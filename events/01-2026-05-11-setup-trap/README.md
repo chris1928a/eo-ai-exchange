@@ -12,7 +12,11 @@
 ## Files in this folder
 
 - `README.md` (this file)
-- [`slides.html`](slides.html), live HTML deck with Erler Ventures branding (open in browser, click or arrow keys to navigate, also printable as PDF)
+- `slides.html`, the live HTML deck with Erler Ventures branding
+
+**Live deck (click to view):** https://chris1928a.github.io/eo-ai-exchange/events/01-2026-05-11-setup-trap/slides.html
+
+Click anywhere or use arrow keys to navigate. Also printable as PDF via your browser print dialog.
 
 ---
 

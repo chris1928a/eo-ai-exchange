@@ -30,7 +30,9 @@ Highlights:
 - [MCP Cookbook](solutions/integration-mcp/mcp-cookbook.md), 10 essential MCP servers for founders
 - Plus 6 more, one per pain cluster
 
-Event #1 deck: [HTML slides](events/01-2026-05-11-setup-trap/slides.html) (Erler Ventures branding, click or arrow keys to navigate).
+**Event #1 deck (live, click to view):** https://chris1928a.github.io/eo-ai-exchange/events/01-2026-05-11-setup-trap/slides.html
+
+Erler Ventures branding (Fraunces + Inter, Forest + Brass on white). Click anywhere or use arrow keys to navigate. Source: [`events/01-2026-05-11-setup-trap/slides.html`](events/01-2026-05-11-setup-trap/slides.html).
 
 ---
 
