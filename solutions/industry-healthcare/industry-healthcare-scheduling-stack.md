@@ -1,7 +1,7 @@
 # Industry Healthcare Scheduling Stack
 
 **Pain cluster:** Industry-Specific Healthcare (6+ of 85, including Dara Shortt 1.500+ calls/day eldercare scheduling and Yuan Min clinical API integration)
-**Status:** Released, Event #1, 2026-05-11 (foundation), full Industry Spotlight at Event #4
+**Status:** Released, Event #1, 2026-05-11
 **Time to read:** 15 min, time to ROI on first pilot: 30-60 days
 
 > The 2026 production stack for healthcare scheduling, validated with deployments at hospitals handling 60%+ of inbound scheduling calls via AI. Built specifically for Dara's eldercare scenario but applicable to any healthcare scheduling pain.
@@ -149,9 +149,7 @@ These matter for Dara specifically:
 
 ## Companion files
 
-- [dara-shortt-1500-calls-prototype.md](dara-shortt-1500-calls-prototype.md): the actual implementation skeleton with code stubs (TBD post-Event-#4)
-- For Yuan Min's clinical API integration scenario: see [Anthropic-Connect Healthcare Workflow](#) (TBD Event #4)
-- For voice-from-car (Marco Pasini's adjacent use case): see [skills/voice-first-from-car/](../../skills/voice-first-from-car/)
+For voice-from-car (Marco Pasini's adjacent use case) and other industry-specific stacks, contributions welcome via PR (see [CONTRIBUTING.md](../../CONTRIBUTING.md)).
 
 ---
 
@@ -180,4 +178,4 @@ These matter for Dara specifically:
 
 ---
 
-*Author: Christoph Erler (EO Berlin), with input requested from Dara Shortt for production refinement post-Event #4. Date: 2026-05-11. All vendor pricing requires direct quote, public figures are estimates only.*
+*Author: Christoph Erler (EO Berlin). Date: 2026-05-11. All vendor pricing requires direct quote, public figures are estimates only. Refinement contributions welcome.*

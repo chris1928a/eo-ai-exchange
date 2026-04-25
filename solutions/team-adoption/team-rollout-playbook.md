@@ -1,7 +1,7 @@
 # Team Rollout Playbook
 
 **Pain cluster:** Team Adoption (12 of 85 audience members)
-**Status:** Released, Event #1, 2026-05-11 (foundation), case studies at Event #3
+**Status:** Released, Event #1, 2026-05-11
 **Time to read:** 15 min, time to execute: 90 days
 
 > The 6-prereq framework adapted for SMB and EO-scale teams (5-200 people). Based on Microsoft's Copilot Adoption Playbook, Zapier's 97% adoption case, and the Prosci change management research from 2026.
@@ -179,4 +179,4 @@ Some adoption problems are not adoption problems, they are leadership problems. 
 
 ---
 
-*Author: Christoph Erler (EO Berlin), informed by ComX rollout experience (80 people). Date: 2026-05-11. Event #3 will deep-dive case studies from EO Series audience.*
+*Author: Christoph Erler (EO Berlin), informed by ComX rollout experience (80 people). Date: 2026-05-11.*

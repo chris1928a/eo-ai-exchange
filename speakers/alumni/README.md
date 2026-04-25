@@ -7,10 +7,6 @@ Past speakers of the EO AI Productivity Exchange Series, in chronological order.
 - **Christoph Erler** (EO Berlin), „The Setup Trap" (Format B opener)
 - **Dominik Raute** (EO Berlin, CTO JustWatch), „Engineering AI Stack at Scale" (Format B co-host)
 
-## Event #2, ~Mid-June 2026
-
-TBD
-
 ---
 
 ## How to add yourself

@@ -1,9 +1,9 @@
 # EO AI Productivity Exchange
 
 > **The Open-Source AI Productivity Series for EO Operators.**
-> Your Pain → Our Skill → 30-90 Days → Repeat.
+> Your Pain → Our Skill → Continuous.
 
-A continuous, audience-driven series where EO members surface real AI-setup pains, and the community ships verified solutions every 30-90 days. Hosted by [Christoph Erler](https://erlerventures.org) and Dominik Raute (CTO JustWatch), EO Berlin.
+A continuous, audience-driven series where EO members surface real AI-setup pains, and the community ships verified solutions. Hosted by [Christoph Erler](https://erlerventures.org) and Dominik Raute (CTO JustWatch), EO Berlin.
 
 ---
 
@@ -12,9 +12,25 @@ A continuous, audience-driven series where EO members surface real AI-setup pain
 A living solution-pipeline for the AI-productivity pains that founders and operators actually face. Every event ends with a `git push`, not just „thanks for listening". Every audience pain becomes either a documented solution, a working skill, or both.
 
 **Three pillars:**
-1. **Audience-driven curriculum.** Pains come from Slido + registration data, not speaker egos.
+1. **Audience-driven curriculum.** Pains come from registration data and live Slido, not speaker egos.
 2. **Open-source solutions.** Every challenge gets a skill / template / playbook here.
-3. **Cadence-flexible.** 30-90 days between events, depending on market velocity.
+3. **Continuous cadence.** 30-90 days between events, depending on market velocity and community demand.
+
+---
+
+## What shipped at Event #1 (2026-05-11)
+
+11 in-depth solutions covering all 10 pain clusters identified from the 85 audience registrations. See [SOLUTIONS.md](SOLUTIONS.md) for the full index.
+
+Highlights:
+- [Setup Trap Diagnostic, 1-pager](solutions/setup-itself/setup-trap-diagnostic.md), the 3 questions to escape the trap
+- [30-Min aiOS Blueprint](solutions/setup-itself/30-min-aios-blueprint.md), zero to working setup in 30 min
+- [OpenClaw Honest Assessment](solutions/openclaw-honest/openclaw-honest-assessment.md), incl. CVE-2026-25253 + 5 alternatives
+- [GDPR Claude Checklist DACH](solutions/security-gdpr/gdpr-claude-checklist-dach.md), incl. EU AI Act August 2026 deadline
+- [MCP Cookbook](solutions/integration-mcp/mcp-cookbook.md), 10 essential MCP servers for founders
+- Plus 6 more, one per pain cluster
+
+Event #1 deck: [HTML slides](events/01-2026-05-11-setup-trap/slides.html) (Erler Ventures branding, click or arrow keys to navigate).
 
 ---
 
@@ -28,8 +44,10 @@ eo-ai-exchange/
 │
 ├── events/                      ← one folder per event
 │   └── 01-2026-05-11-setup-trap/
+│       ├── README.md
+│       └── slides.html          ← live HTML deck
 │
-├── solutions/                   ← solutions grouped by pain cluster
+├── solutions/                   ← solutions grouped by pain cluster (10 clusters)
 │   ├── tool-overload/
 │   ├── setup-itself/
 │   ├── agents/
@@ -41,49 +59,24 @@ eo-ai-exchange/
 │   ├── pace-keeping-up/
 │   └── time-learning/
 │
-├── skills/                      ← runnable Claude Code skills
-│   └── (audience-driven, will grow)
+├── skills/                      ← runnable Claude Code skills (community contributions)
 │
 └── speakers/                    ← speaker pipeline + alumni
 ```
 
 ---
 
-## Cadence logic
+## Cadence philosophy
+
+**Cadence over Quarterly. Solutions over Slides.**
 
 Events fire on triggers, not on a calendar:
+- Major model release → next event in 30 days, focused on what changed
+- Major tool / MCP standard shift → next event in 30 days, focused on what to build
+- Audience pain cluster maturing (10+ submissions on a new topic) → next event in 60 days, industry/vertical spotlight
+- Default cadence (no trigger) → every 90 days, solution review + new cycle
 
-| Trigger | Frequency | Format |
-|---|---|---|
-| Major model release (new Claude / GPT / Gemini) | Within 30 days | Format A: „What changed?" |
-| Major tool / MCP standard shift | Within 30 days | Format B: „What do we build with this?" |
-| Audience pain cluster maturing (10+ Slido submissions on a new topic) | Within 60 days | Format C: „Industry / Vertical Spotlight" |
-| Default cadence (no trigger) | Every 90 days | Format D: „Solution Review + new cycle" |
-
-Hosts check triggers on the 1st of each month. If a trigger fires, an event is announced for the following 30 days.
-
----
-
-## Event format types
-
-- **Format A, Model Release Response (30 min):** New model released, what changed, 1 live skill update, 5 min Q&A.
-- **Format B, Tool / MCP Build (60 min):** New standard, hosts show setup, audience pain collection, Q&A.
-- **Format C, Industry Spotlight (60 min):** One vertical (Healthcare, Real Estate, Sales, Manufacturing), speaker from community, vertical-specific build.
-- **Format D, Solution Review + New Cycle (90 min):** Status report, impact metrics, audience pain re-collection for next cycle, speaker hand-raise.
-
----
-
-## Roadmap (next 12 months)
-
-| # | Date | Format | Theme |
-|---|---|---|---|
-| #1 | 2026-05-11 | B (launch) | Setup Trap + Tool Overload Foundations |
-| #2 | ~Mid-June 2026 | TBD | Likely „Agents in Production" or first Industry Spotlight |
-| #3 | ~Mid-July 2026 | A | Likely Claude Sonnet 4.7 release migration |
-| #4 | ~Mid-August 2026 | C | Industry Spotlight (Healthcare or Sales) |
-| #5 | ~Mid-October 2026 | D | 90-day Solution Review |
-| #6 | ~End-November 2026 | B | TBD |
-| #7 | ~January 2027 | D | Year-1 Wrap |
+Hosts check triggers monthly. The next event is announced when there is something genuinely worth meeting for.
 
 ---
 
@@ -92,8 +85,8 @@ Hosts check triggers on the 1st of each month. If a trigger fires, an event is a
 Three ways to contribute:
 
 1. **Submit a pain.** Open an issue tagged `pain` describing what you are stuck on. We aggregate these for the next event.
-2. **Submit a solution.** Open a PR with a markdown file or a runnable skill in the appropriate folder. See `CONTRIBUTING.md` for format.
-3. **Apply to speak.** Fill the speaker application: [link to Tally form, populated after Event #1].
+2. **Submit a solution.** Open a PR with a markdown file or a runnable skill in the appropriate folder. See [CONTRIBUTING.md](CONTRIBUTING.md) for format.
+3. **Apply to speak at the next event.** See [speakers/README.md](speakers/README.md).
 
 All contributors are credited in `speakers/alumni/`.
 
@@ -118,4 +111,4 @@ All solutions in this repo are released under MIT License. Use, modify, share. A
 
 ---
 
-*Last updated: 2026-05-11 (after Event #1). Next event: TBD per cadence logic.*
+*Last updated: 2026-05-11 (Event #1 shipped, 11 solutions live).*

@@ -122,9 +122,7 @@ Drop anything below daily-use unless it has a clear specialist purpose. Most too
 
 ## Skill version
 
-The companion runnable skill `ai-time-audit` ([skills/ai-time-audit/](../../skills/ai-time-audit/)) automates Step 1. Drop your calendar export + a free-form text dump of your last 7 days, and it returns your top-3 leverage activities with AI-helpfulness scores.
-
-Coming Event #2.
+A companion runnable skill `ai-time-audit` is planned to automate Step 1: drop your calendar export + free-form text dump of your last 7 days, and it returns your top-3 leverage activities with AI-helpfulness scores. PR contributions welcome.
 
 ---
 

@@ -1,7 +1,7 @@
 # Agent Reliability Checklist
 
 **Pain cluster:** Agents (15 of 85 audience members)
-**Status:** Released, Event #1, 2026-05-11 (foundation), full deep-dive at Event #2
+**Status:** Released, Event #1, 2026-05-11
 **Time to complete:** 2-4 hours from prototype to production-ready
 
 > 12 reality-checks before you put any agent in front of a customer or a real workflow. Based on Anthropic's published research, the April 2026 Managed Agents launch, and the production patterns emerging from LangGraph deployments at 1.000+ employee companies.
@@ -161,4 +161,4 @@ Most pain in 2026 comes from people building agents for tasks that should be ski
 
 ---
 
-*Author: Christoph Erler (EO Berlin) + Dominik Raute (CTO JustWatch). Date: 2026-05-11. Next event will deep-dive each architecture pattern with Dom's engineering perspective.*
+*Author: Christoph Erler (EO Berlin) + Dominik Raute (CTO JustWatch). Date: 2026-05-11.*

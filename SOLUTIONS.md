@@ -1,162 +1,127 @@
 # Solutions Master Index
 
-All solutions, organized by pain cluster. Pain clusters were identified from the 85 audience registrations for Event #1 (2026-05-11). All Event #1 solutions are SHIPPED at launch.
+The 11 solutions shipped at Event #1 (2026-05-11), one per audience-pain-cluster, sourced directly from the 85 EO member registrations.
 
-> **The promise:** every audience pain becomes either a documented solution, a runnable skill, or both. Released at the next event in the cluster's priority queue.
+> **The promise:** every audience pain in the analysis becomes a documented solution. What ships next is determined by what the community demands next, not by a pre-set roadmap.
 
 ---
 
-## Pain Cluster 1, Tool Overload (25 audience members)
+## How the pain clusters were identified
 
-**Trigger phrases:** „too many options", „so much out there", „overwhelmed by all the possibilities".
+Each of the 10 clusters below comes from analysis of the 85 audience members who registered for Event #1. Trigger phrases are direct quotes from registration responses to „What is your biggest pain point right now?".
 
-| Solution | Status |
-|---|---|
-| [Tool Overload Diagnostic](solutions/tool-overload/tool-overload-diagnostic.md) | **SHIPPED Event #1** |
-| AI Stack Decision Tree | Planned Event #2 |
-| 30-Day Tool Trial Protocol | Planned Event #2 |
-| `ai-time-audit` Skill (runnable) | Planned Event #2 |
+---
+
+## Pain Cluster 1, Tool Overload (25 of 85 audience members)
+
+**Trigger phrases from registrations:** „too many options", „so much out there", „overwhelmed by all the possibilities", „integration der einzelnen Elemente in ein vernünftiges einfaches System", „which tool for what".
+
+**Solution shipped:**
+- [Tool Overload Diagnostic](solutions/tool-overload/tool-overload-diagnostic.md)
 
 ---
 
 ## Pain Cluster 2, Setup Itself (7 explicit + 30 indirect)
 
-**Trigger phrases:** „Setup", „Setup me", „Time to implement the set up", „Finding the right setup".
+**Trigger phrases:** „Setup", „Setup me", „Time to implement the set up", „Finding the right setup", „Setup and adoption".
 
-| Solution | Status |
-|---|---|
-| [30-Min aiOS Blueprint](solutions/setup-itself/30-min-aios-blueprint.md) | **SHIPPED Event #1** |
-| [Setup Trap Diagnostic, 1-Pager](solutions/setup-itself/setup-trap-diagnostic.md) | **SHIPPED Event #1** |
-| CLAUDE.md Templates (5 starter versions) | Planned Event #2 |
-| Skill Starter Pack (10 skills) | Planned Event #2 |
+**Solutions shipped:**
+- [30-Min aiOS Blueprint](solutions/setup-itself/30-min-aios-blueprint.md)
+- [Setup Trap Diagnostic, 1-Pager](solutions/setup-itself/setup-trap-diagnostic.md)
 
 ---
 
-## Pain Cluster 3, Agents (15 audience members)
+## Pain Cluster 3, Agents (15 of 85)
 
-**Trigger phrases:** „using Agents in a secure way", „Agent Orchestration", „autonomous systems".
+**Trigger phrases:** „using Agents in a secure way", „Agent Orchestration", „autonomous systems", „Setting up an agent team", „agent value optimization", „actively use Agents".
 
-| Solution | Status |
-|---|---|
-| [Agent Reliability Checklist (12 points)](solutions/agents/agent-reliability-checklist.md) | **SHIPPED Event #1** |
-| Agent vs Skill Decision Tree | Planned Event #2 (Dom's deep dive) |
-| Claude Managed Agents Starter Pack | Planned Event #2 |
-| Agent Security Baseline | Planned Event #2 |
+**Solution shipped:**
+- [Agent Reliability Checklist (12 points)](solutions/agents/agent-reliability-checklist.md)
 
 ---
 
-## Pain Cluster 4, Team Adoption (12 audience members)
+## Pain Cluster 4, Team Adoption (12 of 85)
 
-**Trigger phrases:** „Getting team onboard", „Transfer to Team", „Scaling for my Team".
+**Trigger phrases:** „Getting team onboard", „Transfer to Team", „Scaling for my Team", „spread throughout the organization", „bring everything to stable enterprise setup".
 
-| Solution | Status |
-|---|---|
-| [Team Rollout Playbook](solutions/team-adoption/team-rollout-playbook.md) | **SHIPPED Event #1** |
-| Champion Identification Template | Planned Event #3 |
-| Monthly Show-and-Tell Template | Planned Event #3 |
-| ROI Tracking Spreadsheet | Planned Event #3 |
+**Solution shipped:**
+- [Team Rollout Playbook (6 prereqs, 90-day plan)](solutions/team-adoption/team-rollout-playbook.md)
 
 ---
 
-## Pain Cluster 5, Integration / MCP (10 audience members)
+## Pain Cluster 5, Integration / MCP (10 of 85)
 
-**Trigger phrases:** „Making everything work together", „Automation between tools", „How to link everything".
+**Trigger phrases:** „Making everything work together", „Automation between tools", „Integration mit vorhandenen Daten", „How to link everything".
 
-| Solution | Status |
-|---|---|
-| [MCP Cookbook (10 essential servers)](solutions/integration-mcp/mcp-cookbook.md) | **SHIPPED Event #1** |
-| Claude MCP Integrations Guide | Planned Event #2 |
-| MCP vs Zapier Decision Tree | Planned Event #2 |
-| `mcp-installer` Skill (runnable) | Planned Event #2 |
+**Solution shipped:**
+- [MCP Cookbook (10 essential servers)](solutions/integration-mcp/mcp-cookbook.md)
 
 ---
 
-## Pain Cluster 6, OpenClaw Stability (12 audience members)
+## Pain Cluster 6, OpenClaw Stability (12 of 85)
 
 **Trigger phrases:** „stability", „Workflows in OpenClaw", „ease of use and reliability".
 
-| Solution | Status |
-|---|---|
-| [OpenClaw Honest Assessment (incl CVE-2026-25253)](solutions/openclaw-honest/openclaw-honest-assessment.md) | **SHIPPED Event #1** |
-| OpenClaw vs Alternatives Matrix (NanoClaw, ZeroClaw, Skyvern, Nanobot, OpenFang) | Planned Event #2 |
-| Memory Layer for Workflow Tools | Planned Event #2 |
-| Security Baseline for Agent Frameworks | Planned Event #2 |
+**Solution shipped:**
+- [OpenClaw Honest Assessment, includes CVE-2026-25253 + 5 alternatives](solutions/openclaw-honest/openclaw-honest-assessment.md)
 
 ---
 
-## Pain Cluster 7, Industry Healthcare (6+ including Dara, Yuan)
+## Pain Cluster 7, Industry-Specific Healthcare (6+ of 85)
 
-**Audience:** Dara Shortt (1.500+ calls/day eldercare), Yuan Min (clinical API), plus industry-adjacent.
+**Audience:** Dara Shortt (1.500+ calls/day eldercare scheduling), Yuan Min (clinical & appointments software API + sales/treatment/AR follow-ups), plus industry-adjacent.
 
-| Solution | Status |
-|---|---|
-| [Industry Healthcare Scheduling Stack](solutions/industry-healthcare/industry-healthcare-scheduling-stack.md) | **SHIPPED Event #1** |
-| Dara Shortt 1500-Calls Prototype (with Dara as co-author) | Planned Event #4 (Industry Spotlight) |
-| `eos-rocks-extractor` Skill (Ernest van der Meijde) | Planned Event #4 |
-| `voice-first-from-car` Skill (Marco Pasini) | Planned Event #4 |
+**Trigger phrases:** „Scheduling and forward scheduling 1,500 plus calls daily", „clinical & appointments software API", „autonomous systems".
+
+**Solution shipped:**
+- [Industry Healthcare Scheduling Stack](solutions/industry-healthcare/industry-healthcare-scheduling-stack.md)
 
 ---
 
-## Pain Cluster 8, Security / GDPR (4 explicit, all DACH implicit)
+## Pain Cluster 8, Security / GDPR / Compliance (4 explicit + all DACH implicit)
 
-**Trigger phrases:** „Security, tool cluttering", „GDPR and compliance", „robust security".
+**Trigger phrases:** „Security, tool cluttering", „using Agents in a secure way", „GDPR and compliance with security standards", „robust security, uptime and error-free functioning".
 
-| Solution | Status |
-|---|---|
-| [GDPR Claude Checklist DACH (incl EU AI Act August 2026)](solutions/security-gdpr/gdpr-claude-checklist-dach.md) | **SHIPPED Event #1** |
-| Anthropic DPA Template | Planned Event #2 |
-| EU Data Residency Decision (Bedrock vs Vertex) | Planned Event #2 |
-| Agent Credential Security Baseline | Planned Event #2 |
+**Solution shipped:**
+- [GDPR Claude Checklist DACH (incl EU AI Act August 2026 deadline)](solutions/security-gdpr/gdpr-claude-checklist-dach.md)
 
 ---
 
-## Pain Cluster 9, Pace / Keeping Up (8 audience members)
+## Pain Cluster 9, Pace / Keeping Up (8 of 85)
 
-**Trigger phrases:** „Keeping up with the pace", „Race between Opus and Codex".
+**Trigger phrases:** „Keeping up with the pace", „Keeping pace with rapid upgrades and system changes", „Race between Opus and Codex and the API costs", „Choosing which approach to take because everything keeps changing".
 
-| Solution | Status |
-|---|---|
-| [Weekly AI Filter (4-source curated)](solutions/pace-keeping-up/weekly-ai-filter.md) | **SHIPPED Event #1** |
-| Quarterly Audit Template | Planned Event #2 |
-| Paradigm vs Incremental Distinguisher | Planned Event #2 |
+**Solution shipped:**
+- [Weekly AI Filter (4-source curated)](solutions/pace-keeping-up/weekly-ai-filter.md)
 
 ---
 
 ## Pain Cluster 10, Time / Learning for Beginners (6 explicit + 10 beginner cluster)
 
-**Trigger phrases:** „Time to learn more", „Finding time to learn and implement".
+**Trigger phrases:** „Time to learn more", „Finding time to learn and implement ideas", „I don't yet have a basis to work from", „not to invest too much time in AI".
 
-| Solution | Status |
-|---|---|
-| [60-Day Founder Onboarding](solutions/time-learning/60-day-founder-onboarding.md) | **SHIPPED Event #1** |
-| Curated Video Tutorial List (3 max) | Planned Event #2 |
-| 3 Starter Use Cases (Email-Triage, Meeting-Notes, Daily-Brief) | Planned Event #2 |
+**Solution shipped:**
+- [60-Day Founder Onboarding](solutions/time-learning/60-day-founder-onboarding.md)
 
 ---
 
-## Master cadence-priority
+## Summary
 
-| Event | Solutions launched | Total at this event |
-|---|---|---|
-| **Event #1 (2026-05-11) — SHIPPED** | 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 (foundation per cluster) | **11 solutions** |
-| Event #2 (~Mid-June 2026) | Deep-dives in 1, 2, 3, 5, 6, 9, 10 | +20 expected |
-| Event #3 (~Mid-July 2026) | Cluster 4 (Team Adoption) deep-dive with case studies | +5 expected |
-| Event #4 (~Mid-August 2026) | Cluster 7 (Industry Spotlight) with Dara + Yuan as speakers | +5 expected |
-| Event #5 (~Mid-October 2026) | All clusters re-reviewed (D-format, 90-day-audit) | +variable |
+**11 solutions shipped at Event #1**, covering all 10 audience pain clusters. Together: ~30.000 words of practical, source-validated guidance.
 
-By Year-1 wrap (Event #7, ~January 2027): target 50+ solutions in repo.
+What ships next is determined by which clusters the community pushes back on, asks deeper questions about, or contributes new solutions to. Not by a pre-set quarterly roadmap.
 
 ---
 
 ## How to contribute
 
-1. **Submit a pain:** open issue tagged `pain` (template in CONTRIBUTING.md)
-2. **Submit a solution:** open PR with markdown file in appropriate cluster folder
-3. **Submit a skill:** open PR with skill folder under `skills/`
-4. **Apply to speak:** see `speakers/README.md` for application
+1. **Submit a pain:** open an issue tagged `pain` (template in CONTRIBUTING.md)
+2. **Submit a solution:** open a PR with markdown file in the appropriate cluster folder
+3. **Submit a skill:** open a PR with skill folder under `skills/`
+4. **Apply to speak at the next event:** see `speakers/README.md`
 
 All contributors credited in `speakers/alumni/`.
 
 ---
 
-*Solutions master index. Status updated after each event. Last update: 2026-05-11 (Event #1 shipped).*
+*Last update: 2026-05-11 (Event #1 shipped, all 11 solutions live).*

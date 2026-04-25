@@ -206,9 +206,7 @@ If you said NO to any: complete [30-Min aiOS Blueprint](../setup-itself/30-min-a
 
 ## Companion skill
 
-The companion runnable skill `mcp-installer` ([skills/mcp-installer/](../../skills/mcp-installer/)) automates this entire flow: detects your existing tool stack, recommends MCP servers, walks you through OAuth, and validates the setup.
-
-Coming Event #2.
+A companion runnable skill `mcp-installer` is planned to automate this entire flow: detects your existing tool stack, recommends MCP servers, walks you through OAuth, and validates the setup. PR contributions welcome.
 
 ---
 
