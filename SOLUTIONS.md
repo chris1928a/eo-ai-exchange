@@ -1,6 +1,6 @@
 # Solutions Master Index
 
-The 11 solutions shipped at Event #1 (2026-05-11), one per audience-pain-cluster, sourced directly from the 85 EO member registrations.
+The 11 solutions shipped at Event #1 (2026-05-11), one per audience-pain-cluster, sourced directly from 103 EO member registrations across 30+ chapters. Pain-cluster counts below reflect the 97-registration analysis snapshot used for solution scoping; the additional 6 registrations did not shift the cluster ranking.
 
 > **The promise:** every audience pain in the analysis becomes a documented solution. What ships next is determined by what the community demands next, not by a pre-set roadmap.
 
@@ -8,11 +8,11 @@ The 11 solutions shipped at Event #1 (2026-05-11), one per audience-pain-cluster
 
 ## How the pain clusters were identified
 
-Each of the 10 clusters below comes from analysis of the 85 audience members who registered for Event #1. Trigger phrases are direct quotes from registration responses to „What is your biggest pain point right now?".
+Each of the 10 clusters below comes from analysis of the 97-registration snapshot. Trigger phrases are direct quotes from registration responses to "What is your biggest pain point right now?". Total registrations at event time: 103.
 
 ---
 
-## Pain Cluster 1, Tool Overload (25 of 85 audience members)
+## Pain Cluster 1, Tool Overload (28 of 97, 29%)
 
 **Trigger phrases from registrations:** „too many options", „so much out there", „overwhelmed by all the possibilities", „integration der einzelnen Elemente in ein vernünftiges einfaches System", „which tool for what".
 
@@ -21,7 +21,7 @@ Each of the 10 clusters below comes from analysis of the 85 audience members who
 
 ---
 
-## Pain Cluster 2, Setup Itself (7 explicit + 30 indirect)
+## Pain Cluster 2, Setup Itself (9 explicit + 30 indirect)
 
 **Trigger phrases:** „Setup", „Setup me", „Time to implement the set up", „Finding the right setup", „Setup and adoption".
 
@@ -31,7 +31,7 @@ Each of the 10 clusters below comes from analysis of the 85 audience members who
 
 ---
 
-## Pain Cluster 3, Agents (15 of 85)
+## Pain Cluster 3, Agents (17 of 97, 18%)
 
 **Trigger phrases:** „using Agents in a secure way", „Agent Orchestration", „autonomous systems", „Setting up an agent team", „agent value optimization", „actively use Agents".
 
@@ -40,7 +40,7 @@ Each of the 10 clusters below comes from analysis of the 85 audience members who
 
 ---
 
-## Pain Cluster 4, Team Adoption (12 of 85)
+## Pain Cluster 4, Team Adoption (17 of 97, 18%, grew from 14% to 18% between 25.04 and 27.04)
 
 **Trigger phrases:** „Getting team onboard", „Transfer to Team", „Scaling for my Team", „spread throughout the organization", „bring everything to stable enterprise setup".
 
@@ -49,7 +49,7 @@ Each of the 10 clusters below comes from analysis of the 85 audience members who
 
 ---
 
-## Pain Cluster 5, Integration / MCP (10 of 85)
+## Pain Cluster 5, Integration / MCP (12 of 97, 12%)
 
 **Trigger phrases:** „Making everything work together", „Automation between tools", „Integration mit vorhandenen Daten", „How to link everything".
 
@@ -58,7 +58,7 @@ Each of the 10 clusters below comes from analysis of the 85 audience members who
 
 ---
 
-## Pain Cluster 6, OpenClaw Stability (12 of 85)
+## Pain Cluster 6, OpenClaw Stability (12 of 97, 12%)
 
 **Trigger phrases:** „stability", „Workflows in OpenClaw", „ease of use and reliability".
 
@@ -67,7 +67,7 @@ Each of the 10 clusters below comes from analysis of the 85 audience members who
 
 ---
 
-## Pain Cluster 7, Industry-Specific Healthcare (6+ of 85)
+## Pain Cluster 7, Industry-Specific Healthcare (6+ of 97)
 
 **Audience:** Dara Shortt (1.500+ calls/day eldercare scheduling), Yuan Min (clinical & appointments software API + sales/treatment/AR follow-ups), plus industry-adjacent.
 
@@ -87,7 +87,7 @@ Each of the 10 clusters below comes from analysis of the 85 audience members who
 
 ---
 
-## Pain Cluster 9, Pace / Keeping Up (8 of 85)
+## Pain Cluster 9, Pace / Keeping Up (10 of 97, 10%)
 
 **Trigger phrases:** „Keeping up with the pace", „Keeping pace with rapid upgrades and system changes", „Race between Opus and Codex and the API costs", „Choosing which approach to take because everything keeps changing".
 
@@ -96,7 +96,7 @@ Each of the 10 clusters below comes from analysis of the 85 audience members who
 
 ---
 
-## Pain Cluster 10, Time / Learning for Beginners (6 explicit + 10 beginner cluster)
+## Pain Cluster 10, Time / Learning for Beginners (6 explicit + 10 beginner cluster of 97)
 
 **Trigger phrases:** „Time to learn more", „Finding time to learn and implement ideas", „I don't yet have a basis to work from", „not to invest too much time in AI".
 
@@ -124,4 +124,4 @@ All contributors credited in `speakers/alumni/`.
 
 ---
 
-*Last update: 2026-05-11 (Event #1 shipped, all 11 solutions live).*
+*Last update: 2026-05-11 (Event #1 shipped, all 11 solutions live, 103 registrations).*

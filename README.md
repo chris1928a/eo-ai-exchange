@@ -20,7 +20,7 @@ A living solution-pipeline for the AI-productivity pains that founders and opera
 
 ## What shipped at Event #1 (2026-05-11)
 
-11 in-depth solutions covering all 10 pain clusters identified from the 85 audience registrations. See [SOLUTIONS.md](SOLUTIONS.md) for the full index.
+11 in-depth solutions covering all 10 pain clusters identified from 103 audience registrations across 30+ EO chapters. See [SOLUTIONS.md](SOLUTIONS.md) for the full index.
 
 Highlights:
 - [Setup Trap Diagnostic, 1-pager](solutions/setup-itself/setup-trap-diagnostic.md), the 3 questions to escape the trap
@@ -113,4 +113,4 @@ All solutions in this repo are released under MIT License. Use, modify, share. A
 
 ---
 
-*Last updated: 2026-05-11 (Event #1 shipped, 11 solutions live).*
+*Last updated: 2026-05-11 (Event #1 shipped, 11 solutions live, 103 registrations).*

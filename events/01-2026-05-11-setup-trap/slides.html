@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="de">
+<html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Die Setup Trap, EO AI Productivity Exchange #1</title>
+<title>The Setup Trap, EO AI Productivity Exchange #1</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -48,7 +48,7 @@
     content: ''; width: 1.5rem; height: 2px; background: var(--ed-brass);
   }
 
-  /* Slide 1 — Cover */
+  /* Cover slide */
   .cover-eyebrow {
     font-family: var(--sans); font-size: 0.85rem; font-weight: 500;
     letter-spacing: 0.18em; text-transform: uppercase;
@@ -80,17 +80,19 @@
   }
   .cover-meta strong { color: var(--ed-text); font-weight: 600; }
 
-  /* Slide 2 — Versions table */
+  /* Section title */
   h2.section-title {
     font-family: var(--serif); font-weight: 600;
     font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.05;
     letter-spacing: -0.02em; color: var(--ed-forest);
     margin-bottom: 3rem;
   }
-  .versions { display: flex; flex-direction: column; gap: 0.75rem; }
+
+  /* Versions table */
+  .versions { display: flex; flex-direction: column; gap: 0.6rem; }
   .version-row {
     display: grid; grid-template-columns: 6rem 1fr auto;
-    align-items: center; padding: 1.5rem 1.75rem;
+    align-items: center; padding: 1.25rem 1.75rem;
     background: var(--ed-surface); border: 1px solid var(--ed-border); border-radius: 4px;
     transition: all 0.2s;
   }
@@ -99,29 +101,29 @@
     border-left: 4px solid var(--ed-brass);
   }
   .version-row .v {
-    font-family: var(--serif); font-weight: 700; font-size: 1.75rem;
+    font-family: var(--serif); font-weight: 700; font-size: 1.5rem;
     color: var(--ed-muted);
   }
   .version-row.alive .v { color: var(--ed-brass); }
   .version-row .stack {
-    font-family: var(--sans); font-size: 1.25rem; font-weight: 500;
+    font-family: var(--sans); font-size: 1.15rem; font-weight: 500;
     color: var(--ed-muted);
   }
   .version-row.alive .stack { color: var(--ed-text); font-weight: 600; }
   .version-row .status {
-    font-family: var(--serif); font-style: italic; font-size: 1rem;
+    font-family: var(--serif); font-style: italic; font-size: 0.95rem;
     color: var(--ed-muted);
   }
   .version-row.alive .status { color: var(--ed-brass); font-weight: 600; }
   .version-quote {
-    margin-top: 2.5rem; font-family: var(--serif); font-style: italic;
+    margin-top: 2rem; font-family: var(--serif); font-style: italic;
     font-size: clamp(1.1rem, 1.6vw, 1.4rem); color: var(--ed-muted);
     line-height: 1.5;
   }
   .version-quote strong { color: var(--ed-text); font-style: normal; font-weight: 600; }
   .version-quote .brass { color: var(--ed-brass); font-style: normal; font-weight: 600; }
 
-  /* Slide 3 — Diagnostic */
+  /* Diagnostic */
   .diagnostic-subtitle {
     font-family: var(--serif); font-style: italic;
     font-size: clamp(1.1rem, 1.5vw, 1.4rem); color: var(--ed-brass);
@@ -130,7 +132,7 @@
   .questions { display: flex; flex-direction: column; gap: 1rem; }
   .question {
     display: grid; grid-template-columns: 5rem 1fr;
-    align-items: center; padding: 1.75rem 1.75rem;
+    align-items: center; padding: 1.5rem 1.75rem;
     background: var(--ed-surface); border: 1px solid var(--ed-border);
     border-left: 4px solid var(--ed-brass); border-radius: 4px;
   }
@@ -148,7 +150,7 @@
     color: var(--ed-brass); font-weight: 500;
   }
 
-  /* Slide 4 — Hierarchy */
+  /* Hierarchy */
   .hierarchy-headline {
     font-family: var(--serif); font-weight: 700;
     font-size: clamp(2.5rem, 6vw, 5rem); line-height: 1; text-align: center;
@@ -181,9 +183,7 @@
     font-family: var(--sans); font-size: 0.95rem; color: var(--ed-muted);
     font-style: italic; line-height: 1.4;
   }
-  .hier-callout {
-    text-align: left; padding-left: 0;
-  }
+  .hier-callout { text-align: left; padding-left: 0; }
   .hier-callout p {
     font-family: var(--serif); font-size: clamp(1rem, 1.4vw, 1.3rem);
     line-height: 1.5; color: var(--ed-text);
@@ -192,7 +192,7 @@
   .hier-callout .quiet { color: var(--ed-muted); font-style: italic; }
   .hier-callout .strong { font-weight: 700; }
 
-  /* Slide 5 — Handoff */
+  /* Handoff */
   .handoff h2 {
     font-family: var(--serif); font-weight: 700;
     font-size: clamp(2.25rem, 4.5vw, 3.5rem); color: var(--ed-forest);
@@ -204,7 +204,7 @@
     margin-top: 1rem; max-width: 70%;
   }
 
-  /* Slide 6 — Promise */
+  /* Promise / closing slide */
   .promise-headline {
     font-family: var(--serif); font-weight: 700;
     font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; margin-bottom: 0.4rem;
@@ -217,28 +217,170 @@
     margin-top: 1rem; margin-bottom: 3rem;
   }
   .promise-cards {
-    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem;
+    display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 1.25rem;
     margin-bottom: 3rem;
   }
   .promise-card {
-    padding: 2rem; background: var(--ed-surface);
+    padding: 1.75rem; background: var(--ed-surface);
     border: 1px solid var(--ed-border); border-radius: 4px;
     border-top: 3px solid var(--ed-brass);
   }
   .promise-card .num {
-    font-family: var(--serif); font-weight: 700; font-size: 3.5rem;
+    font-family: var(--serif); font-weight: 700; font-size: 3rem;
     color: var(--ed-brass); line-height: 1; margin-bottom: 0.5rem;
   }
   .promise-card .label {
-    font-family: var(--serif); font-weight: 600; font-size: 1.25rem;
+    font-family: var(--serif); font-weight: 600; font-size: 1.15rem;
     color: var(--ed-forest); margin-bottom: 0.4rem;
   }
   .promise-card .desc {
-    font-family: var(--sans); font-style: italic; font-size: 0.9rem;
+    font-family: var(--sans); font-style: italic; font-size: 0.85rem;
     color: var(--ed-muted); line-height: 1.4;
   }
 
-  /* Bottom links bar (slide 5/6) */
+  /* Two Traps */
+  .traps { display: grid; grid-template-columns: 1fr 1fr; gap: 1.75rem; }
+  .trap-card {
+    padding: 2rem; background: var(--ed-surface);
+    border: 1px solid var(--ed-border); border-radius: 4px;
+    border-top: 3px solid var(--ed-brass);
+  }
+  .trap-card .label {
+    font-family: var(--sans); font-size: 0.75rem; font-weight: 500;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--ed-brass); margin-bottom: 0.75rem;
+  }
+  .trap-card .name {
+    font-family: var(--serif); font-weight: 700; font-size: 2rem;
+    color: var(--ed-forest); margin-bottom: 1rem;
+  }
+  .trap-card .data {
+    font-family: var(--sans); font-size: 1rem;
+    color: var(--ed-muted); line-height: 1.5; margin-bottom: 0.75rem;
+  }
+  .trap-card .data strong { color: var(--ed-text); font-weight: 600; }
+  .trap-card .quote {
+    font-family: var(--serif); font-style: italic; font-size: 1.05rem;
+    color: var(--ed-text); line-height: 1.4;
+    border-left: 3px solid var(--ed-brass); padding-left: 1rem; margin-top: 1rem;
+  }
+  .traps-footer {
+    margin-top: 2.5rem; font-family: var(--serif); font-style: italic;
+    font-size: clamp(1.1rem, 1.5vw, 1.35rem); color: var(--ed-muted);
+    text-align: center;
+  }
+
+  /* Demo title slide */
+  .demo-title {
+    display: flex; flex-direction: column; gap: 1.5rem; max-width: 75%;
+  }
+  .demo-title h2 {
+    font-family: var(--serif); font-weight: 700;
+    font-size: clamp(3rem, 6vw, 5rem); line-height: 1;
+    color: var(--ed-forest); letter-spacing: -0.02em;
+  }
+  .demo-title h2 .accent { color: var(--ed-brass); }
+  .demo-title .sub {
+    font-family: var(--serif); font-style: italic;
+    font-size: clamp(1.25rem, 2vw, 1.75rem); color: var(--ed-muted);
+    line-height: 1.4;
+  }
+  .demo-title .hacks {
+    display: flex; gap: 1.5rem; margin-top: 1rem;
+  }
+  .demo-hack {
+    flex: 1; padding: 1.5rem; background: var(--ed-surface);
+    border: 1px solid var(--ed-border); border-left: 4px solid var(--ed-brass);
+    border-radius: 4px;
+  }
+  .demo-hack .hk-num {
+    font-family: var(--serif); font-weight: 700; font-size: 0.9rem;
+    color: var(--ed-brass); letter-spacing: 0.1em; text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+  .demo-hack .hk-name {
+    font-family: var(--serif); font-weight: 700; font-size: 1.5rem;
+    color: var(--ed-forest); margin-bottom: 0.4rem;
+  }
+  .demo-hack .hk-desc {
+    font-family: var(--sans); font-size: 0.95rem; color: var(--ed-muted);
+    line-height: 1.4;
+  }
+  .demo-title .note {
+    font-family: var(--serif); font-style: italic;
+    font-size: 1rem; color: var(--ed-muted); margin-top: 1rem;
+  }
+
+  /* Cost comparison */
+  .cost-grid {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .cost-card {
+    padding: 2rem; background: var(--ed-surface);
+    border: 1px solid var(--ed-border); border-radius: 4px;
+    border-top: 3px solid var(--ed-muted);
+  }
+  .cost-card.winner { border-top-color: var(--ed-brass); background: var(--ed-brass-soft); }
+  .cost-card .price {
+    font-family: var(--serif); font-weight: 700;
+    font-size: clamp(2.5rem, 4vw, 3.5rem); line-height: 1;
+    color: var(--ed-muted); margin-bottom: 0.4rem;
+  }
+  .cost-card.winner .price { color: var(--ed-brass); }
+  .cost-card .price .unit {
+    font-family: var(--sans); font-size: 1rem; font-weight: 500;
+    color: var(--ed-muted); margin-left: 0.25rem;
+  }
+  .cost-card .name {
+    font-family: var(--serif); font-weight: 700; font-size: 1.35rem;
+    color: var(--ed-forest); margin-bottom: 0.6rem;
+  }
+  .cost-card .desc {
+    font-family: var(--sans); font-size: 0.95rem; color: var(--ed-muted);
+    font-style: italic; line-height: 1.4;
+  }
+  .cost-footer {
+    font-family: var(--serif); font-style: italic;
+    font-size: clamp(1.1rem, 1.5vw, 1.35rem); color: var(--ed-text);
+    text-align: center;
+  }
+  .cost-footer .brass { color: var(--ed-brass); font-weight: 600; font-style: normal; }
+
+  /* GitHub list */
+  .gh-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem 2rem;
+    margin: 2rem 0;
+  }
+  .gh-row {
+    display: flex; align-items: baseline; gap: 1rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px dashed var(--ed-border);
+  }
+  .gh-row .gh-cluster {
+    font-family: var(--sans); font-size: 1rem; font-weight: 500;
+    color: var(--ed-text); flex: 1;
+  }
+  .gh-row .gh-count {
+    font-family: var(--serif); font-weight: 700; font-size: 1rem;
+    color: var(--ed-brass);
+  }
+  .gh-url-box {
+    padding: 1.25rem 1.5rem; background: var(--ed-brass-soft);
+    border: 1px solid var(--ed-brass); border-radius: 4px;
+    margin-top: 1.5rem; text-align: center;
+  }
+  .gh-url-box .lbl {
+    font-family: var(--sans); font-size: 0.7rem; font-weight: 500;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--ed-brass); margin-bottom: 0.4rem;
+  }
+  .gh-url-box .url {
+    font-family: var(--serif); font-weight: 700; font-size: 1.5rem;
+    color: var(--ed-forest);
+  }
+
+  /* Bottom links bar */
   .bottom-links {
     display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
     border-top: 1px solid var(--ed-border); padding-top: 1.5rem; margin-top: auto;
@@ -292,164 +434,333 @@
 <body>
 <div class="deck">
 
-  <!-- Slide 1 — Cover -->
+  <!-- Slide 1, Cover -->
   <section class="slide active" id="s1">
-    <div class="cover-eyebrow">EO Berlin · AI Productivity Exchange #1</div>
+    <div class="cover-eyebrow">EO AI Productivity Exchange #1</div>
     <h1 class="cover-title">
-      Die <span class="accent">Setup Trap</span>
+      The <span class="accent">Setup Trap</span>
     </h1>
-    <p class="cover-subtitle">Warum 3 von 4 AI-Setups sterben, und wie du im 4. überlebst.</p>
+    <p class="cover-subtitle">Two operators show the stacks they actually run in production. Tool overload, setup cost, and what survived 18 months.</p>
     <div class="cover-divider"></div>
-    <p class="cover-meta"><strong>Christoph Erler</strong> · EO Berlin · 11.05.2026</p>
-    <div class="brand"><span class="dot"></span>Erler Ventures · The Operating System for Founders</div>
-    <div class="page-num">1 / 6</div>
+    <p class="cover-meta"><strong>Christoph Erler &amp; Dom Raute</strong> &middot; EO Berlin &middot; May 11, 2026 &middot; 18:00 CEST</p>
+    <div class="brand"><span class="dot"></span>Erler Ventures &middot; Hosted via EO</div>
+    <div class="page-num">1 / 12</div>
   </section>
 
-  <!-- Slide 2 — 4 Setups -->
+  <!-- Slide 2, The Promise -->
   <section class="slide" id="s2">
-    <div class="top-label">4 Setups in 18 Monaten</div>
-    <h2 class="section-title">3 sind tot. 1 lebt.</h2>
+    <div class="top-label">60 Minutes</div>
+    <h2 class="section-title">What you walk out with</h2>
+    <div class="promise-cards">
+      <div class="promise-card">
+        <div class="num">1</div>
+        <div class="label">Clarity</div>
+        <div class="desc">Which of two stacks fits you, without burning weeks on it</div>
+      </div>
+      <div class="promise-card">
+        <div class="num">3-5</div>
+        <div class="label">Hacks</div>
+        <div class="desc">Concrete and actionable, the wins and the struggles behind them</div>
+      </div>
+      <div class="promise-card">
+        <div class="num">103</div>
+        <div class="label">Peers</div>
+        <div class="desc">Where other EO operators stand, where you stand</div>
+      </div>
+      <div class="promise-card">
+        <div class="num">&infin;</div>
+        <div class="label">Series</div>
+        <div class="desc">Seat in a continuous 30 to 90 day exchange, not a one-off</div>
+      </div>
+    </div>
+    <p class="version-quote" style="margin-top:1.5rem;">
+      Not the goal: another tool overview, generic theory, or polished vendor demos.
+      <br><span class="brass">We show the struggles, not just the wins.</span>
+    </p>
+    <div class="brand"><span class="dot"></span>Erler Ventures</div>
+    <div class="page-num">2 / 12</div>
+  </section>
+
+  <!-- Slide 3, The Two Traps -->
+  <section class="slide" id="s3">
+    <div class="top-label">The Data</div>
+    <h2 class="section-title">Two traps everyone walks into</h2>
+    <div class="traps">
+      <div class="trap-card">
+        <div class="label">Trap 1</div>
+        <div class="name">Tool Overload</div>
+        <div class="data"><strong>50%</strong> of EO operators say "too many tools"</div>
+        <div class="data"><strong>34%</strong> say "I do not know where to start"</div>
+        <div class="data"><strong>7 of 10</strong> digitalization projects fail on mindset, not tech</div>
+        <div class="quote">"Which one for what?" <br>Sirah Pallas, EO Rhein-Ruhr</div>
+      </div>
+      <div class="trap-card">
+        <div class="label">Trap 2</div>
+        <div class="name">Setup Cost</div>
+        <div class="data"><strong>95%</strong> of AI pilots show negative ROI <br>MIT 2025 study</div>
+        <div class="data"><strong>3 weekends</strong> burned on setup, plus ongoing maintenance</div>
+        <div class="data"><strong>$50/day</strong> Opus burn during build-up</div>
+        <div class="quote">"Weeks burned on setup before any value lands." <br>Andrew, EO interview April 2026</div>
+      </div>
+    </div>
+    <p class="traps-footer">Most don't escape because they fight the wrong trap.</p>
+    <div class="brand"><span class="dot"></span>Erler Ventures</div>
+    <div class="page-num">3 / 12</div>
+  </section>
+
+  <!-- Slide 4, Stack Versions -->
+  <section class="slide" id="s4">
+    <div class="top-label">5 Setups in 18 Months</div>
+    <h2 class="section-title">Three dead. Two live.</h2>
     <div class="versions">
       <div class="version-row">
         <div class="v">v1</div>
-        <div class="stack">Notion + Zapier</div>
-        <div class="status">tot</div>
+        <div class="stack">ChatGPT only, no memory</div>
+        <div class="status">dead</div>
       </div>
       <div class="version-row">
         <div class="v">v2</div>
-        <div class="stack">n8n + GPT-4</div>
-        <div class="status">tot</div>
+        <div class="stack">Notion + Zapier orchestration</div>
+        <div class="status">dead</div>
       </div>
       <div class="version-row">
         <div class="v">v3</div>
-        <div class="stack">Claude Code + Skills</div>
-        <div class="status">tot</div>
+        <div class="stack">Multiple tools, no architecture</div>
+        <div class="status">dead</div>
       </div>
       <div class="version-row alive">
         <div class="v">v4</div>
-        <div class="stack">Telegram + Drive + Memory</div>
-        <div class="status">lebt seit 6 Monaten</div>
+        <div class="stack">Workspace-native + Memory layer (Chris)</div>
+        <div class="status">alive 6 months</div>
+      </div>
+      <div class="version-row alive">
+        <div class="v">v5</div>
+        <div class="stack">Local-first + 5-tier memory (Dom)</div>
+        <div class="status">alive 12 months</div>
       </div>
     </div>
     <p class="version-quote">
-      Was hat sich geändert? <strong>NICHT das Tool.</strong><br>
-      Ich habe aufgehört, Tools zu pflegen. Ich habe angefangen, <span class="brass">Memory</span> zu pflegen.
+      <strong>Two stacks survived. Both share one principle.</strong><br>
+      Stop maintaining tools. Start maintaining <span class="brass">memory</span>.
     </p>
     <div class="brand"><span class="dot"></span>Erler Ventures</div>
-    <div class="page-num">2 / 6</div>
+    <div class="page-num">4 / 12</div>
   </section>
 
-  <!-- Slide 3 — Diagnostic -->
-  <section class="slide" id="s3">
+  <!-- Slide 5, Diagnostic -->
+  <section class="slide" id="s5">
     <div class="top-label">Diagnostic</div>
-    <h2 class="section-title">Bist du in der Setup Trap?</h2>
-    <p class="diagnostic-subtitle">3 Fragen. Ehrlich beantworten.</p>
+    <h2 class="section-title">Are you in the Setup Trap?</h2>
+    <p class="diagnostic-subtitle">3 questions. Answer honestly.</p>
     <div class="questions">
       <div class="question">
         <div class="num">1</div>
         <div class="body">
-          <div class="q-text">Pflegst du dein Setup mehr, als du es nutzt?</div>
-          <div class="verdict">Über 20% deiner Zeit?  Setup Trap.</div>
+          <div class="q-text">Do you maintain your setup more than you use it?</div>
+          <div class="verdict">More than 20% of your time? Setup Trap.</div>
         </div>
       </div>
       <div class="question">
         <div class="num">2</div>
         <div class="body">
-          <div class="q-text">Wenn dein Setup morgen stirbt, verlierst du Wissen oder nur Workflow?</div>
-          <div class="verdict">Wissen?  Setup Trap.</div>
+          <div class="q-text">If your setup dies tomorrow, do you lose knowledge or just workflow?</div>
+          <div class="verdict">Knowledge? Setup Trap.</div>
         </div>
       </div>
       <div class="question">
         <div class="num">3</div>
         <div class="body">
-          <div class="q-text">Würde dein 80-jähriges Ich in 30 Jahren 2 Sätze über dein Setup verstehen?</div>
-          <div class="verdict">Nein?  Setup Trap.</div>
+          <div class="q-text">Could a new team member understand it in 2 sentences?</div>
+          <div class="verdict">No? Setup Trap.</div>
         </div>
       </div>
     </div>
     <div class="brand"><span class="dot"></span>Erler Ventures</div>
-    <div class="page-num">3 / 6</div>
+    <div class="page-num">5 / 12</div>
   </section>
 
-  <!-- Slide 4 — Hierarchy -->
-  <section class="slide" id="s4">
-    <div class="top-label">Die Hierarchie</div>
+  <!-- Slide 6, Hierarchy -->
+  <section class="slide" id="s6">
+    <div class="top-label">The Hierarchy</div>
     <div class="hierarchy-headline">
       <span class="strong">MEMORY</span><span class="arrow">&gt;</span><span class="mid">TOOLS</span><span class="arrow">&gt;</span><span class="weak">MODELS</span>
     </div>
     <div class="hier-cards">
       <div class="hier-card brass">
         <div class="label">MEMORY</div>
-        <div class="desc">was dein System sich merkt</div>
+        <div class="desc">what your system remembers</div>
       </div>
       <div class="hier-card forest">
         <div class="label">TOOLS</div>
-        <div class="desc">was es ausführen kann</div>
+        <div class="desc">what it can execute</div>
       </div>
       <div class="hier-card muted">
         <div class="label">MODELS</div>
-        <div class="desc">welcher AI im Backend läuft</div>
+        <div class="desc">which AI runs in the backend</div>
       </div>
     </div>
     <div class="hier-callout">
-      <p><span class="stat">90% der Executives</span> <span class="strong">sehen keinen messbaren AI-Impact in 3 Jahren.</span></p>
-      <p class="quiet">Nicht weil AI nicht funktioniert. Weil sie <strong>Models</strong> diskutieren statt <span class="brass" style="font-weight:600">Memory</span> bauen.</p>
+      <p><span class="stat">90% of executives</span> <span class="strong">see no measurable AI impact in 3 years.</span></p>
+      <p class="quiet">Not because AI does not work. Because they discuss <strong>models</strong> instead of building <span class="brass" style="font-weight:600">memory</span>.</p>
     </div>
     <div class="brand"><span class="dot"></span>Erler Ventures</div>
-    <div class="page-num">4 / 6</div>
+    <div class="page-num">6 / 12</div>
   </section>
 
-  <!-- Slide 5 — Hand-off zu Dom -->
-  <section class="slide handoff" id="s5">
-    <div class="top-label">Über zu Dom</div>
-    <h2>Dom geht jetzt eine Ebene tiefer.</h2>
-    <p class="sub">Wie ein CTO mit 80 Engineers das löst.</p>
+  <!-- Slide 7, Demo 1 Title (Chris) -->
+  <section class="slide" id="s7">
+    <div class="top-label">Demo 1, Chris &middot; 9 min</div>
+    <div class="demo-title">
+      <h2>AI Inside Your <span class="accent">Existing Stack</span></h2>
+      <p class="sub">Two hacks. Same architecture. Different outputs.</p>
+      <div class="hacks">
+        <div class="demo-hack">
+          <div class="hk-num">Hack 1</div>
+          <div class="hk-name">Morning Briefing</div>
+          <div class="hk-desc">Inbox + Calendar + Drive + priorities, one page in 30 seconds</div>
+        </div>
+        <div class="demo-hack">
+          <div class="hk-num">Hack 2</div>
+          <div class="hk-name">Meeting Prep</div>
+          <div class="hk-desc">LinkedIn + past mail + CRM + Drive context, one page on demand</div>
+        </div>
+      </div>
+      <p class="note">No new tools. Just orchestration on top of Gmail, Calendar, Drive, Notion.</p>
+    </div>
     <div class="brand"><span class="dot"></span>Erler Ventures</div>
-    <div class="page-num">5 / 6</div>
+    <div class="page-num">7 / 12</div>
   </section>
 
-  <!-- Slide 6 — Closing Promise -->
-  <section class="slide" id="s6">
-    <div class="top-label">Das hier ist Day 1</div>
+  <!-- Slide 8, Bridge to Dom -->
+  <section class="slide handoff" id="s8">
+    <div class="top-label">Handoff</div>
+    <h2>Dom takes you one layer deeper.</h2>
+    <p class="sub">From hack on top, to architecture beneath.</p>
+    <div class="brand"><span class="dot"></span>Erler Ventures</div>
+    <div class="page-num">8 / 12</div>
+  </section>
+
+  <!-- Slide 9, Demo 2 Title (Dom) -->
+  <section class="slide" id="s9">
+    <div class="top-label">Demo 2, Dom &middot; 9 min</div>
+    <div class="demo-title">
+      <h2>The Agent That <span class="accent">Remembers</span></h2>
+      <p class="sub">Two hacks. 5-tier memory. Zero monthly cost.</p>
+      <div class="hacks">
+        <div class="demo-hack">
+          <div class="hk-num">Hack 1</div>
+          <div class="hk-name">5-Tier Memory</div>
+          <div class="hk-desc">System Prompt &gt; Bootstrap &gt; On-Demand &gt; Search Index &gt; Raw Archive</div>
+        </div>
+        <div class="demo-hack">
+          <div class="hk-num">Hack 2</div>
+          <div class="hk-name">Rolodex</div>
+          <div class="hk-desc">107 person dossiers, communication style, last contact, open threads</div>
+        </div>
+      </div>
+      <p class="note">Local models. 1,183 indexed files. 2-5 sec queries. $0 API cost.</p>
+    </div>
+    <div class="brand"><span class="dot"></span>Erler Ventures</div>
+    <div class="page-num">9 / 12</div>
+  </section>
+
+  <!-- Slide 10, Cost Comparison -->
+  <section class="slide" id="s10">
+    <div class="top-label">Cost Reality Check</div>
+    <h2 class="section-title">What you pay vs what you get</h2>
+    <div class="cost-grid">
+      <div class="cost-card winner">
+        <div class="price">$0<span class="unit">/mo</span></div>
+        <div class="name">Local-First</div>
+        <div class="desc">Self-hosted memory, local models, 2-5 sec queries</div>
+      </div>
+      <div class="cost-card">
+        <div class="price">$500<span class="unit">/seat</span></div>
+        <div class="name">Glean Enterprise</div>
+        <div class="desc">Hosted enterprise search, vendor lock-in</div>
+      </div>
+      <div class="cost-card">
+        <div class="price">$1,500<span class="unit">/mo</span></div>
+        <div class="name">Enterprise Stack</div>
+        <div class="desc">Notion AI + Glean + ChatGPT Enterprise + others</div>
+      </div>
+    </div>
+    <p class="cost-footer">The <span class="brass">architecture</span> beats the budget.</p>
+    <div class="brand"><span class="dot"></span>Erler Ventures</div>
+    <div class="page-num">10 / 12</div>
+  </section>
+
+  <!-- Slide 11, GitHub Live -->
+  <section class="slide" id="s11">
+    <div class="top-label">Live Tonight</div>
+    <h2 class="section-title">11 solutions shipping today</h2>
+    <div class="gh-grid">
+      <div class="gh-row"><div class="gh-cluster">Tool Overload</div><div class="gh-count">29%</div></div>
+      <div class="gh-row"><div class="gh-cluster">Team Adoption</div><div class="gh-count">18%</div></div>
+      <div class="gh-row"><div class="gh-cluster">Agents in Production</div><div class="gh-count">18%</div></div>
+      <div class="gh-row"><div class="gh-cluster">Integration / MCP</div><div class="gh-count">12%</div></div>
+      <div class="gh-row"><div class="gh-cluster">Pace / Keeping Up</div><div class="gh-count">10%</div></div>
+      <div class="gh-row"><div class="gh-cluster">Setup Itself</div><div class="gh-count">9%</div></div>
+      <div class="gh-row"><div class="gh-cluster">Security / GDPR DACH</div><div class="gh-count">5%</div></div>
+      <div class="gh-row"><div class="gh-cluster">Industry Healthcare</div><div class="gh-count">6%</div></div>
+      <div class="gh-row"><div class="gh-cluster">OpenClaw Stability</div><div class="gh-count">12%</div></div>
+      <div class="gh-row"><div class="gh-cluster">Time / Learning</div><div class="gh-count">6%</div></div>
+    </div>
+    <div class="gh-url-box">
+      <div class="lbl">GitHub, MIT License, fork and remix</div>
+      <div class="url">github.com/chris1928a/eo-ai-exchange</div>
+    </div>
+    <div class="brand"><span class="dot"></span>Erler Ventures</div>
+    <div class="page-num">11 / 12</div>
+  </section>
+
+  <!-- Slide 12, Closing + Event #2 -->
+  <section class="slide" id="s12">
+    <div class="top-label">This is Day 1</div>
     <div class="promise-headline">
-      <span class="l1">Ihr nennt den Pain.</span>
-      <span class="l2">Wir bauen den Skill.</span>
+      <span class="l1">You name the pain.</span>
+      <span class="l2">We build the skill.</span>
     </div>
-    <p class="promise-cadence">30 bis 90 Tage. Wieder von vorne.</p>
+    <p class="promise-cadence">30 to 90 days. Then again.</p>
     <div class="promise-cards">
       <div class="promise-card">
         <div class="num">10</div>
-        <div class="label">Pain-Cluster</div>
-        <div class="desc">aus euren Anmeldungen</div>
+        <div class="label">Pain Clusters</div>
+        <div class="desc">from 103 registrations</div>
       </div>
       <div class="promise-card">
         <div class="num">11</div>
-        <div class="label">Solutions live</div>
-        <div class="desc">heute Abend auf GitHub</div>
+        <div class="label">Solutions</div>
+        <div class="desc">live tonight on GitHub</div>
       </div>
       <div class="promise-card">
-        <div class="num">∞</div>
+        <div class="num">#2</div>
+        <div class="label">Event #2</div>
+        <div class="desc">topic picked by your Slido vote</div>
+      </div>
+      <div class="promise-card">
+        <div class="num">&infin;</div>
         <div class="label">Cadence</div>
-        <div class="desc">marktreaktiv, nicht quartalsweise</div>
+        <div class="desc">market-reactive, not quarterly</div>
       </div>
     </div>
     <div class="bottom-links">
       <div class="bottom-link brass">
-        <div class="label">Slido</div>
+        <div class="label">Slido open 24h</div>
         <div class="value">#3261743</div>
       </div>
       <div class="bottom-link right">
-        <div class="label">GitHub, live heute Abend</div>
+        <div class="label">GitHub, live tonight</div>
         <div class="value">chris1928a/eo-ai-exchange</div>
       </div>
     </div>
     <div class="brand"><span class="dot"></span>Erler Ventures</div>
-    <div class="page-num">6 / 6</div>
+    <div class="page-num">12 / 12</div>
   </section>
 
 </div>
 
-<div class="nav-hint">← → keys to navigate</div>
+<div class="nav-hint">arrow keys to navigate</div>
 
 <script>
   const slides = document.querySelectorAll('.slide');
