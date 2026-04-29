@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Chris Demo, Workspace-Native, EO AI Exchange #1</title>
+<title>How I Built My Brain, Chris Erler, EO AI Exchange</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #ffffff;
@@ -16,6 +16,8 @@
     --accent: #2563eb;
     --accent-deep: #1d4ed8;
     --accent-soft: #eff6ff;
+    --warning: #dc2626;
+    --success: #16a34a;
     --border: #f1f5f9;
     --border-strong: #e2e8f0;
     --code-bg: #f4f4f5;
@@ -26,100 +28,128 @@
   html, body { height: 100%; width: 100%; background: var(--bg); color: var(--text); font-family: var(--sans); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-feature-settings: 'ss01', 'cv11'; }
 
   .deck { width: 100vw; height: 100vh; overflow: hidden; position: relative; }
-  .slide { width: 100vw; height: 100vh; position: absolute; top: 0; left: 0; display: none; padding: 11vh 11vw; flex-direction: column; justify-content: center; background: var(--bg); }
+  .slide { width: 100vw; height: 100vh; position: absolute; top: 0; left: 0; display: none; padding: 10vh 10vw; flex-direction: column; justify-content: center; background: var(--bg); }
   .slide.active { display: flex; }
 
-  .label { position: absolute; top: 6vh; left: 11vw; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); display: flex; align-items: center; gap: 0.7rem; }
+  .label { position: absolute; top: 5vh; left: 10vw; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); display: flex; align-items: center; gap: 0.7rem; }
   .label::before { content: ''; width: 1.25rem; height: 1px; background: var(--accent); }
 
-  .page-num { position: absolute; bottom: 5vh; right: 11vw; font-size: 0.68rem; font-weight: 400; color: var(--faint); letter-spacing: 0.1em; font-variant-numeric: tabular-nums; }
-  .brand { position: absolute; bottom: 5vh; left: 11vw; font-size: 0.68rem; font-weight: 400; color: var(--faint); letter-spacing: 0.1em; text-transform: uppercase; }
+  .page-num { position: absolute; bottom: 4vh; right: 10vw; font-size: 0.68rem; font-weight: 400; color: var(--faint); letter-spacing: 0.1em; font-variant-numeric: tabular-nums; }
+  .brand { position: absolute; bottom: 4vh; left: 10vw; font-size: 0.68rem; font-weight: 400; color: var(--faint); letter-spacing: 0.1em; text-transform: uppercase; }
 
+  /* COVER */
   .cover-eyebrow { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 2.5rem; }
-  h1.cover-title { font-weight: 700; font-size: clamp(6rem, 14vw, 16rem); line-height: 0.9; letter-spacing: -0.05em; color: var(--text); margin-bottom: 2.5rem; }
+  h1.cover-title { font-weight: 700; font-size: clamp(5.5rem, 13vw, 14rem); line-height: 0.9; letter-spacing: -0.05em; color: var(--text); margin-bottom: 2rem; }
   h1.cover-title .accent { color: var(--accent); }
-  .cover-sub { font-size: clamp(1.05rem, 1.5vw, 1.4rem); font-weight: 400; color: var(--muted); max-width: 50ch; line-height: 1.5; margin-bottom: 3.5rem; }
+  .cover-sub { font-size: clamp(1.1rem, 1.6vw, 1.5rem); font-weight: 400; color: var(--muted); max-width: 60ch; line-height: 1.5; margin-bottom: 3rem; }
   .cover-meta { font-size: 0.85rem; font-weight: 400; color: var(--text); letter-spacing: 0.01em; line-height: 1.7; }
   .cover-meta .who { font-weight: 600; display: block; }
   .cover-meta .when { color: var(--muted); }
 
-  h2.title { font-weight: 600; font-size: clamp(2.75rem, 5vw, 4.5rem); line-height: 1.05; letter-spacing: -0.035em; color: var(--text); margin-bottom: 4.5rem; max-width: 22ch; }
+  /* Section title */
+  h2.title { font-weight: 600; font-size: clamp(2.75rem, 5.5vw, 5rem); line-height: 1.02; letter-spacing: -0.04em; color: var(--text); margin-bottom: 3rem; max-width: 24ch; }
   h2.title .accent { color: var(--accent); font-weight: 700; }
 
-  /* DEMO TITLE */
-  .demo { display: grid; grid-template-columns: 0.55fr 1fr; gap: 5rem; align-items: center; }
-  .demo-num { font-weight: 700; font-size: clamp(8rem, 14vw, 15rem); line-height: 0.85; letter-spacing: -0.06em; color: var(--accent); font-variant-numeric: tabular-nums; }
-  .demo-num .of { display: block; font-size: 0.75rem; font-weight: 500; color: var(--muted); margin-top: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; }
-  .demo-body { display: flex; flex-direction: column; gap: 1.5rem; }
-  .demo-body h2 { font-weight: 600; font-size: clamp(2.25rem, 4vw, 3.5rem); line-height: 1.05; letter-spacing: -0.035em; color: var(--text); }
-  .demo-body h2 .accent { color: var(--accent); font-weight: 700; }
-  .demo-body .sub { font-size: 1rem; font-weight: 400; color: var(--muted); line-height: 1.5; }
-  .demo-hacks { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 0.75rem; }
-  .demo-hack { display: grid; grid-template-columns: 5rem 1fr; gap: 1rem; align-items: baseline; padding: 1.1rem 0; border-top: 1px solid var(--border); }
-  .demo-hack .hk-num { font-weight: 600; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); }
-  .demo-hack .hk-content { display: flex; flex-direction: column; gap: 0.3rem; }
-  .demo-hack .hk-name { font-weight: 600; font-size: 1.1rem; color: var(--text); letter-spacing: -0.01em; }
-  .demo-hack .hk-desc { font-weight: 400; font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
-  .demo-note { margin-top: 0.75rem; font-size: 0.8rem; font-weight: 400; color: var(--faint); font-style: italic; }
+  /* Big quote slides */
+  .quote-block { display: flex; flex-direction: column; gap: 2rem; max-width: 80%; }
+  .quote-mark { font-family: serif; font-size: 8rem; line-height: 0.5; color: var(--accent); font-weight: 700; height: 4rem; }
+  .quote-text { font-weight: 500; font-size: clamp(1.75rem, 3vw, 2.75rem); line-height: 1.25; letter-spacing: -0.025em; color: var(--text); }
+  .quote-text .accent { color: var(--accent); font-weight: 700; }
+  .quote-attribution { display: flex; align-items: center; gap: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-strong); }
+  .quote-attribution .who { font-weight: 600; font-size: 1rem; color: var(--text); }
+  .quote-attribution .role { font-weight: 400; font-size: 0.9rem; color: var(--muted); }
 
-  /* ARCHITECTURE diagram */
-  .arch-flow { display: grid; grid-template-columns: 1fr 0.4rem 0.7fr 0.4rem 1fr; align-items: center; gap: 1.5rem; margin: 1rem 0; }
-  .arch-col { display: flex; flex-direction: column; gap: 0.6rem; }
-  .arch-col-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.25rem; }
-  .arch-box { padding: 0.75rem 1rem; border: 1px solid var(--border-strong); font-weight: 500; font-size: 0.9rem; color: var(--text); text-align: center; }
-  .arch-arrow { font-family: var(--mono); font-size: 1.5rem; font-weight: 400; color: var(--accent); text-align: center; line-height: 1; }
-  .arch-bot { padding: 1.75rem 1.25rem; border: 2px solid var(--accent); background: var(--accent-soft); text-align: center; }
-  .arch-bot .bot-name { font-weight: 700; font-size: 1.5rem; color: var(--accent); letter-spacing: -0.02em; margin-bottom: 0.4rem; }
-  .arch-bot .bot-sub { font-size: 0.75rem; font-weight: 500; color: var(--text); letter-spacing: 0.02em; }
-  .arch-bot .bot-note { font-size: 0.7rem; font-weight: 400; color: var(--muted); margin-top: 0.5rem; font-style: italic; }
-  .arch-output { padding: 1rem 1.25rem; border-left: 2px solid var(--accent); background: var(--bg); }
-  .arch-output .out-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem; }
-  .arch-output .out-name { font-weight: 600; font-size: 1rem; color: var(--text); margin-bottom: 0.25rem; }
-  .arch-output .out-desc { font-size: 0.8rem; font-weight: 400; color: var(--muted); line-height: 1.45; }
-  .arch-foot { margin-top: 3rem; text-align: center; font-size: clamp(1.05rem, 1.5vw, 1.3rem); font-weight: 500; color: var(--text); letter-spacing: -0.01em; }
-  .arch-foot .accent { color: var(--accent); font-weight: 600; }
+  /* Numbers / stats grid */
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3rem; }
+  .stat { display: flex; flex-direction: column; gap: 0.4rem; padding-top: 1rem; border-top: 2px solid var(--text); }
+  .stat .n { font-weight: 800; font-size: clamp(3rem, 5vw, 4.5rem); line-height: 1; color: var(--accent); letter-spacing: -0.05em; font-variant-numeric: tabular-nums; }
+  .stat .n .unit { font-size: 0.85rem; font-weight: 500; color: var(--muted); margin-left: 0.4rem; }
+  .stat .lbl { font-weight: 600; font-size: 1rem; color: var(--text); margin-top: 0.5rem; }
+  .stat .desc { font-weight: 400; font-size: 0.8rem; color: var(--muted); line-height: 1.45; }
 
-  /* HACK demo slide */
-  .hack-demo { display: grid; grid-template-columns: 0.7fr 1fr; gap: 3rem; }
-  .hack-trigger { display: flex; flex-direction: column; gap: 1rem; }
-  .hack-output { display: flex; flex-direction: column; gap: 1rem; }
-  .hack-section-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
-  .hack-cmd { font-family: var(--mono); font-size: 1.05rem; font-weight: 500; background: var(--code-bg); color: var(--text); padding: 1rem 1.25rem; border-radius: 4px; border-left: 3px solid var(--accent); }
-  .hack-cmd .prompt { color: var(--accent); }
-  .hack-trigger .desc { font-size: 0.85rem; font-weight: 400; color: var(--muted); line-height: 1.5; }
-  .hack-output-box { padding: 1.25rem 1.5rem; background: var(--accent-soft); border-left: 2px solid var(--accent); display: flex; flex-direction: column; gap: 0.5rem; }
-  .hack-output-line { font-size: 0.9rem; line-height: 1.45; color: var(--text); display: grid; grid-template-columns: 1.5rem 1fr; gap: 0.5rem; }
-  .hack-output-line::before { content: '→'; color: var(--accent); font-weight: 600; }
-  .hack-output-line strong { font-weight: 600; }
-  .hack-foot { grid-column: 1 / -1; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); display: grid; grid-template-columns: auto 1fr; gap: 2.5rem; align-items: baseline; }
-  .hack-foot .hero-num { font-weight: 700; font-size: clamp(3.5rem, 5.5vw, 5rem); color: var(--accent); letter-spacing: -0.045em; line-height: 1; font-variant-numeric: tabular-nums; }
-  .hack-foot .hero-num .unit { font-size: 0.85rem; font-weight: 500; color: var(--muted); margin-left: 0.4rem; }
-  .hack-foot .hero-text { font-size: 0.95rem; font-weight: 400; color: var(--text); line-height: 1.5; }
-  .hack-foot .hero-text strong { font-weight: 600; }
-  .hack-foot .hero-text .quiet { color: var(--muted); font-style: italic; display: block; margin-top: 0.4rem; font-size: 0.85rem; }
+  /* Three-layer architecture */
+  .arch-stack { display: flex; flex-direction: column; gap: 1rem; max-width: 95%; }
+  .arch-layer { display: grid; grid-template-columns: 8rem 1fr 14rem; gap: 2rem; align-items: center; padding: 1.5rem 2rem; border: 1px solid var(--border-strong); border-left: 4px solid; }
+  .arch-layer.top { border-left-color: var(--accent); background: var(--accent-soft); }
+  .arch-layer.mid { border-left-color: var(--text); }
+  .arch-layer.bot { border-left-color: var(--faint); }
+  .arch-layer .ly-tag { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+  .arch-layer .ly-name { font-weight: 700; font-size: 1.5rem; color: var(--text); letter-spacing: -0.02em; }
+  .arch-layer .ly-desc { font-weight: 400; font-size: 0.9rem; color: var(--muted); margin-top: 0.25rem; line-height: 1.45; }
+  .arch-layer .ly-pct { text-align: right; font-weight: 700; font-size: 1.5rem; color: var(--accent); letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+  .arch-layer.mid .ly-pct, .arch-layer.bot .ly-pct { color: var(--muted); }
+  .arch-foot { margin-top: 2rem; font-size: clamp(1rem, 1.4vw, 1.25rem); font-weight: 500; color: var(--text); text-align: center; letter-spacing: -0.005em; }
+  .arch-foot .accent { color: var(--accent); font-weight: 700; }
 
-  /* RECAP */
-  .recap-h { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; }
-  .recap-title { font-weight: 600; font-size: clamp(2rem, 3.5vw, 3rem); line-height: 1.1; letter-spacing: -0.03em; color: var(--text); margin-bottom: 4rem; max-width: 28ch; }
-  .recap-grid { display: grid; grid-template-columns: 0.8fr 1fr; gap: 4rem; margin-bottom: 3rem; }
-  .recap-numbers { display: flex; flex-direction: column; gap: 1.5rem; }
-  .recap-num { display: flex; flex-direction: column; gap: 0.25rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--border); }
-  .recap-num:last-child { border-bottom: none; }
-  .recap-num .n { font-weight: 700; font-size: clamp(3.5rem, 5vw, 4.5rem); line-height: 1; color: var(--accent); letter-spacing: -0.045em; font-variant-numeric: tabular-nums; }
-  .recap-num .n .unit { font-size: 0.95rem; font-weight: 500; color: var(--muted); margin-left: 0.4rem; }
-  .recap-num .lbl { font-weight: 500; font-size: 0.85rem; color: var(--text); margin-top: 0.25rem; letter-spacing: 0.005em; }
-  .recap-struggles { display: flex; flex-direction: column; gap: 1.25rem; }
-  .recap-struggles .s-tag { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.25rem; }
-  .recap-struggles .s-line { display: grid; grid-template-columns: 1.25rem 1fr; gap: 0.75rem; align-items: baseline; font-size: 0.95rem; color: var(--text); line-height: 1.5; padding: 0.5rem 0; }
-  .recap-struggles .s-line::before { content: '—'; color: var(--accent); font-weight: 600; }
-  .recap-foot { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.95rem; font-weight: 400; color: var(--muted); line-height: 1.55; font-style: italic; }
-  .recap-foot .accent { color: var(--accent); font-style: normal; font-weight: 500; }
+  /* Anti-patterns */
+  .anti-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .anti { padding: 1.5rem; border: 1px solid var(--border-strong); border-left: 4px solid var(--warning); display: flex; flex-direction: column; gap: 0.6rem; }
+  .anti .x { font-size: 1.5rem; font-weight: 700; color: var(--warning); letter-spacing: -0.02em; }
+  .anti .name { font-weight: 700; font-size: 1.15rem; color: var(--text); letter-spacing: -0.01em; }
+  .anti .why { font-weight: 400; font-size: 0.85rem; color: var(--muted); line-height: 1.45; }
 
-  /* BRIDGE */
-  .bridge { gap: 1.75rem; }
-  .bridge h2 { font-weight: 600; font-size: clamp(2.5rem, 4.5vw, 4rem); line-height: 1.05; letter-spacing: -0.04em; color: var(--text); max-width: 22ch; }
-  .bridge h2 .accent { color: var(--accent); font-weight: 700; }
-  .bridge .sub { font-size: clamp(1.1rem, 1.6vw, 1.4rem); font-weight: 400; color: var(--muted); max-width: 40ch; line-height: 1.45; }
+  /* Mala case study */
+  .case-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .case-numbers { display: flex; flex-direction: column; gap: 1.5rem; }
+  .case-num { display: flex; flex-direction: column; gap: 0.25rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--border); }
+  .case-num:last-child { border-bottom: none; }
+  .case-num .n { font-weight: 700; font-size: clamp(2.5rem, 3.5vw, 3.25rem); line-height: 1; color: var(--accent); letter-spacing: -0.045em; font-variant-numeric: tabular-nums; }
+  .case-num .n .unit { font-size: 0.95rem; font-weight: 500; color: var(--muted); margin-left: 0.4rem; }
+  .case-num .lbl { font-weight: 500; font-size: 0.85rem; color: var(--text); margin-top: 0.25rem; }
+  .case-list { display: flex; flex-direction: column; gap: 0.5rem; }
+  .case-list .ct { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; }
+  .case-line { display: grid; grid-template-columns: 5rem 1fr; gap: 1rem; align-items: baseline; padding: 0.6rem 0; border-bottom: 1px solid var(--border); font-size: 0.9rem; line-height: 1.45; }
+  .case-line:last-child { border-bottom: none; }
+  .case-line .pid { font-weight: 700; color: var(--accent); font-variant-numeric: tabular-nums; }
+  .case-line .pname { color: var(--text); }
+  .case-line .pname strong { font-weight: 600; }
+
+  /* Comparison matrix */
+  .matrix { width: 100%; border-collapse: collapse; }
+  .matrix th, .matrix td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+  .matrix th { font-weight: 700; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); border-bottom: 2px solid var(--text); }
+  .matrix th.me { color: var(--accent); }
+  .matrix .row-label { font-weight: 600; color: var(--text); }
+  .matrix .me-col { color: var(--accent); font-weight: 600; }
+  .matrix .yes { color: var(--success); font-weight: 600; }
+  .matrix .no { color: var(--faint); }
+
+  /* Diarization */
+  .diar { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .diar-flow { display: flex; flex-direction: column; gap: 1rem; }
+  .diar-step { display: grid; grid-template-columns: 2.5rem 1fr; gap: 1rem; align-items: baseline; padding: 0.75rem 0; border-bottom: 1px solid var(--border); }
+  .diar-step .num { font-weight: 700; font-size: 1.25rem; color: var(--accent); }
+  .diar-step .text { font-size: 0.95rem; line-height: 1.5; }
+  .diar-step .text strong { font-weight: 600; }
+  .diar-text { font-size: clamp(1.1rem, 1.5vw, 1.35rem); font-weight: 400; color: var(--muted); line-height: 1.55; }
+  .diar-text strong { color: var(--text); font-weight: 600; }
+  .diar-text .accent { color: var(--accent); font-weight: 600; }
+
+  /* Audit findings */
+  .audit-grid { display: flex; flex-direction: column; gap: 1rem; }
+  .audit { display: grid; grid-template-columns: 3rem 1fr auto; gap: 1.25rem; align-items: baseline; padding: 1rem 1.5rem; border-left: 4px solid var(--accent); background: var(--accent-soft); }
+  .audit .n { font-weight: 700; font-size: 1.25rem; color: var(--accent); }
+  .audit .desc { font-size: 0.95rem; color: var(--text); line-height: 1.5; }
+  .audit .desc strong { font-weight: 600; }
+  .audit .status { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+
+  /* EO question slide */
+  .questions-back { display: flex; flex-direction: column; gap: 1.5rem; max-width: 90%; }
+  .qb { display: grid; grid-template-columns: 4rem 1fr; gap: 1.5rem; align-items: baseline; padding: 1.25rem 0; border-bottom: 1px solid var(--border); }
+  .qb .qbn { font-weight: 800; font-size: 2.5rem; line-height: 1; color: var(--accent); letter-spacing: -0.04em; font-variant-numeric: tabular-nums; }
+  .qb .qbt { font-weight: 500; font-size: clamp(1rem, 1.4vw, 1.2rem); line-height: 1.4; color: var(--text); }
+
+  /* Take-aways */
+  .takes { display: flex; flex-direction: column; gap: 1.25rem; max-width: 90%; }
+  .take { display: grid; grid-template-columns: auto 1fr; gap: 1.5rem; align-items: baseline; padding: 1rem 0; border-bottom: 1px solid var(--border); }
+  .take .arr { color: var(--accent); font-weight: 700; font-family: var(--mono); font-size: 1.25rem; }
+  .take .text { font-size: clamp(1rem, 1.4vw, 1.2rem); font-weight: 500; color: var(--text); line-height: 1.45; }
+  .take .text .accent { color: var(--accent); font-weight: 700; }
+  .take .text strong { font-weight: 700; }
+
+  /* Sources */
+  .sources { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border); font-size: 0.65rem; font-weight: 400; color: var(--faint); line-height: 1.6; letter-spacing: 0.02em; }
+  .sources strong { font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.6rem; margin-right: 0.6rem; }
 
   .nav-hint { position: fixed; bottom: 1rem; left: 50%; transform: translateX(-50%); font-size: 0.65rem; color: var(--faint); opacity: 0.5; pointer-events: none; letter-spacing: 0.06em; }
   .nav-hint.hidden { opacity: 0; transition: opacity 0.5s; }
@@ -135,151 +165,268 @@
 <body>
 <div class="deck">
 
-  <!-- 1, COVER (Chris-only) -->
+  <!-- 1, COVER -->
   <section class="slide active" id="s1">
-    <div class="cover-eyebrow">Solo Deck &middot; Personal rehearsal</div>
-    <h1 class="cover-title">Demo <span class="accent">01</span><br>Chris.</h1>
-    <p class="cover-sub">Workspace-Native stack. 9 minutes. Two hacks, same architecture, different outputs.</p>
-    <p class="cover-meta"><span class="who">Christoph Erler</span><span class="when">EO AI Exchange #1 &middot; May 11, 2026 &middot; 18:08 to 18:18 CEST</span></p>
-    <div class="brand">Solo rehearsal deck</div>
-    <div class="page-num">01 / 06</div>
+    <div class="cover-eyebrow">Personal talk &middot; Chris Erler</div>
+    <h1 class="cover-title">How I built<br>my <span class="accent">brain.</span></h1>
+    <p class="cover-sub">30 days from chaos to compound. Architecture, lessons, anti-patterns. Honest audit.</p>
+    <p class="cover-meta"><span class="who">Christoph Erler</span><span class="when">EO AI Exchange #1 &middot; May 11, 2026</span></p>
+    <div class="brand">My personal architecture story</div>
+    <div class="page-num">01 / 12</div>
   </section>
 
-  <!-- 2, DEMO TITLE -->
+  <!-- 2, THE 100x QUESTION -->
   <section class="slide" id="s2">
-    <div class="label">Slot 0:00, set the frame</div>
-    <div class="demo">
-      <div class="demo-num">01<span class="of">of two</span></div>
-      <div class="demo-body">
-        <h2>AI inside your <span class="accent">existing stack</span>.</h2>
-        <div class="sub">Two hacks. Same architecture. Different outputs.</div>
-        <div class="demo-hacks">
-          <div class="demo-hack"><div class="hk-num">Hack 01</div><div class="hk-content"><div class="hk-name">Morning Briefing</div><div class="hk-desc">Inbox + Calendar + Drive + priorities, one page in 30 seconds.</div></div></div>
-          <div class="demo-hack"><div class="hk-num">Hack 02</div><div class="hk-content"><div class="hk-name">Meeting Prep</div><div class="hk-desc">LinkedIn + past mail + CRM + Drive context, on demand.</div></div></div>
+    <div class="label">The Hook</div>
+    <div class="quote-block">
+      <div class="quote-mark">"</div>
+      <div class="quote-text">The 2x people and the 100x people are using the <span class="accent">same models</span>. The difference isn't intelligence. It's <span class="accent">architecture</span>, and it fits on an index card.</div>
+      <div class="quote-attribution">
+        <div>
+          <div class="who">Garry Tan</div>
+          <div class="role">CEO Y Combinator, "Thin Harness, Fat Skills", March 2026</div>
         </div>
-        <p class="demo-note">No new tools. Orchestration on top of Gmail, Calendar, Drive, Notion.</p>
       </div>
     </div>
-    <div class="brand">Solo rehearsal deck</div>
-    <div class="page-num">02 / 06</div>
+    <p class="sources"><strong>Source</strong>Garry Tan, x.com/garrytan/status/2042925773300908103, paraphrasing Steve Yegge</p>
+    <div class="brand">My personal architecture story</div>
+    <div class="page-num">02 / 12</div>
   </section>
 
-  <!-- 3, ARCHITECTURE -->
+  <!-- 3, THE NUMBERS -->
   <section class="slide" id="s3">
-    <div class="label">Slot 0:30, explain the mechanic</div>
-    <h2 class="title" style="margin-bottom:2.5rem;">Same bot. Same sources.<br>The <span class="accent">prompt</span> is the lever.</h2>
-    <div class="arch-flow">
-      <div class="arch-col">
-        <div class="arch-col-label">4 Sources</div>
-        <div class="arch-box">Gmail</div>
-        <div class="arch-box">Calendar</div>
-        <div class="arch-box">Drive</div>
-        <div class="arch-box">Notion</div>
+    <div class="label">The Math</div>
+    <h2 class="title">Where I run my business now.</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="n">150<span class="unit">EUR / mo</span></div>
+        <div class="lbl">Total Stack Cost</div>
+        <div class="desc">All-in: API, infra, voice, SaaS</div>
       </div>
-      <div class="arch-arrow">&rarr;</div>
-      <div class="arch-bot">
-        <div class="bot-name">Bot</div>
-        <div class="bot-sub">Orchestrator</div>
-        <div class="bot-note">Telegram-native, voice + text</div>
+      <div class="stat">
+        <div class="n">31</div>
+        <div class="lbl">MCP Tools</div>
+        <div class="desc">Across 8 categories, all production</div>
       </div>
-      <div class="arch-arrow">&rarr;</div>
-      <div class="arch-col">
-        <div class="arch-col-label">2 Outputs</div>
-        <div class="arch-output">
-          <div class="out-label">Hack 01</div>
-          <div class="out-name">Morning Briefing</div>
-          <div class="out-desc">One page. 30 seconds. Read on phone.</div>
-        </div>
-        <div class="arch-output">
-          <div class="out-label">Hack 02</div>
-          <div class="out-name">Meeting Prep</div>
-          <div class="out-desc">One page. On demand. 5 min before any call.</div>
-        </div>
+      <div class="stat">
+        <div class="n">19</div>
+        <div class="lbl">Specialized Skills</div>
+        <div class="desc">17 cluster + plugins for client and personal</div>
+      </div>
+      <div class="stat">
+        <div class="n">0</div>
+        <div class="lbl">Employees</div>
+        <div class="desc">Replaces 3 hires, 8K to 12K EUR / month</div>
       </div>
     </div>
-    <p class="arch-foot">Two outputs. Same architecture. Only the <span class="accent">prompt</span> changes.</p>
-    <div class="brand">Solo rehearsal deck</div>
-    <div class="page-num">03 / 06</div>
+    <p class="diar-text" style="margin-top:3rem;">Payback over <strong>4 to 5 months</strong>, accounting for ~200h setup at consultant rate. <span class="accent">The system never forgets. It does not have bad days.</span></p>
+    <div class="brand">My personal architecture story</div>
+    <div class="page-num">03 / 12</div>
   </section>
 
-  <!-- 4, HACK 01 -->
+  <!-- 4, 3-LAYER ARCHITECTURE -->
   <section class="slide" id="s4">
-    <div class="label">Slot 1:30, live demo Hack 01</div>
-    <h2 class="title" style="margin-bottom:2.5rem;">Morning <span class="accent">Briefing</span>.</h2>
-    <div class="hack-demo">
-      <div class="hack-trigger">
-        <div class="hack-section-label">Trigger</div>
-        <div class="hack-cmd"><span class="prompt">&gt;</span> morning brief</div>
-        <div class="desc">Voice or text in Telegram. 7am every day, before I open Gmail.</div>
-      </div>
-      <div class="hack-output">
-        <div class="hack-section-label">Output, 30 seconds</div>
-        <div class="hack-output-box">
-          <div class="hack-output-line"><strong>Inbox top 3:</strong> Tim Fischer (Valtis follow-up), Diana, Raphi (RC ICP v2)</div>
-          <div class="hack-output-line"><strong>Calendar today:</strong> 11:00 Robert call, 14:00 focus block, 17:30 EO Exchange dry-run</div>
-          <div class="hack-output-line"><strong>Drive priorities:</strong> RC sales script v3 needs review</div>
-          <div class="hack-output-line"><strong>Open threads:</strong> Reisensburg expose, Stephan Big Decision</div>
+    <div class="label">The Architecture</div>
+    <h2 class="title">Three layers. <span class="accent">90 / 10 / deterministic.</span></h2>
+    <div class="arch-stack">
+      <div class="arch-layer top">
+        <div>
+          <div class="ly-tag">Top Layer</div>
+          <div class="ly-name">Fat Skills</div>
         </div>
+        <div class="ly-desc">Markdown procedures with judgment. Method calls with parameters. 17 cluster skills + 30 plugin skills, each one a permanent upgrade that never degrades.</div>
+        <div class="ly-pct">90%<span style="display:block;font-size:0.7rem;font-weight:500;color:var(--muted);margin-top:0.25rem;letter-spacing:0.04em;">of the value</span></div>
       </div>
-      <div class="hack-foot">
-        <div class="hero-num">5h<span class="unit">/ week</span></div>
-        <div class="hero-text"><strong>Tracked over 3 weeks, March 2026.</strong><span class="quiet">What it does not do: prioritize by emotional weight. Bot does not know it's your kid's birthday.</span></div>
+      <div class="arch-layer mid">
+        <div>
+          <div class="ly-tag">Middle Layer</div>
+          <div class="ly-name">Thin Harness</div>
+        </div>
+        <div class="ly-desc">Claude Code. ~50 line CLAUDE.md as resolver, not 20.000 lines. Does only 4 things: model loop, files, context, safety.</div>
+        <div class="ly-pct">~50<span style="display:block;font-size:0.7rem;font-weight:500;color:var(--muted);margin-top:0.25rem;letter-spacing:0.04em;">lines of config</span></div>
+      </div>
+      <div class="arch-layer bot">
+        <div>
+          <div class="ly-tag">Bottom Layer</div>
+          <div class="ly-name">Deterministic</div>
+        </div>
+        <div class="ly-desc">MCP tools, Python builders, scheduled tasks. Combinatorial work, exact arithmetic, things that must produce same input same output.</div>
+        <div class="ly-pct">31<span style="display:block;font-size:0.7rem;font-weight:500;color:var(--muted);margin-top:0.25rem;letter-spacing:0.04em;">tools</span></div>
       </div>
     </div>
-    <div class="brand">Solo rehearsal deck</div>
-    <div class="page-num">04 / 06</div>
+    <p class="arch-foot">Push intelligence <span class="accent">up</span>. Push execution <span class="accent">down</span>. Keep the harness <span class="accent">thin</span>.</p>
+    <div class="brand">My personal architecture story</div>
+    <div class="page-num">04 / 12</div>
   </section>
 
-  <!-- 5, HACK 02 -->
+  <!-- 5, OPENCLAW DISCIPLINE -->
   <section class="slide" id="s5">
-    <div class="label">Slot 4:00, live demo Hack 02</div>
-    <h2 class="title" style="margin-bottom:2.5rem;">Meeting <span class="accent">Prep</span>.</h2>
-    <div class="hack-demo">
-      <div class="hack-trigger">
-        <div class="hack-section-label">Trigger</div>
-        <div class="hack-cmd"><span class="prompt">&gt;</span> prep meeting with Tom Debus</div>
-        <div class="desc">5 minutes before any call. Used to take 20.</div>
-      </div>
-      <div class="hack-output">
-        <div class="hack-section-label">Output, 30 seconds</div>
-        <div class="hack-output-box">
-          <div class="hack-output-line"><strong>LinkedIn last 3:</strong> Ferris.ai launch, AI agents for finance, Q1 wrap-up</div>
-          <div class="hack-output-line"><strong>Past mail thread:</strong> 4 emails over 6 months, last topic was MCP integration</div>
-          <div class="hack-output-line"><strong>Drive mentions:</strong> 2 docs reference Tom, including Sales Exchange notes</div>
-          <div class="hack-output-line"><strong>Suggested opener:</strong> follow up on his Ferris launch + ask about MCP rollout</div>
+    <div class="label">The Discipline</div>
+    <div class="quote-block">
+      <div class="quote-mark">"</div>
+      <div class="quote-text">If I ask you to do something and it will need to happen again, you must: do it manually first on 3 to 10 items. If I approve, codify it into a skill. If it should run automatically, put it on a <span class="accent">cron</span>. The test: if I have to ask you twice, <span class="accent">you failed</span>.</div>
+      <div class="quote-attribution">
+        <div>
+          <div class="who">Garry Tan, OpenClaw Instruction</div>
+          <div class="role">Y Combinator, March 2026</div>
         </div>
       </div>
-      <div class="hack-foot">
-        <div class="hero-num">8h<span class="unit">/ week</span></div>
-        <div class="hero-text"><strong>More than morning brief, because more meetings than mornings.</strong><span class="quiet">Where it fails: meeting with someone new. No history, bot returns thin air. Then I do it manually like it's 2024.</span></div>
-      </div>
     </div>
-    <div class="brand">Solo rehearsal deck</div>
-    <div class="page-num">05 / 06</div>
+    <p class="diar-text" style="margin-top:2.5rem;">My applications: <strong>Parkside daily pricing</strong> on cron. <strong>Holidu mass discount</strong> as skill. <strong>WhatsApp drafts</strong> with style guide. <strong>Invoices and DATEV upload</strong> automated. <span class="accent">If I have to think about it twice, it becomes a skill or a cron.</span></p>
+    <div class="brand">My personal architecture story</div>
+    <div class="page-num">05 / 12</div>
   </section>
 
-  <!-- 6, RECAP + HANDOFF -->
+  <!-- 6, ANTI-PATTERNS -->
   <section class="slide" id="s6">
-    <div class="label">Slot 7:00, recap + handoff to Dom</div>
-    <h2 class="recap-title">Workspace-native, in numbers.</h2>
-    <div class="recap-grid">
-      <div class="recap-numbers">
-        <div class="recap-num"><div class="n">13h<span class="unit">/ week</span></div><div class="lbl">Total saved across both hacks</div></div>
-        <div class="recap-num"><div class="n">30s</div><div class="lbl">Bot response time, both hacks</div></div>
-        <div class="recap-num"><div class="n">39</div><div class="lbl">Workspace tools orchestrated</div></div>
-        <div class="recap-num"><div class="n">2h<span class="unit">/ month</span></div><div class="lbl">Maintenance tax, patching</div></div>
+    <div class="label">What I Do Not Do</div>
+    <h2 class="title">Four anti-patterns I avoid.</h2>
+    <div class="anti-grid">
+      <div class="anti">
+        <div class="x">&times;</div>
+        <div class="name">No Vector-DB over personal brain</div>
+        <div class="why">Threshold is ~10K files. I have ~200. Anthropic, Y Combinator, Karpathy all dropped vectors for agentic search. ripgrep returns in &lt;50ms.</div>
       </div>
-      <div class="recap-struggles">
-        <div class="s-tag">Honest struggles</div>
-        <div class="s-line">Maintenance tax is real, every Workspace update can break the bot</div>
-        <div class="s-line">No emotional weight, bot does not know your kid's birthday is today</div>
-        <div class="s-line">No long-term memory across sessions, fresh context every time</div>
-        <div class="s-line">New contacts return thin air, no history to pull from</div>
+      <div class="anti">
+        <div class="x">&times;</div>
+        <div class="name">No Drive as brain storage</div>
+        <div class="why">API rate limits, 200 to 2000ms latency vs &lt;50ms ripgrep, OAuth refresh issues. Drive is for source-of-truth originals, not for a brain.</div>
+      </div>
+      <div class="anti">
+        <div class="x">&times;</div>
+        <div class="name">No OneDrive plus Git</div>
+        <div class="why">Git index corruption risk. OneDrive syncs .git/objects while Git writes. GitHub Desktop warns explicitly. Fix: moved repo to local C:\Code.</div>
+      </div>
+      <div class="anti">
+        <div class="x">&times;</div>
+        <div class="name">No mega-CLAUDE.md with everything</div>
+        <div class="why">Garry Tan had 20.000 lines, model attention degraded. Cut to ~200 lines of pointers. My CLAUDE.md is ~50 lines. Skills load on demand.</div>
       </div>
     </div>
-    <p class="recap-foot">No long-term memory across sessions. <span class="accent">That is where Dom takes over.</span></p>
-    <div class="brand">Solo rehearsal deck</div>
-    <div class="page-num">06 / 06</div>
+    <p class="sources"><strong>Sources</strong>Boris Cherny (Anthropic, "Claude Code uses agentic search, not vectors"), Karpathy (LLM Wiki Pattern, April 2026), Garry Tan (gbrain repo)</p>
+    <div class="brand">My personal architecture story</div>
+    <div class="page-num">06 / 12</div>
+  </section>
+
+  <!-- 7, MALA CASE STUDY -->
+  <section class="slide" id="s7">
+    <div class="label">Real-World Case</div>
+    <h2 class="title">How I helped Mala save <span class="accent">143K EUR / year</span>.</h2>
+    <div class="case-grid">
+      <div class="case-numbers">
+        <div class="case-num"><div class="n">143K<span class="unit">EUR / year</span></div><div class="lbl">Identified savings across 3 processes</div></div>
+        <div class="case-num"><div class="n">2,926h</div><div class="lbl">Moco hours analyzed, January to April</div></div>
+        <div class="case-num"><div class="n">5</div><div class="lbl">Pushbacks on methodology before CTO call</div></div>
+      </div>
+      <div class="case-list">
+        <div class="ct">Top 3 Processes</div>
+        <div class="case-line"><div class="pid">P03</div><div class="pname"><strong>Listing automation</strong>, 78K EUR savings, 4 to 6 month build</div></div>
+        <div class="case-line"><div class="pid">P07</div><div class="pname"><strong>Reporting adoption</strong>, 32K EUR savings, 4 weeks (skill exists)</div></div>
+        <div class="case-line"><div class="pid">P05</div><div class="pname"><strong>PPC automation</strong>, 32K EUR savings, ranking conditional on Moco hours</div></div>
+        <div class="ct" style="margin-top:1.5rem;">The skill that did this</div>
+        <div class="case-line"><div class="pid">/audit</div><div class="pname">Reads Moco data, applies blended rate, ranks by absolute savings + time-to-value</div></div>
+      </div>
+    </div>
+    <p class="diar-text" style="margin-top:2rem;">Same pattern works for any 7-figure ARR services business. <span class="accent">Audit is one day. Reparatur is one or two days. Lock-in is forever.</span></p>
+    <div class="brand">My personal architecture story</div>
+    <div class="page-num">07 / 12</div>
+  </section>
+
+  <!-- 8, COMPARISON MATRIX -->
+  <section class="slide" id="s8">
+    <div class="label">Where I Land</div>
+    <h2 class="title">Solo founders converge.</h2>
+    <table class="matrix">
+      <thead>
+        <tr>
+          <th></th>
+          <th class="me">Chris</th>
+          <th>Garry Tan</th>
+          <th>Karpathy</th>
+          <th>Miessler</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="row-label">Storage</td><td class="me-col">Markdown + Git</td><td>Markdown + Git</td><td>Markdown + Obsidian</td><td>SQLite + KG + Vector</td></tr>
+        <tr><td class="row-label">Harness</td><td class="me-col">Claude Code</td><td>gbrain CLI ~200 lines</td><td>Custom Python</td><td>Custom Python + UFC</td></tr>
+        <tr><td class="row-label">Skills</td><td class="me-col">Markdown SKILL.md</td><td>Markdown method-calls</td><td>Wiki pages w/ backlinks</td><td>9 Primitives + 11 Packs</td></tr>
+        <tr><td class="row-label">Vector-DB</td><td class="me-col no">No</td><td class="no">No</td><td class="no">No</td><td>Optional</td></tr>
+        <tr><td class="row-label">Search</td><td class="me-col">ripgrep / agentic</td><td>grep / agentic</td><td>grep / agentic</td><td>Hybrid SQL + Vector</td></tr>
+        <tr><td class="row-label">Skills Volume</td><td class="me-col">~17 + 30 plugins</td><td>not public</td><td>minimalist</td><td>100+</td></tr>
+        <tr><td class="row-label">Memory Volume</td><td class="me-col">~125 files</td><td>not public</td><td>unknown</td><td>1.000+</td></tr>
+        <tr><td class="row-label">Multi-User</td><td class="me-col no">No</td><td class="no">No</td><td class="no">No</td><td class="no">No</td></tr>
+      </tbody>
+    </table>
+    <p class="diar-text" style="margin-top:2rem;">Solo-founder setups converge on <strong>Markdown + Skills + agentic search</strong>. Vector-DB is for cybersecurity or 10K+ files. <span class="accent">If your volume fits in your head, your brain fits in Markdown.</span></p>
+    <div class="brand">My personal architecture story</div>
+    <div class="page-num">08 / 12</div>
+  </section>
+
+  <!-- 9, DIARIZATION -->
+  <section class="slide" id="s9">
+    <div class="label">The Lever</div>
+    <h2 class="title">Diarization is the <span class="accent">knowledge-work</span> hack.</h2>
+    <div class="diar">
+      <div class="diar-flow">
+        <div class="diar-step"><div class="num">01</div><div class="text"><strong>Model reads everything</strong> on a subject. Meetings, threads, decisions.</div></div>
+        <div class="diar-step"><div class="num">02</div><div class="text"><strong>Writes 1-page profile.</strong> Judgment distilled from dozens of documents.</div></div>
+        <div class="diar-step"><div class="num">03</div><div class="text"><strong>Profile lives in Markdown.</strong> Loaded by skill on demand.</div></div>
+        <div class="diar-step"><div class="num">04</div><div class="text"><strong>Coach me through it.</strong> System restarts at last context, not at zero.</div></div>
+      </div>
+      <div class="diar-text">
+        125 memory files in my brain.<br><br>
+        Each one a 1-page profile of a person, decision, or pattern.<br><br>
+        <span class="accent">"No SQL query produces this. No RAG pipeline produces this."</span><br><br>
+        Live trigger: <strong>/coach me through latest decision with Stephan</strong> loads `stephan_big_decision_apr26.md`. The system never starts from zero.
+      </div>
+    </div>
+    <div class="brand">My personal architecture story</div>
+    <div class="page-num">09 / 12</div>
+  </section>
+
+  <!-- 10, HONEST AUDIT -->
+  <section class="slide" id="s10">
+    <div class="label">What Did Not Work</div>
+    <h2 class="title">Audit is routine, not failure.</h2>
+    <div class="audit-grid">
+      <div class="audit"><div class="n">01</div><div class="desc"><strong>Drive-Hub Phase 2 half-finished.</strong> 39-day memory lag, Drive-API rate limits killed sync. Decision: kill the Drive-Hub idea, use Git-Pull from GitHub mirror as sync mechanism.</div><div class="status">Resolved 27.04.</div></div>
+      <div class="audit"><div class="n">02</div><div class="desc"><strong>175 uncommitted files</strong> from 30 days of build-up. Hygiene debt that obscured what was active and what was archive. Cleaned up via Robocopy + Git reset.</div><div class="status">Resolved</div></div>
+      <div class="audit"><div class="n">03</div><div class="desc"><strong>OneDrive + Git race condition.</strong> Git index corruption risk. Repo moved from OneDrive sync path to local C:\Code in 43 seconds.</div><div class="status">Resolved</div></div>
+      <div class="audit"><div class="n">04</div><div class="desc"><strong>Memory bloat: 54 SACAA exam memos</strong> stayed in active index after passing the test. Index file consolidation reduced active memory from 124 to 60 lines.</div><div class="status">Resolved</div></div>
+    </div>
+    <p class="diar-text" style="margin-top:2rem;">Garry Tan's discipline applies to my own setup too. <span class="accent">If I have to ask my system for the same thing twice, I failed.</span></p>
+    <div class="brand">My personal architecture story</div>
+    <div class="page-num">10 / 12</div>
+  </section>
+
+  <!-- 11, EO QUESTION -->
+  <section class="slide" id="s11">
+    <div class="label">Back to You</div>
+    <h2 class="title">Three questions to the room.</h2>
+    <div class="questions-back">
+      <div class="qb"><div class="qbn">01</div><div class="qbt">Who has a setup audit that takes longer than one hour? If yes, what bothers you, the audit or the setup?</div></div>
+      <div class="qb"><div class="qbn">02</div><div class="qbt">Who runs a Vector-DB over personal data? What was the concrete trigger, real need or FOMO?</div></div>
+      <div class="qb"><div class="qbn">03</div><div class="qbt">Who has a Drive, Notion or SharePoint hub as "brain of truth" while reading the files locally anyway?</div></div>
+    </div>
+    <p class="diar-text" style="margin-top:2rem;">Drop your answer in <span class="accent">Slido #3261743</span> or in the chat. The most useful pattern lives there too.</p>
+    <div class="brand">My personal architecture story</div>
+    <div class="page-num">11 / 12</div>
+  </section>
+
+  <!-- 12, TAKE-AWAYS -->
+  <section class="slide" id="s12">
+    <div class="label">Take-Aways</div>
+    <h2 class="title">Five lines to leave with.</h2>
+    <div class="takes">
+      <div class="take"><div class="arr">&rarr;</div><div class="text">Push intelligence <span class="accent">UP</span> into Skills. Push execution <span class="accent">DOWN</span> into deterministic tools. Keep the harness <span class="accent">THIN</span>.</div></div>
+      <div class="take"><div class="arr">&rarr;</div><div class="text"><strong>Markdown + Git + agentic search</strong> beats Vector-DB at personal-brain volume.</div></div>
+      <div class="take"><div class="arr">&rarr;</div><div class="text">Drive is for <strong>originals</strong>. Not for a brain. Move your repo out of OneDrive.</div></div>
+      <div class="take"><div class="arr">&rarr;</div><div class="text">If your setup wobbles, audit is <strong>one day</strong>. Repair is <strong>one to two days</strong>. Avoid lock-in.</div></div>
+      <div class="take"><div class="arr">&rarr;</div><div class="text">Every skill is <strong>a permanent upgrade</strong>. It never degrades. Build it once. <span class="accent">It runs forever.</span></div></div>
+    </div>
+    <p class="sources" style="margin-top:2rem;"><strong>Substack</strong>chriserler.substack.com &middot; <strong>Code</strong>github.com/chris1928a/erler-brain-v3 &middot; <strong>Slido</strong>#3261743</p>
+    <div class="brand">My personal architecture story</div>
+    <div class="page-num">12 / 12</div>
   </section>
 
 </div>
