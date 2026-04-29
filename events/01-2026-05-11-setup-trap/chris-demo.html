@@ -346,56 +346,59 @@
   <!-- 8, MOST VALUABLE SKILL -->
   <section class="slide" id="s8">
     <div class="label">Skill Deep Dive</div>
-    <h2 class="title" style="margin-bottom:2rem;">My most valuable skill.<small>Daily Holidu pricing for 6 apartments. Real revenue, real cron, real memory.</small></h2>
+    <h2 class="title" style="margin-bottom:2rem;">My most valuable skill.<small>The founder OS that runs my venture: positioning, ICP, services, outreach, content.</small></h2>
     <div class="skill-deep">
       <div class="skill-meta">
-        <div class="skill-tag">Production skill</div>
-        <div class="skill-name">/parkside-pricing</div>
-        <div class="skill-purpose">Reads bookings, competitor prices, calendar, cluster availability. Writes optimal pricing for 6 studios into Holidu via GraphQL. Daily on cron.</div>
+        <div class="skill-tag">Founder OS, daily use</div>
+        <div class="skill-name">/ev-assistant</div>
+        <div class="skill-purpose">Loads my positioning, dual ICP, services + pricing, voice rules. Generates LinkedIn drafts, outreach per ICP segment, sales conversation prep, content calendar, deal-stage-aware follow-ups.</div>
         <div class="skill-stats">
           <div class="skill-stat">
-            <div class="n">6</div>
-            <div class="lbl">Studios under management</div>
+            <div class="n">2</div>
+            <div class="lbl">ICP segments locked: PE Operating Partners + Series-A founders DACH</div>
           </div>
           <div class="skill-stat">
-            <div class="n">12+</div>
-            <div class="lbl">Pricing decisions consolidated as memory pattern library</div>
+            <div class="n">3</div>
+            <div class="lbl">Service packages: PE Diagnostic, PE Full Engagement, Founder 12-Month</div>
           </div>
           <div class="skill-stat">
-            <div class="n">~1h</div>
-            <div class="lbl">Manual time saved per day</div>
+            <div class="n">~6h</div>
+            <div class="lbl">Saved per week on outreach + content drafts</div>
           </div>
           <div class="skill-stat">
             <div class="n">0</div>
-            <div class="lbl">Customer data, only my own apartments</div>
+            <div class="lbl">Customer data inside, only my own venture context</div>
           </div>
         </div>
       </div>
-      <div class="skill-md"><span class="comment"># SKILL.md, parkside-pricing</span>
-<span class="key">name:</span> parkside-pricing
-<span class="key">type:</span> daily-cron
-<span class="key">runs:</span> 06:00 CEST
+      <div class="skill-md"><span class="comment"># SKILL.md, ev-assistant</span>
+<span class="key">name:</span> ev-assistant
+<span class="key">type:</span> founder-os
+<span class="key">load_when:</span> erler ventures, positioning, ICP, outreach, content
 
 <span class="comment">## Purpose</span>
-Daily Holidu pricing optimization for 6 Parkside studios.
-Maximizes RevPAR via booking velocity + competitor anchor.
+Founder operating system for my venture.
+Positioning, ICP, services, sales prep, content drafts.
 
 <span class="comment">## Inputs (4 sources)</span>
-- Holidu GraphQL: current bookings + competitor prices
-- Calendar: school holidays, Legoland season, events
-- Memory: parkside_pricing_history_index.md (12+ decisions)
-- Cluster check: next 6 weeks availability
+- Notion: Brain Hub &gt; Ventures &gt; Erler Ventures (live)
+- Memory: ev_positioning.md, ev_icp_dual.md, ev_services.md
+- Voice rules: writing_rules.md (anti-AI, deutsche Umlaute)
+- Calendar + Gmail: deal-stage context per prospect
 
-<span class="comment">## Output</span>
-- 6x Holidu price updates via UpsertUnitTypeDiscount
-- Notion entry: today's reasoning + delta from yesterday
-- Telegram summary if any studio drops below 60% occupancy
+<span class="comment">## Outputs</span>
+- LinkedIn post drafts in my voice (Anti-AI clone)
+- Outreach emails per ICP segment (PE vs Founder)
+- Sales conversation prep with prospect context
+- Content calendar suggestions
+- Pricing + service page updates
 
-<span class="comment">## Cluster check rule (PFLICHT)</span>
-72h velocity check before any aggressive discount.
-If S6 stale &gt; 7 days, listing problem not pricing.</div>
+<span class="comment">## Non-negotiable rules</span>
+No AI-fluff (delve, leverage, harness, robust).
+German Umlaute mandatory. No em-dashes.
+Voice match exact. No vendor pitch tone.</div>
     </div>
-    <p class="sources"><strong>Sources</strong>Memory: parkside_pricing_history_index.md (12+ decisions consolidated April 2026), holidu_graphql_api.md (endpoint + auth), holidu_discount_mutation.md (verified 29.04.2026)</p>
+    <p class="sources"><strong>Why this skill:</strong>founder-relevant for everyone in this room &middot; covers positioning, ICP, sales, content in one place &middot; uses only my own venture context, no customer data &middot; pattern is portable to any solo founder running advisory or productized services</p>
     <div class="brand">EO AI Exchange #1</div>
     <div class="page-num">08 / 12</div>
   </section>
@@ -438,26 +441,25 @@ If S6 stale &gt; 7 days, listing problem not pricing.</div>
           <th class="me">Chris</th>
           <th>Garry Tan</th>
           <th>Karpathy</th>
-          <th>Miessler</th>
           <th>Anthropic</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td class="row-label">Storage</td><td class="me-col">Markdown + Git</td><td>Markdown + Git</td><td>Markdown + Obsidian</td><td>SQLite + KG + Vector</td><td>Markdown</td></tr>
-        <tr><td class="row-label">Harness</td><td class="me-col">Claude Code</td><td>gbrain CLI ~200 lines</td><td>Custom Python</td><td>Custom Python + UFC</td><td>Claude Code</td></tr>
-        <tr><td class="row-label">Skills format</td><td class="me-col">Markdown SKILL.md</td><td>Markdown method-calls</td><td>Wiki + backlinks</td><td>9 Primitives + 11 Packs</td><td>Markdown</td></tr>
-        <tr><td class="row-label">Vector-DB</td><td class="me-col no">No</td><td class="no">No</td><td class="no">No</td><td>Optional</td><td class="no">No</td></tr>
-        <tr><td class="row-label">Search</td><td class="me-col">ripgrep / agentic</td><td>grep / agentic</td><td>grep / agentic</td><td>Hybrid SQL + Vector</td><td>ripgrep / agentic</td></tr>
-        <tr><td class="row-label">Skills volume</td><td class="me-col">17 cluster + 30 plugins</td><td>not public</td><td>minimalist</td><td>100+</td><td>marketplace</td></tr>
-        <tr><td class="row-label">Memory volume</td><td class="me-col">~125 files</td><td>not public</td><td>unknown</td><td>1.000+</td><td>n/a</td></tr>
-        <tr><td class="row-label">MCP layer</td><td class="me-col yes">Yes, 31 tools</td><td>not public</td><td>minimal</td><td>UFC (similar)</td><td class="yes">Yes</td></tr>
-        <tr><td class="row-label">Cron / scheduled</td><td class="me-col yes">Yes (Parkside, weekly)</td><td>not public</td><td>not public</td><td>Detailed</td><td class="no">No</td></tr>
-        <tr><td class="row-label">Mobile interface</td><td class="me-col yes">Telegram bot</td><td class="no">No</td><td class="no">No</td><td>via API</td><td>Claude.app</td></tr>
-        <tr><td class="row-label">Multi-user</td><td class="me-col no">No</td><td class="no">No</td><td class="no">No</td><td class="no">No</td><td class="yes">Yes (teams)</td></tr>
+        <tr><td class="row-label">Storage</td><td class="me-col">Markdown + Git</td><td>Markdown + Git</td><td>Markdown + Obsidian</td><td>Markdown</td></tr>
+        <tr><td class="row-label">Harness</td><td class="me-col">Claude Code</td><td>gbrain CLI ~200 lines</td><td>Custom Python</td><td>Claude Code</td></tr>
+        <tr><td class="row-label">Skills format</td><td class="me-col">Markdown SKILL.md</td><td>Markdown method-calls</td><td>Wiki + backlinks</td><td>Markdown</td></tr>
+        <tr><td class="row-label">Vector-DB</td><td class="me-col no">No</td><td class="no">No</td><td class="no">No</td><td class="no">No</td></tr>
+        <tr><td class="row-label">Search</td><td class="me-col">ripgrep / agentic</td><td>grep / agentic</td><td>grep / agentic</td><td>ripgrep / agentic</td></tr>
+        <tr><td class="row-label">Skills volume</td><td class="me-col">17 cluster + 30 plugins</td><td>not public</td><td>minimalist</td><td>marketplace</td></tr>
+        <tr><td class="row-label">Memory volume</td><td class="me-col">~125 files</td><td>not public</td><td>unknown</td><td>n/a</td></tr>
+        <tr><td class="row-label">MCP layer</td><td class="me-col yes">Yes, 31 tools</td><td>not public</td><td>minimal</td><td class="yes">Yes</td></tr>
+        <tr><td class="row-label">Cron / scheduled</td><td class="me-col yes">Yes (Parkside, weekly)</td><td>not public</td><td>not public</td><td class="no">No</td></tr>
+        <tr><td class="row-label">Mobile interface</td><td class="me-col yes">Telegram bot</td><td class="no">No</td><td class="no">No</td><td>Claude.app</td></tr>
+        <tr><td class="row-label">Multi-user</td><td class="me-col no">No</td><td class="no">No</td><td class="no">No</td><td class="yes">Yes (teams)</td></tr>
       </tbody>
     </table>
-    <p class="origin-quote" style="margin-top:1.5rem;font-size:clamp(0.95rem,1.3vw,1.15rem);">Solo-founder setups converge on <strong>Markdown + Skills + agentic search</strong>. Vector-DB is for cybersec or 10K+ files. <span class="accent">If your volume fits in your head, your brain fits in Markdown.</span></p>
-    <p class="sources"><strong>Sources</strong>Garry Tan gbrain repo (github.com/garrytan/gbrain) &middot; Karpathy LLM Wiki gist &middot; Miessler PAI v4.0.3 &middot; Boris Cherny (Anthropic), "Claude Code uses agentic search, not vectors", April 2025</p>
+    <p class="origin-quote" style="margin-top:1.5rem;font-size:clamp(0.95rem,1.3vw,1.15rem);">Solo-founder setups converge on <strong>Markdown + Skills + agentic search</strong>. Vector-DB is for 10K+ unstructured files. <span class="accent">If your volume fits in your head, your brain fits in Markdown.</span></p>
+    <p class="sources"><strong>Sources</strong>Garry Tan gbrain repo (github.com/garrytan/gbrain) &middot; Karpathy LLM Wiki gist &middot; Boris Cherny (Anthropic), "Claude Code uses agentic search, not vectors", April 2025</p>
     <div class="brand">EO AI Exchange #1</div>
     <div class="page-num">10 / 12</div>
   </section>
