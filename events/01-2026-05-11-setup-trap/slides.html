@@ -6,428 +6,463 @@
 <title>The Setup Trap, EO AI Productivity Exchange #1</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ed-forest: hsl(161 51% 12%);
-    --ed-forest-soft: hsl(161 30% 24%);
-    --ed-brass: hsl(36 41% 49%);
-    --ed-brass-soft: hsl(36 41% 92%);
-    --ed-bg: #ffffff;
-    --ed-surface: hsl(36 33% 98%);
-    --ed-text: hsl(0 0% 10%);
-    --ed-muted: hsl(0 0% 36%);
-    --ed-border: hsl(39 30% 87%);
-    --serif: 'Fraunces', Georgia, serif;
+    --bg: #ffffff;
+    --text: #0a0a0a;
+    --muted: #6b6b6b;
+    --faint: #a0a0a0;
+    --accent: #ff4d1c;
+    --accent-soft: #fff1ec;
+    --border: #ececec;
+    --surface: #fafafa;
     --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html, body { height: 100%; width: 100%; background: var(--ed-bg); color: var(--ed-text); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
-
-  /* Deck container */
-  .deck {
-    width: 100vw; height: 100vh; overflow: hidden; position: relative;
+  html, body {
+    height: 100%; width: 100%; background: var(--bg); color: var(--text);
+    font-family: var(--sans); -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
+
+  .deck { width: 100vw; height: 100vh; overflow: hidden; position: relative; }
   .slide {
     width: 100vw; height: 100vh; position: absolute; top: 0; left: 0;
-    display: none; padding: 5vh 7vw;
+    display: none; padding: 8vh 10vw;
     flex-direction: column; justify-content: center;
-    background: var(--ed-bg);
+    background: var(--bg);
   }
   .slide.active { display: flex; }
 
-  /* Top accent label */
-  .top-label {
-    position: absolute; top: 4vh; left: 7vw; right: 7vw;
-    display: flex; align-items: center; gap: 1rem;
-    font-family: var(--sans); font-size: 0.75rem; font-weight: 500;
-    letter-spacing: 0.18em; text-transform: uppercase;
-    color: var(--ed-muted);
+  /* Top label */
+  .label {
+    position: absolute; top: 5vh; left: 10vw;
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--muted);
+    display: flex; align-items: center; gap: 0.7rem;
   }
-  .top-label::before {
-    content: ''; width: 1.5rem; height: 2px; background: var(--ed-brass);
-  }
-
-  /* Cover slide */
-  .cover-eyebrow {
-    font-family: var(--sans); font-size: 0.85rem; font-weight: 500;
-    letter-spacing: 0.18em; text-transform: uppercase;
-    color: var(--ed-brass); margin-bottom: 1rem;
-  }
-  .cover-eyebrow::before {
-    content: ''; display: inline-block; width: 1.5rem; height: 2px;
-    background: var(--ed-brass); vertical-align: middle; margin-right: 0.75rem;
-  }
-  h1.cover-title {
-    font-family: var(--serif); font-weight: 700;
-    font-size: clamp(4rem, 11vw, 11rem); line-height: 0.9;
-    letter-spacing: -0.025em; color: var(--ed-forest);
-    margin: 0.5rem 0;
-  }
-  h1.cover-title .accent { color: var(--ed-brass); display: block; }
-  .cover-subtitle {
-    font-family: var(--serif); font-weight: 500; font-style: italic;
-    font-size: clamp(1.25rem, 2.4vw, 2rem); color: var(--ed-text);
-    max-width: 70%; margin-top: 2rem; line-height: 1.4;
-  }
-  .cover-divider {
-    width: 4rem; height: 2px; background: var(--ed-brass);
-    margin: 2.5rem 0 1rem 0;
-  }
-  .cover-meta {
-    font-family: var(--sans); font-size: 0.95rem; color: var(--ed-muted);
-    letter-spacing: 0.02em;
-  }
-  .cover-meta strong { color: var(--ed-text); font-weight: 600; }
-
-  /* Section title */
-  h2.section-title {
-    font-family: var(--serif); font-weight: 600;
-    font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.05;
-    letter-spacing: -0.02em; color: var(--ed-forest);
-    margin-bottom: 3rem;
+  .label::before {
+    content: ''; width: 1.5rem; height: 2px; background: var(--accent);
   }
 
-  /* Versions table */
-  .versions { display: flex; flex-direction: column; gap: 0.6rem; }
-  .version-row {
-    display: grid; grid-template-columns: 6rem 1fr auto;
-    align-items: center; padding: 1.25rem 1.75rem;
-    background: var(--ed-surface); border: 1px solid var(--ed-border); border-radius: 4px;
-    transition: all 0.2s;
-  }
-  .version-row.alive {
-    background: var(--ed-brass-soft); border-color: var(--ed-brass);
-    border-left: 4px solid var(--ed-brass);
-  }
-  .version-row .v {
-    font-family: var(--serif); font-weight: 700; font-size: 1.5rem;
-    color: var(--ed-muted);
-  }
-  .version-row.alive .v { color: var(--ed-brass); }
-  .version-row .stack {
-    font-family: var(--sans); font-size: 1.15rem; font-weight: 500;
-    color: var(--ed-muted);
-  }
-  .version-row.alive .stack { color: var(--ed-text); font-weight: 600; }
-  .version-row .status {
-    font-family: var(--serif); font-style: italic; font-size: 0.95rem;
-    color: var(--ed-muted);
-  }
-  .version-row.alive .status { color: var(--ed-brass); font-weight: 600; }
-  .version-quote {
-    margin-top: 2rem; font-family: var(--serif); font-style: italic;
-    font-size: clamp(1.1rem, 1.6vw, 1.4rem); color: var(--ed-muted);
-    line-height: 1.5;
-  }
-  .version-quote strong { color: var(--ed-text); font-style: normal; font-weight: 600; }
-  .version-quote .brass { color: var(--ed-brass); font-style: normal; font-weight: 600; }
-
-  /* Diagnostic */
-  .diagnostic-subtitle {
-    font-family: var(--serif); font-style: italic;
-    font-size: clamp(1.1rem, 1.5vw, 1.4rem); color: var(--ed-brass);
-    margin-bottom: 2.5rem; margin-top: -1.5rem;
-  }
-  .questions { display: flex; flex-direction: column; gap: 1rem; }
-  .question {
-    display: grid; grid-template-columns: 5rem 1fr;
-    align-items: center; padding: 1.5rem 1.75rem;
-    background: var(--ed-surface); border: 1px solid var(--ed-border);
-    border-left: 4px solid var(--ed-brass); border-radius: 4px;
-  }
-  .question .num {
-    font-family: var(--serif); font-weight: 700; font-size: 3.5rem;
-    color: var(--ed-forest); line-height: 1;
-  }
-  .question .body { display: flex; flex-direction: column; gap: 0.4rem; }
-  .question .q-text {
-    font-family: var(--sans); font-size: 1.15rem; font-weight: 500;
-    color: var(--ed-text); line-height: 1.4;
-  }
-  .question .verdict {
-    font-family: var(--serif); font-style: italic; font-size: 0.95rem;
-    color: var(--ed-brass); font-weight: 500;
-  }
-
-  /* Hierarchy */
-  .hierarchy-headline {
-    font-family: var(--serif); font-weight: 700;
-    font-size: clamp(2.5rem, 6vw, 5rem); line-height: 1; text-align: center;
-    margin: 1rem 0 3rem 0; letter-spacing: -0.02em;
-  }
-  .hierarchy-headline .strong { color: var(--ed-brass); }
-  .hierarchy-headline .mid { color: var(--ed-forest); }
-  .hierarchy-headline .weak { color: var(--ed-muted); }
-  .hierarchy-headline .arrow { color: var(--ed-muted); margin: 0 0.5rem; font-weight: 400; }
-  .hier-cards {
-    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem;
-    margin-bottom: 3rem;
-  }
-  .hier-card {
-    padding: 2rem 1.5rem; background: var(--ed-surface);
-    border: 1px solid var(--ed-border); border-radius: 4px;
-    border-top: 3px solid;
-  }
-  .hier-card.brass { border-top-color: var(--ed-brass); }
-  .hier-card.forest { border-top-color: var(--ed-forest); }
-  .hier-card.muted { border-top-color: var(--ed-muted); }
-  .hier-card .label {
-    font-family: var(--serif); font-weight: 700;
-    font-size: 1.5rem; margin-bottom: 0.5rem; letter-spacing: 0.02em;
-  }
-  .hier-card.brass .label { color: var(--ed-brass); }
-  .hier-card.forest .label { color: var(--ed-forest); }
-  .hier-card.muted .label { color: var(--ed-muted); }
-  .hier-card .desc {
-    font-family: var(--sans); font-size: 0.95rem; color: var(--ed-muted);
-    font-style: italic; line-height: 1.4;
-  }
-  .hier-callout { text-align: left; padding-left: 0; }
-  .hier-callout p {
-    font-family: var(--serif); font-size: clamp(1rem, 1.4vw, 1.3rem);
-    line-height: 1.5; color: var(--ed-text);
-  }
-  .hier-callout .stat { color: var(--ed-brass); font-weight: 700; }
-  .hier-callout .quiet { color: var(--ed-muted); font-style: italic; }
-  .hier-callout .strong { font-weight: 700; }
-
-  /* Handoff */
-  .handoff h2 {
-    font-family: var(--serif); font-weight: 700;
-    font-size: clamp(2.25rem, 4.5vw, 3.5rem); color: var(--ed-forest);
-    line-height: 1.15; max-width: 80%;
-  }
-  .handoff .sub {
-    font-family: var(--serif); font-style: italic;
-    font-size: clamp(1.25rem, 2vw, 1.75rem); color: var(--ed-muted);
-    margin-top: 1rem; max-width: 70%;
-  }
-
-  /* Promise / closing slide */
-  .promise-headline {
-    font-family: var(--serif); font-weight: 700;
-    font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; margin-bottom: 0.4rem;
-  }
-  .promise-headline .l1 { color: var(--ed-forest); display: block; }
-  .promise-headline .l2 { color: var(--ed-brass); display: block; }
-  .promise-cadence {
-    font-family: var(--serif); font-style: italic;
-    font-size: clamp(1.25rem, 2vw, 1.75rem); color: var(--ed-muted);
-    margin-top: 1rem; margin-bottom: 3rem;
-  }
-  .promise-cards {
-    display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 1.25rem;
-    margin-bottom: 3rem;
-  }
-  .promise-card {
-    padding: 1.75rem; background: var(--ed-surface);
-    border: 1px solid var(--ed-border); border-radius: 4px;
-    border-top: 3px solid var(--ed-brass);
-  }
-  .promise-card .num {
-    font-family: var(--serif); font-weight: 700; font-size: 3rem;
-    color: var(--ed-brass); line-height: 1; margin-bottom: 0.5rem;
-  }
-  .promise-card .label {
-    font-family: var(--serif); font-weight: 600; font-size: 1.15rem;
-    color: var(--ed-forest); margin-bottom: 0.4rem;
-  }
-  .promise-card .desc {
-    font-family: var(--sans); font-style: italic; font-size: 0.85rem;
-    color: var(--ed-muted); line-height: 1.4;
-  }
-
-  /* Source line */
-  .sources {
-    font-family: var(--sans); font-size: 0.7rem; font-weight: 400;
-    color: var(--ed-muted); letter-spacing: 0.04em; line-height: 1.5;
-    margin-top: 1.5rem; padding-top: 0.75rem;
-    border-top: 1px dashed var(--ed-border);
-  }
-  .sources strong { color: var(--ed-text); font-weight: 500; text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.65rem; }
-
-  /* Two Traps */
-  .traps { display: grid; grid-template-columns: 1fr 1fr; gap: 1.75rem; }
-  .trap-card {
-    padding: 2rem; background: var(--ed-surface);
-    border: 1px solid var(--ed-border); border-radius: 4px;
-    border-top: 3px solid var(--ed-brass);
-  }
-  .trap-card .label {
-    font-family: var(--sans); font-size: 0.75rem; font-weight: 500;
-    letter-spacing: 0.18em; text-transform: uppercase;
-    color: var(--ed-brass); margin-bottom: 0.75rem;
-  }
-  .trap-card .name {
-    font-family: var(--serif); font-weight: 700; font-size: 2rem;
-    color: var(--ed-forest); margin-bottom: 1rem;
-  }
-  .trap-card .data {
-    font-family: var(--sans); font-size: 1rem;
-    color: var(--ed-muted); line-height: 1.5; margin-bottom: 0.75rem;
-  }
-  .trap-card .data strong { color: var(--ed-text); font-weight: 600; }
-  .trap-card .quote {
-    font-family: var(--serif); font-style: italic; font-size: 1.05rem;
-    color: var(--ed-text); line-height: 1.4;
-    border-left: 3px solid var(--ed-brass); padding-left: 1rem; margin-top: 1rem;
-  }
-  .traps-footer {
-    margin-top: 2.5rem; font-family: var(--serif); font-style: italic;
-    font-size: clamp(1.1rem, 1.5vw, 1.35rem); color: var(--ed-muted);
-    text-align: center;
-  }
-
-  /* Demo title slide */
-  .demo-title {
-    display: flex; flex-direction: column; gap: 1.5rem; max-width: 75%;
-  }
-  .demo-title h2 {
-    font-family: var(--serif); font-weight: 700;
-    font-size: clamp(3rem, 6vw, 5rem); line-height: 1;
-    color: var(--ed-forest); letter-spacing: -0.02em;
-  }
-  .demo-title h2 .accent { color: var(--ed-brass); }
-  .demo-title .sub {
-    font-family: var(--serif); font-style: italic;
-    font-size: clamp(1.25rem, 2vw, 1.75rem); color: var(--ed-muted);
-    line-height: 1.4;
-  }
-  .demo-title .hacks {
-    display: flex; gap: 1.5rem; margin-top: 1rem;
-  }
-  .demo-hack {
-    flex: 1; padding: 1.5rem; background: var(--ed-surface);
-    border: 1px solid var(--ed-border); border-left: 4px solid var(--ed-brass);
-    border-radius: 4px;
-  }
-  .demo-hack .hk-num {
-    font-family: var(--serif); font-weight: 700; font-size: 0.9rem;
-    color: var(--ed-brass); letter-spacing: 0.1em; text-transform: uppercase;
-    margin-bottom: 0.4rem;
-  }
-  .demo-hack .hk-name {
-    font-family: var(--serif); font-weight: 700; font-size: 1.5rem;
-    color: var(--ed-forest); margin-bottom: 0.4rem;
-  }
-  .demo-hack .hk-desc {
-    font-family: var(--sans); font-size: 0.95rem; color: var(--ed-muted);
-    line-height: 1.4;
-  }
-  .demo-title .note {
-    font-family: var(--serif); font-style: italic;
-    font-size: 1rem; color: var(--ed-muted); margin-top: 1rem;
-  }
-
-  /* Cost comparison */
-  .cost-grid {
-    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem;
-    margin-bottom: 2rem;
-  }
-  .cost-card {
-    padding: 2rem; background: var(--ed-surface);
-    border: 1px solid var(--ed-border); border-radius: 4px;
-    border-top: 3px solid var(--ed-muted);
-  }
-  .cost-card.winner { border-top-color: var(--ed-brass); background: var(--ed-brass-soft); }
-  .cost-card .price {
-    font-family: var(--serif); font-weight: 700;
-    font-size: clamp(2.5rem, 4vw, 3.5rem); line-height: 1;
-    color: var(--ed-muted); margin-bottom: 0.4rem;
-  }
-  .cost-card.winner .price { color: var(--ed-brass); }
-  .cost-card .price .unit {
-    font-family: var(--sans); font-size: 1rem; font-weight: 500;
-    color: var(--ed-muted); margin-left: 0.25rem;
-  }
-  .cost-card .name {
-    font-family: var(--serif); font-weight: 700; font-size: 1.35rem;
-    color: var(--ed-forest); margin-bottom: 0.6rem;
-  }
-  .cost-card .desc {
-    font-family: var(--sans); font-size: 0.95rem; color: var(--ed-muted);
-    font-style: italic; line-height: 1.4;
-  }
-  .cost-footer {
-    font-family: var(--serif); font-style: italic;
-    font-size: clamp(1.1rem, 1.5vw, 1.35rem); color: var(--ed-text);
-    text-align: center;
-  }
-  .cost-footer .brass { color: var(--ed-brass); font-weight: 600; font-style: normal; }
-
-  /* GitHub list */
-  .gh-grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem 2rem;
-    margin: 2rem 0;
-  }
-  .gh-row {
-    display: flex; align-items: baseline; gap: 1rem;
-    padding: 0.6rem 0;
-    border-bottom: 1px dashed var(--ed-border);
-  }
-  .gh-row .gh-cluster {
-    font-family: var(--sans); font-size: 1rem; font-weight: 500;
-    color: var(--ed-text); flex: 1;
-  }
-  .gh-row .gh-count {
-    font-family: var(--serif); font-weight: 700; font-size: 1rem;
-    color: var(--ed-brass);
-  }
-  .gh-url-box {
-    padding: 1.25rem 1.5rem; background: var(--ed-brass-soft);
-    border: 1px solid var(--ed-brass); border-radius: 4px;
-    margin-top: 1.5rem; text-align: center;
-  }
-  .gh-url-box .lbl {
-    font-family: var(--sans); font-size: 0.7rem; font-weight: 500;
-    letter-spacing: 0.18em; text-transform: uppercase;
-    color: var(--ed-brass); margin-bottom: 0.4rem;
-  }
-  .gh-url-box .url {
-    font-family: var(--serif); font-weight: 700; font-size: 1.5rem;
-    color: var(--ed-forest);
-  }
-
-  /* Bottom links bar */
-  .bottom-links {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
-    border-top: 1px solid var(--ed-border); padding-top: 1.5rem; margin-top: auto;
-  }
-  .bottom-link .label {
-    font-family: var(--sans); font-size: 0.7rem; font-weight: 500;
-    letter-spacing: 0.18em; text-transform: uppercase; color: var(--ed-muted);
-    margin-bottom: 0.4rem;
-  }
-  .bottom-link .value {
-    font-family: var(--serif); font-weight: 600; font-size: 1.5rem;
-    color: var(--ed-forest);
-  }
-  .bottom-link.brass .value { color: var(--ed-brass); }
-  .bottom-link.right { text-align: right; }
-
-  /* Page number + branding */
+  /* Page meta */
   .page-num {
-    position: absolute; bottom: 3vh; right: 7vw;
-    font-family: var(--sans); font-size: 0.75rem; font-weight: 500;
-    color: var(--ed-muted); letter-spacing: 0.05em;
+    position: absolute; bottom: 4vh; right: 10vw;
+    font-size: 0.7rem; font-weight: 500; color: var(--faint);
+    letter-spacing: 0.08em;
   }
   .brand {
-    position: absolute; bottom: 3vh; left: 7vw;
-    font-family: var(--serif); font-weight: 600; font-size: 0.85rem;
-    color: var(--ed-forest); letter-spacing: 0.02em;
-  }
-  .brand .dot {
-    display: inline-block; width: 0.4rem; height: 0.4rem;
-    background: var(--ed-brass); border-radius: 50%; margin-right: 0.5rem;
-    vertical-align: middle;
+    position: absolute; bottom: 4vh; left: 10vw;
+    font-size: 0.7rem; font-weight: 500; color: var(--faint);
+    letter-spacing: 0.08em; text-transform: uppercase;
   }
 
-  /* Navigation hint */
+  /* COVER, slide 1 */
+  .cover-eyebrow {
+    font-size: 0.8rem; font-weight: 600; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 1.5rem;
+  }
+  h1.cover-title {
+    font-weight: 800;
+    font-size: clamp(5rem, 13vw, 14rem); line-height: 0.92;
+    letter-spacing: -0.04em; color: var(--text);
+    margin-bottom: 2rem;
+  }
+  h1.cover-title .accent { color: var(--accent); }
+  .cover-sub {
+    font-size: clamp(1.1rem, 1.7vw, 1.5rem); font-weight: 400;
+    color: var(--muted); max-width: 60ch; line-height: 1.4;
+    margin-bottom: 2.5rem;
+  }
+  .cover-meta {
+    font-size: 0.95rem; font-weight: 500; color: var(--text);
+    letter-spacing: 0.01em;
+  }
+  .cover-meta .who { font-weight: 700; }
+  .cover-meta .when { color: var(--muted); margin-left: 0.5rem; }
+
+  /* Section titles */
+  h2.title {
+    font-weight: 800;
+    font-size: clamp(3rem, 6vw, 5rem); line-height: 1;
+    letter-spacing: -0.03em; color: var(--text);
+    margin-bottom: 4rem; max-width: 22ch;
+  }
+  h2.title .accent { color: var(--accent); }
+
+  /* Promise grid, slide 2 */
+  .promise {
+    display: grid; grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2.5rem; margin-bottom: 3rem;
+  }
+  .promise-item {
+    border-top: 3px solid var(--text);
+    padding-top: 1.25rem;
+  }
+  .promise-item .num {
+    font-weight: 800; font-size: clamp(2.5rem, 4.5vw, 4rem);
+    line-height: 1; letter-spacing: -0.03em; color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  .promise-item .lbl {
+    font-weight: 700; font-size: 1.15rem; color: var(--text);
+    margin-bottom: 0.4rem;
+  }
+  .promise-item .desc {
+    font-weight: 400; font-size: 0.9rem; color: var(--muted);
+    line-height: 1.45;
+  }
+  .footer-note {
+    font-size: 1rem; font-weight: 400; color: var(--muted);
+    line-height: 1.5; max-width: 80ch;
+  }
+  .footer-note .accent { color: var(--accent); font-weight: 600; }
+
+  /* Two Traps, slide 3 */
+  .traps {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+  }
+  .trap {
+    display: flex; flex-direction: column; gap: 1rem;
+  }
+  .trap .tag {
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--accent);
+  }
+  .trap .name {
+    font-weight: 800; font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+    color: var(--text); letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+  }
+  .trap .stat-line {
+    display: flex; align-items: baseline; gap: 0.75rem;
+    padding: 0.5rem 0;
+  }
+  .trap .stat-num {
+    font-weight: 800; font-size: clamp(2rem, 3vw, 2.75rem);
+    color: var(--text); letter-spacing: -0.03em; min-width: 4ch;
+  }
+  .trap .stat-text {
+    font-weight: 400; font-size: 1rem; color: var(--muted);
+    line-height: 1.4;
+  }
+  .trap .quote {
+    margin-top: 1rem; padding-left: 1.25rem;
+    border-left: 3px solid var(--accent);
+    font-size: 1rem; font-style: italic; color: var(--text);
+    line-height: 1.45;
+  }
+  .trap .quote .who {
+    display: block; margin-top: 0.4rem;
+    font-style: normal; font-size: 0.8rem; font-weight: 500;
+    color: var(--muted); letter-spacing: 0.02em;
+  }
+  .traps-foot {
+    text-align: center; margin-top: 3rem;
+    font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+    font-weight: 500; color: var(--text);
+  }
+
+  /* Sources */
+  .sources {
+    margin-top: 2rem; padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.7rem; font-weight: 400; color: var(--faint);
+    line-height: 1.5; letter-spacing: 0.02em;
+  }
+  .sources strong {
+    font-weight: 600; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.14em;
+    font-size: 0.62rem; margin-right: 0.5rem;
+  }
+
+  /* Versions table, slide 4 */
+  .versions { display: flex; flex-direction: column; }
+  .v-row {
+    display: grid; grid-template-columns: 4rem 1fr 9rem;
+    align-items: center; padding: 1.25rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .v-row:first-child { border-top: 1px solid var(--border); }
+  .v-row .v {
+    font-weight: 800; font-size: 1.5rem; color: var(--faint);
+    letter-spacing: -0.02em;
+  }
+  .v-row .stack {
+    font-weight: 500; font-size: 1.15rem; color: var(--muted);
+  }
+  .v-row .status {
+    font-weight: 600; font-size: 0.85rem; color: var(--faint);
+    letter-spacing: 0.06em; text-transform: uppercase;
+    text-align: right;
+  }
+  .v-row.alive .v { color: var(--accent); }
+  .v-row.alive .stack { color: var(--text); font-weight: 600; }
+  .v-row.alive .status { color: var(--accent); }
+  .v-quote {
+    margin-top: 2rem;
+    font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+    font-weight: 400; color: var(--muted);
+    line-height: 1.45; max-width: 80ch;
+  }
+  .v-quote strong { color: var(--text); font-weight: 700; }
+  .v-quote .accent { color: var(--accent); font-weight: 600; }
+
+  /* Diagnostic, slide 5 */
+  .diag-sub {
+    font-size: 1rem; font-weight: 500; color: var(--accent);
+    letter-spacing: 0.02em; margin-bottom: 2.5rem;
+    margin-top: -3rem;
+  }
+  .qs { display: flex; flex-direction: column; gap: 1.25rem; }
+  .q {
+    display: grid; grid-template-columns: 4rem 1fr;
+    gap: 1.5rem; align-items: baseline;
+    padding: 0.75rem 0; border-bottom: 1px solid var(--border);
+  }
+  .q .qn {
+    font-weight: 800; font-size: 3rem; line-height: 1;
+    color: var(--accent); letter-spacing: -0.04em;
+  }
+  .q .qbody { display: flex; flex-direction: column; gap: 0.4rem; }
+  .q .qt {
+    font-weight: 600; font-size: 1.2rem; color: var(--text);
+    line-height: 1.4;
+  }
+  .q .qv {
+    font-weight: 500; font-size: 0.85rem; color: var(--muted);
+    letter-spacing: 0.02em;
+  }
+  .q .qv strong { color: var(--accent); font-weight: 700; }
+
+  /* Hierarchy, slide 6 */
+  .hier-bigword {
+    font-weight: 800; font-size: clamp(3rem, 7vw, 6rem);
+    line-height: 0.95; letter-spacing: -0.04em;
+    margin-bottom: 3rem; text-align: center;
+  }
+  .hier-bigword .strong { color: var(--accent); }
+  .hier-bigword .mid { color: var(--text); }
+  .hier-bigword .weak { color: var(--faint); }
+  .hier-bigword .gt { color: var(--faint); margin: 0 0.4rem; font-weight: 500; }
+  .hier-row {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  .hier-col { padding-top: 1rem; border-top: 3px solid; }
+  .hier-col.a { border-color: var(--accent); }
+  .hier-col.b { border-color: var(--text); }
+  .hier-col.c { border-color: var(--faint); }
+  .hier-col .lbl {
+    font-weight: 800; font-size: 1.25rem;
+    letter-spacing: 0.04em; margin-bottom: 0.4rem;
+  }
+  .hier-col.a .lbl { color: var(--accent); }
+  .hier-col.b .lbl { color: var(--text); }
+  .hier-col.c .lbl { color: var(--faint); }
+  .hier-col .desc {
+    font-weight: 400; font-size: 0.95rem; color: var(--muted);
+    line-height: 1.4;
+  }
+  .hier-quote {
+    font-size: clamp(1.4rem, 2.2vw, 2rem); font-weight: 600;
+    line-height: 1.3; letter-spacing: -0.01em; max-width: 60ch;
+  }
+  .hier-quote .num { color: var(--accent); }
+  .hier-quote .small {
+    display: block; margin-top: 0.75rem;
+    font-size: 1rem; font-weight: 400; color: var(--muted);
+    letter-spacing: 0.01em;
+  }
+  .hier-quote .small strong { color: var(--text); font-weight: 600; }
+  .hier-quote .small .accent { color: var(--accent); font-weight: 600; }
+
+  /* Demo title slides, 7 + 9 */
+  .demo {
+    display: grid; grid-template-columns: 0.6fr 1fr;
+    gap: 5rem; align-items: center;
+  }
+  .demo-num {
+    font-weight: 800; font-size: clamp(8rem, 14vw, 16rem);
+    line-height: 0.85; letter-spacing: -0.05em;
+    color: var(--accent);
+  }
+  .demo-num .of {
+    display: block; font-size: 1rem; font-weight: 600;
+    color: var(--muted); margin-top: 0.5rem;
+    letter-spacing: 0.16em; text-transform: uppercase;
+  }
+  .demo-body { display: flex; flex-direction: column; gap: 1.25rem; }
+  .demo-body h2 {
+    font-weight: 800; font-size: clamp(2.5rem, 4.5vw, 4rem);
+    line-height: 1; letter-spacing: -0.03em; color: var(--text);
+  }
+  .demo-body h2 .accent { color: var(--accent); }
+  .demo-body .sub {
+    font-size: clamp(1rem, 1.4vw, 1.25rem); font-weight: 500;
+    color: var(--muted); line-height: 1.4;
+  }
+  .demo-hacks {
+    display: flex; flex-direction: column; gap: 0.75rem;
+    margin-top: 0.5rem;
+  }
+  .demo-hack {
+    display: grid; grid-template-columns: 5rem 1fr;
+    gap: 1rem; align-items: baseline;
+    padding: 1rem 0; border-top: 1px solid var(--border);
+  }
+  .demo-hack .hk-num {
+    font-weight: 700; font-size: 0.75rem;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--accent);
+  }
+  .demo-hack .hk-content { display: flex; flex-direction: column; gap: 0.25rem; }
+  .demo-hack .hk-name {
+    font-weight: 700; font-size: 1.25rem; color: var(--text);
+  }
+  .demo-hack .hk-desc {
+    font-weight: 400; font-size: 0.9rem; color: var(--muted);
+    line-height: 1.4;
+  }
+  .demo-note {
+    margin-top: 0.5rem; font-size: 0.85rem; font-weight: 400;
+    color: var(--faint); font-style: italic;
+  }
+
+  /* Bridge, slide 8 */
+  .bridge { gap: 2rem; }
+  .bridge h2 {
+    font-weight: 800; font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1; letter-spacing: -0.03em; color: var(--text);
+    max-width: 22ch;
+  }
+  .bridge .sub {
+    font-size: clamp(1.25rem, 2vw, 1.75rem); font-weight: 400;
+    color: var(--muted); max-width: 40ch;
+  }
+
+  /* Cost, slide 10 */
+  .cost-grid {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2.5rem;
+  }
+  .cost {
+    border-top: 3px solid var(--faint); padding-top: 1.5rem;
+    display: flex; flex-direction: column; gap: 0.5rem;
+  }
+  .cost.win { border-color: var(--accent); }
+  .cost .price {
+    font-weight: 800; font-size: clamp(3rem, 5vw, 4.5rem);
+    line-height: 1; letter-spacing: -0.04em;
+    color: var(--faint);
+  }
+  .cost.win .price { color: var(--accent); }
+  .cost .price .unit {
+    font-size: 0.95rem; font-weight: 500;
+    color: var(--muted); margin-left: 0.3rem;
+  }
+  .cost .name {
+    font-weight: 700; font-size: 1.25rem; color: var(--text);
+  }
+  .cost .desc {
+    font-weight: 400; font-size: 0.9rem; color: var(--muted);
+    line-height: 1.4;
+  }
+  .cost-foot {
+    margin-top: 3rem; text-align: center;
+    font-size: clamp(1.25rem, 2vw, 1.75rem);
+    font-weight: 600; color: var(--text); letter-spacing: -0.01em;
+  }
+  .cost-foot .accent { color: var(--accent); }
+
+  /* GitHub reveal, slide 11 */
+  .gh-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 3rem;
+    margin: 1.5rem 0 2rem 0;
+  }
+  .gh-row {
+    display: grid; grid-template-columns: 1fr 4rem;
+    padding: 0.65rem 0; border-bottom: 1px solid var(--border);
+    align-items: baseline;
+  }
+  .gh-row .gh-name {
+    font-weight: 500; font-size: 1rem; color: var(--text);
+  }
+  .gh-row .gh-pct {
+    font-weight: 700; font-size: 1rem;
+    color: var(--accent); text-align: right;
+  }
+  .gh-url {
+    margin-top: 1.5rem; padding: 1.5rem 1.75rem;
+    background: var(--accent-soft);
+    border: 2px solid var(--accent); border-radius: 4px;
+    text-align: center;
+  }
+  .gh-url .lbl {
+    font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 0.5rem;
+  }
+  .gh-url .url {
+    font-weight: 800; font-size: clamp(1.25rem, 2.2vw, 2rem);
+    color: var(--text); letter-spacing: -0.02em;
+  }
+
+  /* Closing, slide 12 */
+  .close-h {
+    font-weight: 800; font-size: clamp(3rem, 6vw, 5.5rem);
+    line-height: 1; letter-spacing: -0.04em;
+    margin-bottom: 0.5rem;
+  }
+  .close-h .l1 { color: var(--text); display: block; }
+  .close-h .l2 { color: var(--accent); display: block; }
+  .close-cad {
+    font-size: clamp(1.1rem, 1.5vw, 1.4rem); font-weight: 500;
+    color: var(--muted); margin-bottom: 3rem;
+  }
+  .close-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  .close-cell {
+    border-top: 3px solid var(--text); padding-top: 1rem;
+  }
+  .close-cell .num {
+    font-weight: 800; font-size: clamp(2.5rem, 4vw, 3.5rem);
+    line-height: 1; color: var(--accent); letter-spacing: -0.03em;
+    margin-bottom: 0.5rem;
+  }
+  .close-cell .lbl {
+    font-weight: 700; font-size: 1rem; color: var(--text);
+    margin-bottom: 0.25rem;
+  }
+  .close-cell .d {
+    font-weight: 400; font-size: 0.85rem; color: var(--muted);
+    line-height: 1.4;
+  }
+  .close-bottom {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+    padding-top: 1.5rem; border-top: 1px solid var(--border);
+    margin-top: auto;
+  }
+  .close-bottom .lbl {
+    font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 0.4rem;
+  }
+  .close-bottom .v {
+    font-weight: 800; font-size: 1.5rem;
+    color: var(--text); letter-spacing: -0.01em;
+  }
+  .close-bottom .v.acc { color: var(--accent); }
+  .close-bottom .right { text-align: right; }
+
+  /* Nav hint */
   .nav-hint {
     position: fixed; bottom: 1rem; left: 50%; transform: translateX(-50%);
-    font-family: var(--sans); font-size: 0.7rem; color: var(--ed-muted);
-    opacity: 0.5; pointer-events: none;
+    font-size: 0.7rem; color: var(--faint); opacity: 0.6;
+    pointer-events: none; letter-spacing: 0.04em;
   }
   .nav-hint.hidden { opacity: 0; transition: opacity 0.5s; }
 
@@ -443,340 +478,306 @@
 <body>
 <div class="deck">
 
-  <!-- Slide 1, Cover -->
+  <!-- 1, COVER -->
   <section class="slide active" id="s1">
-    <div class="cover-eyebrow">EO AI Productivity Exchange #1</div>
-    <h1 class="cover-title">
-      The <span class="accent">Setup Trap</span>
-    </h1>
-    <p class="cover-subtitle">Two operators show the stacks they actually run in production. Tool overload, setup cost, and what survived 18 months.</p>
-    <div class="cover-divider"></div>
-    <p class="cover-meta"><strong>Christoph Erler &amp; Dom Raute</strong> &middot; EO Berlin &middot; May 11, 2026 &middot; 18:00 CEST</p>
-    <div class="brand"><span class="dot"></span>Erler Ventures &middot; Hosted via EO</div>
-    <div class="page-num">1 / 12</div>
+    <div class="cover-eyebrow">EO AI Productivity Exchange &middot; #1</div>
+    <h1 class="cover-title">The <span class="accent">Setup</span><br>Trap.</h1>
+    <p class="cover-sub">Two operators show the stacks they actually run. Tool overload, setup cost, what survived 18 months.</p>
+    <p class="cover-meta"><span class="who">Christoph Erler &amp; Dom Raute</span><span class="when">May 11, 2026 &middot; 18:00 CEST</span></p>
+    <div class="brand">EO Berlin</div>
+    <div class="page-num">01 / 12</div>
   </section>
 
-  <!-- Slide 2, The Promise -->
+  <!-- 2, PROMISE -->
   <section class="slide" id="s2">
-    <div class="top-label">60 Minutes</div>
-    <h2 class="section-title">What you walk out with</h2>
-    <div class="promise-cards">
-      <div class="promise-card">
-        <div class="num">1</div>
-        <div class="label">Clarity</div>
-        <div class="desc">Which of two stacks fits you, without burning weeks on it</div>
+    <div class="label">60 Minutes</div>
+    <h2 class="title">What you walk out with.</h2>
+    <div class="promise">
+      <div class="promise-item">
+        <div class="num">01</div>
+        <div class="lbl">Clarity</div>
+        <div class="desc">Which of two stacks fits you, without burning weeks on it.</div>
       </div>
-      <div class="promise-card">
+      <div class="promise-item">
         <div class="num">3-5</div>
-        <div class="label">Hacks</div>
-        <div class="desc">Concrete and actionable, the wins and the struggles behind them</div>
+        <div class="lbl">Hacks</div>
+        <div class="desc">Concrete and actionable. The wins and the struggles behind them.</div>
       </div>
-      <div class="promise-card">
+      <div class="promise-item">
         <div class="num">103</div>
-        <div class="label">Peers</div>
-        <div class="desc">Where other EO operators stand, where you stand</div>
+        <div class="lbl">Peers</div>
+        <div class="desc">Where other EO operators stand. Where you stand.</div>
       </div>
-      <div class="promise-card">
+      <div class="promise-item">
         <div class="num">&infin;</div>
-        <div class="label">Series</div>
-        <div class="desc">Seat in a continuous 30 to 90 day exchange, not a one-off</div>
+        <div class="lbl">Series</div>
+        <div class="desc">Seat in a continuous 30 to 90 day exchange.</div>
       </div>
     </div>
-    <p class="version-quote" style="margin-top:1.5rem;">
-      Not the goal: another tool overview, generic theory, or polished vendor demos.
-      <br><span class="brass">We show the struggles, not just the wins.</span>
-    </p>
-    <div class="brand"><span class="dot"></span>Erler Ventures</div>
-    <div class="page-num">2 / 12</div>
+    <p class="footer-note">Not the goal: another tool overview, generic theory, or polished vendor demos. <span class="accent">We show the struggles, not just the wins.</span></p>
+    <div class="brand">EO Berlin</div>
+    <div class="page-num">02 / 12</div>
   </section>
 
-  <!-- Slide 3, The Two Traps -->
+  <!-- 3, TWO TRAPS -->
   <section class="slide" id="s3">
-    <div class="top-label">The Data</div>
-    <h2 class="section-title">Two traps everyone walks into</h2>
+    <div class="label">The Data</div>
+    <h2 class="title">Two traps everyone walks into.</h2>
     <div class="traps">
-      <div class="trap-card">
-        <div class="label">Trap 1</div>
+      <div class="trap">
+        <div class="tag">Trap 01</div>
         <div class="name">Tool Overload</div>
-        <div class="data"><strong>50%</strong> of EO operators say "too many tools"</div>
-        <div class="data"><strong>34%</strong> say "I do not know where to start"</div>
-        <div class="data"><strong>7 of 10</strong> digitalization projects fail on mindset, not tech</div>
-        <div class="quote">"Which one for what?" <br>Sirah Pallas, EO Rhein-Ruhr</div>
+        <div class="stat-line"><div class="stat-num">50%</div><div class="stat-text">of EO operators say "too many tools"</div></div>
+        <div class="stat-line"><div class="stat-num">34%</div><div class="stat-text">say "I do not know where to start"</div></div>
+        <div class="stat-line"><div class="stat-num">7 / 10</div><div class="stat-text">digitalization projects fail on mindset, not tech</div></div>
+        <div class="quote">"Which one for what?"<span class="who">Sirah Pallas, EO Rhein-Ruhr</span></div>
       </div>
-      <div class="trap-card">
-        <div class="label">Trap 2</div>
+      <div class="trap">
+        <div class="tag">Trap 02</div>
         <div class="name">Setup Cost</div>
-        <div class="data"><strong>95%</strong> of AI pilots show negative ROI <br>MIT 2025 study</div>
-        <div class="data"><strong>3 weekends</strong> burned on setup, plus ongoing maintenance</div>
-        <div class="data"><strong>$50/day</strong> Opus burn during build-up</div>
-        <div class="quote">"Weeks burned on setup before any value lands." <br>Andrew, EO interview April 2026</div>
+        <div class="stat-line"><div class="stat-num">95%</div><div class="stat-text">of AI pilots show negative ROI, MIT 2025</div></div>
+        <div class="stat-line"><div class="stat-num">3</div><div class="stat-text">weekends burned on setup, plus ongoing maintenance</div></div>
+        <div class="stat-line"><div class="stat-num">$50</div><div class="stat-text">per day Opus burn during build-up</div></div>
+        <div class="quote">"Weeks burned on setup before any value lands."<span class="who">Andrew, EO Best Guy interview</span></div>
       </div>
     </div>
-    <p class="traps-footer">Most don't escape because they fight the wrong trap.</p>
-    <p class="sources">
-      <strong>Sources</strong> &middot; EO WhatsApp Poll, 122 votes, March 2026
-      &middot; MIT Project NANDA, "The GenAI Divide", 2025
-      &middot; Chal&eacute;at, "Why 7 of 10 digitalization projects fail", 2024
-      &middot; Andrew van Aswegen, EO Best Guy interview, April 2026
-    </p>
-    <div class="brand"><span class="dot"></span>Erler Ventures</div>
-    <div class="page-num">3 / 12</div>
+    <p class="traps-foot">Most don't escape because they fight the wrong trap.</p>
+    <p class="sources"><strong>Sources</strong>EO WhatsApp Poll (122 votes, March 2026) &middot; MIT Project NANDA, "The GenAI Divide", 2025 &middot; Chal&eacute;at, "Why 7 of 10 digitalization projects fail", 2024 &middot; Andrew van Aswegen, EO Best Guy interview, April 2026</p>
+    <div class="brand">EO Berlin</div>
+    <div class="page-num">03 / 12</div>
   </section>
 
-  <!-- Slide 4, Stack Versions -->
+  <!-- 4, STACK VERSIONS -->
   <section class="slide" id="s4">
-    <div class="top-label">5 Setups in 18 Months</div>
-    <h2 class="section-title">Three dead. Two live.</h2>
+    <div class="label">5 Setups in 18 Months</div>
+    <h2 class="title">Three dead.<br>Two <span class="accent">live</span>.</h2>
     <div class="versions">
-      <div class="version-row">
-        <div class="v">v1</div>
-        <div class="stack">ChatGPT only, no memory</div>
-        <div class="status">dead</div>
-      </div>
-      <div class="version-row">
-        <div class="v">v2</div>
-        <div class="stack">Notion + Zapier orchestration</div>
-        <div class="status">dead</div>
-      </div>
-      <div class="version-row">
-        <div class="v">v3</div>
-        <div class="stack">Multiple tools, no architecture</div>
-        <div class="status">dead</div>
-      </div>
-      <div class="version-row alive">
-        <div class="v">v4</div>
-        <div class="stack">Workspace-native + Memory layer (Chris)</div>
-        <div class="status">alive 6 months</div>
-      </div>
-      <div class="version-row alive">
-        <div class="v">v5</div>
-        <div class="stack">Local-first + 5-tier memory (Dom)</div>
-        <div class="status">alive 12 months</div>
-      </div>
+      <div class="v-row"><div class="v">v1</div><div class="stack">ChatGPT only, no memory</div><div class="status">dead</div></div>
+      <div class="v-row"><div class="v">v2</div><div class="stack">Notion + Zapier orchestration</div><div class="status">dead</div></div>
+      <div class="v-row"><div class="v">v3</div><div class="stack">Multiple tools, no architecture</div><div class="status">dead</div></div>
+      <div class="v-row alive"><div class="v">v4</div><div class="stack">Workspace-native + memory layer (Chris)</div><div class="status">alive 6 mo</div></div>
+      <div class="v-row alive"><div class="v">v5</div><div class="stack">Local-first + 5-tier memory (Dom)</div><div class="status">alive 12 mo</div></div>
     </div>
-    <p class="version-quote">
-      <strong>Two stacks survived. Both share one principle.</strong><br>
-      Stop maintaining tools. Start maintaining <span class="brass">memory</span>.
-    </p>
-    <div class="brand"><span class="dot"></span>Erler Ventures</div>
-    <div class="page-num">4 / 12</div>
+    <p class="v-quote"><strong>Two stacks survived. Both share one principle.</strong> Stop maintaining tools. Start maintaining <span class="accent">memory</span>.</p>
+    <div class="brand">EO Berlin</div>
+    <div class="page-num">04 / 12</div>
   </section>
 
-  <!-- Slide 5, Diagnostic -->
+  <!-- 5, DIAGNOSTIC -->
   <section class="slide" id="s5">
-    <div class="top-label">Diagnostic</div>
-    <h2 class="section-title">Are you in the Setup Trap?</h2>
-    <p class="diagnostic-subtitle">3 questions. Answer honestly.</p>
-    <div class="questions">
-      <div class="question">
-        <div class="num">1</div>
-        <div class="body">
-          <div class="q-text">Do you maintain your setup more than you use it?</div>
-          <div class="verdict">More than 20% of your time? Setup Trap.</div>
+    <div class="label">Diagnostic</div>
+    <h2 class="title">Are you in the <span class="accent">Setup Trap</span>?</h2>
+    <p class="diag-sub">3 questions. Answer honestly.</p>
+    <div class="qs">
+      <div class="q">
+        <div class="qn">01</div>
+        <div class="qbody">
+          <div class="qt">Do you maintain your setup more than you use it?</div>
+          <div class="qv">More than 20% of your time? <strong>Setup Trap.</strong></div>
         </div>
       </div>
-      <div class="question">
-        <div class="num">2</div>
-        <div class="body">
-          <div class="q-text">If your setup dies tomorrow, do you lose knowledge or just workflow?</div>
-          <div class="verdict">Knowledge? Setup Trap.</div>
+      <div class="q">
+        <div class="qn">02</div>
+        <div class="qbody">
+          <div class="qt">If your setup dies tomorrow, do you lose knowledge or just workflow?</div>
+          <div class="qv">Knowledge? <strong>Setup Trap.</strong></div>
         </div>
       </div>
-      <div class="question">
-        <div class="num">3</div>
-        <div class="body">
-          <div class="q-text">Could a new team member understand it in 2 sentences?</div>
-          <div class="verdict">No? Setup Trap.</div>
+      <div class="q">
+        <div class="qn">03</div>
+        <div class="qbody">
+          <div class="qt">Could a new team member understand it in 2 sentences?</div>
+          <div class="qv">No? <strong>Setup Trap.</strong></div>
         </div>
       </div>
     </div>
-    <div class="brand"><span class="dot"></span>Erler Ventures</div>
-    <div class="page-num">5 / 12</div>
+    <div class="brand">EO Berlin</div>
+    <div class="page-num">05 / 12</div>
   </section>
 
-  <!-- Slide 6, Hierarchy -->
+  <!-- 6, HIERARCHY -->
   <section class="slide" id="s6">
-    <div class="top-label">The Hierarchy</div>
-    <div class="hierarchy-headline">
-      <span class="strong">MEMORY</span><span class="arrow">&gt;</span><span class="mid">TOOLS</span><span class="arrow">&gt;</span><span class="weak">MODELS</span>
+    <div class="label">The Hierarchy</div>
+    <div class="hier-bigword">
+      <span class="strong">MEMORY</span><span class="gt">&gt;</span><span class="mid">TOOLS</span><span class="gt">&gt;</span><span class="weak">MODELS</span>
     </div>
-    <div class="hier-cards">
-      <div class="hier-card brass">
-        <div class="label">MEMORY</div>
-        <div class="desc">what your system remembers</div>
-      </div>
-      <div class="hier-card forest">
-        <div class="label">TOOLS</div>
-        <div class="desc">what it can execute</div>
-      </div>
-      <div class="hier-card muted">
-        <div class="label">MODELS</div>
-        <div class="desc">which AI runs in the backend</div>
-      </div>
+    <div class="hier-row">
+      <div class="hier-col a"><div class="lbl">MEMORY</div><div class="desc">what your system remembers</div></div>
+      <div class="hier-col b"><div class="lbl">TOOLS</div><div class="desc">what it can execute</div></div>
+      <div class="hier-col c"><div class="lbl">MODELS</div><div class="desc">which AI runs in the backend</div></div>
     </div>
-    <div class="hier-callout">
-      <p><span class="stat">90% of executives</span> <span class="strong">see no measurable AI impact in 3 years.</span></p>
-      <p class="quiet">Not because AI does not work. Because they discuss <strong>models</strong> instead of building <span class="brass" style="font-weight:600">memory</span>.</p>
+    <div class="hier-quote">
+      <span class="num">90%</span> of executives see no measurable AI impact in 3 years.
+      <span class="small">Not because AI does not work. Because they discuss <strong>models</strong> instead of building <span class="accent">memory</span>.</span>
     </div>
-    <p class="sources">
-      <strong>Source</strong> &middot; McKinsey, "The state of AI: How organizations are rewiring to capture value", 2025
-    </p>
-    <div class="brand"><span class="dot"></span>Erler Ventures</div>
-    <div class="page-num">6 / 12</div>
+    <p class="sources"><strong>Source</strong>McKinsey, "The state of AI: How organizations are rewiring to capture value", 2025</p>
+    <div class="brand">EO Berlin</div>
+    <div class="page-num">06 / 12</div>
   </section>
 
-  <!-- Slide 7, Demo 1 Title (Chris) -->
+  <!-- 7, DEMO 1 -->
   <section class="slide" id="s7">
-    <div class="top-label">Demo 1, Chris &middot; 9 min</div>
-    <div class="demo-title">
-      <h2>AI Inside Your <span class="accent">Existing Stack</span></h2>
-      <p class="sub">Two hacks. Same architecture. Different outputs.</p>
-      <div class="hacks">
-        <div class="demo-hack">
-          <div class="hk-num">Hack 1</div>
-          <div class="hk-name">Morning Briefing</div>
-          <div class="hk-desc">Inbox + Calendar + Drive + priorities, one page in 30 seconds</div>
+    <div class="label">Demo 01 &middot; Chris &middot; 9 min</div>
+    <div class="demo">
+      <div class="demo-num">01<span class="of">of two</span></div>
+      <div class="demo-body">
+        <h2>AI inside your <span class="accent">existing stack</span>.</h2>
+        <div class="sub">Two hacks. Same architecture. Different outputs.</div>
+        <div class="demo-hacks">
+          <div class="demo-hack">
+            <div class="hk-num">Hack 01</div>
+            <div class="hk-content">
+              <div class="hk-name">Morning Briefing</div>
+              <div class="hk-desc">Inbox + Calendar + Drive + priorities, one page in 30 seconds.</div>
+            </div>
+          </div>
+          <div class="demo-hack">
+            <div class="hk-num">Hack 02</div>
+            <div class="hk-content">
+              <div class="hk-name">Meeting Prep</div>
+              <div class="hk-desc">LinkedIn + past mail + CRM + Drive context, one page on demand.</div>
+            </div>
+          </div>
         </div>
-        <div class="demo-hack">
-          <div class="hk-num">Hack 2</div>
-          <div class="hk-name">Meeting Prep</div>
-          <div class="hk-desc">LinkedIn + past mail + CRM + Drive context, one page on demand</div>
-        </div>
+        <p class="demo-note">No new tools. Just orchestration on top of Gmail, Calendar, Drive, Notion.</p>
       </div>
-      <p class="note">No new tools. Just orchestration on top of Gmail, Calendar, Drive, Notion.</p>
     </div>
-    <div class="brand"><span class="dot"></span>Erler Ventures</div>
-    <div class="page-num">7 / 12</div>
+    <div class="brand">EO Berlin</div>
+    <div class="page-num">07 / 12</div>
   </section>
 
-  <!-- Slide 8, Bridge to Dom -->
-  <section class="slide handoff" id="s8">
-    <div class="top-label">Handoff</div>
-    <h2>Dom takes you one layer deeper.</h2>
+  <!-- 8, BRIDGE -->
+  <section class="slide bridge" id="s8">
+    <div class="label">Handoff</div>
+    <h2>Dom takes you<br>one layer <span style="color:var(--accent);">deeper</span>.</h2>
     <p class="sub">From hack on top, to architecture beneath.</p>
-    <div class="brand"><span class="dot"></span>Erler Ventures</div>
-    <div class="page-num">8 / 12</div>
+    <div class="brand">EO Berlin</div>
+    <div class="page-num">08 / 12</div>
   </section>
 
-  <!-- Slide 9, Demo 2 Title (Dom) -->
+  <!-- 9, DEMO 2 -->
   <section class="slide" id="s9">
-    <div class="top-label">Demo 2, Dom &middot; 9 min</div>
-    <div class="demo-title">
-      <h2>The Agent That <span class="accent">Remembers</span></h2>
-      <p class="sub">Two hacks. 5-tier memory. Zero monthly cost.</p>
-      <div class="hacks">
-        <div class="demo-hack">
-          <div class="hk-num">Hack 1</div>
-          <div class="hk-name">5-Tier Memory</div>
-          <div class="hk-desc">System Prompt &gt; Bootstrap &gt; On-Demand &gt; Search Index &gt; Raw Archive</div>
+    <div class="label">Demo 02 &middot; Dom &middot; 9 min</div>
+    <div class="demo">
+      <div class="demo-num">02<span class="of">of two</span></div>
+      <div class="demo-body">
+        <h2>The agent that <span class="accent">remembers</span>.</h2>
+        <div class="sub">Two hacks. 5-tier memory. Zero monthly cost.</div>
+        <div class="demo-hacks">
+          <div class="demo-hack">
+            <div class="hk-num">Hack 01</div>
+            <div class="hk-content">
+              <div class="hk-name">5-Tier Memory</div>
+              <div class="hk-desc">System Prompt &gt; Bootstrap &gt; On-Demand &gt; Search Index &gt; Raw Archive.</div>
+            </div>
+          </div>
+          <div class="demo-hack">
+            <div class="hk-num">Hack 02</div>
+            <div class="hk-content">
+              <div class="hk-name">Rolodex</div>
+              <div class="hk-desc">107 person dossiers, communication style, last contact, open threads.</div>
+            </div>
+          </div>
         </div>
-        <div class="demo-hack">
-          <div class="hk-num">Hack 2</div>
-          <div class="hk-name">Rolodex</div>
-          <div class="hk-desc">107 person dossiers, communication style, last contact, open threads</div>
-        </div>
+        <p class="demo-note">Local models. 1,183 indexed files. 2-5 sec queries. $0 API cost.</p>
       </div>
-      <p class="note">Local models. 1,183 indexed files. 2-5 sec queries. $0 API cost.</p>
     </div>
-    <div class="brand"><span class="dot"></span>Erler Ventures</div>
-    <div class="page-num">9 / 12</div>
+    <div class="brand">EO Berlin</div>
+    <div class="page-num">09 / 12</div>
   </section>
 
-  <!-- Slide 10, Cost Comparison -->
+  <!-- 10, COST -->
   <section class="slide" id="s10">
-    <div class="top-label">Cost Reality Check</div>
-    <h2 class="section-title">What you pay vs what you get</h2>
+    <div class="label">Cost Reality</div>
+    <h2 class="title">What you pay vs<br>what you get.</h2>
     <div class="cost-grid">
-      <div class="cost-card winner">
+      <div class="cost win">
         <div class="price">$0<span class="unit">/mo</span></div>
         <div class="name">Local-First</div>
-        <div class="desc">Self-hosted memory, local models, 2-5 sec queries</div>
+        <div class="desc">Self-hosted memory, local models, 2-5 sec queries.</div>
       </div>
-      <div class="cost-card">
+      <div class="cost">
         <div class="price">$500<span class="unit">/seat</span></div>
         <div class="name">Glean Enterprise</div>
-        <div class="desc">Hosted enterprise search, vendor lock-in</div>
+        <div class="desc">Hosted enterprise search, vendor lock-in.</div>
       </div>
-      <div class="cost-card">
-        <div class="price">$1,500<span class="unit">/mo</span></div>
+      <div class="cost">
+        <div class="price">$1.5K<span class="unit">/mo</span></div>
         <div class="name">Enterprise Stack</div>
-        <div class="desc">Notion AI + Glean + ChatGPT Enterprise + others</div>
+        <div class="desc">Notion AI + Glean + ChatGPT Enterprise + others.</div>
       </div>
     </div>
-    <p class="cost-footer">The <span class="brass">architecture</span> beats the budget.</p>
-    <p class="sources">
-      <strong>Sources</strong> &middot; Glean Enterprise public pricing, 2026
-      &middot; Notion AI + Glean + ChatGPT Enterprise list pricing combined, 2026
-    </p>
-    <div class="brand"><span class="dot"></span>Erler Ventures</div>
+    <p class="cost-foot">The <span class="accent">architecture</span> beats the budget.</p>
+    <p class="sources"><strong>Sources</strong>Glean Enterprise public pricing, 2026 &middot; Notion AI + Glean + ChatGPT Enterprise list pricing combined, 2026</p>
+    <div class="brand">EO Berlin</div>
     <div class="page-num">10 / 12</div>
   </section>
 
-  <!-- Slide 11, GitHub Live -->
+  <!-- 11, GITHUB REVEAL -->
   <section class="slide" id="s11">
-    <div class="top-label">Live Tonight</div>
-    <h2 class="section-title">11 solutions shipping today</h2>
+    <div class="label">Live Tonight</div>
+    <h2 class="title">11 solutions <span class="accent">shipping</span> today.</h2>
     <div class="gh-grid">
-      <div class="gh-row"><div class="gh-cluster">Tool Overload</div><div class="gh-count">29%</div></div>
-      <div class="gh-row"><div class="gh-cluster">Team Adoption</div><div class="gh-count">18%</div></div>
-      <div class="gh-row"><div class="gh-cluster">Agents in Production</div><div class="gh-count">18%</div></div>
-      <div class="gh-row"><div class="gh-cluster">Integration / MCP</div><div class="gh-count">12%</div></div>
-      <div class="gh-row"><div class="gh-cluster">Pace / Keeping Up</div><div class="gh-count">10%</div></div>
-      <div class="gh-row"><div class="gh-cluster">Setup Itself</div><div class="gh-count">9%</div></div>
-      <div class="gh-row"><div class="gh-cluster">Security / GDPR DACH</div><div class="gh-count">5%</div></div>
-      <div class="gh-row"><div class="gh-cluster">Industry Healthcare</div><div class="gh-count">6%</div></div>
-      <div class="gh-row"><div class="gh-cluster">OpenClaw Stability</div><div class="gh-count">12%</div></div>
-      <div class="gh-row"><div class="gh-cluster">Time / Learning</div><div class="gh-count">6%</div></div>
+      <div class="gh-row"><div class="gh-name">Tool Overload</div><div class="gh-pct">29%</div></div>
+      <div class="gh-row"><div class="gh-name">Team Adoption</div><div class="gh-pct">18%</div></div>
+      <div class="gh-row"><div class="gh-name">Agents in Production</div><div class="gh-pct">18%</div></div>
+      <div class="gh-row"><div class="gh-name">Integration / MCP</div><div class="gh-pct">12%</div></div>
+      <div class="gh-row"><div class="gh-name">OpenClaw Stability</div><div class="gh-pct">12%</div></div>
+      <div class="gh-row"><div class="gh-name">Pace / Keeping Up</div><div class="gh-pct">10%</div></div>
+      <div class="gh-row"><div class="gh-name">Setup Itself</div><div class="gh-pct">9%</div></div>
+      <div class="gh-row"><div class="gh-name">Healthcare</div><div class="gh-pct">6%</div></div>
+      <div class="gh-row"><div class="gh-name">Time / Learning</div><div class="gh-pct">6%</div></div>
+      <div class="gh-row"><div class="gh-name">Security / GDPR DACH</div><div class="gh-pct">5%</div></div>
     </div>
-    <div class="gh-url-box">
-      <div class="lbl">GitHub, MIT License, fork and remix</div>
+    <div class="gh-url">
+      <div class="lbl">MIT License &middot; fork and remix</div>
       <div class="url">github.com/chris1928a/eo-ai-exchange</div>
     </div>
-    <div class="brand"><span class="dot"></span>Erler Ventures</div>
+    <div class="brand">EO Berlin</div>
     <div class="page-num">11 / 12</div>
   </section>
 
-  <!-- Slide 12, Closing + Event #2 -->
+  <!-- 12, CLOSING -->
   <section class="slide" id="s12">
-    <div class="top-label">This is Day 1</div>
-    <div class="promise-headline">
+    <div class="label">This is Day 1</div>
+    <div class="close-h">
       <span class="l1">You name the pain.</span>
       <span class="l2">We build the skill.</span>
     </div>
-    <p class="promise-cadence">30 to 90 days. Then again.</p>
-    <div class="promise-cards">
-      <div class="promise-card">
+    <p class="close-cad">30 to 90 days. Then again.</p>
+    <div class="close-grid">
+      <div class="close-cell">
         <div class="num">10</div>
-        <div class="label">Pain Clusters</div>
-        <div class="desc">from 103 registrations</div>
+        <div class="lbl">Pain Clusters</div>
+        <div class="d">from 103 registrations</div>
       </div>
-      <div class="promise-card">
+      <div class="close-cell">
         <div class="num">11</div>
-        <div class="label">Solutions</div>
-        <div class="desc">live tonight on GitHub</div>
+        <div class="lbl">Solutions</div>
+        <div class="d">live tonight on GitHub</div>
       </div>
-      <div class="promise-card">
+      <div class="close-cell">
         <div class="num">#2</div>
-        <div class="label">Event #2</div>
-        <div class="desc">topic picked by your Slido vote</div>
+        <div class="lbl">Event #2</div>
+        <div class="d">topic picked by your Slido vote</div>
       </div>
-      <div class="promise-card">
+      <div class="close-cell">
         <div class="num">&infin;</div>
-        <div class="label">Cadence</div>
-        <div class="desc">market-reactive, not quarterly</div>
+        <div class="lbl">Cadence</div>
+        <div class="d">market-reactive, not quarterly</div>
       </div>
     </div>
-    <div class="bottom-links">
-      <div class="bottom-link brass">
-        <div class="label">Slido open 24h</div>
-        <div class="value">#3261743</div>
+    <div class="close-bottom">
+      <div>
+        <div class="lbl">Slido open 24h</div>
+        <div class="v acc">#3261743</div>
       </div>
-      <div class="bottom-link right">
-        <div class="label">GitHub, live tonight</div>
-        <div class="value">chris1928a/eo-ai-exchange</div>
+      <div class="right">
+        <div class="lbl">GitHub, live tonight</div>
+        <div class="v">chris1928a/eo-ai-exchange</div>
       </div>
     </div>
-    <div class="brand"><span class="dot"></span>Erler Ventures</div>
+    <div class="brand">EO Berlin</div>
     <div class="page-num">12 / 12</div>
   </section>
 
@@ -801,18 +802,15 @@
     if (e.key === 'End') go(slides.length - 1);
     document.querySelector('.nav-hint').classList.add('hidden');
   });
-  // Click to advance
   document.querySelector('.deck').addEventListener('click', (e) => {
     const x = e.clientX; const w = window.innerWidth;
     if (x > w / 2) go(current + 1);
     else go(current - 1);
   });
-  // Hash navigation
   if (window.location.hash) {
     const n = parseInt(window.location.hash.replace('#', ''));
     if (n >= 1 && n <= slides.length) go(n - 1);
   }
-  // Hide nav hint after 5s
   setTimeout(() => document.querySelector('.nav-hint').classList.add('hidden'), 5000);
 </script>
 </body>
