@@ -6,7 +6,7 @@
 <title>The Setup Trap, EO AI Productivity Exchange #1</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #ffffff;
@@ -18,7 +18,9 @@
     --accent-soft: #eff6ff;
     --border: #f1f5f9;
     --border-strong: #e2e8f0;
+    --code-bg: #f4f4f5;
     --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body {
@@ -37,18 +39,14 @@
   }
   .slide.active { display: flex; }
 
-  /* Top label */
   .label {
     position: absolute; top: 6vh; left: 11vw;
     font-size: 0.68rem; font-weight: 500; letter-spacing: 0.18em;
     text-transform: uppercase; color: var(--muted);
     display: flex; align-items: center; gap: 0.7rem;
   }
-  .label::before {
-    content: ''; width: 1.25rem; height: 1px; background: var(--accent);
-  }
+  .label::before { content: ''; width: 1.25rem; height: 1px; background: var(--accent); }
 
-  /* Page meta */
   .page-num {
     position: absolute; bottom: 5vh; right: 11vw;
     font-size: 0.68rem; font-weight: 400; color: var(--faint);
@@ -60,7 +58,7 @@
     letter-spacing: 0.1em; text-transform: uppercase;
   }
 
-  /* COVER, slide 1 */
+  /* COVER */
   .cover-eyebrow {
     font-size: 0.72rem; font-weight: 500; letter-spacing: 0.2em;
     text-transform: uppercase; color: var(--accent);
@@ -72,7 +70,7 @@
     letter-spacing: -0.045em; color: var(--text);
     margin-bottom: 2.5rem;
   }
-  h1.cover-title .accent { color: var(--accent); font-weight: 700; }
+  h1.cover-title .accent { color: var(--accent); }
   .cover-sub {
     font-size: clamp(1.05rem, 1.5vw, 1.4rem); font-weight: 400;
     color: var(--muted); max-width: 50ch; line-height: 1.5;
@@ -85,7 +83,6 @@
   .cover-meta .who { font-weight: 600; display: block; }
   .cover-meta .when { color: var(--muted); }
 
-  /* Section titles */
   h2.title {
     font-weight: 600;
     font-size: clamp(2.75rem, 5vw, 4.5rem); line-height: 1.05;
@@ -94,442 +91,277 @@
   }
   h2.title .accent { color: var(--accent); font-weight: 700; }
 
-  /* Promise grid, slide 2 */
-  .promise {
-    display: grid; grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 3rem; margin-bottom: 4rem;
-  }
+  /* PROMISE */
+  .promise { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 4rem; }
   .promise-item { display: flex; flex-direction: column; gap: 0.5rem; }
   .promise-item .num {
     font-weight: 700; font-size: clamp(2rem, 3.5vw, 3rem);
     line-height: 1; letter-spacing: -0.04em; color: var(--accent);
-    margin-bottom: 0.75rem;
-    font-variant-numeric: tabular-nums;
+    margin-bottom: 0.75rem; font-variant-numeric: tabular-nums;
   }
-  .promise-item .lbl {
-    font-weight: 600; font-size: 0.95rem; color: var(--text);
-    letter-spacing: -0.005em;
-  }
-  .promise-item .desc {
-    font-weight: 400; font-size: 0.85rem; color: var(--muted);
-    line-height: 1.5;
-  }
-  .footer-note {
-    font-size: 0.95rem; font-weight: 400; color: var(--muted);
-    line-height: 1.55; max-width: 75ch;
-  }
+  .promise-item .lbl { font-weight: 600; font-size: 0.95rem; color: var(--text); }
+  .promise-item .desc { font-weight: 400; font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
+  .footer-note { font-size: 0.95rem; font-weight: 400; color: var(--muted); line-height: 1.55; max-width: 75ch; }
   .footer-note .accent { color: var(--text); font-weight: 500; }
 
-  /* Two Traps, slide 3 */
-  .traps {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;
-  }
+  /* TWO TRAPS */
+  .traps { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; }
   .trap { display: flex; flex-direction: column; gap: 1.25rem; }
-  .trap .tag {
-    font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em;
-    text-transform: uppercase; color: var(--accent);
-  }
-  .trap .name {
-    font-weight: 600; font-size: clamp(1.5rem, 2.2vw, 2rem);
-    color: var(--text); letter-spacing: -0.025em;
-  }
-  .trap .stat-line {
-    display: flex; align-items: baseline; gap: 1rem;
-    padding: 0.4rem 0;
-  }
-  .trap .stat-num {
-    font-weight: 700; font-size: clamp(1.6rem, 2.4vw, 2.2rem);
-    color: var(--text); letter-spacing: -0.03em; min-width: 4ch;
-    font-variant-numeric: tabular-nums;
-  }
-  .trap .stat-text {
-    font-weight: 400; font-size: 0.9rem; color: var(--muted);
-    line-height: 1.45;
-  }
-  .trap .quote {
-    margin-top: 1rem; padding-left: 1.25rem;
-    border-left: 2px solid var(--accent);
-    font-size: 0.95rem; font-style: italic; color: var(--text);
-    line-height: 1.5;
-  }
-  .trap .quote .who {
-    display: block; margin-top: 0.5rem;
-    font-style: normal; font-size: 0.75rem; font-weight: 500;
-    color: var(--muted); letter-spacing: 0.02em;
-  }
-  .traps-foot {
-    text-align: center; margin-top: 3.5rem;
-    font-size: clamp(1rem, 1.4vw, 1.25rem);
-    font-weight: 500; color: var(--text);
-    letter-spacing: -0.005em;
-  }
+  .trap .tag { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); }
+  .trap .name { font-weight: 600; font-size: clamp(1.5rem, 2.2vw, 2rem); color: var(--text); letter-spacing: -0.025em; }
+  .trap .stat-line { display: flex; align-items: baseline; gap: 1rem; padding: 0.4rem 0; }
+  .trap .stat-num { font-weight: 700; font-size: clamp(1.6rem, 2.4vw, 2.2rem); color: var(--text); letter-spacing: -0.03em; min-width: 4ch; font-variant-numeric: tabular-nums; }
+  .trap .stat-text { font-weight: 400; font-size: 0.9rem; color: var(--muted); line-height: 1.45; }
+  .trap .quote { margin-top: 1rem; padding-left: 1.25rem; border-left: 2px solid var(--accent); font-size: 0.95rem; font-style: italic; color: var(--text); line-height: 1.5; }
+  .trap .quote .who { display: block; margin-top: 0.5rem; font-style: normal; font-size: 0.75rem; font-weight: 500; color: var(--muted); letter-spacing: 0.02em; }
+  .traps-foot { text-align: center; margin-top: 3.5rem; font-size: clamp(1rem, 1.4vw, 1.25rem); font-weight: 500; color: var(--text); letter-spacing: -0.005em; }
 
-  /* Sources */
-  .sources {
-    margin-top: 2rem; padding-top: 1rem;
-    border-top: 1px solid var(--border);
-    font-size: 0.65rem; font-weight: 400; color: var(--faint);
-    line-height: 1.6; letter-spacing: 0.02em;
-  }
-  .sources strong {
-    font-weight: 600; color: var(--muted);
-    text-transform: uppercase; letter-spacing: 0.16em;
-    font-size: 0.6rem; margin-right: 0.6rem;
-  }
+  .sources { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border); font-size: 0.65rem; font-weight: 400; color: var(--faint); line-height: 1.6; letter-spacing: 0.02em; }
+  .sources strong { font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.6rem; margin-right: 0.6rem; }
 
-  /* Versions table, slide 4 */
+  /* VERSIONS */
   .versions { display: flex; flex-direction: column; }
-  .v-row {
-    display: grid; grid-template-columns: 4rem 1fr 9rem;
-    align-items: center; padding: 1.1rem 0;
-    border-bottom: 1px solid var(--border);
-  }
+  .v-row { display: grid; grid-template-columns: 4rem 1fr 9rem; align-items: center; padding: 1.1rem 0; border-bottom: 1px solid var(--border); }
   .v-row:first-child { border-top: 1px solid var(--border); }
-  .v-row .v {
-    font-weight: 600; font-size: 1.15rem; color: var(--faint);
-    letter-spacing: -0.01em; font-variant-numeric: tabular-nums;
-  }
-  .v-row .stack {
-    font-weight: 400; font-size: 1rem; color: var(--muted);
-  }
-  .v-row .status {
-    font-weight: 500; font-size: 0.75rem; color: var(--faint);
-    letter-spacing: 0.1em; text-transform: uppercase;
-    text-align: right;
-  }
+  .v-row .v { font-weight: 600; font-size: 1.15rem; color: var(--faint); letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
+  .v-row .stack { font-weight: 400; font-size: 1rem; color: var(--muted); }
+  .v-row .status { font-weight: 500; font-size: 0.75rem; color: var(--faint); letter-spacing: 0.1em; text-transform: uppercase; text-align: right; }
   .v-row.alive .v { color: var(--accent); font-weight: 700; }
   .v-row.alive .stack { color: var(--text); font-weight: 500; }
   .v-row.alive .status { color: var(--accent); font-weight: 600; }
-  .v-quote {
-    margin-top: 2.5rem;
-    font-size: clamp(1.05rem, 1.5vw, 1.3rem);
-    font-weight: 400; color: var(--muted);
-    line-height: 1.55; max-width: 75ch;
-  }
+  .v-quote { margin-top: 2.5rem; font-size: clamp(1.05rem, 1.5vw, 1.3rem); font-weight: 400; color: var(--muted); line-height: 1.55; max-width: 75ch; }
   .v-quote strong { color: var(--text); font-weight: 600; }
   .v-quote .accent { color: var(--accent); font-weight: 600; }
 
-  /* Diagnostic, slide 5 */
-  .diag-sub {
-    font-size: 0.95rem; font-weight: 500; color: var(--accent);
-    letter-spacing: 0.02em; margin-bottom: 3rem;
-    margin-top: -3.5rem;
-  }
+  /* DIAGNOSTIC */
+  .diag-sub { font-size: 0.95rem; font-weight: 500; color: var(--accent); letter-spacing: 0.02em; margin-bottom: 3rem; margin-top: -3.5rem; }
   .qs { display: flex; flex-direction: column; gap: 0.5rem; }
-  .q {
-    display: grid; grid-template-columns: 4rem 1fr;
-    gap: 2rem; align-items: baseline;
-    padding: 1.25rem 0; border-bottom: 1px solid var(--border);
-  }
-  .q .qn {
-    font-weight: 700; font-size: 2.25rem; line-height: 1;
-    color: var(--accent); letter-spacing: -0.04em;
-    font-variant-numeric: tabular-nums;
-  }
+  .q { display: grid; grid-template-columns: 4rem 1fr; gap: 2rem; align-items: baseline; padding: 1.25rem 0; border-bottom: 1px solid var(--border); }
+  .q .qn { font-weight: 700; font-size: 2.25rem; line-height: 1; color: var(--accent); letter-spacing: -0.04em; font-variant-numeric: tabular-nums; }
   .q .qbody { display: flex; flex-direction: column; gap: 0.5rem; }
-  .q .qt {
-    font-weight: 500; font-size: 1.1rem; color: var(--text);
-    line-height: 1.4; letter-spacing: -0.01em;
-  }
-  .q .qv {
-    font-weight: 400; font-size: 0.8rem; color: var(--muted);
-    letter-spacing: 0.02em;
-  }
+  .q .qt { font-weight: 500; font-size: 1.1rem; color: var(--text); line-height: 1.4; letter-spacing: -0.01em; }
+  .q .qv { font-weight: 400; font-size: 0.8rem; color: var(--muted); letter-spacing: 0.02em; }
   .q .qv strong { color: var(--accent); font-weight: 600; }
 
-  /* Hierarchy, slide 6 */
-  .hier-bigword {
-    font-weight: 700; font-size: clamp(2.75rem, 6vw, 5.25rem);
-    line-height: 0.95; letter-spacing: -0.045em;
-    margin-bottom: 4rem; text-align: center;
-  }
+  /* HIERARCHY */
+  .hier-bigword { font-weight: 700; font-size: clamp(2.75rem, 6vw, 5.25rem); line-height: 0.95; letter-spacing: -0.045em; margin-bottom: 4rem; text-align: center; }
   .hier-bigword .strong { color: var(--accent); font-weight: 700; }
   .hier-bigword .mid { color: var(--text); font-weight: 600; }
   .hier-bigword .weak { color: var(--faint); font-weight: 400; }
   .hier-bigword .gt { color: var(--faint); margin: 0 0.5rem; font-weight: 300; }
-  .hier-row {
-    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem;
-    margin-bottom: 4rem;
-  }
+  .hier-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; margin-bottom: 4rem; }
   .hier-col { padding-top: 1rem; border-top: 1px solid; }
   .hier-col.a { border-color: var(--accent); }
   .hier-col.b { border-color: var(--text); }
   .hier-col.c { border-color: var(--faint); }
-  .hier-col .lbl {
-    font-weight: 600; font-size: 0.95rem;
-    letter-spacing: 0.02em; margin-bottom: 0.4rem;
-  }
+  .hier-col .lbl { font-weight: 600; font-size: 0.95rem; letter-spacing: 0.02em; margin-bottom: 0.4rem; }
   .hier-col.a .lbl { color: var(--accent); }
   .hier-col.b .lbl { color: var(--text); }
   .hier-col.c .lbl { color: var(--faint); }
-  .hier-col .desc {
-    font-weight: 400; font-size: 0.85rem; color: var(--muted);
-    line-height: 1.45;
-  }
-  .hier-quote {
-    font-size: clamp(1.25rem, 1.9vw, 1.7rem); font-weight: 500;
-    line-height: 1.4; letter-spacing: -0.015em; max-width: 65ch;
-  }
+  .hier-col .desc { font-weight: 400; font-size: 0.85rem; color: var(--muted); line-height: 1.45; }
+  .hier-quote { font-size: clamp(1.25rem, 1.9vw, 1.7rem); font-weight: 500; line-height: 1.4; letter-spacing: -0.015em; max-width: 65ch; }
   .hier-quote .num { color: var(--accent); font-weight: 700; }
-  .hier-quote .small {
-    display: block; margin-top: 1rem;
-    font-size: 0.95rem; font-weight: 400; color: var(--muted);
-    letter-spacing: 0.005em; line-height: 1.55;
-  }
+  .hier-quote .small { display: block; margin-top: 1rem; font-size: 0.95rem; font-weight: 400; color: var(--muted); letter-spacing: 0.005em; line-height: 1.55; }
   .hier-quote .small strong { color: var(--text); font-weight: 500; }
   .hier-quote .small .accent { color: var(--accent); font-weight: 500; }
 
-  /* Demo title slides, 7 + 10 */
-  .demo {
-    display: grid; grid-template-columns: 0.55fr 1fr;
-    gap: 5rem; align-items: center;
-  }
-  .demo-num {
-    font-weight: 700; font-size: clamp(8rem, 14vw, 15rem);
-    line-height: 0.85; letter-spacing: -0.06em;
-    color: var(--accent);
-    font-variant-numeric: tabular-nums;
-  }
-  .demo-num .of {
-    display: block; font-size: 0.75rem; font-weight: 500;
-    color: var(--muted); margin-top: 0.75rem;
-    letter-spacing: 0.18em; text-transform: uppercase;
-  }
+  /* DEMO TITLE */
+  .demo { display: grid; grid-template-columns: 0.55fr 1fr; gap: 5rem; align-items: center; }
+  .demo-num { font-weight: 700; font-size: clamp(8rem, 14vw, 15rem); line-height: 0.85; letter-spacing: -0.06em; color: var(--accent); font-variant-numeric: tabular-nums; }
+  .demo-num .of { display: block; font-size: 0.75rem; font-weight: 500; color: var(--muted); margin-top: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; }
   .demo-body { display: flex; flex-direction: column; gap: 1.5rem; }
-  .demo-body h2 {
-    font-weight: 600; font-size: clamp(2.25rem, 4vw, 3.5rem);
-    line-height: 1.05; letter-spacing: -0.035em; color: var(--text);
-  }
+  .demo-body h2 { font-weight: 600; font-size: clamp(2.25rem, 4vw, 3.5rem); line-height: 1.05; letter-spacing: -0.035em; color: var(--text); }
   .demo-body h2 .accent { color: var(--accent); font-weight: 700; }
-  .demo-body .sub {
-    font-size: 1rem; font-weight: 400;
-    color: var(--muted); line-height: 1.5;
-  }
-  .demo-hacks {
-    display: flex; flex-direction: column; gap: 0.75rem;
-    margin-top: 0.75rem;
-  }
-  .demo-hack {
-    display: grid; grid-template-columns: 5rem 1fr;
-    gap: 1rem; align-items: baseline;
-    padding: 1.1rem 0; border-top: 1px solid var(--border);
-  }
-  .demo-hack .hk-num {
-    font-weight: 600; font-size: 0.7rem;
-    letter-spacing: 0.18em; text-transform: uppercase;
-    color: var(--accent);
-  }
+  .demo-body .sub { font-size: 1rem; font-weight: 400; color: var(--muted); line-height: 1.5; }
+  .demo-hacks { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 0.75rem; }
+  .demo-hack { display: grid; grid-template-columns: 5rem 1fr; gap: 1rem; align-items: baseline; padding: 1.1rem 0; border-top: 1px solid var(--border); }
+  .demo-hack .hk-num { font-weight: 600; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); }
   .demo-hack .hk-content { display: flex; flex-direction: column; gap: 0.3rem; }
-  .demo-hack .hk-name {
-    font-weight: 600; font-size: 1.1rem; color: var(--text);
-    letter-spacing: -0.01em;
-  }
-  .demo-hack .hk-desc {
-    font-weight: 400; font-size: 0.85rem; color: var(--muted);
-    line-height: 1.5;
-  }
-  .demo-note {
-    margin-top: 0.75rem; font-size: 0.8rem; font-weight: 400;
-    color: var(--faint); font-style: italic;
-  }
+  .demo-hack .hk-name { font-weight: 600; font-size: 1.1rem; color: var(--text); letter-spacing: -0.01em; }
+  .demo-hack .hk-desc { font-weight: 400; font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
+  .demo-note { margin-top: 0.75rem; font-size: 0.8rem; font-weight: 400; color: var(--faint); font-style: italic; }
 
-  /* Demo recap slides, 8 + 11 */
-  .recap-h {
-    font-size: 0.7rem; font-weight: 500; letter-spacing: 0.2em;
-    text-transform: uppercase; color: var(--accent);
-    margin-bottom: 1.5rem;
+  /* ARCHITECTURE diagram */
+  .arch-flow {
+    display: grid; grid-template-columns: 1fr 0.4rem 0.7fr 0.4rem 1fr;
+    align-items: center; gap: 1.5rem; margin: 1rem 0;
   }
-  .recap-title {
-    font-weight: 600; font-size: clamp(2rem, 3.5vw, 3rem);
-    line-height: 1.1; letter-spacing: -0.03em; color: var(--text);
-    margin-bottom: 4rem; max-width: 28ch;
+  .arch-col { display: flex; flex-direction: column; gap: 0.6rem; }
+  .arch-col-label {
+    font-size: 0.65rem; font-weight: 600; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 0.25rem;
   }
-  .recap-grid {
-    display: grid; grid-template-columns: 0.8fr 1fr; gap: 4rem;
-    margin-bottom: 3rem;
+  .arch-box {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-strong);
+    font-weight: 500; font-size: 0.9rem; color: var(--text);
+    text-align: center;
+    transition: all 0.2s;
   }
-  .recap-numbers { display: flex; flex-direction: column; gap: 1.5rem; }
-  .recap-num {
-    display: flex; flex-direction: column; gap: 0.25rem;
-    padding-bottom: 1.25rem; border-bottom: 1px solid var(--border);
+  .arch-arrow {
+    font-family: var(--mono); font-size: 1.5rem; font-weight: 400;
+    color: var(--accent); text-align: center; line-height: 1;
   }
-  .recap-num:last-child { border-bottom: none; }
-  .recap-num .n {
-    font-weight: 700; font-size: clamp(2.5rem, 3.5vw, 3.25rem);
-    line-height: 1; color: var(--accent); letter-spacing: -0.04em;
-    font-variant-numeric: tabular-nums;
-  }
-  .recap-num .n .unit {
-    font-size: 0.95rem; font-weight: 500;
-    color: var(--muted); margin-left: 0.4rem;
-  }
-  .recap-num .lbl {
-    font-weight: 500; font-size: 0.85rem; color: var(--text);
-    margin-top: 0.25rem; letter-spacing: 0.005em;
-  }
-  .recap-struggles { display: flex; flex-direction: column; gap: 1.25rem; }
-  .recap-struggles .s-tag {
-    font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em;
-    text-transform: uppercase; color: var(--muted);
-    margin-bottom: 0.25rem;
-  }
-  .recap-struggles .s-line {
-    display: grid; grid-template-columns: 1.25rem 1fr; gap: 0.75rem;
-    align-items: baseline; font-size: 0.95rem;
-    color: var(--text); line-height: 1.5;
-    padding: 0.5rem 0;
-  }
-  .recap-struggles .s-line::before {
-    content: '—'; color: var(--accent); font-weight: 600;
-  }
-  .recap-foot {
-    margin-top: 1.5rem; padding-top: 1.5rem;
-    border-top: 1px solid var(--border);
-    font-size: 0.95rem; font-weight: 400; color: var(--muted);
-    line-height: 1.55; font-style: italic;
-  }
-  .recap-foot .accent { color: var(--accent); font-style: normal; font-weight: 500; }
-
-  /* Bridge, slide 9 */
-  .bridge { gap: 1.75rem; }
-  .bridge h2 {
-    font-weight: 600; font-size: clamp(2.5rem, 4.5vw, 4rem);
-    line-height: 1.05; letter-spacing: -0.04em; color: var(--text);
-    max-width: 22ch;
-  }
-  .bridge h2 .accent { color: var(--accent); font-weight: 700; }
-  .bridge .sub {
-    font-size: clamp(1.1rem, 1.6vw, 1.4rem); font-weight: 400;
-    color: var(--muted); max-width: 40ch; line-height: 1.45;
-  }
-
-  /* Cost, slide 12 */
-  .cost-grid {
-    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3rem;
-  }
-  .cost {
-    border-top: 1px solid var(--faint); padding-top: 1.5rem;
-    display: flex; flex-direction: column; gap: 0.5rem;
-  }
-  .cost.win { border-color: var(--accent); border-top-width: 2px; }
-  .cost .price {
-    font-weight: 700; font-size: clamp(2.75rem, 4.5vw, 4rem);
-    line-height: 1; letter-spacing: -0.045em;
-    color: var(--faint);
-    font-variant-numeric: tabular-nums;
-  }
-  .cost.win .price { color: var(--accent); }
-  .cost .price .unit {
-    font-size: 0.85rem; font-weight: 500;
-    color: var(--muted); margin-left: 0.3rem;
-  }
-  .cost .name {
-    font-weight: 600; font-size: 1.1rem; color: var(--text);
-    letter-spacing: -0.01em;
-  }
-  .cost .desc {
-    font-weight: 400; font-size: 0.85rem; color: var(--muted);
-    line-height: 1.45;
-  }
-  .cost-foot {
-    margin-top: 4rem; text-align: center;
-    font-size: clamp(1.1rem, 1.6vw, 1.5rem);
-    font-weight: 500; color: var(--text); letter-spacing: -0.01em;
-  }
-  .cost-foot .accent { color: var(--accent); font-weight: 600; }
-
-  /* GitHub reveal, slide 13 */
-  .gh-grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem 4rem;
-    margin: 1.5rem 0 2rem 0;
-  }
-  .gh-row {
-    display: grid; grid-template-columns: 1fr 4rem;
-    padding: 0.75rem 0; border-bottom: 1px solid var(--border);
-    align-items: baseline;
-  }
-  .gh-row .gh-name {
-    font-weight: 400; font-size: 0.95rem; color: var(--text);
-  }
-  .gh-row .gh-pct {
-    font-weight: 600; font-size: 0.95rem;
-    color: var(--accent); text-align: right;
-    font-variant-numeric: tabular-nums;
-  }
-  .gh-url {
-    margin-top: 1.5rem; padding: 1.5rem 1.75rem;
+  .arch-bot {
+    padding: 1.75rem 1.25rem;
+    border: 2px solid var(--accent);
     background: var(--accent-soft);
-    border-left: 2px solid var(--accent);
     text-align: center;
   }
-  .gh-url .lbl {
-    font-size: 0.65rem; font-weight: 600;
-    letter-spacing: 0.18em; text-transform: uppercase;
-    color: var(--accent); margin-bottom: 0.6rem;
+  .arch-bot .bot-name {
+    font-weight: 700; font-size: 1.5rem; color: var(--accent);
+    letter-spacing: -0.02em; margin-bottom: 0.4rem;
   }
-  .gh-url .url {
-    font-weight: 600; font-size: clamp(1.1rem, 2vw, 1.75rem);
-    color: var(--text); letter-spacing: -0.02em;
+  .arch-bot .bot-sub {
+    font-size: 0.75rem; font-weight: 500;
+    color: var(--text); letter-spacing: 0.02em;
   }
-
-  /* Closing, slide 14 */
-  .close-h {
-    font-weight: 600; font-size: clamp(2.75rem, 5.5vw, 5rem);
-    line-height: 1.05; letter-spacing: -0.045em;
-    margin-bottom: 0.75rem;
+  .arch-bot .bot-note {
+    font-size: 0.7rem; font-weight: 400;
+    color: var(--muted); margin-top: 0.5rem; font-style: italic;
   }
-  .close-h .l1 { color: var(--text); display: block; }
-  .close-h .l2 { color: var(--accent); display: block; font-weight: 700; }
-  .close-cad {
-    font-size: clamp(1rem, 1.4vw, 1.25rem); font-weight: 400;
-    color: var(--muted); margin-bottom: 4rem;
-    letter-spacing: 0.005em;
+  .arch-output {
+    padding: 1rem 1.25rem;
+    border-left: 2px solid var(--accent);
+    background: var(--bg);
   }
-  .close-grid {
-    display: grid; grid-template-columns: repeat(4, 1fr); gap: 2.5rem;
-    margin-bottom: 3rem;
+  .arch-output .out-label {
+    font-size: 0.65rem; font-weight: 600; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem;
   }
-  .close-cell { padding-top: 1rem; border-top: 1px solid var(--border-strong); }
-  .close-cell .num {
-    font-weight: 700; font-size: clamp(2rem, 3vw, 2.75rem);
-    line-height: 1; color: var(--accent); letter-spacing: -0.035em;
-    margin-bottom: 0.5rem;
-    font-variant-numeric: tabular-nums;
-  }
-  .close-cell .lbl {
-    font-weight: 600; font-size: 0.9rem; color: var(--text);
+  .arch-output .out-name {
+    font-weight: 600; font-size: 1rem; color: var(--text);
     margin-bottom: 0.25rem;
   }
-  .close-cell .d {
-    font-weight: 400; font-size: 0.8rem; color: var(--muted);
+  .arch-output .out-desc {
+    font-size: 0.8rem; font-weight: 400; color: var(--muted);
     line-height: 1.45;
   }
-  .close-bottom {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
-    padding-top: 1.5rem; border-top: 1px solid var(--border);
-    margin-top: auto;
+  .arch-foot {
+    margin-top: 3rem; text-align: center;
+    font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+    font-weight: 500; color: var(--text); letter-spacing: -0.01em;
   }
-  .close-bottom .lbl {
-    font-size: 0.65rem; font-weight: 600;
-    letter-spacing: 0.18em; text-transform: uppercase;
-    color: var(--muted); margin-bottom: 0.4rem;
+  .arch-foot .accent { color: var(--accent); font-weight: 600; }
+
+  /* HACK demo slide */
+  .hack-demo { display: grid; grid-template-columns: 0.7fr 1fr; gap: 3rem; }
+  .hack-trigger { display: flex; flex-direction: column; gap: 1rem; }
+  .hack-output { display: flex; flex-direction: column; gap: 1rem; }
+  .hack-section-label {
+    font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--muted);
   }
-  .close-bottom .v {
-    font-weight: 600; font-size: 1.25rem;
-    color: var(--text); letter-spacing: -0.01em;
+  .hack-cmd {
+    font-family: var(--mono); font-size: 1.05rem; font-weight: 500;
+    background: var(--code-bg); color: var(--text);
+    padding: 1rem 1.25rem; border-radius: 4px;
+    border-left: 3px solid var(--accent);
   }
+  .hack-cmd .prompt { color: var(--accent); }
+  .hack-trigger .desc {
+    font-size: 0.85rem; font-weight: 400; color: var(--muted);
+    line-height: 1.5;
+  }
+  .hack-output-box {
+    padding: 1.25rem 1.5rem;
+    background: var(--accent-soft);
+    border-left: 2px solid var(--accent);
+    display: flex; flex-direction: column; gap: 0.5rem;
+  }
+  .hack-output-line {
+    font-size: 0.9rem; line-height: 1.45; color: var(--text);
+    display: grid; grid-template-columns: 1.5rem 1fr; gap: 0.5rem;
+  }
+  .hack-output-line::before {
+    content: '→'; color: var(--accent); font-weight: 600;
+  }
+  .hack-output-line strong { font-weight: 600; }
+  .hack-foot {
+    grid-column: 1 / -1; margin-top: 2rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    display: grid; grid-template-columns: auto 1fr; gap: 2.5rem;
+    align-items: baseline;
+  }
+  .hack-foot .hero-num {
+    font-weight: 700; font-size: clamp(2.5rem, 4vw, 3.5rem);
+    color: var(--accent); letter-spacing: -0.04em; line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+  .hack-foot .hero-num .unit {
+    font-size: 0.85rem; font-weight: 500; color: var(--muted);
+    margin-left: 0.4rem;
+  }
+  .hack-foot .hero-text {
+    font-size: 0.95rem; font-weight: 400; color: var(--text);
+    line-height: 1.5;
+  }
+  .hack-foot .hero-text strong { font-weight: 600; }
+  .hack-foot .hero-text .quiet { color: var(--muted); font-style: italic; display: block; margin-top: 0.4rem; font-size: 0.85rem; }
+
+  /* RECAP */
+  .recap-h { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; }
+  .recap-title { font-weight: 600; font-size: clamp(2rem, 3.5vw, 3rem); line-height: 1.1; letter-spacing: -0.03em; color: var(--text); margin-bottom: 4rem; max-width: 28ch; }
+  .recap-grid { display: grid; grid-template-columns: 0.8fr 1fr; gap: 4rem; margin-bottom: 3rem; }
+  .recap-numbers { display: flex; flex-direction: column; gap: 1.5rem; }
+  .recap-num { display: flex; flex-direction: column; gap: 0.25rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--border); }
+  .recap-num:last-child { border-bottom: none; }
+  .recap-num .n { font-weight: 700; font-size: clamp(2.5rem, 3.5vw, 3.25rem); line-height: 1; color: var(--accent); letter-spacing: -0.04em; font-variant-numeric: tabular-nums; }
+  .recap-num .n .unit { font-size: 0.95rem; font-weight: 500; color: var(--muted); margin-left: 0.4rem; }
+  .recap-num .lbl { font-weight: 500; font-size: 0.85rem; color: var(--text); margin-top: 0.25rem; letter-spacing: 0.005em; }
+  .recap-struggles { display: flex; flex-direction: column; gap: 1.25rem; }
+  .recap-struggles .s-tag { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.25rem; }
+  .recap-struggles .s-line { display: grid; grid-template-columns: 1.25rem 1fr; gap: 0.75rem; align-items: baseline; font-size: 0.95rem; color: var(--text); line-height: 1.5; padding: 0.5rem 0; }
+  .recap-struggles .s-line::before { content: '—'; color: var(--accent); font-weight: 600; }
+  .recap-foot { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.95rem; font-weight: 400; color: var(--muted); line-height: 1.55; font-style: italic; }
+  .recap-foot .accent { color: var(--accent); font-style: normal; font-weight: 500; }
+
+  /* BRIDGE */
+  .bridge { gap: 1.75rem; }
+  .bridge h2 { font-weight: 600; font-size: clamp(2.5rem, 4.5vw, 4rem); line-height: 1.05; letter-spacing: -0.04em; color: var(--text); max-width: 22ch; }
+  .bridge h2 .accent { color: var(--accent); font-weight: 700; }
+  .bridge .sub { font-size: clamp(1.1rem, 1.6vw, 1.4rem); font-weight: 400; color: var(--muted); max-width: 40ch; line-height: 1.45; }
+
+  /* COST */
+  .cost-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3rem; }
+  .cost { border-top: 1px solid var(--faint); padding-top: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; }
+  .cost.win { border-color: var(--accent); border-top-width: 2px; }
+  .cost .price { font-weight: 700; font-size: clamp(2.75rem, 4.5vw, 4rem); line-height: 1; letter-spacing: -0.045em; color: var(--faint); font-variant-numeric: tabular-nums; }
+  .cost.win .price { color: var(--accent); }
+  .cost .price .unit { font-size: 0.85rem; font-weight: 500; color: var(--muted); margin-left: 0.3rem; }
+  .cost .name { font-weight: 600; font-size: 1.1rem; color: var(--text); letter-spacing: -0.01em; }
+  .cost .desc { font-weight: 400; font-size: 0.85rem; color: var(--muted); line-height: 1.45; }
+  .cost-foot { margin-top: 4rem; text-align: center; font-size: clamp(1.1rem, 1.6vw, 1.5rem); font-weight: 500; color: var(--text); letter-spacing: -0.01em; }
+  .cost-foot .accent { color: var(--accent); font-weight: 600; }
+
+  /* GITHUB */
+  .gh-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem 4rem; margin: 1.5rem 0 2rem 0; }
+  .gh-row { display: grid; grid-template-columns: 1fr 4rem; padding: 0.75rem 0; border-bottom: 1px solid var(--border); align-items: baseline; }
+  .gh-row .gh-name { font-weight: 400; font-size: 0.95rem; color: var(--text); }
+  .gh-row .gh-pct { font-weight: 600; font-size: 0.95rem; color: var(--accent); text-align: right; font-variant-numeric: tabular-nums; }
+  .gh-url { margin-top: 1.5rem; padding: 1.5rem 1.75rem; background: var(--accent-soft); border-left: 2px solid var(--accent); text-align: center; }
+  .gh-url .lbl { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.6rem; }
+  .gh-url .url { font-weight: 600; font-size: clamp(1.1rem, 2vw, 1.75rem); color: var(--text); letter-spacing: -0.02em; }
+
+  /* CLOSING */
+  .close-h { font-weight: 600; font-size: clamp(2.75rem, 5.5vw, 5rem); line-height: 1.05; letter-spacing: -0.045em; margin-bottom: 0.75rem; }
+  .close-h .l1 { color: var(--text); display: block; }
+  .close-h .l2 { color: var(--accent); display: block; font-weight: 700; }
+  .close-cad { font-size: clamp(1rem, 1.4vw, 1.25rem); font-weight: 400; color: var(--muted); margin-bottom: 4rem; letter-spacing: 0.005em; }
+  .close-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2.5rem; margin-bottom: 3rem; }
+  .close-cell { padding-top: 1rem; border-top: 1px solid var(--border-strong); }
+  .close-cell .num { font-weight: 700; font-size: clamp(2rem, 3vw, 2.75rem); line-height: 1; color: var(--accent); letter-spacing: -0.035em; margin-bottom: 0.5rem; font-variant-numeric: tabular-nums; }
+  .close-cell .lbl { font-weight: 600; font-size: 0.9rem; color: var(--text); margin-bottom: 0.25rem; }
+  .close-cell .d { font-weight: 400; font-size: 0.8rem; color: var(--muted); line-height: 1.45; }
+  .close-bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); margin-top: auto; }
+  .close-bottom .lbl { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.4rem; }
+  .close-bottom .v { font-weight: 600; font-size: 1.25rem; color: var(--text); letter-spacing: -0.01em; }
   .close-bottom .v.acc { color: var(--accent); font-weight: 700; }
   .close-bottom .right { text-align: right; }
 
-  /* Nav hint */
-  .nav-hint {
-    position: fixed; bottom: 1rem; left: 50%; transform: translateX(-50%);
-    font-size: 0.65rem; color: var(--faint); opacity: 0.5;
-    pointer-events: none; letter-spacing: 0.06em;
-  }
+  .nav-hint { position: fixed; bottom: 1rem; left: 50%; transform: translateX(-50%); font-size: 0.65rem; color: var(--faint); opacity: 0.5; pointer-events: none; letter-spacing: 0.06em; }
   .nav-hint.hidden { opacity: 0; transition: opacity 0.5s; }
 
-  /* Print */
   @media print {
     @page { size: 13.3in 7.5in; margin: 0; }
     .deck { height: auto; }
@@ -548,7 +380,7 @@
     <p class="cover-sub">Two operators show the stacks they actually run. Tool overload, setup cost, what survived 18 months.</p>
     <p class="cover-meta"><span class="who">Christoph Erler &amp; Dom Raute</span><span class="when">May 11, 2026 &middot; 18:00 CEST</span></p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">01 / 14</div>
+    <div class="page-num">01 / 17</div>
   </section>
 
   <!-- 2, PROMISE -->
@@ -556,30 +388,14 @@
     <div class="label">60 Minutes</div>
     <h2 class="title">What you walk out with.</h2>
     <div class="promise">
-      <div class="promise-item">
-        <div class="num">01</div>
-        <div class="lbl">Clarity</div>
-        <div class="desc">Which of two stacks fits you, without burning weeks.</div>
-      </div>
-      <div class="promise-item">
-        <div class="num">3-5</div>
-        <div class="lbl">Hacks</div>
-        <div class="desc">Concrete, actionable. Wins and the struggles behind them.</div>
-      </div>
-      <div class="promise-item">
-        <div class="num">103</div>
-        <div class="lbl">Peers</div>
-        <div class="desc">Where other EO operators stand. Where you stand.</div>
-      </div>
-      <div class="promise-item">
-        <div class="num">&infin;</div>
-        <div class="lbl">Series</div>
-        <div class="desc">Seat in a continuous 30 to 90 day exchange.</div>
-      </div>
+      <div class="promise-item"><div class="num">01</div><div class="lbl">Clarity</div><div class="desc">Which of two stacks fits you, without burning weeks.</div></div>
+      <div class="promise-item"><div class="num">3-5</div><div class="lbl">Hacks</div><div class="desc">Concrete, actionable. Wins and the struggles behind them.</div></div>
+      <div class="promise-item"><div class="num">103</div><div class="lbl">Peers</div><div class="desc">Where other EO operators stand. Where you stand.</div></div>
+      <div class="promise-item"><div class="num">&infin;</div><div class="lbl">Series</div><div class="desc">Seat in a continuous 30 to 90 day exchange.</div></div>
     </div>
     <p class="footer-note">Not the goal: another tool overview, generic theory, polished vendor demos. <span class="accent">We show the struggles, not just the wins.</span></p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">02 / 14</div>
+    <div class="page-num">02 / 17</div>
   </section>
 
   <!-- 3, TWO TRAPS -->
@@ -605,7 +421,7 @@
     <p class="traps-foot">Most don't escape because they fight the wrong trap.</p>
     <p class="sources"><strong>Sources</strong>EO WhatsApp Poll (122 votes, March 2026) &middot; MIT Project NANDA, "The GenAI Divide", 2025 &middot; Andrew van Aswegen, EO Best Guy interview, April 2026</p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">03 / 14</div>
+    <div class="page-num">03 / 17</div>
   </section>
 
   <!-- 4, STACK VERSIONS -->
@@ -621,7 +437,7 @@
     </div>
     <p class="v-quote"><strong>Two stacks survived. Both share one principle.</strong> Stop maintaining tools. Start maintaining <span class="accent">memory</span>.</p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">04 / 14</div>
+    <div class="page-num">04 / 17</div>
   </section>
 
   <!-- 5, DIAGNOSTIC -->
@@ -630,30 +446,12 @@
     <h2 class="title">Are you in the <span class="accent">Setup Trap</span>?</h2>
     <p class="diag-sub">3 questions. Answer honestly.</p>
     <div class="qs">
-      <div class="q">
-        <div class="qn">01</div>
-        <div class="qbody">
-          <div class="qt">Do you maintain your setup more than you use it?</div>
-          <div class="qv">More than 20% of your time? <strong>Setup Trap.</strong></div>
-        </div>
-      </div>
-      <div class="q">
-        <div class="qn">02</div>
-        <div class="qbody">
-          <div class="qt">If your setup dies tomorrow, do you lose knowledge or just workflow?</div>
-          <div class="qv">Knowledge? <strong>Setup Trap.</strong></div>
-        </div>
-      </div>
-      <div class="q">
-        <div class="qn">03</div>
-        <div class="qbody">
-          <div class="qt">Could a new team member understand it in 2 sentences?</div>
-          <div class="qv">No? <strong>Setup Trap.</strong></div>
-        </div>
-      </div>
+      <div class="q"><div class="qn">01</div><div class="qbody"><div class="qt">Do you maintain your setup more than you use it?</div><div class="qv">More than 20% of your time? <strong>Setup Trap.</strong></div></div></div>
+      <div class="q"><div class="qn">02</div><div class="qbody"><div class="qt">If your setup dies tomorrow, do you lose knowledge or just workflow?</div><div class="qv">Knowledge? <strong>Setup Trap.</strong></div></div></div>
+      <div class="q"><div class="qn">03</div><div class="qbody"><div class="qt">Could a new team member understand it in 2 sentences?</div><div class="qv">No? <strong>Setup Trap.</strong></div></div></div>
     </div>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">05 / 14</div>
+    <div class="page-num">05 / 17</div>
   </section>
 
   <!-- 6, HIERARCHY -->
@@ -673,10 +471,10 @@
     </div>
     <p class="sources"><strong>Source</strong>McKinsey, "The state of AI: How organizations are rewiring to capture value", 2025</p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">06 / 14</div>
+    <div class="page-num">06 / 17</div>
   </section>
 
-  <!-- 7, DEMO 1 TITLE (Chris) -->
+  <!-- 7, DEMO 1 TITLE -->
   <section class="slide" id="s7">
     <div class="label">Demo 01 &middot; Chris &middot; 9 min</div>
     <div class="demo">
@@ -685,75 +483,145 @@
         <h2>AI inside your <span class="accent">existing stack</span>.</h2>
         <div class="sub">Two hacks. Same architecture. Different outputs.</div>
         <div class="demo-hacks">
-          <div class="demo-hack">
-            <div class="hk-num">Hack 01</div>
-            <div class="hk-content">
-              <div class="hk-name">Morning Briefing</div>
-              <div class="hk-desc">Inbox + Calendar + Drive + priorities, one page in 30 seconds.</div>
-            </div>
-          </div>
-          <div class="demo-hack">
-            <div class="hk-num">Hack 02</div>
-            <div class="hk-content">
-              <div class="hk-name">Meeting Prep</div>
-              <div class="hk-desc">LinkedIn + past mail + CRM + Drive context, on demand.</div>
-            </div>
-          </div>
+          <div class="demo-hack"><div class="hk-num">Hack 01</div><div class="hk-content"><div class="hk-name">Morning Briefing</div><div class="hk-desc">Inbox + Calendar + Drive + priorities, one page in 30 seconds.</div></div></div>
+          <div class="demo-hack"><div class="hk-num">Hack 02</div><div class="hk-content"><div class="hk-name">Meeting Prep</div><div class="hk-desc">LinkedIn + past mail + CRM + Drive context, on demand.</div></div></div>
         </div>
         <p class="demo-note">No new tools. Orchestration on top of Gmail, Calendar, Drive, Notion.</p>
       </div>
     </div>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">07 / 14</div>
+    <div class="page-num">07 / 17</div>
   </section>
 
-  <!-- 8, DEMO 1 RECAP (Chris) -->
+  <!-- 8, DEMO 1 ARCHITECTURE -->
   <section class="slide" id="s8">
+    <div class="label">Demo 01 &middot; How it works</div>
+    <h2 class="title" style="margin-bottom:2.5rem;">Same bot. Same sources.<br>The <span class="accent">prompt</span> is the lever.</h2>
+    <div class="arch-flow">
+      <div class="arch-col">
+        <div class="arch-col-label">4 Sources</div>
+        <div class="arch-box">Gmail</div>
+        <div class="arch-box">Calendar</div>
+        <div class="arch-box">Drive</div>
+        <div class="arch-box">Notion</div>
+      </div>
+      <div class="arch-arrow">&rarr;</div>
+      <div class="arch-bot">
+        <div class="bot-name">Bot</div>
+        <div class="bot-sub">Orchestrator</div>
+        <div class="bot-note">Telegram-native, voice + text</div>
+      </div>
+      <div class="arch-arrow">&rarr;</div>
+      <div class="arch-col">
+        <div class="arch-col-label">2 Outputs</div>
+        <div class="arch-output">
+          <div class="out-label">Hack 01</div>
+          <div class="out-name">Morning Briefing</div>
+          <div class="out-desc">One page. 30 seconds. Read on phone.</div>
+        </div>
+        <div class="arch-output">
+          <div class="out-label">Hack 02</div>
+          <div class="out-name">Meeting Prep</div>
+          <div class="out-desc">One page. On demand. 5 min before any call.</div>
+        </div>
+      </div>
+    </div>
+    <p class="arch-foot">Two outputs. Same architecture. Only the <span class="accent">prompt</span> changes.</p>
+    <div class="brand">EO Berlin</div>
+    <div class="page-num">08 / 17</div>
+  </section>
+
+  <!-- 9, DEMO 1 HACK 01 -->
+  <section class="slide" id="s9">
+    <div class="label">Demo 01 &middot; Hack 01</div>
+    <h2 class="title" style="margin-bottom:2.5rem;">Morning <span class="accent">Briefing</span>.</h2>
+    <div class="hack-demo">
+      <div class="hack-trigger">
+        <div class="hack-section-label">Trigger</div>
+        <div class="hack-cmd"><span class="prompt">&gt;</span> morning brief</div>
+        <div class="desc">Voice or text in Telegram. 7am every day, before I open Gmail.</div>
+      </div>
+      <div class="hack-output">
+        <div class="hack-section-label">Output, 30 seconds</div>
+        <div class="hack-output-box">
+          <div class="hack-output-line"><strong>Inbox top 3:</strong> Tim Fischer (Valtis follow-up), Diana, Raphi (RC ICP v2)</div>
+          <div class="hack-output-line"><strong>Calendar today:</strong> 11:00 Robert call, 14:00 focus block, 17:30 EO Exchange dry-run</div>
+          <div class="hack-output-line"><strong>Drive priorities:</strong> RC sales script v3 needs review</div>
+          <div class="hack-output-line"><strong>Open threads:</strong> Reisensburg expose, Stephan Big Decision</div>
+        </div>
+      </div>
+      <div class="hack-foot">
+        <div class="hero-num">5h<span class="unit">/ week</span></div>
+        <div class="hero-text"><strong>Tracked over 3 weeks, March 2026.</strong><span class="quiet">What it does not do: prioritize by emotional weight. Bot does not know it's your kid's birthday.</span></div>
+      </div>
+    </div>
+    <div class="brand">EO Berlin</div>
+    <div class="page-num">09 / 17</div>
+  </section>
+
+  <!-- 10, DEMO 1 HACK 02 -->
+  <section class="slide" id="s10">
+    <div class="label">Demo 01 &middot; Hack 02</div>
+    <h2 class="title" style="margin-bottom:2.5rem;">Meeting <span class="accent">Prep</span>.</h2>
+    <div class="hack-demo">
+      <div class="hack-trigger">
+        <div class="hack-section-label">Trigger</div>
+        <div class="hack-cmd"><span class="prompt">&gt;</span> prep meeting with Tom Debus</div>
+        <div class="desc">5 minutes before any call. Used to take 20.</div>
+      </div>
+      <div class="hack-output">
+        <div class="hack-section-label">Output, 30 seconds</div>
+        <div class="hack-output-box">
+          <div class="hack-output-line"><strong>LinkedIn last 3:</strong> Ferris.ai launch, AI agents for finance, Q1 wrap-up</div>
+          <div class="hack-output-line"><strong>Past mail thread:</strong> 4 emails over 6 months, last topic was MCP integration</div>
+          <div class="hack-output-line"><strong>Drive mentions:</strong> 2 docs reference Tom, including Sales Exchange notes</div>
+          <div class="hack-output-line"><strong>Suggested opener:</strong> follow up on his Ferris launch + ask about MCP rollout</div>
+        </div>
+      </div>
+      <div class="hack-foot">
+        <div class="hero-num">8h<span class="unit">/ week</span></div>
+        <div class="hero-text"><strong>More than morning brief, because more meetings than mornings.</strong><span class="quiet">Where it fails: meeting with someone new. No history, bot returns thin air. Then I do it manually like it's 2024.</span></div>
+      </div>
+    </div>
+    <div class="brand">EO Berlin</div>
+    <div class="page-num">10 / 17</div>
+  </section>
+
+  <!-- 11, DEMO 1 RECAP -->
+  <section class="slide" id="s11">
     <div class="label">Demo 01 &middot; What you just saw</div>
     <h2 class="recap-title">Workspace-native, in numbers.</h2>
     <div class="recap-grid">
       <div class="recap-numbers">
-        <div class="recap-num">
-          <div class="n">5h<span class="unit">/ week</span></div>
-          <div class="lbl">Morning Briefing</div>
-        </div>
-        <div class="recap-num">
-          <div class="n">8h<span class="unit">/ week</span></div>
-          <div class="lbl">Meeting Prep</div>
-        </div>
-        <div class="recap-num">
-          <div class="n">30s</div>
-          <div class="lbl">Bot response time, both hacks</div>
-        </div>
-        <div class="recap-num">
-          <div class="n">39</div>
-          <div class="lbl">Workspace tools orchestrated</div>
-        </div>
+        <div class="recap-num"><div class="n">13h<span class="unit">/ week</span></div><div class="lbl">Total saved across both hacks</div></div>
+        <div class="recap-num"><div class="n">30s</div><div class="lbl">Bot response time, both hacks</div></div>
+        <div class="recap-num"><div class="n">39</div><div class="lbl">Workspace tools orchestrated</div></div>
+        <div class="recap-num"><div class="n">2h<span class="unit">/ month</span></div><div class="lbl">Maintenance tax, patching</div></div>
       </div>
       <div class="recap-struggles">
         <div class="s-tag">Honest struggles</div>
-        <div class="s-line">Maintenance tax: every Workspace update can break the bot, ~2h per month patching</div>
-        <div class="s-line">No emotional weight: bot does not know your kid's birthday is today</div>
+        <div class="s-line">Maintenance tax is real, every Workspace update can break the bot</div>
+        <div class="s-line">No emotional weight, bot does not know your kid's birthday is today</div>
         <div class="s-line">No long-term memory across sessions, fresh context every time</div>
         <div class="s-line">New contacts return thin air, no history to pull from</div>
       </div>
     </div>
-    <p class="recap-foot">No long-term memory across sessions, fresh context every time. <span class="accent">That is where Dom takes over.</span></p>
+    <p class="recap-foot">No long-term memory across sessions. <span class="accent">That is where Dom takes over.</span></p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">08 / 14</div>
+    <div class="page-num">11 / 17</div>
   </section>
 
-  <!-- 9, BRIDGE -->
-  <section class="slide bridge" id="s9">
+  <!-- 12, BRIDGE -->
+  <section class="slide bridge" id="s12">
     <div class="label">Handoff</div>
     <h2>Dom takes you<br>one layer <span class="accent">deeper</span>.</h2>
     <p class="sub">From hack on top, to architecture beneath.</p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">09 / 14</div>
+    <div class="page-num">12 / 17</div>
   </section>
 
-  <!-- 10, DEMO 2 TITLE (Dom) -->
-  <section class="slide" id="s10">
+  <!-- 13, DEMO 2 TITLE -->
+  <section class="slide" id="s13">
     <div class="label">Demo 02 &middot; Dom &middot; 9 min</div>
     <div class="demo">
       <div class="demo-num">02<span class="of">of two</span></div>
@@ -761,50 +629,26 @@
         <h2>The agent that <span class="accent">remembers</span>.</h2>
         <div class="sub">Two hacks. 5-tier memory. Zero monthly cost.</div>
         <div class="demo-hacks">
-          <div class="demo-hack">
-            <div class="hk-num">Hack 01</div>
-            <div class="hk-content">
-              <div class="hk-name">5-Tier Memory</div>
-              <div class="hk-desc">System Prompt &gt; Bootstrap &gt; On-Demand &gt; Search Index &gt; Raw Archive.</div>
-            </div>
-          </div>
-          <div class="demo-hack">
-            <div class="hk-num">Hack 02</div>
-            <div class="hk-content">
-              <div class="hk-name">Rolodex</div>
-              <div class="hk-desc">107 person dossiers, communication style, last contact, open threads.</div>
-            </div>
-          </div>
+          <div class="demo-hack"><div class="hk-num">Hack 01</div><div class="hk-content"><div class="hk-name">5-Tier Memory</div><div class="hk-desc">System Prompt &gt; Bootstrap &gt; On-Demand &gt; Search Index &gt; Raw Archive.</div></div></div>
+          <div class="demo-hack"><div class="hk-num">Hack 02</div><div class="hk-content"><div class="hk-name">Rolodex</div><div class="hk-desc">107 person dossiers, communication style, last contact, open threads.</div></div></div>
         </div>
         <p class="demo-note">Local models. 1,183 indexed files. 2-5 sec queries. $0 API cost.</p>
       </div>
     </div>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">10 / 14</div>
+    <div class="page-num">13 / 17</div>
   </section>
 
-  <!-- 11, DEMO 2 RECAP (Dom) -->
-  <section class="slide" id="s11">
+  <!-- 14, DEMO 2 RECAP -->
+  <section class="slide" id="s14">
     <div class="label">Demo 02 &middot; What you just saw</div>
     <h2 class="recap-title">Local-first memory, in numbers.</h2>
     <div class="recap-grid">
       <div class="recap-numbers">
-        <div class="recap-num">
-          <div class="n">$0<span class="unit">/ month</span></div>
-          <div class="lbl">Memory layer total cost</div>
-        </div>
-        <div class="recap-num">
-          <div class="n">5,735</div>
-          <div class="lbl">Vectors indexed across 11 collections</div>
-        </div>
-        <div class="recap-num">
-          <div class="n">2-5s</div>
-          <div class="lbl">Local query time, no API call</div>
-        </div>
-        <div class="recap-num">
-          <div class="n">107</div>
-          <div class="lbl">Person dossiers in Rolodex</div>
-        </div>
+        <div class="recap-num"><div class="n">$0<span class="unit">/ month</span></div><div class="lbl">Memory layer total cost</div></div>
+        <div class="recap-num"><div class="n">5,735</div><div class="lbl">Vectors indexed across 11 collections</div></div>
+        <div class="recap-num"><div class="n">2-5s</div><div class="lbl">Local query time, no API call</div></div>
+        <div class="recap-num"><div class="n">107</div><div class="lbl">Person dossiers in Rolodex</div></div>
       </div>
       <div class="recap-struggles">
         <div class="s-tag">Honest struggles</div>
@@ -816,38 +660,26 @@
     </div>
     <p class="recap-foot">Architecture wins long-term. <span class="accent">Setup cost upfront, near-zero compounding cost after.</span></p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">11 / 14</div>
+    <div class="page-num">14 / 17</div>
   </section>
 
-  <!-- 12, COST -->
-  <section class="slide" id="s12">
+  <!-- 15, COST -->
+  <section class="slide" id="s15">
     <div class="label">Cost Reality</div>
     <h2 class="title">What you pay vs<br>what you get.</h2>
     <div class="cost-grid">
-      <div class="cost win">
-        <div class="price">$0<span class="unit">/mo</span></div>
-        <div class="name">Local-First</div>
-        <div class="desc">Self-hosted memory, local models, 2-5 sec queries.</div>
-      </div>
-      <div class="cost">
-        <div class="price">$500<span class="unit">/seat</span></div>
-        <div class="name">Glean Enterprise</div>
-        <div class="desc">Hosted enterprise search, vendor lock-in.</div>
-      </div>
-      <div class="cost">
-        <div class="price">$1.5K<span class="unit">/mo</span></div>
-        <div class="name">Enterprise Stack</div>
-        <div class="desc">Notion AI + Glean + ChatGPT Enterprise + others.</div>
-      </div>
+      <div class="cost win"><div class="price">$0<span class="unit">/mo</span></div><div class="name">Local-First</div><div class="desc">Self-hosted memory, local models, 2-5 sec queries.</div></div>
+      <div class="cost"><div class="price">$500<span class="unit">/seat</span></div><div class="name">Glean Enterprise</div><div class="desc">Hosted enterprise search, vendor lock-in.</div></div>
+      <div class="cost"><div class="price">$1.5K<span class="unit">/mo</span></div><div class="name">Enterprise Stack</div><div class="desc">Notion AI + Glean + ChatGPT Enterprise + others.</div></div>
     </div>
     <p class="cost-foot">The <span class="accent">architecture</span> beats the budget.</p>
     <p class="sources"><strong>Sources</strong>Glean Enterprise public pricing, 2026 &middot; Notion AI + Glean + ChatGPT Enterprise list pricing combined, 2026</p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">12 / 14</div>
+    <div class="page-num">15 / 17</div>
   </section>
 
-  <!-- 13, GITHUB REVEAL -->
-  <section class="slide" id="s13">
+  <!-- 16, GITHUB REVEAL -->
+  <section class="slide" id="s16">
     <div class="label">Live Tonight</div>
     <h2 class="title">11 solutions <span class="accent">shipping</span> today.</h2>
     <div class="gh-grid">
@@ -862,16 +694,13 @@
       <div class="gh-row"><div class="gh-name">Time / Learning</div><div class="gh-pct">6%</div></div>
       <div class="gh-row"><div class="gh-name">Security / GDPR DACH</div><div class="gh-pct">5%</div></div>
     </div>
-    <div class="gh-url">
-      <div class="lbl">MIT License &middot; fork and remix</div>
-      <div class="url">github.com/chris1928a/eo-ai-exchange</div>
-    </div>
+    <div class="gh-url"><div class="lbl">MIT License &middot; fork and remix</div><div class="url">github.com/chris1928a/eo-ai-exchange</div></div>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">13 / 14</div>
+    <div class="page-num">16 / 17</div>
   </section>
 
-  <!-- 14, CLOSING -->
-  <section class="slide" id="s14">
+  <!-- 17, CLOSING -->
+  <section class="slide" id="s17">
     <div class="label">This is Day 1</div>
     <div class="close-h">
       <span class="l1">You name the pain.</span>
@@ -879,39 +708,17 @@
     </div>
     <p class="close-cad">30 to 90 days. Then again.</p>
     <div class="close-grid">
-      <div class="close-cell">
-        <div class="num">10</div>
-        <div class="lbl">Pain Clusters</div>
-        <div class="d">from 103 registrations</div>
-      </div>
-      <div class="close-cell">
-        <div class="num">11</div>
-        <div class="lbl">Solutions</div>
-        <div class="d">live tonight on GitHub</div>
-      </div>
-      <div class="close-cell">
-        <div class="num">#2</div>
-        <div class="lbl">Event #2</div>
-        <div class="d">topic picked by your Slido vote</div>
-      </div>
-      <div class="close-cell">
-        <div class="num">&infin;</div>
-        <div class="lbl">Cadence</div>
-        <div class="d">market-reactive, not quarterly</div>
-      </div>
+      <div class="close-cell"><div class="num">10</div><div class="lbl">Pain Clusters</div><div class="d">from 103 registrations</div></div>
+      <div class="close-cell"><div class="num">11</div><div class="lbl">Solutions</div><div class="d">live tonight on GitHub</div></div>
+      <div class="close-cell"><div class="num">#2</div><div class="lbl">Event #2</div><div class="d">topic picked by your Slido vote</div></div>
+      <div class="close-cell"><div class="num">&infin;</div><div class="lbl">Cadence</div><div class="d">market-reactive, not quarterly</div></div>
     </div>
     <div class="close-bottom">
-      <div>
-        <div class="lbl">Slido open 24h</div>
-        <div class="v acc">#3261743</div>
-      </div>
-      <div class="right">
-        <div class="lbl">GitHub, live tonight</div>
-        <div class="v">chris1928a/eo-ai-exchange</div>
-      </div>
+      <div><div class="lbl">Slido open 24h</div><div class="v acc">#3261743</div></div>
+      <div class="right"><div class="lbl">GitHub, live tonight</div><div class="v">chris1928a/eo-ai-exchange</div></div>
     </div>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">14 / 14</div>
+    <div class="page-num">17 / 17</div>
   </section>
 
 </div>
