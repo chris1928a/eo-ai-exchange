@@ -28,13 +28,13 @@
   html, body { height: 100%; width: 100%; background: var(--bg); color: var(--text); font-family: var(--sans); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-feature-settings: 'ss01', 'cv11'; }
 
   .deck { width: 100vw; height: 100vh; overflow: hidden; position: relative; }
-  .slide { width: 100vw; height: 100vh; position: absolute; top: 0; left: 0; display: none; padding: 9vh 9vw; flex-direction: column; justify-content: center; background: var(--bg); }
+  .slide { width: 100vw; height: 100vh; position: absolute; top: 0; left: 0; display: none; padding: 8vh 8vw; flex-direction: column; justify-content: center; background: var(--bg); }
   .slide.active { display: flex; }
 
-  .label { position: absolute; top: 5vh; left: 9vw; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); display: flex; align-items: center; gap: 0.7rem; }
+  .label { position: absolute; top: 5vh; left: 8vw; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); display: flex; align-items: center; gap: 0.7rem; }
   .label::before { content: ''; width: 1.25rem; height: 1px; background: var(--accent); }
-  .page-num { position: absolute; bottom: 4vh; right: 9vw; font-size: 0.68rem; font-weight: 400; color: var(--faint); letter-spacing: 0.1em; font-variant-numeric: tabular-nums; }
-  .brand { position: absolute; bottom: 4vh; left: 9vw; font-size: 0.68rem; font-weight: 400; color: var(--faint); letter-spacing: 0.1em; text-transform: uppercase; }
+  .page-num { position: absolute; bottom: 4vh; right: 8vw; font-size: 0.68rem; font-weight: 400; color: var(--faint); letter-spacing: 0.1em; font-variant-numeric: tabular-nums; }
+  .brand { position: absolute; bottom: 4vh; left: 8vw; font-size: 0.68rem; font-weight: 400; color: var(--faint); letter-spacing: 0.1em; text-transform: uppercase; }
 
   .cover-eyebrow { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 2.5rem; }
   h1.cover-title { font-weight: 700; font-size: clamp(6rem, 14vw, 16rem); line-height: 0.88; letter-spacing: -0.05em; color: var(--text); margin-bottom: 2rem; }
@@ -44,13 +44,13 @@
   .cover-meta .who { font-weight: 600; display: block; }
   .cover-meta .when { color: var(--muted); }
 
-  h2.title { font-weight: 600; font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.02; letter-spacing: -0.04em; color: var(--text); margin-bottom: 3rem; max-width: 24ch; }
+  h2.title { font-weight: 600; font-size: clamp(2.25rem, 4.5vw, 3.75rem); line-height: 1.05; letter-spacing: -0.04em; color: var(--text); margin-bottom: 2.5rem; max-width: 26ch; }
   h2.title .accent { color: var(--accent); font-weight: 700; }
   h2.title small { font-weight: 400; font-size: 0.5em; color: var(--muted); display: block; letter-spacing: 0; line-height: 1.3; margin-top: 0.5rem; }
 
   /* Origin */
   .origin { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-  .origin-quote { font-size: clamp(1.5rem, 2.5vw, 2.25rem); font-weight: 500; line-height: 1.25; letter-spacing: -0.025em; color: var(--text); }
+  .origin-quote { font-size: clamp(1.4rem, 2.2vw, 2rem); font-weight: 500; line-height: 1.25; letter-spacing: -0.02em; color: var(--text); }
   .origin-quote .accent { color: var(--accent); font-weight: 700; }
   .origin-side { display: flex; flex-direction: column; gap: 1.25rem; padding-left: 2rem; border-left: 2px solid var(--accent); }
   .origin-side .l { font-size: 0.9rem; line-height: 1.5; color: var(--muted); }
@@ -59,13 +59,13 @@
   /* Stats */
   .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3rem; }
   .stat { display: flex; flex-direction: column; gap: 0.4rem; padding-top: 1rem; border-top: 2px solid var(--text); }
-  .stat .n { font-weight: 800; font-size: clamp(3rem, 5vw, 4.5rem); line-height: 1; color: var(--accent); letter-spacing: -0.05em; font-variant-numeric: tabular-nums; }
+  .stat .n { font-weight: 800; font-size: clamp(2.75rem, 4.5vw, 4rem); line-height: 1; color: var(--accent); letter-spacing: -0.05em; font-variant-numeric: tabular-nums; }
   .stat .n .unit { font-size: 0.85rem; font-weight: 500; color: var(--muted); margin-left: 0.4rem; }
   .stat .lbl { font-weight: 600; font-size: 0.95rem; color: var(--text); margin-top: 0.5rem; }
   .stat .desc { font-weight: 400; font-size: 0.75rem; color: var(--muted); line-height: 1.45; }
 
   /* Stack map */
-  .stack-map { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-bottom: 2rem; }
+  .stack-map { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
   .stack-col { display: flex; flex-direction: column; gap: 0.5rem; }
   .stack-col-h { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); padding-bottom: 0.5rem; border-bottom: 1px solid var(--border-strong); margin-bottom: 0.25rem; }
   .stack-item { display: flex; align-items: baseline; gap: 0.6rem; padding: 0.45rem 0.6rem; background: var(--bg); border: 1px solid var(--border-strong); font-size: 0.8rem; }
@@ -78,21 +78,29 @@
 
   /* Tool walkthrough */
   .tool { display: grid; grid-template-columns: 0.7fr 1fr; gap: 4rem; align-items: start; }
-  .tool-title { font-weight: 700; font-size: clamp(3.5rem, 6vw, 5rem); line-height: 0.95; letter-spacing: -0.05em; color: var(--accent); margin-bottom: 1rem; }
+  .tool-title { font-weight: 700; font-size: clamp(3rem, 5.5vw, 4.5rem); line-height: 0.95; letter-spacing: -0.05em; color: var(--accent); margin-bottom: 1rem; }
   .tool-sub { font-size: 1rem; font-weight: 500; color: var(--text); line-height: 1.5; margin-bottom: 1.5rem; max-width: 30ch; }
   .tool-tag { display: inline-block; padding: 0.25rem 0.75rem; background: var(--accent-soft); color: var(--accent); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.5rem; }
   .tool-quote { font-size: 0.85rem; font-weight: 400; color: var(--muted); line-height: 1.55; font-style: italic; padding-left: 1rem; border-left: 2px solid var(--border-strong); }
   .tool-cat { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem; margin-top: 0.5rem; }
   .tool-cat:first-child { margin-top: 0; }
-  .tool-row { display: grid; grid-template-columns: auto 1fr auto; gap: 1rem; padding: 0.65rem 0; border-bottom: 1px solid var(--border); align-items: baseline; font-size: 0.85rem; }
+  .tool-row { display: grid; grid-template-columns: auto 1fr auto; gap: 1rem; padding: 0.55rem 0; border-bottom: 1px solid var(--border); align-items: baseline; font-size: 0.82rem; }
   .tool-row:last-child { border-bottom: none; }
-  .tool-row .pth { font-family: var(--mono); font-size: 0.75rem; color: var(--accent); font-weight: 500; }
+  .tool-row .pth { font-family: var(--mono); font-size: 0.72rem; color: var(--accent); font-weight: 500; white-space: nowrap; }
   .tool-row .desc { color: var(--text); line-height: 1.45; }
   .tool-row .desc strong { font-weight: 600; }
-  .tool-row .meta { font-size: 0.7rem; color: var(--muted); font-style: italic; }
+  .tool-row .meta { font-size: 0.68rem; color: var(--muted); font-style: italic; white-space: nowrap; }
   .tool-foot { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
   .tool-foot strong { color: var(--text); font-weight: 600; }
   .tool-foot .accent { color: var(--accent); font-weight: 600; }
+
+  /* Skills overview grid */
+  .skills-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem 2rem; }
+  .skill-cluster { display: flex; flex-direction: column; gap: 0.5rem; padding-top: 0.75rem; border-top: 2px solid var(--accent); }
+  .skill-cluster .cl-name { font-family: var(--mono); font-size: 0.85rem; font-weight: 600; color: var(--accent); }
+  .skill-cluster .cl-purpose { font-size: 0.85rem; font-weight: 600; color: var(--text); letter-spacing: -0.005em; }
+  .skill-cluster .cl-subs { font-size: 0.75rem; color: var(--muted); line-height: 1.5; }
+  .skill-cluster .cl-subs strong { color: var(--text); font-weight: 500; }
 
   /* How I Build a Skill */
   .build-flow { display: flex; flex-direction: column; gap: 1rem; max-width: 95%; }
@@ -111,7 +119,7 @@
   .build-rule { margin-top: 1.5rem; padding: 1.25rem 1.5rem; background: var(--code-bg); border-left: 3px solid var(--accent); font-style: italic; font-size: 0.95rem; color: var(--text); line-height: 1.55; }
   .build-rule .accent { color: var(--accent); font-style: normal; font-weight: 700; }
 
-  /* Most Valuable Skill */
+  /* Skill deep dive */
   .skill-deep { display: grid; grid-template-columns: 0.6fr 1fr; gap: 4rem; }
   .skill-meta { display: flex; flex-direction: column; gap: 1rem; }
   .skill-name { font-family: var(--mono); font-size: clamp(1.5rem, 2.5vw, 2.25rem); font-weight: 600; color: var(--accent); line-height: 1.1; letter-spacing: -0.02em; }
@@ -124,9 +132,76 @@
   .skill-md .key { color: var(--accent); font-weight: 600; }
   .skill-md .comment { color: var(--muted); font-style: italic; }
 
+  /* Live trace */
+  .trace { display: grid; grid-template-columns: 1fr; gap: 0.75rem; max-width: 95%; }
+  .trace-step { display: grid; grid-template-columns: 8rem 1fr; gap: 1.5rem; padding: 0.85rem 1.25rem; border-left: 3px solid var(--border-strong); align-items: baseline; }
+  .trace-step.in { border-left-color: var(--muted); }
+  .trace-step.process { border-left-color: var(--text); }
+  .trace-step.out { border-left-color: var(--accent); background: var(--accent-soft); }
+  .trace-step .stage { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+  .trace-step.out .stage { color: var(--accent); }
+  .trace-step .content { font-family: var(--mono); font-size: 0.82rem; line-height: 1.5; color: var(--text); }
+  .trace-step .content strong { font-family: var(--sans); font-weight: 600; }
+  .trace-time { text-align: right; font-size: 0.75rem; color: var(--accent); font-weight: 700; margin-top: 1rem; font-variant-numeric: tabular-nums; }
+
+  /* ICP segments */
+  .icp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+  .icp { display: flex; flex-direction: column; gap: 1rem; padding: 1.5rem; border: 1px solid var(--border-strong); border-top: 4px solid var(--accent); }
+  .icp .seg-tag { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); }
+  .icp .seg-name { font-weight: 700; font-size: 1.5rem; color: var(--text); letter-spacing: -0.02em; }
+  .icp .seg-meta { display: grid; grid-template-columns: auto 1fr; gap: 0.5rem 1rem; font-size: 0.85rem; line-height: 1.45; }
+  .icp .seg-meta dt { color: var(--muted); font-weight: 500; }
+  .icp .seg-meta dd { color: var(--text); }
+
+  /* Service packages */
+  .svc-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; }
+  .svc { display: flex; flex-direction: column; gap: 0.6rem; padding: 1.5rem; border: 1px solid var(--border-strong); border-top: 4px solid var(--accent); }
+  .svc .svc-tag { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); }
+  .svc .svc-name { font-weight: 700; font-size: 1.25rem; color: var(--text); letter-spacing: -0.02em; }
+  .svc .svc-row { display: grid; grid-template-columns: 6rem 1fr; gap: 0.75rem; font-size: 0.8rem; line-height: 1.45; padding: 0.4rem 0; border-bottom: 1px solid var(--border); }
+  .svc .svc-row:last-child { border-bottom: none; }
+  .svc .svc-row .k { color: var(--muted); font-weight: 500; }
+  .svc .svc-row .v { color: var(--text); }
+  .svc .svc-row .v strong { font-weight: 600; }
+  .svc .svc-row .v.acc { color: var(--accent); font-weight: 700; }
+
+  /* Voice rules */
+  .voice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .voice-col { display: flex; flex-direction: column; gap: 0.6rem; }
+  .voice-col-h { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; padding-bottom: 0.5rem; border-bottom: 2px solid; margin-bottom: 0.25rem; }
+  .voice-col.no .voice-col-h { color: var(--warning); border-color: var(--warning); }
+  .voice-col.yes .voice-col-h { color: var(--success); border-color: var(--success); }
+  .voice-line { display: grid; grid-template-columns: 1.25rem 1fr; gap: 0.75rem; font-size: 0.88rem; line-height: 1.5; padding: 0.5rem 0; border-bottom: 1px solid var(--border); align-items: baseline; }
+  .voice-line:last-child { border-bottom: none; }
+  .voice-col.no .voice-line::before { content: '\00d7'; color: var(--warning); font-weight: 700; font-size: 1rem; }
+  .voice-col.yes .voice-line::before { content: '\2713'; color: var(--success); font-weight: 700; }
+  .voice-line .text strong { font-weight: 600; }
+
+  /* Memory categories */
+  .mem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem 2rem; }
+  .mem-cat { display: grid; grid-template-columns: auto 1fr auto; gap: 1rem; padding: 0.6rem 0; border-bottom: 1px solid var(--border); align-items: baseline; font-size: 0.85rem; }
+  .mem-cat .nm { font-weight: 600; color: var(--text); }
+  .mem-cat .desc { color: var(--muted); font-size: 0.78rem; line-height: 1.45; }
+  .mem-cat .ct { color: var(--accent); font-weight: 700; font-variant-numeric: tabular-nums; }
+
+  /* Cron list */
+  .cron-list { display: flex; flex-direction: column; gap: 0.5rem; max-width: 95%; }
+  .cron-row { display: grid; grid-template-columns: 8rem 1fr 8rem; gap: 1.5rem; padding: 0.85rem 1.25rem; border: 1px solid var(--border-strong); border-left: 3px solid var(--accent); background: var(--bg); align-items: baseline; }
+  .cron-row .when { font-family: var(--mono); font-size: 0.78rem; font-weight: 600; color: var(--accent); }
+  .cron-row .what { font-size: 0.95rem; font-weight: 500; color: var(--text); line-height: 1.45; }
+  .cron-row .what small { color: var(--muted); font-weight: 400; font-size: 0.78rem; display: block; margin-top: 0.2rem; }
+  .cron-row .impact { font-size: 0.72rem; color: var(--muted); font-style: italic; text-align: right; }
+
+  /* Anti-patterns */
+  .anti-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .anti { padding: 1.25rem; border: 1px solid var(--border-strong); border-left: 4px solid var(--warning); display: flex; flex-direction: column; gap: 0.5rem; }
+  .anti .x { font-size: 1.5rem; font-weight: 700; color: var(--warning); letter-spacing: -0.02em; line-height: 1; }
+  .anti .name { font-weight: 700; font-size: 1.05rem; color: var(--text); letter-spacing: -0.01em; }
+  .anti .why { font-weight: 400; font-size: 0.82rem; color: var(--muted); line-height: 1.45; }
+
   /* Comparison matrix */
   .matrix { width: 100%; border-collapse: collapse; }
-  .matrix th, .matrix td { padding: 0.7rem 1rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.85rem; }
+  .matrix th, .matrix td { padding: 0.65rem 1rem; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.82rem; }
   .matrix th { font-weight: 700; font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); border-bottom: 2px solid var(--text); padding-bottom: 0.85rem; }
   .matrix th.me { color: var(--accent); }
   .matrix .row-label { font-weight: 600; color: var(--text); white-space: nowrap; }
@@ -134,31 +209,51 @@
   .matrix .yes { color: var(--success); font-weight: 600; }
   .matrix .no { color: var(--faint); }
 
-  /* Garry Tan compare slide */
+  /* Garry Tan compare */
   .gt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
   .gt-col { display: flex; flex-direction: column; gap: 1rem; }
   .gt-col-h { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; padding-bottom: 0.5rem; border-bottom: 2px solid; }
   .gt-col.same .gt-col-h { color: var(--success); border-color: var(--success); }
   .gt-col.diff .gt-col-h { color: var(--accent); border-color: var(--accent); }
-  .gt-line { display: grid; grid-template-columns: 1.5rem 1fr; gap: 0.75rem; align-items: baseline; padding: 0.6rem 0; font-size: 0.88rem; line-height: 1.5; border-bottom: 1px solid var(--border); }
+  .gt-line { display: grid; grid-template-columns: 1.5rem 1fr; gap: 0.75rem; align-items: baseline; padding: 0.55rem 0; font-size: 0.85rem; line-height: 1.5; border-bottom: 1px solid var(--border); }
   .gt-line:last-child { border-bottom: none; }
   .gt-col.same .gt-line::before { content: '='; color: var(--success); font-weight: 700; font-family: var(--mono); }
   .gt-col.diff .gt-line::before { content: '+'; color: var(--accent); font-weight: 700; font-family: var(--mono); }
   .gt-line .text strong { font-weight: 600; }
-  .gt-foot { margin-top: 2rem; padding: 1.25rem 1.5rem; background: var(--accent-soft); border-left: 3px solid var(--accent); font-size: 0.95rem; color: var(--text); line-height: 1.55; }
+  .gt-foot { margin-top: 1.5rem; padding: 1.25rem 1.5rem; background: var(--accent-soft); border-left: 3px solid var(--accent); font-size: 0.92rem; color: var(--text); line-height: 1.55; }
   .gt-foot strong { font-weight: 700; }
   .gt-foot .accent { color: var(--accent); font-weight: 700; }
+
+  /* Sprint timeline */
+  .sprint { display: flex; flex-direction: column; gap: 0.75rem; max-width: 95%; }
+  .sprint-row { display: grid; grid-template-columns: 7rem 1fr; gap: 1.5rem; padding: 0.85rem 1.25rem; border-left: 3px solid var(--accent); align-items: baseline; }
+  .sprint-row.muted { border-left-color: var(--muted); }
+  .sprint-row .date { font-family: var(--mono); font-size: 0.85rem; font-weight: 600; color: var(--accent); }
+  .sprint-row.muted .date { color: var(--muted); }
+  .sprint-row .what { font-size: 0.92rem; line-height: 1.5; }
+  .sprint-row .what strong { font-weight: 700; color: var(--text); }
+  .sprint-row .what em { color: var(--muted); font-style: normal; }
 
   /* Quotes */
   .quote-block { display: flex; flex-direction: column; gap: 2rem; max-width: 80%; }
   .quote-mark { font-family: serif; font-size: 8rem; line-height: 0.5; color: var(--accent); font-weight: 700; height: 4rem; }
-  .quote-text { font-weight: 500; font-size: clamp(1.75rem, 3vw, 2.75rem); line-height: 1.25; letter-spacing: -0.025em; color: var(--text); }
+  .quote-text { font-weight: 500; font-size: clamp(1.5rem, 2.6vw, 2.5rem); line-height: 1.25; letter-spacing: -0.025em; color: var(--text); }
   .quote-text .accent { color: var(--accent); font-weight: 700; }
   .quote-attribution { display: flex; align-items: center; gap: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-strong); }
   .quote-attribution .who { font-weight: 600; font-size: 1rem; color: var(--text); }
   .quote-attribution .role { font-weight: 400; font-size: 0.9rem; color: var(--muted); }
 
-  .sources { margin-top: 1.25rem; padding-top: 0.75rem; border-top: 1px solid var(--border); font-size: 0.62rem; font-weight: 400; color: var(--faint); line-height: 1.6; letter-spacing: 0.02em; }
+  /* Memory file frontmatter example */
+  .memfile { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+  .memfile-code { font-family: var(--mono); font-size: 0.78rem; line-height: 1.65; background: var(--code-bg); border-left: 3px solid var(--accent); padding: 1.25rem 1.5rem; white-space: pre-wrap; color: var(--text); }
+  .memfile-code .key { color: var(--accent); font-weight: 600; }
+  .memfile-code .comment { color: var(--muted); font-style: italic; }
+  .memfile-side { display: flex; flex-direction: column; gap: 1rem; }
+  .memfile-side .l { font-size: 0.95rem; line-height: 1.55; color: var(--text); }
+  .memfile-side .l strong { font-weight: 600; }
+  .memfile-side .l .accent { color: var(--accent); font-weight: 600; }
+
+  .sources { margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--border); font-size: 0.62rem; font-weight: 400; color: var(--faint); line-height: 1.6; letter-spacing: 0.02em; }
   .sources strong { font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.58rem; margin-right: 0.5rem; }
 
   .nav-hint { position: fixed; bottom: 1rem; left: 50%; transform: translateX(-50%); font-size: 0.65rem; color: var(--faint); opacity: 0.5; pointer-events: none; letter-spacing: 0.06em; }
@@ -179,10 +274,10 @@
   <section class="slide active" id="s1">
     <div class="cover-eyebrow">Personal Talk &middot; Chris Erler</div>
     <h1 class="cover-title">My <span class="accent">Setup</span>.</h1>
-    <p class="cover-sub">How I run my entire business with GitHub, Notion, Drive, Skills, Memory and Claude Code. The actual paths, the actual stack, where it differs from Garry Tan.</p>
+    <p class="cover-sub">How I run my entire venture with GitHub, Notion, Drive, Skills, Memory and Claude Code. The actual paths, the actual stack, where it differs from Garry Tan.</p>
     <p class="cover-meta"><span class="who">Christoph Erler</span><span class="when">EO AI Exchange #1 &middot; May 11, 2026</span></p>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">01 / 12</div>
+    <div class="page-num">01 / 24</div>
   </section>
 
   <!-- 2, ORIGIN -->
@@ -199,42 +294,54 @@
       </div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">02 / 12</div>
+    <div class="page-num">02 / 24</div>
   </section>
 
   <!-- 3, NUMBERS -->
   <section class="slide" id="s3">
     <div class="label">The Math</div>
-    <h2 class="title">Where I run my business now.</h2>
+    <h2 class="title">Where I run my venture now.</h2>
     <div class="stats">
-      <div class="stat">
-        <div class="n">150<span class="unit">EUR / mo</span></div>
-        <div class="lbl">Total Stack</div>
-        <div class="desc">All-in: API, infra, voice, SaaS</div>
-      </div>
-      <div class="stat">
-        <div class="n">31</div>
-        <div class="lbl">MCP Tools</div>
-        <div class="desc">Across 8 categories, all production</div>
-      </div>
-      <div class="stat">
-        <div class="n">19</div>
-        <div class="lbl">Skills</div>
-        <div class="desc">Markdown procedures, judgment + parameters</div>
-      </div>
-      <div class="stat">
-        <div class="n">125</div>
-        <div class="lbl">Memory Files</div>
-        <div class="desc">1-page profiles, diarized from meetings</div>
-      </div>
+      <div class="stat"><div class="n">150<span class="unit">EUR / mo</span></div><div class="lbl">Total stack</div><div class="desc">All-in: API, infra, voice, SaaS</div></div>
+      <div class="stat"><div class="n">31</div><div class="lbl">MCP Tools</div><div class="desc">Across 8 categories, all production</div></div>
+      <div class="stat"><div class="n">19</div><div class="lbl">Skills</div><div class="desc">Markdown procedures, judgment + parameters</div></div>
+      <div class="stat"><div class="n">125</div><div class="lbl">Memory files</div><div class="desc">1-page profiles, diarized from meetings</div></div>
     </div>
-    <p class="origin-quote" style="margin-top:3rem;font-size:clamp(1.1rem,1.5vw,1.4rem);">Replaces what would otherwise cost <strong>8 to 12K EUR per month</strong> in three hires (content manager, virtual assistant, research analyst). Payback in <span class="accent">4 to 5 months</span> including 200h setup time.</p>
+    <p class="origin-quote" style="margin-top:3rem;font-size:clamp(1.05rem,1.4vw,1.3rem);">Replaces what would otherwise cost <strong>8 to 12K EUR per month</strong> in three hires (content manager, virtual assistant, research analyst). Payback in <span class="accent">4 to 5 months</span> including 200h setup time.</p>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">03 / 12</div>
+    <div class="page-num">03 / 24</div>
   </section>
 
-  <!-- 4, GITHUB -->
+  <!-- 4, STACK MAP -->
   <section class="slide" id="s4">
+    <div class="label">The Map</div>
+    <h2 class="title">One brain. <span class="accent">Six places it lives.</span></h2>
+    <div class="stack-map">
+      <div class="stack-col">
+        <div class="stack-col-h">Source of Truth</div>
+        <div class="stack-item primary"><span class="ic">git</span><span class="nm">GitHub</span><span class="role">code + skills</span></div>
+        <div class="stack-item primary"><span class="ic">md</span><span class="nm">Markdown files</span><span class="role">~200 files local</span></div>
+        <div class="stack-item primary"><span class="ic">db</span><span class="nm">Memory files</span><span class="role">125 1-pagers</span></div>
+      </div>
+      <div class="stack-col">
+        <div class="stack-col-h">Sharing + Originals</div>
+        <div class="stack-item"><span class="ic">nt</span><span class="nm">Notion</span><span class="role">shared knowledge</span></div>
+        <div class="stack-item"><span class="ic">gd</span><span class="nm">Google Drive</span><span class="role">PDFs + decks only</span></div>
+      </div>
+      <div class="stack-col">
+        <div class="stack-col-h">Harness + Interface</div>
+        <div class="stack-item primary"><span class="ic">cc</span><span class="nm">Claude Code</span><span class="role">main harness</span></div>
+        <div class="stack-item"><span class="ic">tg</span><span class="nm">Telegram bot</span><span class="role">mobile interface</span></div>
+        <div class="stack-item"><span class="ic">cd</span><span class="nm">Claude Desktop</span><span class="role">cowork mode</span></div>
+      </div>
+    </div>
+    <p class="stack-foot">Push intelligence <span class="accent">up</span> into Skills. Push execution <span class="accent">down</span> into deterministic tools. Keep the harness <span class="accent">thin</span>.</p>
+    <div class="brand">EO AI Exchange #1</div>
+    <div class="page-num">04 / 24</div>
+  </section>
+
+  <!-- 5, GITHUB -->
+  <section class="slide" id="s5">
     <div class="label">Source of Truth &middot; Tool 01</div>
     <div class="tool">
       <div>
@@ -249,18 +356,18 @@
         <div class="tool-row"><div class="pth">eo-ai-exchange</div><div class="desc"><strong>This event repo.</strong> Open-source solution pipeline. Slides, skills, speakers.</div><div class="meta">public, MIT</div></div>
         <div class="tool-row"><div class="pth">cape-town-ai-exchange</div><div class="desc"><strong>Cape Town hub.</strong> Skills, quickstarts, meetup notes for the local builders community.</div><div class="meta">public, MIT</div></div>
         <div class="tool-cat">Path structure</div>
-        <div class="tool-row"><div class="pth">/skills/</div><div class="desc">17 cluster skills (aviation, real-estate, content, paid-blueprint-engine, parkside-pricing)</div><div class="meta">~200 .md files</div></div>
+        <div class="tool-row"><div class="pth">/skills/</div><div class="desc">17 cluster skills (aviation, real-estate, content, paid-blueprint-engine, parkside-pricing, etc.)</div><div class="meta">~200 .md files</div></div>
         <div class="tool-row"><div class="pth">/memory/</div><div class="desc">125 diarized 1-page profiles, mirrored from ~/.claude/projects/</div><div class="meta">git-tracked</div></div>
         <div class="tool-row"><div class="pth">/innovation/</div><div class="desc">Architecture essays, pattern research, group chat insights</div><div class="meta">live notes</div></div>
         <p class="tool-foot"><strong>Anti-pattern I hit and removed:</strong> OneDrive + Git. Index corruption risk because OneDrive syncs .git/objects mid-write. Repo lives in <span class="accent">C:\Code, never in OneDrive</span>.</p>
       </div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">04 / 12</div>
+    <div class="page-num">05 / 24</div>
   </section>
 
-  <!-- 5, NOTION -->
-  <section class="slide" id="s5">
+  <!-- 6, NOTION -->
+  <section class="slide" id="s6">
     <div class="label">Sharing Layer &middot; Tool 02</div>
     <div class="tool">
       <div>
@@ -281,11 +388,11 @@
       </div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">05 / 12</div>
+    <div class="page-num">06 / 24</div>
   </section>
 
-  <!-- 6, DRIVE -->
-  <section class="slide" id="s6">
+  <!-- 7, DRIVE -->
+  <section class="slide" id="s7">
     <div class="label">Originals &middot; Tool 03</div>
     <div class="tool">
       <div>
@@ -305,11 +412,81 @@
       </div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">06 / 12</div>
+    <div class="page-num">07 / 24</div>
   </section>
 
-  <!-- 7, HOW I BUILD A SKILL -->
-  <section class="slide" id="s7">
+  <!-- 8, SKILLS OVERVIEW -->
+  <section class="slide" id="s8">
+    <div class="label">All 17 Clusters</div>
+    <h2 class="title">Skills inventory.</h2>
+    <div class="skills-grid">
+      <div class="skill-cluster">
+        <div class="cl-name">/aviation</div>
+        <div class="cl-purpose">SACAA pilot training</div>
+        <div class="cl-subs">Sub-skills: <strong>pre-flight</strong> (FPL filing), <strong>in-flight</strong> (NAV logs, radio), <strong>exam</strong> (PPL Air Law)</div>
+      </div>
+      <div class="skill-cluster">
+        <div class="cl-name">/real-estate</div>
+        <div class="cl-purpose">Property portfolio ops</div>
+        <div class="cl-subs">Sub-skills: <strong>investments</strong> (strategic), <strong>parkside-pricing</strong> (daily Holidu cron)</div>
+      </div>
+      <div class="skill-cluster">
+        <div class="cl-name">/content</div>
+        <div class="cl-purpose">Substack + LinkedIn engine</div>
+        <div class="cl-subs">Sub-skills: <strong>paid-blueprint-engine</strong>, <strong>weekly-content-engine</strong> with anti-AI voice clone</div>
+      </div>
+      <div class="skill-cluster">
+        <div class="cl-name">/people</div>
+        <div class="cl-purpose">Personal communication</div>
+        <div class="cl-subs">Sub-skills: <strong>personal-coach</strong>, <strong>investment-coach</strong>, <strong>wedding-assistant</strong>, <strong>travel-planner</strong></div>
+      </div>
+      <div class="skill-cluster">
+        <div class="cl-name">/utils</div>
+        <div class="cl-purpose">Cross-cutting helpers</div>
+        <div class="cl-subs">Sub-skills: <strong>whatsapp-chat-automation</strong>, voice-to-calendar, draft factory</div>
+      </div>
+      <div class="skill-cluster">
+        <div class="cl-name">/invoice-creator</div>
+        <div class="cl-purpose">Bookkeeping automation</div>
+        <div class="cl-subs"><strong>PDF gen</strong>, DATEV upload, monthly receipt sweep, missing invoice tracker</div>
+      </div>
+      <div class="skill-cluster">
+        <div class="cl-name">/ev-assistant</div>
+        <div class="cl-purpose">Founder OS</div>
+        <div class="cl-subs">Positioning, dual ICP, services, outreach, content calendar (most valuable, see slide 11)</div>
+      </div>
+      <div class="skill-cluster">
+        <div class="cl-name">/cold-case-podcast</div>
+        <div class="cl-purpose">Podcast production</div>
+        <div class="cl-subs">9-phase episode workflow, source verification, Dan-Carlin-style narrative</div>
+      </div>
+      <div class="skill-cluster">
+        <div class="cl-name">/mvp-tester</div>
+        <div class="cl-purpose">Product validation</div>
+        <div class="cl-subs">8-phase validation, market research, scoring, content for launch (replaces 38h work)</div>
+      </div>
+      <div class="skill-cluster">
+        <div class="cl-name">+30 plugins</div>
+        <div class="cl-purpose">Anthropic-shipped</div>
+        <div class="cl-subs"><strong>docx, pdf, pptx, xlsx</strong> document specialists, plus skill-creator, mcp-builder</div>
+      </div>
+      <div class="skill-cluster">
+        <div class="cl-name">/audit-skill</div>
+        <div class="cl-purpose">Drift detection</div>
+        <div class="cl-subs">Compares GitHub reference files vs live state, reports deviations</div>
+      </div>
+      <div class="skill-cluster">
+        <div class="cl-name">/sync-skill</div>
+        <div class="cl-purpose">Reference regeneration</div>
+        <div class="cl-subs">Regenerates references from Notion, commits with diff approval</div>
+      </div>
+    </div>
+    <div class="brand">EO AI Exchange #1</div>
+    <div class="page-num">08 / 24</div>
+  </section>
+
+  <!-- 9, HOW I BUILD A SKILL -->
+  <section class="slide" id="s9">
     <div class="label">The Discipline</div>
     <h2 class="title">How I build a skill.<small>The OpenClaw rule from Garry Tan, applied.</small></h2>
     <div class="build-flow">
@@ -317,7 +494,7 @@
         <div class="num">01</div>
         <div class="body">
           <div class="name">Manual first, 3 to 10 items.</div>
-          <div class="desc">Do the work yourself. Not for a week. <strong>For months. For years if needed.</strong> Identify what dimensions actually matter, not what feels obvious. Hit 3 to 10 real cases by hand.</div>
+          <div class="desc">Do the work yourself. Not for a week. <strong>For months. For years if needed.</strong> Identify what dimensions actually matter, not what feels obvious.</div>
         </div>
         <div class="when">Months to years</div>
       </div>
@@ -333,42 +510,30 @@
         <div class="num">03</div>
         <div class="body">
           <div class="name">Automate or cron.</div>
-          <div class="desc">Skill runs on demand via Claude Code. <strong>Recurring pattern? Put it on a cron.</strong> Parkside daily pricing, weekly content, monthly invoices. The system never forgets.</div>
+          <div class="desc">Skill runs on demand via Claude Code. <strong>Recurring pattern? Put it on a cron.</strong> Parkside daily pricing, weekly content, monthly invoices.</div>
         </div>
         <div class="when">A few hours</div>
       </div>
     </div>
     <p class="build-rule"><span class="accent">The test:</span> if I have to ask my system for the same thing twice, <strong>I failed</strong>. Not the model. Me, for not codifying it the first time.</p>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">07 / 12</div>
+    <div class="page-num">09 / 24</div>
   </section>
 
-  <!-- 8, MOST VALUABLE SKILL -->
-  <section class="slide" id="s8">
+  <!-- 10, MOST VALUABLE: ev-assistant -->
+  <section class="slide" id="s10">
     <div class="label">Skill Deep Dive</div>
-    <h2 class="title" style="margin-bottom:2rem;">My most valuable skill.<small>The founder OS that runs my venture: positioning, ICP, services, outreach, content.</small></h2>
+    <h2 class="title" style="margin-bottom:1.5rem;">My most valuable skill.<small>The founder OS that runs my venture: positioning, ICP, services, outreach, content.</small></h2>
     <div class="skill-deep">
       <div class="skill-meta">
         <div class="skill-tag">Founder OS, daily use</div>
         <div class="skill-name">/ev-assistant</div>
-        <div class="skill-purpose">Loads my positioning, dual ICP, services + pricing, voice rules. Generates LinkedIn drafts, outreach per ICP segment, sales conversation prep, content calendar, deal-stage-aware follow-ups.</div>
+        <div class="skill-purpose">Loads my positioning, dual ICP, services + pricing, voice rules. Generates LinkedIn drafts, outreach per ICP segment, sales prep, content calendar, deal-stage-aware follow-ups.</div>
         <div class="skill-stats">
-          <div class="skill-stat">
-            <div class="n">2</div>
-            <div class="lbl">ICP segments locked: PE Operating Partners + Series-A founders DACH</div>
-          </div>
-          <div class="skill-stat">
-            <div class="n">3</div>
-            <div class="lbl">Service packages: PE Diagnostic, PE Full Engagement, Founder 12-Month</div>
-          </div>
-          <div class="skill-stat">
-            <div class="n">~6h</div>
-            <div class="lbl">Saved per week on outreach + content drafts</div>
-          </div>
-          <div class="skill-stat">
-            <div class="n">0</div>
-            <div class="lbl">Customer data inside, only my own venture context</div>
-          </div>
+          <div class="skill-stat"><div class="n">2</div><div class="lbl">ICP segments locked</div></div>
+          <div class="skill-stat"><div class="n">3</div><div class="lbl">Service packages</div></div>
+          <div class="skill-stat"><div class="n">~6h</div><div class="lbl">Saved per week on outreach + content</div></div>
+          <div class="skill-stat"><div class="n">0</div><div class="lbl">Customer data, only my venture context</div></div>
         </div>
       </div>
       <div class="skill-md"><span class="comment"># SKILL.md, ev-assistant</span>
@@ -398,40 +563,327 @@ No AI-fluff (delve, leverage, harness, robust).
 German Umlaute mandatory. No em-dashes.
 Voice match exact. No vendor pitch tone.</div>
     </div>
-    <p class="sources"><strong>Why this skill:</strong>founder-relevant for everyone in this room &middot; covers positioning, ICP, sales, content in one place &middot; uses only my own venture context, no customer data &middot; pattern is portable to any solo founder running advisory or productized services</p>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">08 / 12</div>
+    <div class="page-num">10 / 24</div>
   </section>
 
-  <!-- 9, MEMORY + CLAUDE CODE -->
-  <section class="slide" id="s9">
-    <div class="label">Memory + Harness &middot; Tools 04 + 05</div>
-    <div class="tool">
-      <div>
-        <div class="tool-tag">Diarization Layer</div>
-        <div class="tool-title">Memory.</div>
-        <div class="tool-sub">125 1-page profiles. Each one a judgment distilled from dozens of documents. Loaded by skill on demand, never all at once.</div>
-        <div class="tool-quote">"Modell liest alles, schreibt 1-Page strukturiertes Profile. Kein SQL, kein RAG ersetzt das." — Garry Tan</div>
+  <!-- 11, ev-assistant LIVE TRACE -->
+  <section class="slide" id="s11">
+    <div class="label">Live Trace</div>
+    <h2 class="title">ev-assistant in action.<small>End-to-end outreach for a PE Operating Partner. ~30 seconds.</small></h2>
+    <div class="trace">
+      <div class="trace-step in">
+        <div class="stage">Trigger</div>
+        <div class="content"><strong>"Draft outreach to Sandra K, Tier-1 PE OperatingPartner, recently announced PortCo CEO appointment in B2B SaaS."</strong></div>
       </div>
-      <div>
-        <div class="tool-cat">Memory examples (own life only)</div>
-        <div class="tool-row"><div class="pth">parkside_s6_status_29apr_evening.md</div><div class="desc">Apartment ops snapshot, listing problem diagnosis</div><div class="meta">apr 29</div></div>
-        <div class="tool-row"><div class="pth">sacaa_flight_debrief_apr24.md</div><div class="desc">NAV training, 4 specific gaps to drill before solo</div><div class="meta">apr 24</div></div>
-        <div class="tool-row"><div class="pth">holderlin_property_details.md</div><div class="desc">Real estate buildings, financing structure, exit options</div><div class="meta">apr 21</div></div>
-        <div class="tool-row"><div class="pth">writing_rules.md</div><div class="desc">Voice rules, anti-AI words, deutsche Umlaute, no em-dashes</div><div class="meta">always loaded</div></div>
-        <div class="tool-cat">Harness layer</div>
-        <div class="tool-row"><div class="pth">CLAUDE.md</div><div class="desc"><strong>~50 lines.</strong> Pointers to skills + memory. Resolver, not container.</div><div class="meta">always loaded</div></div>
-        <div class="tool-row"><div class="pth">ripgrep + glob</div><div class="desc"><strong>&lt;50ms search.</strong> No vector-DB. Modern models reason directly.</div><div class="meta">agentic</div></div>
-        <div class="tool-row"><div class="pth">Telegram bot</div><div class="desc"><strong>AWS Lightsail Frankfurt.</strong> Voice + text triggers, calls Claude API with brain context.</div><div class="meta">mobile interface</div></div>
-        <p class="tool-foot"><strong>Live trigger I use daily:</strong> /coach me through latest decision with X loads the relevant memory and starts the conversation at last context, not at zero. <span class="accent">The system never forgets.</span></p>
+      <div class="trace-step process">
+        <div class="stage">Skill loads</div>
+        <div class="content">Memory: ev_positioning.md (operator-architect frame)<br>Memory: ev_icp_pe_segment.md (PE-specific tone, references)<br>Voice: writing_rules.md (anti-AI, no em-dashes, Sie-Form for PE)<br>Calendar: any prior touch with Sandra? (none found)<br>Gmail: any thread? (none found)</div>
+      </div>
+      <div class="trace-step process">
+        <div class="stage">Reasoning</div>
+        <div class="content">Cold prospect. PE OP. New PortCo CEO trigger = operational gap pain. Lead with diagnostic offer (5-day PE Diagnostic), not full engagement. Reference: <strong>operational alpha</strong>, founder-dependency score, exit-readiness index. Length: 3 sentences max.</div>
+      </div>
+      <div class="trace-step out">
+        <div class="stage">Output 1, LinkedIn DM</div>
+        <div class="content">Hi Sandra, gratuliere zur CEO-Berufung bei [PortCo]. Bei neuen CEO-Setups in B2B SaaS sehe ich oft 6 bis 9 Monate Reibung beim Operational-Hand-Off, was im Exit auf die Multiple drueckt. Falls fuer dich relevant, mein 5-Tage PE Diagnostic findet die 3 groessten Founder-Dependency-Punkte vor dem Closing. Verfuegbar fuer 30 Min naechste Woche?</div>
+      </div>
+      <div class="trace-step out">
+        <div class="stage">Output 2, Email follow-up</div>
+        <div class="content">Auf LinkedIn habe ich gerade kurz angefragt. Falls du den Kontext lieber per Email hast: ich arbeite mit PE OPs an der Bridge zwischen Founder-Dependency und Exit-Readiness. Drei Cases, alle DACH, alle mid-market. Anbei eine 1-Pager Summary von einem.</div>
+      </div>
+    </div>
+    <p class="sources"><strong>What is real here:</strong>the trigger, the skill load chain, the voice. <strong>What is illustrative:</strong>the prospect name and PortCo (anonymized for the talk).</p>
+    <div class="brand">EO AI Exchange #1</div>
+    <div class="page-num">11 / 24</div>
+  </section>
+
+  <!-- 12, ICP DEEP-DIVE -->
+  <section class="slide" id="s12">
+    <div class="label">The Dual ICP</div>
+    <h2 class="title">Two segments. <span class="accent">One bridge.</span></h2>
+    <div class="icp-grid">
+      <div class="icp">
+        <div class="seg-tag">Segment A</div>
+        <div class="seg-name">PE Operating Partners</div>
+        <dl class="seg-meta">
+          <dt>Geo</dt><dd>DACH mid-market, &gt;1B AUM</dd>
+          <dt>Trigger</dt><dd>New PortCo CEO, growth-stage operational gaps</dd>
+          <dt>Pain</dt><dd>Founder-dependency, slow operational due-diligence</dd>
+          <dt>Tone</dt><dd>Sie-Form, references, operational-alpha frame</dd>
+          <dt>Lead with</dt><dd>5-day PE Diagnostic (productized)</dd>
+          <dt>Outcome</dt><dd>Founder Dependency Score, Exit-Readiness Index</dd>
+        </dl>
+      </div>
+      <div class="icp">
+        <div class="seg-tag">Segment B</div>
+        <div class="seg-name">Series-A Founders, 1 to 10M ARR</div>
+        <dl class="seg-meta">
+          <dt>Geo</dt><dd>DACH primary, EU secondary</dd>
+          <dt>Trigger</dt><dd>Hiring spree, key person risk, Series-B prep</dd>
+          <dt>Pain</dt><dd>Burning out, no operating system, can't sleep</dd>
+          <dt>Tone</dt><dd>Du-Form, founder-to-founder, lived-experience</dd>
+          <dt>Lead with</dt><dd>Founder 12-Month engagement</dd>
+          <dt>Outcome</dt><dd>Operator-to-Architect transformation</dd>
+        </dl>
+      </div>
+    </div>
+    <p class="origin-quote" style="margin-top:1.5rem;font-size:clamp(0.95rem,1.3vw,1.15rem);"><span class="accent">The bridge is the same operating system.</span> What changes is who I sell it to: the PE OP buys it as risk-reduction, the founder buys it as personal liberation.</p>
+    <div class="brand">EO AI Exchange #1</div>
+    <div class="page-num">12 / 24</div>
+  </section>
+
+  <!-- 13, SERVICE ARCHITECTURE -->
+  <section class="slide" id="s13">
+    <div class="label">3 Service Packages</div>
+    <h2 class="title">From one-off diagnostic to 12-month engagement.</h2>
+    <div class="svc-grid">
+      <div class="svc">
+        <div class="svc-tag">Tier 01</div>
+        <div class="svc-name">PE Diagnostic</div>
+        <div class="svc-row"><div class="k">Audience</div><div class="v">PE OPs pre-investment</div></div>
+        <div class="svc-row"><div class="k">Duration</div><div class="v">5 days</div></div>
+        <div class="svc-row"><div class="k">Output</div><div class="v">Founder Dependency Score, 3 biggest gaps, 90-day fix plan</div></div>
+        <div class="svc-row"><div class="k">Pricing</div><div class="v acc">15K EUR fixed</div></div>
+        <div class="svc-row"><div class="k">Margin</div><div class="v">High, productized</div></div>
+      </div>
+      <div class="svc">
+        <div class="svc-tag">Tier 02</div>
+        <div class="svc-name">PE Full Engagement</div>
+        <div class="svc-row"><div class="k">Audience</div><div class="v">PE OPs post-investment</div></div>
+        <div class="svc-row"><div class="k">Duration</div><div class="v">12 weeks</div></div>
+        <div class="svc-row"><div class="k">Output</div><div class="v">CEO transition, operating system install, exit-readiness index</div></div>
+        <div class="svc-row"><div class="k">Pricing</div><div class="v acc">75K to 150K EUR</div></div>
+        <div class="svc-row"><div class="k">Margin</div><div class="v">Mid, success-fee optional</div></div>
+      </div>
+      <div class="svc">
+        <div class="svc-tag">Tier 03</div>
+        <div class="svc-name">Founder 12-Month</div>
+        <div class="svc-row"><div class="k">Audience</div><div class="v">Series-A founders</div></div>
+        <div class="svc-row"><div class="k">Duration</div><div class="v">12 months</div></div>
+        <div class="svc-row"><div class="k">Output</div><div class="v">Operator-to-Architect transformation, system install, advisory access</div></div>
+        <div class="svc-row"><div class="k">Pricing</div><div class="v acc">60K EUR + equity</div></div>
+        <div class="svc-row"><div class="k">Margin</div><div class="v">Equity-leveraged upside</div></div>
+      </div>
+    </div>
+    <p class="origin-quote" style="margin-top:1.5rem;font-size:clamp(0.95rem,1.3vw,1.15rem);">Same operating system, three buyer-pain frames. <strong>The skill knows which one to load</strong> based on prospect signal.</p>
+    <div class="brand">EO AI Exchange #1</div>
+    <div class="page-num">13 / 24</div>
+  </section>
+
+  <!-- 14, VOICE RULES -->
+  <section class="slide" id="s14">
+    <div class="label">Anti-AI Voice Clone</div>
+    <h2 class="title">Voice rules.<small>The non-negotiables loaded into every output the skill generates.</small></h2>
+    <div class="voice-grid">
+      <div class="voice-col no">
+        <div class="voice-col-h">Banned</div>
+        <div class="voice-line"><div class="text"><strong>AI fluff:</strong> delve, leverage, unlock, harness, synergy, robust, seamless, ensure, foster, empower</div></div>
+        <div class="voice-line"><div class="text"><strong>Em-dashes</strong> (—) and en-dashes (–). Use commas or two short sentences.</div></div>
+        <div class="voice-line"><div class="text"><strong>Enthusiasm filler:</strong> "Großartige Frage!", "Absolut!", "Klar!", "in der Tat", "zweifellos"</div></div>
+        <div class="voice-line"><div class="text"><strong>Mega-paragraphs.</strong> Cap at 3 sentences in DM, 5 in email.</div></div>
+        <div class="voice-line"><div class="text"><strong>Vendor pitch tone.</strong> No "transform", "elevate", "next-level", "game-changing".</div></div>
+        <div class="voice-line"><div class="text"><strong>Repeating user input</strong> as opener. No "Great question, here is what I think...".</div></div>
+      </div>
+      <div class="voice-col yes">
+        <div class="voice-col-h">Required</div>
+        <div class="voice-line"><div class="text"><strong>German Umlaute</strong> (ä ö ü ß) always written, never ae oe ue ss as substitute</div></div>
+        <div class="voice-line"><div class="text"><strong>Direct, terse, natural.</strong> Shorter is better. Punctuation like a human.</div></div>
+        <div class="voice-line"><div class="text"><strong>Match the segment.</strong> PE OP gets Sie-Form + references. Founder gets Du-Form + lived-experience.</div></div>
+        <div class="voice-line"><div class="text"><strong>WhatsApp drafts:</strong> zero asterisks, plain text, lowercase first letter ok.</div></div>
+        <div class="voice-line"><div class="text"><strong>One concrete number</strong> per outreach if possible (50 percent valuation comp, 6 months operational gap, etc.)</div></div>
+        <div class="voice-line"><div class="text"><strong>Always sign with first name only</strong> in DMs. Full sig in formal emails.</div></div>
+      </div>
+    </div>
+    <p class="sources"><strong>Built up over 30 days:</strong>~60 banned words now, started at 20. The skill audits its own drafts and self-corrects before final output.</p>
+    <div class="brand">EO AI Exchange #1</div>
+    <div class="page-num">14 / 24</div>
+  </section>
+
+  <!-- 15, MEMORY OVERVIEW -->
+  <section class="slide" id="s15">
+    <div class="label">Memory Layer &middot; Tool 04</div>
+    <h2 class="title">125 files. <span class="accent">Loaded on demand, never all at once.</span></h2>
+    <div class="mem-grid">
+      <div class="mem-cat"><div class="nm">Schreibregeln</div><div class="desc">Voice rules, Anti-AI words, Umlaute mandate, no em-dashes, no asterisks WhatsApp</div><div class="ct">12</div></div>
+      <div class="mem-cat"><div class="nm">Brain Architecture</div><div class="desc">Garry Tan, Karpathy patterns, v3.5 audit + migration, source map</div><div class="ct">5</div></div>
+      <div class="mem-cat"><div class="nm">Real Estate</div><div class="desc">7 properties, Holdings, MASTERFILE, Parkside Holidu pricing history index</div><div class="ct">15</div></div>
+      <div class="mem-cat"><div class="nm">Aviation</div><div class="desc">SACAA training (54 exam memos consolidated), NAV log format, FPL filing</div><div class="ct">10</div></div>
+      <div class="mem-cat"><div class="nm">Erler Ventures</div><div class="desc">Positioning, dual ICP, services, pricing, content calendar, weekly engine</div><div class="ct">8</div></div>
+      <div class="mem-cat"><div class="nm">Personal & Family</div><div class="desc">Wedding (Cin Cin, vendors), travel, life ops, ELI personality test</div><div class="ct">8</div></div>
+      <div class="mem-cat"><div class="nm">Content & Sales</div><div class="desc">Substack drafts, Cold Case podcast, B2B Sales Exchange notes, GitHub repos disambig</div><div class="ct">10</div></div>
+      <div class="mem-cat"><div class="nm">Diverses</div><div class="desc">Calendly link, Generalkonsulat Kapstadt, ad-hoc reference notes</div><div class="ct">7</div></div>
+    </div>
+    <p class="origin-quote" style="margin-top:1rem;font-size:clamp(0.95rem,1.3vw,1.15rem);">Each file is a 1-page judgment, distilled from dozens of documents. <strong>Loaded by skill on demand, never all at once.</strong> The MEMORY.md index file is 60 lines, points at relevant memory by topic.</p>
+    <div class="brand">EO AI Exchange #1</div>
+    <div class="page-num">15 / 24</div>
+  </section>
+
+  <!-- 16, MEMORY FILE EXAMPLE -->
+  <section class="slide" id="s16">
+    <div class="label">Memory File Anatomy</div>
+    <h2 class="title">A memory file is <span class="accent">structured Markdown</span>.</h2>
+    <div class="memfile">
+      <div class="memfile-code"><span class="comment">---</span>
+<span class="key">name:</span> stephan_big_decision_apr26
+<span class="key">description:</span> Big Decision Framework for Stephan
+  exit decision, Hybrid Pfad C 8-Wo Sales-Sprint
+<span class="key">type:</span> reference
+<span class="key">originSessionId:</span> 8b99bcca-...
+<span class="comment">---</span>
+
+Stephan Förtsch (EO Cape Town buddy) seit 26.04
+Vater Christopher will raus, Bewertung 320-535k.
+
+<span class="comment">## Why</span>
+Stephan ueberlegt Pfade. Gefragt nach Empfehlung.
+
+<span class="comment">## How to apply</span>
+- Pfad A (sofort verkaufen): liquide schnell,
+  niedrige Bewertung, Risiko Schwarzwald
+- Pfad B (warten): unklare Variabel, 12+ Monate
+- Pfad C (8-Wo Sales-Sprint Hybrid): Liquiditaet
+  + Optionalitaet, klare Stop-Loss-Regel
+- Empfehlung: C wenn Vater einverstanden
+
+<span class="comment">## Anchor</span>
+- Quarterly Review Stephan vor Q3</div>
+      <div class="memfile-side">
+        <div class="l"><strong>Frontmatter:</strong> what it is, when to load it, type (reference / project / feedback). Skills can find by type.</div>
+        <div class="l"><strong>Why section:</strong> the trigger context. Why I built this memory in the first place.</div>
+        <div class="l"><strong>How to apply:</strong> the actionable distillation. <span class="accent">This is the diarization.</span> Not the raw conversation, not the meeting notes, the judgment.</div>
+        <div class="l"><strong>Anchor:</strong> when to revisit. Auto-pruned if stale.</div>
+        <div class="l"><strong>Live trigger:</strong> /coach me through Stephan loads this file, system starts at last context, not at zero.</div>
       </div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">09 / 12</div>
+    <div class="page-num">16 / 24</div>
   </section>
 
-  <!-- 10, COMPARISON MATRIX -->
-  <section class="slide" id="s10">
+  <!-- 17, CLAUDE CODE HARNESS -->
+  <section class="slide" id="s17">
+    <div class="label">Harness &middot; Tool 05</div>
+    <div class="tool">
+      <div>
+        <div class="tool-tag">Thin Harness</div>
+        <div class="tool-title">Claude Code.</div>
+        <div class="tool-sub">The harness that runs the model in a loop. Reads files, manages context, enforces safety. ~50 line CLAUDE.md, not 20.000.</div>
+        <div class="tool-quote">"My CLAUDE.md was 20.000 lines. The model's attention degraded. The fix was 200 lines, just pointers." — Garry Tan</div>
+      </div>
+      <div>
+        <div class="tool-cat">My harness layer</div>
+        <div class="tool-row"><div class="pth">CLAUDE.md</div><div class="desc"><strong>~50 lines.</strong> Voice rules, anti-patterns, where to find what. Pointers, not content.</div><div class="meta">always loaded</div></div>
+        <div class="tool-row"><div class="pth">ripgrep + glob</div><div class="desc"><strong>Agentic search.</strong> No vector-DB. Modern models reason over structured text directly.</div><div class="meta">&lt;50ms</div></div>
+        <div class="tool-row"><div class="pth">Sub-Agents</div><div class="desc"><strong>Explore, Plan, general-purpose.</strong> Parallel agents for research and multi-step tasks.</div><div class="meta">on-demand</div></div>
+        <div class="tool-row"><div class="pth">Hooks</div><div class="desc"><strong>Sparingly.</strong> PostToolUse on writes, settings updates. Deterministic enforcement only.</div><div class="meta">deterministic</div></div>
+        <div class="tool-row"><div class="pth">MCP servers</div><div class="desc"><strong>15+ adapters.</strong> Notion, Drive, Gmail, Calendar, Computer-Use, Chrome, Telegram. All optional, loaded per session.</div><div class="meta">plug-and-play</div></div>
+        <p class="tool-foot"><strong>What the harness does:</strong> Loop, files, context, safety. Four things only. <span class="accent">Push intelligence up into Skills, push execution down into MCP and Bash, keep the harness thin.</span></p>
+      </div>
+    </div>
+    <div class="brand">EO AI Exchange #1</div>
+    <div class="page-num">17 / 24</div>
+  </section>
+
+  <!-- 18, TELEGRAM INTERFACE -->
+  <section class="slide" id="s18">
+    <div class="label">Mobile Interface &middot; Tool 06</div>
+    <div class="tool">
+      <div>
+        <div class="tool-tag">From Anywhere</div>
+        <div class="tool-title">Telegram.</div>
+        <div class="tool-sub">My brain on my phone. Voice + text triggers, anywhere. Calls back to Claude API with full brain context loaded.</div>
+        <div class="tool-quote">"I read this on my phone in bed before I move. By the time I am at the desk, I know what today is about."</div>
+      </div>
+      <div>
+        <div class="tool-cat">Setup</div>
+        <div class="tool-row"><div class="pth">Server</div><div class="desc"><strong>AWS Lightsail Frankfurt.</strong> Sovereign EU stack, GDPR-aware, 20 EUR/month.</div><div class="meta">3.71.254.207</div></div>
+        <div class="tool-row"><div class="pth">Bot</div><div class="desc">39 tools registered. HMAC webhook verification, prompt injection guards (XML tags), TwiML escaping.</div><div class="meta">production</div></div>
+        <div class="tool-row"><div class="pth">Memory access</div><div class="desc">Skills + Memory loaded via Git pull from GitHub mirror, hourly sync.</div><div class="meta">git-based</div></div>
+        <div class="tool-cat">My daily triggers</div>
+        <div class="tool-row"><div class="pth">morning brief</div><div class="desc">Inbox + Calendar + Drive priorities, 1 page in 30 seconds. 7am every day.</div><div class="meta">5h saved/wk</div></div>
+        <div class="tool-row"><div class="pth">prep meeting with X</div><div class="desc">LinkedIn last 3 + past mail + Drive + opener suggestion. 5 min before any call.</div><div class="meta">8h saved/wk</div></div>
+        <div class="tool-row"><div class="pth">draft outreach to Y</div><div class="desc">ev-assistant skill, ICP-segment-aware, voice-rule-compliant. LinkedIn + Email pair.</div><div class="meta">~6h saved/wk</div></div>
+        <div class="tool-row"><div class="pth">log this call</div><div class="desc">Voice memo to memory file, structured by skill, indexed by topic + person.</div><div class="meta">diarization</div></div>
+        <p class="tool-foot"><strong>The interface:</strong> Telegram is where I talk to my brain when I am not at the desk. <span class="accent">Voice in, structured output out.</span></p>
+      </div>
+    </div>
+    <div class="brand">EO AI Exchange #1</div>
+    <div class="page-num">18 / 24</div>
+  </section>
+
+  <!-- 19, CRON WORKFLOWS -->
+  <section class="slide" id="s19">
+    <div class="label">What Runs Without Me</div>
+    <h2 class="title">Cron workflows.<small>If I have to start it twice, it goes on a cron.</small></h2>
+    <div class="cron-list">
+      <div class="cron-row">
+        <div class="when">Daily 06:00</div>
+        <div class="what"><strong>Parkside daily pricing.</strong> 6 studios, Holidu GraphQL update, 12+ pattern memory consolidated.<small>Reads bookings, competitor prices, calendar, cluster. Writes optimal price + Notion log.</small></div>
+        <div class="impact">Real revenue<br>~1h/day saved</div>
+      </div>
+      <div class="cron-row">
+        <div class="when">Hourly</div>
+        <div class="what"><strong>Drive memory sync.</strong> Git pull from GitHub mirror to local + Telegram bot server.<small>Replaces the v4 Drive-as-brain that failed. Now Git-based, deterministic.</small></div>
+        <div class="impact">Sync<br>continuous</div>
+      </div>
+      <div class="cron-row">
+        <div class="when">Sun 14:00</div>
+        <div class="what"><strong>Weekly content engine.</strong> LinkedIn post + Substack teaser drafts for the week.<small>Competitive intel scan, anti-AI voice clone, anti-repetitions check, overlap with prior 30 posts.</small></div>
+        <div class="impact">Content<br>~4h/wk saved</div>
+      </div>
+      <div class="cron-row">
+        <div class="when">Mon 1st of month</div>
+        <div class="what"><strong>Invoice generation + DATEV upload.</strong> All client invoices PDF, signed, sent, archived.<small>Automatic numbering, client database integration, post-send archive in Notion.</small></div>
+        <div class="impact">Bookkeeping<br>~6h/mo saved</div>
+      </div>
+      <div class="cron-row">
+        <div class="when">Fri 17:00</div>
+        <div class="what"><strong>Weekly review.</strong> Past 7 days summary, open threads, next-week priorities, missed actions.<small>Uses memory diarization across the week, builds 1-page snapshot.</small></div>
+        <div class="impact">Reflection<br>2h/wk saved</div>
+      </div>
+      <div class="cron-row">
+        <div class="when">As-needed</div>
+        <div class="what"><strong>Receipt sweep.</strong> Caya + Gmail receipts pulled, JPG to PDF, queued for DATEV.<small>Triggered manually but should be cron in v3.6 next iteration.</small></div>
+        <div class="impact">Bookkeeping<br>WIP</div>
+      </div>
+    </div>
+    <div class="brand">EO AI Exchange #1</div>
+    <div class="page-num">19 / 24</div>
+  </section>
+
+  <!-- 20, ANTI-PATTERNS -->
+  <section class="slide" id="s20">
+    <div class="label">What I Do Not Do</div>
+    <h2 class="title">Four anti-patterns I avoid.</h2>
+    <div class="anti-grid">
+      <div class="anti">
+        <div class="x">&times;</div>
+        <div class="name">No Vector-DB over personal brain</div>
+        <div class="why">Threshold is ~10K files. I have ~200. Anthropic, Y Combinator, Karpathy all dropped vectors for agentic search. ripgrep returns in &lt;50ms. Anthropic Boris Cherny: "Early Claude Code used RAG + vector DB, agentic search works better."</div>
+      </div>
+      <div class="anti">
+        <div class="x">&times;</div>
+        <div class="name">No Drive as brain storage</div>
+        <div class="why">API rate limits, 200 to 2000ms latency vs &lt;50ms ripgrep, OAuth refresh issues, drift between Drive and local. Drive is for source-of-truth originals (PDFs, decks, contracts), not for a brain. v4 of my brain tried this. Killed it April 27.</div>
+      </div>
+      <div class="anti">
+        <div class="x">&times;</div>
+        <div class="name">No OneDrive plus Git</div>
+        <div class="why">Git index corruption risk. OneDrive syncs .git/objects while Git writes. Race conditions, false API errors. GitHub Desktop warns explicitly. Fix: moved repo to local C:\Code in 43 seconds via Robocopy.</div>
+      </div>
+      <div class="anti">
+        <div class="x">&times;</div>
+        <div class="name">No mega-CLAUDE.md with everything</div>
+        <div class="why">Garry Tan had 20.000 lines. Model attention degraded. Cut to ~200 lines of pointers. My CLAUDE.md is ~50 lines. Skills + Memory + Resolvers load on demand. Less in the harness, more in the skill files.</div>
+      </div>
+    </div>
+    <p class="sources"><strong>Sources</strong>Boris Cherny (Anthropic) on agentic search &middot; Karpathy LLM Wiki Pattern, April 2026 &middot; Garry Tan gbrain repo &middot; my own Brain v3.5 audit, April 27 2026</p>
+    <div class="brand">EO AI Exchange #1</div>
+    <div class="page-num">20 / 24</div>
+  </section>
+
+  <!-- 21, COMPARISON MATRIX -->
+  <section class="slide" id="s21">
     <div class="label">Where I Land</div>
     <h2 class="title">Solo founders converge.</h2>
     <table class="matrix">
@@ -458,16 +910,16 @@ Voice match exact. No vendor pitch tone.</div>
         <tr><td class="row-label">Multi-user</td><td class="me-col no">No</td><td class="no">No</td><td class="no">No</td><td class="yes">Yes (teams)</td></tr>
       </tbody>
     </table>
-    <p class="origin-quote" style="margin-top:1.5rem;font-size:clamp(0.95rem,1.3vw,1.15rem);">Solo-founder setups converge on <strong>Markdown + Skills + agentic search</strong>. Vector-DB is for 10K+ unstructured files. <span class="accent">If your volume fits in your head, your brain fits in Markdown.</span></p>
-    <p class="sources"><strong>Sources</strong>Garry Tan gbrain repo (github.com/garrytan/gbrain) &middot; Karpathy LLM Wiki gist &middot; Boris Cherny (Anthropic), "Claude Code uses agentic search, not vectors", April 2025</p>
+    <p class="origin-quote" style="margin-top:1.25rem;font-size:clamp(0.92rem,1.25vw,1.1rem);">Solo-founder setups converge on <strong>Markdown + Skills + agentic search</strong>. Vector-DB is for 10K+ unstructured files. <span class="accent">If your volume fits in your head, your brain fits in Markdown.</span></p>
+    <p class="sources"><strong>Sources</strong>Garry Tan gbrain repo &middot; Karpathy LLM Wiki gist &middot; Boris Cherny (Anthropic), "Claude Code uses agentic search, not vectors", April 2025</p>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">10 / 12</div>
+    <div class="page-num">21 / 24</div>
   </section>
 
-  <!-- 11, vs GARRY TAN -->
-  <section class="slide" id="s11">
+  <!-- 22, vs GARRY TAN -->
+  <section class="slide" id="s22">
     <div class="label">Direct Comparison</div>
-    <h2 class="title">Where I follow Tan.<br>Where I differ.</h2>
+    <h2 class="title">Where I follow Tan. <span class="accent">Where I differ.</span></h2>
     <div class="gt-grid">
       <div class="gt-col same">
         <div class="gt-col-h">Same as Garry Tan</div>
@@ -483,32 +935,67 @@ Voice match exact. No vendor pitch tone.</div>
         <div class="gt-line"><div class="text"><strong>Heavy MCP layer:</strong> 31 tools across Notion, Drive, Gmail, Calendar, Telegram, Computer-Use. Tan does not publish his.</div></div>
         <div class="gt-line"><div class="text"><strong>17 thematic clusters</strong> (aviation, real-estate, content, people) plus 30 plugins. Tan focuses on YC ops only.</div></div>
         <div class="gt-line"><div class="text"><strong>Telegram mobile interface</strong> via AWS Lightsail Frankfurt. Voice + text triggers from anywhere.</div></div>
-        <div class="gt-line"><div class="text"><strong>Cron-driven workflows:</strong> Parkside daily pricing, weekly content, monthly invoices, weekly review.</div></div>
+        <div class="gt-line"><div class="text"><strong>Cron-driven workflows:</strong> Parkside daily, weekly content, monthly invoices, weekly review.</div></div>
         <div class="gt-line"><div class="text"><strong>Notion as sharing layer</strong> for non-developers. Tan has not addressed the share-with-others problem publicly.</div></div>
         <div class="gt-line"><div class="text"><strong>EU-only stack:</strong> AWS Frankfurt, deutsche Umlaute as voice rule, GDPR-aware by default.</div></div>
       </div>
     </div>
     <p class="gt-foot"><strong>Net:</strong> Tan's pattern is the foundation. <span class="accent">My differences come from being a multi-domain operator (real estate + content + ventures + aviation) who lives outside of Mountain View.</span> The architecture is identical, the surface area is wider.</p>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">11 / 12</div>
+    <div class="page-num">22 / 24</div>
   </section>
 
-  <!-- 12, TAKE-AWAYS -->
-  <section class="slide" id="s12">
+  <!-- 23, THE 30-DAY SPRINT -->
+  <section class="slide" id="s23">
+    <div class="label">Recent Audit + Migration</div>
+    <h2 class="title">From chaos to compound, in <span class="accent">30 days</span>.</h2>
+    <div class="sprint">
+      <div class="sprint-row muted">
+        <div class="date">Mar 18</div>
+        <div class="what"><strong>Brain v4 upgrade Phases 1-5.</strong> <em>Drive-Hub as brain vision. Telegram bot security fixes. 39 tools registered. PDF/DOCX parsing. Health checks.</em></div>
+      </div>
+      <div class="sprint-row muted">
+        <div class="date">Mar to Apr</div>
+        <div class="what"><strong>30 days of build-up.</strong> <em>Skills cluster expansion. ~17 clusters reached. 175 uncommitted files. Drive sync half-finished. Memory bloat from 54 SACAA exam memos still active after passing.</em></div>
+      </div>
+      <div class="sprint-row">
+        <div class="date">Apr 27 AM</div>
+        <div class="what"><strong>Brain v3.5 Audit.</strong> <em>Drive sync killed. OneDrive + Git race condition flagged. ~10K vector-DB threshold confirmed not met. Vector-DB definitively skipped.</em></div>
+      </div>
+      <div class="sprint-row">
+        <div class="date">Apr 27 PM</div>
+        <div class="what"><strong>Migration in 1 day.</strong> <em>Robocopy to C:\Code (1.72 GB / 58.638 files in 43 sec). Memory-folder copied to ~/.claude/projects/. 11 legacy skills archived. MEMORY.md compressed 124 to 60 lines.</em></div>
+      </div>
+      <div class="sprint-row">
+        <div class="date">Apr 27 EOD</div>
+        <div class="what"><strong>Architecture documented.</strong> <em>Vortrag backbone written for this talk. Cross-references to Tan, Karpathy, Anthropic. Roadmap May to September drafted.</em></div>
+      </div>
+      <div class="sprint-row">
+        <div class="date">May 11</div>
+        <div class="what"><strong>This talk.</strong> <em>Architecture as artifact. Anti-patterns shared. EO operators get the playbook before they hit the same walls.</em></div>
+      </div>
+    </div>
+    <p class="origin-quote" style="margin-top:1.25rem;font-size:clamp(0.95rem,1.3vw,1.15rem);">Audit is <strong>one day</strong>. Migration is <strong>one day</strong>. Documentation is <strong>one day</strong>. <span class="accent">The cost of architecture drift is always shorter to fix than to live with.</span></p>
+    <div class="brand">EO AI Exchange #1</div>
+    <div class="page-num">23 / 24</div>
+  </section>
+
+  <!-- 24, TAKE-AWAYS -->
+  <section class="slide" id="s24">
     <div class="label">What to take with you</div>
     <h2 class="title">Five lines.</h2>
     <div class="quote-block">
       <div class="quote-mark">"</div>
       <div class="quote-text">Push intelligence <span class="accent">UP</span> into Skills.<br>Push execution <span class="accent">DOWN</span> into deterministic tools.<br>Keep the harness <span class="accent">THIN</span>.</div>
     </div>
-    <div style="margin-top:3rem;display:flex;flex-direction:column;gap:0.85rem;">
+    <div style="margin-top:2.5rem;display:flex;flex-direction:column;gap:0.85rem;">
       <div class="origin-quote" style="font-size:clamp(1rem,1.35vw,1.2rem);"><span class="accent">&rarr;</span> &nbsp; Markdown + Git + agentic search beats Vector-DB at personal-brain volume.</div>
       <div class="origin-quote" style="font-size:clamp(1rem,1.35vw,1.2rem);"><span class="accent">&rarr;</span> &nbsp; Drive is for originals. GitHub for code. Notion for shared prose.</div>
       <div class="origin-quote" style="font-size:clamp(1rem,1.35vw,1.2rem);"><span class="accent">&rarr;</span> &nbsp; If you ask your system for the same thing twice, you failed. Skill-ify it.</div>
       <div class="origin-quote" style="font-size:clamp(1rem,1.35vw,1.2rem);"><span class="accent">&rarr;</span> &nbsp; Audit is one day. Repair is one or two. Lock-in is forever.</div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">12 / 12</div>
+    <div class="page-num">24 / 24</div>
   </section>
 
 </div>
