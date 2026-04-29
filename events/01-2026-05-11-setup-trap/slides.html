@@ -6,17 +6,18 @@
 <title>The Setup Trap, EO AI Productivity Exchange #1</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #ffffff;
-    --text: #0a0a0a;
-    --muted: #6b6b6b;
-    --faint: #a0a0a0;
-    --accent: #ff4d1c;
-    --accent-soft: #fff1ec;
-    --border: #ececec;
-    --surface: #fafafa;
+    --text: #09090b;
+    --muted: #71717a;
+    --faint: #a1a1aa;
+    --accent: #2563eb;
+    --accent-deep: #1d4ed8;
+    --accent-soft: #eff6ff;
+    --border: #f1f5f9;
+    --border-strong: #e2e8f0;
     --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -24,12 +25,13 @@
     height: 100%; width: 100%; background: var(--bg); color: var(--text);
     font-family: var(--sans); -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    font-feature-settings: 'ss01', 'cv11';
   }
 
   .deck { width: 100vw; height: 100vh; overflow: hidden; position: relative; }
   .slide {
     width: 100vw; height: 100vh; position: absolute; top: 0; left: 0;
-    display: none; padding: 8vh 10vw;
+    display: none; padding: 11vh 11vw;
     flex-direction: column; justify-content: center;
     background: var(--bg);
   }
@@ -37,409 +39,470 @@
 
   /* Top label */
   .label {
-    position: absolute; top: 5vh; left: 10vw;
-    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em;
+    position: absolute; top: 6vh; left: 11vw;
+    font-size: 0.68rem; font-weight: 500; letter-spacing: 0.18em;
     text-transform: uppercase; color: var(--muted);
     display: flex; align-items: center; gap: 0.7rem;
   }
   .label::before {
-    content: ''; width: 1.5rem; height: 2px; background: var(--accent);
+    content: ''; width: 1.25rem; height: 1px; background: var(--accent);
   }
 
   /* Page meta */
   .page-num {
-    position: absolute; bottom: 4vh; right: 10vw;
-    font-size: 0.7rem; font-weight: 500; color: var(--faint);
-    letter-spacing: 0.08em;
+    position: absolute; bottom: 5vh; right: 11vw;
+    font-size: 0.68rem; font-weight: 400; color: var(--faint);
+    letter-spacing: 0.1em; font-variant-numeric: tabular-nums;
   }
   .brand {
-    position: absolute; bottom: 4vh; left: 10vw;
-    font-size: 0.7rem; font-weight: 500; color: var(--faint);
-    letter-spacing: 0.08em; text-transform: uppercase;
+    position: absolute; bottom: 5vh; left: 11vw;
+    font-size: 0.68rem; font-weight: 400; color: var(--faint);
+    letter-spacing: 0.1em; text-transform: uppercase;
   }
 
   /* COVER, slide 1 */
   .cover-eyebrow {
-    font-size: 0.8rem; font-weight: 600; letter-spacing: 0.16em;
+    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.2em;
     text-transform: uppercase; color: var(--accent);
-    margin-bottom: 1.5rem;
-  }
-  h1.cover-title {
-    font-weight: 800;
-    font-size: clamp(5rem, 13vw, 14rem); line-height: 0.92;
-    letter-spacing: -0.04em; color: var(--text);
-    margin-bottom: 2rem;
-  }
-  h1.cover-title .accent { color: var(--accent); }
-  .cover-sub {
-    font-size: clamp(1.1rem, 1.7vw, 1.5rem); font-weight: 400;
-    color: var(--muted); max-width: 60ch; line-height: 1.4;
     margin-bottom: 2.5rem;
   }
-  .cover-meta {
-    font-size: 0.95rem; font-weight: 500; color: var(--text);
-    letter-spacing: 0.01em;
+  h1.cover-title {
+    font-weight: 700;
+    font-size: clamp(5rem, 12vw, 13rem); line-height: 0.92;
+    letter-spacing: -0.045em; color: var(--text);
+    margin-bottom: 2.5rem;
   }
-  .cover-meta .who { font-weight: 700; }
-  .cover-meta .when { color: var(--muted); margin-left: 0.5rem; }
+  h1.cover-title .accent { color: var(--accent); font-weight: 700; }
+  .cover-sub {
+    font-size: clamp(1.05rem, 1.5vw, 1.4rem); font-weight: 400;
+    color: var(--muted); max-width: 50ch; line-height: 1.5;
+    margin-bottom: 3.5rem;
+  }
+  .cover-meta {
+    font-size: 0.85rem; font-weight: 400; color: var(--text);
+    letter-spacing: 0.01em; line-height: 1.7;
+  }
+  .cover-meta .who { font-weight: 600; display: block; }
+  .cover-meta .when { color: var(--muted); }
 
   /* Section titles */
   h2.title {
-    font-weight: 800;
-    font-size: clamp(3rem, 6vw, 5rem); line-height: 1;
-    letter-spacing: -0.03em; color: var(--text);
-    margin-bottom: 4rem; max-width: 22ch;
+    font-weight: 600;
+    font-size: clamp(2.75rem, 5vw, 4.5rem); line-height: 1.05;
+    letter-spacing: -0.035em; color: var(--text);
+    margin-bottom: 4.5rem; max-width: 22ch;
   }
-  h2.title .accent { color: var(--accent); }
+  h2.title .accent { color: var(--accent); font-weight: 700; }
 
   /* Promise grid, slide 2 */
   .promise {
     display: grid; grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 2.5rem; margin-bottom: 3rem;
+    gap: 3rem; margin-bottom: 4rem;
   }
-  .promise-item {
-    border-top: 3px solid var(--text);
-    padding-top: 1.25rem;
-  }
+  .promise-item { display: flex; flex-direction: column; gap: 0.5rem; }
   .promise-item .num {
-    font-weight: 800; font-size: clamp(2.5rem, 4.5vw, 4rem);
-    line-height: 1; letter-spacing: -0.03em; color: var(--accent);
-    margin-bottom: 1rem;
+    font-weight: 700; font-size: clamp(2rem, 3.5vw, 3rem);
+    line-height: 1; letter-spacing: -0.04em; color: var(--accent);
+    margin-bottom: 0.75rem;
+    font-variant-numeric: tabular-nums;
   }
   .promise-item .lbl {
-    font-weight: 700; font-size: 1.15rem; color: var(--text);
-    margin-bottom: 0.4rem;
+    font-weight: 600; font-size: 0.95rem; color: var(--text);
+    letter-spacing: -0.005em;
   }
   .promise-item .desc {
-    font-weight: 400; font-size: 0.9rem; color: var(--muted);
-    line-height: 1.45;
+    font-weight: 400; font-size: 0.85rem; color: var(--muted);
+    line-height: 1.5;
   }
   .footer-note {
-    font-size: 1rem; font-weight: 400; color: var(--muted);
-    line-height: 1.5; max-width: 80ch;
+    font-size: 0.95rem; font-weight: 400; color: var(--muted);
+    line-height: 1.55; max-width: 75ch;
   }
-  .footer-note .accent { color: var(--accent); font-weight: 600; }
+  .footer-note .accent { color: var(--text); font-weight: 500; }
 
   /* Two Traps, slide 3 */
   .traps {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;
   }
-  .trap {
-    display: flex; flex-direction: column; gap: 1rem;
-  }
+  .trap { display: flex; flex-direction: column; gap: 1.25rem; }
   .trap .tag {
-    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.16em;
+    font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em;
     text-transform: uppercase; color: var(--accent);
   }
   .trap .name {
-    font-weight: 800; font-size: clamp(1.75rem, 2.5vw, 2.25rem);
-    color: var(--text); letter-spacing: -0.02em;
-    margin-bottom: 0.5rem;
+    font-weight: 600; font-size: clamp(1.5rem, 2.2vw, 2rem);
+    color: var(--text); letter-spacing: -0.025em;
   }
   .trap .stat-line {
-    display: flex; align-items: baseline; gap: 0.75rem;
-    padding: 0.5rem 0;
+    display: flex; align-items: baseline; gap: 1rem;
+    padding: 0.4rem 0;
   }
   .trap .stat-num {
-    font-weight: 800; font-size: clamp(2rem, 3vw, 2.75rem);
+    font-weight: 700; font-size: clamp(1.6rem, 2.4vw, 2.2rem);
     color: var(--text); letter-spacing: -0.03em; min-width: 4ch;
+    font-variant-numeric: tabular-nums;
   }
   .trap .stat-text {
-    font-weight: 400; font-size: 1rem; color: var(--muted);
-    line-height: 1.4;
+    font-weight: 400; font-size: 0.9rem; color: var(--muted);
+    line-height: 1.45;
   }
   .trap .quote {
     margin-top: 1rem; padding-left: 1.25rem;
-    border-left: 3px solid var(--accent);
-    font-size: 1rem; font-style: italic; color: var(--text);
-    line-height: 1.45;
+    border-left: 2px solid var(--accent);
+    font-size: 0.95rem; font-style: italic; color: var(--text);
+    line-height: 1.5;
   }
   .trap .quote .who {
-    display: block; margin-top: 0.4rem;
-    font-style: normal; font-size: 0.8rem; font-weight: 500;
+    display: block; margin-top: 0.5rem;
+    font-style: normal; font-size: 0.75rem; font-weight: 500;
     color: var(--muted); letter-spacing: 0.02em;
   }
   .traps-foot {
-    text-align: center; margin-top: 3rem;
-    font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+    text-align: center; margin-top: 3.5rem;
+    font-size: clamp(1rem, 1.4vw, 1.25rem);
     font-weight: 500; color: var(--text);
+    letter-spacing: -0.005em;
   }
 
   /* Sources */
   .sources {
     margin-top: 2rem; padding-top: 1rem;
     border-top: 1px solid var(--border);
-    font-size: 0.7rem; font-weight: 400; color: var(--faint);
-    line-height: 1.5; letter-spacing: 0.02em;
+    font-size: 0.65rem; font-weight: 400; color: var(--faint);
+    line-height: 1.6; letter-spacing: 0.02em;
   }
   .sources strong {
     font-weight: 600; color: var(--muted);
-    text-transform: uppercase; letter-spacing: 0.14em;
-    font-size: 0.62rem; margin-right: 0.5rem;
+    text-transform: uppercase; letter-spacing: 0.16em;
+    font-size: 0.6rem; margin-right: 0.6rem;
   }
 
   /* Versions table, slide 4 */
   .versions { display: flex; flex-direction: column; }
   .v-row {
     display: grid; grid-template-columns: 4rem 1fr 9rem;
-    align-items: center; padding: 1.25rem 0;
+    align-items: center; padding: 1.1rem 0;
     border-bottom: 1px solid var(--border);
   }
   .v-row:first-child { border-top: 1px solid var(--border); }
   .v-row .v {
-    font-weight: 800; font-size: 1.5rem; color: var(--faint);
-    letter-spacing: -0.02em;
+    font-weight: 600; font-size: 1.15rem; color: var(--faint);
+    letter-spacing: -0.01em; font-variant-numeric: tabular-nums;
   }
   .v-row .stack {
-    font-weight: 500; font-size: 1.15rem; color: var(--muted);
+    font-weight: 400; font-size: 1rem; color: var(--muted);
   }
   .v-row .status {
-    font-weight: 600; font-size: 0.85rem; color: var(--faint);
-    letter-spacing: 0.06em; text-transform: uppercase;
+    font-weight: 500; font-size: 0.75rem; color: var(--faint);
+    letter-spacing: 0.1em; text-transform: uppercase;
     text-align: right;
   }
-  .v-row.alive .v { color: var(--accent); }
-  .v-row.alive .stack { color: var(--text); font-weight: 600; }
-  .v-row.alive .status { color: var(--accent); }
+  .v-row.alive .v { color: var(--accent); font-weight: 700; }
+  .v-row.alive .stack { color: var(--text); font-weight: 500; }
+  .v-row.alive .status { color: var(--accent); font-weight: 600; }
   .v-quote {
-    margin-top: 2rem;
-    font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+    margin-top: 2.5rem;
+    font-size: clamp(1.05rem, 1.5vw, 1.3rem);
     font-weight: 400; color: var(--muted);
-    line-height: 1.45; max-width: 80ch;
+    line-height: 1.55; max-width: 75ch;
   }
-  .v-quote strong { color: var(--text); font-weight: 700; }
+  .v-quote strong { color: var(--text); font-weight: 600; }
   .v-quote .accent { color: var(--accent); font-weight: 600; }
 
   /* Diagnostic, slide 5 */
   .diag-sub {
-    font-size: 1rem; font-weight: 500; color: var(--accent);
-    letter-spacing: 0.02em; margin-bottom: 2.5rem;
-    margin-top: -3rem;
+    font-size: 0.95rem; font-weight: 500; color: var(--accent);
+    letter-spacing: 0.02em; margin-bottom: 3rem;
+    margin-top: -3.5rem;
   }
-  .qs { display: flex; flex-direction: column; gap: 1.25rem; }
+  .qs { display: flex; flex-direction: column; gap: 0.5rem; }
   .q {
     display: grid; grid-template-columns: 4rem 1fr;
-    gap: 1.5rem; align-items: baseline;
-    padding: 0.75rem 0; border-bottom: 1px solid var(--border);
+    gap: 2rem; align-items: baseline;
+    padding: 1.25rem 0; border-bottom: 1px solid var(--border);
   }
   .q .qn {
-    font-weight: 800; font-size: 3rem; line-height: 1;
+    font-weight: 700; font-size: 2.25rem; line-height: 1;
     color: var(--accent); letter-spacing: -0.04em;
+    font-variant-numeric: tabular-nums;
   }
-  .q .qbody { display: flex; flex-direction: column; gap: 0.4rem; }
+  .q .qbody { display: flex; flex-direction: column; gap: 0.5rem; }
   .q .qt {
-    font-weight: 600; font-size: 1.2rem; color: var(--text);
-    line-height: 1.4;
+    font-weight: 500; font-size: 1.1rem; color: var(--text);
+    line-height: 1.4; letter-spacing: -0.01em;
   }
   .q .qv {
-    font-weight: 500; font-size: 0.85rem; color: var(--muted);
+    font-weight: 400; font-size: 0.8rem; color: var(--muted);
     letter-spacing: 0.02em;
   }
-  .q .qv strong { color: var(--accent); font-weight: 700; }
+  .q .qv strong { color: var(--accent); font-weight: 600; }
 
   /* Hierarchy, slide 6 */
   .hier-bigword {
-    font-weight: 800; font-size: clamp(3rem, 7vw, 6rem);
-    line-height: 0.95; letter-spacing: -0.04em;
-    margin-bottom: 3rem; text-align: center;
+    font-weight: 700; font-size: clamp(2.75rem, 6vw, 5.25rem);
+    line-height: 0.95; letter-spacing: -0.045em;
+    margin-bottom: 4rem; text-align: center;
   }
-  .hier-bigword .strong { color: var(--accent); }
-  .hier-bigword .mid { color: var(--text); }
-  .hier-bigword .weak { color: var(--faint); }
-  .hier-bigword .gt { color: var(--faint); margin: 0 0.4rem; font-weight: 500; }
+  .hier-bigword .strong { color: var(--accent); font-weight: 700; }
+  .hier-bigword .mid { color: var(--text); font-weight: 600; }
+  .hier-bigword .weak { color: var(--faint); font-weight: 400; }
+  .hier-bigword .gt { color: var(--faint); margin: 0 0.5rem; font-weight: 300; }
   .hier-row {
     display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
   }
-  .hier-col { padding-top: 1rem; border-top: 3px solid; }
+  .hier-col { padding-top: 1rem; border-top: 1px solid; }
   .hier-col.a { border-color: var(--accent); }
   .hier-col.b { border-color: var(--text); }
   .hier-col.c { border-color: var(--faint); }
   .hier-col .lbl {
-    font-weight: 800; font-size: 1.25rem;
-    letter-spacing: 0.04em; margin-bottom: 0.4rem;
+    font-weight: 600; font-size: 0.95rem;
+    letter-spacing: 0.02em; margin-bottom: 0.4rem;
   }
   .hier-col.a .lbl { color: var(--accent); }
   .hier-col.b .lbl { color: var(--text); }
   .hier-col.c .lbl { color: var(--faint); }
   .hier-col .desc {
-    font-weight: 400; font-size: 0.95rem; color: var(--muted);
-    line-height: 1.4;
+    font-weight: 400; font-size: 0.85rem; color: var(--muted);
+    line-height: 1.45;
   }
   .hier-quote {
-    font-size: clamp(1.4rem, 2.2vw, 2rem); font-weight: 600;
-    line-height: 1.3; letter-spacing: -0.01em; max-width: 60ch;
+    font-size: clamp(1.25rem, 1.9vw, 1.7rem); font-weight: 500;
+    line-height: 1.4; letter-spacing: -0.015em; max-width: 65ch;
   }
-  .hier-quote .num { color: var(--accent); }
+  .hier-quote .num { color: var(--accent); font-weight: 700; }
   .hier-quote .small {
-    display: block; margin-top: 0.75rem;
-    font-size: 1rem; font-weight: 400; color: var(--muted);
-    letter-spacing: 0.01em;
+    display: block; margin-top: 1rem;
+    font-size: 0.95rem; font-weight: 400; color: var(--muted);
+    letter-spacing: 0.005em; line-height: 1.55;
   }
-  .hier-quote .small strong { color: var(--text); font-weight: 600; }
-  .hier-quote .small .accent { color: var(--accent); font-weight: 600; }
+  .hier-quote .small strong { color: var(--text); font-weight: 500; }
+  .hier-quote .small .accent { color: var(--accent); font-weight: 500; }
 
-  /* Demo title slides, 7 + 9 */
+  /* Demo title slides, 7 + 10 */
   .demo {
-    display: grid; grid-template-columns: 0.6fr 1fr;
+    display: grid; grid-template-columns: 0.55fr 1fr;
     gap: 5rem; align-items: center;
   }
   .demo-num {
-    font-weight: 800; font-size: clamp(8rem, 14vw, 16rem);
-    line-height: 0.85; letter-spacing: -0.05em;
+    font-weight: 700; font-size: clamp(8rem, 14vw, 15rem);
+    line-height: 0.85; letter-spacing: -0.06em;
     color: var(--accent);
+    font-variant-numeric: tabular-nums;
   }
   .demo-num .of {
-    display: block; font-size: 1rem; font-weight: 600;
-    color: var(--muted); margin-top: 0.5rem;
-    letter-spacing: 0.16em; text-transform: uppercase;
+    display: block; font-size: 0.75rem; font-weight: 500;
+    color: var(--muted); margin-top: 0.75rem;
+    letter-spacing: 0.18em; text-transform: uppercase;
   }
-  .demo-body { display: flex; flex-direction: column; gap: 1.25rem; }
+  .demo-body { display: flex; flex-direction: column; gap: 1.5rem; }
   .demo-body h2 {
-    font-weight: 800; font-size: clamp(2.5rem, 4.5vw, 4rem);
-    line-height: 1; letter-spacing: -0.03em; color: var(--text);
+    font-weight: 600; font-size: clamp(2.25rem, 4vw, 3.5rem);
+    line-height: 1.05; letter-spacing: -0.035em; color: var(--text);
   }
-  .demo-body h2 .accent { color: var(--accent); }
+  .demo-body h2 .accent { color: var(--accent); font-weight: 700; }
   .demo-body .sub {
-    font-size: clamp(1rem, 1.4vw, 1.25rem); font-weight: 500;
-    color: var(--muted); line-height: 1.4;
+    font-size: 1rem; font-weight: 400;
+    color: var(--muted); line-height: 1.5;
   }
   .demo-hacks {
     display: flex; flex-direction: column; gap: 0.75rem;
-    margin-top: 0.5rem;
+    margin-top: 0.75rem;
   }
   .demo-hack {
     display: grid; grid-template-columns: 5rem 1fr;
     gap: 1rem; align-items: baseline;
-    padding: 1rem 0; border-top: 1px solid var(--border);
+    padding: 1.1rem 0; border-top: 1px solid var(--border);
   }
   .demo-hack .hk-num {
-    font-weight: 700; font-size: 0.75rem;
-    letter-spacing: 0.16em; text-transform: uppercase;
+    font-weight: 600; font-size: 0.7rem;
+    letter-spacing: 0.18em; text-transform: uppercase;
     color: var(--accent);
   }
-  .demo-hack .hk-content { display: flex; flex-direction: column; gap: 0.25rem; }
+  .demo-hack .hk-content { display: flex; flex-direction: column; gap: 0.3rem; }
   .demo-hack .hk-name {
-    font-weight: 700; font-size: 1.25rem; color: var(--text);
+    font-weight: 600; font-size: 1.1rem; color: var(--text);
+    letter-spacing: -0.01em;
   }
   .demo-hack .hk-desc {
-    font-weight: 400; font-size: 0.9rem; color: var(--muted);
-    line-height: 1.4;
+    font-weight: 400; font-size: 0.85rem; color: var(--muted);
+    line-height: 1.5;
   }
   .demo-note {
-    margin-top: 0.5rem; font-size: 0.85rem; font-weight: 400;
+    margin-top: 0.75rem; font-size: 0.8rem; font-weight: 400;
     color: var(--faint); font-style: italic;
   }
 
-  /* Bridge, slide 8 */
-  .bridge { gap: 2rem; }
+  /* Demo recap slides, 8 + 11 */
+  .recap-h {
+    font-size: 0.7rem; font-weight: 500; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 1.5rem;
+  }
+  .recap-title {
+    font-weight: 600; font-size: clamp(2rem, 3.5vw, 3rem);
+    line-height: 1.1; letter-spacing: -0.03em; color: var(--text);
+    margin-bottom: 4rem; max-width: 28ch;
+  }
+  .recap-grid {
+    display: grid; grid-template-columns: 0.8fr 1fr; gap: 4rem;
+    margin-bottom: 3rem;
+  }
+  .recap-numbers { display: flex; flex-direction: column; gap: 1.5rem; }
+  .recap-num {
+    display: flex; flex-direction: column; gap: 0.25rem;
+    padding-bottom: 1.25rem; border-bottom: 1px solid var(--border);
+  }
+  .recap-num:last-child { border-bottom: none; }
+  .recap-num .n {
+    font-weight: 700; font-size: clamp(2.5rem, 3.5vw, 3.25rem);
+    line-height: 1; color: var(--accent); letter-spacing: -0.04em;
+    font-variant-numeric: tabular-nums;
+  }
+  .recap-num .n .unit {
+    font-size: 0.95rem; font-weight: 500;
+    color: var(--muted); margin-left: 0.4rem;
+  }
+  .recap-num .lbl {
+    font-weight: 500; font-size: 0.85rem; color: var(--text);
+    margin-top: 0.25rem; letter-spacing: 0.005em;
+  }
+  .recap-struggles { display: flex; flex-direction: column; gap: 1.25rem; }
+  .recap-struggles .s-tag {
+    font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--muted);
+    margin-bottom: 0.25rem;
+  }
+  .recap-struggles .s-line {
+    display: grid; grid-template-columns: 1.25rem 1fr; gap: 0.75rem;
+    align-items: baseline; font-size: 0.95rem;
+    color: var(--text); line-height: 1.5;
+    padding: 0.5rem 0;
+  }
+  .recap-struggles .s-line::before {
+    content: '—'; color: var(--accent); font-weight: 600;
+  }
+  .recap-foot {
+    margin-top: 1.5rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.95rem; font-weight: 400; color: var(--muted);
+    line-height: 1.55; font-style: italic;
+  }
+  .recap-foot .accent { color: var(--accent); font-style: normal; font-weight: 500; }
+
+  /* Bridge, slide 9 */
+  .bridge { gap: 1.75rem; }
   .bridge h2 {
-    font-weight: 800; font-size: clamp(2.5rem, 5vw, 4.5rem);
-    line-height: 1; letter-spacing: -0.03em; color: var(--text);
+    font-weight: 600; font-size: clamp(2.5rem, 4.5vw, 4rem);
+    line-height: 1.05; letter-spacing: -0.04em; color: var(--text);
     max-width: 22ch;
   }
+  .bridge h2 .accent { color: var(--accent); font-weight: 700; }
   .bridge .sub {
-    font-size: clamp(1.25rem, 2vw, 1.75rem); font-weight: 400;
-    color: var(--muted); max-width: 40ch;
+    font-size: clamp(1.1rem, 1.6vw, 1.4rem); font-weight: 400;
+    color: var(--muted); max-width: 40ch; line-height: 1.45;
   }
 
-  /* Cost, slide 10 */
+  /* Cost, slide 12 */
   .cost-grid {
-    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2.5rem;
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3rem;
   }
   .cost {
-    border-top: 3px solid var(--faint); padding-top: 1.5rem;
+    border-top: 1px solid var(--faint); padding-top: 1.5rem;
     display: flex; flex-direction: column; gap: 0.5rem;
   }
-  .cost.win { border-color: var(--accent); }
+  .cost.win { border-color: var(--accent); border-top-width: 2px; }
   .cost .price {
-    font-weight: 800; font-size: clamp(3rem, 5vw, 4.5rem);
-    line-height: 1; letter-spacing: -0.04em;
+    font-weight: 700; font-size: clamp(2.75rem, 4.5vw, 4rem);
+    line-height: 1; letter-spacing: -0.045em;
     color: var(--faint);
+    font-variant-numeric: tabular-nums;
   }
   .cost.win .price { color: var(--accent); }
   .cost .price .unit {
-    font-size: 0.95rem; font-weight: 500;
+    font-size: 0.85rem; font-weight: 500;
     color: var(--muted); margin-left: 0.3rem;
   }
   .cost .name {
-    font-weight: 700; font-size: 1.25rem; color: var(--text);
+    font-weight: 600; font-size: 1.1rem; color: var(--text);
+    letter-spacing: -0.01em;
   }
   .cost .desc {
-    font-weight: 400; font-size: 0.9rem; color: var(--muted);
-    line-height: 1.4;
+    font-weight: 400; font-size: 0.85rem; color: var(--muted);
+    line-height: 1.45;
   }
   .cost-foot {
-    margin-top: 3rem; text-align: center;
-    font-size: clamp(1.25rem, 2vw, 1.75rem);
-    font-weight: 600; color: var(--text); letter-spacing: -0.01em;
+    margin-top: 4rem; text-align: center;
+    font-size: clamp(1.1rem, 1.6vw, 1.5rem);
+    font-weight: 500; color: var(--text); letter-spacing: -0.01em;
   }
-  .cost-foot .accent { color: var(--accent); }
+  .cost-foot .accent { color: var(--accent); font-weight: 600; }
 
-  /* GitHub reveal, slide 11 */
+  /* GitHub reveal, slide 13 */
   .gh-grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 3rem;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem 4rem;
     margin: 1.5rem 0 2rem 0;
   }
   .gh-row {
     display: grid; grid-template-columns: 1fr 4rem;
-    padding: 0.65rem 0; border-bottom: 1px solid var(--border);
+    padding: 0.75rem 0; border-bottom: 1px solid var(--border);
     align-items: baseline;
   }
   .gh-row .gh-name {
-    font-weight: 500; font-size: 1rem; color: var(--text);
+    font-weight: 400; font-size: 0.95rem; color: var(--text);
   }
   .gh-row .gh-pct {
-    font-weight: 700; font-size: 1rem;
+    font-weight: 600; font-size: 0.95rem;
     color: var(--accent); text-align: right;
+    font-variant-numeric: tabular-nums;
   }
   .gh-url {
     margin-top: 1.5rem; padding: 1.5rem 1.75rem;
     background: var(--accent-soft);
-    border: 2px solid var(--accent); border-radius: 4px;
+    border-left: 2px solid var(--accent);
     text-align: center;
   }
   .gh-url .lbl {
-    font-size: 0.7rem; font-weight: 700;
-    letter-spacing: 0.16em; text-transform: uppercase;
-    color: var(--accent); margin-bottom: 0.5rem;
+    font-size: 0.65rem; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 0.6rem;
   }
   .gh-url .url {
-    font-weight: 800; font-size: clamp(1.25rem, 2.2vw, 2rem);
+    font-weight: 600; font-size: clamp(1.1rem, 2vw, 1.75rem);
     color: var(--text); letter-spacing: -0.02em;
   }
 
-  /* Closing, slide 12 */
+  /* Closing, slide 14 */
   .close-h {
-    font-weight: 800; font-size: clamp(3rem, 6vw, 5.5rem);
-    line-height: 1; letter-spacing: -0.04em;
-    margin-bottom: 0.5rem;
+    font-weight: 600; font-size: clamp(2.75rem, 5.5vw, 5rem);
+    line-height: 1.05; letter-spacing: -0.045em;
+    margin-bottom: 0.75rem;
   }
   .close-h .l1 { color: var(--text); display: block; }
-  .close-h .l2 { color: var(--accent); display: block; }
+  .close-h .l2 { color: var(--accent); display: block; font-weight: 700; }
   .close-cad {
-    font-size: clamp(1.1rem, 1.5vw, 1.4rem); font-weight: 500;
-    color: var(--muted); margin-bottom: 3rem;
+    font-size: clamp(1rem, 1.4vw, 1.25rem); font-weight: 400;
+    color: var(--muted); margin-bottom: 4rem;
+    letter-spacing: 0.005em;
   }
   .close-grid {
-    display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 2.5rem;
     margin-bottom: 3rem;
   }
-  .close-cell {
-    border-top: 3px solid var(--text); padding-top: 1rem;
-  }
+  .close-cell { padding-top: 1rem; border-top: 1px solid var(--border-strong); }
   .close-cell .num {
-    font-weight: 800; font-size: clamp(2.5rem, 4vw, 3.5rem);
-    line-height: 1; color: var(--accent); letter-spacing: -0.03em;
+    font-weight: 700; font-size: clamp(2rem, 3vw, 2.75rem);
+    line-height: 1; color: var(--accent); letter-spacing: -0.035em;
     margin-bottom: 0.5rem;
+    font-variant-numeric: tabular-nums;
   }
   .close-cell .lbl {
-    font-weight: 700; font-size: 1rem; color: var(--text);
+    font-weight: 600; font-size: 0.9rem; color: var(--text);
     margin-bottom: 0.25rem;
   }
   .close-cell .d {
-    font-weight: 400; font-size: 0.85rem; color: var(--muted);
-    line-height: 1.4;
+    font-weight: 400; font-size: 0.8rem; color: var(--muted);
+    line-height: 1.45;
   }
   .close-bottom {
     display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
@@ -447,22 +510,22 @@
     margin-top: auto;
   }
   .close-bottom .lbl {
-    font-size: 0.7rem; font-weight: 700;
-    letter-spacing: 0.16em; text-transform: uppercase;
+    font-size: 0.65rem; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase;
     color: var(--muted); margin-bottom: 0.4rem;
   }
   .close-bottom .v {
-    font-weight: 800; font-size: 1.5rem;
+    font-weight: 600; font-size: 1.25rem;
     color: var(--text); letter-spacing: -0.01em;
   }
-  .close-bottom .v.acc { color: var(--accent); }
+  .close-bottom .v.acc { color: var(--accent); font-weight: 700; }
   .close-bottom .right { text-align: right; }
 
   /* Nav hint */
   .nav-hint {
     position: fixed; bottom: 1rem; left: 50%; transform: translateX(-50%);
-    font-size: 0.7rem; color: var(--faint); opacity: 0.6;
-    pointer-events: none; letter-spacing: 0.04em;
+    font-size: 0.65rem; color: var(--faint); opacity: 0.5;
+    pointer-events: none; letter-spacing: 0.06em;
   }
   .nav-hint.hidden { opacity: 0; transition: opacity 0.5s; }
 
@@ -485,7 +548,7 @@
     <p class="cover-sub">Two operators show the stacks they actually run. Tool overload, setup cost, what survived 18 months.</p>
     <p class="cover-meta"><span class="who">Christoph Erler &amp; Dom Raute</span><span class="when">May 11, 2026 &middot; 18:00 CEST</span></p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">01 / 12</div>
+    <div class="page-num">01 / 14</div>
   </section>
 
   <!-- 2, PROMISE -->
@@ -496,12 +559,12 @@
       <div class="promise-item">
         <div class="num">01</div>
         <div class="lbl">Clarity</div>
-        <div class="desc">Which of two stacks fits you, without burning weeks on it.</div>
+        <div class="desc">Which of two stacks fits you, without burning weeks.</div>
       </div>
       <div class="promise-item">
         <div class="num">3-5</div>
         <div class="lbl">Hacks</div>
-        <div class="desc">Concrete and actionable. The wins and the struggles behind them.</div>
+        <div class="desc">Concrete, actionable. Wins and the struggles behind them.</div>
       </div>
       <div class="promise-item">
         <div class="num">103</div>
@@ -514,9 +577,9 @@
         <div class="desc">Seat in a continuous 30 to 90 day exchange.</div>
       </div>
     </div>
-    <p class="footer-note">Not the goal: another tool overview, generic theory, or polished vendor demos. <span class="accent">We show the struggles, not just the wins.</span></p>
+    <p class="footer-note">Not the goal: another tool overview, generic theory, polished vendor demos. <span class="accent">We show the struggles, not just the wins.</span></p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">02 / 12</div>
+    <div class="page-num">02 / 14</div>
   </section>
 
   <!-- 3, TWO TRAPS -->
@@ -529,22 +592,20 @@
         <div class="name">Tool Overload</div>
         <div class="stat-line"><div class="stat-num">50%</div><div class="stat-text">of EO operators say "too many tools"</div></div>
         <div class="stat-line"><div class="stat-num">34%</div><div class="stat-text">say "I do not know where to start"</div></div>
-        <div class="stat-line"><div class="stat-num">7 / 10</div><div class="stat-text">digitalization projects fail on mindset, not tech</div></div>
         <div class="quote">"Which one for what?"<span class="who">Sirah Pallas, EO Rhein-Ruhr</span></div>
       </div>
       <div class="trap">
         <div class="tag">Trap 02</div>
         <div class="name">Setup Cost</div>
         <div class="stat-line"><div class="stat-num">95%</div><div class="stat-text">of AI pilots show negative ROI, MIT 2025</div></div>
-        <div class="stat-line"><div class="stat-num">3</div><div class="stat-text">weekends burned on setup, plus ongoing maintenance</div></div>
         <div class="stat-line"><div class="stat-num">$50</div><div class="stat-text">per day Opus burn during build-up</div></div>
         <div class="quote">"Weeks burned on setup before any value lands."<span class="who">Andrew, EO Best Guy interview</span></div>
       </div>
     </div>
     <p class="traps-foot">Most don't escape because they fight the wrong trap.</p>
-    <p class="sources"><strong>Sources</strong>EO WhatsApp Poll (122 votes, March 2026) &middot; MIT Project NANDA, "The GenAI Divide", 2025 &middot; Chal&eacute;at, "Why 7 of 10 digitalization projects fail", 2024 &middot; Andrew van Aswegen, EO Best Guy interview, April 2026</p>
+    <p class="sources"><strong>Sources</strong>EO WhatsApp Poll (122 votes, March 2026) &middot; MIT Project NANDA, "The GenAI Divide", 2025 &middot; Andrew van Aswegen, EO Best Guy interview, April 2026</p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">03 / 12</div>
+    <div class="page-num">03 / 14</div>
   </section>
 
   <!-- 4, STACK VERSIONS -->
@@ -560,7 +621,7 @@
     </div>
     <p class="v-quote"><strong>Two stacks survived. Both share one principle.</strong> Stop maintaining tools. Start maintaining <span class="accent">memory</span>.</p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">04 / 12</div>
+    <div class="page-num">04 / 14</div>
   </section>
 
   <!-- 5, DIAGNOSTIC -->
@@ -592,7 +653,7 @@
       </div>
     </div>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">05 / 12</div>
+    <div class="page-num">05 / 14</div>
   </section>
 
   <!-- 6, HIERARCHY -->
@@ -612,10 +673,10 @@
     </div>
     <p class="sources"><strong>Source</strong>McKinsey, "The state of AI: How organizations are rewiring to capture value", 2025</p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">06 / 12</div>
+    <div class="page-num">06 / 14</div>
   </section>
 
-  <!-- 7, DEMO 1 -->
+  <!-- 7, DEMO 1 TITLE (Chris) -->
   <section class="slide" id="s7">
     <div class="label">Demo 01 &middot; Chris &middot; 9 min</div>
     <div class="demo">
@@ -635,28 +696,64 @@
             <div class="hk-num">Hack 02</div>
             <div class="hk-content">
               <div class="hk-name">Meeting Prep</div>
-              <div class="hk-desc">LinkedIn + past mail + CRM + Drive context, one page on demand.</div>
+              <div class="hk-desc">LinkedIn + past mail + CRM + Drive context, on demand.</div>
             </div>
           </div>
         </div>
-        <p class="demo-note">No new tools. Just orchestration on top of Gmail, Calendar, Drive, Notion.</p>
+        <p class="demo-note">No new tools. Orchestration on top of Gmail, Calendar, Drive, Notion.</p>
       </div>
     </div>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">07 / 12</div>
+    <div class="page-num">07 / 14</div>
   </section>
 
-  <!-- 8, BRIDGE -->
-  <section class="slide bridge" id="s8">
+  <!-- 8, DEMO 1 RECAP (Chris) -->
+  <section class="slide" id="s8">
+    <div class="label">Demo 01 &middot; What you just saw</div>
+    <h2 class="recap-title">Workspace-native, in numbers.</h2>
+    <div class="recap-grid">
+      <div class="recap-numbers">
+        <div class="recap-num">
+          <div class="n">5h<span class="unit">/ week</span></div>
+          <div class="lbl">Morning Briefing</div>
+        </div>
+        <div class="recap-num">
+          <div class="n">8h<span class="unit">/ week</span></div>
+          <div class="lbl">Meeting Prep</div>
+        </div>
+        <div class="recap-num">
+          <div class="n">30s</div>
+          <div class="lbl">Bot response time, both hacks</div>
+        </div>
+        <div class="recap-num">
+          <div class="n">39</div>
+          <div class="lbl">Workspace tools orchestrated</div>
+        </div>
+      </div>
+      <div class="recap-struggles">
+        <div class="s-tag">Honest struggles</div>
+        <div class="s-line">Maintenance tax: every Workspace update can break the bot, ~2h per month patching</div>
+        <div class="s-line">No emotional weight: bot does not know your kid's birthday is today</div>
+        <div class="s-line">No long-term memory across sessions, fresh context every time</div>
+        <div class="s-line">New contacts return thin air, no history to pull from</div>
+      </div>
+    </div>
+    <p class="recap-foot">No long-term memory across sessions, fresh context every time. <span class="accent">That is where Dom takes over.</span></p>
+    <div class="brand">EO Berlin</div>
+    <div class="page-num">08 / 14</div>
+  </section>
+
+  <!-- 9, BRIDGE -->
+  <section class="slide bridge" id="s9">
     <div class="label">Handoff</div>
-    <h2>Dom takes you<br>one layer <span style="color:var(--accent);">deeper</span>.</h2>
+    <h2>Dom takes you<br>one layer <span class="accent">deeper</span>.</h2>
     <p class="sub">From hack on top, to architecture beneath.</p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">08 / 12</div>
+    <div class="page-num">09 / 14</div>
   </section>
 
-  <!-- 9, DEMO 2 -->
-  <section class="slide" id="s9">
+  <!-- 10, DEMO 2 TITLE (Dom) -->
+  <section class="slide" id="s10">
     <div class="label">Demo 02 &middot; Dom &middot; 9 min</div>
     <div class="demo">
       <div class="demo-num">02<span class="of">of two</span></div>
@@ -683,11 +780,47 @@
       </div>
     </div>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">09 / 12</div>
+    <div class="page-num">10 / 14</div>
   </section>
 
-  <!-- 10, COST -->
-  <section class="slide" id="s10">
+  <!-- 11, DEMO 2 RECAP (Dom) -->
+  <section class="slide" id="s11">
+    <div class="label">Demo 02 &middot; What you just saw</div>
+    <h2 class="recap-title">Local-first memory, in numbers.</h2>
+    <div class="recap-grid">
+      <div class="recap-numbers">
+        <div class="recap-num">
+          <div class="n">$0<span class="unit">/ month</span></div>
+          <div class="lbl">Memory layer total cost</div>
+        </div>
+        <div class="recap-num">
+          <div class="n">5,735</div>
+          <div class="lbl">Vectors indexed across 11 collections</div>
+        </div>
+        <div class="recap-num">
+          <div class="n">2-5s</div>
+          <div class="lbl">Local query time, no API call</div>
+        </div>
+        <div class="recap-num">
+          <div class="n">107</div>
+          <div class="lbl">Person dossiers in Rolodex</div>
+        </div>
+      </div>
+      <div class="recap-struggles">
+        <div class="s-tag">Honest struggles</div>
+        <div class="s-line">$50 per day Opus burn during build-up phase</div>
+        <div class="s-line">Cold-start memory loss despite the 5-tier architecture</div>
+        <div class="s-line">Manual rolodex drift, not auto-synced yet</div>
+        <div class="s-line">Setup is real engineering work, not a weekend project</div>
+      </div>
+    </div>
+    <p class="recap-foot">Architecture wins long-term. <span class="accent">Setup cost upfront, near-zero compounding cost after.</span></p>
+    <div class="brand">EO Berlin</div>
+    <div class="page-num">11 / 14</div>
+  </section>
+
+  <!-- 12, COST -->
+  <section class="slide" id="s12">
     <div class="label">Cost Reality</div>
     <h2 class="title">What you pay vs<br>what you get.</h2>
     <div class="cost-grid">
@@ -710,11 +843,11 @@
     <p class="cost-foot">The <span class="accent">architecture</span> beats the budget.</p>
     <p class="sources"><strong>Sources</strong>Glean Enterprise public pricing, 2026 &middot; Notion AI + Glean + ChatGPT Enterprise list pricing combined, 2026</p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">10 / 12</div>
+    <div class="page-num">12 / 14</div>
   </section>
 
-  <!-- 11, GITHUB REVEAL -->
-  <section class="slide" id="s11">
+  <!-- 13, GITHUB REVEAL -->
+  <section class="slide" id="s13">
     <div class="label">Live Tonight</div>
     <h2 class="title">11 solutions <span class="accent">shipping</span> today.</h2>
     <div class="gh-grid">
@@ -734,11 +867,11 @@
       <div class="url">github.com/chris1928a/eo-ai-exchange</div>
     </div>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">11 / 12</div>
+    <div class="page-num">13 / 14</div>
   </section>
 
-  <!-- 12, CLOSING -->
-  <section class="slide" id="s12">
+  <!-- 14, CLOSING -->
+  <section class="slide" id="s14">
     <div class="label">This is Day 1</div>
     <div class="close-h">
       <span class="l1">You name the pain.</span>
@@ -778,7 +911,7 @@
       </div>
     </div>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">12 / 12</div>
+    <div class="page-num">14 / 14</div>
   </section>
 
 </div>
