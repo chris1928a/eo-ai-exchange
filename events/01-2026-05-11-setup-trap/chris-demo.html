@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Chris Demo, Workspace-Native, EO AI Exchange #1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #ffffff;
+    --text: #09090b;
+    --muted: #71717a;
+    --faint: #a1a1aa;
+    --accent: #2563eb;
+    --accent-deep: #1d4ed8;
+    --accent-soft: #eff6ff;
+    --border: #f1f5f9;
+    --border-strong: #e2e8f0;
+    --code-bg: #f4f4f5;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; width: 100%; background: var(--bg); color: var(--text); font-family: var(--sans); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-feature-settings: 'ss01', 'cv11'; }
+
+  .deck { width: 100vw; height: 100vh; overflow: hidden; position: relative; }
+  .slide { width: 100vw; height: 100vh; position: absolute; top: 0; left: 0; display: none; padding: 11vh 11vw; flex-direction: column; justify-content: center; background: var(--bg); }
+  .slide.active { display: flex; }
+
+  .label { position: absolute; top: 6vh; left: 11vw; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); display: flex; align-items: center; gap: 0.7rem; }
+  .label::before { content: ''; width: 1.25rem; height: 1px; background: var(--accent); }
+
+  .page-num { position: absolute; bottom: 5vh; right: 11vw; font-size: 0.68rem; font-weight: 400; color: var(--faint); letter-spacing: 0.1em; font-variant-numeric: tabular-nums; }
+  .brand { position: absolute; bottom: 5vh; left: 11vw; font-size: 0.68rem; font-weight: 400; color: var(--faint); letter-spacing: 0.1em; text-transform: uppercase; }
+
+  .cover-eyebrow { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 2.5rem; }
+  h1.cover-title { font-weight: 700; font-size: clamp(6rem, 14vw, 16rem); line-height: 0.9; letter-spacing: -0.05em; color: var(--text); margin-bottom: 2.5rem; }
+  h1.cover-title .accent { color: var(--accent); }
+  .cover-sub { font-size: clamp(1.05rem, 1.5vw, 1.4rem); font-weight: 400; color: var(--muted); max-width: 50ch; line-height: 1.5; margin-bottom: 3.5rem; }
+  .cover-meta { font-size: 0.85rem; font-weight: 400; color: var(--text); letter-spacing: 0.01em; line-height: 1.7; }
+  .cover-meta .who { font-weight: 600; display: block; }
+  .cover-meta .when { color: var(--muted); }
+
+  h2.title { font-weight: 600; font-size: clamp(2.75rem, 5vw, 4.5rem); line-height: 1.05; letter-spacing: -0.035em; color: var(--text); margin-bottom: 4.5rem; max-width: 22ch; }
+  h2.title .accent { color: var(--accent); font-weight: 700; }
+
+  /* DEMO TITLE */
+  .demo { display: grid; grid-template-columns: 0.55fr 1fr; gap: 5rem; align-items: center; }
+  .demo-num { font-weight: 700; font-size: clamp(8rem, 14vw, 15rem); line-height: 0.85; letter-spacing: -0.06em; color: var(--accent); font-variant-numeric: tabular-nums; }
+  .demo-num .of { display: block; font-size: 0.75rem; font-weight: 500; color: var(--muted); margin-top: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; }
+  .demo-body { display: flex; flex-direction: column; gap: 1.5rem; }
+  .demo-body h2 { font-weight: 600; font-size: clamp(2.25rem, 4vw, 3.5rem); line-height: 1.05; letter-spacing: -0.035em; color: var(--text); }
+  .demo-body h2 .accent { color: var(--accent); font-weight: 700; }
+  .demo-body .sub { font-size: 1rem; font-weight: 400; color: var(--muted); line-height: 1.5; }
+  .demo-hacks { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 0.75rem; }
+  .demo-hack { display: grid; grid-template-columns: 5rem 1fr; gap: 1rem; align-items: baseline; padding: 1.1rem 0; border-top: 1px solid var(--border); }
+  .demo-hack .hk-num { font-weight: 600; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); }
+  .demo-hack .hk-content { display: flex; flex-direction: column; gap: 0.3rem; }
+  .demo-hack .hk-name { font-weight: 600; font-size: 1.1rem; color: var(--text); letter-spacing: -0.01em; }
+  .demo-hack .hk-desc { font-weight: 400; font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
+  .demo-note { margin-top: 0.75rem; font-size: 0.8rem; font-weight: 400; color: var(--faint); font-style: italic; }
+
+  /* ARCHITECTURE diagram */
+  .arch-flow { display: grid; grid-template-columns: 1fr 0.4rem 0.7fr 0.4rem 1fr; align-items: center; gap: 1.5rem; margin: 1rem 0; }
+  .arch-col { display: flex; flex-direction: column; gap: 0.6rem; }
+  .arch-col-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.25rem; }
+  .arch-box { padding: 0.75rem 1rem; border: 1px solid var(--border-strong); font-weight: 500; font-size: 0.9rem; color: var(--text); text-align: center; }
+  .arch-arrow { font-family: var(--mono); font-size: 1.5rem; font-weight: 400; color: var(--accent); text-align: center; line-height: 1; }
+  .arch-bot { padding: 1.75rem 1.25rem; border: 2px solid var(--accent); background: var(--accent-soft); text-align: center; }
+  .arch-bot .bot-name { font-weight: 700; font-size: 1.5rem; color: var(--accent); letter-spacing: -0.02em; margin-bottom: 0.4rem; }
+  .arch-bot .bot-sub { font-size: 0.75rem; font-weight: 500; color: var(--text); letter-spacing: 0.02em; }
+  .arch-bot .bot-note { font-size: 0.7rem; font-weight: 400; color: var(--muted); margin-top: 0.5rem; font-style: italic; }
+  .arch-output { padding: 1rem 1.25rem; border-left: 2px solid var(--accent); background: var(--bg); }
+  .arch-output .out-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem; }
+  .arch-output .out-name { font-weight: 600; font-size: 1rem; color: var(--text); margin-bottom: 0.25rem; }
+  .arch-output .out-desc { font-size: 0.8rem; font-weight: 400; color: var(--muted); line-height: 1.45; }
+  .arch-foot { margin-top: 3rem; text-align: center; font-size: clamp(1.05rem, 1.5vw, 1.3rem); font-weight: 500; color: var(--text); letter-spacing: -0.01em; }
+  .arch-foot .accent { color: var(--accent); font-weight: 600; }
+
+  /* HACK demo slide */
+  .hack-demo { display: grid; grid-template-columns: 0.7fr 1fr; gap: 3rem; }
+  .hack-trigger { display: flex; flex-direction: column; gap: 1rem; }
+  .hack-output { display: flex; flex-direction: column; gap: 1rem; }
+  .hack-section-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+  .hack-cmd { font-family: var(--mono); font-size: 1.05rem; font-weight: 500; background: var(--code-bg); color: var(--text); padding: 1rem 1.25rem; border-radius: 4px; border-left: 3px solid var(--accent); }
+  .hack-cmd .prompt { color: var(--accent); }
+  .hack-trigger .desc { font-size: 0.85rem; font-weight: 400; color: var(--muted); line-height: 1.5; }
+  .hack-output-box { padding: 1.25rem 1.5rem; background: var(--accent-soft); border-left: 2px solid var(--accent); display: flex; flex-direction: column; gap: 0.5rem; }
+  .hack-output-line { font-size: 0.9rem; line-height: 1.45; color: var(--text); display: grid; grid-template-columns: 1.5rem 1fr; gap: 0.5rem; }
+  .hack-output-line::before { content: '→'; color: var(--accent); font-weight: 600; }
+  .hack-output-line strong { font-weight: 600; }
+  .hack-foot { grid-column: 1 / -1; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); display: grid; grid-template-columns: auto 1fr; gap: 2.5rem; align-items: baseline; }
+  .hack-foot .hero-num { font-weight: 700; font-size: clamp(3.5rem, 5.5vw, 5rem); color: var(--accent); letter-spacing: -0.045em; line-height: 1; font-variant-numeric: tabular-nums; }
+  .hack-foot .hero-num .unit { font-size: 0.85rem; font-weight: 500; color: var(--muted); margin-left: 0.4rem; }
+  .hack-foot .hero-text { font-size: 0.95rem; font-weight: 400; color: var(--text); line-height: 1.5; }
+  .hack-foot .hero-text strong { font-weight: 600; }
+  .hack-foot .hero-text .quiet { color: var(--muted); font-style: italic; display: block; margin-top: 0.4rem; font-size: 0.85rem; }
+
+  /* RECAP */
+  .recap-h { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; }
+  .recap-title { font-weight: 600; font-size: clamp(2rem, 3.5vw, 3rem); line-height: 1.1; letter-spacing: -0.03em; color: var(--text); margin-bottom: 4rem; max-width: 28ch; }
+  .recap-grid { display: grid; grid-template-columns: 0.8fr 1fr; gap: 4rem; margin-bottom: 3rem; }
+  .recap-numbers { display: flex; flex-direction: column; gap: 1.5rem; }
+  .recap-num { display: flex; flex-direction: column; gap: 0.25rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--border); }
+  .recap-num:last-child { border-bottom: none; }
+  .recap-num .n { font-weight: 700; font-size: clamp(3.5rem, 5vw, 4.5rem); line-height: 1; color: var(--accent); letter-spacing: -0.045em; font-variant-numeric: tabular-nums; }
+  .recap-num .n .unit { font-size: 0.95rem; font-weight: 500; color: var(--muted); margin-left: 0.4rem; }
+  .recap-num .lbl { font-weight: 500; font-size: 0.85rem; color: var(--text); margin-top: 0.25rem; letter-spacing: 0.005em; }
+  .recap-struggles { display: flex; flex-direction: column; gap: 1.25rem; }
+  .recap-struggles .s-tag { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.25rem; }
+  .recap-struggles .s-line { display: grid; grid-template-columns: 1.25rem 1fr; gap: 0.75rem; align-items: baseline; font-size: 0.95rem; color: var(--text); line-height: 1.5; padding: 0.5rem 0; }
+  .recap-struggles .s-line::before { content: '—'; color: var(--accent); font-weight: 600; }
+  .recap-foot { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.95rem; font-weight: 400; color: var(--muted); line-height: 1.55; font-style: italic; }
+  .recap-foot .accent { color: var(--accent); font-style: normal; font-weight: 500; }
+
+  /* BRIDGE */
+  .bridge { gap: 1.75rem; }
+  .bridge h2 { font-weight: 600; font-size: clamp(2.5rem, 4.5vw, 4rem); line-height: 1.05; letter-spacing: -0.04em; color: var(--text); max-width: 22ch; }
+  .bridge h2 .accent { color: var(--accent); font-weight: 700; }
+  .bridge .sub { font-size: clamp(1.1rem, 1.6vw, 1.4rem); font-weight: 400; color: var(--muted); max-width: 40ch; line-height: 1.45; }
+
+  .nav-hint { position: fixed; bottom: 1rem; left: 50%; transform: translateX(-50%); font-size: 0.65rem; color: var(--faint); opacity: 0.5; pointer-events: none; letter-spacing: 0.06em; }
+  .nav-hint.hidden { opacity: 0; transition: opacity 0.5s; }
+
+  @media print {
+    @page { size: 13.3in 7.5in; margin: 0; }
+    .deck { height: auto; }
+    .slide { display: flex !important; height: 7.5in; width: 13.3in; page-break-after: always; }
+    .nav-hint { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="deck">
+
+  <!-- 1, COVER (Chris-only) -->
+  <section class="slide active" id="s1">
+    <div class="cover-eyebrow">Solo Deck &middot; Personal rehearsal</div>
+    <h1 class="cover-title">Demo <span class="accent">01</span><br>Chris.</h1>
+    <p class="cover-sub">Workspace-Native stack. 9 minutes. Two hacks, same architecture, different outputs.</p>
+    <p class="cover-meta"><span class="who">Christoph Erler</span><span class="when">EO AI Exchange #1 &middot; May 11, 2026 &middot; 18:08 to 18:18 CEST</span></p>
+    <div class="brand">Solo rehearsal deck</div>
+    <div class="page-num">01 / 06</div>
+  </section>
+
+  <!-- 2, DEMO TITLE -->
+  <section class="slide" id="s2">
+    <div class="label">Slot 0:00, set the frame</div>
+    <div class="demo">
+      <div class="demo-num">01<span class="of">of two</span></div>
+      <div class="demo-body">
+        <h2>AI inside your <span class="accent">existing stack</span>.</h2>
+        <div class="sub">Two hacks. Same architecture. Different outputs.</div>
+        <div class="demo-hacks">
+          <div class="demo-hack"><div class="hk-num">Hack 01</div><div class="hk-content"><div class="hk-name">Morning Briefing</div><div class="hk-desc">Inbox + Calendar + Drive + priorities, one page in 30 seconds.</div></div></div>
+          <div class="demo-hack"><div class="hk-num">Hack 02</div><div class="hk-content"><div class="hk-name">Meeting Prep</div><div class="hk-desc">LinkedIn + past mail + CRM + Drive context, on demand.</div></div></div>
+        </div>
+        <p class="demo-note">No new tools. Orchestration on top of Gmail, Calendar, Drive, Notion.</p>
+      </div>
+    </div>
+    <div class="brand">Solo rehearsal deck</div>
+    <div class="page-num">02 / 06</div>
+  </section>
+
+  <!-- 3, ARCHITECTURE -->
+  <section class="slide" id="s3">
+    <div class="label">Slot 0:30, explain the mechanic</div>
+    <h2 class="title" style="margin-bottom:2.5rem;">Same bot. Same sources.<br>The <span class="accent">prompt</span> is the lever.</h2>
+    <div class="arch-flow">
+      <div class="arch-col">
+        <div class="arch-col-label">4 Sources</div>
+        <div class="arch-box">Gmail</div>
+        <div class="arch-box">Calendar</div>
+        <div class="arch-box">Drive</div>
+        <div class="arch-box">Notion</div>
+      </div>
+      <div class="arch-arrow">&rarr;</div>
+      <div class="arch-bot">
+        <div class="bot-name">Bot</div>
+        <div class="bot-sub">Orchestrator</div>
+        <div class="bot-note">Telegram-native, voice + text</div>
+      </div>
+      <div class="arch-arrow">&rarr;</div>
+      <div class="arch-col">
+        <div class="arch-col-label">2 Outputs</div>
+        <div class="arch-output">
+          <div class="out-label">Hack 01</div>
+          <div class="out-name">Morning Briefing</div>
+          <div class="out-desc">One page. 30 seconds. Read on phone.</div>
+        </div>
+        <div class="arch-output">
+          <div class="out-label">Hack 02</div>
+          <div class="out-name">Meeting Prep</div>
+          <div class="out-desc">One page. On demand. 5 min before any call.</div>
+        </div>
+      </div>
+    </div>
+    <p class="arch-foot">Two outputs. Same architecture. Only the <span class="accent">prompt</span> changes.</p>
+    <div class="brand">Solo rehearsal deck</div>
+    <div class="page-num">03 / 06</div>
+  </section>
+
+  <!-- 4, HACK 01 -->
+  <section class="slide" id="s4">
+    <div class="label">Slot 1:30, live demo Hack 01</div>
+    <h2 class="title" style="margin-bottom:2.5rem;">Morning <span class="accent">Briefing</span>.</h2>
+    <div class="hack-demo">
+      <div class="hack-trigger">
+        <div class="hack-section-label">Trigger</div>
+        <div class="hack-cmd"><span class="prompt">&gt;</span> morning brief</div>
+        <div class="desc">Voice or text in Telegram. 7am every day, before I open Gmail.</div>
+      </div>
+      <div class="hack-output">
+        <div class="hack-section-label">Output, 30 seconds</div>
+        <div class="hack-output-box">
+          <div class="hack-output-line"><strong>Inbox top 3:</strong> Tim Fischer (Valtis follow-up), Diana, Raphi (RC ICP v2)</div>
+          <div class="hack-output-line"><strong>Calendar today:</strong> 11:00 Robert call, 14:00 focus block, 17:30 EO Exchange dry-run</div>
+          <div class="hack-output-line"><strong>Drive priorities:</strong> RC sales script v3 needs review</div>
+          <div class="hack-output-line"><strong>Open threads:</strong> Reisensburg expose, Stephan Big Decision</div>
+        </div>
+      </div>
+      <div class="hack-foot">
+        <div class="hero-num">5h<span class="unit">/ week</span></div>
+        <div class="hero-text"><strong>Tracked over 3 weeks, March 2026.</strong><span class="quiet">What it does not do: prioritize by emotional weight. Bot does not know it's your kid's birthday.</span></div>
+      </div>
+    </div>
+    <div class="brand">Solo rehearsal deck</div>
+    <div class="page-num">04 / 06</div>
+  </section>
+
+  <!-- 5, HACK 02 -->
+  <section class="slide" id="s5">
+    <div class="label">Slot 4:00, live demo Hack 02</div>
+    <h2 class="title" style="margin-bottom:2.5rem;">Meeting <span class="accent">Prep</span>.</h2>
+    <div class="hack-demo">
+      <div class="hack-trigger">
+        <div class="hack-section-label">Trigger</div>
+        <div class="hack-cmd"><span class="prompt">&gt;</span> prep meeting with Tom Debus</div>
+        <div class="desc">5 minutes before any call. Used to take 20.</div>
+      </div>
+      <div class="hack-output">
+        <div class="hack-section-label">Output, 30 seconds</div>
+        <div class="hack-output-box">
+          <div class="hack-output-line"><strong>LinkedIn last 3:</strong> Ferris.ai launch, AI agents for finance, Q1 wrap-up</div>
+          <div class="hack-output-line"><strong>Past mail thread:</strong> 4 emails over 6 months, last topic was MCP integration</div>
+          <div class="hack-output-line"><strong>Drive mentions:</strong> 2 docs reference Tom, including Sales Exchange notes</div>
+          <div class="hack-output-line"><strong>Suggested opener:</strong> follow up on his Ferris launch + ask about MCP rollout</div>
+        </div>
+      </div>
+      <div class="hack-foot">
+        <div class="hero-num">8h<span class="unit">/ week</span></div>
+        <div class="hero-text"><strong>More than morning brief, because more meetings than mornings.</strong><span class="quiet">Where it fails: meeting with someone new. No history, bot returns thin air. Then I do it manually like it's 2024.</span></div>
+      </div>
+    </div>
+    <div class="brand">Solo rehearsal deck</div>
+    <div class="page-num">05 / 06</div>
+  </section>
+
+  <!-- 6, RECAP + HANDOFF -->
+  <section class="slide" id="s6">
+    <div class="label">Slot 7:00, recap + handoff to Dom</div>
+    <h2 class="recap-title">Workspace-native, in numbers.</h2>
+    <div class="recap-grid">
+      <div class="recap-numbers">
+        <div class="recap-num"><div class="n">13h<span class="unit">/ week</span></div><div class="lbl">Total saved across both hacks</div></div>
+        <div class="recap-num"><div class="n">30s</div><div class="lbl">Bot response time, both hacks</div></div>
+        <div class="recap-num"><div class="n">39</div><div class="lbl">Workspace tools orchestrated</div></div>
+        <div class="recap-num"><div class="n">2h<span class="unit">/ month</span></div><div class="lbl">Maintenance tax, patching</div></div>
+      </div>
+      <div class="recap-struggles">
+        <div class="s-tag">Honest struggles</div>
+        <div class="s-line">Maintenance tax is real, every Workspace update can break the bot</div>
+        <div class="s-line">No emotional weight, bot does not know your kid's birthday is today</div>
+        <div class="s-line">No long-term memory across sessions, fresh context every time</div>
+        <div class="s-line">New contacts return thin air, no history to pull from</div>
+      </div>
+    </div>
+    <p class="recap-foot">No long-term memory across sessions. <span class="accent">That is where Dom takes over.</span></p>
+    <div class="brand">Solo rehearsal deck</div>
+    <div class="page-num">06 / 06</div>
+  </section>
+
+</div>
+
+<div class="nav-hint">arrow keys to navigate &middot; press P for print PDF</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  let current = 0;
+  function go(idx) {
+    if (idx < 0 || idx >= slides.length) return;
+    slides[current].classList.remove('active');
+    slides[idx].classList.add('active');
+    current = idx;
+    history.replaceState({}, '', '#' + (idx + 1));
+  }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); go(current + 1); }
+    if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); go(current - 1); }
+    if (e.key === 'Home') go(0);
+    if (e.key === 'End') go(slides.length - 1);
+    if (e.key === 'p' || e.key === 'P') window.print();
+    document.querySelector('.nav-hint').classList.add('hidden');
+  });
+  document.querySelector('.deck').addEventListener('click', (e) => {
+    const x = e.clientX; const w = window.innerWidth;
+    if (x > w / 2) go(current + 1);
+    else go(current - 1);
+  });
+  if (window.location.hash) {
+    const n = parseInt(window.location.hash.replace('#', ''));
+    if (n >= 1 && n <= slides.length) go(n - 1);
+  }
+  setTimeout(() => document.querySelector('.nav-hint').classList.add('hidden'), 5000);
+</script>
+</body>
+</html>
