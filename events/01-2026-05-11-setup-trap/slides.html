@@ -359,6 +359,32 @@
   .close-bottom .v.acc { color: var(--accent); font-weight: 700; }
   .close-bottom .right { text-align: right; }
 
+
+  /* ========== NEW: HOURS WASTED HERO (shared deck) ========== */
+  .wasted-hero { display: flex; flex-direction: column; gap: 2rem; align-items: flex-start; }
+  .wasted-num { font-weight: 800; font-size: clamp(8rem, 18vw, 18rem); line-height: 0.85; letter-spacing: -0.06em; color: #dc2626; font-variant-numeric: tabular-nums; }
+  .wasted-eq { font-size: clamp(1.4rem, 2.4vw, 2.2rem); font-weight: 600; color: var(--text); line-height: 1.3; max-width: 36ch; letter-spacing: -0.02em; }
+  .wasted-eq .accent { color: var(--accent); font-weight: 700; }
+  .wasted-eq .strike { color: #dc2626; font-weight: 700; }
+  .wasted-foot { font-size: 0.95rem; color: var(--muted); max-width: 75ch; line-height: 1.55; padding-top: 1.5rem; border-top: 1px solid var(--border-strong); margin-top: 1rem; }
+  .wasted-foot strong { color: var(--text); font-weight: 600; }
+
+  /* ========== NEW: HEADCOUNT TEASER (shared deck) ========== */
+  .hc-teaser { display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: center; }
+  .hc-teaser-num { font-weight: 800; font-size: clamp(5rem, 10vw, 8rem); line-height: 0.9; letter-spacing: -0.05em; color: var(--accent); font-variant-numeric: tabular-nums; }
+  .hc-teaser-num small { font-size: 0.4em; color: var(--muted); font-weight: 500; margin-left: 0.3em; }
+  .hc-teaser-side { display: flex; flex-direction: column; gap: 1rem; }
+  .hc-teaser-side .h { font-weight: 700; font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); }
+  .hc-teaser-side .l { font-size: 1rem; font-weight: 500; line-height: 1.55; color: var(--text); }
+  .hc-teaser-side .l strong { font-weight: 700; }
+  .hc-teaser-side .l .strike { text-decoration: line-through; text-decoration-color: #dc2626; text-decoration-thickness: 2px; color: var(--muted); }
+
+  /* ========== NEW: MASTER TEMPLATE BAR (shared deck) ========== */
+  .mt-bar { margin-top: 1.5rem; padding: 1.5rem 2rem; background: var(--accent-soft); border-left: 4px solid var(--accent); display: flex; flex-direction: column; gap: 0.85rem; }
+  .mt-bar .h { font-weight: 700; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); }
+  .mt-bar .l { font-size: 1.05rem; font-weight: 600; line-height: 1.5; color: var(--text); }
+  .mt-bar .l .accent { color: var(--accent); font-weight: 700; }
+
   .nav-hint { position: fixed; bottom: 1rem; left: 50%; transform: translateX(-50%); font-size: 0.65rem; color: var(--faint); opacity: 0.5; pointer-events: none; letter-spacing: 0.06em; }
   .nav-hint.hidden { opacity: 0; transition: opacity 0.5s; }
 
@@ -377,10 +403,10 @@
   <section class="slide active" id="s1">
     <div class="cover-eyebrow">EO AI Productivity Exchange &middot; #1</div>
     <h1 class="cover-title">The <span class="accent">Setup</span><br>Trap.</h1>
-    <p class="cover-sub">Two operators show the stacks they actually run. Tool overload, setup cost, what survived 18 months.</p>
+    <p class="cover-sub">Two operators. Five organizations between us. The hours saved, the hires never made, and the master template you fork tonight.</p>
     <p class="cover-meta"><span class="who">Christoph Erler &amp; Dom Raute</span><span class="when">May 11, 2026 &middot; 18:00 CEST</span></p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">01 / 17</div>
+    <div class="page-num">01 / 19</div>
   </section>
 
   <!-- 2, PROMISE -->
@@ -395,7 +421,7 @@
     </div>
     <p class="footer-note">Not the goal: another tool overview, generic theory, polished vendor demos. <span class="accent">We show the struggles, not just the wins.</span></p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">02 / 17</div>
+    <div class="page-num">02 / 19</div>
   </section>
 
   <!-- 3, TWO TRAPS -->
@@ -421,11 +447,24 @@
     <p class="traps-foot">Most don't escape because they fight the wrong trap.</p>
     <p class="sources"><strong>Sources</strong>EO WhatsApp Poll (122 votes, March 2026) &middot; MIT Project NANDA, "The GenAI Divide", 2025 &middot; Andrew van Aswegen, EO Best Guy interview, April 2026</p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">03 / 17</div>
+    <div class="page-num">03 / 19</div>
   </section>
 
-  <!-- 4, STACK VERSIONS -->
+  <!-- 4, HOURS WASTED HERO (NEW) -->
   <section class="slide" id="s4">
+    <div class="label">The trap before the trap</div>
+    <div class="wasted-hero">
+      <div class="wasted-num">658</div>
+      <div class="wasted-eq"><span class="strike">658 hours</span> per year. <span class="accent">12 weeks of your life</span>. Spent installing tools you stopped using.</div>
+      <p class="wasted-foot">14 hours per week, 47 working weeks. Tool research, context re-explanation, integration patching, app switching. <strong>The hours nobody counts because nobody wants to see the math.</strong></p>
+    </div>
+    <p class="sources"><strong>Sources</strong>MIT Project NANDA "The GenAI Divide" 2025 (95% pilots negative ROI) &middot; EO WhatsApp Poll, 122 votes, March 2026 &middot; Andrew van Aswegen, EO Best Guy interview April 2026</p>
+    <div class="brand">EO Berlin</div>
+    <div class="page-num">04 / 19</div>
+  </section>
+
+  <!-- 5, STACK VERSIONS -->
+  <section class="slide" id="s5">
     <div class="label">5 Setups in 18 Months</div>
     <h2 class="title">Three dead.<br>Two <span class="accent">live</span>.</h2>
     <div class="versions">
@@ -437,11 +476,11 @@
     </div>
     <p class="v-quote"><strong>Two stacks survived. Both share one principle.</strong> Stop maintaining tools. Start maintaining <span class="accent">memory</span>.</p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">04 / 17</div>
+    <div class="page-num">05 / 19</div>
   </section>
 
   <!-- 5, DIAGNOSTIC -->
-  <section class="slide" id="s5">
+  <section class="slide" id="s6">
     <div class="label">Diagnostic</div>
     <h2 class="title">Are you in the <span class="accent">Setup Trap</span>?</h2>
     <p class="diag-sub">3 questions. Answer honestly.</p>
@@ -451,11 +490,11 @@
       <div class="q"><div class="qn">03</div><div class="qbody"><div class="qt">Could a new team member understand it in 2 sentences?</div><div class="qv">No? <strong>Setup Trap.</strong></div></div></div>
     </div>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">05 / 17</div>
+    <div class="page-num">06 / 19</div>
   </section>
 
   <!-- 6, HIERARCHY -->
-  <section class="slide" id="s6">
+  <section class="slide" id="s7">
     <div class="label">The Hierarchy</div>
     <div class="hier-bigword">
       <span class="strong">MEMORY</span><span class="gt">&gt;</span><span class="mid">TOOLS</span><span class="gt">&gt;</span><span class="weak">MODELS</span>
@@ -471,11 +510,11 @@
     </div>
     <p class="sources"><strong>Source</strong>McKinsey, "The state of AI: How organizations are rewiring to capture value", 2025</p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">06 / 17</div>
+    <div class="page-num">07 / 19</div>
   </section>
 
   <!-- 7, DEMO 1 TITLE -->
-  <section class="slide" id="s7">
+  <section class="slide" id="s8">
     <div class="label">Demo 01 &middot; Chris &middot; 9 min</div>
     <div class="demo">
       <div class="demo-num">01<span class="of">of two</span></div>
@@ -490,11 +529,11 @@
       </div>
     </div>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">07 / 17</div>
+    <div class="page-num">08 / 19</div>
   </section>
 
   <!-- 8, DEMO 1 ARCHITECTURE -->
-  <section class="slide" id="s8">
+  <section class="slide" id="s9">
     <div class="label">Demo 01 &middot; How it works</div>
     <h2 class="title" style="margin-bottom:2.5rem;">Same bot. Same sources.<br>The <span class="accent">prompt</span> is the lever.</h2>
     <div class="arch-flow">
@@ -528,11 +567,11 @@
     </div>
     <p class="arch-foot">Two outputs. Same architecture. Only the <span class="accent">prompt</span> changes.</p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">08 / 17</div>
+    <div class="page-num">09 / 19</div>
   </section>
 
   <!-- 9, DEMO 1 HACK 01 -->
-  <section class="slide" id="s9">
+  <section class="slide" id="s10">
     <div class="label">Demo 01 &middot; Hack 01</div>
     <h2 class="title" style="margin-bottom:2.5rem;">Morning <span class="accent">Briefing</span>.</h2>
     <div class="hack-demo">
@@ -556,11 +595,11 @@
       </div>
     </div>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">09 / 17</div>
+    <div class="page-num">10 / 19</div>
   </section>
 
   <!-- 10, DEMO 1 HACK 02 -->
-  <section class="slide" id="s10">
+  <section class="slide" id="s11">
     <div class="label">Demo 01 &middot; Hack 02</div>
     <h2 class="title" style="margin-bottom:2.5rem;">Meeting <span class="accent">Prep</span>.</h2>
     <div class="hack-demo">
@@ -584,11 +623,11 @@
       </div>
     </div>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">10 / 17</div>
+    <div class="page-num">11 / 19</div>
   </section>
 
   <!-- 11, DEMO 1 RECAP -->
-  <section class="slide" id="s11">
+  <section class="slide" id="s12">
     <div class="label">Demo 01 &middot; What you just saw</div>
     <h2 class="recap-title">Workspace-native, in numbers.</h2>
     <div class="recap-grid">
@@ -608,20 +647,20 @@
     </div>
     <p class="recap-foot">No long-term memory across sessions. <span class="accent">That is where Dom takes over.</span></p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">11 / 17</div>
+    <div class="page-num">12 / 19</div>
   </section>
 
   <!-- 12, BRIDGE -->
-  <section class="slide bridge" id="s12">
+  <section class="slide bridge" id="s13">
     <div class="label">Handoff</div>
     <h2>Dom takes you<br>one layer <span class="accent">deeper</span>.</h2>
     <p class="sub">From hack on top, to architecture beneath.</p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">12 / 17</div>
+    <div class="page-num">13 / 19</div>
   </section>
 
   <!-- 13, DEMO 2 TITLE -->
-  <section class="slide" id="s13">
+  <section class="slide" id="s14">
     <div class="label">Demo 02 &middot; Dom &middot; 9 min</div>
     <div class="demo">
       <div class="demo-num">02<span class="of">of two</span></div>
@@ -636,11 +675,11 @@
       </div>
     </div>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">13 / 17</div>
+    <div class="page-num">14 / 19</div>
   </section>
 
   <!-- 14, DEMO 2 RECAP -->
-  <section class="slide" id="s14">
+  <section class="slide" id="s15">
     <div class="label">Demo 02 &middot; What you just saw</div>
     <h2 class="recap-title">Local-first memory, in numbers.</h2>
     <div class="recap-grid">
@@ -660,11 +699,11 @@
     </div>
     <p class="recap-foot">Architecture wins long-term. <span class="accent">Setup cost upfront, near-zero compounding cost after.</span></p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">14 / 17</div>
+    <div class="page-num">15 / 19</div>
   </section>
 
   <!-- 15, COST -->
-  <section class="slide" id="s15">
+  <section class="slide" id="s16">
     <div class="label">Cost Reality</div>
     <h2 class="title">What you pay vs<br>what you get.</h2>
     <div class="cost-grid">
@@ -675,13 +714,13 @@
     <p class="cost-foot">The <span class="accent">architecture</span> beats the budget.</p>
     <p class="sources"><strong>Sources</strong>Glean Enterprise public pricing, 2026 &middot; Notion AI + Glean + ChatGPT Enterprise list pricing combined, 2026</p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">15 / 17</div>
+    <div class="page-num">16 / 19</div>
   </section>
 
   <!-- 16, GITHUB REVEAL -->
-  <section class="slide" id="s16">
+  <section class="slide" id="s17">
     <div class="label">Live Tonight</div>
-    <h2 class="title">11 solutions <span class="accent">shipping</span> today.</h2>
+    <h2 class="title">11 solutions + <span class="accent">1 master template</span> shipping today.</h2>
     <div class="gh-grid">
       <div class="gh-row"><div class="gh-name">Tool Overload</div><div class="gh-pct">29%</div></div>
       <div class="gh-row"><div class="gh-name">Team Adoption</div><div class="gh-pct">18%</div></div>
@@ -694,13 +733,33 @@
       <div class="gh-row"><div class="gh-name">Time / Learning</div><div class="gh-pct">6%</div></div>
       <div class="gh-row"><div class="gh-name">Security / GDPR DACH</div><div class="gh-pct">5%</div></div>
     </div>
-    <div class="gh-url"><div class="lbl">MIT License &middot; fork and remix</div><div class="url">github.com/chris1928a/eo-ai-exchange</div></div>
+    <div class="gh-url"><div class="lbl">MIT License &middot; fork and remix &middot; 5 portable skills + 30-day Personal-to-Org plan</div><div class="url">github.com/chris1928a/eo-ai-exchange</div></div>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">16 / 17</div>
+    <div class="page-num">17 / 19</div>
   </section>
 
-  <!-- 17, CLOSING -->
-  <section class="slide" id="s17">
+  <!-- 18, HEADCOUNT TEASER (NEW) -->
+  <section class="slide" id="s18">
+    <div class="label">The bigger reveal &middot; Chris demo</div>
+    <h2 class="title">Same blueprint. <span class="accent">Four buildings.</span><small>What Chris will show in his deep dive: the architecture that scales from one operator to a 12-person org and a sales floor with zero managers.</small></h2>
+    <div class="hc-teaser">
+      <div class="hc-teaser-num">670<small>-990k EUR</small></div>
+      <div class="hc-teaser-side">
+        <div class="h">Headcount value &middot; 4 organizations &middot; 1 architecture</div>
+        <p class="l"><span class="strike">3 personal hires</span> + <span class="strike">1 ops manager</span> + <span class="strike">2 sales-mgmt hires</span> + <span class="strike">3 pre-seed engineering hires</span></p>
+        <p class="l"><strong>Replaced by the same 3-layer pattern</strong>, deployed on different harnesses (Mac, Cloud, Edge). Capability without hire.</p>
+      </div>
+    </div>
+    <div class="mt-bar">
+      <div class="h">Tonight on GitHub, beyond the 11 solutions</div>
+      <div class="l">A <span class="accent">Master Template</span> with 5 portable skills (/diarize-person, /audit-process, /weekly-review, /draft-by-channel, /memory-curator) plus a 30-day rollout plan from Personal to Org.</div>
+    </div>
+    <div class="brand">EO Berlin</div>
+    <div class="page-num">18 / 19</div>
+  </section>
+
+  <!-- 19, CLOSING -->
+  <section class="slide" id="s19">
     <div class="label">This is Day 1</div>
     <div class="close-h">
       <span class="l1">You name the pain.</span>
@@ -709,7 +768,7 @@
     <p class="close-cad">30 to 90 days. Then again.</p>
     <div class="close-grid">
       <div class="close-cell"><div class="num">10</div><div class="lbl">Pain Clusters</div><div class="d">from 103 registrations</div></div>
-      <div class="close-cell"><div class="num">11</div><div class="lbl">Solutions</div><div class="d">live tonight on GitHub</div></div>
+      <div class="close-cell"><div class="num">11<span style="font-size:0.5em">+1</span></div><div class="lbl">Solutions + Template</div><div class="d">live tonight on GitHub</div></div>
       <div class="close-cell"><div class="num">#2</div><div class="lbl">Event #2</div><div class="d">topic picked by your Slido vote</div></div>
       <div class="close-cell"><div class="num">&infin;</div><div class="lbl">Cadence</div><div class="d">market-reactive, not quarterly</div></div>
     </div>
@@ -718,7 +777,7 @@
       <div class="right"><div class="lbl">GitHub, live tonight</div><div class="v">chris1928a/eo-ai-exchange</div></div>
     </div>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">17 / 17</div>
+    <div class="page-num">19 / 19</div>
   </section>
 
 </div>
