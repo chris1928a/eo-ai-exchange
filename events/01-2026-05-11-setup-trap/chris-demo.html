@@ -694,107 +694,93 @@
     <div class="page-num">09 / 43</div>
   </section>
 
-  <!-- 10, 3-LAYER ARCHITECTURE: TESLA METAPHOR (NEW) -->
+  <!-- 10, 3-LAYER ARCHITECTURE: HUMAN BODY METAPHOR -->
   <section class="slide" id="s10">
     <div class="label">The pattern that scales</div>
-    <h2 class="title">Same trick as <span class="accent">Tesla</span>.<small>Software is the brain. Silicon carries the signal. Hardware does the work. One neural net, every car. One brain, every org.</small></h2>
+    <h2 class="title">Same blueprint as <span class="accent">your own body</span>.<small>Long-term memory holds what you trained. Working memory thinks in real time. Body executes. The AI version is the same. You already know this pattern.</small></h2>
     <div class="arch-svg-wrap">
       <svg viewBox="0 0 980 420" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <linearGradient id="aiGrad" x1="0" y1="0" x2="0" y2="1">
+          <linearGradient id="ltmGrad" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stop-color="#2563eb"/><stop offset="100%" stop-color="#1d4ed8"/>
           </linearGradient>
-          <linearGradient id="chipGrad" x1="0" y1="0" x2="1" y2="0">
+          <linearGradient id="wmGrad" x1="0" y1="0" x2="1" y2="0">
             <stop offset="0%" stop-color="#3f3f46"/><stop offset="50%" stop-color="#52525b"/><stop offset="100%" stop-color="#3f3f46"/>
           </linearGradient>
         </defs>
-        <!-- TOP LAYER: Tesla AI / Neural Net -->
-        <rect x="60" y="30" width="860" height="100" rx="10" fill="url(#aiGrad)" stroke="#1d4ed8" stroke-width="2"/>
-        <!-- Neural net dots + connections -->
-        <g opacity="0.5">
-          <circle cx="180" cy="60" r="5" fill="white"/>
-          <circle cx="180" cy="80" r="5" fill="white"/>
-          <circle cx="180" cy="100" r="5" fill="white"/>
-          <circle cx="240" cy="55" r="5" fill="white"/>
-          <circle cx="240" cy="80" r="5" fill="white"/>
-          <circle cx="240" cy="105" r="5" fill="white"/>
-          <circle cx="300" cy="60" r="5" fill="white"/>
-          <circle cx="300" cy="80" r="5" fill="white"/>
-          <circle cx="300" cy="100" r="5" fill="white"/>
-          <line x1="180" y1="60" x2="240" y2="55" stroke="white" stroke-width="0.8"/>
-          <line x1="180" y1="60" x2="240" y2="80" stroke="white" stroke-width="0.8"/>
-          <line x1="180" y1="80" x2="240" y2="55" stroke="white" stroke-width="0.8"/>
-          <line x1="180" y1="80" x2="240" y2="80" stroke="white" stroke-width="0.8"/>
-          <line x1="180" y1="80" x2="240" y2="105" stroke="white" stroke-width="0.8"/>
-          <line x1="180" y1="100" x2="240" y2="80" stroke="white" stroke-width="0.8"/>
-          <line x1="180" y1="100" x2="240" y2="105" stroke="white" stroke-width="0.8"/>
-          <line x1="240" y1="55" x2="300" y2="60" stroke="white" stroke-width="0.8"/>
-          <line x1="240" y1="80" x2="300" y2="60" stroke="white" stroke-width="0.8"/>
-          <line x1="240" y1="80" x2="300" y2="80" stroke="white" stroke-width="0.8"/>
-          <line x1="240" y1="80" x2="300" y2="100" stroke="white" stroke-width="0.8"/>
-          <line x1="240" y1="105" x2="300" y2="80" stroke="white" stroke-width="0.8"/>
-          <line x1="240" y1="105" x2="300" y2="100" stroke="white" stroke-width="0.8"/>
+
+        <!-- TOP LAYER: Long-term Memory -->
+        <rect x="60" y="30" width="860" height="100" rx="10" fill="url(#ltmGrad)" stroke="#1d4ed8" stroke-width="2"/>
+        <!-- Skill icons (book stacks + gear shapes representing trained skills) -->
+        <g fill="white" opacity="0.55">
+          <!-- Book 1 -->
+          <rect x="170" y="62" width="22" height="34" rx="2"/>
+          <line x1="170" y1="68" x2="192" y2="68" stroke="#1d4ed8" stroke-width="1"/>
+          <line x1="170" y1="74" x2="192" y2="74" stroke="#1d4ed8" stroke-width="1"/>
+          <!-- Book 2 -->
+          <rect x="200" y="58" width="22" height="38" rx="2"/>
+          <line x1="200" y1="64" x2="222" y2="64" stroke="#1d4ed8" stroke-width="1"/>
+          <line x1="200" y1="70" x2="222" y2="70" stroke="#1d4ed8" stroke-width="1"/>
+          <!-- Book 3 -->
+          <rect x="230" y="60" width="22" height="36" rx="2"/>
+          <line x1="230" y1="66" x2="252" y2="66" stroke="#1d4ed8" stroke-width="1"/>
+          <line x1="230" y1="72" x2="252" y2="72" stroke="#1d4ed8" stroke-width="1"/>
+          <!-- Gear -->
+          <circle cx="285" cy="78" r="14" fill="none" stroke="white" stroke-width="2.5"/>
+          <circle cx="285" cy="78" r="6" fill="white"/>
+          <rect x="282" y="60" width="6" height="5" fill="white"/>
+          <rect x="282" y="91" width="6" height="5" fill="white"/>
+          <rect x="270" y="75" width="5" height="6" fill="white"/>
+          <rect x="295" y="75" width="5" height="6" fill="white"/>
         </g>
-        <text x="490" y="68" text-anchor="middle" fill="white" font-family="Inter" font-weight="700" font-size="22">Tesla AI</text>
-        <text x="490" y="92" text-anchor="middle" fill="#dbeafe" font-family="Inter" font-weight="500" font-size="13">Neural net trained on billions of miles. Retrained weekly.</text>
-        <text x="490" y="115" text-anchor="middle" fill="#dbeafe" font-family="JetBrains Mono" font-weight="500" font-size="11">your equivalent: Skills (Markdown procedures with judgment)</text>
+        <text x="540" y="68" text-anchor="middle" fill="white" font-family="Inter" font-weight="700" font-size="22">Long-term Memory</text>
+        <text x="540" y="92" text-anchor="middle" fill="#dbeafe" font-family="Inter" font-weight="500" font-size="13">Where every skill you trained lives. Riding a bike, your handwriting, the Carbonara recipe by heart.</text>
+        <text x="540" y="115" text-anchor="middle" fill="#dbeafe" font-family="JetBrains Mono" font-weight="500" font-size="11">your equivalent: Skills (Markdown procedures with judgment)</text>
         <text x="900" y="80" text-anchor="end" fill="#1d4ed8" font-family="JetBrains Mono" font-weight="600" font-size="11">90% of value</text>
 
-        <!-- MIDDLE LAYER: FSD Chip -->
-        <rect x="180" y="170" width="620" height="80" fill="url(#chipGrad)" stroke="#27272a" stroke-width="2" rx="6"/>
-        <!-- Chip pins -->
-        <g fill="#a1a1aa">
-          <rect x="180" y="160" width="8" height="6"/><rect x="200" y="160" width="8" height="6"/><rect x="220" y="160" width="8" height="6"/>
-          <rect x="240" y="160" width="8" height="6"/><rect x="260" y="160" width="8" height="6"/><rect x="280" y="160" width="8" height="6"/>
-          <rect x="300" y="160" width="8" height="6"/><rect x="320" y="160" width="8" height="6"/><rect x="340" y="160" width="8" height="6"/>
-          <rect x="360" y="160" width="8" height="6"/><rect x="380" y="160" width="8" height="6"/><rect x="400" y="160" width="8" height="6"/>
-          <rect x="600" y="160" width="8" height="6"/><rect x="620" y="160" width="8" height="6"/><rect x="640" y="160" width="8" height="6"/>
-          <rect x="660" y="160" width="8" height="6"/><rect x="680" y="160" width="8" height="6"/><rect x="700" y="160" width="8" height="6"/>
-          <rect x="720" y="160" width="8" height="6"/><rect x="740" y="160" width="8" height="6"/><rect x="760" y="160" width="8" height="6"/>
-          <rect x="780" y="160" width="8" height="6"/><rect x="800" y="160" width="8" height="6"/>
-          <rect x="180" y="254" width="8" height="6"/><rect x="200" y="254" width="8" height="6"/><rect x="220" y="254" width="8" height="6"/>
-          <rect x="240" y="254" width="8" height="6"/><rect x="260" y="254" width="8" height="6"/><rect x="280" y="254" width="8" height="6"/>
-          <rect x="300" y="254" width="8" height="6"/><rect x="320" y="254" width="8" height="6"/><rect x="340" y="254" width="8" height="6"/>
-          <rect x="360" y="254" width="8" height="6"/><rect x="380" y="254" width="8" height="6"/><rect x="400" y="254" width="8" height="6"/>
-          <rect x="600" y="254" width="8" height="6"/><rect x="620" y="254" width="8" height="6"/><rect x="640" y="254" width="8" height="6"/>
-          <rect x="660" y="254" width="8" height="6"/><rect x="680" y="254" width="8" height="6"/><rect x="700" y="254" width="8" height="6"/>
-          <rect x="720" y="254" width="8" height="6"/><rect x="740" y="254" width="8" height="6"/><rect x="760" y="254" width="8" height="6"/>
-          <rect x="780" y="254" width="8" height="6"/><rect x="800" y="254" width="8" height="6"/>
+        <!-- MIDDLE LAYER: Working Memory -->
+        <rect x="180" y="170" width="620" height="80" fill="url(#wmGrad)" stroke="#27272a" stroke-width="2" rx="40"/>
+        <!-- Brain icon (simplified) -->
+        <g fill="white" opacity="0.6">
+          <path d="M 230 195 Q 220 185 230 178 Q 240 172 252 178 Q 264 172 274 178 Q 284 185 274 195 Q 284 205 274 215 Q 264 222 252 215 Q 240 222 230 215 Q 220 205 230 195 Z" fill="none" stroke="white" stroke-width="2"/>
+          <path d="M 240 188 Q 245 192 240 198 M 254 184 Q 252 195 256 200 M 264 188 Q 268 195 264 205" stroke="white" stroke-width="1.2" fill="none"/>
         </g>
-        <text x="490" y="200" text-anchor="middle" fill="white" font-family="Inter" font-weight="700" font-size="20">FSD Chip (HW4)</text>
-        <text x="490" y="220" text-anchor="middle" fill="#e4e4e7" font-family="Inter" font-weight="500" font-size="13">Loads the AI, executes inferences. Stupid silicon, perfectly stable.</text>
+        <text x="490" y="200" text-anchor="middle" fill="white" font-family="Inter" font-weight="700" font-size="20">Working Memory</text>
+        <text x="490" y="220" text-anchor="middle" fill="#e4e4e7" font-family="Inter" font-weight="500" font-size="13">What you are thinking right now. Loads from long-term, decides next move. Stores nothing itself.</text>
         <text x="490" y="240" text-anchor="middle" fill="#a1a1aa" font-family="JetBrains Mono" font-weight="500" font-size="11">your equivalent: Harness (~200 lines of Claude Code)</text>
         <text x="900" y="215" text-anchor="end" fill="#52525b" font-family="JetBrains Mono" font-weight="600" font-size="11">stable, swappable</text>
 
-        <!-- BOTTOM LAYER: The Car -->
+        <!-- BOTTOM LAYER: Body -->
         <rect x="60" y="290" width="860" height="100" fill="#f4f4f5" stroke="#a1a1aa" stroke-width="2" rx="8"/>
-        <!-- Car silhouette -->
+        <!-- Body silhouette: head + torso + arms reaching out -->
         <g fill="#52525b">
-          <path d="M 200 360 Q 200 340 220 335 L 280 332 L 320 320 L 380 320 L 420 332 L 460 335 Q 480 340 480 360 L 200 360 Z"/>
-          <circle cx="240" cy="362" r="8"/>
-          <circle cx="440" cy="362" r="8"/>
-          <circle cx="240" cy="362" r="3" fill="#f4f4f5"/>
-          <circle cx="440" cy="362" r="3" fill="#f4f4f5"/>
+          <!-- Head -->
+          <circle cx="225" cy="318" r="11"/>
+          <!-- Torso -->
+          <path d="M 210 332 Q 210 330 215 330 L 235 330 Q 240 330 240 332 L 240 365 Q 240 368 237 368 L 213 368 Q 210 368 210 365 Z"/>
+          <!-- Left arm -->
+          <path d="M 210 336 Q 195 340 188 348 Q 184 354 188 360 Q 192 364 196 360 Q 200 354 203 350 Q 206 346 210 344 Z"/>
+          <!-- Right arm -->
+          <path d="M 240 336 Q 255 340 262 348 Q 266 354 262 360 Q 258 364 254 360 Q 250 354 247 350 Q 244 346 240 344 Z"/>
         </g>
-        <text x="660" y="320" text-anchor="middle" fill="#09090b" font-family="Inter" font-weight="700" font-size="20">The Car</text>
-        <text x="660" y="342" text-anchor="middle" fill="#52525b" font-family="Inter" font-weight="500" font-size="13">Wheels, motors, brakes. Mechanically deterministic. Real-world.</text>
-        <text x="660" y="365" text-anchor="middle" fill="#71717a" font-family="JetBrains Mono" font-weight="500" font-size="11">your equivalent: Tools (Gmail, Notion, GitHub, AWS, real APIs)</text>
+        <text x="610" y="320" text-anchor="middle" fill="#09090b" font-family="Inter" font-weight="700" font-size="20">Body</text>
+        <text x="610" y="342" text-anchor="middle" fill="#52525b" font-family="Inter" font-weight="500" font-size="13">Hands type. Voice speaks. Eyes read. Predictable mechanics, real-world execution.</text>
+        <text x="610" y="365" text-anchor="middle" fill="#71717a" font-family="JetBrains Mono" font-weight="500" font-size="11">your equivalent: Tools (Gmail, Notion, GitHub, real APIs)</text>
 
         <!-- Side arrows -->
         <path d="M 30 50 L 30 380" stroke="#2563eb" stroke-width="2" stroke-dasharray="5 5" fill="none"/>
         <path d="M 30 50 L 25 60 M 30 50 L 35 60" stroke="#2563eb" stroke-width="2" fill="none"/>
-        <text x="20" y="220" fill="#2563eb" font-family="Inter" font-weight="700" font-size="11" transform="rotate(-90 20 220)">smart, retrainable</text>
+        <text x="20" y="220" fill="#2563eb" font-family="Inter" font-weight="700" font-size="11" transform="rotate(-90 20 220)">trained, retrievable</text>
         <path d="M 950 50 L 950 380" stroke="#71717a" stroke-width="2" stroke-dasharray="5 5" fill="none"/>
         <path d="M 950 380 L 945 370 M 950 380 L 955 370" stroke="#71717a" stroke-width="2" fill="none"/>
-        <text x="965" y="220" fill="#71717a" font-family="Inter" font-weight="700" font-size="11" transform="rotate(-90 965 220)">deterministic, real</text>
+        <text x="965" y="220" fill="#71717a" font-family="Inter" font-weight="700" font-size="11" transform="rotate(-90 965 220)">physical, deterministic</text>
       </svg>
       <div class="arch-legend">
-        <div class="leg"><div class="l-name">The brain travels</div><div class="l-desc">Tesla retrains the AI weekly. Pushed to every car overnight. Your skills evolve the same way: edit Markdown, every brain updated.</div></div>
-        <div class="leg"><div class="l-name">The chip just runs</div><div class="l-desc">FSD Hardware 3 to 4 to 5 swap-out. The AI doesn't change. Your harness is the same: replace Claude Code with anything else, skills survive.</div></div>
-        <div class="leg"><div class="l-name">The car just drives</div><div class="l-desc">Wheels turn, brakes brake. Tesla doesn't reinvent the wheel. Your tools don't either: Gmail is Gmail, Notion is Notion.</div></div>
+        <div class="leg"><div class="l-name">Memory holds the skills</div><div class="l-desc">You spent years training to ride a bike. The skill is now in long-term memory, retrievable in a second. My Markdown skills are the same: practiced once, recalled forever.</div></div>
+        <div class="leg"><div class="l-name">Working memory just thinks</div><div class="l-desc">Right now you are reading and thinking, but you are not storing this in a permanent way. Working memory is the harness: small, active, throwaway.</div></div>
+        <div class="leg"><div class="l-name">Body just acts</div><div class="l-desc">Hands type, voice speaks, eyes read. The body is deterministic. Tools are the same: Gmail is Gmail. Notion is Notion. They never improvise.</div></div>
       </div>
     </div>
-    <p class="sources"><strong>Pattern</strong>Garry Tan, "Thin Harness, Fat Skills", April 2026 (gbrain). Tesla AI &middot; FSD Chip &middot; Vehicle is the public-domain version of the same architecture pattern.</p>
     <div class="brand">EO AI Exchange #1</div>
     <div class="page-num">10 / 43</div>
   </section>
@@ -802,7 +788,7 @@
   <!-- 11, 4-PYRAMID COMPARISON SVG (the WOW visual) -->
   <section class="slide" id="s11">
     <div class="label">The pattern, side by side</div>
-    <h2 class="title">Four chassis. <span class="accent">One AI.</span><small>Tesla ships Model S, Model 3, Cybertruck, Roadster. Same neural net runs every one. Same brain runs my four orgs. Different chassis, same intelligence.</small></h2>
+    <h2 class="title">Four bodies. <span class="accent">One brain pattern.</span><small>Same architecture as your own body. Long-term memory holds the skills, working memory thinks, the body executes. I run this pattern across one personal life and three organizations. Same shape every time.</small></h2>
     <div class="arch-svg-wrap">
       <svg viewBox="0 0 980 360" xmlns="http://www.w3.org/2000/svg">
         <path d="M 70 60 L 230 60 L 270 130 L 30 130 Z" fill="#2563eb" stroke="#1d4ed8" stroke-width="1.5"/>
@@ -1276,7 +1262,7 @@
     <h2 class="title">Five lines.</h2>
     <div class="quote-block">
       <div class="quote-mark">"</div>
-      <div class="quote-text">One brain, two scales.<br>Personal Twin saves the operator. Org Brain saves the company.<br>Same Tesla pattern: software is the brain, silicon carries the signal, hardware does the work.<br>The blueprint is yours, tonight.</div>
+      <div class="quote-text">One brain, two scales.<br>Personal Twin saves the operator. Org Brain saves the company.<br>Same blueprint as your own body: long-term memory holds the skills, working memory thinks, body executes.<br>The pattern is yours, tonight.</div>
     </div>
     <div style="margin-top:2.5rem;display:flex;flex-direction:column;gap:0.85rem;">
       <div class="origin-quote" style="font-size:clamp(1rem,1.35vw,1.2rem);"><span class="accent">&rarr;</span> &nbsp; Markdown + Git + agentic search beats Vector-DB at personal-brain volume.</div>
