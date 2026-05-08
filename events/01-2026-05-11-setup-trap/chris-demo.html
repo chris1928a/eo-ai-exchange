@@ -128,7 +128,7 @@
   .skill-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-strong); }
   .skill-stat .n { font-weight: 700; font-size: 1.5rem; color: var(--accent); letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
   .skill-stat .lbl { font-size: 0.75rem; color: var(--muted); margin-top: 0.25rem; }
-  .skill-md { font-family: var(--mono); font-size: 0.78rem; line-height: 1.65; background: var(--code-bg); border-left: 3px solid var(--accent); padding: 1.25rem 1.5rem; white-space: pre-wrap; color: var(--text); overflow: hidden; }
+  .skill-md { font-family: var(--mono); font-size: 0.7rem; line-height: 1.5; background: var(--code-bg); border-left: 3px solid var(--accent); padding: 0.9rem 1.1rem; white-space: pre-wrap; color: var(--text); overflow: hidden; max-height: 55vh; }
   .skill-md .key { color: var(--accent); font-weight: 600; }
   .skill-md .comment { color: var(--muted); font-style: italic; }
 
@@ -289,8 +289,8 @@
   .pivot-sub { font-size: clamp(1.05rem, 1.5vw, 1.4rem); font-weight: 400; color: var(--muted); max-width: 70ch; line-height: 1.5; }
 
   /* ========== NEW: ARCHITECTURE SVG WRAPPER ========== */
-  .arch-svg-wrap { display: flex; flex-direction: column; gap: 1.25rem; align-items: center; }
-  .arch-svg-wrap svg { width: 100%; max-width: 980px; height: auto; }
+  .arch-svg-wrap { display: flex; flex-direction: column; gap: 0.85rem; align-items: center; max-height: 100%; }
+  .arch-svg-wrap svg { width: 100%; max-width: 900px; max-height: 50vh; height: auto; }
   .arch-legend { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 980px; width: 100%; padding-top: 1rem; border-top: 1px solid var(--border-strong); }
   .arch-legend .leg { display: flex; flex-direction: column; gap: 0.3rem; padding-left: 1rem; border-left: 3px solid var(--accent); }
   .arch-legend .leg .l-name { font-weight: 700; font-size: 0.85rem; color: var(--text); }
@@ -318,10 +318,10 @@
 
   /* ========== NEW: HEADCOUNT TABLE ========== */
   .hc-table { width: 100%; border-collapse: collapse; }
-  .hc-table th { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); border-bottom: 2px solid var(--text); padding: 0.85rem 1rem; text-align: left; }
+  .hc-table th { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); border-bottom: 2px solid var(--text); padding: 0.65rem 1rem; text-align: left; }
   .hc-table th.right { text-align: right; }
-  .hc-table td { padding: 0.95rem 1rem; border-bottom: 1px solid var(--border-strong); font-size: 0.88rem; vertical-align: top; }
-  .hc-table tr.totals td { border-top: 2px solid var(--text); border-bottom: none; padding-top: 1.25rem; }
+  .hc-table td { padding: 0.7rem 1rem; border-bottom: 1px solid var(--border-strong); font-size: 0.85rem; vertical-align: top; }
+  .hc-table tr.totals td { border-top: 2px solid var(--text); border-bottom: none; padding-top: 0.95rem; }
   .hc-table .org { font-weight: 700; color: var(--text); }
   .hc-table .org small { display: block; color: var(--muted); font-weight: 400; font-size: 0.76rem; margin-top: 0.15rem; }
   .hc-table .hires { color: var(--text); line-height: 1.5; }
@@ -331,7 +331,7 @@
   .hc-table .actual { font-weight: 600; color: var(--text); }
   .hc-table .actual.zero { color: var(--success); font-weight: 800; font-size: 1.1rem; }
   .hc-table .actual small { display: block; color: var(--muted); font-weight: 400; font-size: 0.74rem; margin-top: 0.15rem; }
-  .hc-foot { margin-top: 1.5rem; padding: 1.25rem 1.5rem; background: var(--accent-soft); border-left: 3px solid var(--accent); font-size: 0.95rem; line-height: 1.55; color: var(--text); }
+  .hc-foot { margin-top: 1rem; padding: 0.9rem 1.25rem; background: var(--accent-soft); border-left: 3px solid var(--accent); font-size: 0.85rem; line-height: 1.5; color: var(--text); }
   .hc-foot strong { font-weight: 700; }
   .hc-foot .accent { color: var(--accent); font-weight: 800; }
 
