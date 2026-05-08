@@ -581,8 +581,71 @@
     <div class="page-num">06 / 43</div>
   </section>
 
-  <!-- 7, PERSONAL ARCHITECTURE SVG -->
+  <!-- 7, MY PERSONAL BRAIN, 4-LAYER WITH /weekly-review EXAMPLE -->
   <section class="slide" id="s7">
+    <div class="label">My Personal Brain &middot; live example</div>
+    <h2 class="title">How my <span class="accent">/weekly-review</span> skill remembers, thinks, and acts.<small>Same blueprint as your own body. Long-term memory holds everything I might ever need. Short-term memory is what gets loaded for this task. Working memory thinks. Body executes.</small></h2>
+    <div class="arch-svg-wrap">
+      <svg viewBox="0 0 980 470" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="ltmA" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#1d4ed8"/><stop offset="100%" stop-color="#1e40af"/>
+          </linearGradient>
+          <linearGradient id="stmA" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#2563eb"/>
+          </linearGradient>
+          <linearGradient id="wmA" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#3f3f46"/><stop offset="50%" stop-color="#52525b"/><stop offset="100%" stop-color="#3f3f46"/>
+          </linearGradient>
+        </defs>
+
+        <!-- LAYER 1: Long-term Memory -->
+        <rect x="60" y="20" width="860" height="90" rx="8" fill="url(#ltmA)" stroke="#1e40af" stroke-width="2"/>
+        <text x="80" y="44" fill="white" font-family="Inter" font-weight="700" font-size="14">Long-term Memory</text>
+        <text x="80" y="62" fill="#dbeafe" font-family="Inter" font-weight="500" font-size="11">Every deep document I might ever need, stored, not loaded by default.</text>
+        <text x="80" y="84" fill="white" font-family="JetBrains Mono" font-size="10">7 property folders &middot; 18 months Notion meeting notes &middot; 6 years of email threads</text>
+        <text x="80" y="100" fill="white" font-family="JetBrains Mono" font-size="10">+ all GitHub history &middot; all Drive originals &middot; archived Friday reviews</text>
+        <text x="900" y="62" text-anchor="end" fill="#dbeafe" font-family="JetBrains Mono" font-weight="600" font-size="10">deep archive</text>
+
+        <!-- LAYER 2: Short-term Memory -->
+        <rect x="60" y="120" width="860" height="90" rx="8" fill="url(#stmA)" stroke="#2563eb" stroke-width="2"/>
+        <text x="80" y="144" fill="white" font-family="Inter" font-weight="700" font-size="14">Short-term Memory <tspan fill="#dbeafe" font-weight="500" font-size="11">(.md files, curated)</tspan></text>
+        <text x="80" y="162" fill="#dbeafe" font-family="Inter" font-weight="500" font-size="11">The right .md files for this exact task. Loaded into the harness on demand.</text>
+        <text x="80" y="184" fill="white" font-family="JetBrains Mono" font-size="10">/skills/weekly-review.md &middot; /skills/draft-by-channel.md</text>
+        <text x="80" y="200" fill="white" font-family="JetBrains Mono" font-size="10">/memory/current_priorities.md &middot; /memory/hat_system.md &middot; CLAUDE.md</text>
+        <text x="900" y="162" text-anchor="end" fill="#dbeafe" font-family="JetBrains Mono" font-weight="600" font-size="10">125 .md files total</text>
+
+        <!-- LAYER 3: Working Memory -->
+        <rect x="180" y="220" width="620" height="90" rx="40" fill="url(#wmA)" stroke="#27272a" stroke-width="2"/>
+        <text x="490" y="246" text-anchor="middle" fill="white" font-family="Inter" font-weight="700" font-size="14">Working Memory <tspan fill="#a1a1aa" font-weight="500" font-size="11">(active brain, right now)</tspan></text>
+        <text x="490" y="264" text-anchor="middle" fill="#e4e4e7" font-family="Inter" font-weight="500" font-size="11">Decides WHAT to do, WHEN, HOW. Loads memory, calls tools, stores nothing.</text>
+        <text x="490" y="286" text-anchor="middle" fill="white" font-family="JetBrains Mono" font-size="10">Friday 17:00 cron triggers Claude Code on my Lightsail VM</text>
+        <text x="490" y="302" text-anchor="middle" fill="white" font-family="JetBrains Mono" font-size="10">harness ~200 lines: load /weekly-review.md, route the model loop, exit</text>
+
+        <!-- LAYER 4: Body -->
+        <rect x="60" y="320" width="860" height="90" rx="8" fill="#f4f4f5" stroke="#a1a1aa" stroke-width="2"/>
+        <text x="80" y="344" fill="#09090b" font-family="Inter" font-weight="700" font-size="14">Body <tspan fill="#52525b" font-weight="500" font-size="11">(tools, real APIs)</tspan></text>
+        <text x="80" y="362" fill="#52525b" font-family="Inter" font-weight="500" font-size="11">Hands type, voice speaks. Predictable mechanics. Real-world execution.</text>
+        <text x="80" y="384" fill="#27272a" font-family="JetBrains Mono" font-size="10">Reads Gmail + Calendar + Notion + GitHub commits this week</text>
+        <text x="80" y="400" fill="#27272a" font-family="JetBrains Mono" font-size="10">Drafts the Friday note &middot; sends back to me via Telegram</text>
+        <text x="900" y="362" text-anchor="end" fill="#52525b" font-family="JetBrains Mono" font-weight="600" font-size="10">deterministic, real</text>
+
+        <!-- Side flow indicator -->
+        <path d="M 30 30 L 30 405" stroke="#2563eb" stroke-width="2" stroke-dasharray="4 4" fill="none"/>
+        <path d="M 30 405 L 25 395 M 30 405 L 35 395" stroke="#2563eb" stroke-width="2" fill="none"/>
+        <text x="20" y="220" fill="#2563eb" font-family="Inter" font-weight="700" font-size="10" transform="rotate(-90 20 220)">flows down on every run</text>
+
+        <!-- Bottom takeaway -->
+        <rect x="180" y="430" width="620" height="28" rx="5" fill="#eff6ff" stroke="#2563eb" stroke-width="1"/>
+        <text x="490" y="448" text-anchor="middle" fill="#1d4ed8" font-family="Inter" font-weight="700" font-size="11">One real skill. Four layers. Same as how your own body remembers, thinks, acts.</text>
+      </svg>
+    </div>
+    <div class="brand">EO AI Exchange #1</div>
+    <div class="page-num">07 / 43</div>
+  </section>
+
+  <!-- 8, PERSONAL ARCHITECTURE SVG -->
+  <section class="slide" id="s8">
     <div class="label">Act 1 &middot; how my Personal Brain wires</div>
     <h2 class="title">Telegram in. <span class="accent">39 tools out.</span><small>One Lightsail VM in Frankfurt, Claude Code as the harness, no enterprise stack.</small></h2>
     <div class="arch-svg-wrap">
@@ -641,79 +704,16 @@
       </svg>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">07 / 43</div>
+    <div class="page-num">08 / 43</div>
   </section>
 
-  <!-- 8, PIVOT HERO (NEW) -->
-  <section class="slide" id="s8">
+  <!-- 9, PIVOT HERO (NEW) -->
+  <section class="slide" id="s9">
     <div class="label">Act 2 &middot; The Discovery</div>
     <div class="pivot-hero">
       <div class="pivot-eyebrow">A few months in, this hit me</div>
       <div class="pivot-line">The same brain<br>works for <span class="accent">entire organizations</span>.</div>
       <p class="pivot-sub">My personal twin handles 25% of my own work. Then I realized: the same Markdown skills, the same harness, the same deterministic glue, can be deployed for an entire team. <strong>Personal Brain to Org Brain. Same architecture, different scale.</strong></p>
-    </div>
-    <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">08 / 43</div>
-  </section>
-
-  <!-- 9, MY PERSONAL BRAIN, 4-LAYER WITH /weekly-review EXAMPLE -->
-  <section class="slide" id="s9">
-    <div class="label">My Personal Brain &middot; live example</div>
-    <h2 class="title">How my <span class="accent">/weekly-review</span> skill remembers, thinks, and acts.<small>Same blueprint as your own body. Long-term memory holds everything I might ever need. Short-term memory is what gets loaded for this task. Working memory thinks. Body executes.</small></h2>
-    <div class="arch-svg-wrap">
-      <svg viewBox="0 0 980 470" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="ltmA" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#1d4ed8"/><stop offset="100%" stop-color="#1e40af"/>
-          </linearGradient>
-          <linearGradient id="stmA" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#2563eb"/>
-          </linearGradient>
-          <linearGradient id="wmA" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stop-color="#3f3f46"/><stop offset="50%" stop-color="#52525b"/><stop offset="100%" stop-color="#3f3f46"/>
-          </linearGradient>
-        </defs>
-
-        <!-- LAYER 1: Long-term Memory -->
-        <rect x="60" y="20" width="860" height="90" rx="8" fill="url(#ltmA)" stroke="#1e40af" stroke-width="2"/>
-        <text x="80" y="44" fill="white" font-family="Inter" font-weight="700" font-size="14">Long-term Memory</text>
-        <text x="80" y="62" fill="#dbeafe" font-family="Inter" font-weight="500" font-size="11">Every deep document I might ever need, stored, not loaded by default.</text>
-        <text x="80" y="84" fill="white" font-family="JetBrains Mono" font-size="10">7 property folders &middot; 18 months Notion meeting notes &middot; 6 years of email threads</text>
-        <text x="80" y="100" fill="white" font-family="JetBrains Mono" font-size="10">+ all GitHub history &middot; all Drive originals &middot; archived Friday reviews</text>
-        <text x="900" y="62" text-anchor="end" fill="#dbeafe" font-family="JetBrains Mono" font-weight="600" font-size="10">deep archive</text>
-
-        <!-- LAYER 2: Short-term Memory -->
-        <rect x="60" y="120" width="860" height="90" rx="8" fill="url(#stmA)" stroke="#2563eb" stroke-width="2"/>
-        <text x="80" y="144" fill="white" font-family="Inter" font-weight="700" font-size="14">Short-term Memory <tspan fill="#dbeafe" font-weight="500" font-size="11">(.md files, curated)</tspan></text>
-        <text x="80" y="162" fill="#dbeafe" font-family="Inter" font-weight="500" font-size="11">The right .md files for this exact task. Loaded into the harness on demand.</text>
-        <text x="80" y="184" fill="white" font-family="JetBrains Mono" font-size="10">/skills/weekly-review.md &middot; /skills/draft-by-channel.md</text>
-        <text x="80" y="200" fill="white" font-family="JetBrains Mono" font-size="10">/memory/current_priorities.md &middot; /memory/hat_system.md &middot; CLAUDE.md</text>
-        <text x="900" y="162" text-anchor="end" fill="#dbeafe" font-family="JetBrains Mono" font-weight="600" font-size="10">125 .md files total</text>
-
-        <!-- LAYER 3: Working Memory -->
-        <rect x="180" y="220" width="620" height="90" rx="40" fill="url(#wmA)" stroke="#27272a" stroke-width="2"/>
-        <text x="490" y="246" text-anchor="middle" fill="white" font-family="Inter" font-weight="700" font-size="14">Working Memory <tspan fill="#a1a1aa" font-weight="500" font-size="11">(active brain, right now)</tspan></text>
-        <text x="490" y="264" text-anchor="middle" fill="#e4e4e7" font-family="Inter" font-weight="500" font-size="11">Decides WHAT to do, WHEN, HOW. Loads memory, calls tools, stores nothing.</text>
-        <text x="490" y="286" text-anchor="middle" fill="white" font-family="JetBrains Mono" font-size="10">Friday 17:00 cron triggers Claude Code on my Lightsail VM</text>
-        <text x="490" y="302" text-anchor="middle" fill="white" font-family="JetBrains Mono" font-size="10">harness ~200 lines: load /weekly-review.md, route the model loop, exit</text>
-
-        <!-- LAYER 4: Body -->
-        <rect x="60" y="320" width="860" height="90" rx="8" fill="#f4f4f5" stroke="#a1a1aa" stroke-width="2"/>
-        <text x="80" y="344" fill="#09090b" font-family="Inter" font-weight="700" font-size="14">Body <tspan fill="#52525b" font-weight="500" font-size="11">(tools, real APIs)</tspan></text>
-        <text x="80" y="362" fill="#52525b" font-family="Inter" font-weight="500" font-size="11">Hands type, voice speaks. Predictable mechanics. Real-world execution.</text>
-        <text x="80" y="384" fill="#27272a" font-family="JetBrains Mono" font-size="10">Reads Gmail + Calendar + Notion + GitHub commits this week</text>
-        <text x="80" y="400" fill="#27272a" font-family="JetBrains Mono" font-size="10">Drafts the Friday note &middot; sends back to me via Telegram</text>
-        <text x="900" y="362" text-anchor="end" fill="#52525b" font-family="JetBrains Mono" font-weight="600" font-size="10">deterministic, real</text>
-
-        <!-- Side flow indicator -->
-        <path d="M 30 30 L 30 405" stroke="#2563eb" stroke-width="2" stroke-dasharray="4 4" fill="none"/>
-        <path d="M 30 405 L 25 395 M 30 405 L 35 395" stroke="#2563eb" stroke-width="2" fill="none"/>
-        <text x="20" y="220" fill="#2563eb" font-family="Inter" font-weight="700" font-size="10" transform="rotate(-90 20 220)">flows down on every run</text>
-
-        <!-- Bottom takeaway -->
-        <rect x="180" y="430" width="620" height="28" rx="5" fill="#eff6ff" stroke="#2563eb" stroke-width="1"/>
-        <text x="490" y="448" text-anchor="middle" fill="#1d4ed8" font-family="Inter" font-weight="700" font-size="11">One real skill. Four layers. Same as how your own body remembers, thinks, acts.</text>
-      </svg>
     </div>
     <div class="brand">EO AI Exchange #1</div>
     <div class="page-num">09 / 43</div>
