@@ -301,19 +301,19 @@
 
   /* RECAP */
   .recap-h { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; }
-  .recap-title { font-weight: 600; font-size: clamp(2rem, 3.5vw, 3rem); line-height: 1.1; letter-spacing: -0.03em; color: var(--text); margin-bottom: 4rem; max-width: 28ch; }
-  .recap-grid { display: grid; grid-template-columns: 0.8fr 1fr; gap: 4rem; margin-bottom: 3rem; }
-  .recap-numbers { display: flex; flex-direction: column; gap: 1.5rem; }
-  .recap-num { display: flex; flex-direction: column; gap: 0.25rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--border); }
+  .recap-title { font-weight: 600; font-size: clamp(1.6rem, 2.6vw, 2.25rem); line-height: 1.1; letter-spacing: -0.025em; color: var(--text); margin-bottom: 1.5rem; max-width: 30ch; }
+  .recap-grid { display: grid; grid-template-columns: 0.8fr 1fr; gap: 2rem; margin-bottom: 1rem; }
+  .recap-numbers { display: flex; flex-direction: column; gap: 0.5rem; }
+  .recap-num { display: flex; flex-direction: column; gap: 0.15rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
   .recap-num:last-child { border-bottom: none; }
-  .recap-num .n { font-weight: 700; font-size: clamp(3.5rem, 5vw, 4.5rem); line-height: 1; color: var(--accent); letter-spacing: -0.045em; font-variant-numeric: tabular-nums; }
-  .recap-num .n .unit { font-size: 0.95rem; font-weight: 500; color: var(--muted); margin-left: 0.4rem; }
-  .recap-num .lbl { font-weight: 500; font-size: 0.85rem; color: var(--text); margin-top: 0.25rem; letter-spacing: 0.005em; }
-  .recap-struggles { display: flex; flex-direction: column; gap: 1.25rem; }
+  .recap-num .n { font-weight: 700; font-size: clamp(2rem, 3.2vw, 2.85rem); line-height: 1; color: var(--accent); letter-spacing: -0.035em; font-variant-numeric: tabular-nums; }
+  .recap-num .n .unit { font-size: 0.7rem; font-weight: 500; color: var(--muted); margin-left: 0.3rem; }
+  .recap-num .lbl { font-weight: 500; font-size: 0.7rem; color: var(--text); margin-top: 0.1rem; letter-spacing: 0.005em; }
+  .recap-struggles { display: flex; flex-direction: column; gap: 0.4rem; }
   .recap-struggles .s-tag { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.25rem; }
-  .recap-struggles .s-line { display: grid; grid-template-columns: 1.25rem 1fr; gap: 0.75rem; align-items: baseline; font-size: 0.95rem; color: var(--text); line-height: 1.5; padding: 0.5rem 0; }
+  .recap-struggles .s-line { display: grid; grid-template-columns: 1.1rem 1fr; gap: 0.5rem; align-items: baseline; font-size: 0.78rem; color: var(--text); line-height: 1.4; padding: 0.2rem 0; }
   .recap-struggles .s-line::before { content: '—'; color: var(--accent); font-weight: 600; }
-  .recap-foot { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.95rem; font-weight: 400; color: var(--muted); line-height: 1.55; font-style: italic; }
+  .recap-foot { margin-top: 0.85rem; padding-top: 0.85rem; border-top: 1px solid var(--border); font-size: 0.78rem; font-weight: 400; color: var(--muted); line-height: 1.45; font-style: italic; }
   .recap-foot .accent { color: var(--accent); font-style: normal; font-weight: 500; }
 
   /* BRIDGE */
@@ -406,7 +406,7 @@
     <p class="cover-sub">Two operators. Five organizations between us. The hours saved, the hires never made, and the master template you fork tonight.</p>
     <p class="cover-meta"><span class="who">Christoph Erler &amp; Dom Raute</span><span class="when">May 11, 2026 &middot; 18:00 CEST</span></p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">01 / 19</div>
+    <div class="page-num">01 / 16</div>
   </section>
 
   <!-- 2, PROMISE -->
@@ -421,7 +421,7 @@
     </div>
     <p class="footer-note">Not the goal: another tool overview, generic theory, polished vendor demos. <span class="accent">We show the struggles, not just the wins.</span></p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">02 / 19</div>
+    <div class="page-num">02 / 16</div>
   </section>
 
   <!-- 3, TWO TRAPS -->
@@ -447,7 +447,7 @@
     <p class="traps-foot">Most don't escape because they fight the wrong trap.</p>
     <p class="sources"><strong>Sources</strong>EO operator polls &middot; MIT 2025 &middot; founder interviews</p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">03 / 19</div>
+    <div class="page-num">03 / 16</div>
   </section>
 
   <!-- 4, MY 12 WEEKS (NEW) -->
@@ -459,7 +459,7 @@
       <p class="wasted-foot">Five dead stacks. Three different harnesses. Two memory rewrites. <strong>The setup you are about to see is what survived.</strong> Not what I planned on day one.</p>
     </div>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">04 / 19</div>
+    <div class="page-num">04 / 16</div>
   </section>
 
   <!-- 5, STACK VERSIONS -->
@@ -475,10 +475,10 @@
     </div>
     <p class="v-quote"><strong>Two stacks survived. Both share one principle.</strong> Stop maintaining tools. Start maintaining <span class="accent">memory</span>.</p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">05 / 19</div>
+    <div class="page-num">05 / 16</div>
   </section>
 
-  <!-- 5, DIAGNOSTIC -->
+  <!-- 6, DIAGNOSTIC -->
   <section class="slide" id="s6">
     <div class="label">Diagnostic</div>
     <h2 class="title">Are you in the <span class="accent">Setup Trap</span>?</h2>
@@ -489,10 +489,10 @@
       <div class="q"><div class="qn">03</div><div class="qbody"><div class="qt">Could a new team member understand it in 2 sentences?</div><div class="qv">No? <strong>Setup Trap.</strong></div></div></div>
     </div>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">06 / 19</div>
+    <div class="page-num">06 / 16</div>
   </section>
 
-  <!-- 6, HIERARCHY -->
+  <!-- 7, HIERARCHY -->
   <section class="slide" id="s7">
     <div class="label">The Hierarchy</div>
     <div class="hier-bigword">
@@ -509,10 +509,10 @@
     </div>
     <p class="sources"><strong>Source</strong>McKinsey, "The state of AI: How organizations are rewiring to capture value", 2025</p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">07 / 19</div>
+    <div class="page-num">07 / 16</div>
   </section>
 
-  <!-- 7, DEMO 1 TITLE -->
+  <!-- 8, DEMO 1 TITLE -->
   <section class="slide" id="s8">
     <div class="label">Demo 01 &middot; Chris &middot; 9 min</div>
     <div class="demo">
@@ -528,105 +528,11 @@
       </div>
     </div>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">08 / 19</div>
+    <div class="page-num">08 / 16</div>
   </section>
 
-  <!-- 8, DEMO 1 ARCHITECTURE -->
+  <!-- 9, DEMO 1 RECAP -->
   <section class="slide" id="s9">
-    <div class="label">Demo 01 &middot; How it works</div>
-    <h2 class="title" style="margin-bottom:2.5rem;">Same bot. Same sources.<br>The <span class="accent">prompt</span> is the lever.</h2>
-    <div class="arch-flow">
-      <div class="arch-col">
-        <div class="arch-col-label">4 Sources</div>
-        <div class="arch-box">Gmail</div>
-        <div class="arch-box">Calendar</div>
-        <div class="arch-box">Drive</div>
-        <div class="arch-box">Notion</div>
-      </div>
-      <div class="arch-arrow">&rarr;</div>
-      <div class="arch-bot">
-        <div class="bot-name">Bot</div>
-        <div class="bot-sub">Orchestrator</div>
-        <div class="bot-note">Telegram-native, voice + text</div>
-      </div>
-      <div class="arch-arrow">&rarr;</div>
-      <div class="arch-col">
-        <div class="arch-col-label">2 Outputs</div>
-        <div class="arch-output">
-          <div class="out-label">Hack 01</div>
-          <div class="out-name">Morning Briefing</div>
-          <div class="out-desc">One page. 30 seconds. Read on phone.</div>
-        </div>
-        <div class="arch-output">
-          <div class="out-label">Hack 02</div>
-          <div class="out-name">Meeting Prep</div>
-          <div class="out-desc">One page. On demand. 5 min before any call.</div>
-        </div>
-      </div>
-    </div>
-    <p class="arch-foot">Two outputs. Same architecture. Only the <span class="accent">prompt</span> changes.</p>
-    <div class="brand">EO Berlin</div>
-    <div class="page-num">09 / 19</div>
-  </section>
-
-  <!-- 9, DEMO 1 HACK 01 -->
-  <section class="slide" id="s10">
-    <div class="label">Demo 01 &middot; Hack 01</div>
-    <h2 class="title" style="margin-bottom:2.5rem;">Morning <span class="accent">Briefing</span>.</h2>
-    <div class="hack-demo">
-      <div class="hack-trigger">
-        <div class="hack-section-label">Trigger</div>
-        <div class="hack-cmd"><span class="prompt">&gt;</span> morning brief</div>
-        <div class="desc">Voice or text in Telegram. 7am every day, before I open Gmail.</div>
-      </div>
-      <div class="hack-output">
-        <div class="hack-section-label">Output, 30 seconds</div>
-        <div class="hack-output-box">
-          <div class="hack-output-line"><strong>Inbox top 3:</strong> Tim Fischer (Valtis follow-up), Diana, Raphi (RC ICP v2)</div>
-          <div class="hack-output-line"><strong>Calendar today:</strong> 11:00 Robert call, 14:00 focus block, 17:30 EO Exchange dry-run</div>
-          <div class="hack-output-line"><strong>Drive priorities:</strong> RC sales script v3 needs review</div>
-          <div class="hack-output-line"><strong>Open threads:</strong> Reisensburg expose, Stephan Big Decision</div>
-        </div>
-      </div>
-      <div class="hack-foot">
-        <div class="hero-num">5h<span class="unit">/ week</span></div>
-        <div class="hero-text"><strong>Tracked over 3 weeks, March 2026.</strong><span class="quiet">What it does not do: prioritize by emotional weight. Bot does not know it's your kid's birthday.</span></div>
-      </div>
-    </div>
-    <div class="brand">EO Berlin</div>
-    <div class="page-num">10 / 19</div>
-  </section>
-
-  <!-- 10, DEMO 1 HACK 02 -->
-  <section class="slide" id="s11">
-    <div class="label">Demo 01 &middot; Hack 02</div>
-    <h2 class="title" style="margin-bottom:2.5rem;">Meeting <span class="accent">Prep</span>.</h2>
-    <div class="hack-demo">
-      <div class="hack-trigger">
-        <div class="hack-section-label">Trigger</div>
-        <div class="hack-cmd"><span class="prompt">&gt;</span> prep meeting with Tom Debus</div>
-        <div class="desc">5 minutes before any call. Used to take 20.</div>
-      </div>
-      <div class="hack-output">
-        <div class="hack-section-label">Output, 30 seconds</div>
-        <div class="hack-output-box">
-          <div class="hack-output-line"><strong>LinkedIn last 3:</strong> Ferris.ai launch, AI agents for finance, Q1 wrap-up</div>
-          <div class="hack-output-line"><strong>Past mail thread:</strong> 4 emails over 6 months, last topic was MCP integration</div>
-          <div class="hack-output-line"><strong>Drive mentions:</strong> 2 docs reference Tom, including Sales Exchange notes</div>
-          <div class="hack-output-line"><strong>Suggested opener:</strong> follow up on his Ferris launch + ask about MCP rollout</div>
-        </div>
-      </div>
-      <div class="hack-foot">
-        <div class="hero-num">8h<span class="unit">/ week</span></div>
-        <div class="hero-text"><strong>More than morning brief, because more meetings than mornings.</strong><span class="quiet">Where it fails: meeting with someone new. No history, bot returns thin air. Then I do it manually like it's 2024.</span></div>
-      </div>
-    </div>
-    <div class="brand">EO Berlin</div>
-    <div class="page-num">11 / 19</div>
-  </section>
-
-  <!-- 11, DEMO 1 RECAP -->
-  <section class="slide" id="s12">
     <div class="label">Demo 01 &middot; What you just saw</div>
     <h2 class="recap-title">Workspace-native, in numbers.</h2>
     <div class="recap-grid">
@@ -646,20 +552,20 @@
     </div>
     <p class="recap-foot">No long-term memory across sessions. <span class="accent">That is where Dom takes over.</span></p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">12 / 19</div>
+    <div class="page-num">09 / 16</div>
   </section>
 
-  <!-- 12, BRIDGE -->
-  <section class="slide bridge" id="s13">
+  <!-- 10, BRIDGE -->
+  <section class="slide bridge" id="s10">
     <div class="label">Handoff</div>
     <h2>Dom takes you<br>one layer <span class="accent">deeper</span>.</h2>
     <p class="sub">From hack on top, to architecture beneath.</p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">13 / 19</div>
+    <div class="page-num">10 / 16</div>
   </section>
 
-  <!-- 13, DEMO 2 TITLE -->
-  <section class="slide" id="s14">
+  <!-- 11, DEMO 2 TITLE -->
+  <section class="slide" id="s11">
     <div class="label">Demo 02 &middot; Dom &middot; 9 min</div>
     <div class="demo">
       <div class="demo-num">02<span class="of">of two</span></div>
@@ -674,11 +580,11 @@
       </div>
     </div>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">14 / 19</div>
+    <div class="page-num">11 / 16</div>
   </section>
 
-  <!-- 14, DEMO 2 RECAP -->
-  <section class="slide" id="s15">
+  <!-- 12, DEMO 2 RECAP -->
+  <section class="slide" id="s12">
     <div class="label">Demo 02 &middot; What you just saw</div>
     <h2 class="recap-title">Local-first memory, in numbers.</h2>
     <div class="recap-grid">
@@ -698,11 +604,11 @@
     </div>
     <p class="recap-foot">Architecture wins long-term. <span class="accent">Setup cost upfront, near-zero compounding cost after.</span></p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">15 / 19</div>
+    <div class="page-num">12 / 16</div>
   </section>
 
-  <!-- 15, COST -->
-  <section class="slide" id="s16">
+  <!-- 13, COST -->
+  <section class="slide" id="s13">
     <div class="label">Cost Reality</div>
     <h2 class="title">What you pay vs<br>what you get.</h2>
     <div class="cost-grid">
@@ -713,11 +619,11 @@
     <p class="cost-foot">The <span class="accent">architecture</span> beats the budget.</p>
     <p class="sources"><strong>Sources</strong>Glean Enterprise public pricing, 2026 &middot; Notion AI + Glean + ChatGPT Enterprise list pricing combined, 2026</p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">16 / 19</div>
+    <div class="page-num">13 / 16</div>
   </section>
 
-  <!-- 16, GITHUB REVEAL -->
-  <section class="slide" id="s17">
+  <!-- 14, GITHUB REVEAL -->
+  <section class="slide" id="s14">
     <div class="label">Live Tonight</div>
     <h2 class="title">11 solutions + <span class="accent">1 master template</span> shipping today.</h2>
     <div class="gh-grid">
@@ -734,11 +640,11 @@
     </div>
     <div class="gh-url"><div class="lbl">MIT License &middot; fork and remix &middot; 5 portable skills + 30-day Personal-to-Org plan</div><div class="url">github.com/chris1928a/eo-ai-exchange</div></div>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">17 / 19</div>
+    <div class="page-num">14 / 16</div>
   </section>
 
-  <!-- 18, HEADCOUNT TEASER (NEW) -->
-  <section class="slide" id="s18">
+  <!-- 15, HEADCOUNT TEASER (NEW) -->
+  <section class="slide" id="s15">
     <div class="label">The bigger reveal &middot; Chris demo</div>
     <h2 class="title">Same blueprint. <span class="accent">Four buildings.</span><small>What Chris will show in his deep dive: the architecture that scales from one operator to a 12-person org and a sales floor with zero managers.</small></h2>
     <div class="hc-teaser">
@@ -754,11 +660,11 @@
       <div class="l">A <span class="accent">Master Template</span> with 5 portable skills (/diarize-person, /audit-process, /weekly-review, /draft-by-channel, /memory-curator) plus a 30-day rollout plan from Personal to Org.</div>
     </div>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">18 / 19</div>
+    <div class="page-num">15 / 16</div>
   </section>
 
-  <!-- 19, CLOSING -->
-  <section class="slide" id="s19">
+  <!-- 16, CLOSING -->
+  <section class="slide" id="s16">
     <div class="label">This is Day 1</div>
     <div class="close-h">
       <span class="l1">You name the pain.</span>
@@ -776,7 +682,7 @@
       <div class="right"><div class="lbl">GitHub, live tonight</div><div class="v">chris1928a/eo-ai-exchange</div></div>
     </div>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">19 / 19</div>
+    <div class="page-num">16 / 16</div>
   </section>
 
 </div>

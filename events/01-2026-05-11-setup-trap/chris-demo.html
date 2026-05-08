@@ -257,6 +257,69 @@
   .sources strong { font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.58rem; margin-right: 0.5rem; }
 
 
+
+  /* ========== ARCHITECTURE FLOW (overview from slides.html) ========== */
+  .arch-flow {
+    display: grid; grid-template-columns: 1fr 0.3rem 0.7fr 0.3rem 1fr;
+    align-items: center; gap: 1rem; margin: 0.75rem 0;
+  }
+  .arch-col { display: flex; flex-direction: column; gap: 0.5rem; }
+  .arch-col-label {
+    font-size: 0.6rem; font-weight: 600; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 0.2rem;
+  }
+  .arch-box {
+    padding: 0.55rem 0.85rem;
+    border: 1px solid var(--border-strong);
+    font-weight: 500; font-size: 0.78rem; color: var(--text);
+    text-align: center;
+  }
+  .arch-arrow {
+    font-family: var(--mono); font-size: 1.2rem; font-weight: 400;
+    color: var(--accent); text-align: center; line-height: 1;
+  }
+  .arch-bot {
+    padding: 1.1rem 0.9rem;
+    border: 2px solid var(--accent);
+    background: var(--accent-soft);
+    text-align: center;
+  }
+  .arch-bot .bot-name {
+    font-weight: 700; font-size: 1.15rem; color: var(--accent);
+    letter-spacing: -0.02em; margin-bottom: 0.25rem;
+  }
+  .arch-bot .bot-sub {
+    font-size: 0.65rem; font-weight: 500;
+    color: var(--text); letter-spacing: 0.02em;
+  }
+  .arch-bot .bot-note {
+    font-size: 0.6rem; font-weight: 400;
+    color: var(--muted); margin-top: 0.4rem; font-style: italic;
+  }
+  .arch-output {
+    padding: 0.6rem 0.85rem;
+    border-left: 2px solid var(--accent);
+    background: var(--bg);
+  }
+  .arch-output .out-label {
+    font-size: 0.55rem; font-weight: 600; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 0.25rem;
+  }
+  .arch-output .out-name {
+    font-weight: 600; font-size: 0.85rem; color: var(--text);
+    margin-bottom: 0.2rem;
+  }
+  .arch-output .out-desc {
+    font-size: 0.7rem; font-weight: 400; color: var(--muted);
+    line-height: 1.4;
+  }
+  .arch-foot {
+    margin-top: 1rem; text-align: center;
+    font-size: clamp(0.85rem, 1.1vw, 1.05rem);
+    font-weight: 500; color: var(--text); letter-spacing: -0.005em;
+  }
+  .arch-foot .accent { color: var(--accent); font-weight: 600; }
+
   /* ========== NEW: HOURS WASTED HERO ========== */
   .wasted-hero { display: flex; flex-direction: column; gap: 2rem; align-items: flex-start; }
   .wasted-num { font-weight: 800; font-size: clamp(7rem, 14vw, 13rem); line-height: 0.85; letter-spacing: -0.05em; color: var(--warning); font-variant-numeric: tabular-nums; }
@@ -395,7 +458,7 @@
     <p class="cover-sub">One pattern. Personal life and four organizations. The hours saved, the hires never made, and the master template you fork tonight.</p>
     <p class="cover-meta"><span class="who">Christoph Erler</span><span class="when">EO AI Exchange #1 &middot; May 11, 2026</span></p>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">01 / 42</div>
+    <div class="page-num">01 / 43</div>
   </section>
 
   <!-- 2, ORIGIN -->
@@ -412,7 +475,7 @@
       </div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">02 / 42</div>
+    <div class="page-num">02 / 43</div>
   </section>
 
   <!-- 3, HOURS WASTED HERO (NEW) -->
@@ -425,7 +488,7 @@
     </div>
     <p class="sources"><strong>Sources</strong>MIT Project NANDA "The GenAI Divide" 2025 (95% pilots negative ROI) &middot; EO WhatsApp Poll, 122 votes, March 2026 &middot; Andrew van Aswegen, EO Best Guy interview April 2026 ("weeks burned on setup before any value lands")</p>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">03 / 42</div>
+    <div class="page-num">03 / 43</div>
   </section>
 
   <!-- 4, WASTE BREAKDOWN (NEW) -->
@@ -469,7 +532,7 @@
       <div class="totalh">14h<small>/ wk</small></div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">04 / 42</div>
+    <div class="page-num">04 / 43</div>
   </section>
 
   <!-- 5, PIVOT HERO (NEW) -->
@@ -481,7 +544,7 @@
       <p class="pivot-sub">Personal AI assistant is the warm-up. The mind-blow is when the same architecture replicates across an entire organization. <strong>Same trick Tesla pulled.</strong> One brain, every car. One brain, every org. I run four. The architecture lifts itself.</p>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">05 / 42</div>
+    <div class="page-num">05 / 43</div>
   </section>
 
   <!-- 6, 3-LAYER ARCHITECTURE: TESLA METAPHOR (NEW) -->
@@ -586,7 +649,7 @@
     </div>
     <p class="sources"><strong>Pattern</strong>Garry Tan, "Thin Harness, Fat Skills", April 2026 (gbrain). Tesla AI &middot; FSD Chip &middot; Vehicle is the public-domain version of the same architecture pattern.</p>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">06 / 42</div>
+    <div class="page-num">06 / 43</div>
   </section>
 
   <!-- 7, 4-PYRAMID COMPARISON SVG (the WOW visual) -->
@@ -639,7 +702,7 @@
       </div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">07 / 42</div>
+    <div class="page-num">07 / 43</div>
   </section>
 
   <!-- 8, NUMBERS -->
@@ -654,11 +717,49 @@
     </div>
     <p class="origin-quote" style="margin-top:3rem;font-size:clamp(1.05rem,1.4vw,1.3rem);">Replaces what would otherwise cost <strong>8 to 12K EUR per month</strong> in three hires (content manager, virtual assistant, research analyst). Payback in <span class="accent">4 to 5 months</span> including 200h setup time.</p>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">08 / 42</div>
+    <div class="page-num">08 / 43</div>
   </section>
 
-  <!-- 9, BUILDING 1: PERSONAL DEEP -->
+  <!-- 9, ARCHITECTURE FLOW (moved from slides.html) -->
   <section class="slide" id="s9">
+    <div class="label">The simplest view</div>
+    <h2 class="title" style="margin-bottom:1rem;">Same bot. Same sources.<br>The <span class="accent">prompt</span> is the lever.</h2>
+    <div class="arch-flow">
+      <div class="arch-col">
+        <div class="arch-col-label">4 Sources</div>
+        <div class="arch-box">Gmail</div>
+        <div class="arch-box">Calendar</div>
+        <div class="arch-box">Drive</div>
+        <div class="arch-box">Notion</div>
+      </div>
+      <div class="arch-arrow">&rarr;</div>
+      <div class="arch-bot">
+        <div class="bot-name">Bot</div>
+        <div class="bot-sub">Orchestrator</div>
+        <div class="bot-note">Telegram-native, voice + text</div>
+      </div>
+      <div class="arch-arrow">&rarr;</div>
+      <div class="arch-col">
+        <div class="arch-col-label">2 Outputs (of many)</div>
+        <div class="arch-output">
+          <div class="out-label">Skill 01</div>
+          <div class="out-name">Morning Briefing</div>
+          <div class="out-desc">One page. 30 seconds. Read on phone.</div>
+        </div>
+        <div class="arch-output">
+          <div class="out-label">Skill 02</div>
+          <div class="out-name">Meeting Prep</div>
+          <div class="out-desc">One page. On demand. 5 min before any call.</div>
+        </div>
+      </div>
+    </div>
+    <p class="arch-foot">Two outputs visible. <span class="accent">19 in total.</span> Same architecture. Only the prompt changes.</p>
+    <div class="brand">EO AI Exchange #1</div>
+    <div class="page-num">09 / 43</div>
+  </section>
+
+  <!-- 10, BUILDING 1: PERSONAL DEEP -->
+  <section class="slide" id="s10">
     <div class="label">Building 1 of 4 &middot; Personal</div>
     <div class="org-deep">
       <div class="org-deep-left">
@@ -685,11 +786,11 @@
       </div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">09 / 42</div>
+    <div class="page-num">10 / 43</div>
   </section>
 
-  <!-- 10, PERSONAL ARCHITECTURE SVG -->
-  <section class="slide" id="s10">
+  <!-- 11, PERSONAL ARCHITECTURE SVG -->
+  <section class="slide" id="s11">
     <div class="label">Personal Brain &middot; how it actually wires</div>
     <h2 class="title">Telegram in. <span class="accent">39 tools out.</span><small>One Lightsail VM in Frankfurt, Claude Code as the harness, no enterprise stack.</small></h2>
     <div class="arch-svg-wrap">
@@ -748,11 +849,11 @@
       </svg>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">10 / 42</div>
+    <div class="page-num">11 / 43</div>
   </section>
 
-  <!-- 11, BUILDING 2: ANONYMIZED AGENCY DEEP -->
-  <section class="slide" id="s11">
+  <!-- 12, BUILDING 2: ANONYMIZED AGENCY DEEP -->
+  <section class="slide" id="s12">
     <div class="label">Building 2 of 4 &middot; 12-person Agency</div>
     <div class="org-deep">
       <div class="org-deep-left">
@@ -779,11 +880,11 @@
       </div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">11 / 42</div>
+    <div class="page-num">12 / 43</div>
   </section>
 
-  <!-- 12, AGENCY ARCHITECTURE SVG -->
-  <section class="slide" id="s12">
+  <!-- 13, AGENCY ARCHITECTURE SVG -->
+  <section class="slide" id="s13">
     <div class="label">Agency Brain &middot; how it wires</div>
     <h2 class="title">GitHub master. <span class="accent">Notion shared.</span> Dropbox raw.<small>Token-efficient hierarchy: code lives in Git, prose lives in Notion, originals in Dropbox.</small></h2>
     <div class="arch-svg-wrap">
@@ -839,11 +940,11 @@
       </svg>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">12 / 42</div>
+    <div class="page-num">13 / 43</div>
   </section>
 
-  <!-- 13, BUILDING 3: RC DEEP -->
-  <section class="slide" id="s13">
+  <!-- 14, BUILDING 3: RC DEEP -->
+  <section class="slide" id="s14">
     <div class="label">Building 3 of 4 &middot; B2B Sales Org</div>
     <div class="org-deep">
       <div class="org-deep-left">
@@ -870,11 +971,11 @@
       </div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">13 / 42</div>
+    <div class="page-num">14 / 43</div>
   </section>
 
-  <!-- 14, RC ARCHITECTURE SVG -->
-  <section class="slide" id="s14">
+  <!-- 15, RC ARCHITECTURE SVG -->
+  <section class="slide" id="s15">
     <div class="label">Sales Org Brain &middot; how it wires</div>
     <h2 class="title">AWS Lambda. <span class="accent">5 schedules.</span> Zero managers.<small>Same 3-layer pattern. Different harness because cron-at-scale lives better in cloud than on a Mac.</small></h2>
     <div class="arch-svg-wrap">
@@ -937,11 +1038,11 @@
       </svg>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">14 / 42</div>
+    <div class="page-num">15 / 43</div>
   </section>
 
-  <!-- 15, BUILDING 4: BEST GUY DEEP -->
-  <section class="slide" id="s15">
+  <!-- 16, BUILDING 4: BEST GUY DEEP -->
+  <section class="slide" id="s16">
     <div class="label">Building 4 of 4 &middot; Best Guy</div>
     <div class="org-deep">
       <div class="org-deep-left">
@@ -968,11 +1069,11 @@
       </div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">15 / 42</div>
+    <div class="page-num">16 / 43</div>
   </section>
 
-  <!-- 16, BEST GUY ARCHITECTURE SVG -->
-  <section class="slide" id="s16">
+  <!-- 17, BEST GUY ARCHITECTURE SVG -->
+  <section class="slide" id="s17">
     <div class="label">Best Guy &middot; how it wires</div>
     <h2 class="title">Sub-agents. <span class="accent">21 tools.</span> One product.<small>Each sub-agent owns a domain. The orchestrator routes by intent. Same 3-layer pattern, just with sub-agents instead of a single model.</small></h2>
     <div class="arch-svg-wrap">
@@ -1028,11 +1129,11 @@
       </svg>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">16 / 42</div>
+    <div class="page-num">17 / 43</div>
   </section>
 
-  <!-- 17, HEADCOUNT MATH TABLE -->
-  <section class="slide" id="s17">
+  <!-- 18, HEADCOUNT MATH TABLE -->
+  <section class="slide" id="s18">
     <div class="label">The headcount math</div>
     <h2 class="title">Hires that <span class="accent">never happened</span>.<small>The brain does not replace people. It prevents the hires you would have made by default.</small></h2>
     <table class="hc-table">
@@ -1079,11 +1180,11 @@
     </table>
     <div class="hc-foot">The brain does not replace humans on payroll. <strong>It prevents the hires you would have made by default to compensate for missing systems.</strong> That is the difference between cost saving (which lays people off) and <span class="accent">capability without hire</span> (which never staffs the role in the first place).</div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">17 / 42</div>
+    <div class="page-num">18 / 43</div>
   </section>
 
-  <!-- 18, WOW NUMBER HERO -->
-  <section class="slide" id="s18">
+  <!-- 19, WOW NUMBER HERO -->
+  <section class="slide" id="s19">
     <div class="label">Single number on screen</div>
     <div class="wow-hero">
       <div class="wow-eyebrow">Headcount value, four organizations, one architecture</div>
@@ -1092,11 +1193,11 @@
       <p class="wow-foot">This is what scales. Not the number. <strong>The fact that it is the same blueprint.</strong> And tonight, on GitHub, the blueprint becomes yours.</p>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">18 / 42</div>
+    <div class="page-num">19 / 43</div>
   </section>
 
-  <!-- 19, MASTER TEMPLATE GIFT -->
-  <section class="slide" id="s19">
+  <!-- 20, MASTER TEMPLATE GIFT -->
+  <section class="slide" id="s20">
     <div class="label">Tonight, on GitHub</div>
     <div class="gift-hero">
       <div class="gift-line">Fork tonight.<br>Personal Monday.<br><span class="accent">Org by week 4.</span></div>
@@ -1108,11 +1209,11 @@
       </div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">19 / 42</div>
+    <div class="page-num">20 / 43</div>
   </section>
 
-  <!-- 20, 5 SHAREABLE SKILLS -->
-  <section class="slide" id="s20">
+  <!-- 21, 5 SHAREABLE SKILLS -->
+  <section class="slide" id="s21">
     <div class="label">Five skills to fork tonight</div>
     <h2 class="title">The portable five.<small>Each one is a Markdown file with parameters, voice rules and example outputs. Plug and run.</small></h2>
     <div class="share-grid">
@@ -1167,11 +1268,11 @@
     </div>
     <div class="share-foot">$ git clone github.com/chris1928a/eo-ai-exchange &amp;&amp; cd skills/ &amp;&amp; cat MASTER_TEMPLATE.md</div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">20 / 42</div>
+    <div class="page-num">21 / 43</div>
   </section>
 
-  <!-- 21, TAKE-AWAYS -->
-  <section class="slide" id="s21">
+  <!-- 22, TAKE-AWAYS -->
+  <section class="slide" id="s22">
     <div class="label">What to take with you</div>
     <h2 class="title">Five lines.</h2>
     <div class="quote-block">
@@ -1185,11 +1286,11 @@
       <div class="origin-quote" style="font-size:clamp(1rem,1.35vw,1.2rem);"><span class="accent">&rarr;</span> &nbsp; Audit is one day. Repair is one or two. Lock-in is forever.</div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">21 / 42</div>
+    <div class="page-num">22 / 43</div>
   </section>
 
-  <!-- 22, APPENDIX DIVIDER -->
-  <section class="slide" id="s22">
+  <!-- 23, APPENDIX DIVIDER -->
+  <section class="slide" id="s23">
     <div class="label">Reference material from here on</div>
     <div class="pivot-hero" style="align-items: center; text-align: center;">
       <div class="pivot-eyebrow" style="align-self: center;">End of main story</div>
@@ -1197,11 +1298,11 @@
       <p class="pivot-sub" style="text-align: center; align-self: center;">The 20 slides that follow are the receipts: how every layer of my Personal Brain is actually built. Skip if Slido is hot. Open if Q&amp;A goes deep.</p>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">22 / 42</div>
+    <div class="page-num">23 / 43</div>
   </section>
 
-  <!-- 23, STACK MAP -->
-  <section class="slide" id="s23">
+  <!-- 24, STACK MAP -->
+  <section class="slide" id="s24">
     <div class="label">The Map</div>
     <h2 class="title">One brain. <span class="accent">Six places it lives.</span></h2>
     <div class="stack-map">
@@ -1225,11 +1326,11 @@
     </div>
     <p class="stack-foot">Push intelligence <span class="accent">up</span> into Skills. Push execution <span class="accent">down</span> into deterministic tools. Keep the harness <span class="accent">thin</span>.</p>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">23 / 42</div>
+    <div class="page-num">24 / 43</div>
   </section>
 
-  <!-- 24, GITHUB -->
-  <section class="slide" id="s24">
+  <!-- 25, GITHUB -->
+  <section class="slide" id="s25">
     <div class="label">Source of Truth &middot; Tool 01</div>
     <div class="tool">
       <div>
@@ -1251,11 +1352,11 @@
       </div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">24 / 42</div>
+    <div class="page-num">25 / 43</div>
   </section>
 
-  <!-- 25, NOTION -->
-  <section class="slide" id="s25">
+  <!-- 26, NOTION -->
+  <section class="slide" id="s26">
     <div class="label">Sharing Layer &middot; Tool 02</div>
     <div class="tool">
       <div>
@@ -1276,11 +1377,11 @@
       </div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">25 / 42</div>
+    <div class="page-num">26 / 43</div>
   </section>
 
-  <!-- 26, DRIVE -->
-  <section class="slide" id="s26">
+  <!-- 27, DRIVE -->
+  <section class="slide" id="s27">
     <div class="label">Originals &middot; Tool 03</div>
     <div class="tool">
       <div>
@@ -1300,11 +1401,11 @@
       </div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">26 / 42</div>
+    <div class="page-num">27 / 43</div>
   </section>
 
-  <!-- 27, SKILLS OVERVIEW -->
-  <section class="slide" id="s27">
+  <!-- 28, SKILLS OVERVIEW -->
+  <section class="slide" id="s28">
     <div class="label">All 17 Clusters</div>
     <h2 class="title">Skills inventory.</h2>
     <div class="skills-grid">
@@ -1370,11 +1471,11 @@
       </div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">27 / 42</div>
+    <div class="page-num">28 / 43</div>
   </section>
 
-  <!-- 28, HOW I BUILD A SKILL -->
-  <section class="slide" id="s28">
+  <!-- 29, HOW I BUILD A SKILL -->
+  <section class="slide" id="s29">
     <div class="label">The Discipline</div>
     <h2 class="title">How I build a skill.<small>The OpenClaw rule from Garry Tan, applied.</small></h2>
     <div class="build-flow">
@@ -1405,11 +1506,11 @@
     </div>
     <p class="build-rule"><span class="accent">The test:</span> if I have to ask my system for the same thing twice, <strong>I failed</strong>. Not the model. Me, for not codifying it the first time.</p>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">28 / 42</div>
+    <div class="page-num">29 / 43</div>
   </section>
 
-  <!-- 29, MOST VALUABLE: ev-assistant -->
-  <section class="slide" id="s29">
+  <!-- 30, MOST VALUABLE: ev-assistant -->
+  <section class="slide" id="s30">
     <div class="label">Skill Deep Dive</div>
     <h2 class="title" style="margin-bottom:1.5rem;">My most valuable skill.<small>The founder OS that runs my venture: positioning, ICP, services, outreach, content.</small></h2>
     <div class="skill-deep">
@@ -1452,11 +1553,11 @@ German Umlaute mandatory. No em-dashes.
 Voice match exact. No vendor pitch tone.</div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">29 / 42</div>
+    <div class="page-num">30 / 43</div>
   </section>
 
-  <!-- 30, ev-assistant LIVE TRACE -->
-  <section class="slide" id="s30">
+  <!-- 31, ev-assistant LIVE TRACE -->
+  <section class="slide" id="s31">
     <div class="label">Live Trace</div>
     <h2 class="title">ev-assistant in action.<small>End-to-end outreach for a PE Operating Partner. ~30 seconds.</small></h2>
     <div class="trace">
@@ -1483,11 +1584,11 @@ Voice match exact. No vendor pitch tone.</div>
     </div>
     <p class="sources"><strong>What is real here:</strong>the trigger, the skill load chain, the voice. <strong>What is illustrative:</strong>the prospect name and PortCo (anonymized for the talk).</p>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">30 / 42</div>
+    <div class="page-num">31 / 43</div>
   </section>
 
-  <!-- 31, ICP DEEP-DIVE -->
-  <section class="slide" id="s31">
+  <!-- 32, ICP DEEP-DIVE -->
+  <section class="slide" id="s32">
     <div class="label">The Dual ICP</div>
     <h2 class="title">Two segments. <span class="accent">One bridge.</span></h2>
     <div class="icp-grid">
@@ -1518,11 +1619,11 @@ Voice match exact. No vendor pitch tone.</div>
     </div>
     <p class="origin-quote" style="margin-top:1.5rem;font-size:clamp(0.95rem,1.3vw,1.15rem);"><span class="accent">The bridge is the same operating system.</span> What changes is who I sell it to: the PE OP buys it as risk-reduction, the founder buys it as personal liberation.</p>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">31 / 42</div>
+    <div class="page-num">32 / 43</div>
   </section>
 
-  <!-- 32, SERVICE ARCHITECTURE -->
-  <section class="slide" id="s32">
+  <!-- 33, SERVICE ARCHITECTURE -->
+  <section class="slide" id="s33">
     <div class="label">3 Service Packages</div>
     <h2 class="title">From one-off diagnostic to 12-month engagement.</h2>
     <div class="svc-grid">
@@ -1556,11 +1657,11 @@ Voice match exact. No vendor pitch tone.</div>
     </div>
     <p class="origin-quote" style="margin-top:1.5rem;font-size:clamp(0.95rem,1.3vw,1.15rem);">Same operating system, three buyer-pain frames. <strong>The skill knows which one to load</strong> based on prospect signal.</p>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">32 / 42</div>
+    <div class="page-num">33 / 43</div>
   </section>
 
-  <!-- 33, VOICE RULES -->
-  <section class="slide" id="s33">
+  <!-- 34, VOICE RULES -->
+  <section class="slide" id="s34">
     <div class="label">Anti-AI Voice Clone</div>
     <h2 class="title">Voice rules.<small>The non-negotiables loaded into every output the skill generates.</small></h2>
     <div class="voice-grid">
@@ -1585,11 +1686,11 @@ Voice match exact. No vendor pitch tone.</div>
     </div>
     <p class="sources"><strong>Built up over 30 days:</strong>~60 banned words now, started at 20. The skill audits its own drafts and self-corrects before final output.</p>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">33 / 42</div>
+    <div class="page-num">34 / 43</div>
   </section>
 
-  <!-- 34, MEMORY OVERVIEW -->
-  <section class="slide" id="s34">
+  <!-- 35, MEMORY OVERVIEW -->
+  <section class="slide" id="s35">
     <div class="label">Memory Layer &middot; Tool 04</div>
     <h2 class="title">125 files. <span class="accent">Loaded on demand, never all at once.</span></h2>
     <div class="mem-grid">
@@ -1604,11 +1705,11 @@ Voice match exact. No vendor pitch tone.</div>
     </div>
     <p class="origin-quote" style="margin-top:1rem;font-size:clamp(0.95rem,1.3vw,1.15rem);">Each file is a 1-page judgment, distilled from dozens of documents. <strong>Loaded by skill on demand, never all at once.</strong> The MEMORY.md index file is 60 lines, points at relevant memory by topic.</p>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">34 / 42</div>
+    <div class="page-num">35 / 43</div>
   </section>
 
-  <!-- 35, MEMORY FILE EXAMPLE -->
-  <section class="slide" id="s35">
+  <!-- 36, MEMORY FILE EXAMPLE -->
+  <section class="slide" id="s36">
     <div class="label">Memory File Anatomy</div>
     <h2 class="title">A memory file is <span class="accent">structured Markdown</span>.</h2>
     <div class="memfile">
@@ -1645,11 +1746,11 @@ Stephan ueberlegt Pfade. Gefragt nach Empfehlung.
       </div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">35 / 42</div>
+    <div class="page-num">36 / 43</div>
   </section>
 
-  <!-- 36, CLAUDE CODE HARNESS -->
-  <section class="slide" id="s36">
+  <!-- 37, CLAUDE CODE HARNESS -->
+  <section class="slide" id="s37">
     <div class="label">Harness &middot; Tool 05</div>
     <div class="tool">
       <div>
@@ -1669,11 +1770,11 @@ Stephan ueberlegt Pfade. Gefragt nach Empfehlung.
       </div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">36 / 42</div>
+    <div class="page-num">37 / 43</div>
   </section>
 
-  <!-- 37, TELEGRAM INTERFACE -->
-  <section class="slide" id="s37">
+  <!-- 38, TELEGRAM INTERFACE -->
+  <section class="slide" id="s38">
     <div class="label">Mobile Interface &middot; Tool 06</div>
     <div class="tool">
       <div>
@@ -1696,11 +1797,11 @@ Stephan ueberlegt Pfade. Gefragt nach Empfehlung.
       </div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">37 / 42</div>
+    <div class="page-num">38 / 43</div>
   </section>
 
-  <!-- 38, CRON WORKFLOWS -->
-  <section class="slide" id="s38">
+  <!-- 39, CRON WORKFLOWS -->
+  <section class="slide" id="s39">
     <div class="label">What Runs Without Me</div>
     <h2 class="title">Cron workflows.<small>If I have to start it twice, it goes on a cron.</small></h2>
     <div class="cron-list">
@@ -1736,11 +1837,11 @@ Stephan ueberlegt Pfade. Gefragt nach Empfehlung.
       </div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">38 / 42</div>
+    <div class="page-num">39 / 43</div>
   </section>
 
-  <!-- 39, ANTI-PATTERNS -->
-  <section class="slide" id="s39">
+  <!-- 40, ANTI-PATTERNS -->
+  <section class="slide" id="s40">
     <div class="label">What I Do Not Do</div>
     <h2 class="title">Four anti-patterns I avoid.</h2>
     <div class="anti-grid">
@@ -1767,11 +1868,11 @@ Stephan ueberlegt Pfade. Gefragt nach Empfehlung.
     </div>
     <p class="sources"><strong>Sources</strong>Boris Cherny (Anthropic) on agentic search &middot; Karpathy LLM Wiki Pattern, April 2026 &middot; Garry Tan gbrain repo &middot; my own Brain v3.5 audit, April 27 2026</p>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">39 / 42</div>
+    <div class="page-num">40 / 43</div>
   </section>
 
-  <!-- 40, COMPARISON MATRIX -->
-  <section class="slide" id="s40">
+  <!-- 41, COMPARISON MATRIX -->
+  <section class="slide" id="s41">
     <div class="label">Where I Land</div>
     <h2 class="title">Solo founders converge.</h2>
     <table class="matrix">
@@ -1801,11 +1902,11 @@ Stephan ueberlegt Pfade. Gefragt nach Empfehlung.
     <p class="origin-quote" style="margin-top:1.25rem;font-size:clamp(0.92rem,1.25vw,1.1rem);">Solo-founder setups converge on <strong>Markdown + Skills + agentic search</strong>. Vector-DB is for 10K+ unstructured files. <span class="accent">If your volume fits in your head, your brain fits in Markdown.</span></p>
     <p class="sources"><strong>Sources</strong>Garry Tan gbrain repo &middot; Karpathy LLM Wiki gist &middot; Boris Cherny (Anthropic), "Claude Code uses agentic search, not vectors", April 2025</p>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">40 / 42</div>
+    <div class="page-num">41 / 43</div>
   </section>
 
-  <!-- 41, vs GARRY TAN -->
-  <section class="slide" id="s41">
+  <!-- 42, vs GARRY TAN -->
+  <section class="slide" id="s42">
     <div class="label">Direct Comparison</div>
     <h2 class="title">Where I follow Tan. <span class="accent">Where I differ.</span></h2>
     <div class="gt-grid">
@@ -1830,11 +1931,11 @@ Stephan ueberlegt Pfade. Gefragt nach Empfehlung.
     </div>
     <p class="gt-foot"><strong>Net:</strong> Tan's pattern is the foundation. <span class="accent">My differences come from being a multi-domain operator (real estate + content + ventures + aviation) who lives outside of Mountain View.</span> The architecture is identical, the surface area is wider.</p>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">41 / 42</div>
+    <div class="page-num">42 / 43</div>
   </section>
 
-  <!-- 42, THE 30-DAY SPRINT -->
-  <section class="slide" id="s42">
+  <!-- 43, THE 30-DAY SPRINT -->
+  <section class="slide" id="s43">
     <div class="label">Recent Audit + Migration</div>
     <h2 class="title">From chaos to compound, in <span class="accent">30 days</span>.</h2>
     <div class="sprint">
@@ -1865,7 +1966,7 @@ Stephan ueberlegt Pfade. Gefragt nach Empfehlung.
     </div>
     <p class="origin-quote" style="margin-top:1.25rem;font-size:clamp(0.95rem,1.3vw,1.15rem);">Audit is <strong>one day</strong>. Migration is <strong>one day</strong>. Documentation is <strong>one day</strong>. <span class="accent">The cost of architecture drift is always shorter to fix than to live with.</span></p>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">42 / 42</div>
+    <div class="page-num">43 / 43</div>
   </section>
 
 </div>
