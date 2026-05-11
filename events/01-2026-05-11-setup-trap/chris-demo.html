@@ -451,6 +451,83 @@
   .share-foot { margin-top: 0.85rem; padding: 0.65rem 1rem; background: var(--code-bg); border-left: 3px solid var(--text); font-family: var(--mono); font-size: 0.72rem; color: var(--text); line-height: 1.45; }
 
   /* ========== NEW: SCREENSHOT PLACEHOLDER ========== */
+  /* GARRY TAN STACK - Personal + Org Brain */
+  .gt-stack { display: flex; flex-direction: column; gap: 0; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .gt-layer { display: grid; grid-template-columns: 0.62fr 1fr; gap: 0; padding: 0.95rem 1.5rem; align-items: center; }
+  .gt-layer-l { display: flex; flex-direction: column; gap: 0.25rem; padding-right: 1.25rem; }
+  .gt-layer-r { padding-left: 1.5rem; display: flex; flex-direction: column; gap: 0.2rem; }
+  .gt-tag { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+  .gt-name { font-weight: 700; font-size: 1rem; letter-spacing: -0.01em; }
+  .gt-desc { font-size: 0.74rem; font-weight: 400; line-height: 1.4; opacity: 0.92; }
+  .gt-trace-h { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+  .gt-trace-l { font-size: 0.72rem; font-weight: 500; line-height: 1.45; font-family: var(--mono); }
+  .gt-skills { background: #1d4ed8; color: white; border-left: 2px dashed rgba(255,255,255,0.25); }
+  .gt-skills .gt-layer-r { border-left: 2px dashed rgba(255,255,255,0.25); }
+  .gt-skills .gt-tag, .gt-skills .gt-trace-h { color: #93c5fd; }
+  .gt-skills .gt-trace-l { color: #dbeafe; }
+  .gt-resolvers { background: #2563eb; color: white; }
+  .gt-resolvers .gt-layer-r { border-left: 2px dashed rgba(255,255,255,0.3); }
+  .gt-resolvers .gt-tag, .gt-resolvers .gt-trace-h { color: #bfdbfe; }
+  .gt-resolvers .gt-trace-l { color: #dbeafe; }
+  .gt-harness { background: #3f3f46; color: white; }
+  .gt-harness .gt-layer-r { border-left: 2px dashed rgba(255,255,255,0.25); }
+  .gt-harness .gt-tag, .gt-harness .gt-trace-h { color: #a1a1aa; }
+  .gt-harness .gt-trace-l { color: #e4e4e7; }
+  .gt-app { background: #f4f4f5; color: #09090b; border-top: 1px solid #a1a1aa; }
+  .gt-app .gt-layer-r { border-left: 2px dashed #a1a1aa; }
+  .gt-app .gt-tag, .gt-app .gt-trace-h { color: #1d4ed8; }
+  .gt-app .gt-desc { color: #52525b; }
+  .gt-app .gt-trace-l { color: #27272a; }
+  .gt-bottom { margin-top: 1rem; padding: 0.8rem 1.25rem; background: var(--accent-soft); border-left: 3px solid var(--accent); font-size: 0.82rem; font-weight: 500; color: var(--text); line-height: 1.5; }
+  .gt-bottom strong { color: var(--accent); font-weight: 700; }
+  .gt-flow { display: flex; align-items: center; justify-content: center; padding: 0.4rem 0; background: var(--bg); color: var(--accent); font-family: var(--mono); font-size: 0.9rem; font-weight: 700; }
+
+  /* MOCKUPS, real-looking screenshots in HTML/CSS */
+  .mock { background: white; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.08); display: flex; flex-direction: column; min-height: 320px; max-height: 420px; font-family: var(--sans); }
+  .mtg-head { display: flex; align-items: center; gap: 0.55rem; padding: 0.55rem 0.85rem; background: linear-gradient(180deg,#2563eb,#1d4ed8); color: white; }
+  .mtg-avatar { width: 30px; height: 30px; border-radius: 50%; background: white; color: #1d4ed8; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem; }
+  .mtg-info { display: flex; flex-direction: column; gap: 0; }
+  .mtg-name { font-weight: 600; font-size: 0.82rem; }
+  .mtg-status { font-size: 0.6rem; opacity: 0.85; }
+  .mtg-body { padding: 0.55rem 0.7rem; flex: 1; background: #e3eaf3; display: flex; flex-direction: column; gap: 0.35rem; overflow-y: auto; }
+  .mtg-date { text-align: center; font-size: 0.58rem; color: #52525b; padding: 0.15rem 0.55rem; background: rgba(255,255,255,0.75); align-self: center; border-radius: 8px; font-weight: 500; }
+  .mtg-bubble { background: white; padding: 0.55rem 0.7rem; border-radius: 10px; max-width: 95%; box-shadow: 0 1px 2px rgba(0,0,0,0.06); font-size: 0.66rem; line-height: 1.45; color: #09090b; }
+  .mtg-bubble .lbl { font-weight: 700; color: #1d4ed8; margin-top: 0.35rem; display: block; font-size: 0.58rem; letter-spacing: 0.06em; text-transform: uppercase; }
+  .mtg-bubble .lbl:first-child { margin-top: 0; }
+  .mtg-bubble .row { padding: 0.1rem 0; }
+  .mtg-bubble .t { font-size: 0.52rem; color: #a1a1aa; text-align: right; margin-top: 0.3rem; }
+  .mtg-bubble strong { font-weight: 600; }
+  .mnt-bar { padding: 0.45rem 0.85rem; font-size: 0.6rem; color: #71717a; background: #fafafa; border-bottom: 1px solid #e5e7eb; font-family: var(--mono); }
+  .mnt-body { padding: 0.85rem 0.95rem; flex: 1; overflow: hidden; }
+  .mnt-title { font-weight: 700; font-size: 0.78rem; color: var(--text); margin-bottom: 0.6rem; letter-spacing: -0.005em; }
+  .mnt-grid { display: grid; grid-template-columns: 1.8rem repeat(3, 1fr); border: 1px solid #e5e7eb; margin-bottom: 0.6rem; font-size: 0.5rem; }
+  .mnt-grid .gh { background: #f4f4f5; padding: 0.25rem 0.2rem; font-weight: 700; text-align: center; color: #52525b; border-right: 1px solid #e5e7eb; border-bottom: 1px solid #e5e7eb; }
+  .mnt-grid .gv { background: #f4f4f5; padding: 0.25rem 0.2rem; font-weight: 700; text-align: center; color: #52525b; border-bottom: 1px solid #e5e7eb; writing-mode: vertical-rl; transform: rotate(180deg); }
+  .mnt-grid .gc { padding: 0.3rem 0.25rem; border-right: 1px solid #e5e7eb; border-bottom: 1px solid #e5e7eb; min-height: 22px; display: flex; flex-wrap: wrap; gap: 2px; align-items: center; justify-content: center; }
+  .mnt-grid .gc.win { background: #eff6ff; }
+  .mnt-dot { width: 7px; height: 7px; border-radius: 50%; display: inline-block; }
+  .mnt-dot.b { background: #2563eb; }
+  .mnt-dot.g { background: #71717a; }
+  .mnt-list .row { display: grid; grid-template-columns: 1rem 1fr 4rem; gap: 0.4rem; padding: 0.3rem 0; border-bottom: 1px solid #e5e7eb; font-size: 0.6rem; align-items: baseline; }
+  .mnt-list .rk { font-weight: 700; color: #2563eb; font-family: var(--mono); }
+  .mnt-list .sv { font-weight: 700; color: #15803d; text-align: right; font-family: var(--mono); font-size: 0.58rem; }
+  .msl-head { padding: 0.45rem 0.85rem; background: #3f0e40; color: white; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.02em; }
+  .msl-channel { padding: 0.5rem 0.85rem; border-bottom: 1px solid #e5e7eb; display: flex; align-items: center; gap: 0.35rem; font-size: 0.72rem; }
+  .msl-channel .hash { font-weight: 700; color: #52525b; font-size: 0.9rem; }
+  .msl-channel .name { font-weight: 700; color: var(--text); }
+  .msl-channel .mem { color: #71717a; font-size: 0.55rem; margin-left: auto; }
+  .msl-post { padding: 0.7rem 0.85rem; flex: 1; }
+  .msl-author { display: flex; gap: 0.45rem; align-items: flex-start; margin-bottom: 0.3rem; }
+  .msl-avatar { width: 26px; height: 26px; border-radius: 4px; background: linear-gradient(135deg,#2563eb,#1d4ed8); color: white; font-size: 0.7rem; display: flex; align-items: center; justify-content: center; font-weight: 700; }
+  .msl-meta { display: flex; flex-direction: column; gap: 0; flex: 1; }
+  .msl-meta .n { font-weight: 700; font-size: 0.68rem; color: var(--text); }
+  .msl-meta .t { font-size: 0.52rem; color: #71717a; }
+  .msl-content { padding-left: calc(26px + 0.45rem); font-size: 0.66rem; line-height: 1.45; color: var(--text); }
+  .msl-content .l { padding: 0.1rem 0; }
+  .msl-content .fail { color: #991b1b; background: #fef2f2; padding: 0.4rem 0.55rem; border-left: 2px solid #dc2626; border-radius: 4px; margin: 0.35rem 0; font-size: 0.6rem; }
+  .msl-content .drill { color: #15803d; font-weight: 600; padding: 0.25rem 0 0.15rem 0; font-size: 0.62rem; }
+  .msl-content .link { color: #1d4ed8; font-size: 0.55rem; font-family: var(--mono); padding-top: 0.3rem; border-top: 1px solid #e5e7eb; margin-top: 0.4rem; }
+
   .shot { background: linear-gradient(135deg, var(--code-bg) 0%, var(--accent-soft) 100%); border: 2px dashed var(--accent); padding: 2rem; display: flex; flex-direction: column; gap: 0.5rem; align-items: center; justify-content: center; min-height: 200px; text-align: center; }
   .shot .stag { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); }
   .shot .swhat { font-size: 0.95rem; font-weight: 600; color: var(--text); max-width: 36ch; line-height: 1.4; }
@@ -477,7 +554,7 @@
     <p class="cover-sub">From a personal AI twin to organizational brains. One pattern, two scales. The hours saved, the hires never made, and the master template you fork tonight.</p>
     <p class="cover-meta"><span class="who">Christoph Erler</span><span class="when">EO AI Exchange #1 &middot; May 11, 2026</span></p>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">01 / 45</div>
+    <div class="page-num">01 / 43</div>
   </section>
 
   <!-- 2, ORIGIN -->
@@ -494,7 +571,7 @@
       </div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">02 / 45</div>
+    <div class="page-num">02 / 43</div>
   </section>
 
   <!-- 3, HOURS WASTED HERO (NEW) -->
@@ -507,7 +584,7 @@
     </div>
     <p class="sources"><strong>Sources</strong>MIT Project NANDA "The GenAI Divide" 2025 (95% pilots negative ROI) &middot; EO WhatsApp Poll, 122 votes, March 2026 &middot; Andrew van Aswegen, EO Best Guy interview April 2026 ("weeks burned on setup before any value lands")</p>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">03 / 45</div>
+    <div class="page-num">03 / 43</div>
   </section>
 
   <!-- 4, WASTE BREAKDOWN (NEW) -->
@@ -551,7 +628,7 @@
       <div class="totalh">14h<small>/ wk</small></div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">04 / 45</div>
+    <div class="page-num">04 / 43</div>
   </section>
 
   <!-- 5, MY 25% DIGITAL TWIN -->
@@ -566,7 +643,7 @@
     </div>
     <p class="origin-quote" style="margin-top:3rem;font-size:clamp(1.05rem,1.4vw,1.3rem);">Replaces what would otherwise cost <strong>8 to 12K EUR per month</strong> in three hires (content manager, virtual assistant, research analyst). Payback in <span class="accent">4 to 5 months</span> including 200h setup time.</p>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">05 / 45</div>
+    <div class="page-num">05 / 43</div>
   </section>
 
   <!-- 6, BUILDING 1: PERSONAL DEEP -->
@@ -575,35 +652,56 @@
     <div class="org-deep">
       <div class="org-deep-left">
         <div class="org-deep-tag">My 25% Digital Twin</div>
-        <div class="org-deep-name">One operator. <span class="accent">Seven hats</span>. Zero employees.</div>
-        <p class="org-deep-sub"><strong>Erler Ventures is my holding company.</strong> Inside it: my advisory practice (with clients), my product (Best Guy), real estate across 7 properties, plus aviation training and personal life. Same brain runs all seven.</p>
+        <div class="org-deep-name">One operator. <span class="accent">Six hats</span>. Zero employees.</div>
+        <p class="org-deep-sub"><strong>Erler Ventures is my holding company.</strong> Inside it: my advisory practice (with clients), real estate across 7 properties, plus aviation training and personal life. Same brain runs all six.</p>
         <div class="org-deep-rows">
-          <div class="org-deep-row"><div class="k">The seven hats</div><div class="v">Erler Ventures (holding) &middot; 2 advisory clients &middot; Best Guy (my product) &middot; 7 properties &middot; pilot training &middot; personal life</div></div>
+          <div class="org-deep-row"><div class="k">The six hats</div><div class="v">Erler Ventures (holding) &middot; 2 advisory clients &middot; 7 properties &middot; pilot training &middot; personal life</div></div>
           <div class="org-deep-row"><div class="k">Skills (my USP)</div><div class="v acc">19 named clusters &middot; the actual tasks I do, codified. The work I refuse to hire away because it IS my edge.</div></div>
           <div class="org-deep-row"><div class="k">Short-term memory</div><div class="v">125 .md files, loaded per task / person / project</div></div>
           <div class="org-deep-row"><div class="k">Body (tools)</div><div class="v">39 Workspace tools orchestrated (Gmail, Calendar, Notion, Holidu, Close, more)</div></div>
           <div class="org-deep-row"><div class="k">Monthly cost</div><div class="v">150 EUR (Claude Pro + Telegram VM + minor APIs)</div></div>
-          <div class="org-deep-row"><div class="k">Hours saved</div><div class="v acc">~25h / week (personal admin + client work + Best Guy), tracked over 8 weeks</div></div>
+          <div class="org-deep-row"><div class="k">Hours saved</div><div class="v acc">~23h / week (personal admin + client work), tracked over 8 weeks</div></div>
         </div>
         <div class="org-deep-replaces">
           <div class="h">What this brain is worth, two ways</div>
-          <div class="v"><strong>1. My billable hours, saved:</strong><br>~25h/week &times; 47 weeks &times; 250 EUR/hr = <span class="acc-num">~290k EUR / year</span><br><br><strong>2. Or hires never made:</strong><br><span class="strike">EA + Junior Analyst + Content Manager + 0.5 advisory associate</span> = <span class="acc-num">200-260k EUR / year</span> (DACH gross + employer cost)<br><br>Either calculation: a quarter-million per year I redirect into building, not managing.</div>
+          <div class="v"><strong>1. My billable hours, saved:</strong><br>~23h/week &times; 47 weeks &times; 250 EUR/hr = <span class="acc-num">~270k EUR / year</span><br><br><strong>2. Or hires never made:</strong><br><span class="strike">EA + Junior Analyst + Content Manager + 0.5 advisory associate</span> = <span class="acc-num">200-260k EUR / year</span> (DACH gross + employer cost)<br><br>Either calculation: a quarter-million per year I redirect into building, not managing.</div>
         </div>
       </div>
-      <div class="shot">
-        <div class="stag">Screenshot Slot</div>
-        <div class="swhat">Telegram, 7am morning brief output. One page, top of inbox + calendar today + open threads.</div>
-        <div class="snote">Capture: Sunday morning, real screenshot, 3 names redacted to keep Chatham House.</div>
+      <div class="mock">
+        <div class="mtg-head">
+          <div class="mtg-avatar">B</div>
+          <div class="mtg-info">
+            <div class="mtg-name">Brain Bot</div>
+            <div class="mtg-status">cron 07:00 &middot; daily</div>
+          </div>
+        </div>
+        <div class="mtg-body">
+          <div class="mtg-date">Sun, 11 May</div>
+          <div class="mtg-bubble">
+            <span class="lbl">Top of inbox</span>
+            <div class="row">1. <strong>[redacted PE OP]</strong> diagnostic, response due 12:00</div>
+            <div class="row">2. Parkside Knöringen velocity audit, [host] WhatsApp</div>
+            <div class="row">3. Diana wedding venue, decision deadline today</div>
+            <span class="lbl">Today, 4 calls</span>
+            <div class="row">09:00 [redacted] strategy review</div>
+            <div class="row">11:00 Raphi RC sync, pricing pivot</div>
+            <div class="row">14:00 [redacted] Mala status</div>
+            <div class="row">16:00 Stephan Cape Town call</div>
+            <span class="lbl">Open threads</span>
+            <div class="row">Hölderlin financing &middot; ehevertrag draft &middot; FOS pricing</div>
+            <div class="t">07:02</div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">06 / 45</div>
+    <div class="page-num">06 / 43</div>
   </section>
 
   <!-- 7, DAY IN THE LIFE - TIME SAVINGS TABLE -->
   <section class="slide" id="s7">
     <div class="label">A day in my life with the brain</div>
-    <h2 class="title">Where my <span class="accent">25 hours per week</span> actually come from.<small>Personal admin and ops + advisory work for clients + Best Guy product. Real tasks, real frequencies, measured over 8 weeks.</small></h2>
+    <h2 class="title">Where my <span class="accent">23 hours per week</span> actually come from.<small>Personal admin and ops + advisory work for clients + real estate ops. Real tasks, real frequencies, measured over 8 weeks.</small></h2>
     <table class="time-table">
       <thead>
         <tr>
@@ -678,28 +776,21 @@
           <td class="with"><strong>15 min &times; 3</strong> brain drafts in my voice, I edit and ship</td>
           <td class="saved">3.75h</td>
         </tr>
-        <tr>
-          <td class="task">Best Guy product work<small>spec drafts, co-founder syncs, build decisions</small></td>
-          <td class="freq">Daily, ~5 days/wk</td>
-          <td class="without"><span class="strike">30 min / day</span> context-gathering + drafting</td>
-          <td class="with"><strong>5 min / day</strong> brain has co-founder Slack + history loaded</td>
-          <td class="saved">2h</td>
-        </tr>
         <tr class="totals">
           <td colspan="4">Total time saved per week</td>
-          <td class="saved">~25h</td>
+          <td class="saved">~23h</td>
         </tr>
       </tbody>
     </table>
-    <div class="time-foot">Tracked over 8 weeks (March-April 2026). 18.7h personal + 8.75h client and product work = <strong>~25h per week reclaimed.</strong> Real tasks. Real frequencies. Real outputs.</div>
+    <div class="time-foot">Tracked over 8 weeks (March-April 2026). Personal admin + ops + advisory work for clients = <strong>~23h per week reclaimed.</strong> Real tasks. Real frequencies. Real outputs.</div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">07 / 45</div>
+    <div class="page-num">07 / 43</div>
   </section>
 
   <!-- 8, MY MOST HELPFUL SKILLS -->
   <section class="slide" id="s8">
     <div class="label">Act 1 &middot; the skills that do the work</div>
-    <h2 class="title">Eight skills that <span class="accent">move the needle</span>.<small>Markdown procedures I use weekly across personal admin, client advisory, real estate ops and Best Guy. Ranked by frequency and impact, not novelty.</small></h2>
+    <h2 class="title">Eight skills that <span class="accent">move the needle</span>.<small>Markdown procedures I use weekly across personal admin, client advisory and real estate ops. Ranked by frequency and impact, not novelty.</small></h2>
     <div class="share-grid">
       <div class="share-skill">
         <div class="sn">01</div>
@@ -768,70 +859,73 @@
     </div>
     <div class="share-foot">All eight in production, version-controlled in /skills/. The five most portable get forked at the end of tonight.</div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">08 / 45</div>
+    <div class="page-num">08 / 43</div>
   </section>
 
   <!-- 9, MY PERSONAL BRAIN, 4-LAYER WITH /weekly-review EXAMPLE -->
   <section class="slide" id="s9">
-    <div class="label">My Personal Brain &middot; live example</div>
-    <h2 class="title">How my <span class="accent">/weekly-review</span> skill remembers, thinks, and acts.<small>Same blueprint as your own body. Long-term memory holds everything I might ever need. Short-term memory is what gets loaded for this task. Working memory thinks. Body executes.</small></h2>
-    <div class="arch-svg-wrap">
-      <svg viewBox="0 0 980 470" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="ltmA" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#1d4ed8"/><stop offset="100%" stop-color="#1e40af"/>
-          </linearGradient>
-          <linearGradient id="stmA" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#2563eb"/>
-          </linearGradient>
-          <linearGradient id="wmA" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stop-color="#3f3f46"/><stop offset="50%" stop-color="#52525b"/><stop offset="100%" stop-color="#3f3f46"/>
-          </linearGradient>
-        </defs>
-
-        <!-- LAYER 1: Long-term Memory -->
-        <rect x="60" y="20" width="860" height="90" rx="8" fill="url(#ltmA)" stroke="#1e40af" stroke-width="2"/>
-        <text x="80" y="44" fill="white" font-family="Inter" font-weight="700" font-size="14">Long-term Memory</text>
-        <text x="80" y="62" fill="#dbeafe" font-family="Inter" font-weight="500" font-size="11">Every deep document I might ever need, stored, not loaded by default.</text>
-        <text x="80" y="84" fill="white" font-family="JetBrains Mono" font-size="10">7 property folders &middot; 18 months Notion meeting notes &middot; 6 years of email threads</text>
-        <text x="80" y="100" fill="white" font-family="JetBrains Mono" font-size="10">+ all GitHub history &middot; all Drive originals &middot; archived Friday reviews</text>
-        <text x="900" y="62" text-anchor="end" fill="#dbeafe" font-family="JetBrains Mono" font-weight="600" font-size="10">deep archive</text>
-
-        <!-- LAYER 2: Short-term Memory -->
-        <rect x="60" y="120" width="860" height="90" rx="8" fill="url(#stmA)" stroke="#2563eb" stroke-width="2"/>
-        <text x="80" y="144" fill="white" font-family="Inter" font-weight="700" font-size="14">Short-term Memory <tspan fill="#dbeafe" font-weight="500" font-size="11">(.md files, curated)</tspan></text>
-        <text x="80" y="162" fill="#dbeafe" font-family="Inter" font-weight="500" font-size="11">The right .md files for this exact task. Loaded into the harness on demand.</text>
-        <text x="80" y="184" fill="white" font-family="JetBrains Mono" font-size="10">/skills/weekly-review.md &middot; /skills/draft-by-channel.md</text>
-        <text x="80" y="200" fill="white" font-family="JetBrains Mono" font-size="10">/memory/current_priorities.md &middot; /memory/hat_system.md &middot; CLAUDE.md</text>
-        <text x="900" y="162" text-anchor="end" fill="#dbeafe" font-family="JetBrains Mono" font-weight="600" font-size="10">125 .md files total</text>
-
-        <!-- LAYER 3: Working Memory -->
-        <rect x="180" y="220" width="620" height="90" rx="40" fill="url(#wmA)" stroke="#27272a" stroke-width="2"/>
-        <text x="490" y="246" text-anchor="middle" fill="white" font-family="Inter" font-weight="700" font-size="14">Working Memory <tspan fill="#a1a1aa" font-weight="500" font-size="11">(active brain, right now)</tspan></text>
-        <text x="490" y="264" text-anchor="middle" fill="#e4e4e7" font-family="Inter" font-weight="500" font-size="11">Decides WHAT to do, WHEN, HOW. Loads memory, calls tools, stores nothing.</text>
-        <text x="490" y="286" text-anchor="middle" fill="white" font-family="JetBrains Mono" font-size="10">Friday 17:00 cron triggers Claude Code on my Lightsail VM</text>
-        <text x="490" y="302" text-anchor="middle" fill="white" font-family="JetBrains Mono" font-size="10">harness ~200 lines: load /weekly-review.md, route the model loop, exit</text>
-
-        <!-- LAYER 4: Body -->
-        <rect x="60" y="320" width="860" height="90" rx="8" fill="#f4f4f5" stroke="#a1a1aa" stroke-width="2"/>
-        <text x="80" y="344" fill="#09090b" font-family="Inter" font-weight="700" font-size="14">Body <tspan fill="#52525b" font-weight="500" font-size="11">(tools, real APIs)</tspan></text>
-        <text x="80" y="362" fill="#52525b" font-family="Inter" font-weight="500" font-size="11">Hands type, voice speaks. Predictable mechanics. Real-world execution.</text>
-        <text x="80" y="384" fill="#27272a" font-family="JetBrains Mono" font-size="10">Reads Gmail + Calendar + Notion + GitHub commits this week</text>
-        <text x="80" y="400" fill="#27272a" font-family="JetBrains Mono" font-size="10">Drafts the Friday note &middot; sends back to me via Telegram</text>
-        <text x="900" y="362" text-anchor="end" fill="#52525b" font-family="JetBrains Mono" font-weight="600" font-size="10">deterministic, real</text>
-
-        <!-- Side flow indicator -->
-        <path d="M 30 30 L 30 405" stroke="#2563eb" stroke-width="2" stroke-dasharray="4 4" fill="none"/>
-        <path d="M 30 405 L 25 395 M 30 405 L 35 395" stroke="#2563eb" stroke-width="2" fill="none"/>
-        <text x="20" y="220" fill="#2563eb" font-family="Inter" font-weight="700" font-size="10" transform="rotate(-90 20 220)">flows down on every run</text>
-
-        <!-- Bottom takeaway -->
-        <rect x="180" y="430" width="620" height="28" rx="5" fill="#eff6ff" stroke="#2563eb" stroke-width="1"/>
-        <text x="490" y="448" text-anchor="middle" fill="#1d4ed8" font-family="Inter" font-weight="700" font-size="11">One real skill. Four layers. Same as how your own body remembers, thinks, acts.</text>
-      </svg>
+    <div class="label">My Personal Brain &middot; live trace of /weekly-review</div>
+    <h2 class="title">Garry Tan&apos;s 3 layers, mapped to <span class="accent">my Personal Brain</span>.<small>Fat skills on top, thin harness in the middle, deterministic tools at the bottom. Right column shows what happens when /weekly-review runs at Friday 17:00. Real files, real paths, real outputs.</small></h2>
+    <div class="gt-stack">
+      <div class="gt-layer gt-skills">
+        <div class="gt-layer-l">
+          <div class="gt-tag">Layer 1 &middot; Fat Skills + Memory</div>
+          <div class="gt-name">90 percent of the value.</div>
+          <div class="gt-desc">Markdown procedures with judgment, plus the deep archive of everything I might ever need.</div>
+          <div class="gt-desc"><strong>19 skills</strong> + <strong>125 .md files</strong> + 7 property folders + 18 mo Notion + 6 yr email + all Drive + GitHub history.</div>
+        </div>
+        <div class="gt-layer-r">
+          <div class="gt-trace-h">Trace, Friday 17:00</div>
+          <div class="gt-trace-l">Cron fires. Skill <strong>/weekly-review</strong> requested.</div>
+          <div class="gt-trace-l">Deep archive stays put. Only the relevant slice will load.</div>
+        </div>
+      </div>
+      <div class="gt-layer gt-resolvers">
+        <div class="gt-layer-l">
+          <div class="gt-tag">Layer 2 &middot; Resolvers</div>
+          <div class="gt-name">CLAUDE.md, 200 lines of pointers.</div>
+          <div class="gt-desc">Routing table. Says which skill triggers when, which memory files to load for this task.</div>
+          <div class="gt-desc">Garry Tan&apos;s rule: pointer-only, never the content itself.</div>
+        </div>
+        <div class="gt-layer-r">
+          <div class="gt-trace-h">Resolves to</div>
+          <div class="gt-trace-l">/skills/weekly-review.md</div>
+          <div class="gt-trace-l">/memory/hat_system.md, /memory/current_priorities.md</div>
+          <div class="gt-trace-l">7 hat-status files, last week&apos;s Friday note</div>
+        </div>
+      </div>
+      <div class="gt-layer gt-harness">
+        <div class="gt-layer-l">
+          <div class="gt-tag">Layer 3 &middot; Thin Harness</div>
+          <div class="gt-name">Claude Code, ~200 lines.</div>
+          <div class="gt-desc">Four jobs only: model loop, file I/O, context window, safety. No business logic, no judgment.</div>
+          <div class="gt-desc">Runs on my Lightsail VM, read-only by default.</div>
+        </div>
+        <div class="gt-layer-r">
+          <div class="gt-trace-h">Working memory, right now</div>
+          <div class="gt-trace-l">Loads resolved files, reasons across 6 hats</div>
+          <div class="gt-trace-l">Ranks open threads, flags decay, drafts the Friday note</div>
+          <div class="gt-trace-l">Stores nothing. Next run starts fresh.</div>
+        </div>
+      </div>
+      <div class="gt-layer gt-app">
+        <div class="gt-layer-l">
+          <div class="gt-tag">Layer 4 &middot; Deterministic Application</div>
+          <div class="gt-name">39 Workspace tools, real APIs.</div>
+          <div class="gt-desc">No judgment, no vibes. Predictable mechanics. Real-world execution.</div>
+          <div class="gt-desc">Gmail, Calendar, Notion, Drive, Holidu, Close, GitHub, Telegram, ~30 more.</div>
+        </div>
+        <div class="gt-layer-r">
+          <div class="gt-trace-h">Body executes</div>
+          <div class="gt-trace-l">Writes Friday note to /memory/friday-notes/</div>
+          <div class="gt-trace-l">Pushes 1-page digest to Telegram</div>
+          <div class="gt-trace-l">Archives stale threads, flags 3 decisions for Monday</div>
+        </div>
+      </div>
     </div>
+    <div class="gt-bottom"><strong>One Garry Tan pattern.</strong> Skills compound, harness stays thin, application stays dumb. 23h saved per week, same architecture as the Org Brain on the next slide.</div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">09 / 45</div>
+    <div class="page-num">09 / 43</div>
   </section>
 
   <!-- 10, PERSONAL ARCHITECTURE SVG -->
@@ -894,7 +988,7 @@
       </svg>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">10 / 45</div>
+    <div class="page-num">10 / 43</div>
   </section>
 
   <!-- 11, PIVOT HERO (NEW) -->
@@ -906,123 +1000,117 @@
       <p class="pivot-sub">My personal twin handles 25% of my own work. Then I realized: the same Markdown skills, the same harness, the same deterministic glue, can be deployed for an entire team. <strong>Personal Brain to Org Brain. Same architecture, different scale.</strong></p>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">11 / 45</div>
+    <div class="page-num">11 / 43</div>
   </section>
 
-  <!-- 12, ORG BRAIN, 4-LAYER WITH /audit-process EXAMPLE -->
+  <!-- 12, ORG BRAIN, GARRY TAN LAYERS WITH /audit-process EXAMPLE -->
   <section class="slide" id="s12">
-    <div class="label">An Org Brain &middot; live example</div>
-    <h2 class="title">How an Org Brain runs <span class="accent">/audit-process</span>.<small>Same four layers, scaled to a team. Long-term memory is the org's deep archive. Short-term memory is the curated skill library. Working memory is the harness, in the cloud. Body is the team's operations.</small></h2>
-    <div class="arch-svg-wrap">
-      <svg viewBox="0 0 980 470" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="ltmB" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#1d4ed8"/><stop offset="100%" stop-color="#1e40af"/>
-          </linearGradient>
-          <linearGradient id="stmB" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#2563eb"/>
-          </linearGradient>
-          <linearGradient id="wmB" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stop-color="#3f3f46"/><stop offset="50%" stop-color="#52525b"/><stop offset="100%" stop-color="#3f3f46"/>
-          </linearGradient>
-        </defs>
-
-        <!-- LAYER 1: Long-term Memory -->
-        <rect x="60" y="20" width="860" height="90" rx="8" fill="url(#ltmB)" stroke="#1e40af" stroke-width="2"/>
-        <text x="80" y="44" fill="white" font-family="Inter" font-weight="700" font-size="14">Long-term Memory</text>
-        <text x="80" y="62" fill="#dbeafe" font-family="Inter" font-weight="500" font-size="11">The org's deep institutional knowledge, stored, not loaded by default.</text>
-        <text x="80" y="84" fill="white" font-family="JetBrains Mono" font-size="10">17 process docs in Notion &middot; customer engagement archive (3 years)</text>
-        <text x="80" y="100" fill="white" font-family="JetBrains Mono" font-size="10">Slack history &middot; Moco time-tracking &middot; financial records &middot; Dropbox originals</text>
-        <text x="900" y="62" text-anchor="end" fill="#dbeafe" font-family="JetBrains Mono" font-weight="600" font-size="10">deep archive</text>
-
-        <!-- LAYER 2: Short-term Memory -->
-        <rect x="60" y="120" width="860" height="90" rx="8" fill="url(#stmB)" stroke="#2563eb" stroke-width="2"/>
-        <text x="80" y="144" fill="white" font-family="Inter" font-weight="700" font-size="14">Short-term Memory <tspan fill="#dbeafe" font-weight="500" font-size="11">(.md files, version-controlled in GitHub agency-brain)</tspan></text>
-        <text x="80" y="162" fill="#dbeafe" font-family="Inter" font-weight="500" font-size="11">The curated org skill library. Same Markdown pattern as my personal brain.</text>
-        <text x="80" y="184" fill="white" font-family="JetBrains Mono" font-size="10">/skills/audit-process.md &middot; /skills/impact-effort-matrix.md</text>
-        <text x="80" y="200" fill="white" font-family="JetBrains Mono" font-size="10">/skills/voice-rules.md &middot; CLAUDE.md per role &middot; 10 org skills total</text>
-        <text x="900" y="162" text-anchor="end" fill="#dbeafe" font-family="JetBrains Mono" font-weight="600" font-size="10">10 org skills</text>
-
-        <!-- LAYER 3: Working Memory -->
-        <rect x="180" y="220" width="620" height="90" rx="40" fill="url(#wmB)" stroke="#27272a" stroke-width="2"/>
-        <text x="490" y="246" text-anchor="middle" fill="white" font-family="Inter" font-weight="700" font-size="14">Working Memory <tspan fill="#a1a1aa" font-weight="500" font-size="11">(harness, scaled to the cloud)</tspan></text>
-        <text x="490" y="264" text-anchor="middle" fill="#e4e4e7" font-family="Inter" font-weight="500" font-size="11">Same role as my personal brain. Different deployment surface for team scale.</text>
-        <text x="490" y="286" text-anchor="middle" fill="white" font-family="JetBrains Mono" font-size="10">Founder asks &quot;run an audit on our 17 processes&quot; in Claude Code Bypass mode</text>
-        <text x="490" y="302" text-anchor="middle" fill="white" font-family="JetBrains Mono" font-size="10">harness loads /audit-process.md, walks all 17 processes, writes back to Notion</text>
-
-        <!-- LAYER 4: Body -->
-        <rect x="60" y="320" width="860" height="90" rx="8" fill="#f4f4f5" stroke="#a1a1aa" stroke-width="2"/>
-        <text x="80" y="344" fill="#09090b" font-family="Inter" font-weight="700" font-size="14">Body <tspan fill="#52525b" font-weight="500" font-size="11">(team operations + tools, real APIs)</tspan></text>
-        <text x="80" y="362" fill="#52525b" font-family="Inter" font-weight="500" font-size="11">The team executes what the brain decided. Predictable, deterministic.</text>
-        <text x="80" y="384" fill="#27272a" font-family="JetBrains Mono" font-size="10">Output: Impact-Effort matrix in Notion &middot; ranked top 3 bottlenecks</text>
-        <text x="80" y="400" fill="#27272a" font-family="JetBrains Mono" font-size="10">+ founder time saved per process per week &middot; team picks up the rollout</text>
-        <text x="900" y="362" text-anchor="end" fill="#52525b" font-family="JetBrains Mono" font-weight="600" font-size="10">deterministic, real</text>
-
-        <!-- Side flow indicator -->
-        <path d="M 30 30 L 30 405" stroke="#2563eb" stroke-width="2" stroke-dasharray="4 4" fill="none"/>
-        <path d="M 30 405 L 25 395 M 30 405 L 35 395" stroke="#2563eb" stroke-width="2" fill="none"/>
-        <text x="20" y="220" fill="#2563eb" font-family="Inter" font-weight="700" font-size="10" transform="rotate(-90 20 220)">same flow, scaled</text>
-
-        <!-- Bottom takeaway -->
-        <rect x="180" y="430" width="620" height="28" rx="5" fill="#eff6ff" stroke="#2563eb" stroke-width="1"/>
-        <text x="490" y="448" text-anchor="middle" fill="#1d4ed8" font-family="Inter" font-weight="700" font-size="11">Same architecture as my Personal Brain. Just deployed to a team.</text>
-      </svg>
+    <div class="label">An Org Brain &middot; live trace of /audit-process</div>
+    <h2 class="title">Same 3 layers, this time at <span class="accent">team scale</span>.<small>The org has its own institutional memory, not borrowed from any operator. Skills travel between people. The harness moves to the cloud. Tools become the team&apos;s shared APIs. Right column shows what happens when a founder runs /audit-process.</small></h2>
+    <div class="gt-stack">
+      <div class="gt-layer gt-skills">
+        <div class="gt-layer-l">
+          <div class="gt-tag">Layer 1 &middot; Org Skills + Institutional Memory</div>
+          <div class="gt-name">The team&apos;s compounding asset.</div>
+          <div class="gt-desc">Org IP, version-controlled. Skills survive a person leaving. Memory survives a quarter ending.</div>
+          <div class="gt-desc"><strong>10 org skills</strong> + 17 process docs + 3 yr customer archive + Slack history + Moco time-tracking + Dropbox originals.</div>
+        </div>
+        <div class="gt-layer-r">
+          <div class="gt-trace-h">Trace, founder request</div>
+          <div class="gt-trace-l">Founder: <strong>&ldquo;Audit our 17 processes for the next ops hire.&rdquo;</strong></div>
+          <div class="gt-trace-l">3 yr archive stays put. Only the relevant slice will load.</div>
+        </div>
+      </div>
+      <div class="gt-layer gt-resolvers">
+        <div class="gt-layer-l">
+          <div class="gt-tag">Layer 2 &middot; Resolvers</div>
+          <div class="gt-name">CLAUDE.md per role, routing per query.</div>
+          <div class="gt-desc">Founder CLAUDE.md routes to org-wide skills. Employee CLAUDE.md routes to scoped subset.</div>
+          <div class="gt-desc">Same pointer-only rule. No content in the resolver.</div>
+        </div>
+        <div class="gt-layer-r">
+          <div class="gt-trace-h">Resolves to</div>
+          <div class="gt-trace-l">/skills/audit-process.md, /skills/impact-effort-matrix.md</div>
+          <div class="gt-trace-l">17 process docs (Notion), last 3 mo Slack summary</div>
+          <div class="gt-trace-l">customer engagement archive index</div>
+        </div>
+      </div>
+      <div class="gt-layer gt-harness">
+        <div class="gt-layer-l">
+          <div class="gt-tag">Layer 3 &middot; Thin Harness, cloud-deployed</div>
+          <div class="gt-name">Claude Code Bypass on AWS.</div>
+          <div class="gt-desc">Same harness as Personal Brain. Different surface, same four jobs: model loop, files, context, safety.</div>
+          <div class="gt-desc">Run by founder, scoped by role, audit-logged per query.</div>
+        </div>
+        <div class="gt-layer-r">
+          <div class="gt-trace-h">Working memory, right now</div>
+          <div class="gt-trace-l">Walks all 17 processes, scores impact vs effort</div>
+          <div class="gt-trace-l">Identifies top 3 bottlenecks + founder-time per process</div>
+          <div class="gt-trace-l">Drafts decision-ready ranked list</div>
+        </div>
+      </div>
+      <div class="gt-layer gt-app">
+        <div class="gt-layer-l">
+          <div class="gt-tag">Layer 4 &middot; Deterministic Application</div>
+          <div class="gt-name">Team operations + shared APIs.</div>
+          <div class="gt-desc">Slack, Notion, Dropbox, CRM, the team&apos;s actual stack. Predictable, deterministic.</div>
+          <div class="gt-desc">No judgment lives here. Just the team&apos;s wires.</div>
+        </div>
+        <div class="gt-layer-r">
+          <div class="gt-trace-h">Body executes</div>
+          <div class="gt-trace-l">Writes Impact-Effort matrix to Notion</div>
+          <div class="gt-trace-l">Posts top 3 bottlenecks to #ops Slack channel</div>
+          <div class="gt-trace-l">Team picks up rollout, no founder-bottleneck</div>
+        </div>
+      </div>
     </div>
+    <div class="gt-bottom"><strong>Same Garry Tan pattern.</strong> Personal Brain runs on a Mac at 150 EUR/mo. Org Brain runs in the cloud at under 1k EUR/mo. The brain belongs to the org, not to the operator.</div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">12 / 45</div>
+    <div class="page-num">12 / 43</div>
   </section>
 
-  <!-- 13, 4-PYRAMID COMPARISON SVG (the WOW visual) -->
+  <!-- 13, 3-PYRAMID COMPARISON SVG (the WOW visual) -->
   <section class="slide" id="s13">
     <div class="label">The pattern, side by side</div>
-    <h2 class="title">Four bodies. <span class="accent">One brain pattern.</span><small>Same architecture as your own body. Long-term memory holds the skills, working memory thinks, the body executes. I run this pattern across one personal life and three organizations. Same shape every time.</small></h2>
+    <h2 class="title">Three bodies. <span class="accent">One Garry Tan pattern.</span><small>Fat Skills on top. Thin Harness in the middle. Deterministic Application at the bottom. I run this across one personal life and two organizations. Same shape every time, different deployment surface.</small></h2>
     <div class="arch-svg-wrap">
       <svg viewBox="0 0 980 360" xmlns="http://www.w3.org/2000/svg">
-        <path d="M 70 60 L 230 60 L 270 130 L 30 130 Z" fill="#2563eb" stroke="#1d4ed8" stroke-width="1.5"/>
-        <text x="150" y="100" text-anchor="middle" fill="white" font-family="Inter" font-weight="700" font-size="12">19 Skills</text>
-        <rect x="40" y="140" width="220" height="60" fill="#71717a" stroke="#52525b" stroke-width="1.5"/>
-        <text x="150" y="174" text-anchor="middle" fill="white" font-family="Inter" font-weight="700" font-size="12">Claude Code</text>
-        <rect x="20" y="210" width="260" height="80" fill="#f4f4f5" stroke="#a1a1aa" stroke-width="1.5"/>
-        <text x="150" y="244" text-anchor="middle" fill="#09090b" font-family="Inter" font-weight="700" font-size="12">39 Workspace tools</text>
-        <text x="150" y="262" text-anchor="middle" fill="#52525b" font-family="Inter" font-size="10">Telegram + Cron</text>
-        <text x="150" y="320" text-anchor="middle" fill="#1d4ed8" font-family="Inter" font-weight="700" font-size="13">Personal</text>
-        <text x="150" y="340" text-anchor="middle" fill="#71717a" font-family="Inter" font-size="11">7 hats, 0 employees</text>
-        <path d="M 320 60 L 460 60 L 500 130 L 280 130 Z" fill="#2563eb" stroke="#1d4ed8" stroke-width="1.5"/>
-        <text x="390" y="100" text-anchor="middle" fill="white" font-family="Inter" font-weight="700" font-size="12">10 Skills</text>
-        <rect x="290" y="140" width="200" height="60" fill="#71717a" stroke="#52525b" stroke-width="1.5"/>
-        <text x="390" y="174" text-anchor="middle" fill="white" font-family="Inter" font-weight="700" font-size="12">Claude Code Bypass</text>
-        <rect x="270" y="210" width="240" height="80" fill="#f4f4f5" stroke="#a1a1aa" stroke-width="1.5"/>
-        <text x="390" y="244" text-anchor="middle" fill="#09090b" font-family="Inter" font-weight="700" font-size="12">GitHub + Notion + Dropbox</text>
-        <text x="390" y="262" text-anchor="middle" fill="#52525b" font-family="Inter" font-size="10">17 internal processes</text>
-        <text x="390" y="320" text-anchor="middle" fill="#1d4ed8" font-family="Inter" font-weight="700" font-size="13">Agency</text>
-        <text x="390" y="340" text-anchor="middle" fill="#71717a" font-family="Inter" font-size="11">12 employees</text>
-        <path d="M 560 60 L 700 60 L 740 130 L 520 130 Z" fill="#2563eb" stroke="#1d4ed8" stroke-width="1.5"/>
-        <text x="630" y="100" text-anchor="middle" fill="white" font-family="Inter" font-weight="700" font-size="12">8 Skills</text>
-        <rect x="530" y="140" width="200" height="60" fill="#71717a" stroke="#52525b" stroke-width="1.5"/>
-        <text x="630" y="174" text-anchor="middle" fill="white" font-family="Inter" font-weight="700" font-size="12">AWS Lambda</text>
-        <rect x="510" y="210" width="240" height="80" fill="#f4f4f5" stroke="#a1a1aa" stroke-width="1.5"/>
-        <text x="630" y="244" text-anchor="middle" fill="#09090b" font-family="Inter" font-weight="700" font-size="12">Close + Sheets + Slack</text>
-        <text x="630" y="262" text-anchor="middle" fill="#52525b" font-family="Inter" font-size="10">5 EventBridge schedules</text>
-        <text x="630" y="320" text-anchor="middle" fill="#1d4ed8" font-family="Inter" font-weight="700" font-size="13">Sales Org</text>
-        <text x="630" y="340" text-anchor="middle" fill="#71717a" font-family="Inter" font-size="11">4 reps, 0 managers</text>
-        <path d="M 800 60 L 940 60 L 970 130 L 770 130 Z" fill="#2563eb" stroke="#1d4ed8" stroke-width="1.5"/>
-        <text x="870" y="100" text-anchor="middle" fill="white" font-family="Inter" font-weight="700" font-size="12">12 Skills</text>
-        <rect x="780" y="140" width="180" height="60" fill="#71717a" stroke="#52525b" stroke-width="1.5"/>
-        <text x="870" y="174" text-anchor="middle" fill="white" font-family="Inter" font-weight="700" font-size="12">Cloudflare Workers</text>
-        <rect x="760" y="210" width="220" height="80" fill="#f4f4f5" stroke="#a1a1aa" stroke-width="1.5"/>
-        <text x="870" y="244" text-anchor="middle" fill="#09090b" font-family="Inter" font-weight="700" font-size="12">21 OAuth-scoped tools</text>
-        <text x="870" y="262" text-anchor="middle" fill="#52525b" font-family="Inter" font-size="10">SQLite + Litestream</text>
-        <text x="870" y="320" text-anchor="middle" fill="#1d4ed8" font-family="Inter" font-weight="700" font-size="13">Best Guy</text>
-        <text x="870" y="340" text-anchor="middle" fill="#71717a" font-family="Inter" font-size="11">5 founders, 1 product</text>
+        <path d="M 100 60 L 280 60 L 320 130 L 60 130 Z" fill="#2563eb" stroke="#1d4ed8" stroke-width="1.5"/>
+        <text x="190" y="100" text-anchor="middle" fill="white" font-family="Inter" font-weight="700" font-size="13">19 Skills</text>
+        <rect x="80" y="140" width="220" height="60" fill="#71717a" stroke="#52525b" stroke-width="1.5"/>
+        <text x="190" y="174" text-anchor="middle" fill="white" font-family="Inter" font-weight="700" font-size="12">Claude Code</text>
+        <rect x="60" y="210" width="260" height="80" fill="#f4f4f5" stroke="#a1a1aa" stroke-width="1.5"/>
+        <text x="190" y="244" text-anchor="middle" fill="#09090b" font-family="Inter" font-weight="700" font-size="12">39 Workspace tools</text>
+        <text x="190" y="262" text-anchor="middle" fill="#52525b" font-family="Inter" font-size="10">Telegram + Cron</text>
+        <text x="190" y="320" text-anchor="middle" fill="#1d4ed8" font-family="Inter" font-weight="700" font-size="14">Personal</text>
+        <text x="190" y="340" text-anchor="middle" fill="#71717a" font-family="Inter" font-size="11">6 hats, 0 employees</text>
+        <path d="M 420 60 L 600 60 L 640 130 L 380 130 Z" fill="#2563eb" stroke="#1d4ed8" stroke-width="1.5"/>
+        <text x="510" y="100" text-anchor="middle" fill="white" font-family="Inter" font-weight="700" font-size="13">10 Skills</text>
+        <rect x="400" y="140" width="220" height="60" fill="#71717a" stroke="#52525b" stroke-width="1.5"/>
+        <text x="510" y="174" text-anchor="middle" fill="white" font-family="Inter" font-weight="700" font-size="12">Claude Code Bypass</text>
+        <rect x="380" y="210" width="260" height="80" fill="#f4f4f5" stroke="#a1a1aa" stroke-width="1.5"/>
+        <text x="510" y="244" text-anchor="middle" fill="#09090b" font-family="Inter" font-weight="700" font-size="12">GitHub + Notion + Dropbox</text>
+        <text x="510" y="262" text-anchor="middle" fill="#52525b" font-family="Inter" font-size="10">17 internal processes</text>
+        <text x="510" y="320" text-anchor="middle" fill="#1d4ed8" font-family="Inter" font-weight="700" font-size="14">Agency</text>
+        <text x="510" y="340" text-anchor="middle" fill="#71717a" font-family="Inter" font-size="11">12 employees</text>
+        <path d="M 740 60 L 920 60 L 960 130 L 700 130 Z" fill="#2563eb" stroke="#1d4ed8" stroke-width="1.5"/>
+        <text x="830" y="100" text-anchor="middle" fill="white" font-family="Inter" font-weight="700" font-size="13">8 Skills</text>
+        <rect x="720" y="140" width="220" height="60" fill="#71717a" stroke="#52525b" stroke-width="1.5"/>
+        <text x="830" y="174" text-anchor="middle" fill="white" font-family="Inter" font-weight="700" font-size="12">AWS Lambda</text>
+        <rect x="700" y="210" width="260" height="80" fill="#f4f4f5" stroke="#a1a1aa" stroke-width="1.5"/>
+        <text x="830" y="244" text-anchor="middle" fill="#09090b" font-family="Inter" font-weight="700" font-size="12">Close + Sheets + Slack</text>
+        <text x="830" y="262" text-anchor="middle" fill="#52525b" font-family="Inter" font-size="10">5 EventBridge schedules</text>
+        <text x="830" y="320" text-anchor="middle" fill="#1d4ed8" font-family="Inter" font-weight="700" font-size="14">Sales Org</text>
+        <text x="830" y="340" text-anchor="middle" fill="#71717a" font-family="Inter" font-size="11">4 reps, 0 managers</text>
       </svg>
       <div class="arch-legend">
-        <div class="leg"><div class="l-name">Top: The AI (Skills)</div><div class="l-desc">Same Markdown procedures across all four orgs. Same voice rules. Same intelligence layer travels.</div></div>
-        <div class="leg"><div class="l-name">Middle: The Chip (Harness)</div><div class="l-desc">Differs by deployment surface, like FSD HW3 to HW4. Mac, Cloud, Edge. Same role, swappable.</div></div>
-        <div class="leg"><div class="l-name">Bottom: The Car (Tools)</div><div class="l-desc">The mechanical floor. Real APIs, real auth, real wheels. Predictable execution, no vibes.</div></div>
+        <div class="leg"><div class="l-name">Top: Fat Skills (intelligence)</div><div class="l-desc">Markdown procedures with judgment. 90 percent of the value. Travels across every deployment.</div></div>
+        <div class="leg"><div class="l-name">Middle: Thin Harness (~200 lines)</div><div class="l-desc">Model loop, files, context, safety. Same role, different surface. Mac, Cloud, Edge, swappable.</div></div>
+        <div class="leg"><div class="l-name">Bottom: Deterministic Application</div><div class="l-desc">Real APIs, real auth, real outputs. Predictable execution, no judgment, no vibes.</div></div>
       </div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">13 / 45</div>
+    <div class="page-num">13 / 43</div>
   </section>
 
   <!-- 14, BUILDING 2: ANONYMIZED AGENCY DEEP -->
@@ -1046,14 +1134,38 @@
           <div class="v">Without this: <span class="strike">1 Operations Manager (DACH mid-market 80k+)</span> + extended agency engagement. The brain shifts the next hire from <strong>mid-senior to junior</strong> and keeps founders in the operating seat.</div>
         </div>
       </div>
-      <div class="shot">
-        <div class="stag">Screenshot Slot</div>
-        <div class="swhat">/audit-process output: Impact-Effort matrix, top 3 bottlenecks ranked, founder time saved per week per process.</div>
-        <div class="snote">Capture: anonymized output, real numbers, customer name redacted.</div>
+      <div class="mock">
+        <div class="mnt-bar">Agency Workspace / Process Audit Q2 / [client redacted]</div>
+        <div class="mnt-body">
+          <div class="mnt-title">/audit-process &middot; 17 processes ranked</div>
+          <div class="mnt-grid">
+            <div class="gh"></div>
+            <div class="gh">Low effort</div>
+            <div class="gh">Mid effort</div>
+            <div class="gh">High effort</div>
+            <div class="gv">High impact</div>
+            <div class="gc win"><span class="mnt-dot b"></span><span class="mnt-dot b"></span><span class="mnt-dot b"></span></div>
+            <div class="gc"><span class="mnt-dot b"></span><span class="mnt-dot g"></span></div>
+            <div class="gc"><span class="mnt-dot g"></span></div>
+            <div class="gv">Mid impact</div>
+            <div class="gc"><span class="mnt-dot b"></span><span class="mnt-dot g"></span></div>
+            <div class="gc"><span class="mnt-dot g"></span><span class="mnt-dot g"></span><span class="mnt-dot g"></span></div>
+            <div class="gc"><span class="mnt-dot g"></span></div>
+            <div class="gv">Low impact</div>
+            <div class="gc"><span class="mnt-dot g"></span></div>
+            <div class="gc"><span class="mnt-dot g"></span></div>
+            <div class="gc"></div>
+          </div>
+          <div class="mnt-list">
+            <div class="row"><span class="rk">01</span><span>Client onboarding handoff, sales to delivery</span><span class="sv">6.2h / wk</span></div>
+            <div class="row"><span class="rk">02</span><span>Invoicing follow-up sequence, 30-60-90</span><span class="sv">4.5h / wk</span></div>
+            <div class="row"><span class="rk">03</span><span>Project status reports to retainer clients</span><span class="sv">3.1h / wk</span></div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">14 / 45</div>
+    <div class="page-num">14 / 43</div>
   </section>
 
   <!-- 15, AGENCY ARCHITECTURE SVG -->
@@ -1113,7 +1225,7 @@
       </svg>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">15 / 45</div>
+    <div class="page-num">15 / 43</div>
   </section>
 
   <!-- 16, BUILDING 3: RC DEEP -->
@@ -1137,14 +1249,30 @@
           <div class="v">Without this: <span class="strike">1 Sales Manager (80-120k DACH) + 1 Sales Ops Analyst (60-80k)</span> = <span class="acc-num">140-200k EUR</span> per year. Two hires that never happened, replaced by code that runs at 09:00, 13:00, 18:00, 18:30, 19:30.</div>
         </div>
       </div>
-      <div class="shot">
-        <div class="stag">Screenshot Slot</div>
-        <div class="swhat">Slack #sales-training, automated daily coaching post: rep name, top fail of the day, drill assigned, Loom link.</div>
-        <div class="snote">Capture: real Slack thread, rep names redacted, customer names removed.</div>
+      <div class="mock">
+        <div class="msl-head">Recruitment Circle Workspace</div>
+        <div class="msl-channel">
+          <span class="hash">#</span><span class="name">sales-training</span>
+          <span class="mem">8 members</span>
+        </div>
+        <div class="msl-post">
+          <div class="msl-author">
+            <div class="msl-avatar">C</div>
+            <div class="msl-meta">
+              <div class="n">Coaching Bot <span class="t">Today at 09:00</span></div>
+            </div>
+          </div>
+          <div class="msl-content">
+            <div class="l"><strong>[rep redacted]</strong> &middot; daily coaching</div>
+            <div class="fail">Top fail yesterday: jumped to features at 1:43 in the [customer redacted] call. Missed the budget signal at 1:38.</div>
+            <div class="drill">Drill today: pre-pitch discovery, 3-Whys. 15 min before the first call.</div>
+            <div class="link">Loom snippet (1:38 to 2:10) &middot; Skill: /sales-script-rewriter#discovery-3-whys</div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">16 / 45</div>
+    <div class="page-num">16 / 43</div>
   </section>
 
   <!-- 17, RC ARCHITECTURE SVG -->
@@ -1211,103 +1339,15 @@
       </svg>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">17 / 45</div>
+    <div class="page-num">17 / 43</div>
   </section>
 
-  <!-- 18, BUILDING 4: BEST GUY DEEP -->
-  <section class="slide" id="s18">
-    <div class="label">Act 3 &middot; Org Brain 3 of 3 &middot; Pre-launch SaaS</div>
-    <div class="org-deep">
-      <div class="org-deep-left">
-        <div class="org-deep-tag">Org Brain &middot; Building a product, no engineering team</div>
-        <div class="org-deep-name">Best Guy. <span class="accent">A product I am shipping</span>, with co-founders.</div>
-        <p class="org-deep-sub">An AI Chief of Staff for Google Workspace. Standard pre-seed playbook says hire 3 engineers. We ship with sub-agents instead.</p>
-        <div class="org-deep-rows">
-          <div class="org-deep-row"><div class="k">Standard staffing</div><div class="v"><span class="strike">CTO + Backend Engineer + Designer</span></div></div>
-          <div class="org-deep-row"><div class="k">Actual team</div><div class="v acc">5 co-founders, time-shared. Zero employees.</div></div>
-          <div class="org-deep-row"><div class="k">First version built in</div><div class="v">5 days, sub-agents do the engineering</div></div>
-          <div class="org-deep-row"><div class="k">What it does</div><div class="v">Triages your inbox, blocks your calendar, briefs you before every meeting</div></div>
-          <div class="org-deep-row"><div class="k">Honest cost</div><div class="v">$50 per day in Claude calls during build-up</div></div>
-        </div>
-        <div class="org-deep-replaces">
-          <div class="h">What it would have cost to staff normally</div>
-          <div class="v">Three engineers on payroll = <span class="acc-num">250-400k EUR</span> per year. We pay <span class="strike">none of that</span>. Sub-agents do the work, 1 product still ships.</div>
-        </div>
-      </div>
-      <div class="shot">
-        <div class="stag">Screenshot Slot</div>
-        <div class="swhat">Best Guy MVP: dashboard view with 21-tool integration status, OAuth scopes granted, sub-agent traces.</div>
-        <div class="snote">Capture: pre-launch screenshot, no customer data, internal account.</div>
-      </div>
-    </div>
-    <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">18 / 45</div>
-  </section>
+  <!-- Slides 18 + 19 (Best Guy Deep + Architecture) removed 2026-05-11 -->
 
-  <!-- 19, BEST GUY ARCHITECTURE SVG -->
-  <section class="slide" id="s19">
-    <div class="label">Best Guy &middot; how it wires</div>
-    <h2 class="title">Sub-agents. <span class="accent">21 tools.</span> One product.<small>Each sub-agent owns a domain. The orchestrator routes by intent. Same 3-layer pattern, just with sub-agents instead of a single model.</small></h2>
-    <div class="arch-svg-wrap">
-      <svg viewBox="0 0 980 380" xmlns="http://www.w3.org/2000/svg">
-        <rect x="20" y="160" width="120" height="60" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
-        <text x="80" y="188" text-anchor="middle" fill="#1d4ed8" font-family="Inter" font-weight="700" font-size="13">Founder</text>
-        <text x="80" y="206" text-anchor="middle" fill="#52525b" font-family="Inter" font-size="10">5+ cal events/day</text>
-        <path d="M 145 190 L 200 190" stroke="#2563eb" stroke-width="2" fill="none"/>
-        <path d="M 200 190 L 193 185 M 200 190 L 193 195" stroke="#2563eb" stroke-width="2" fill="none"/>
-        <rect x="205" y="150" width="170" height="80" rx="8" fill="#52525b" stroke="#27272a" stroke-width="2"/>
-        <text x="290" y="178" text-anchor="middle" fill="white" font-family="Inter" font-weight="700" font-size="14">Orchestrator</text>
-        <text x="290" y="196" text-anchor="middle" fill="#e4e4e7" font-family="Inter" font-size="10">intent classifier</text>
-        <text x="290" y="212" text-anchor="middle" fill="#dbeafe" font-family="JetBrains Mono" font-size="10">Cloudflare Worker</text>
-        <path d="M 380 165 L 430 90" stroke="#2563eb" stroke-width="1.5" fill="none"/>
-        <path d="M 430 90 L 422 92 M 430 90 L 425 98" stroke="#2563eb" stroke-width="1.5" fill="none"/>
-        <path d="M 380 180 L 430 165" stroke="#2563eb" stroke-width="1.5" fill="none"/>
-        <path d="M 430 165 L 422 168 M 430 165 L 422 162" stroke="#2563eb" stroke-width="1.5" fill="none"/>
-        <path d="M 380 200 L 430 235" stroke="#2563eb" stroke-width="1.5" fill="none"/>
-        <path d="M 430 235 L 422 232 M 430 235 L 425 240" stroke="#2563eb" stroke-width="1.5" fill="none"/>
-        <path d="M 380 215 L 430 305" stroke="#2563eb" stroke-width="1.5" fill="none"/>
-        <path d="M 430 305 L 422 302 M 430 305 L 425 310" stroke="#2563eb" stroke-width="1.5" fill="none"/>
-        <rect x="435" y="65" width="180" height="55" rx="6" fill="#2563eb" stroke="#1d4ed8" stroke-width="1.5"/>
-        <text x="525" y="88" text-anchor="middle" fill="white" font-family="Inter" font-weight="700" font-size="12">Calendar Agent</text>
-        <text x="525" y="106" text-anchor="middle" fill="#dbeafe" font-family="Inter" font-size="10">scheduling, blocks, conflicts</text>
-        <rect x="435" y="140" width="180" height="55" rx="6" fill="#2563eb" stroke="#1d4ed8" stroke-width="1.5"/>
-        <text x="525" y="163" text-anchor="middle" fill="white" font-family="Inter" font-weight="700" font-size="12">Email Agent</text>
-        <text x="525" y="181" text-anchor="middle" fill="#dbeafe" font-family="Inter" font-size="10">triage, draft, send-on-approve</text>
-        <rect x="435" y="215" width="180" height="55" rx="6" fill="#2563eb" stroke="#1d4ed8" stroke-width="1.5"/>
-        <text x="525" y="238" text-anchor="middle" fill="white" font-family="Inter" font-weight="700" font-size="12">Briefing Agent</text>
-        <text x="525" y="256" text-anchor="middle" fill="#dbeafe" font-family="Inter" font-size="10">prep before any meeting</text>
-        <rect x="435" y="290" width="180" height="55" rx="6" fill="#2563eb" stroke="#1d4ed8" stroke-width="1.5"/>
-        <text x="525" y="313" text-anchor="middle" fill="white" font-family="Inter" font-weight="700" font-size="12">Memory Agent</text>
-        <text x="525" y="331" text-anchor="middle" fill="#dbeafe" font-family="Inter" font-size="10">stakeholder dossiers</text>
-        <path d="M 620 95 L 670 95" stroke="#71717a" stroke-width="1.5" fill="none"/>
-        <path d="M 620 165 L 670 165" stroke="#71717a" stroke-width="1.5" fill="none"/>
-        <path d="M 620 235 L 670 235" stroke="#71717a" stroke-width="1.5" fill="none"/>
-        <path d="M 620 305 L 670 305" stroke="#71717a" stroke-width="1.5" fill="none"/>
-        <rect x="675" y="40" width="285" height="320" rx="8" fill="#f4f4f5" stroke="#a1a1aa" stroke-width="2"/>
-        <text x="817" y="68" text-anchor="middle" fill="#09090b" font-family="Inter" font-weight="700" font-size="14">21 Tools</text>
-        <text x="817" y="86" text-anchor="middle" fill="#52525b" font-family="Inter" font-size="11">Workspace + auth + billing</text>
-        <line x1="690" y1="98" x2="945" y2="98" stroke="#a1a1aa" stroke-width="1"/>
-        <text x="690" y="120" fill="#27272a" font-family="JetBrains Mono" font-size="11">Google OAuth (Workspace)</text>
-        <text x="690" y="142" fill="#27272a" font-family="JetBrains Mono" font-size="11">Gmail API (read + send)</text>
-        <text x="690" y="164" fill="#27272a" font-family="JetBrains Mono" font-size="11">Calendar API (RW)</text>
-        <text x="690" y="186" fill="#27272a" font-family="JetBrains Mono" font-size="11">Drive API (read)</text>
-        <text x="690" y="208" fill="#27272a" font-family="JetBrains Mono" font-size="11">Slack API (notifications)</text>
-        <text x="690" y="230" fill="#27272a" font-family="JetBrains Mono" font-size="11">Stripe (subscriptions)</text>
-        <text x="690" y="252" fill="#27272a" font-family="JetBrains Mono" font-size="11">SQLite + Litestream (state)</text>
-        <text x="690" y="274" fill="#27272a" font-family="JetBrains Mono" font-size="11">Cloudflare Workers (edge)</text>
-        <text x="690" y="296" fill="#27272a" font-family="JetBrains Mono" font-size="11">Anthropic Claude API</text>
-        <text x="690" y="318" fill="#27272a" font-family="JetBrains Mono" font-size="11">+ 12 more, OAuth-scoped</text>
-        <text x="690" y="340" fill="#71717a" font-family="JetBrains Mono" font-size="10">all tools = strict permission scope</text>
-      </svg>
-    </div>
-    <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">19 / 45</div>
-  </section>
-
-  <!-- 20, HEADCOUNT MATH TABLE -->
+  <!-- 18, HEADCOUNT MATH TABLE (formerly 20) -->
   <section class="slide" id="s20">
     <div class="label">Add it all up</div>
-    <h2 class="title">If I had hired normally, my payroll would be <span class="accent">670 to 990k EUR per year higher</span>.<small>Same four organizations. Same output. The brain does the job that would otherwise need 9 people on payroll.</small></h2>
+    <h2 class="title">If I had hired normally, my payroll would be <span class="accent">420 to 590k EUR per year higher</span>.<small>Same three organizations. Same output. The brain does the job that would otherwise need 6 people on payroll.</small></h2>
     <table class="hc-table">
       <thead>
         <tr>
@@ -1336,36 +1376,30 @@
           <td class="market">140-200k</td>
           <td class="actual zero">0</td>
         </tr>
-        <tr>
-          <td class="org">Best Guy<small>my product</small></td>
-          <td class="hires">CTO + Backend Engineer + Designer</td>
-          <td class="market">250-400k</td>
-          <td class="actual">co-founder<br>time-share</td>
-        </tr>
         <tr class="totals">
           <td class="org">Total</td>
-          <td class="hires">9 hires I never had to make</td>
-          <td class="market">670-990k</td>
-          <td class="actual">2.5 FTE</td>
+          <td class="hires">6 hires I never had to make</td>
+          <td class="market">420-590k</td>
+          <td class="actual">0.5 FTE</td>
         </tr>
       </tbody>
     </table>
-    <div class="hc-foot">Read the bottom row. <strong>9 hires worth 670-990k EUR</strong> never happened, because the brain replaces what those people would have done. That is what scales.</div>
+    <div class="hc-foot">Read the bottom row. <strong>6 hires worth 420-590k EUR</strong> never happened, because the brain replaces what those people would have done. That is what scales.</div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">20 / 45</div>
+    <div class="page-num">18 / 43</div>
   </section>
 
-  <!-- 21, WOW NUMBER HERO -->
+  <!-- 19, WOW NUMBER HERO (formerly 21) -->
   <section class="slide" id="s21">
     <div class="label">Single number on screen</div>
     <div class="wow-hero">
-      <div class="wow-eyebrow">Headcount value, four organizations, one architecture</div>
-      <div class="wow-num"><span>670</span><span class="dash">–</span><span>990</span><span class="unit">k EUR</span></div>
+      <div class="wow-eyebrow">Headcount value, three organizations, one Garry Tan pattern</div>
+      <div class="wow-num"><span>420</span><span class="dash">–</span><span>590</span><span class="unit">k EUR</span></div>
       <div class="wow-line"><span class="muted">Per year. Hires I never had to write a job description for, never had to defend in budget review, never had to fire when the cycle turned.</span></div>
       <p class="wow-foot">This is what scales. Not the number. <strong>The fact that it is the same blueprint.</strong> And tonight, on GitHub, the blueprint becomes yours.</p>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">21 / 45</div>
+    <div class="page-num">19 / 43</div>
   </section>
 
   <!-- 22, MASTER TEMPLATE GIFT -->
@@ -1381,7 +1415,7 @@
       </div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">22 / 45</div>
+    <div class="page-num">20 / 43</div>
   </section>
 
   <!-- 23, 5 SHAREABLE SKILLS -->
@@ -1440,7 +1474,7 @@
     </div>
     <div class="share-foot">$ git clone github.com/chris1928a/eo-ai-exchange &amp;&amp; cd skills/ &amp;&amp; cat MASTER_TEMPLATE.md</div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">23 / 45</div>
+    <div class="page-num">21 / 43</div>
   </section>
 
   <!-- 24, TAKE-AWAYS -->
@@ -1458,7 +1492,7 @@
       <div class="origin-quote" style="font-size:clamp(1rem,1.35vw,1.2rem);"><span class="accent">&rarr;</span> &nbsp; Audit is one day. Repair is one or two. Lock-in is forever.</div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">24 / 45</div>
+    <div class="page-num">22 / 43</div>
   </section>
 
   <!-- 25, APPENDIX DIVIDER -->
@@ -1470,7 +1504,7 @@
       <p class="pivot-sub" style="text-align: center; align-self: center;">The 20 slides that follow are the receipts: how every layer of my Personal Brain is actually built. Skip if Slido is hot. Open if Q&amp;A goes deep.</p>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">25 / 45</div>
+    <div class="page-num">23 / 43</div>
   </section>
 
   <!-- 26, STACK MAP -->
@@ -1498,7 +1532,7 @@
     </div>
     <p class="stack-foot">Push intelligence <span class="accent">up</span> into Skills. Push execution <span class="accent">down</span> into deterministic tools. Keep the harness <span class="accent">thin</span>.</p>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">26 / 45</div>
+    <div class="page-num">24 / 43</div>
   </section>
 
   <!-- 27, GITHUB -->
@@ -1524,7 +1558,7 @@
       </div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">27 / 45</div>
+    <div class="page-num">25 / 43</div>
   </section>
 
   <!-- 28, NOTION -->
@@ -1540,7 +1574,7 @@
       <div>
         <div class="tool-cat">Brain Hub structure</div>
         <div class="tool-row"><div class="pth">01</div><div class="desc"><strong>Personal & Family.</strong> Wedding planning, travel, life ops</div><div class="meta">private</div></div>
-        <div class="tool-row"><div class="pth">02</div><div class="desc"><strong>Ventures.</strong> Erler Ventures, Best Guy, every active product</div><div class="meta">private</div></div>
+        <div class="tool-row"><div class="pth">02</div><div class="desc"><strong>Ventures.</strong> Erler Ventures, every active product</div><div class="meta">private</div></div>
         <div class="tool-row"><div class="pth">03</div><div class="desc"><strong>Real Estate.</strong> 7 properties, holdings, master file</div><div class="meta">private</div></div>
         <div class="tool-row"><div class="pth">04</div><div class="desc"><strong>Aviation.</strong> SACAA training log, NAV logs, exam prep</div><div class="meta">private</div></div>
         <div class="tool-row"><div class="pth">05</div><div class="desc"><strong>Content.</strong> Blueprint chapters, weekly engine, podcast</div><div class="meta">selective sharing</div></div>
@@ -1549,7 +1583,7 @@
       </div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">28 / 45</div>
+    <div class="page-num">26 / 43</div>
   </section>
 
   <!-- 29, DRIVE -->
@@ -1573,7 +1607,7 @@
       </div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">29 / 45</div>
+    <div class="page-num">27 / 43</div>
   </section>
 
   <!-- 30, SKILLS OVERVIEW -->
@@ -1643,7 +1677,7 @@
       </div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">30 / 45</div>
+    <div class="page-num">28 / 43</div>
   </section>
 
   <!-- 31, HOW I BUILD A SKILL -->
@@ -1678,7 +1712,7 @@
     </div>
     <p class="build-rule"><span class="accent">The test:</span> if I have to ask my system for the same thing twice, <strong>I failed</strong>. Not the model. Me, for not codifying it the first time.</p>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">31 / 45</div>
+    <div class="page-num">29 / 43</div>
   </section>
 
   <!-- 32, MOST VALUABLE: ev-assistant -->
@@ -1725,7 +1759,7 @@ German Umlaute mandatory. No em-dashes.
 Voice match exact. No vendor pitch tone.</div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">32 / 45</div>
+    <div class="page-num">30 / 43</div>
   </section>
 
   <!-- 33, ev-assistant LIVE TRACE -->
@@ -1756,7 +1790,7 @@ Voice match exact. No vendor pitch tone.</div>
     </div>
     <p class="sources"><strong>What is real here:</strong>the trigger, the skill load chain, the voice. <strong>What is illustrative:</strong>the prospect name and PortCo (anonymized for the talk).</p>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">33 / 45</div>
+    <div class="page-num">31 / 43</div>
   </section>
 
   <!-- 34, ICP DEEP-DIVE -->
@@ -1791,7 +1825,7 @@ Voice match exact. No vendor pitch tone.</div>
     </div>
     <p class="origin-quote" style="margin-top:1.5rem;font-size:clamp(0.95rem,1.3vw,1.15rem);"><span class="accent">The bridge is the same operating system.</span> What changes is who I sell it to: the PE OP buys it as risk-reduction, the founder buys it as personal liberation.</p>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">34 / 45</div>
+    <div class="page-num">32 / 43</div>
   </section>
 
   <!-- 35, SERVICE ARCHITECTURE -->
@@ -1829,7 +1863,7 @@ Voice match exact. No vendor pitch tone.</div>
     </div>
     <p class="origin-quote" style="margin-top:1.5rem;font-size:clamp(0.95rem,1.3vw,1.15rem);">Same operating system, three buyer-pain frames. <strong>The skill knows which one to load</strong> based on prospect signal.</p>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">35 / 45</div>
+    <div class="page-num">33 / 43</div>
   </section>
 
   <!-- 36, VOICE RULES -->
@@ -1858,7 +1892,7 @@ Voice match exact. No vendor pitch tone.</div>
     </div>
     <p class="sources"><strong>Built up over 30 days:</strong>~60 banned words now, started at 20. The skill audits its own drafts and self-corrects before final output.</p>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">36 / 45</div>
+    <div class="page-num">34 / 43</div>
   </section>
 
   <!-- 37, MEMORY OVERVIEW -->
@@ -1877,7 +1911,7 @@ Voice match exact. No vendor pitch tone.</div>
     </div>
     <p class="origin-quote" style="margin-top:1rem;font-size:clamp(0.95rem,1.3vw,1.15rem);">Each file is a 1-page judgment, distilled from dozens of documents. <strong>Loaded by skill on demand, never all at once.</strong> The MEMORY.md index file is 60 lines, points at relevant memory by topic.</p>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">37 / 45</div>
+    <div class="page-num">35 / 43</div>
   </section>
 
   <!-- 38, MEMORY FILE EXAMPLE -->
@@ -1918,7 +1952,7 @@ Stephan ueberlegt Pfade. Gefragt nach Empfehlung.
       </div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">38 / 45</div>
+    <div class="page-num">36 / 43</div>
   </section>
 
   <!-- 39, CLAUDE CODE HARNESS -->
@@ -1942,7 +1976,7 @@ Stephan ueberlegt Pfade. Gefragt nach Empfehlung.
       </div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">39 / 45</div>
+    <div class="page-num">37 / 43</div>
   </section>
 
   <!-- 40, TELEGRAM INTERFACE -->
@@ -1969,7 +2003,7 @@ Stephan ueberlegt Pfade. Gefragt nach Empfehlung.
       </div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">40 / 45</div>
+    <div class="page-num">38 / 43</div>
   </section>
 
   <!-- 41, CRON WORKFLOWS -->
@@ -2009,7 +2043,7 @@ Stephan ueberlegt Pfade. Gefragt nach Empfehlung.
       </div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">41 / 45</div>
+    <div class="page-num">39 / 43</div>
   </section>
 
   <!-- 42, ANTI-PATTERNS -->
@@ -2040,7 +2074,7 @@ Stephan ueberlegt Pfade. Gefragt nach Empfehlung.
     </div>
     <p class="sources"><strong>Sources</strong>Boris Cherny (Anthropic) on agentic search &middot; Karpathy LLM Wiki Pattern, April 2026 &middot; Garry Tan gbrain repo &middot; my own Brain v3.5 audit, April 27 2026</p>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">42 / 45</div>
+    <div class="page-num">40 / 43</div>
   </section>
 
   <!-- 43, COMPARISON MATRIX -->
@@ -2074,7 +2108,7 @@ Stephan ueberlegt Pfade. Gefragt nach Empfehlung.
     <p class="origin-quote" style="margin-top:1.25rem;font-size:clamp(0.92rem,1.25vw,1.1rem);">Solo-founder setups converge on <strong>Markdown + Skills + agentic search</strong>. Vector-DB is for 10K+ unstructured files. <span class="accent">If your volume fits in your head, your brain fits in Markdown.</span></p>
     <p class="sources"><strong>Sources</strong>Garry Tan gbrain repo &middot; Karpathy LLM Wiki gist &middot; Boris Cherny (Anthropic), "Claude Code uses agentic search, not vectors", April 2025</p>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">43 / 45</div>
+    <div class="page-num">41 / 43</div>
   </section>
 
   <!-- 44, vs GARRY TAN -->
@@ -2103,7 +2137,7 @@ Stephan ueberlegt Pfade. Gefragt nach Empfehlung.
     </div>
     <p class="gt-foot"><strong>Net:</strong> Tan's pattern is the foundation. <span class="accent">My differences come from being a multi-domain operator (real estate + content + ventures + aviation) who lives outside of Mountain View.</span> The architecture is identical, the surface area is wider.</p>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">44 / 45</div>
+    <div class="page-num">42 / 43</div>
   </section>
 
   <!-- 45, THE 30-DAY SPRINT -->
@@ -2138,7 +2172,7 @@ Stephan ueberlegt Pfade. Gefragt nach Empfehlung.
     </div>
     <p class="origin-quote" style="margin-top:1.25rem;font-size:clamp(0.95rem,1.3vw,1.15rem);">Audit is <strong>one day</strong>. Migration is <strong>one day</strong>. Documentation is <strong>one day</strong>. <span class="accent">The cost of architecture drift is always shorter to fix than to live with.</span></p>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">45 / 45</div>
+    <div class="page-num">43 / 43</div>
   </section>
 
 </div>

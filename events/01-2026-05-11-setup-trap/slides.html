@@ -385,6 +385,19 @@
   .mt-bar .l { font-size: 0.85rem; font-weight: 600; line-height: 1.45; color: var(--text); }
   .mt-bar .l .accent { color: var(--accent); font-weight: 700; }
 
+  /* ========== NEW: GROUND RULES ========== */
+  .rules { display: flex; flex-direction: column; margin-bottom: 2.5rem; }
+  .rule { display: grid; grid-template-columns: 4rem 1fr; gap: 2rem; align-items: baseline; padding: 1.1rem 0; border-bottom: 1px solid var(--border); }
+  .rule:first-child { border-top: 1px solid var(--border); }
+  .rule .rn { font-weight: 700; font-size: 1.5rem; line-height: 1; color: var(--accent); letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+  .rule .rb { display: flex; flex-direction: column; gap: 0.3rem; }
+  .rule .rh { font-weight: 600; font-size: 1.05rem; color: var(--text); letter-spacing: -0.01em; }
+  .rule .rd { font-weight: 400; font-size: 0.85rem; color: var(--muted); line-height: 1.45; }
+  .rules-slido { margin-top: 1.5rem; padding: 1.1rem 1.5rem; background: var(--accent-soft); border-left: 3px solid var(--accent); }
+  .rules-slido .rs-h { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem; }
+  .rules-slido .rs-l { font-size: 0.95rem; font-weight: 500; color: var(--text); line-height: 1.5; }
+  .rules-slido .rs-l strong { font-weight: 700; color: var(--accent); }
+
   .nav-hint { position: fixed; bottom: 1rem; left: 50%; transform: translateX(-50%); font-size: 0.65rem; color: var(--faint); opacity: 0.5; pointer-events: none; letter-spacing: 0.06em; }
   .nav-hint.hidden { opacity: 0; transition: opacity 0.5s; }
 
@@ -403,14 +416,33 @@
   <section class="slide active" id="s1">
     <div class="cover-eyebrow">EO AI Productivity Exchange &middot; #1</div>
     <h1 class="cover-title">The <span class="accent">Setup</span><br>Trap.</h1>
-    <p class="cover-sub">Two operators. Five organizations between us. The hours saved, the hires never made, and the master template you fork tonight.</p>
+    <p class="cover-sub">Two operators. Four organizations between us. The hours saved, the hires never made, and the master template you fork tonight.</p>
     <p class="cover-meta"><span class="who">Christoph Erler &amp; Dom Raute</span><span class="when">May 11, 2026 &middot; 18:00 CEST</span></p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">01 / 16</div>
+    <div class="page-num">01 / 17</div>
   </section>
 
-  <!-- 2, PROMISE -->
+  <!-- 2, GROUND RULES (NEW) -->
   <section class="slide" id="s2">
+    <div class="label">Before we start</div>
+    <h2 class="title">Ground rules<br>for tonight.</h2>
+    <div class="rules">
+      <div class="rule"><div class="rn">01</div><div class="rb"><div class="rh">Chatham House Rule</div><div class="rd">Share what you learn here. Never who said it. Inside this room and outside.</div></div></div>
+      <div class="rule"><div class="rn">02</div><div class="rb"><div class="rh">All on mute</div><div class="rd">Questions go to Slido and the chat. Hosts call you in when it is your turn.</div></div></div>
+      <div class="rule"><div class="rn">03</div><div class="rb"><div class="rh">No recording. No screenshots.</div><div class="rd">Respect for every operator in the room. The setups you see are not public.</div></div></div>
+      <div class="rule"><div class="rn">04</div><div class="rb"><div class="rh">We transcribe. You stay anonymous.</div><div class="rd">Chris transcribes live for an anonymized MoM. Names and companies redacted before anything ships.</div></div></div>
+      <div class="rule"><div class="rn">05</div><div class="rb"><div class="rh">More exchanges follow</div><div class="rd">30 to 90 day cadence. Topic for #2 picked by your Slido vote tonight.</div></div></div>
+    </div>
+    <div class="rules-slido">
+      <div class="rs-h">Slido open now</div>
+      <div class="rs-l">Code <strong>#3261743</strong> at slido.com. Drop and upvote questions for the live panel.</div>
+    </div>
+    <div class="brand">EO Berlin</div>
+    <div class="page-num">02 / 17</div>
+  </section>
+
+  <!-- 3, PROMISE -->
+  <section class="slide" id="s3">
     <div class="label">60 Minutes</div>
     <h2 class="title">What you walk out with.</h2>
     <div class="promise">
@@ -421,7 +453,7 @@
     </div>
     <p class="footer-note">Not the goal: another tool overview, generic theory, polished vendor demos. <span class="accent">We show the struggles, not just the wins.</span></p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">02 / 16</div>
+    <div class="page-num">03 / 17</div>
   </section>
 
   <!-- 3, TWO TRAPS -->
@@ -447,7 +479,7 @@
     <p class="traps-foot">Most don't escape because they fight the wrong trap.</p>
     <p class="sources"><strong>Sources</strong>EO operator polls &middot; MIT 2025 &middot; founder interviews</p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">03 / 16</div>
+    <div class="page-num">04 / 17</div>
   </section>
 
   <!-- 4, MY 12 WEEKS (NEW) -->
@@ -459,7 +491,7 @@
       <p class="wasted-foot">Five dead stacks. Three different harnesses. Two memory rewrites. <strong>The setup you are about to see is what survived.</strong> Not what I planned on day one.</p>
     </div>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">04 / 16</div>
+    <div class="page-num">05 / 17</div>
   </section>
 
   <!-- 5, STACK VERSIONS -->
@@ -475,7 +507,7 @@
     </div>
     <p class="v-quote"><strong>Two stacks survived. Both share one principle.</strong> Stop maintaining tools. Start maintaining <span class="accent">memory</span>.</p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">05 / 16</div>
+    <div class="page-num">06 / 17</div>
   </section>
 
   <!-- 6, DIAGNOSTIC -->
@@ -489,7 +521,7 @@
       <div class="q"><div class="qn">03</div><div class="qbody"><div class="qt">Could a new team member understand it in 2 sentences?</div><div class="qv">No? <strong>Setup Trap.</strong></div></div></div>
     </div>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">06 / 16</div>
+    <div class="page-num">07 / 17</div>
   </section>
 
   <!-- 7, HIERARCHY -->
@@ -509,7 +541,7 @@
     </div>
     <p class="sources"><strong>Source</strong>McKinsey, "The state of AI: How organizations are rewiring to capture value", 2025</p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">07 / 16</div>
+    <div class="page-num">08 / 17</div>
   </section>
 
   <!-- 8, DEMO 1 TITLE -->
@@ -528,7 +560,7 @@
       </div>
     </div>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">08 / 16</div>
+    <div class="page-num">09 / 17</div>
   </section>
 
   <!-- 9, DEMO 1 RECAP -->
@@ -552,7 +584,7 @@
     </div>
     <p class="recap-foot">No long-term memory across sessions. <span class="accent">That is where Dom takes over.</span></p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">09 / 16</div>
+    <div class="page-num">10 / 17</div>
   </section>
 
   <!-- 10, BRIDGE -->
@@ -561,7 +593,7 @@
     <h2>Dom takes you<br>one layer <span class="accent">deeper</span>.</h2>
     <p class="sub">From hack on top, to architecture beneath.</p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">10 / 16</div>
+    <div class="page-num">11 / 17</div>
   </section>
 
   <!-- 11, DEMO 2 TITLE -->
@@ -580,7 +612,7 @@
       </div>
     </div>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">11 / 16</div>
+    <div class="page-num">12 / 17</div>
   </section>
 
   <!-- 12, DEMO 2 RECAP -->
@@ -604,7 +636,7 @@
     </div>
     <p class="recap-foot">Architecture wins long-term. <span class="accent">Setup cost upfront, near-zero compounding cost after.</span></p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">12 / 16</div>
+    <div class="page-num">13 / 17</div>
   </section>
 
   <!-- 13, COST -->
@@ -619,7 +651,7 @@
     <p class="cost-foot">The <span class="accent">architecture</span> beats the budget.</p>
     <p class="sources"><strong>Sources</strong>Glean Enterprise public pricing, 2026 &middot; Notion AI + Glean + ChatGPT Enterprise list pricing combined, 2026</p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">13 / 16</div>
+    <div class="page-num">14 / 17</div>
   </section>
 
   <!-- 14, GITHUB REVEAL -->
@@ -640,18 +672,18 @@
     </div>
     <div class="gh-url"><div class="lbl">MIT License &middot; fork and remix &middot; 5 portable skills + 30-day Personal-to-Org plan</div><div class="url">github.com/chris1928a/eo-ai-exchange</div></div>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">14 / 16</div>
+    <div class="page-num">15 / 17</div>
   </section>
 
   <!-- 15, HEADCOUNT TEASER (NEW) -->
   <section class="slide" id="s15">
     <div class="label">The bigger reveal &middot; Chris demo</div>
-    <h2 class="title">Same blueprint. <span class="accent">Four buildings.</span><small>What Chris will show in his deep dive: the architecture that scales from one operator to a 12-person org and a sales floor with zero managers.</small></h2>
+    <h2 class="title">Same blueprint. <span class="accent">Three buildings.</span><small>What Chris will show in his deep dive: the architecture that scales from one operator to a 12-person org and a sales floor with zero managers.</small></h2>
     <div class="hc-teaser">
-      <div class="hc-teaser-num">670<small>-990k EUR</small></div>
+      <div class="hc-teaser-num">420<small>-590k EUR</small></div>
       <div class="hc-teaser-side">
-        <div class="h">Headcount value &middot; 4 organizations &middot; 1 architecture</div>
-        <p class="l"><span class="strike">3 personal hires</span> + <span class="strike">1 ops manager</span> + <span class="strike">2 sales-mgmt hires</span> + <span class="strike">3 pre-seed engineering hires</span></p>
+        <div class="h">Headcount value &middot; 3 organizations &middot; 1 Garry Tan pattern</div>
+        <p class="l"><span class="strike">3 personal hires</span> + <span class="strike">1 ops manager</span> + <span class="strike">2 sales-mgmt hires</span></p>
         <p class="l"><strong>Replaced by the same 3-layer pattern</strong>, deployed on different harnesses (Mac, Cloud, Edge). Capability without hire.</p>
       </div>
     </div>
@@ -660,7 +692,7 @@
       <div class="l">A <span class="accent">Master Template</span> with 5 portable skills (/diarize-person, /audit-process, /weekly-review, /draft-by-channel, /memory-curator) plus a 30-day rollout plan from Personal to Org.</div>
     </div>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">15 / 16</div>
+    <div class="page-num">16 / 17</div>
   </section>
 
   <!-- 16, CLOSING -->
@@ -682,7 +714,7 @@
       <div class="right"><div class="lbl">GitHub, live tonight</div><div class="v">chris1928a/eo-ai-exchange</div></div>
     </div>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">16 / 16</div>
+    <div class="page-num">17 / 17</div>
   </section>
 
 </div>
