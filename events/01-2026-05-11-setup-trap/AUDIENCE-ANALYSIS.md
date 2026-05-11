@@ -1,8 +1,9 @@
 # Audience Analysis, Event #1
 
 **Snapshot:** 2026-05-11 08:48 CEST
-**Source:** Luma guest export, 140 approved registrations
-**Capacity:** 150 (93% sold)
+**Source:** Luma guest export, 118 approved audience registrations (plus Chris as host = 119 in raw CSV)
+**Capacity:** 150 (79% sold)
+**Already checked in:** 20 founders early
 
 > Live picture of who is in the room tonight and what they are stuck on. Drives Slido prioritization and the panel order.
 
@@ -10,27 +11,43 @@
 
 ## Stack distribution, what registrants currently use
 
+Verified counts from 117 stack responses (1 left blank):
+
 | Stack | Count | Share |
 |---|---|---|
-| **Claude (any variant)** | ~95 | 68% |
-| Claude Code + Cowork | ~45 | 32% |
-| OpenClaw (alone or mixed) | ~22 | 16% |
-| ChatGPT (alone or mixed) | ~30 | 21% |
-| Gemini / Google Workspace | ~18 | 13% |
-| Perplexity | ~8 | 6% |
-| Multi-vendor stack ("Claude + GPT + Gemini") | ~20 | 14% |
-| PAI (Personal AI Infrastructure) | 1 explicit (Fabian) | <1% |
-| Other (Copilot, n8n, Zapier, Fireflies, Cursor, Lovable, Replit) | ~25 | 18% |
-| Just basic / browser only | ~12 | 9% |
-| No AI yet | 2 | 1% |
+| **Claude (any variant)** | **82** | **69%** |
+| **Multi-vendor stack (2+ tools)** | **44** | **37%** |
+| ChatGPT (alone or mixed) | 23 | 19% |
+| Gemini / Google Workspace | 19 | 16% |
+| OpenClaw (alone or mixed) | 16 | 14% |
+| Perplexity | 8 | 7% |
+| Copilot | 4 | 3% |
+| PAI (Personal AI Infrastructure) | 1 explicit (Fabian) | 1% |
 
 **Takeaway:** Claude is the de-facto standard in this room (68%). OpenClaw is the orchestration second-place. The audience is sophisticated, most are past "should we use AI" and into "how do we make it work in production".
 
 ---
 
-## Pain clusters from registration responses
+## Pain clusters from 117 registration responses
 
-### Cluster 1, Tool Overload (29% of registrations)
+Verified counts via keyword matching on raw pain-point answers:
+
+| Rank | Pain cluster | n | Share |
+|---|---|---|---|
+| 1 | Agents / Orchestration | 18 | 15% |
+| 2 | Setup itself / time to configure | 16 | 14% |
+| 3 | Integration across tools | 14 | 12% |
+| 4 | Team adoption / transfer | 11 | 9% |
+| 5 | Tool overload, which one for what | 10 | 9% |
+| 6 | Pace / keeping up with releases | 10 | 9% |
+| 7 | Time / learning curve | 7 | 6% |
+| 8 | Reliability / stability | 6 | 5% |
+| 9 | Security / GDPR (explicit) | 4 | 3% |
+| 10 | Cost | 4 | 3% |
+
+Note: DACH-implicit GDPR pressure is higher than the 3% explicit. 51% of the room is DACH-based, regulated industries assume compliance is required.
+
+### Cluster 1, Tool Overload (9% explicit, much higher implicit)
 
 **Trigger phrases:** "too many options", "so much out there, overwhelmed", "which tool for what", "Integration der einzelnen Elemente in ein vernünftiges einfaches System", "Maintaining the overview", "FOMO", "feel like I am getting left behind".
 
@@ -111,15 +128,25 @@ Notable: every DACH-based registrant carries implicit GDPR weight. The 6% explic
 
 ## Geographic distribution
 
-Roughly half DACH (Germany, Austria, Switzerland), other half global:
+**DACH-area is the plurality at 51% (59 of 116 chapter responses).** Verified top chapters:
 
-- **DACH:** Berlin (~20), Hamburg (~12), Munich (~8), Zurich (~8), Southwest Germany (~5), Rhine-Ruhr (~5), Austria (~4)
-- **Other Europe:** Netherlands, Ireland, Bulgaria, Italy, Spain, Romania, Ukraine, Belgium
-- **Americas:** New York, Charlotte, Houston, Miami, Dominican Republic, El Salvador, Brazil, Monterrey, Vancouver Island
-- **Asia / Pacific:** Bahrain, Bengaluru, Chennai, Qatar, Australia (Melbourne), Costa Rica
-- **Africa:** Cape Town, Kenya
+| Chapter | Count |
+|---|---|
+| Berlin | 20 |
+| Hamburg | 10 |
+| Zurich | 7 |
+| Munich | 7 |
+| Rhine-Ruhr | 5 |
+| Germany Southwest | 5 |
+| EBC | 3 |
+| Spain | 3 |
+| Netherlands | 3 |
+| Ireland | 3 |
+| Belgium, Dubai, London, India, Cape Town | 2 each |
 
-**Takeaway:** ~30 EO chapters represented. DACH is the plurality. English presentation is the right choice; some German-language pain points indicate German-speaking attendees comfortable in either.
+53 unique EO chapter strings represented across 4 continents (Europe, Americas, Asia, Africa).
+
+**Takeaway:** English is the right language. Some German-language pain submissions (e.g. "Integration der einzelnen Elemente in ein vernünftiges einfaches System") indicate Germans comfortable in either.
 
 ---
 

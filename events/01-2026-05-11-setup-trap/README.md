@@ -5,7 +5,7 @@
 **Date:** 2026-05-11, 18:00 to 19:00 CEST
 **Format:** Online (Google Meet)
 **Hosts:** Christoph Erler, Dominik Raute (CTO JustWatch), Fabian Gless (EO Berlin)
-**Attendance:** 140 approved registrations as of 2026-05-11 08:48 CEST (capacity 150)
+**Attendance:** 118 approved audience registrations as of 2026-05-11 08:48 CEST (capacity 150)
 **Slido Code:** #3261743 ([app.sli.do/event/ayixnbqUoPEUoNJQa6WuFA](https://app.sli.do/event/ayixnbqUoPEUoNJQa6WuFA))
 **Luma:** [luma.com/9ek390dc](https://luma.com/9ek390dc)
 
@@ -30,22 +30,22 @@ Click anywhere or use arrow keys to navigate. Printable as PDF via browser print
 
 ---
 
-## Audience pain clusters (140 registrations, 30+ chapters)
+## Audience pain clusters (118 registrations, 53 chapters)
 
-Top clusters from registration responses:
+Verified top clusters from 117 pain submissions (1 blank):
 
-| Rank | Pain | Share |
-|---|---|---|
-| 1 | Tool Overload | 29% |
-| 2 | Setup Itself | 28% |
-| 3 | Agents in Production | 18% |
-| 4 | Team Adoption | 18% |
-| 5 | Integration / MCP | 14% |
-| 6 | OpenClaw Stability | 12% |
-| 7 | Pace / Keeping Up | 11% |
-| 8 | Time / Learning | 8% |
-| 9 | Industry-Specific | 6% |
-| 10 | Security / GDPR | 6% (DACH implicit much higher) |
+| Rank | Pain | n | Share |
+|---|---|---|---|
+| 1 | Agents / Orchestration | 18 | 15% |
+| 2 | Setup itself, time to configure | 16 | 14% |
+| 3 | Integration across tools | 14 | 12% |
+| 4 | Team adoption / transfer | 11 | 9% |
+| 5 | Tool overload, which one for what | 10 | 9% |
+| 6 | Pace / keeping up with releases | 10 | 9% |
+| 7 | Time / learning curve | 7 | 6% |
+| 8 | Reliability / stability | 6 | 5% |
+| 9 | Security / GDPR (explicit) | 4 | 3% |
+| 10 | Cost | 4 | 3% |
 
 Full breakdown plus stack distribution plus speaker-pain alignment in [AUDIENCE-ANALYSIS.md](AUDIENCE-ANALYSIS.md).
 

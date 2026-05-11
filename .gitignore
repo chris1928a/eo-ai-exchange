@@ -1,0 +1,4 @@
+
+events/*/raw-data/
+events/*/_guests.csv
+events/*/_analyze.py
