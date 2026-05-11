@@ -323,16 +323,19 @@
   .bridge .sub { font-size: clamp(1.1rem, 1.6vw, 1.4rem); font-weight: 400; color: var(--muted); max-width: 40ch; line-height: 1.45; }
 
   /* COST */
-  .cost-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3rem; }
-  .cost { border-top: 1px solid var(--faint); padding-top: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; }
-  .cost.win { border-color: var(--accent); border-top-width: 2px; }
-  .cost .price { font-weight: 700; font-size: clamp(3.5rem, 5.5vw, 5rem); line-height: 1; letter-spacing: -0.05em; color: var(--faint); font-variant-numeric: tabular-nums; }
-  .cost.win .price { color: var(--accent); }
-  .cost .price .unit { font-size: 0.85rem; font-weight: 500; color: var(--muted); margin-left: 0.3rem; }
-  .cost .name { font-weight: 600; font-size: 1.1rem; color: var(--text); letter-spacing: -0.01em; }
-  .cost .desc { font-weight: 400; font-size: 0.85rem; color: var(--muted); line-height: 1.45; }
-  .cost-foot { margin-top: 4rem; text-align: center; font-size: clamp(1.1rem, 1.6vw, 1.5rem); font-weight: 500; color: var(--text); letter-spacing: -0.01em; }
-  .cost-foot .accent { color: var(--accent); font-weight: 600; }
+  .cost-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
+  .cost { padding: 1.4rem 1.4rem 1.2rem; display: flex; flex-direction: column; gap: 0.65rem; border-radius: 8px; border: 1px solid var(--border-strong); background: var(--bg); }
+  .cost.win { background: var(--accent-soft); border-color: var(--accent); border-width: 2px; box-shadow: 0 2px 8px rgba(37,99,235,0.12); }
+  .cost.warn { background: #fef2f2; border-color: #fca5a5; }
+  .cost .price { font-weight: 800; font-size: clamp(2.2rem, 3.6vw, 3.2rem); line-height: 1; letter-spacing: -0.04em; color: var(--accent); font-variant-numeric: tabular-nums; display: flex; align-items: baseline; gap: 0.35rem; flex-wrap: wrap; }
+  .cost .price .unit { font-size: 0.38em; font-weight: 600; color: var(--muted); letter-spacing: 0; line-height: 1; }
+  .cost.warn .price { color: #b91c1c; }
+  .cost.warn .price .unit { color: #991b1b; }
+  .cost .name { font-weight: 700; font-size: 1.05rem; color: var(--text); letter-spacing: -0.01em; }
+  .cost .desc { font-weight: 400; font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
+  .cost .desc strong { color: var(--text); font-weight: 600; }
+  .cost-foot { margin-top: 0.5rem; padding: 0.85rem 1.2rem; background: var(--accent-soft); border-left: 3px solid var(--accent); font-size: 0.95rem; font-weight: 500; color: var(--text); line-height: 1.5; letter-spacing: -0.005em; border-radius: 4px; }
+  .cost-foot .accent { color: var(--accent); font-weight: 700; }
 
   /* GITHUB */
   .gh-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem 4rem; margin: 1.5rem 0 2rem 0; }
@@ -893,9 +896,9 @@
     <div class="label">Cost Reality</div>
     <h2 class="title">Where <span class="accent">you</span> sit on the cost curve.</h2>
     <div class="cost-grid">
-      <div class="cost win"><div class="price">20<span class="unit">EUR/mo</span></div><div class="name">Lean &middot; Single tool</div><div class="desc">Claude Pro or ChatGPT Plus or Gemini Pro. Browser only. <strong>69% of you have this minimum.</strong></div></div>
-      <div class="cost"><div class="price">150-300<span class="unit">EUR/mo</span></div><div class="name">Active &middot; Multi-vendor stack</div><div class="desc">Claude Pro + API + Telegram VM + 1-2 niche tools. <strong>37% of you mix 2+ vendors.</strong> Where Chris sits.</div></div>
-      <div class="cost"><div class="price">1.5-5k<span class="unit">EUR/mo</span></div><div class="name">Enterprise Trap</div><div class="desc">Glean 50-65 USD/seat &middot; 100-seat min &middot; plus ChatGPT Enterprise 45-75 USD/seat 150-seat min &middot; plus Notion AI. <strong>Sold as the answer. Rarely is.</strong></div></div>
+      <div class="cost"><div class="price">20<span class="unit">EUR/mo</span></div><div class="name">Lean &middot; Single tool</div><div class="desc">Claude Pro or ChatGPT Plus or Gemini Pro. Browser only. <strong>69% of you have this minimum.</strong></div></div>
+      <div class="cost win"><div class="price">150-300<span class="unit">EUR/mo</span></div><div class="name">Active &middot; Multi-vendor stack</div><div class="desc">Claude Pro + API + Telegram VM + 1-2 niche tools. <strong>37% of you mix 2+ vendors.</strong> Where Chris sits.</div></div>
+      <div class="cost warn"><div class="price">1.5-5k<span class="unit">EUR/mo</span></div><div class="name">Enterprise Trap</div><div class="desc">Glean 50-65 USD/seat &middot; 100-seat min &middot; plus ChatGPT Enterprise 45-75 USD/seat 150-seat min &middot; plus Notion AI. <strong>Sold as the answer. Rarely is.</strong></div></div>
     </div>
     <p class="cost-foot">Most of you sit between <span class="accent">20 and 300 EUR per month</span>. Architecture beats budget at every tier. Tonight is about the architecture, not the price tag.</p>
     <p class="sources"><strong>Sources</strong>Anthropic Claude Pro/Team pricing, 2026 &middot; Glean Enterprise public pricing, 2026 (100-seat min) &middot; ChatGPT Enterprise list (150-seat min annual) &middot; Audience CSV n=117</p>
