@@ -414,14 +414,11 @@
   .audbar-row .track { height: 8px; background: var(--code-bg); border-radius: 99px; overflow: hidden; }
   .audbar-row .fill { height: 100%; background: var(--accent); border-radius: 99px; }
   .audbar-row .pct { color: var(--accent); font-weight: 700; text-align: right; font-variant-numeric: tabular-nums; font-size: 0.78rem; }
-  .audpains { display: flex; flex-direction: column; gap: 0.4rem; }
-  .audpains-row { display: grid; grid-template-columns: 1.6rem 1fr 5rem 3rem; gap: 0.65rem; align-items: center; padding: 0.45rem 0.55rem; border-bottom: 1px solid var(--border); font-size: 0.82rem; }
-  .audpains-row .rk { font-weight: 700; color: var(--accent); font-family: var(--mono); font-size: 0.78rem; }
-  .audpains-row .pn { color: var(--text); font-weight: 500; line-height: 1.35; }
-  .audpains-row .pc { color: var(--accent); font-weight: 700; text-align: right; font-variant-numeric: tabular-nums; font-size: 0.92rem; }
-  .audpains-row .tag { font-size: 0.66rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: white; background: var(--accent); padding: 0.35rem 0.7rem; border-radius: 99px; text-align: center; white-space: nowrap; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 1px 2px rgba(37,99,235,0.25); }
-  .audpains-row.covered { background: var(--accent-soft); border-radius: 6px; border-bottom: 1px solid transparent; }
-  .audpains-row.covered .pn { font-weight: 600; color: var(--accent-deep); }
+  .audpains { display: flex; flex-direction: column; gap: 0.5rem; }
+  .audpains-row { display: grid; grid-template-columns: 3.6rem 1fr 6.5rem; gap: 0.95rem; align-items: center; padding: 0.55rem 0.7rem; border-radius: 6px; background: var(--accent-soft); }
+  .audpains-row .pc { color: var(--accent); font-weight: 800; text-align: left; font-variant-numeric: tabular-nums; font-size: 1.65rem; line-height: 1; letter-spacing: -0.03em; }
+  .audpains-row .pn { color: var(--text); font-weight: 600; line-height: 1.3; font-size: 0.86rem; }
+  .audpains-row .tag { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: white; background: var(--accent); padding: 0.4rem 0.75rem; border-radius: 99px; text-align: center; white-space: nowrap; box-shadow: 0 1px 2px rgba(37,99,235,0.25); }
   .audfoot { padding: 0.7rem 1rem; background: var(--accent-soft); border-left: 3px solid var(--accent); font-size: 0.82rem; color: var(--text); line-height: 1.5; }
   .audfoot strong { color: var(--accent); font-weight: 700; }
 
@@ -566,14 +563,14 @@
         </div>
       </div>
       <div>
-        <div class="audblock-h">Top pain points (n=117) &middot; <span style="color:var(--accent);">covered tonight</span></div>
+        <div class="audblock-h">Top pain points (n=117) &middot; <span style="color:var(--accent);">every row covered tonight</span></div>
         <div class="audpains">
-          <div class="audpains-row covered"><span class="rk">01</span><span class="pn">Agents and orchestration</span><span class="tag">Dom</span><span class="pc">15%</span></div>
-          <div class="audpains-row covered"><span class="rk">02</span><span class="pn">Setup itself, time to configure</span><span class="tag">Slide 8</span><span class="pc">14%</span></div>
-          <div class="audpains-row covered"><span class="rk">03</span><span class="pn">Integration across tools</span><span class="tag">Chris</span><span class="pc">12%</span></div>
-          <div class="audpains-row covered"><span class="rk">04</span><span class="pn">Team adoption + transfer</span><span class="tag">Fabian</span><span class="pc">9%</span></div>
-          <div class="audpains-row covered"><span class="rk">05</span><span class="pn">Tool overload, which one for what</span><span class="tag">Slide 5</span><span class="pc">9%</span></div>
-          <div class="audpains-row covered"><span class="rk">06</span><span class="pn">Pace, keeping up with releases</span><span class="tag">Q&amp;A</span><span class="pc">9%</span></div>
+          <div class="audpains-row"><span class="pc">15%</span><span class="pn">Agents and orchestration</span><span class="tag">Dom Demo</span></div>
+          <div class="audpains-row"><span class="pc">14%</span><span class="pn">Setup itself, time to configure</span><span class="tag">Diagnostic</span></div>
+          <div class="audpains-row"><span class="pc">12%</span><span class="pn">Integration across tools</span><span class="tag">Chris Demo</span></div>
+          <div class="audpains-row"><span class="pc">9%</span><span class="pn">Team adoption + transfer</span><span class="tag">Fabian Demo</span></div>
+          <div class="audpains-row"><span class="pc">9%</span><span class="pn">Tool overload, which one for what</span><span class="tag">Two Traps</span></div>
+          <div class="audpains-row"><span class="pc">9%</span><span class="pn">Pace, keeping up with releases</span><span class="tag">Q&amp;A Panel</span></div>
         </div>
       </div>
     </div>
