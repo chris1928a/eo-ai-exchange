@@ -465,20 +465,30 @@
   .gt-trace-l code { font-family: var(--mono); font-size: 0.72rem; padding: 1px 4px; background: rgba(255,255,255,0.12); border-radius: 3px; }
   .gt-app .gt-trace-l code { background: rgba(0,0,0,0.06); color: #1d4ed8; }
 
-  /* MEMORIZATION FLOW (Slide 10) */
-  .memflow { display: flex; flex-direction: column; }
-  .memstep { display: grid; grid-template-columns: 3.5rem 1fr; gap: 1.5rem; padding: 0.85rem 0; border-top: 1px solid var(--border); align-items: baseline; }
-  .memstep:last-child { border-bottom: 1px solid var(--border); }
-  .memstep-num { font-weight: 700; font-size: 1.6rem; color: var(--accent); letter-spacing: -0.03em; line-height: 1; font-variant-numeric: tabular-nums; }
-  .memstep-body { display: flex; flex-direction: column; gap: 0.3rem; }
-  .memstep-h { font-weight: 700; font-size: 1.05rem; color: var(--text); letter-spacing: -0.01em; }
-  .memstep-d { font-size: 0.84rem; color: var(--muted); line-height: 1.5; }
-  .memstep-d code { font-family: var(--mono); font-size: 0.78rem; background: var(--code-bg); padding: 1px 5px; border-radius: 3px; color: #1d4ed8; }
-  .memstep-d strong { color: var(--text); font-weight: 600; }
-  .memex { margin-top: 1.5rem; padding: 1.1rem 1.4rem; background: var(--accent-soft); border-left: 3px solid var(--accent); }
-  .memex-h { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.45rem; }
-  .memex-d { font-size: 0.88rem; color: var(--text); line-height: 1.55; }
-  .memex-d code { font-family: var(--mono); font-size: 0.78rem; background: white; padding: 1px 6px; border-radius: 3px; color: #1d4ed8; }
+  /* MEMORIZATION 4 LAYERS (Slide 10) */
+  .savemap { display: flex; flex-direction: column; gap: 0.55rem; margin-bottom: 1.1rem; }
+  .savemap-row { display: grid; grid-template-columns: 11.5rem 1fr; gap: 1.25rem; padding: 0.7rem 1rem; border-radius: 6px; border-left: 4px solid; align-items: center; }
+  .savemap-row.cache { background: #f4f4f5; border-color: #71717a; }
+  .savemap-row.notion { background: #fef3c7; border-color: #d97706; }
+  .savemap-row.github { background: #dcfce7; border-color: #16a34a; }
+  .savemap-row.drive { background: #eff6ff; border-color: #2563eb; }
+  .savemap-left { display: flex; flex-direction: column; gap: 0.15rem; }
+  .savemap-tag { font-size: 0.55rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #71717a; }
+  .savemap-name { font-weight: 700; font-size: 0.95rem; color: var(--text); letter-spacing: -0.01em; }
+  .savemap-path { font-size: 0.62rem; color: #71717a; font-family: var(--mono); }
+  .savemap-right { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; align-items: baseline; }
+  .savemap-h { font-size: 0.55rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #52525b; margin-bottom: 0.2rem; }
+  .savemap-d { font-size: 0.74rem; color: var(--text); line-height: 1.45; }
+  .savemap-d strong { font-weight: 600; }
+  .savemap-d code { font-family: var(--mono); font-size: 0.68rem; background: rgba(0,0,0,0.05); padding: 1px 4px; border-radius: 3px; color: #1d4ed8; }
+  .saveex { padding: 0.95rem 1.2rem; background: var(--accent-soft); border-left: 3px solid var(--accent); display: grid; grid-template-columns: 9rem 1fr; gap: 1.5rem; align-items: center; }
+  .saveex-h { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); }
+  .saveex-list { display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.76rem; color: var(--text); line-height: 1.4; }
+  .saveex-list .ln { display: grid; grid-template-columns: 4.5rem 1fr; gap: 0.6rem; }
+  .saveex-list .ln .lbl { font-weight: 700; font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+  .saveex-list .ln code { font-family: var(--mono); font-size: 0.7rem; background: white; padding: 1px 5px; border-radius: 3px; color: #1d4ed8; }
+  .saverule { margin-top: 0.85rem; padding: 0.65rem 1rem; background: #fef2f2; border-left: 3px solid #dc2626; font-size: 0.74rem; color: #7f1d1d; line-height: 1.5; }
+  .saverule strong { color: #991b1b; font-weight: 700; }
   .gt-skills { background: #1d4ed8; color: white; border-left: 2px dashed rgba(255,255,255,0.25); }
   .gt-skills .gt-layer-r { border-left: 2px dashed rgba(255,255,255,0.25); }
   .gt-skills .gt-tag, .gt-skills .gt-trace-h { color: #93c5fd; }
@@ -943,51 +953,90 @@
     <div class="page-num">09 / 43</div>
   </section>
 
-  <!-- 10, MEMORIZATION FLOW (after each session) -->
+  <!-- 10, MEMORIZATION 4 LAYERS (after each session) -->
   <section class="slide" id="s10">
     <div class="label">After every session</div>
-    <h2 class="title">How I save what I just <span class="accent">learned</span>.<small>Sessions end. Conversations end. Insights get lost. Mine do not. After every meaningful exchange, the brain writes a memory file. Five steps, every time, automatic.</small></h2>
-    <div class="memflow">
-      <div class="memstep">
-        <div class="memstep-num">01</div>
-        <div class="memstep-body">
-          <div class="memstep-h">Session ends</div>
-          <div class="memstep-d">End of a meeting, end of a chat, end of a research run. Something new just happened. A new fact, a new commitment, a new pattern noticed.</div>
+    <h2 class="title">How I actually save what I <span class="accent">learn</span>.<small>Not one memory. Four layers. Each layer has one job. After a session, the brain routes the content to where it belongs. No layer auto-feeds another. Audit skills catch drift.</small></h2>
+    <div class="savemap">
+      <div class="savemap-row cache">
+        <div class="savemap-left">
+          <div class="savemap-tag">Layer 1 &middot; Cache</div>
+          <div class="savemap-name">User Memory</div>
+          <div class="savemap-path">~/.claude/.../memory/</div>
+        </div>
+        <div class="savemap-right">
+          <div>
+            <div class="savemap-h">What lives here</div>
+            <div class="savemap-d">My own preferences, voice rules per contact, feedback to remember, project status snapshots. Compressed pointers, never the truth itself.</div>
+          </div>
+          <div>
+            <div class="savemap-h">When it goes here</div>
+            <div class="savemap-d">I say it out loud: <strong>&ldquo;remember that ...&rdquo;</strong>, <strong>&ldquo;forget about ...&rdquo;</strong>, <strong>&ldquo;update: X is now Y&rdquo;</strong>. Never auto-written.</div>
+          </div>
         </div>
       </div>
-      <div class="memstep">
-        <div class="memstep-num">02</div>
-        <div class="memstep-body">
-          <div class="memstep-h">Brain reflects</div>
-          <div class="memstep-d">The skill <code>/memory-curator</code> asks three questions: <strong>what was important, what was surprising, what changes my next decision?</strong> The brain decides what is worth keeping. Everything else stays in the session log.</div>
+      <div class="savemap-row notion">
+        <div class="savemap-left">
+          <div class="savemap-tag">Layer 2 &middot; Truth Data</div>
+          <div class="savemap-name">Notion</div>
+          <div class="savemap-path">notion.so/erler-brain</div>
+        </div>
+        <div class="savemap-right">
+          <div>
+            <div class="savemap-h">What lives here</div>
+            <div class="savemap-d">Meeting notes, status updates, customer voice, people pages, deep dives with numbers, daily briefings. Hand-edited, single source of truth for data.</div>
+          </div>
+          <div>
+            <div class="savemap-h">When it goes here</div>
+            <div class="savemap-d">After every meeting, briefing, or decision worth team visibility. Default destination for prose with numbers.</div>
+          </div>
         </div>
       </div>
-      <div class="memstep">
-        <div class="memstep-num">03</div>
-        <div class="memstep-body">
-          <div class="memstep-h">Memory file written</div>
-          <div class="memstep-d">Plain Markdown, named for the topic. <code>/memory/diana_lucanet.md</code>, <code>/memory/rc_pricing_pivot.md</code>, <code>/memory/parkside_velocity_lessons.md</code>. One file per concept, never overwritten.</div>
+      <div class="savemap-row github">
+        <div class="savemap-left">
+          <div class="savemap-tag">Layer 3 &middot; Versioned Code</div>
+          <div class="savemap-name">GitHub</div>
+          <div class="savemap-path">chris1928a/erler-brain-v3</div>
+        </div>
+        <div class="savemap-right">
+          <div>
+            <div class="savemap-h">What lives here</div>
+            <div class="savemap-d">Skills, frameworks, prompts, checklists, reference files, scripts. Version-controlled, CI-checked, single source of truth for code.</div>
+          </div>
+          <div>
+            <div class="savemap-h">When it goes here</div>
+            <div class="savemap-d">When a workflow has happened 3+ times and is worth skill-ifying. Then I codify it as <code>skills/&lt;name&gt;/SKILL.md</code>.</div>
+          </div>
         </div>
       </div>
-      <div class="memstep">
-        <div class="memstep-num">04</div>
-        <div class="memstep-body">
-          <div class="memstep-h">Index updated</div>
-          <div class="memstep-d">One line added to <code>MEMORY.md</code>, pointing to the new file. The index stays small (it loads every session). The files do the heavy lifting (they load only when needed).</div>
+      <div class="savemap-row drive">
+        <div class="savemap-left">
+          <div class="savemap-tag">Layer 4 &middot; Originals</div>
+          <div class="savemap-name">Google Drive</div>
+          <div class="savemap-path">Erler Ventures shared</div>
         </div>
-      </div>
-      <div class="memstep">
-        <div class="memstep-num">05</div>
-        <div class="memstep-body">
-          <div class="memstep-h">Loaded next time</div>
-          <div class="memstep-d">When the same person texts me again, or the same topic comes up, the routing table in <code>CLAUDE.md</code> matches the keyword and pulls the file. <strong>Context is already there.</strong> Zero rebuild on my side.</div>
+        <div class="savemap-right">
+          <div>
+            <div class="savemap-h">What lives here</div>
+            <div class="savemap-d">PDFs, decks, sheets, contracts, financials, call recordings, long-form content. Read-only originals, never derived data.</div>
+          </div>
+          <div>
+            <div class="savemap-h">When it goes here</div>
+            <div class="savemap-d">After creating or receiving a finished document. Linked from Notion or GitHub as the canonical original.</div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="memex">
-      <div class="memex-h">Real example, this week</div>
-      <div class="memex-d">After my call with Diana about her Lucanet quota, the brain wrote <code>/memory/diana_lucanet.md</code>: her current quota (1M ARR), who her boss is (Tobi), what is frustrating her (territory plan delayed). Next time she WhatsApps me, that file loads first. I do not re-read 6 months of chat history. The brain already knows.</div>
+    <div class="saveex">
+      <div class="saveex-h">Real example<br>Diana, Lucanet call this week</div>
+      <div class="saveex-list">
+        <div class="ln"><span class="lbl">Memory</span><span><code>/memory/diana_lucanet.md</code> updated: new quota (1M ARR), boss (Tobi), current frustration (territory plan delayed).</span></div>
+        <div class="ln"><span class="lbl">Notion</span><span>Diana&apos;s People Page got 3 fresh action items, decisions, and the date of our next sync.</span></div>
+        <div class="ln"><span class="lbl">GitHub</span><span>Nothing. No repeatable skill pattern emerged from this one call.</span></div>
+        <div class="ln"><span class="lbl">Drive</span><span>Call recording archived to <code>/people/diana/calls/2026-05-09.m4a</code>.</span></div>
+      </div>
     </div>
+    <div class="saverule"><strong>The rule:</strong> no layer auto-feeds another. <code>/audit-memory</code> + <code>/audit-skill</code> run weekly to catch drift. Memory is the cache. Notion + GitHub + Drive are the truth. Mixing them creates the April 2026 13-month-drift incident I never want to repeat.</div>
     <div class="brand">EO AI Exchange #1</div>
     <div class="page-num">10 / 43</div>
   </section>
