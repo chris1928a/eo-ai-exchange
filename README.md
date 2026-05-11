@@ -3,7 +3,7 @@
 > **The Open-Source AI Productivity Series for EO Operators.**
 > Your Pain → Our Skill → Continuous.
 
-A continuous, audience-driven series where EO members surface real AI-setup pains, and the community ships verified solutions. Hosted by [Christoph Erler](https://erlerventures.org) and Dominik Raute (CTO JustWatch), EO Berlin.
+A continuous, audience-driven series where EO members surface real AI-setup pains, and the community ships verified solutions. Hosted by [Christoph Erler](https://erlerventures.org), Dominik Raute (CTO JustWatch), and Fabian Gless, EO Berlin.
 
 ---
 
@@ -33,6 +33,26 @@ Highlights:
 **Event #1 deck (live, click to view):** https://chris1928a.github.io/eo-ai-exchange/events/01-2026-05-11-setup-trap/slides.html
 
 Erler Ventures branding (Fraunces + Inter, Forest + Brass on white). Click anywhere or use arrow keys to navigate. Source: [`events/01-2026-05-11-setup-trap/slides.html`](events/01-2026-05-11-setup-trap/slides.html).
+
+---
+
+## Referenced architectures
+
+External open-source patterns we recommend forking, reading, or learning from.
+
+### Daniel Miessler &middot; Personal AI Infrastructure (PAI)
+
+[github.com/danielmiessler/Personal_AI_Infrastructure](https://github.com/danielmiessler/Personal_AI_Infrastructure) &middot; MIT &middot; 12.100+ stars
+
+A Life Operating System for AI. PAI captures who you are, what you care about, and where you are trying to go, and then helps you move toward it. Three layers:
+
+- **PAI** itself, the OS (skills, memory, the Algorithm, your Telos, identity files)
+- **Pulse**, the Life Dashboard at `localhost:31337`
+- **The DA** (Digital Assistant), the voice you talk to
+
+v5.0.0 ships **45 skills, 171 workflows, 37 hooks**, Algorithm v6.3.0 (Current State → Ideal State across seven phases), the **ISA** primitive (universal "ideal state" articulation), and structural privacy via containment zones. macOS and Linux supported (Windows not yet). One-line install: `curl -sSL https://ourpai.ai/install.sh | bash`.
+
+**Why we reference it:** PAI is the opinionated counterpoint to Chris's workspace-native setup and Dom's local-first memory. It is featured as **Demo 3 at Event #1**, presented by Fabian Gless. Companion deep dive: [events/01-2026-05-11-setup-trap/fabian-demo-pai.md](events/01-2026-05-11-setup-trap/fabian-demo-pai.md).
 
 ---
 
@@ -104,6 +124,7 @@ All event content is shared under Chatham House Rule: share the information, not
 
 - **Christoph Erler** (EO Berlin), former co-founder & COO of [ComX](https://practicalfounders.com/podcast/bootstrappers-sold-modern-digital-leadgen-conservative-german-businesses-chris-erler/) ($20M ARR, sold to Flex Capital). Founder of [Erler Ventures](https://erlerventures.org).
 - **Dominik Raute** (EO Berlin), CTO of JustWatch.
+- **Fabian Gless** (EO Berlin), operator and Personal AI Infrastructure (PAI) advocate.
 
 ---
 
