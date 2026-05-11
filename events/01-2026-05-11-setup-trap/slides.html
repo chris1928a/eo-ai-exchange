@@ -398,6 +398,19 @@
   .rules-slido .rs-l { font-size: 0.95rem; font-weight: 500; color: var(--text); line-height: 1.5; }
   .rules-slido .rs-l strong { font-weight: 700; color: var(--accent); }
 
+  /* AGENDA TIME-BOX */
+  .agenda { display: flex; flex-direction: column; margin-bottom: 1.5rem; }
+  .agenda-row { display: grid; grid-template-columns: 8.5rem 1fr 3.5rem; gap: 1.5rem; align-items: center; padding: 0.85rem 0; border-bottom: 1px solid var(--border); }
+  .agenda-row:first-child { border-top: 1px solid var(--border); }
+  .agenda-row.demo { background: var(--accent-soft); padding-left: 1rem; padding-right: 1rem; border-radius: 4px; border-bottom: 1px solid #bfdbfe; }
+  .agenda-time { font-weight: 700; font-size: 1rem; color: var(--accent); font-variant-numeric: tabular-nums; letter-spacing: -0.005em; }
+  .agenda-time .min { display: block; font-size: 0.65rem; font-weight: 500; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; margin-top: 0.15rem; }
+  .agenda-body { display: flex; flex-direction: column; gap: 0.15rem; }
+  .agenda-title { font-weight: 600; font-size: 1.05rem; color: var(--text); letter-spacing: -0.01em; }
+  .agenda-title .accent { color: var(--accent); }
+  .agenda-who { font-size: 0.78rem; color: var(--muted); }
+  .agenda-dur { font-size: 0.95rem; color: var(--accent); text-align: right; font-variant-numeric: tabular-nums; font-weight: 700; letter-spacing: -0.01em; }
+
   .nav-hint { position: fixed; bottom: 1rem; left: 50%; transform: translateX(-50%); font-size: 0.65rem; color: var(--faint); opacity: 0.5; pointer-events: none; letter-spacing: 0.06em; }
   .nav-hint.hidden { opacity: 0; transition: opacity 0.5s; }
 
@@ -419,30 +432,76 @@
     <p class="cover-sub">Two operators. Four organizations between us. The hours saved, the hires never made, and the master template you fork tonight.</p>
     <p class="cover-meta"><span class="who">Christoph Erler &amp; Dom Raute</span><span class="when">May 11, 2026 &middot; 18:00 CEST</span></p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">01 / 17</div>
+    <div class="page-num">01 / 21</div>
   </section>
 
-  <!-- 2, GROUND RULES (NEW) -->
+  <!-- 2, GROUND RULES (updated 11.05) -->
   <section class="slide" id="s2">
     <div class="label">Before we start</div>
-    <h2 class="title">Ground rules<br>for tonight.</h2>
+    <h2 class="title">Rules for this session.</h2>
     <div class="rules">
-      <div class="rule"><div class="rn">01</div><div class="rb"><div class="rh">Chatham House Rule</div><div class="rd">Share what you learn here. Never who said it. Inside this room and outside.</div></div></div>
-      <div class="rule"><div class="rn">02</div><div class="rb"><div class="rh">All on mute</div><div class="rd">Questions go to Slido and the chat. Hosts call you in when it is your turn.</div></div></div>
-      <div class="rule"><div class="rn">03</div><div class="rb"><div class="rh">No recording. No screenshots.</div><div class="rd">Respect for every operator in the room. The setups you see are not public.</div></div></div>
-      <div class="rule"><div class="rn">04</div><div class="rb"><div class="rh">We transcribe. You stay anonymous.</div><div class="rd">Chris transcribes live for an anonymized MoM. Names and companies redacted before anything ships.</div></div></div>
-      <div class="rule"><div class="rn">05</div><div class="rb"><div class="rh">More exchanges follow</div><div class="rd">30 to 90 day cadence. Topic for #2 picked by your Slido vote tonight.</div></div></div>
+      <div class="rule"><div class="rn">01</div><div class="rb"><div class="rh">EO conform &middot; Chatham House Rule</div><div class="rd">Share what you learn here. Never who said it. Inside this room and outside. Confidentiality applies to every setup, every number, every name on screen.</div></div></div>
+      <div class="rule"><div class="rn">02</div><div class="rb"><div class="rh">No recording. No screenshots.</div><div class="rd">Respect for every operator in the room. The demos you see tonight are not public material.</div></div></div>
+      <div class="rule"><div class="rn">03</div><div class="rb"><div class="rh">Everyone on mute</div><div class="rd">Hosts unmute speakers when called in. Keeps the line clean for screen-share and audio.</div></div></div>
+      <div class="rule"><div class="rn">04</div><div class="rb"><div class="rh">Questions: chat for quick, Slido for big</div><div class="rd">Quick clarifications in the meeting chat in between, hosts pick them up. Bigger questions go to Slido <strong>#3261743</strong>, top-voted get answered live in the panel.</div></div></div>
+      <div class="rule"><div class="rn">05</div><div class="rb"><div class="rh">Chris transcribes &middot; anonymized MoM</div><div class="rd">Chris runs a live transcription for the Minutes of Meeting. Names, companies, and identifying details get redacted before anything ships to the channel.</div></div></div>
     </div>
     <div class="rules-slido">
       <div class="rs-h">Slido open now</div>
-      <div class="rs-l">Code <strong>#3261743</strong> at slido.com. Drop and upvote questions for the live panel.</div>
+      <div class="rs-l">Code <strong>#3261743</strong> at slido.com. Drop and upvote questions. We will run the panel from your top votes.</div>
     </div>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">02 / 17</div>
+    <div class="page-num">02 / 21</div>
   </section>
 
-  <!-- 3, PROMISE -->
+  <!-- 3, AGENDA (NEW) -->
   <section class="slide" id="s3">
+    <div class="label">60 minutes &middot; time-boxed</div>
+    <h2 class="title">Agenda.</h2>
+    <div class="agenda">
+      <div class="agenda-row">
+        <div class="agenda-time">18:00<span class="min">CEST</span></div>
+        <div class="agenda-body"><div class="agenda-title">Welcome + Rules</div><div class="agenda-who">Chris &middot; Dom</div></div>
+        <div class="agenda-dur">5 min</div>
+      </div>
+      <div class="agenda-row">
+        <div class="agenda-time">18:05<span class="min">CEST</span></div>
+        <div class="agenda-body"><div class="agenda-title">Why this series + The Setup Trap</div><div class="agenda-who">Framing &middot; stack versions &middot; diagnostic</div></div>
+        <div class="agenda-dur">5 min</div>
+      </div>
+      <div class="agenda-row demo">
+        <div class="agenda-time">18:10<span class="min">CEST</span></div>
+        <div class="agenda-body"><div class="agenda-title">Demo 1 &middot; <span class="accent">AI in your existing stack</span></div><div class="agenda-who">Chris Erler</div></div>
+        <div class="agenda-dur">10 min</div>
+      </div>
+      <div class="agenda-row demo">
+        <div class="agenda-time">18:20<span class="min">CEST</span></div>
+        <div class="agenda-body"><div class="agenda-title">Demo 2 &middot; <span class="accent">The agent that remembers</span></div><div class="agenda-who">Dominik Raute</div></div>
+        <div class="agenda-dur">10 min</div>
+      </div>
+      <div class="agenda-row demo">
+        <div class="agenda-time">18:30<span class="min">CEST</span></div>
+        <div class="agenda-body"><div class="agenda-title">Demo 3 &middot; <span class="accent">Fabian&apos;s setup</span></div><div class="agenda-who">Fabian Gless</div></div>
+        <div class="agenda-dur">10 min</div>
+      </div>
+      <div class="agenda-row">
+        <div class="agenda-time">18:40<span class="min">CEST</span></div>
+        <div class="agenda-body"><div class="agenda-title">Slido panel + Live Q&amp;A</div><div class="agenda-who">Top votes from #3261743 &middot; all hosts</div></div>
+        <div class="agenda-dur">15 min</div>
+      </div>
+      <div class="agenda-row">
+        <div class="agenda-time">18:55<span class="min">CEST</span></div>
+        <div class="agenda-body"><div class="agenda-title">Wrap + Event #2 topic</div><div class="agenda-who">Picked from tonight&apos;s votes</div></div>
+        <div class="agenda-dur">5 min</div>
+      </div>
+    </div>
+    <p class="footer-note">If a demo runs long, we cut into the panel. <span class="accent">Slido drives priority, not the deck.</span></p>
+    <div class="brand">EO Berlin</div>
+    <div class="page-num">03 / 21</div>
+  </section>
+
+  <!-- 4, PROMISE -->
+  <section class="slide" id="s4">
     <div class="label">60 Minutes</div>
     <h2 class="title">What you walk out with.</h2>
     <div class="promise">
@@ -453,7 +512,7 @@
     </div>
     <p class="footer-note">Not the goal: another tool overview, generic theory, polished vendor demos. <span class="accent">We show the struggles, not just the wins.</span></p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">03 / 17</div>
+    <div class="page-num">04 / 21</div>
   </section>
 
   <!-- 3, TWO TRAPS -->
@@ -479,7 +538,7 @@
     <p class="traps-foot">Most don't escape because they fight the wrong trap.</p>
     <p class="sources"><strong>Sources</strong>EO operator polls &middot; MIT 2025 &middot; founder interviews</p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">04 / 17</div>
+    <div class="page-num">05 / 21</div>
   </section>
 
   <!-- 4, MY 12 WEEKS (NEW) -->
@@ -491,7 +550,7 @@
       <p class="wasted-foot">Five dead stacks. Three different harnesses. Two memory rewrites. <strong>The setup you are about to see is what survived.</strong> Not what I planned on day one.</p>
     </div>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">05 / 17</div>
+    <div class="page-num">06 / 21</div>
   </section>
 
   <!-- 5, STACK VERSIONS -->
@@ -507,7 +566,7 @@
     </div>
     <p class="v-quote"><strong>Two stacks survived. Both share one principle.</strong> Stop maintaining tools. Start maintaining <span class="accent">memory</span>.</p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">06 / 17</div>
+    <div class="page-num">07 / 21</div>
   </section>
 
   <!-- 6, DIAGNOSTIC -->
@@ -521,7 +580,7 @@
       <div class="q"><div class="qn">03</div><div class="qbody"><div class="qt">Could a new team member understand it in 2 sentences?</div><div class="qv">No? <strong>Setup Trap.</strong></div></div></div>
     </div>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">07 / 17</div>
+    <div class="page-num">08 / 21</div>
   </section>
 
   <!-- 7, HIERARCHY -->
@@ -541,7 +600,7 @@
     </div>
     <p class="sources"><strong>Source</strong>McKinsey, "The state of AI: How organizations are rewiring to capture value", 2025</p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">08 / 17</div>
+    <div class="page-num">09 / 21</div>
   </section>
 
   <!-- 8, DEMO 1 TITLE -->
@@ -560,7 +619,7 @@
       </div>
     </div>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">09 / 17</div>
+    <div class="page-num">10 / 21</div>
   </section>
 
   <!-- 9, DEMO 1 RECAP -->
@@ -584,7 +643,7 @@
     </div>
     <p class="recap-foot">No long-term memory across sessions. <span class="accent">That is where Dom takes over.</span></p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">10 / 17</div>
+    <div class="page-num">11 / 21</div>
   </section>
 
   <!-- 10, BRIDGE -->
@@ -593,7 +652,7 @@
     <h2>Dom takes you<br>one layer <span class="accent">deeper</span>.</h2>
     <p class="sub">From hack on top, to architecture beneath.</p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">11 / 17</div>
+    <div class="page-num">12 / 21</div>
   </section>
 
   <!-- 11, DEMO 2 TITLE -->
@@ -612,7 +671,7 @@
       </div>
     </div>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">12 / 17</div>
+    <div class="page-num">13 / 21</div>
   </section>
 
   <!-- 12, DEMO 2 RECAP -->
@@ -636,10 +695,62 @@
     </div>
     <p class="recap-foot">Architecture wins long-term. <span class="accent">Setup cost upfront, near-zero compounding cost after.</span></p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">13 / 17</div>
+    <div class="page-num">14 / 21</div>
   </section>
 
-  <!-- 13, COST -->
+  <!-- 15, BRIDGE TO FABIAN (NEW) -->
+  <section class="slide bridge" id="s12c">
+    <div class="label">Handoff</div>
+    <h2>Now Fabian takes you<br>into <span class="accent">his angle</span>.</h2>
+    <p class="sub">Third operator, third stack. Same questions, different answers.</p>
+    <div class="brand">EO Berlin</div>
+    <div class="page-num">15 / 21</div>
+  </section>
+
+  <!-- 16, DEMO 3 TITLE FABIAN (NEW) -->
+  <section class="slide" id="s12d">
+    <div class="label">Demo 03 &middot; Fabian &middot; 10 min</div>
+    <div class="demo">
+      <div class="demo-num">03<span class="of">of three</span></div>
+      <div class="demo-body">
+        <h2>Fabian&apos;s <span class="accent">setup</span>.</h2>
+        <div class="sub">Topic to be filled by Fabian before the event.</div>
+        <div class="demo-hacks">
+          <div class="demo-hack"><div class="hk-num">Hack 01</div><div class="hk-content"><div class="hk-name">[Hack name TBC]</div><div class="hk-desc">One sentence describing what the hack does. Replace before going live.</div></div></div>
+          <div class="demo-hack"><div class="hk-num">Hack 02</div><div class="hk-content"><div class="hk-name">[Hack name TBC]</div><div class="hk-desc">One sentence describing what the hack does. Replace before going live.</div></div></div>
+        </div>
+        <p class="demo-note">Fabian Gless &middot; placeholder, Fabian to fill in his own framing before the call.</p>
+      </div>
+    </div>
+    <div class="brand">EO Berlin</div>
+    <div class="page-num">16 / 21</div>
+  </section>
+
+  <!-- 17, DEMO 3 RECAP FABIAN (NEW) -->
+  <section class="slide" id="s12e">
+    <div class="label">Demo 03 &middot; What you just saw</div>
+    <h2 class="recap-title">Fabian&apos;s stack, in numbers.</h2>
+    <div class="recap-grid">
+      <div class="recap-numbers">
+        <div class="recap-num"><div class="n">[TBC]</div><div class="lbl">Top line metric</div></div>
+        <div class="recap-num"><div class="n">[TBC]</div><div class="lbl">Second metric</div></div>
+        <div class="recap-num"><div class="n">[TBC]</div><div class="lbl">Third metric</div></div>
+        <div class="recap-num"><div class="n">[TBC]</div><div class="lbl">Fourth metric</div></div>
+      </div>
+      <div class="recap-struggles">
+        <div class="s-tag">Honest struggles</div>
+        <div class="s-line">[Struggle 1 TBC, what broke during build-up]</div>
+        <div class="s-line">[Struggle 2 TBC, what does not work yet]</div>
+        <div class="s-line">[Struggle 3 TBC, what cost more than expected]</div>
+        <div class="s-line">[Struggle 4 TBC, what you would skip on a redo]</div>
+      </div>
+    </div>
+    <p class="recap-foot">Three operators, three angles on the same problem. <span class="accent">No single right answer.</span></p>
+    <div class="brand">EO Berlin</div>
+    <div class="page-num">17 / 21</div>
+  </section>
+
+  <!-- 18, COST -->
   <section class="slide" id="s13">
     <div class="label">Cost Reality</div>
     <h2 class="title">What you pay vs<br>what you get.</h2>
@@ -651,7 +762,7 @@
     <p class="cost-foot">The <span class="accent">architecture</span> beats the budget.</p>
     <p class="sources"><strong>Sources</strong>Glean Enterprise public pricing, 2026 &middot; Notion AI + Glean + ChatGPT Enterprise list pricing combined, 2026</p>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">14 / 17</div>
+    <div class="page-num">18 / 21</div>
   </section>
 
   <!-- 14, GITHUB REVEAL -->
@@ -672,7 +783,7 @@
     </div>
     <div class="gh-url"><div class="lbl">MIT License &middot; fork and remix &middot; 5 portable skills + 30-day Personal-to-Org plan</div><div class="url">github.com/chris1928a/eo-ai-exchange</div></div>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">15 / 17</div>
+    <div class="page-num">19 / 21</div>
   </section>
 
   <!-- 15, HEADCOUNT TEASER (NEW) -->
@@ -692,7 +803,7 @@
       <div class="l">A <span class="accent">Master Template</span> with 5 portable skills (/diarize-person, /audit-process, /weekly-review, /draft-by-channel, /memory-curator) plus a 30-day rollout plan from Personal to Org.</div>
     </div>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">16 / 17</div>
+    <div class="page-num">20 / 21</div>
   </section>
 
   <!-- 16, CLOSING -->
@@ -714,7 +825,7 @@
       <div class="right"><div class="lbl">GitHub, live tonight</div><div class="v">chris1928a/eo-ai-exchange</div></div>
     </div>
     <div class="brand">EO Berlin</div>
-    <div class="page-num">17 / 17</div>
+    <div class="page-num">21 / 21</div>
   </section>
 
 </div>
