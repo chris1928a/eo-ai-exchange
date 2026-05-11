@@ -65,7 +65,7 @@ Each question:
 **References**
 - slides.html #14 Cost Reality ($0 local vs $500/seat Glean vs $1.5k enterprise stack)
 - chris-demo.html #5 25% Digital Twin (150 EUR/mo, 31 MCP tools, 19 skills, 125 memory files)
-- chris-demo.html #20 Headcount Math (420-590k EUR replaced)
+- chris-demo.html #20 Headcount Math (330-490k EUR replaced, equivalent-capability honest)
 - Solution: `solutions/setup-itself/30-min-aios-blueprint.md`
 
 ---
