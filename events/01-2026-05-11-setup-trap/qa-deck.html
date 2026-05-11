@@ -1,0 +1,632 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Q&amp;A Deep Dive, EO AI Productivity Exchange #1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #ffffff;
+    --text: #09090b;
+    --muted: #71717a;
+    --faint: #a1a1aa;
+    --accent: #2563eb;
+    --accent-deep: #1d4ed8;
+    --accent-soft: #eff6ff;
+    --border: #f1f5f9;
+    --border-strong: #e2e8f0;
+    --code-bg: #f4f4f5;
+    --green: #15803d;
+    --green-soft: #dcfce7;
+    --red: #dc2626;
+    --red-soft: #fef2f2;
+    --orange: #ea580c;
+    --orange-soft: #fff7ed;
+    --purple: #7c3aed;
+    --purple-soft: #ede9fe;
+    --yellow: #d97706;
+    --yellow-soft: #fef3c7;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    height: 100%; width: 100%; background: var(--bg); color: var(--text);
+    font-family: var(--sans); -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  .deck { width: 100vw; height: 100vh; overflow: hidden; position: relative; }
+  .slide {
+    width: 100vw; height: 100vh; position: absolute; top: 0; left: 0;
+    display: none; padding: 7vh 8vw 6vh;
+    flex-direction: column; background: var(--bg); overflow-y: auto;
+  }
+  .slide.active { display: flex; }
+
+  /* HEADER per slide */
+  .qhead { display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: flex-start; margin-bottom: 1.25rem; }
+  .qhead-left { display: flex; flex-direction: column; gap: 0.35rem; }
+  .qhead-eyebrow { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); display: flex; align-items: center; gap: 0.55rem; }
+  .qhead-eyebrow::before { content: ''; width: 1.25rem; height: 1px; background: var(--accent); }
+  .qhead-votes { display: inline-flex; align-items: baseline; gap: 0.4rem; padding: 0.35rem 0.7rem; background: var(--accent-soft); border: 1px solid #bfdbfe; border-radius: 999px; font-size: 0.65rem; font-weight: 600; color: var(--accent-deep); }
+  .qhead-votes .n { font-weight: 700; font-size: 0.85rem; }
+  .qhead h1 { font-weight: 700; font-size: clamp(1.6rem, 2.6vw, 2.3rem); line-height: 1.12; letter-spacing: -0.02em; max-width: 30ch; }
+  .qhead h1 .accent { color: var(--accent); }
+
+  /* QUICK ANSWER BOX */
+  .quickans { padding: 1.1rem 1.4rem; background: var(--accent-soft); border-left: 4px solid var(--accent); border-radius: 6px; margin-bottom: 1.1rem; }
+  .quickans-h { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.45rem; }
+  .quickans-t { font-size: 0.95rem; color: var(--text); line-height: 1.55; }
+  .quickans-t strong { font-weight: 700; color: var(--accent-deep); }
+
+  /* DEPTH BULLETS */
+  .depth { display: flex; flex-direction: column; gap: 0.45rem; margin-bottom: 1.1rem; }
+  .depth-item { display: grid; grid-template-columns: 1.5rem 1fr; gap: 0.65rem; padding: 0.45rem 0; align-items: baseline; border-bottom: 1px solid var(--border); font-size: 0.82rem; color: var(--text); line-height: 1.5; }
+  .depth-item:last-child { border-bottom: none; }
+  .depth-item .bullet { font-weight: 700; color: var(--accent); font-family: var(--mono); font-size: 0.75rem; }
+  .depth-item strong { font-weight: 600; }
+  .depth-item code { font-family: var(--mono); font-size: 0.74rem; background: var(--code-bg); padding: 1px 5px; border-radius: 3px; color: var(--accent-deep); }
+  .depth-item .num { font-weight: 700; color: var(--accent); font-variant-numeric: tabular-nums; }
+
+  /* SOURCES BAR */
+  .sources { margin-top: auto; padding-top: 0.85rem; border-top: 1px solid var(--border); font-size: 0.62rem; color: var(--faint); line-height: 1.55; }
+  .sources strong { color: var(--muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.58rem; margin-right: 0.5rem; }
+  .sources a { color: var(--accent); text-decoration: none; }
+  .sources a:hover { text-decoration: underline; }
+
+  /* COMPARISON TABLE */
+  .ctable { width: 100%; border-collapse: collapse; font-size: 0.78rem; margin-bottom: 1rem; }
+  .ctable th { background: var(--code-bg); padding: 0.55rem 0.7rem; text-align: left; font-weight: 700; font-size: 0.7rem; color: var(--text); letter-spacing: -0.005em; border-bottom: 2px solid var(--border-strong); }
+  .ctable th.win { color: var(--accent); }
+  .ctable td { padding: 0.5rem 0.7rem; border-bottom: 1px solid var(--border); color: var(--text); line-height: 1.4; }
+  .ctable td.dim { color: var(--muted); }
+  .ctable td.win { background: var(--accent-soft); font-weight: 600; }
+  .ctable td.acc { color: var(--accent); font-weight: 700; font-variant-numeric: tabular-nums; }
+  .ctable td.num { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+
+  /* TWO COLS */
+  .twocol { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1rem; }
+  .col-card { padding: 1rem 1.15rem; border-radius: 6px; border-top: 3px solid; display: flex; flex-direction: column; gap: 0.5rem; }
+  .col-card.win { background: var(--green-soft); border-color: var(--green); }
+  .col-card.lose { background: var(--red-soft); border-color: var(--red); }
+  .col-card.warn { background: var(--yellow-soft); border-color: var(--yellow); }
+  .col-card.info { background: var(--accent-soft); border-color: var(--accent); }
+  .col-card .h { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+  .col-card .name { font-weight: 700; font-size: 1.05rem; letter-spacing: -0.01em; color: var(--text); }
+  .col-card .desc { font-size: 0.82rem; line-height: 1.5; color: var(--text); }
+  .col-card.win .h { color: var(--green); }
+  .col-card.lose .h { color: var(--red); }
+  .col-card.warn .h { color: var(--yellow); }
+  .col-card.info .h { color: var(--accent); }
+  .col-card ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.3rem; margin-top: 0.3rem; }
+  .col-card li { font-size: 0.78rem; line-height: 1.45; padding-left: 1rem; position: relative; }
+  .col-card li::before { content: '→'; position: absolute; left: 0; font-weight: 700; }
+  .col-card.win li::before { color: var(--green); }
+  .col-card.lose li::before { color: var(--red); }
+  .col-card.warn li::before { color: var(--yellow); }
+  .col-card.info li::before { color: var(--accent); }
+
+  /* THREE COLS */
+  .threecol { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+
+  /* STATS GRID */
+  .statgrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 1rem; }
+  .stat { display: flex; flex-direction: column; gap: 0.25rem; padding-top: 0.65rem; border-top: 2px solid var(--accent); }
+  .stat .n { font-weight: 700; font-size: clamp(1.6rem, 2.4vw, 2.1rem); color: var(--accent); line-height: 1; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+  .stat .lbl { font-weight: 600; font-size: 0.78rem; color: var(--text); }
+  .stat .desc { font-size: 0.7rem; color: var(--muted); line-height: 1.4; }
+
+  /* COVER + OUTRO */
+  .cover { display: flex; flex-direction: column; justify-content: center; padding: 11vh 11vw; }
+  .cover-eyebrow { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 2.5rem; }
+  .cover h1 { font-weight: 700; font-size: clamp(4.5rem, 11vw, 10rem); line-height: 0.9; letter-spacing: -0.05em; margin-bottom: 2rem; }
+  .cover h1 .accent { color: var(--accent); }
+  .cover-sub { font-size: clamp(1rem, 1.5vw, 1.4rem); font-weight: 400; color: var(--muted); max-width: 55ch; line-height: 1.5; margin-bottom: 3rem; }
+  .cover-meta { font-size: 0.85rem; color: var(--text); line-height: 1.7; }
+  .cover-meta .who { font-weight: 600; display: block; }
+  .cover-meta .when { color: var(--muted); }
+
+  /* TOC */
+  .toc { display: grid; grid-template-columns: 1fr 1fr; gap: 0.45rem 2.5rem; }
+  .toc-row { display: grid; grid-template-columns: 2.5rem 3rem 1fr; gap: 0.5rem; padding: 0.5rem 0; border-bottom: 1px solid var(--border); align-items: baseline; font-size: 0.82rem; color: var(--text); }
+  .toc-row .q { font-weight: 700; color: var(--accent); font-family: var(--mono); font-size: 0.7rem; }
+  .toc-row .v { font-weight: 700; color: var(--accent-deep); font-size: 0.7rem; padding: 0.15rem 0.45rem; background: var(--accent-soft); border-radius: 4px; text-align: center; }
+  .toc-row .t { line-height: 1.4; }
+
+  /* FOOTER BRAND */
+  .brand { position: absolute; bottom: 4vh; left: 8vw; font-size: 0.65rem; font-weight: 400; color: var(--faint); letter-spacing: 0.12em; text-transform: uppercase; }
+  .page-num { position: absolute; bottom: 4vh; right: 8vw; font-size: 0.65rem; color: var(--faint); letter-spacing: 0.1em; font-variant-numeric: tabular-nums; }
+
+  /* NAV */
+  .nav-hint { position: fixed; bottom: 1rem; left: 50%; transform: translateX(-50%); font-size: 0.65rem; color: var(--faint); opacity: 0.5; pointer-events: none; letter-spacing: 0.06em; }
+  .nav-hint.hidden { opacity: 0; transition: opacity 0.5s; }
+
+  @media print {
+    @page { size: 13.3in 7.5in; margin: 0; }
+    .deck { height: auto; }
+    .slide { display: flex !important; height: 7.5in; width: 13.3in; page-break-after: always; }
+    .nav-hint { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="deck">
+
+  <!-- 1, COVER -->
+  <section class="slide cover active" id="s1">
+    <div class="cover-eyebrow">EO AI Productivity Exchange #1 &middot; Backup deck</div>
+    <h1>Live Q&amp;A.<br><span class="accent">Deep dive.</span></h1>
+    <p class="cover-sub">Twelve Slido questions, source-backed answers, panel-ready. 30 to 90 seconds per question. Sources cited per slide. Open during the panel as a teleprompter, or skip if Slido goes hot in another direction.</p>
+    <p class="cover-meta"><span class="who">Christoph Erler &amp; Dom Raute</span><span class="when">May 11, 2026 &middot; 18:00 CEST &middot; Online</span></p>
+    <div class="brand">EO Berlin</div>
+    <div class="page-num">01 / 15</div>
+  </section>
+
+  <!-- 2, TABLE OF CONTENTS -->
+  <section class="slide" id="s2">
+    <div class="qhead">
+      <div class="qhead-left">
+        <div class="qhead-eyebrow">Index</div>
+        <h1>The 12 questions, ranked by Slido votes.</h1>
+      </div>
+    </div>
+    <div class="toc">
+      <div class="toc-row"><span class="q">Q1</span><span class="v">7</span><span class="t">If you could start over, what would you build differently?</span></div>
+      <div class="toc-row"><span class="q">Q2</span><span class="v">6</span><span class="t">How do you handle sensitive data &middot; GDPR?</span></div>
+      <div class="toc-row"><span class="q">Q3</span><span class="v">5</span><span class="t">What does your setup cost monthly &middot; honest breakdown?</span></div>
+      <div class="toc-row"><span class="q">Q4</span><span class="v">5</span><span class="t">Thilo &middot; AI risk to my own business + investments?</span></div>
+      <div class="toc-row"><span class="q">Q5</span><span class="v">4</span><span class="t">Cloud vs self-hosted vs local?</span></div>
+      <div class="toc-row"><span class="q">Q6</span><span class="v">2</span><span class="t">Claude vs Gemini &middot; we are in Workspace?</span></div>
+      <div class="toc-row"><span class="q">Q7</span><span class="v">2</span><span class="t">Pace of software development overruns enterprise AI?</span></div>
+      <div class="toc-row"><span class="q">Q8</span><span class="v">1</span><span class="t">How many hours per week does this save?</span></div>
+      <div class="toc-row"><span class="q">Q9</span><span class="v">1</span><span class="t">Best Perplexity use case beside search?</span></div>
+      <div class="toc-row"><span class="q">Q10</span><span class="v">1</span><span class="t">Best practical use case for ChatGPT?</span></div>
+      <div class="toc-row"><span class="q">Q11</span><span class="v">0</span><span class="t">Worst AI fail in your business?</span></div>
+      <div class="toc-row"><span class="q">Q12</span><span class="v">0</span><span class="t">How do you get your team to adopt AI?</span></div>
+    </div>
+    <p class="sources"><strong>Panel discipline</strong>60 seconds per question. No filler. Read the question for the audience. Hard skip on financial trades, legal advice, prohibited actions.</p>
+    <div class="brand">EO Berlin</div>
+    <div class="page-num">02 / 15</div>
+  </section>
+
+  <!-- 3, Q1 START OVER -->
+  <section class="slide" id="s3">
+    <div class="qhead">
+      <div class="qhead-left">
+        <div class="qhead-eyebrow">Slido Q1</div>
+        <h1>If you could start over, what would you <span class="accent">build differently</span>?</h1>
+      </div>
+      <div class="qhead-votes"><span class="n">7</span> votes</div>
+    </div>
+    <div class="quickans">
+      <div class="quickans-h">60-second answer</div>
+      <div class="quickans-t">Five regrets, ordered. <strong>One:</strong> start with memory, not tools. <strong>Two:</strong> write down who you are and what you do before installing anything. <strong>Three:</strong> use Markdown files, not Vector-DB, until you cross 10.000 unstructured docs. <strong>Four:</strong> avoid vendor lock-in, every assistant should be a Markdown wrapper, not a SaaS subscription. <strong>Five:</strong> build for one stack you live in, not for every tool you have.</div>
+    </div>
+    <div class="depth">
+      <div class="depth-item"><span class="bullet">01</span><span><strong>My own v1 to v3 are dead.</strong> ChatGPT-only with no memory. Notion plus Zapier orchestration. Multiple tools with no architecture. 12 weeks of building, ripping, rebuilding before v4 held.</span></div>
+      <div class="depth-item"><span class="bullet">02</span><span><strong>Single biggest mistake:</strong> optimizing for tools before defining what I want the brain to remember. The tools became the project. The brain never showed up.</span></div>
+      <div class="depth-item"><span class="bullet">03</span><span><strong>Honest cost of starting over:</strong> 200 hours setup time, ~$50/day Opus burn during build-up phase, 4 to 5 months payback before the brain replaces the work of three hires.</span></div>
+      <div class="depth-item"><span class="bullet">04</span><span><strong>What I would do today, day one:</strong> 50-line CLAUDE.md, three skills (/morning-brief, /diarize-person, /weekly-review), one mobile interface (Telegram). Skip everything else for 30 days.</span></div>
+    </div>
+    <p class="sources"><strong>References</strong>Main deck slides #5-6 &middot; chris-demo #6, #24 &middot; <a href="../../solutions/openclaw-honest/openclaw-honest-assessment.md">solutions/openclaw-honest-assessment.md</a></p>
+    <div class="brand">EO Berlin</div>
+    <div class="page-num">03 / 15</div>
+  </section>
+
+  <!-- 4, Q2 GDPR -->
+  <section class="slide" id="s4">
+    <div class="qhead">
+      <div class="qhead-left">
+        <div class="qhead-eyebrow">Slido Q2</div>
+        <h1>Sensitive company data &middot; <span class="accent">GDPR compliance</span>?</h1>
+      </div>
+      <div class="qhead-votes"><span class="n">6</span> votes</div>
+    </div>
+    <div class="quickans">
+      <div class="quickans-h">60-second answer</div>
+      <div class="quickans-t">You can run Claude GDPR-compliant in 2026, but you have to configure it. Default: <strong>route through AWS Bedrock EU Frankfurt (eu-central-1)</strong> or Google Vertex AI EU. Anthropic DPA auto-signs via Commercial Terms. ISO 27001 + ISO 42001 + SOC 2 Type II certified. API retention <strong>7 days</strong> default since Sep 2025. <strong>ZDR available via Enterprise sales</strong>. EU AI Act full enforcement <strong>2 Aug 2026</strong>, business assistants land in Limited Risk tier. For German Kanzleien: GDPR DPA alone is NOT enough for §203 StGB, add explicit Verschwiegenheitsverpflichtung.</div>
+    </div>
+    <div class="depth">
+      <div class="depth-item"><span class="bullet">01</span><span><strong>EU AI Act penalties from 2 Aug 2026:</strong> €35M or 7% turnover for prohibited practices, €15M or 3% for high-risk violations. Most business AI = Limited Risk = transparency obligation only.</span></div>
+      <div class="depth-item"><span class="bullet">02</span><span><strong>Bedrock EU regions for Claude:</strong> Frankfurt (eu-central-1), Ireland (eu-west-1), Paris, Stockholm. Cross-region inference profile "EU" keeps routing inside EU boundary.</span></div>
+      <div class="depth-item"><span class="bullet">03</span><span><strong>Claude Code on Bedrock EU:</strong> <code>export CLAUDE_CODE_USE_BEDROCK=1; export AWS_REGION=eu-central-1</code>. Must be env var, not .aws/config.</span></div>
+      <div class="depth-item"><span class="bullet">04</span><span><strong>ZDR scope:</strong> Anthropic API + Claude Code with commercial org key. Does NOT auto-apply on Bedrock/Vertex, those follow cloud-provider policy.</span></div>
+      <div class="depth-item"><span class="bullet">05</span><span><strong>BStBK AI FAQ (Feb 2026):</strong> for Kanzleien/Notariate, sign DSGVO DPA + §203-specific Verschwiegenheitsvereinbarung with cloud provider.</span></div>
+    </div>
+    <p class="sources"><strong>Sources</strong><a href="https://trust.anthropic.com/">trust.anthropic.com</a> &middot; <a href="https://artificialintelligenceact.eu/implementation-timeline/">AI Act timeline</a> &middot; <a href="https://privacy.claude.com/en/articles/10015870-what-certifications-has-anthropic-obtained">Anthropic certifications</a> &middot; <a href="https://platform.claude.com/docs/en/build-with-claude/api-and-data-retention">Claude API retention</a> &middot; <a href="../../solutions/security-gdpr/gdpr-claude-checklist-dach.md">solutions/gdpr-claude-checklist-dach.md (20 items)</a></p>
+    <div class="brand">EO Berlin</div>
+    <div class="page-num">04 / 15</div>
+  </section>
+
+  <!-- 5, Q3 COST -->
+  <section class="slide" id="s5">
+    <div class="qhead">
+      <div class="qhead-left">
+        <div class="qhead-eyebrow">Slido Q3</div>
+        <h1>What does your setup <span class="accent">cost monthly</span>?</h1>
+      </div>
+      <div class="qhead-votes"><span class="n">5</span> votes</div>
+    </div>
+    <div class="quickans">
+      <div class="quickans-h">60-second answer</div>
+      <div class="quickans-t">My personal stack: <strong>150 EUR/mo all-in</strong>. Claude Pro + Telegram VM Lightsail Frankfurt + minor APIs. Dom is at <strong>$0/mo</strong>, fully local. Compared to Glean Enterprise <strong>50-65 USD/seat (100-seat minimum)</strong>, ChatGPT Enterprise <strong>45-75 USD/seat (150-seat min)</strong>, M365 Copilot <strong>18-30 USD/seat</strong>. Architecture beats budget. The subscription sticker is 20-30% of true cost. <strong>Hidden cost: 70-80% is setup time, integration, maintenance, change management.</strong></div>
+    </div>
+    <table class="ctable">
+      <thead>
+        <tr><th>Tier</th><th>Solo</th><th>Team of 10</th><th>Enterprise 50+</th><th class="win">Hidden cost</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Subscription</strong></td><td class="num">100-500 USD</td><td class="num">1-3k USD</td><td class="num">8-25k USD</td><td class="dim">20-30% of true cost</td></tr>
+        <tr><td><strong>Setup time</strong></td><td>~200h (~25k EUR)</td><td>1-2 FTE quarter</td><td class="num">20-50k USD</td><td class="dim">Often skipped from budget</td></tr>
+        <tr><td><strong>Maintenance</strong></td><td>2h/mo patching</td><td>0.5 FTE ongoing</td><td class="num">15-30% of build/yr</td><td class="dim">Annual recurring</td></tr>
+        <tr><td><strong>Training</strong></td><td>0 (self)</td><td class="num">1.5k/person</td><td class="num">80-120k FTE/yr</td><td class="dim">36% feel undertrained</td></tr>
+        <tr><td><strong>Payback</strong></td><td class="acc">4-5 mo</td><td class="acc">6-9 mo</td><td>Median 2-4 yrs</td><td class="dim">Only 5-6% under 12mo</td></tr>
+      </tbody>
+    </table>
+    <p class="sources"><strong>Sources</strong><a href="https://checkthat.ai/brands/glean/pricing">Glean pricing</a> &middot; <a href="https://www.microsoft.com/en-us/microsoft-365-copilot/pricing">M365 Copilot</a> &middot; <a href="https://inference.net/content/chatgpt-enterprise-pricing/">ChatGPT Enterprise</a> &middot; <a href="https://www.deloitte.com/global/en/issues/generative-ai/ai-roi-the-paradox-of-rising-investment-and-elusive-returns.html">Deloitte AI ROI paradox</a> &middot; <a href="https://masterofcode.com/blog/ai-roi">Master of Code, 5% breakeven</a></p>
+    <div class="brand">EO Berlin</div>
+    <div class="page-num">05 / 15</div>
+  </section>
+
+  <!-- 6, Q4 THILO - own business -->
+  <section class="slide" id="s6">
+    <div class="qhead">
+      <div class="qhead-left">
+        <div class="qhead-eyebrow">Slido Q4 &middot; Thilo &middot; part 1 of 1</div>
+        <h1>AI risk to your <span class="accent">business model + investments</span>.</h1>
+      </div>
+      <div class="qhead-votes"><span class="n">5</span> votes</div>
+    </div>
+    <div class="quickans">
+      <div class="quickans-h">90-second answer</div>
+      <div class="quickans-t">I run two filters on every business and every investment. <strong>Replacement filter:</strong> can a well-prompted Claude do my next quarter? If yes, I am the moat or the casualty. <strong>Rails filter:</strong> am I selling picks-and-shovels to the people who cannot be replaced? Real estate, regulated advisory, trust-based DACH B2B pass both filters. Per-seat SaaS, generic content, junior-analyst work fail. DACH is 18 months behind US adoption, that is a feature not a bug for the next 3 years.</div>
+    </div>
+    <div class="twocol">
+      <div class="col-card lose">
+        <div class="h">AI-vulnerable, sell side</div>
+        <ul>
+          <li><strong>Information arbitrage:</strong> Chegg $14B → $191M, Stack Overflow questions -76%</li>
+          <li><strong>Junior-analyst SaaS:</strong> per-seat productivity, generic copywriting, L1 support</li>
+          <li><strong>Horizontal SaaS without distribution moat:</strong> SaaSpocalypse, $285B repricing 2026</li>
+          <li><strong>Mid-pyramid consulting:</strong> Accenture rolled Copilot to 743k employees</li>
+        </ul>
+      </div>
+      <div class="col-card win">
+        <div class="h">AI-resistant, buy/hold side</div>
+        <ul>
+          <li><strong>Regulated verticals with liability:</strong> legal (20k jurisdictions), healthcare, finance, KYC</li>
+          <li><strong>Trust-based B2B with relationships:</strong> PE operating partners, founder advisory, family offices</li>
+          <li><strong>Vertical depth + outcome data:</strong> Validata, BetterCloud beat horizontal SaaS</li>
+          <li><strong>Physical assets:</strong> real estate, hospitality, manufacturing</li>
+          <li><strong>Distribution moats:</strong> the rails, not the software</li>
+        </ul>
+      </div>
+    </div>
+    <p class="sources"><strong>Sources</strong><a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai">McKinsey State of AI 2025</a> &middot; <a href="https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/">MIT NANDA GenAI Divide</a> &middot; <a href="https://www.gartner.com/en/articles/strategic-predictions-for-2026">Gartner 2026 predictions</a> &middot; <a href="https://stratechery.com/2026/aggregators-and-ai/">Stratechery: aggregators and AI</a> &middot; <a href="https://www.forrester.com/blogs/saas-as-we-know-it-is-dead-how-to-survive-the-saas-pocalypse/">Forrester SaaSpocalypse</a> &middot; <a href="https://pitchbook.com/news/articles/pe-survey-signals-positive-outlook-for-2026-with-ai-bringing-risks-rewards">PitchBook PE 2026</a></p>
+    <div class="brand">EO Berlin</div>
+    <div class="page-num">06 / 15</div>
+  </section>
+
+  <!-- 7, Q5 CLOUD vs SELF-HOSTED vs LOCAL -->
+  <section class="slide" id="s7">
+    <div class="qhead">
+      <div class="qhead-left">
+        <div class="qhead-eyebrow">Slido Q5</div>
+        <h1>Cloud vs self-hosted vs <span class="accent">local</span>?</h1>
+      </div>
+      <div class="qhead-votes"><span class="n">4</span> votes</div>
+    </div>
+    <div class="quickans">
+      <div class="quickans-h">60-second answer</div>
+      <div class="quickans-t">Three valid paths, depending on what you optimize for. <strong>Local first like Dom:</strong> $0/mo, full sovereignty, you carry the engineering load forever. <strong>Workspace native like me:</strong> 150 EUR/mo, mobile via Telegram, you ride the vendor roadmap. <strong>Enterprise hosted like Glean:</strong> $500/seat, no engineering load, vendor lock-in plus data in third party. <strong>Middle for DACH:</strong> AWS Bedrock EU Frankfurt, cloud convenience plus EU residency plus audit trail.</div>
+    </div>
+    <div class="threecol">
+      <div class="col-card win">
+        <div class="h">Local-first</div>
+        <div class="name">$0/mo &middot; Mac/RTX/H100</div>
+        <ul>
+          <li>Best for power users, regulated industries, max privacy</li>
+          <li>Hardware 500-3000 USD one-time (RTX 4090) or 15-25k (H100)</li>
+          <li>Breakeven 2-3 months vs cloud API at 200 req/day</li>
+          <li>Catch: needs MLOps engineer for 24/7 production</li>
+        </ul>
+      </div>
+      <div class="col-card info">
+        <div class="h">Cloud Workspace-native</div>
+        <div class="name">150 EUR/mo all-in</div>
+        <ul>
+          <li>Mobile-first via Telegram from anywhere</li>
+          <li>AWS Lightsail Frankfurt, Claude Code as harness</li>
+          <li>Rides Anthropic + AWS roadmap, vendor co-managed</li>
+          <li>Best for multi-domain operators (real estate, sales, content)</li>
+        </ul>
+      </div>
+      <div class="col-card warn">
+        <div class="h">Enterprise hosted</div>
+        <div class="name">$500-1.5k/seat/mo</div>
+        <ul>
+          <li>Best for teams not building, want it tomorrow</li>
+          <li>Glean / Notion AI Enterprise / M365 Copilot</li>
+          <li>100-200 seat minimums, annual commits, vendor lock-in</li>
+          <li>Hidden cost: 80-120k EUR/yr admin FTE</li>
+        </ul>
+      </div>
+    </div>
+    <p class="sources"><strong>Sources</strong><a href="https://blog.premai.io/self-hosted-llm-guide-setup-tools-cost-comparison-2026/">Premai self-hosted LLM guide</a> &middot; <a href="https://onyx.app/insights/best-self-hosted-llms-2026">Onyx best self-hosted 2026</a> &middot; <a href="https://checkthat.ai/brands/glean/pricing">Glean Enterprise pricing</a> &middot; <a href="../../solutions/security-gdpr/gdpr-claude-checklist-dach.md">solutions/gdpr-claude-checklist-dach.md</a></p>
+    <div class="brand">EO Berlin</div>
+    <div class="page-num">07 / 15</div>
+  </section>
+
+  <!-- 8, Q6 CLAUDE vs GEMINI -->
+  <section class="slide" id="s8">
+    <div class="qhead">
+      <div class="qhead-left">
+        <div class="qhead-eyebrow">Slido Q6</div>
+        <h1>Claude vs Gemini, <span class="accent">we are in Workspace</span>?</h1>
+      </div>
+      <div class="qhead-votes"><span class="n">2</span> votes</div>
+    </div>
+    <div class="quickans">
+      <div class="quickans-h">60-second answer</div>
+      <div class="quickans-t">Use both. <strong>Gemini wins inside Workspace</strong> for Doc/Sheet/Slide/Gmail inline work, native integration since Jan 2025, free in Business Plus. <strong>Claude wins for reasoning, code, long-context analysis, agentic loops.</strong> On Artificial Analysis Intelligence Index <strong>both score 57</strong> (Opus 4.7 = Gemini 3.1 Pro Preview). SWE-bench coding: <strong>Opus 87.6%, Gemini ~64%</strong>. Do not wait for Google to catch up on reasoning, they are already there. Use Claude where reasoning matters, Gemini where Workspace integration matters.</div>
+    </div>
+    <table class="ctable">
+      <thead>
+        <tr><th>Use case</th><th class="win">Claude Opus 4.7</th><th>Gemini 3.1 Pro</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Workspace inline</strong> (Doc/Sheet/Slide/Gmail)</td><td class="dim">Browser extension only</td><td class="win">Native, included in Business Plus</td></tr>
+        <tr><td><strong>Coding</strong> (SWE-bench Verified)</td><td class="acc">87.6%</td><td class="num">~64%</td></tr>
+        <tr><td><strong>Reasoning</strong> (Humanity's Last Exam)</td><td class="acc">46.9%</td><td class="num">44.4%</td></tr>
+        <tr><td><strong>Multimodal video + long context</strong></td><td>1M context (Sonnet beta)</td><td class="win">2M context, native video</td></tr>
+        <tr><td><strong>ARC-AGI-2</strong> (abstract reasoning)</td><td class="num">75.8%</td><td class="win">77.1%</td></tr>
+        <tr><td><strong>Pricing API</strong></td><td>$5 / $25 per M token</td><td>Comparable</td></tr>
+        <tr><td><strong>Consumer plan</strong></td><td>$20/mo Pro</td><td>$19.99/mo AI Pro (€7.99 AI Plus EU)</td></tr>
+      </tbody>
+    </table>
+    <p class="sources"><strong>Sources</strong><a href="https://www.anthropic.com/news/claude-opus-4-7">Claude Opus 4.7</a> &middot; <a href="https://artificialanalysis.ai/models/comparisons/claude-opus-4-7-non-reasoning-vs-gemini-3-1-pro-preview">Artificial Analysis comparison</a> &middot; <a href="https://blog.google/products-and-platforms/products/workspace/gemini-workspace-updates-march-2026/">Gemini Workspace updates Mar 2026</a> &middot; <a href="https://www.datacamp.com/blog/claude-opus-4-7-vs-gemini-3-1-pro">DataCamp comparison</a> &middot; <a href="https://www.glbgpt.com/hub/is-google-ai-plus-plan-available-in-europe-2026-price-e7-99-review/">Google AI Plus EU pricing</a></p>
+    <div class="brand">EO Berlin</div>
+    <div class="page-num">08 / 15</div>
+  </section>
+
+  <!-- 9, Q7 PACE OVERRUNS -->
+  <section class="slide" id="s9">
+    <div class="qhead">
+      <div class="qhead-left">
+        <div class="qhead-eyebrow">Slido Q7</div>
+        <h1>Software pace <span class="accent">overruns</span> my enterprise AI product?</h1>
+      </div>
+      <div class="qhead-votes"><span class="n">2</span> votes</div>
+    </div>
+    <div class="quickans">
+      <div class="quickans-h">60-second answer</div>
+      <div class="quickans-t">Bet on architecture, not on model. The same architecture (memory + tools + models) survives any model swap. <strong>If your platform is locked to a specific model API, you bought a depreciating asset.</strong> If your platform has a thin harness that calls a swappable model, you bought an appreciating asset. Test: <strong>can my product run on a different model in 30 days?</strong> If no, you have technical lock-in, not product moat. Models commoditize in 12-18 months. The moat is data, distribution, judgment encoding, vertical depth.</div>
+    </div>
+    <div class="depth">
+      <div class="depth-item"><span class="bullet">01</span><span><strong>2026 commodity timeline:</strong> Opus 4.7 = Gemini 3.1 Pro on Intelligence Index. GPT-5.5 at 59. Anthropic, OpenAI, Google, Mistral, open-weights are all within 10% of each other.</span></div>
+      <div class="depth-item"><span class="bullet">02</span><span><strong>Lock-in test patterns:</strong> proprietary prompts in vendor format, vendor-specific tool calling syntax, fine-tunes that don't transfer, vector embeddings tied to one provider's model.</span></div>
+      <div class="depth-item"><span class="bullet">03</span><span><strong>What survives:</strong> data layer separate from model, thin harness with model-portable interface, skills as Markdown, observability/audit trail at app layer.</span></div>
+      <div class="depth-item"><span class="bullet">04</span><span><strong>Enterprise contracts 2027:</strong> customers will demand model-portability clauses by default. Vendor lock-in becomes a procurement red flag.</span></div>
+      <div class="depth-item"><span class="bullet">05</span><span><strong>NVIDIA bet:</strong> $40B in AI equity bets 2026 incl. $30B into OpenAI. Capital rotates toward rails (compute, distribution), away from replaced. Stratechery (Thompson 2026): aggregators with network effects win, point solutions lose.</span></div>
+    </div>
+    <p class="sources"><strong>Sources</strong><a href="https://stratechery.com/2026/microsoft-and-software-survival/">Stratechery Software Survival</a> &middot; <a href="https://artificialanalysis.ai/models/comparisons/claude-opus-4-7-non-reasoning-vs-gemini-3-1-pro-preview">AA Intelligence Index</a> &middot; <a href="https://www.cnbc.com/2026/05/09/nvidia-embraces-ai-investor-topping-40-billion-in-equity-bets-2026.html">NVIDIA $40B equity bets</a> &middot; <a href="../../solutions/pace-keeping-up/weekly-ai-filter.md">solutions/pace-keeping-up/weekly-ai-filter.md</a></p>
+    <div class="brand">EO Berlin</div>
+    <div class="page-num">09 / 15</div>
+  </section>
+
+  <!-- 10, Q8 HOURS SAVED -->
+  <section class="slide" id="s10">
+    <div class="qhead">
+      <div class="qhead-left">
+        <div class="qhead-eyebrow">Slido Q8</div>
+        <h1>Hours per week <span class="accent">real numbers</span>?</h1>
+      </div>
+      <div class="qhead-votes"><span class="n">1</span> vote</div>
+    </div>
+    <div class="quickans">
+      <div class="quickans-h">60-second answer</div>
+      <div class="quickans-t"><strong>23 hours per week</strong>, tracked over 8 weeks. Industry benchmark: knowledge workers save <strong>6.4h/seat</strong>, senior practitioners <strong>10-12h</strong>. My setup is 2-3x that because I built skills not just tools. Personal Brain v4, alive 6 months, 150 EUR/mo, payback 4-5 months.</div>
+    </div>
+    <div class="statgrid">
+      <div class="stat"><div class="n">23h</div><div class="lbl">my weekly save</div><div class="desc">tracked 8 wks</div></div>
+      <div class="stat"><div class="n">6.4h</div><div class="lbl">industry median</div><div class="desc">knowledge worker</div></div>
+      <div class="stat"><div class="n">10-12h</div><div class="lbl">senior practitioner</div><div class="desc">McKinsey 2026</div></div>
+      <div class="stat"><div class="n">9x</div><div class="lbl">cost ratio</div><div class="desc">AI vs human ticket</div></div>
+    </div>
+    <div class="depth">
+      <div class="depth-item"><span class="bullet">01</span><span><strong>Morning briefing (daily 7am cron):</strong> 30 min → 3 min = <span class="num">2.25h/wk</span></span></div>
+      <div class="depth-item"><span class="bullet">02</span><span><strong>Meeting prep</strong> (4 calls/day, dossier ready): 20 min × 4 → 3 min × 4 = <span class="num">5.7h/wk</span></span></div>
+      <div class="depth-item"><span class="bullet">03</span><span><strong>Email + WhatsApp drafts</strong> voice-locked: 5 min × 8 → 1 min × 8 = <span class="num">2.7h/wk</span></span></div>
+      <div class="depth-item"><span class="bullet">04</span><span><strong>Real estate pricing</strong> (6 studios via Holidu cron): 1h/day → 0 min = <span class="num">5h/wk</span></span></div>
+      <div class="depth-item"><span class="bullet">05</span><span><strong>Friday weekly review</strong>: 90 min → 10 min = <span class="num">1.3h/wk</span></span></div>
+      <div class="depth-item"><span class="bullet">06</span><span><strong>Client diagnostics + deliverables</strong>: <span class="num">6.75h/wk</span> combined</span></div>
+    </div>
+    <p class="sources"><strong>Sources</strong>Chris own tracking 8 wks &middot; <a href="https://www.digitalapplied.com/blog/ai-agent-productivity-statistics-2026-roi-data-points">AI Agent productivity stats 2026</a> &middot; chris-demo #7 Day in the Life table</p>
+    <div class="brand">EO Berlin</div>
+    <div class="page-num">10 / 15</div>
+  </section>
+
+  <!-- 11, Q9 PERPLEXITY -->
+  <section class="slide" id="s11">
+    <div class="qhead">
+      <div class="qhead-left">
+        <div class="qhead-eyebrow">Slido Q9</div>
+        <h1>Best Perplexity use case <span class="accent">beside search</span>?</h1>
+      </div>
+      <div class="qhead-votes"><span class="n">1</span> vote</div>
+    </div>
+    <div class="quickans">
+      <div class="quickans-h">60-second answer</div>
+      <div class="quickans-t">Three honest uses beyond standard search. <strong>One: Perplexity Spaces</strong> (5M+ created since launch, NVIDIA + Databricks + Bridgewater use it for competitive intel). <strong>Two: Deep Research mode</strong> for due diligence, 2-4 minute reports with 37% hallucination rate vs 67% on ChatGPT Deep Research. <strong>Three: Pro tier $20/mo gives CB Insights + PitchBook + Statista access</strong>, alone worth hundreds in subscriptions. Comet browser caveat: zero-click vulnerability in March 2026, careful with enterprise.</div>
+    </div>
+    <div class="twocol">
+      <div class="col-card win">
+        <div class="h">Perplexity wins</div>
+        <ul>
+          <li><strong>Spaces:</strong> dedicated workspaces with file upload + SSO permissions, competitive intel hub per competitor</li>
+          <li><strong>Deep Research:</strong> 10 min preliminary DD reports vs 4h analyst work</li>
+          <li><strong>Citations:</strong> 37% hallucination rate, lowest in market</li>
+          <li><strong>Premium data:</strong> CB Insights, PitchBook, Statista in $20 Pro tier</li>
+          <li><strong>Speed:</strong> 2-4 min multi-source research</li>
+        </ul>
+      </div>
+      <div class="col-card lose">
+        <div class="h">Perplexity loses to Claude</div>
+        <ul>
+          <li>Long nuanced drafts</li>
+          <li>Coding</li>
+          <li>Complex multi-step reasoning</li>
+          <li>Writing in your own voice</li>
+          <li>Comet browser security (3 CVEs Mar 2026)</li>
+        </ul>
+      </div>
+    </div>
+    <p class="sources"><strong>Sources</strong><a href="https://www.perplexity.ai/hub/blog/introducing-internal-knowledge-search-and-spaces">Perplexity Spaces</a> &middot; <a href="https://felloai.com/perplexity-pricing/">Perplexity pricing 2026</a> &middot; <a href="https://aimultiple.com/ai-deep-research">Deep Research comparison</a> &middot; <a href="https://mwm.ai/articles/comet-ai-browser-viral-sensation-2026-03-23">Comet security</a></p>
+    <div class="brand">EO Berlin</div>
+    <div class="page-num">11 / 15</div>
+  </section>
+
+  <!-- 12, Q10 CHATGPT -->
+  <section class="slide" id="s12">
+    <div class="qhead">
+      <div class="qhead-left">
+        <div class="qhead-eyebrow">Slido Q10</div>
+        <h1>Best practical use case for <span class="accent">ChatGPT</span>?</h1>
+      </div>
+      <div class="qhead-votes"><span class="n">1</span> vote</div>
+    </div>
+    <div class="quickans">
+      <div class="quickans-h">60-second answer</div>
+      <div class="quickans-t">Three honest wins. <strong>Advanced Data Analysis</strong> (former Code Interpreter): Excel/CSV in, Python + charts + PPTX out, in one prompt. Beats Claude Code for one-shot data-to-visualization. <strong>DALL-E / GPT Image 2</strong>: wins on text rendering in images, ad creatives with readable text, API workflows. Industry mix recommended: 60% DALL-E API, 20% Midjourney for hero visuals, 20% Imagen. <strong>Voice Mode</strong>: hands-free brainstorming, CarPlay rubber-ducking, structured Socratic sessions on walks. <strong>GPT-5.5 Instant</strong> (May 2026) is the new default, hallucinates less in law/medicine/finance, can search Past Conversations + Files + Gmail.</div>
+    </div>
+    <div class="twocol">
+      <div class="col-card win">
+        <div class="h">ChatGPT wins</div>
+        <ul>
+          <li><strong>Image generation</strong> native in-window (Vision input too)</li>
+          <li><strong>Voice Mode</strong> for hands-free</li>
+          <li><strong>Custom GPTs</strong> for niche repeated workflows (B2B verticals)</li>
+          <li><strong>Advanced Data Analysis</strong> one-shot data viz</li>
+          <li><strong>Multimodal</strong> in one window</li>
+          <li><strong>Speed</strong> on quick tasks</li>
+        </ul>
+      </div>
+      <div class="col-card lose">
+        <div class="h">ChatGPT loses to Claude</div>
+        <ul>
+          <li><strong>Coding:</strong> 70% developer preference for Claude</li>
+          <li><strong>Writing quality:</strong> less AI-speak</li>
+          <li><strong>Long-context reasoning</strong></li>
+          <li><strong>Fewer invented function signatures</strong></li>
+          <li><strong>Claude Code</strong> as terminal agent for multi-hour tasks</li>
+        </ul>
+      </div>
+    </div>
+    <p class="sources"><strong>Sources</strong><a href="https://openai.com/index/introducing-gpt-5-5/">OpenAI GPT-5.5 launch</a> &middot; <a href="https://www.eesel.ai/blog/gpt-image-2-vs-midjourney-vs-dall-e-3-2026">Image gen comparison 2026</a> &middot; <a href="https://obot.ai/resources/learning-center/chatgpt-advanced-data-analysis/">Advanced Data Analysis guide</a> &middot; <a href="https://www.morphllm.com/claude-vs-chatgpt">Claude vs ChatGPT honest comparison</a></p>
+    <div class="brand">EO Berlin</div>
+    <div class="page-num">12 / 15</div>
+  </section>
+
+  <!-- 13, Q11 WORST FAIL -->
+  <section class="slide" id="s13">
+    <div class="qhead">
+      <div class="qhead-left">
+        <div class="qhead-eyebrow">Slido Q11</div>
+        <h1>Worst AI fail and <span class="accent">what you learned</span>?</h1>
+      </div>
+      <div class="qhead-votes"><span class="n">0</span> votes</div>
+    </div>
+    <div class="quickans">
+      <div class="quickans-h">60-second answer</div>
+      <div class="quickans-t">Three real industry fails, two of mine. <strong>Replit July 2025:</strong> AI agent deleted production DB during code freeze, fabricated 4000 fake users, lied about rollback. <strong>OpenClaw CVE-2026-25253:</strong> 1-Click RCE in agentic orchestration platform, 42k instances exposed, plus <strong>ClawHavoc supply chain attack</strong> 1184 malicious skills, ~300k users affected (Antiy CERT Feb 2026). <strong>Anthropic 31 Mar 2026:</strong> shipped 513k lines of Claude Code source via npm sourcemap. <strong>My own:</strong> April 2026 13-month memory drift, weekly /audit-memory now catches it. Lesson: AI fails silently. Sandbox destructive actions, version-control everything, never trust silent success.</div>
+    </div>
+    <div class="depth">
+      <div class="depth-item"><span class="bullet">01</span><span><strong>Replit (Jul 2025):</strong> Jason Lemkin SaaStr vibe-coding experiment, AI deleted prod DB on day 9, recovery manual, Replit shipped dev/prod separation + planning-only mode in response.</span></div>
+      <div class="depth-item"><span class="bullet">02</span><span><strong>Legal AI hallucinations:</strong> 1348 worldwide cases by April 2026 (Damien Charlotin tracker). Sullivan & Cromwell ~28 fabricated citations in Prince Global Chapter 15. Oregon $110k fine for Valley View winery case.</span></div>
+      <div class="depth-item"><span class="bullet">03</span><span><strong>Customer service liability:</strong> Air Canada 2024 ruling, chatbot promise was legally binding ($600 + costs). Chevrolet of Watsonville bot prompt-injected to sell Tahoe for $1.</span></div>
+      <div class="depth-item"><span class="bullet">04</span><span><strong>Devin reality:</strong> Answer.AI 30-day eval, 3 successes/14 fails/3 inconclusive out of 20 tasks = 15% success rate.</span></div>
+      <div class="depth-item"><span class="bullet">05</span><span><strong>Standard discipline:</strong> sandbox + human-in-loop for irreversible actions + memory hygiene with audit trail + short-lived credentials + dev/prod separation. OWASP AI Agent Security Cheat Sheet is the reference.</span></div>
+    </div>
+    <p class="sources"><strong>Sources</strong><a href="https://socradar.io/blog/cve-2026-25253-rce-openclaw-auth-token/">CVE-2026-25253 SOCRadar</a> &middot; <a href="https://www.antiy.net/p/clawhavoc-analysis-of-large-scale-poisoning-campaign-targeting-the-openclaw-skill-market-for-ai-agents/">ClawHavoc Antiy</a> &middot; <a href="https://www.theregister.com/2026/03/31/anthropic_claude_code_source_code/">Anthropic npm leak</a> &middot; <a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/ai-coding-platform-goes-rogue-during-code-freeze-and-deletes-entire-company-database-replit-ceo-apologizes-after-ai-engine-says-it-made-a-catastrophic-error-in-judgment-and-destroyed-all-production-data">Replit incident</a> &middot; <a href="https://www.damiencharlotin.com/hallucinations/">Charlotin hallucination tracker</a> &middot; <a href="https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html">OWASP AI Agent Cheat Sheet</a></p>
+    <div class="brand">EO Berlin</div>
+    <div class="page-num">13 / 15</div>
+  </section>
+
+  <!-- 14, Q12 TEAM ADOPTION -->
+  <section class="slide" id="s14">
+    <div class="qhead">
+      <div class="qhead-left">
+        <div class="qhead-eyebrow">Slido Q12</div>
+        <h1>How do you get a team to <span class="accent">actually adopt</span> AI?</h1>
+      </div>
+      <div class="qhead-votes"><span class="n">0</span> votes</div>
+    </div>
+    <div class="quickans">
+      <div class="quickans-h">90-second answer</div>
+      <div class="quickans-t">Hard truth: <strong>McKinsey says C-levels think 4% use AI daily, employees self-report 13%.</strong> BCG silicon ceiling: half of frontline workers don't touch the tools you bought. <strong>Gartner: 50% of GenAI projects abandoned after PoC.</strong> Three things that actually work. <strong>1) Name skills not tools</strong>, BBVA built 11k active users with 750 "wizards" and 2-5h/wk saved per person (HBR April 2026). <strong>2) One workflow per quarter</strong>, pilot with 2 champions, measure, then scale. <strong>3) Founder visibility</strong>, McKinsey says 3x adoption when leaders role-model. DACH: <strong>Betriebsrat first</strong>, BAG 2026 ruling co-determination on practically any AI, EU AI Act fully applicable Aug 2026.</div>
+    </div>
+    <div class="statgrid">
+      <div class="stat"><div class="n">50%</div><div class="lbl">PoCs abandoned</div><div class="desc">Gartner 2025</div></div>
+      <div class="stat"><div class="n">3x</div><div class="lbl">adoption lift</div><div class="desc">when leaders model</div></div>
+      <div class="stat"><div class="n">11k</div><div class="lbl">BBVA active users</div><div class="desc">built bottom-up</div></div>
+      <div class="stat"><div class="n">2-5h</div><div class="lbl">per person/wk</div><div class="desc">tracked at BBVA</div></div>
+    </div>
+    <div class="depth">
+      <div class="depth-item"><span class="bullet">01</span><span><strong>Measure what matters:</strong> skill invocations per team member per week, hours saved self-reported, active/licensed user ratio (best in class ~80%), 5+ days/week active rate (Copilot bench 67%).</span></div>
+      <div class="depth-item"><span class="bullet">02</span><span><strong>Failure modes to avoid:</strong> blanket mandate (Duolingo PR crisis), training-then-forget (only 36% feel training was enough), tool-led not workflow-led ("we bought Copilot" trap), centralized AI team picking use cases for the field.</span></div>
+      <div class="depth-item"><span class="bullet">03</span><span><strong>DACH §87/§90/§95 BetrVG:</strong> not optional. Loop Betriebsrat in at workflow-selection stage. Frame skills narrowly. Defining "AI-suitability to monitor" triggers co-determination, not intent.</span></div>
+      <div class="depth-item"><span class="bullet">04</span><span><strong>Drop-off norms:</strong> 20-30% drop-off is best-in-class. GitHub Copilot enterprises: 67% 5+ days/week, 1% monthly churn. Claude Code: 81% engineers still using at week 20.</span></div>
+    </div>
+    <p class="sources"><strong>Sources</strong><a href="https://hbr.org/2026/04/the-hidden-demand-for-ai-inside-your-company">HBR BBVA Alfaro Apr 2026</a> &middot; <a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai">McKinsey State of AI 2025</a> &middot; <a href="https://www.bcg.com/publications/2025/ai-at-work-momentum-builds-but-gaps-remain">BCG AI at Work 2025</a> &middot; <a href="https://www.gartner.com/en/newsroom/press-releases/2024-07-29-gartner-predicts-30-percent-of-generative-ai-projects-will-be-abandoned-after-proof-of-concept">Gartner abandonment</a> &middot; <a href="https://skill-sprinters.de/blog/compliance/bag-urteil-2026-betriebsrat-ki-mitbestimmung-verschaerft/">BAG 2026 Betriebsrat</a> &middot; <a href="../../solutions/team-adoption/team-rollout-playbook.md">solutions/team-adoption/team-rollout-playbook.md</a></p>
+    <div class="brand">EO Berlin</div>
+    <div class="page-num">14 / 15</div>
+  </section>
+
+  <!-- 15, OUTRO -->
+  <section class="slide cover" id="s15">
+    <div class="cover-eyebrow">After the panel</div>
+    <h1>Slido stays<br><span class="accent">open 24h.</span></h1>
+    <p class="cover-sub">Late questions land in the same room. We pick the topic for Event #2 from tonight's votes plus the next 24 hours. All sources cited per slide are clickable. The QA cheatsheet companion lives at <strong>events/01-2026-05-11-setup-trap/QA-CHEATSHEET.md</strong>. Fork, remix, contribute.</p>
+    <p class="cover-meta"><span class="who">github.com/chris1928a/eo-ai-exchange</span><span class="when">Slido #3261743 &middot; app.sli.do/event/ayixnbqUoPEUoNJQa6WuFA</span></p>
+    <div class="brand">EO Berlin</div>
+    <div class="page-num">15 / 15</div>
+  </section>
+
+</div>
+
+<div class="nav-hint">arrow keys to navigate &middot; click left/right halves of screen</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  let current = 0;
+  function go(idx) {
+    if (idx < 0 || idx >= slides.length) return;
+    slides[current].classList.remove('active');
+    slides[idx].classList.add('active');
+    current = idx;
+    history.replaceState({}, '', '#' + (idx + 1));
+  }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); go(current + 1); }
+    if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); go(current - 1); }
+    if (e.key === 'Home') go(0);
+    if (e.key === 'End') go(slides.length - 1);
+    document.querySelector('.nav-hint').classList.add('hidden');
+  });
+  document.querySelector('.deck').addEventListener('click', (e) => {
+    if (e.target.closest('a')) return;
+    const x = e.clientX; const w = window.innerWidth;
+    if (x > w / 2) go(current + 1);
+    else go(current - 1);
+  });
+  if (window.location.hash) {
+    const n = parseInt(window.location.hash.replace('#', ''));
+    if (n >= 1 && n <= slides.length) go(n - 1);
+  }
+  setTimeout(() => document.querySelector('.nav-hint').classList.add('hidden'), 5000);
+</script>
+</body>
+</html>
