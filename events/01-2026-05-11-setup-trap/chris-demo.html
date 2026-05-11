@@ -500,6 +500,29 @@
   .tech-row.l3 .tech-col-b code { background: rgba(255,255,255,0.15); color: white; }
   .tech-bottom { padding: 0.85rem 1.25rem; background: var(--accent-soft); border-left: 3px solid var(--accent); font-size: 0.92rem; color: var(--text); line-height: 1.5; border-radius: 4px; }
   .tech-bottom strong { color: var(--accent); font-weight: 700; }
+
+  /* WEEKEND ROADMAP (slide 23 repurpose) */
+  .weekend-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 1.5rem; margin-bottom: 1rem; }
+  .weekend-timeline { display: flex; flex-direction: column; gap: 0.55rem; }
+  .weekend-step { display: grid; grid-template-columns: 4.5rem 1fr; gap: 1rem; padding: 0.7rem 0.95rem; background: var(--bg); border-left: 3px solid var(--accent); border-radius: 4px; align-items: start; }
+  .weekend-step.win { background: var(--accent-soft); border-left-width: 4px; box-shadow: 0 2px 8px rgba(37,99,235,0.15); }
+  .step-time { font-weight: 700; font-size: 0.85rem; color: var(--accent); font-variant-numeric: tabular-nums; letter-spacing: -0.005em; text-align: right; padding-top: 0.1rem; }
+  .step-body { display: flex; flex-direction: column; gap: 0.25rem; }
+  .step-h { font-weight: 700; font-size: 0.85rem; color: var(--text); letter-spacing: -0.005em; }
+  .step-d { font-size: 0.78rem; color: var(--muted); line-height: 1.45; }
+  .step-d strong { color: var(--text); font-weight: 600; }
+  .step-cmd { font-family: var(--mono); font-size: 0.7rem; background: var(--code-bg); color: var(--text); padding: 0.35rem 0.55rem; border-radius: 4px; border-left: 2px solid var(--accent); margin-top: 0.2rem; word-break: break-all; }
+  .weekend-side { display: flex; flex-direction: column; gap: 0.85rem; }
+  .weekend-anti { padding: 0.95rem 1.1rem; background: #fef2f2; border: 1px solid #fca5a5; border-left: 4px solid #dc2626; border-radius: 6px; display: flex; flex-direction: column; gap: 0.5rem; }
+  .anti-h { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #b91c1c; }
+  .anti-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.45rem; }
+  .anti-list li { font-size: 0.76rem; color: #7f1d1d; line-height: 1.45; padding-left: 1rem; position: relative; }
+  .anti-list li::before { content: '\2715'; position: absolute; left: 0; color: #dc2626; font-weight: 700; }
+  .anti-list li strong { color: #991b1b; font-weight: 700; }
+  .weekend-help { padding: 0.85rem 1.1rem; background: var(--accent-soft); border: 1px solid #bfdbfe; border-left: 4px solid var(--accent); border-radius: 6px; display: flex; flex-direction: column; gap: 0.35rem; }
+  .help-h { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); }
+  .help-d { font-size: 0.78rem; color: var(--text); line-height: 1.5; }
+  .help-d .accent { color: var(--accent); font-weight: 600; }
   .share-foot { margin-top: 0.85rem; padding: 0.65rem 1rem; background: var(--code-bg); border-left: 3px solid var(--text); font-family: var(--mono); font-size: 0.72rem; color: var(--text); line-height: 1.45; }
 
   /* ========== NEW: SCREENSHOT PLACEHOLDER ========== */
@@ -1715,61 +1738,67 @@
     <div class="page-num">22 / 45</div>
   </section>
 
-  <!-- 23, 5 SHAREABLE SKILLS -->
+  <!-- 23, YOUR FIRST WEEKEND (repurpose: actionable roadmap, replaces redundant 5-skills) -->
   <section class="slide" id="s23">
-    <div class="label">Five skills to fork tonight</div>
-    <h2 class="title">The portable five.<small>Each one is a Markdown file with parameters, voice rules and example outputs. Plug and run.</small></h2>
-    <div class="share-grid">
-      <div class="share-skill">
-        <div class="sn">01</div>
-        <div class="sbody">
-          <div class="scmd">/diarize-person</div>
-          <div class="sname">Stakeholder Profile in One Page</div>
-          <div class="swhat">Reads everything you have on a person and writes a 1-page profile: communication style, last contact, open threads. <strong>The knowledge-work lever for any operator.</strong></div>
+    <div class="label">Your first weekend</div>
+    <h2 class="title">Five steps. <span class="accent">One working brain.</span><small>Time-boxed for a weekend. Real commands. The shortest path from this slide to your first auto-delivered Monday brief.</small></h2>
+    <div class="weekend-grid">
+      <div class="weekend-timeline">
+        <div class="weekend-step">
+          <div class="step-time">30 min</div>
+          <div class="step-body">
+            <div class="step-h">Tonight, right after this call</div>
+            <div class="step-d">Clone the repo. Read <strong>MASTER_TEMPLATE.md</strong> once, top to bottom.</div>
+            <div class="step-cmd">git clone github.com/chris1928a/eo-ai-exchange &amp;&amp; cat skills/MASTER_TEMPLATE.md</div>
+          </div>
+        </div>
+        <div class="weekend-step">
+          <div class="step-time">1-2 h</div>
+          <div class="step-body">
+            <div class="step-h">Saturday morning &middot; write your CLAUDE.md</div>
+            <div class="step-d">50 lines max: who you are, your hats, your voice rules, your tools. Pointer-only, no content. This is the router.</div>
+            <div class="step-cmd">cp templates/CLAUDE.md.example ~/.claude/projects/YOUR_BRAIN/CLAUDE.md</div>
+          </div>
+        </div>
+        <div class="weekend-step">
+          <div class="step-time">1 h</div>
+          <div class="step-body">
+            <div class="step-h">Saturday afternoon &middot; fork your first skill</div>
+            <div class="step-d"><code>/morning-brief</code> is the easiest win. Customize the prompt for your inbox + calendar + 3 priorities.</div>
+            <div class="step-cmd">cp skills/universal/morning-brief.md ~/.claude/projects/YOUR_BRAIN/skills/</div>
+          </div>
+        </div>
+        <div class="weekend-step">
+          <div class="step-time">1-2 h</div>
+          <div class="step-body">
+            <div class="step-h">Sunday &middot; wire up the harness</div>
+            <div class="step-d">Telegram bot + Claude Code on your laptop OR a small VM. Set a cron for 7:00 Monday.</div>
+            <div class="step-cmd">follow setup-telegram-bot.md in the repo</div>
+          </div>
+        </div>
+        <div class="weekend-step win">
+          <div class="step-time">Monday<br>07:00</div>
+          <div class="step-body">
+            <div class="step-h">First brief delivered to your phone</div>
+            <div class="step-d"><strong>You did it.</strong> 5h of weekend, your brain runs the rest of the year. Add one new skill every fortnight from here.</div>
+          </div>
         </div>
       </div>
-      <div class="share-skill">
-        <div class="sn">02</div>
-        <div class="sbody">
-          <div class="scmd">/audit-process</div>
-          <div class="sname">Impact-Effort Audit</div>
-          <div class="swhat">Run on any 10-30 internal processes. Outputs ranked Impact-Effort matrix with founder time saved per week. <strong>The skill that surfaced 17 processes in the agency case study.</strong></div>
+      <div class="weekend-side">
+        <div class="weekend-anti">
+          <div class="anti-h">Skip these 3</div>
+          <ul class="anti-list">
+            <li><strong>Do not install 5 tools first.</strong> One workflow, one skill, one win. The stack grows after the first run, not before.</li>
+            <li><strong>Do not write a 2000-line CLAUDE.md.</strong> 50 lines, pointer-only. Long CLAUDE.md kills model attention and your weekend.</li>
+            <li><strong>Do not automate before manual works.</strong> Run /morning-brief manually three times. Only then put it on a cron.</li>
+          </ul>
         </div>
-      </div>
-      <div class="share-skill">
-        <div class="sn">03</div>
-        <div class="sbody">
-          <div class="scmd">/weekly-review</div>
-          <div class="sname">Cron-Ready Status Sweep</div>
-          <div class="swhat">Loops over every hat (or every org), pulls open threads, flags decay, drafts the Friday note to yourself. <strong>Designed for the harness to call without you.</strong></div>
-        </div>
-      </div>
-      <div class="share-skill">
-        <div class="sn">04</div>
-        <div class="sbody">
-          <div class="scmd">/draft-by-channel</div>
-          <div class="sname">Communication Style Per Person and Channel</div>
-          <div class="swhat">Knows that WhatsApp Lars is different from Email Lars. Loads voice rules per relationship. <strong>Kills the "draft it in your tone" awkwardness.</strong></div>
-        </div>
-      </div>
-      <div class="share-skill">
-        <div class="sn">05</div>
-        <div class="sbody">
-          <div class="scmd">/memory-curator</div>
-          <div class="sname">What to Save, What to Drop</div>
-          <div class="swhat">Diarization at the file level. Decides what becomes durable memory and what stays in the chat log. <strong>Stops your memory layer from becoming a junk drawer.</strong></div>
-        </div>
-      </div>
-      <div class="share-skill" style="border-left-color: var(--success);">
-        <div class="sn" style="color: var(--success);">+</div>
-        <div class="sbody">
-          <div class="scmd" style="color: var(--success);">MASTER_TEMPLATE.md</div>
-          <div class="sname">The Bridge Doc</div>
-          <div class="swhat">3-layer brain architecture, CLAUDE.md boilerplate (200 lines max), Hat-System guide, 30-day rollout plan. <strong>Read once, ship the brain.</strong></div>
+        <div class="weekend-help">
+          <div class="help-h">Stuck during the weekend?</div>
+          <div class="help-d">Drop in the chat tonight or on <strong>Slido #3261743</strong> within 24h. <span class="accent">Every broken step you report becomes a new solution in the repo.</span></div>
         </div>
       </div>
     </div>
-    <div class="share-foot">$ git clone github.com/chris1928a/eo-ai-exchange &amp;&amp; cd skills/ &amp;&amp; cat MASTER_TEMPLATE.md</div>
     <div class="brand">EO AI Exchange #1</div>
     <div class="page-num">23 / 45</div>
   </section>
