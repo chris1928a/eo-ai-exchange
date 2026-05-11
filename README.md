@@ -20,19 +20,23 @@ A living solution-pipeline for the AI-productivity pains that founders and opera
 
 ## What shipped at Event #1 (2026-05-11)
 
-11 in-depth solutions covering all 10 pain clusters identified from 103 audience registrations across 30+ EO chapters. See [SOLUTIONS.md](SOLUTIONS.md) for the full index.
+11 in-depth solutions covering all 10 pain clusters identified from **118 audience registrations across 53 EO chapters and 4 continents**. See [SOLUTIONS.md](SOLUTIONS.md) for the full index and [AUDIENCE-ANALYSIS](events/01-2026-05-11-setup-trap/AUDIENCE-ANALYSIS.md) for the verified pain breakdown.
 
-Highlights:
-- [Setup Trap Diagnostic, 1-pager](solutions/setup-itself/setup-trap-diagnostic.md), the 3 questions to escape the trap
-- [30-Min aiOS Blueprint](solutions/setup-itself/30-min-aios-blueprint.md), zero to working setup in 30 min
-- [OpenClaw Honest Assessment](solutions/openclaw-honest/openclaw-honest-assessment.md), incl. CVE-2026-25253 + 5 alternatives
-- [GDPR Claude Checklist DACH](solutions/security-gdpr/gdpr-claude-checklist-dach.md), incl. EU AI Act August 2026 deadline
-- [MCP Cookbook](solutions/integration-mcp/mcp-cookbook.md), 10 essential MCP servers for founders
-- Plus 6 more, one per pain cluster
+### Live decks
 
-**Event #1 deck (live, click to view):** https://chris1928a.github.io/eo-ai-exchange/events/01-2026-05-11-setup-trap/slides.html
+- **Joint deck** &middot; [chris1928a.github.io/eo-ai-exchange/events/01-2026-05-11-setup-trap/slides.html](https://chris1928a.github.io/eo-ai-exchange/events/01-2026-05-11-setup-trap/slides.html) (22 slides)
+- **Chris's deep dive** &middot; [chris-demo.html](https://chris1928a.github.io/eo-ai-exchange/events/01-2026-05-11-setup-trap/chris-demo.html) (44 slides)
+- **Q&A backup** &middot; [qa-deck.html](https://chris1928a.github.io/eo-ai-exchange/events/01-2026-05-11-setup-trap/qa-deck.html) (15 slides, all 12 Slido questions with sources)
 
-Erler Ventures branding (Fraunces + Inter, Forest + Brass on white). Click anywhere or use arrow keys to navigate. Source: [`events/01-2026-05-11-setup-trap/slides.html`](events/01-2026-05-11-setup-trap/slides.html).
+### Solution highlights
+
+- [Setup Trap Diagnostic, 1-pager](solutions/setup-itself/setup-trap-diagnostic.md) &middot; the 3 questions to escape the trap
+- [30-Min aiOS Blueprint](solutions/setup-itself/30-min-aios-blueprint.md) &middot; zero to working setup in 30 min
+- [OpenClaw Honest Assessment](solutions/openclaw-honest/openclaw-honest-assessment.md) &middot; incl. CVE-2026-25253 + 5 alternatives
+- [GDPR Claude Checklist DACH](solutions/security-gdpr/gdpr-claude-checklist-dach.md) &middot; incl. EU AI Act August 2026 deadline
+- [MCP Cookbook](solutions/integration-mcp/mcp-cookbook.md) &middot; 10 essential MCP servers for founders
+- [Team Rollout Playbook](solutions/team-adoption/team-rollout-playbook.md) &middot; 90-day plan with BBVA case study
+- Plus 5 more, one per pain cluster, in [`solutions/`](solutions/)
 
 ---
 
@@ -66,20 +70,25 @@ eo-ai-exchange/
 │
 ├── events/                      ← one folder per event
 │   └── 01-2026-05-11-setup-trap/
-│       ├── README.md
-│       └── slides.html          ← live HTML deck
+│       ├── README.md            ← event-specific intro
+│       ├── slides.html          ← joint deck for the live event (22 slides)
+│       ├── chris-demo.html      ← Chris's solo deep dive (44 slides)
+│       ├── qa-deck.html         ← Q&A backup deck (15 slides)
+│       ├── fabian-demo-pai.md   ← PAI demo companion (1200 words)
+│       ├── QA-CHEATSHEET.md     ← panel cheatsheet, plain Markdown
+│       └── AUDIENCE-ANALYSIS.md ← anonymized pain breakdown, 118 registrants
 │
 ├── solutions/                   ← solutions grouped by pain cluster (10 clusters)
-│   ├── tool-overload/
-│   ├── setup-itself/
-│   ├── agents/
-│   ├── team-adoption/
-│   ├── integration-mcp/
-│   ├── openclaw-honest/
-│   ├── industry-healthcare/
-│   ├── security-gdpr/
-│   ├── pace-keeping-up/
-│   └── time-learning/
+│   ├── tool-overload/           ← Tool Overload Diagnostic
+│   ├── setup-itself/            ← Setup Trap Diagnostic + 30-Min aiOS Blueprint
+│   ├── agents/                  ← Agent Reliability Checklist
+│   ├── team-adoption/           ← Team Rollout Playbook (90-day)
+│   ├── integration-mcp/         ← MCP Cookbook (10 essential servers)
+│   ├── openclaw-honest/         ← OpenClaw Honest Assessment (incl CVE)
+│   ├── industry-healthcare/     ← Healthcare Scheduling Stack
+│   ├── security-gdpr/           ← GDPR Claude Checklist DACH
+│   ├── pace-keeping-up/         ← Weekly AI Filter
+│   └── time-learning/           ← 60-Day Founder Onboarding
 │
 ├── skills/                      ← runnable Claude Code skills (community contributions)
 │
@@ -134,4 +143,4 @@ All solutions in this repo are released under MIT License. Use, modify, share. A
 
 ---
 
-*Last updated: 2026-05-11 (Event #1 shipped, 11 solutions live, 103 registrations).*
+*Last updated: 2026-05-11 (Event #1 shipped, 11 solutions live, 118 registrations across 53 EO chapters).*

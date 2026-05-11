@@ -11,22 +11,24 @@
 
 ---
 
-## Files in this folder
+## What is in this folder
 
-- `README.md` (this file)
-- `slides.html`, joint deck for the live event (21 slides, all three operators)
-- `chris-demo.html`, Chris's solo deep-dive deck (44 slides)
-- `qa-deck.html`, Q&A backup deck (15 slides, all 12 Slido questions answered with sources)
-- `QA-CHEATSHEET.md`, panel cheatsheet, Markdown companion
-- `fabian-demo-pai.md`, companion doc for Fabian's PAI demo
-- `AUDIENCE-ANALYSIS.md`, pain cluster breakdown from 140 registrations
+### Take this home
 
-**Live decks:**
-- Joint: https://chris1928a.github.io/eo-ai-exchange/events/01-2026-05-11-setup-trap/slides.html
-- Chris Demo: https://chris1928a.github.io/eo-ai-exchange/events/01-2026-05-11-setup-trap/chris-demo.html
-- Q&A Backup: https://chris1928a.github.io/eo-ai-exchange/events/01-2026-05-11-setup-trap/qa-deck.html
+- **`slides.html`** &middot; the live joint deck (22 slides, all three founders). [Open](https://chris1928a.github.io/eo-ai-exchange/events/01-2026-05-11-setup-trap/slides.html)
+- **`chris-demo.html`** &middot; Chris's solo deep-dive deck (44 slides, Personal Brain + Org Brain + the Math). [Open](https://chris1928a.github.io/eo-ai-exchange/events/01-2026-05-11-setup-trap/chris-demo.html)
+- **`qa-deck.html`** &middot; Q&A deep-dive backup deck (15 slides, all 12 Slido questions answered with sources). [Open](https://chris1928a.github.io/eo-ai-exchange/events/01-2026-05-11-setup-trap/qa-deck.html)
+- **`fabian-demo-pai.md`** &middot; companion doc for Fabian's PAI demo (1200 words on Daniel Miessler's Life OS)
+- **`QA-CHEATSHEET.md`** &middot; panel cheatsheet in plain Markdown, the same 12 questions and answers but readable in your terminal or VS Code
 
-Click anywhere or use arrow keys to navigate. Printable as PDF via browser print dialog.
+### Behind the curtain
+
+- **`AUDIENCE-ANALYSIS.md`** &middot; pain cluster breakdown from 118 anonymized registrations (53 EO chapters, 4 continents). Drove the panel order.
+- **`README.md`** &middot; this file
+
+### Reading the decks
+
+Arrow keys to navigate, or click left/right half of the screen. Hash routing works: append `#5` to any URL to jump to slide 5. Decks are printable via your browser's print dialog (lets you take them home as PDF).
 
 ---
 
