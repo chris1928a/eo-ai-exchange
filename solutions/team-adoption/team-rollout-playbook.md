@@ -145,9 +145,9 @@ If 4 of 5 are green at month 6, you are succeeding. If 3 of 5 are red, restart P
 
 ## Anti-pattern Chris saw at ComX
 
-At ComX (80 people, sold to Flex Capital), the failed first attempt: top-down email „use ChatGPT, here is the link". 3 weeks later, 12 of 80 had logged in once.
+At ComX, the failed first attempt: top-down email „use ChatGPT, here is the link". 3 weeks later, only a handful of the team had logged in once.
 
-The successful second attempt: 5 power-users from Sales + Ops, monthly internal show-and-tell, deals attributed to AI-assisted outreach surfaced publicly. 8 weeks later, 60 of 80 active users.
+The successful second attempt: 5 power-users from Sales + Ops, monthly internal show-and-tell, deals attributed to AI-assisted outreach surfaced publicly. 8 weeks later, the majority were active users.
 
 Same company. Same tool. Different rollout method. The method is the variable.
 
@@ -179,4 +179,4 @@ Some adoption problems are not adoption problems, they are leadership problems. 
 
 ---
 
-*Author: Christoph Erler (EO Berlin), informed by ComX rollout experience (80 people). Date: 2026-05-11.*
+*Author: Christoph Erler (EO Berlin), informed by his ComX rollout experience. Date: 2026-05-11.*

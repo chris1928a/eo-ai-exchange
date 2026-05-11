@@ -131,7 +131,7 @@ All event content is shared under Chatham House Rule: share the information, not
 
 ## Hosts
 
-- **Christoph Erler** (EO Berlin), former co-founder & COO of [ComX](https://practicalfounders.com/podcast/bootstrappers-sold-modern-digital-leadgen-conservative-german-businesses-chris-erler/) ($20M ARR, sold to Flex Capital). Founder of [Erler Ventures](https://erlerventures.org).
+- **Christoph Erler** (EO Berlin), former co-founder & COO at ComX (exit). Founder of [Erler Ventures](https://erlerventures.org).
 - **Dominik Raute** (EO Berlin), CTO of JustWatch.
 - **Fabian Gless** (EO Berlin), operator and Personal AI Infrastructure (PAI) advocate.
 

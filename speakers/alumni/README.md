@@ -6,7 +6,7 @@ Past presenters at the EO AI Productivity Exchange.
 
 | Founder | Role | Demo angle | LinkedIn |
 |---|---|---|---|
-| Christoph Erler | Founder, Erler Ventures (formerly ComX co-founder + COO, 20M ARR exit to Flex Capital) | Workspace-native: 39 tools orchestrated, 23h/wk saved at 150 EUR/mo | [linkedin.com/in/christopherler](https://www.linkedin.com/in/christopherler/) |
+| Christoph Erler | Founder, Erler Ventures (former ComX co-founder + COO, exit) | Workspace-native: 39 tools orchestrated, 23h/wk saved at 150 EUR/mo | [linkedin.com/in/christopherler](https://www.linkedin.com/in/christopherler/) |
 | Dominik Raute | CTO, JustWatch | Local-first: 5-tier memory, 107-person rolodex, $0/mo | [linkedin.com/in/dominikraute](https://www.linkedin.com/in/dominikraute/) |
 | Fabian Gless | Founder, digital-verkaufen-lernen.de | Personal AI Infrastructure (PAI v5): Pulse + ISA + DA, Life OS for sales teams | [linkedin.com/in/fabian-gless](https://www.linkedin.com/in/fabian-gless/) |
 
