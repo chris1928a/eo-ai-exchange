@@ -100,10 +100,10 @@ Notable: OpenClaw users explicitly mention reliability. Some are exploring alter
 ### Cluster 8, Security / GDPR / Compliance (6%)
 
 **Trigger phrases by registrant name:**
-- **Boris Kirn (Berlin):** "GDPR and compliance with security standards"
-- **Carsten Hermann (Munich):** "Security, tool cluttering, news & updates fatigue"
-- **Dan Schwarzlmüller (Hamburg):** "using Agents in a secure way"
-- **Leonard Rego (Dubai):** "robust security, uptime and error-free functioning"
+- **Anonymous (EO Berlin):** "GDPR and compliance with security standards"
+- **Anonymous (EO Munich):** "Security, tool cluttering, news & updates fatigue"
+- **Anonymous (EO Hamburg):** "using Agents in a secure way"
+- **Anonymous (EO Dubai):** "robust security, uptime and error-free functioning"
 
 Notable: every DACH-based registrant carries implicit GDPR weight. The 6% explicit is the floor, not the ceiling.
 
@@ -112,8 +112,8 @@ Notable: every DACH-based registrant carries implicit GDPR weight. The 6% explic
 ### Cluster 9, Industry-Specific (6%)
 
 **Trigger phrases:**
-- **Dara Shortt (Ireland, eldercare):** "Scheduling and forward scheduling 1,500 plus calls daily"
-- **Yuan Min (Costa Rica, clinical):** "hard to adapt to our clinical & appointments software API and to create other agents for sales follow up, treatment follow up, AR agent"
+- **Anonymous (EO Ireland, eldercare):** "Scheduling and forward scheduling 1,500 plus calls daily"
+- **Anonymous (EO Costa Rica, clinical):** "hard to adapt to our clinical & appointments software API and to create other agents for sales follow up, treatment follow up, AR agent"
 - Multiple manufacturing, hospitality, real estate registrants
 
 **Live response:** Demo 1 (Chris) shows real estate pricing skill. [Solution: industry-healthcare-scheduling-stack.md](../../solutions/industry-healthcare/).
@@ -169,7 +169,7 @@ Notable: Fabian's pain ("Transfer to Team") puts him squarely in **Cluster 4 (Te
 1. (7 votes) Start over differently
 2. (6 votes) GDPR sensitive data
 3. (5 votes) Monthly cost honest
-4. (5 votes) Thilo Wendt: AI risk to business + investments (Thilo Wendt is a registrant, EO Berlin)
+4. (5 votes) Anonymous (EO Berlin): AI risk to business + investments (a registrant from EO Berlin)
 5. (4 votes) Cloud vs self-hosted vs local
 6. (2 votes) Claude vs Gemini in Workspace
 7. (2 votes) Pace overruns Enterprise AI
@@ -190,7 +190,7 @@ Notable: Fabian's pain ("Transfer to Team") puts him squarely in **Cluster 4 (Te
 3. **Frame "honest" early** to match the Luma tagline expectation
 4. **Lead the panel from Slido top-votes**, not the deck's question list
 5. **Tag Thilo by name** if his question comes up (he is on the registrant list, EO Berlin)
-6. **Spotlight the registrants with industry-specific pains** in the panel: Dara Shortt (eldercare scheduling), Yuan Min (clinical workflows). Reference their pain even if they do not unmute.
+6. **Spotlight the registrants with industry-specific pains** in the panel: Anonymous (EO Ireland) (eldercare scheduling), Anonymous (EO Costa Rica) (clinical workflows). Reference their pain even if they do not unmute.
 
 ---
 

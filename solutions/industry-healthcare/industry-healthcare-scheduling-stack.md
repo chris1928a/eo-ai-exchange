@@ -1,6 +1,6 @@
 # Industry Healthcare Scheduling Stack
 
-**Pain cluster:** Industry-Specific Healthcare (6+ of 85, including Dara Shortt 1.500+ calls/day eldercare scheduling and Yuan Min clinical API integration)
+**Pain cluster:** Industry-Specific Healthcare (6+ of 85, including Anonymous (EO Ireland) 1.500+ calls/day eldercare scheduling and Anonymous (EO Costa Rica) clinical API integration)
 **Status:** Released, Event #1, 2026-05-11
 **Time to read:** 15 min, time to ROI on first pilot: 30-60 days
 
@@ -10,7 +10,7 @@
 
 ## Why this exists
 
-Dara Shortt (Comfort Home Care, Ireland) registered for Event #1 with one of the most concrete pain statements of all 85 audience members: „Scheduling and forward scheduling 1,500 plus calls daily."
+Anonymous (EO Ireland) (Comfort Home Care, Ireland) registered for Event #1 with one of the most concrete pain statements of all 85 audience members: „Scheduling and forward scheduling 1,500 plus calls daily."
 
 This is not a theoretical AI question. This is „my operations are bottlenecked on phone-based scheduling and I need to halve the load while maintaining care quality."
 

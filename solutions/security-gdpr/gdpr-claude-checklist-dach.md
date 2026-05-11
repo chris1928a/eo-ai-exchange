@@ -10,7 +10,7 @@
 
 ## Why this exists
 
-4 audience members at Event #1 explicitly named GDPR/Security as their top pain (Boris Kirn, Carsten Hermann, Dan Schwarzlmüller, Leonard Rego). Plus 16+ DACH-based members for whom GDPR is implicit operational reality.
+4 audience members at Event #1 explicitly named GDPR/Security as their top pain (Anonymous, Anonymous, Anonymous, Anonymous). Plus 16+ DACH-based members for whom GDPR is implicit operational reality.
 
 The reality in 2026 is not „can I use Claude under GDPR" (yes, you can). The reality is „what do I configure to be COMPLIANT, not just legal-on-paper". This checklist is the configuration.
 

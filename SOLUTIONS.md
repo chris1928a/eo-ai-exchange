@@ -69,7 +69,7 @@ Each of the 10 clusters below comes from analysis of the 97-registration snapsho
 
 ## Pain Cluster 7, Industry-Specific Healthcare (6+ of 97)
 
-**Audience:** Dara Shortt (1.500+ calls/day eldercare scheduling), Yuan Min (clinical & appointments software API + sales/treatment/AR follow-ups), plus industry-adjacent.
+**Audience:** Anonymous (EO Ireland) (1.500+ calls/day eldercare scheduling), Anonymous (EO Costa Rica) (clinical & appointments software API + sales/treatment/AR follow-ups), plus industry-adjacent.
 
 **Trigger phrases:** „Scheduling and forward scheduling 1,500 plus calls daily", „clinical & appointments software API", „autonomous systems".
 
