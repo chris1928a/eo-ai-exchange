@@ -348,6 +348,26 @@
   .wasted-foot { font-size: 0.95rem; color: var(--muted); max-width: 75ch; line-height: 1.55; padding-top: 1.5rem; border-top: 1px solid var(--border-strong); margin-top: 1rem; }
   .wasted-foot strong { color: var(--text); font-weight: 600; }
 
+  /* BET MATH (slide 3 rewrite) */
+  .bet-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 1.5rem; }
+  .bet-cell { padding: 1.6rem 1.6rem 1.4rem; border-radius: 10px; display: flex; flex-direction: column; gap: 0.85rem; }
+  .bet-cell.skip { background: #fef2f2; border: 2px solid #fca5a5; }
+  .bet-cell.win { background: var(--accent-soft); border: 3px solid var(--accent); box-shadow: 0 4px 18px rgba(37,99,235,0.22); }
+  .bet-num { font-weight: 800; font-size: clamp(3rem, 5vw, 4.4rem); line-height: 1; letter-spacing: -0.04em; font-variant-numeric: tabular-nums; display: flex; align-items: baseline; gap: 0.35rem; flex-wrap: wrap; }
+  .bet-cell.skip .bet-num { color: #b91c1c; }
+  .bet-cell.win .bet-num { color: var(--accent); }
+  .bet-num .unit { font-size: 0.32em; font-weight: 600; color: var(--muted); letter-spacing: 0; }
+  .bet-cell.skip .bet-num .unit { color: #991b1b; }
+  .bet-label { font-weight: 700; font-size: 1.05rem; color: var(--text); letter-spacing: -0.005em; }
+  .bet-list { display: flex; flex-direction: column; gap: 0.32rem; font-size: 0.85rem; color: var(--text); line-height: 1.45; }
+  .bet-list .row { padding-left: 1rem; position: relative; }
+  .bet-list .row::before { content: '\2022'; position: absolute; left: 0.1rem; font-weight: 700; }
+  .bet-cell.skip .bet-list .row::before { color: #dc2626; }
+  .bet-cell.win .bet-list .row::before { color: var(--accent); }
+  .bet-meta { font-size: 0.74rem; color: var(--muted); padding-top: 0.5rem; border-top: 1px solid rgba(0,0,0,0.08); margin-top: auto; font-style: italic; }
+  .bet-foot { padding: 0.95rem 1.25rem; background: var(--accent-soft); border-left: 3px solid var(--accent); font-size: 0.95rem; line-height: 1.55; color: var(--text); border-radius: 4px; }
+  .bet-foot strong { color: var(--accent); font-weight: 700; }
+
   /* ========== NEW: WASTE BREAKDOWN ========== */
   .waste-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
   .waste-cell { display: grid; grid-template-columns: 5rem 1fr auto; gap: 1.5rem; padding: 1rem 1.5rem; border: 1px solid var(--border-strong); border-left: 4px solid var(--warning); align-items: baseline; }
@@ -626,15 +646,33 @@
     <div class="page-num">02 / 44</div>
   </section>
 
-  <!-- 3, HOURS WASTED HERO (NEW) -->
+  <!-- 3, THE MATH BEHIND THE BET (rewritten, was Hours Wasted) -->
   <section class="slide" id="s3">
-    <div class="label">Before the architecture</div>
-    <div class="wasted-hero">
-      <div class="wasted-num">658</div>
-      <div class="wasted-eq"><span class="strike">658 hours</span> per year. <span class="accent">12 weeks of your life</span>. Spent installing tools you stopped using.</div>
-      <p class="wasted-foot">14 hours per week. 47 working weeks. The math nobody runs because nobody wants to see it. <strong>This is the trap before the trap.</strong></p>
+    <div class="label">The math behind the bet</div>
+    <h2 class="title">Three hires not made.<br>One brain <span class="accent">doing the work</span>.</h2>
+    <div class="bet-compare">
+      <div class="bet-cell skip">
+        <div class="bet-num">12-19k<span class="unit">EUR/mo</span></div>
+        <div class="bet-label">Three personal hires I never hired</div>
+        <div class="bet-list">
+          <div class="row">EA, full-time, ~5k EUR/mo</div>
+          <div class="row">Junior Analyst, full-time, ~5k EUR/mo</div>
+          <div class="row">Content Manager, full-time, ~5k EUR/mo</div>
+        </div>
+        <div class="bet-meta">DACH gross + employer cost. The market range, not my numbers.</div>
+      </div>
+      <div class="bet-cell win">
+        <div class="bet-num">150<span class="unit">EUR/mo</span></div>
+        <div class="bet-label">The brain doing the same work</div>
+        <div class="bet-list">
+          <div class="row">Claude Pro subscription</div>
+          <div class="row">Telegram VM on AWS Lightsail Frankfurt</div>
+          <div class="row">Minor API spend across MCP tools</div>
+        </div>
+        <div class="bet-meta">All-in monthly, two years running, single seat.</div>
+      </div>
     </div>
-    <p class="sources"><strong>Sources</strong>MIT Project NANDA "The GenAI Divide" 2025 (95% pilots negative ROI) &middot; EO WhatsApp Poll, 122 votes, March 2026 &middot; Andrew van Aswegen, EO Best Guy interview April 2026 ("weeks burned on setup before any value lands")</p>
+    <p class="bet-foot"><strong>Cost ratio: ~80x to 120x.</strong> Plus zero coordination tax, zero hiring cycle, zero exit interview, zero performance review. The bet was a no-brainer once the math was on paper. The rest of tonight is what I do with the saved capacity.</p>
     <div class="brand">EO AI Exchange #1</div>
     <div class="page-num">03 / 44</div>
   </section>
