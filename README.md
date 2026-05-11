@@ -133,7 +133,7 @@ All event content is shared under Chatham House Rule: share the information, not
 
 - **Christoph Erler** (EO Berlin), former co-founder & COO at ComX (exit). Founder of [Erler Ventures](https://erlerventures.org).
 - **Dominik Raute** (EO Berlin), CTO of JustWatch.
-- **Fabian Gless** (EO Berlin), operator and Personal AI Infrastructure (PAI) advocate.
+- **Fabian Gless** (EO Berlin), founder of Die Tierversicherer (AI-enabled insurance broker, performance marketing roots). Personal AI Infrastructure (PAI) operator.
 
 ---
 
