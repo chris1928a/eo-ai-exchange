@@ -489,6 +489,27 @@
   .saveex-list .ln code { font-family: var(--mono); font-size: 0.7rem; background: white; padding: 1px 5px; border-radius: 3px; color: #1d4ed8; }
   .saverule { margin-top: 0.85rem; padding: 0.65rem 1rem; background: #fef2f2; border-left: 3px solid #dc2626; font-size: 0.74rem; color: #7f1d1d; line-height: 1.5; }
   .saverule strong { color: #991b1b; font-weight: 700; }
+
+  /* ORG MEMORIZATION (Slide 13) */
+  .orgmem { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.65rem; margin-bottom: 0.85rem; }
+  .orgmem-mode { padding: 0.75rem 0.85rem; border-radius: 6px; border-top: 3px solid; display: flex; flex-direction: column; gap: 0.3rem; }
+  .orgmem-mode.manual { background: #fef3c7; border-color: #d97706; }
+  .orgmem-mode.ai { background: #ede9fe; border-color: #7c3aed; }
+  .orgmem-mode.auto { background: #dcfce7; border-color: #16a34a; }
+  .orgmem-tag { font-size: 0.55rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #71717a; }
+  .orgmem-h { font-weight: 700; font-size: 0.82rem; color: var(--text); letter-spacing: -0.005em; line-height: 1.25; }
+  .orgmem-list { display: flex; flex-direction: column; gap: 0.2rem; padding-top: 0.2rem; }
+  .orgmem-item { font-size: 0.66rem; color: var(--text); line-height: 1.4; padding-left: 0.85rem; position: relative; }
+  .orgmem-item:before { content: '\2192'; position: absolute; left: 0; font-weight: 700; }
+  .orgmem-mode.manual .orgmem-item:before { color: #d97706; }
+  .orgmem-mode.ai .orgmem-item:before { color: #7c3aed; }
+  .orgmem-mode.auto .orgmem-item:before { color: #16a34a; }
+  .orgmem-item code { font-family: var(--mono); font-size: 0.62rem; background: rgba(255,255,255,0.6); padding: 1px 3px; border-radius: 3px; }
+  .orgmem-dest { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.08em; color: #52525b; padding-top: 0.35rem; border-top: 1px solid rgba(0,0,0,0.08); margin-top: 0.3rem; text-transform: uppercase; }
+  .orgstat { display: flex; align-items: center; gap: 1.25rem; padding: 0.75rem 1.1rem; background: #1d1d1f; color: white; border-radius: 6px; margin-bottom: 0.85rem; }
+  .orgstat-n { font-weight: 700; font-size: 2rem; color: #f87171; line-height: 1; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+  .orgstat-t { font-size: 0.82rem; color: #e4e4e7; line-height: 1.4; }
+  .orgstat-t strong { color: white; font-weight: 600; }
   .gt-skills { background: #1d4ed8; color: white; border-left: 2px dashed rgba(255,255,255,0.25); }
   .gt-skills .gt-layer-r { border-left: 2px dashed rgba(255,255,255,0.25); }
   .gt-skills .gt-tag, .gt-skills .gt-trace-h { color: #93c5fd; }
@@ -582,7 +603,7 @@
     <p class="cover-sub">From a personal AI twin to organizational brains. One pattern, two scales. The hours saved, the hires never made, and the master template you fork tonight.</p>
     <p class="cover-meta"><span class="who">Christoph Erler</span><span class="when">EO AI Exchange #1 &middot; May 11, 2026</span></p>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">01 / 43</div>
+    <div class="page-num">01 / 44</div>
   </section>
 
   <!-- 2, ORIGIN -->
@@ -599,7 +620,7 @@
       </div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">02 / 43</div>
+    <div class="page-num">02 / 44</div>
   </section>
 
   <!-- 3, HOURS WASTED HERO (NEW) -->
@@ -612,7 +633,7 @@
     </div>
     <p class="sources"><strong>Sources</strong>MIT Project NANDA "The GenAI Divide" 2025 (95% pilots negative ROI) &middot; EO WhatsApp Poll, 122 votes, March 2026 &middot; Andrew van Aswegen, EO Best Guy interview April 2026 ("weeks burned on setup before any value lands")</p>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">03 / 43</div>
+    <div class="page-num">03 / 44</div>
   </section>
 
   <!-- 4, WASTE BREAKDOWN (NEW) -->
@@ -656,7 +677,7 @@
       <div class="totalh">14h<small>/ wk</small></div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">04 / 43</div>
+    <div class="page-num">04 / 44</div>
   </section>
 
   <!-- 5, MY 25% DIGITAL TWIN -->
@@ -671,7 +692,7 @@
     </div>
     <p class="origin-quote" style="margin-top:3rem;font-size:clamp(1.05rem,1.4vw,1.3rem);">Replaces what would otherwise cost <strong>8 to 12K EUR per month</strong> in three hires (content manager, virtual assistant, research analyst). Payback in <span class="accent">4 to 5 months</span> including 200h setup time.</p>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">05 / 43</div>
+    <div class="page-num">05 / 44</div>
   </section>
 
   <!-- 6, BUILDING 1: PERSONAL DEEP -->
@@ -723,7 +744,7 @@
       </div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">06 / 43</div>
+    <div class="page-num">06 / 44</div>
   </section>
 
   <!-- 7, DAY IN THE LIFE - TIME SAVINGS TABLE -->
@@ -812,7 +833,7 @@
     </table>
     <div class="time-foot">Tracked over 8 weeks (March-April 2026). Personal admin + ops + advisory work for clients = <strong>~23h per week reclaimed.</strong> Real tasks. Real frequencies. Real outputs.</div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">07 / 43</div>
+    <div class="page-num">07 / 44</div>
   </section>
 
   <!-- 8, MY MOST HELPFUL SKILLS -->
@@ -887,7 +908,7 @@
     </div>
     <div class="share-foot">All eight in production, version-controlled in /skills/. The five most portable get forked at the end of tonight.</div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">08 / 43</div>
+    <div class="page-num">08 / 44</div>
   </section>
 
   <!-- 9, MY PERSONAL BRAIN, 4-LAYER WITH /weekly-review EXAMPLE -->
@@ -950,7 +971,7 @@
     </div>
     <div class="gt-bottom"><strong>Same shape as your own brain.</strong> Just persistent, queryable, and version-controlled. 23h saved per week. <span style="color:var(--accent);">Next slide: what happens after each session, how the brain saves what I just learned.</span></div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">09 / 43</div>
+    <div class="page-num">09 / 44</div>
   </section>
 
   <!-- 10, MEMORIZATION 4 LAYERS (after each session) -->
@@ -1038,7 +1059,7 @@
     </div>
     <div class="saverule"><strong>The rule:</strong> no layer auto-feeds another. <code>/audit-memory</code> + <code>/audit-skill</code> run weekly to catch drift. Memory is the cache. Notion + GitHub + Drive are the truth. Mixing them creates the April 2026 13-month-drift incident I never want to repeat.</div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">10 / 43</div>
+    <div class="page-num">10 / 44</div>
   </section>
 
   <!-- 11, PIVOT HERO (NEW) -->
@@ -1050,7 +1071,7 @@
       <p class="pivot-sub">My personal twin handles 25% of my own work. Then I realized: the same Markdown skills, the same harness, the same deterministic glue, can be deployed for an entire team. <strong>Personal Brain to Org Brain. Same architecture, different scale.</strong></p>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">11 / 43</div>
+    <div class="page-num">11 / 44</div>
   </section>
 
   <!-- 12, ORG BRAIN, same four parts as Personal -->
@@ -1113,10 +1134,78 @@
     </div>
     <div class="gt-bottom"><strong>Same shape, scaled to a team.</strong> Personal Brain runs on a Mac at 150 EUR/mo. Org Brain runs in the cloud at under 1k EUR/mo. The brain belongs to the org, not to the operator.</div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">12 / 43</div>
+    <div class="page-num">12 / 44</div>
   </section>
 
-  <!-- 13, 3-PYRAMID COMPARISON SVG (the WOW visual) -->
+  <!-- 13, ORG MEMORIZATION (how the org actually remembers) -->
+  <section class="slide" id="s12b">
+    <div class="label">An organization remembering</div>
+    <h2 class="title">How an org <span class="accent">actually</span> remembers.<small>Most orgs lose memory in Slack threads, calls, and email. The standard fix in 2026: two capture modes. Humans update what needs judgment. Cron captures what does not. AI bridges them. Destination is always Notion, GitHub, or Drive, never a single operator&apos;s head.</small></h2>
+
+    <div class="orgstat">
+      <div class="orgstat-n">80%</div>
+      <div class="orgstat-t">of org memory dies in Slack, email, and meetings. The remaining 20 percent lives in stale Notion pages no one trusts. <strong>This pattern catches both.</strong></div>
+    </div>
+
+    <div class="orgmem">
+      <div class="orgmem-mode manual">
+        <div class="orgmem-tag">Mode 1 &middot; Humans update</div>
+        <div class="orgmem-h">For anything that needs judgment.</div>
+        <div class="orgmem-list">
+          <div class="orgmem-item">Strategy decisions (the why)</div>
+          <div class="orgmem-item">People insights (this customer trusts us because...)</div>
+          <div class="orgmem-item">Postmortems and retros</div>
+          <div class="orgmem-item">ICP and voice-of-customer interpretation</div>
+          <div class="orgmem-item">Architectural decisions (ADRs)</div>
+          <div class="orgmem-item">Onboarding and role descriptions</div>
+        </div>
+        <div class="orgmem-dest">Notion (truth)</div>
+      </div>
+      <div class="orgmem-mode ai">
+        <div class="orgmem-tag">Mode 2 &middot; AI extracts</div>
+        <div class="orgmem-h">Where unstructured becomes structured.</div>
+        <div class="orgmem-list">
+          <div class="orgmem-item">Meeting transcript <code>&rarr;</code> action items <code>&rarr;</code> People Page</div>
+          <div class="orgmem-item">Customer call <code>&rarr;</code> voice-of-customer <code>&rarr;</code> ICP refresh</div>
+          <div class="orgmem-item">Slack thread <code>&rarr;</code> decision log <code>&rarr;</code> Decisions Page</div>
+          <div class="orgmem-item">Email thread <code>&rarr;</code> relationship update</div>
+          <div class="orgmem-item">Recurring pattern <code>&rarr;</code> new skill candidate</div>
+        </div>
+        <div class="orgmem-dest">Notion + GitHub (skill candidates)</div>
+      </div>
+      <div class="orgmem-mode auto">
+        <div class="orgmem-tag">Mode 3 &middot; Cron captures</div>
+        <div class="orgmem-h">For state that should never depend on a human typing.</div>
+        <div class="orgmem-list">
+          <div class="orgmem-item">Code commits (Git hooks)</div>
+          <div class="orgmem-item">Deal pipeline state (CRM API pull)</div>
+          <div class="orgmem-item">Time tracking (Moco/Toggl)</div>
+          <div class="orgmem-item">Support tickets (Zendesk events)</div>
+          <div class="orgmem-item">Billing events (Stripe webhook)</div>
+          <div class="orgmem-item">Call recordings (Fathom/Granola)</div>
+        </div>
+        <div class="orgmem-dest">GitHub (code) + Drive (originals) + Notion (state)</div>
+      </div>
+    </div>
+
+    <div class="saveex">
+      <div class="saveex-h">Real flow<br>12-person agency, morning cron</div>
+      <div class="saveex-list">
+        <div class="ln"><span class="lbl">06:00</span><span>Cron picks up yesterday&apos;s call recordings, Slack threads, and Linear updates.</span></div>
+        <div class="ln"><span class="lbl">06:05</span><span><code>/audit-call</code> + <code>/audit-process</code> extract action items, voice-of-customer, decision signals.</span></div>
+        <div class="ln"><span class="lbl">06:10</span><span>Drafts written to Notion per-customer + per-meeting page. Marked for human review.</span></div>
+        <div class="ln"><span class="lbl">08:30</span><span>Founder reviews top 3 in morning brief, 10 min total. Approves or edits, commits.</span></div>
+        <div class="ln"><span class="lbl">Weekly</span><span><code>/audit-org-memory</code> flags drift, surfaces skill candidates if a pattern repeats.</span></div>
+      </div>
+    </div>
+
+    <div class="saverule"><strong>The 2026 standard:</strong> 80 percent of capture is automated. 20 percent of curation stays human. The 20 is where org judgment lives. The 80 is where org reality lives. Both must be true for the org to actually remember, not just to claim it does.</div>
+
+    <div class="brand">EO AI Exchange #1</div>
+    <div class="page-num">13 / 44</div>
+  </section>
+
+  <!-- 14, 3-PYRAMID COMPARISON SVG (the WOW visual) -->
   <section class="slide" id="s13">
     <div class="label">The pattern, side by side</div>
     <h2 class="title">Three bodies. <span class="accent">One brain pattern.</span><small>Long-term memory plus skills on top. Working brain in the middle. Body of tools at the bottom. I run this across one personal life and two organizations. Same shape every time, different deployment surface.</small></h2>
@@ -1157,7 +1246,7 @@
       </div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">13 / 43</div>
+    <div class="page-num">14 / 44</div>
   </section>
 
   <!-- 14, BUILDING 2: ANONYMIZED AGENCY DEEP -->
@@ -1212,7 +1301,7 @@
       </div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">14 / 43</div>
+    <div class="page-num">15 / 44</div>
   </section>
 
   <!-- 15, AGENCY ARCHITECTURE SVG -->
@@ -1272,7 +1361,7 @@
       </svg>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">15 / 43</div>
+    <div class="page-num">16 / 44</div>
   </section>
 
   <!-- 16, BUILDING 3: RC DEEP -->
@@ -1319,7 +1408,7 @@
       </div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">16 / 43</div>
+    <div class="page-num">17 / 44</div>
   </section>
 
   <!-- 17, RC ARCHITECTURE SVG -->
@@ -1386,7 +1475,7 @@
       </svg>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">17 / 43</div>
+    <div class="page-num">18 / 44</div>
   </section>
 
   <!-- Slides 18 + 19 (Best Guy Deep + Architecture) removed 2026-05-11 -->
@@ -1433,7 +1522,7 @@
     </table>
     <div class="hc-foot">Read the bottom row. <strong>6 hires worth 420-590k EUR</strong> never happened, because the brain replaces what those people would have done. That is what scales.</div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">18 / 43</div>
+    <div class="page-num">19 / 44</div>
   </section>
 
   <!-- 19, WOW NUMBER HERO (formerly 21) -->
@@ -1446,7 +1535,7 @@
       <p class="wow-foot">This is what scales. Not the number. <strong>The fact that it is the same blueprint.</strong> And tonight, on GitHub, the blueprint becomes yours.</p>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">19 / 43</div>
+    <div class="page-num">20 / 44</div>
   </section>
 
   <!-- 22, MASTER TEMPLATE GIFT -->
@@ -1462,7 +1551,7 @@
       </div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">20 / 43</div>
+    <div class="page-num">21 / 44</div>
   </section>
 
   <!-- 23, 5 SHAREABLE SKILLS -->
@@ -1521,7 +1610,7 @@
     </div>
     <div class="share-foot">$ git clone github.com/chris1928a/eo-ai-exchange &amp;&amp; cd skills/ &amp;&amp; cat MASTER_TEMPLATE.md</div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">21 / 43</div>
+    <div class="page-num">22 / 44</div>
   </section>
 
   <!-- 24, TAKE-AWAYS -->
@@ -1539,7 +1628,7 @@
       <div class="origin-quote" style="font-size:clamp(1rem,1.35vw,1.2rem);"><span class="accent">&rarr;</span> &nbsp; Audit is one day. Repair is one or two. Lock-in is forever.</div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">22 / 43</div>
+    <div class="page-num">23 / 44</div>
   </section>
 
   <!-- 25, APPENDIX DIVIDER -->
@@ -1551,7 +1640,7 @@
       <p class="pivot-sub" style="text-align: center; align-self: center;">The 20 slides that follow are the receipts: how every layer of my Personal Brain is actually built. Skip if Slido is hot. Open if Q&amp;A goes deep.</p>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">23 / 43</div>
+    <div class="page-num">24 / 44</div>
   </section>
 
   <!-- 26, STACK MAP -->
@@ -1579,7 +1668,7 @@
     </div>
     <p class="stack-foot">Push intelligence <span class="accent">up</span> into Skills. Push execution <span class="accent">down</span> into deterministic tools. Keep the harness <span class="accent">thin</span>.</p>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">24 / 43</div>
+    <div class="page-num">25 / 44</div>
   </section>
 
   <!-- 27, GITHUB -->
@@ -1605,7 +1694,7 @@
       </div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">25 / 43</div>
+    <div class="page-num">26 / 44</div>
   </section>
 
   <!-- 28, NOTION -->
@@ -1630,7 +1719,7 @@
       </div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">26 / 43</div>
+    <div class="page-num">27 / 44</div>
   </section>
 
   <!-- 29, DRIVE -->
@@ -1654,7 +1743,7 @@
       </div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">27 / 43</div>
+    <div class="page-num">28 / 44</div>
   </section>
 
   <!-- 30, SKILLS OVERVIEW -->
@@ -1724,7 +1813,7 @@
       </div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">28 / 43</div>
+    <div class="page-num">29 / 44</div>
   </section>
 
   <!-- 31, HOW I BUILD A SKILL -->
@@ -1759,7 +1848,7 @@
     </div>
     <p class="build-rule"><span class="accent">The test:</span> if I have to ask my system for the same thing twice, <strong>I failed</strong>. Not the model. Me, for not codifying it the first time.</p>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">29 / 43</div>
+    <div class="page-num">30 / 44</div>
   </section>
 
   <!-- 32, MOST VALUABLE: ev-assistant -->
@@ -1806,7 +1895,7 @@ German Umlaute mandatory. No em-dashes.
 Voice match exact. No vendor pitch tone.</div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">30 / 43</div>
+    <div class="page-num">31 / 44</div>
   </section>
 
   <!-- 33, ev-assistant LIVE TRACE -->
@@ -1837,7 +1926,7 @@ Voice match exact. No vendor pitch tone.</div>
     </div>
     <p class="sources"><strong>What is real here:</strong>the trigger, the skill load chain, the voice. <strong>What is illustrative:</strong>the prospect name and PortCo (anonymized for the talk).</p>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">31 / 43</div>
+    <div class="page-num">32 / 44</div>
   </section>
 
   <!-- 34, ICP DEEP-DIVE -->
@@ -1872,7 +1961,7 @@ Voice match exact. No vendor pitch tone.</div>
     </div>
     <p class="origin-quote" style="margin-top:1.5rem;font-size:clamp(0.95rem,1.3vw,1.15rem);"><span class="accent">The bridge is the same operating system.</span> What changes is who I sell it to: the PE OP buys it as risk-reduction, the founder buys it as personal liberation.</p>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">32 / 43</div>
+    <div class="page-num">33 / 44</div>
   </section>
 
   <!-- 35, SERVICE ARCHITECTURE -->
@@ -1910,7 +1999,7 @@ Voice match exact. No vendor pitch tone.</div>
     </div>
     <p class="origin-quote" style="margin-top:1.5rem;font-size:clamp(0.95rem,1.3vw,1.15rem);">Same operating system, three buyer-pain frames. <strong>The skill knows which one to load</strong> based on prospect signal.</p>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">33 / 43</div>
+    <div class="page-num">34 / 44</div>
   </section>
 
   <!-- 36, VOICE RULES -->
@@ -1939,7 +2028,7 @@ Voice match exact. No vendor pitch tone.</div>
     </div>
     <p class="sources"><strong>Built up over 30 days:</strong>~60 banned words now, started at 20. The skill audits its own drafts and self-corrects before final output.</p>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">34 / 43</div>
+    <div class="page-num">35 / 44</div>
   </section>
 
   <!-- 37, MEMORY OVERVIEW -->
@@ -1958,7 +2047,7 @@ Voice match exact. No vendor pitch tone.</div>
     </div>
     <p class="origin-quote" style="margin-top:1rem;font-size:clamp(0.95rem,1.3vw,1.15rem);">Each file is a 1-page judgment, distilled from dozens of documents. <strong>Loaded by skill on demand, never all at once.</strong> The MEMORY.md index file is 60 lines, points at relevant memory by topic.</p>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">35 / 43</div>
+    <div class="page-num">36 / 44</div>
   </section>
 
   <!-- 38, MEMORY FILE EXAMPLE -->
@@ -1999,7 +2088,7 @@ Stephan ueberlegt Pfade. Gefragt nach Empfehlung.
       </div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">36 / 43</div>
+    <div class="page-num">37 / 44</div>
   </section>
 
   <!-- 39, CLAUDE CODE HARNESS -->
@@ -2023,7 +2112,7 @@ Stephan ueberlegt Pfade. Gefragt nach Empfehlung.
       </div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">37 / 43</div>
+    <div class="page-num">38 / 44</div>
   </section>
 
   <!-- 40, TELEGRAM INTERFACE -->
@@ -2050,7 +2139,7 @@ Stephan ueberlegt Pfade. Gefragt nach Empfehlung.
       </div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">38 / 43</div>
+    <div class="page-num">39 / 44</div>
   </section>
 
   <!-- 41, CRON WORKFLOWS -->
@@ -2090,7 +2179,7 @@ Stephan ueberlegt Pfade. Gefragt nach Empfehlung.
       </div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">39 / 43</div>
+    <div class="page-num">40 / 44</div>
   </section>
 
   <!-- 42, ANTI-PATTERNS -->
@@ -2121,7 +2210,7 @@ Stephan ueberlegt Pfade. Gefragt nach Empfehlung.
     </div>
     <p class="sources"><strong>Sources</strong>Boris Cherny (Anthropic) on agentic search &middot; Karpathy LLM Wiki Pattern, April 2026 &middot; my own Brain v3.5 audit, April 27 2026</p>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">40 / 43</div>
+    <div class="page-num">41 / 44</div>
   </section>
 
   <!-- 43, COMPARISON MATRIX -->
@@ -2155,7 +2244,7 @@ Stephan ueberlegt Pfade. Gefragt nach Empfehlung.
     <p class="origin-quote" style="margin-top:1.25rem;font-size:clamp(0.92rem,1.25vw,1.1rem);">Solo-founder setups converge on <strong>Markdown + Skills + agentic search</strong>. Vector-DB is for 10K+ unstructured files. <span class="accent">If your volume fits in your head, your brain fits in Markdown.</span></p>
     <p class="sources"><strong>Sources</strong>Industry brain repos &middot; Karpathy LLM Wiki gist &middot; Boris Cherny (Anthropic), "Claude Code uses agentic search, not vectors", April 2025</p>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">41 / 43</div>
+    <div class="page-num">42 / 44</div>
   </section>
 
   <!-- 44, BRAIN PATTERN ALIGNMENT -->
@@ -2184,7 +2273,7 @@ Stephan ueberlegt Pfade. Gefragt nach Empfehlung.
     </div>
     <p class="gt-foot"><strong>Net:</strong> The industry pattern is the foundation. <span class="accent">My differences come from being a multi-domain operator (real estate + content + ventures + aviation) who lives outside of Mountain View.</span> The architecture is identical, the surface area is wider.</p>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">42 / 43</div>
+    <div class="page-num">43 / 44</div>
   </section>
 
   <!-- 45, THE 30-DAY SPRINT -->
@@ -2219,7 +2308,7 @@ Stephan ueberlegt Pfade. Gefragt nach Empfehlung.
     </div>
     <p class="origin-quote" style="margin-top:1.25rem;font-size:clamp(0.95rem,1.3vw,1.15rem);">Audit is <strong>one day</strong>. Migration is <strong>one day</strong>. Documentation is <strong>one day</strong>. <span class="accent">The cost of architecture drift is always shorter to fix than to live with.</span></p>
     <div class="brand">EO AI Exchange #1</div>
-    <div class="page-num">43 / 43</div>
+    <div class="page-num">44 / 44</div>
   </section>
 
 </div>
