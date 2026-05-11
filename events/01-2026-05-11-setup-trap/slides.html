@@ -360,6 +360,11 @@
   .gh-url .url { font-weight: 600; font-size: clamp(1.1rem, 2vw, 1.75rem); color: var(--text); letter-spacing: -0.02em; }
 
   /* CLOSING */
+  .close-ask { padding: 1.1rem 1.6rem; background: linear-gradient(135deg, var(--accent) 0%, var(--accent-deep) 100%); color: white; border-radius: 10px; margin: 0.5rem 0 1.75rem; display: flex; flex-direction: column; gap: 0.4rem; box-shadow: 0 6px 22px rgba(37,99,235,0.28); }
+  .close-ask-lbl { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.88; }
+  .close-ask-q { font-size: clamp(1.4rem, 2.4vw, 2.1rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; }
+  .close-ask-sub { font-size: 0.85rem; opacity: 0.9; font-weight: 500; line-height: 1.4; }
+
   .close-h { font-weight: 600; font-size: clamp(2.75rem, 5.5vw, 5rem); line-height: 1.05; letter-spacing: -0.045em; margin-bottom: 0.75rem; }
   .close-h .l1 { color: var(--text); display: block; }
   .close-h .l2 { color: var(--accent); display: block; font-weight: 700; }
@@ -968,12 +973,16 @@
       <span class="l1">You name the pain.</span>
       <span class="l2">We build the skill.</span>
     </div>
-    <p class="close-cad">30 to 90 days. Then again.</p>
+    <div class="close-ask">
+      <div class="close-ask-lbl">Right now, drop in the chat</div>
+      <div class="close-ask-q">What should the next exchange be about?</div>
+      <div class="close-ask-sub">Topic + one line why. Top votes drive Event #2. Slido also stays open for 24 hours.</div>
+    </div>
     <div class="close-grid">
       <div class="close-cell"><div class="num">10</div><div class="lbl">Pain Clusters</div><div class="d">from 118 registrations</div></div>
       <div class="close-cell"><div class="num">11</div><div class="lbl">Solutions live</div><div class="d">on GitHub tonight, MIT</div></div>
-      <div class="close-cell"><div class="num">#2</div><div class="lbl">Event #2</div><div class="d">topic picked by your Slido vote</div></div>
-      <div class="close-cell"><div class="num">&infin;</div><div class="lbl">Cadence</div><div class="d">market-reactive, not quarterly</div></div>
+      <div class="close-cell"><div class="num">30-90</div><div class="lbl">Days cadence</div><div class="d">market-reactive, not quarterly</div></div>
+      <div class="close-cell"><div class="num">&infin;</div><div class="lbl">Series</div><div class="d">your pain, our skill, every time</div></div>
     </div>
     <div class="close-bottom">
       <div><div class="lbl">Slido open 24h</div><div class="v acc">#3261743</div></div>
