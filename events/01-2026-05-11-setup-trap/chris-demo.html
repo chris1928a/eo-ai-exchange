@@ -209,7 +209,7 @@
   .matrix .yes { color: var(--success); font-weight: 600; }
   .matrix .no { color: var(--faint); }
 
-  /* Garry Tan compare */
+  /* Industry compare */
   .gt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
   .gt-col { display: flex; flex-direction: column; gap: 0.6rem; }
   .gt-col-h { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding-bottom: 0.4rem; border-bottom: 2px solid; }
@@ -451,7 +451,7 @@
   .share-foot { margin-top: 0.85rem; padding: 0.65rem 1rem; background: var(--code-bg); border-left: 3px solid var(--text); font-family: var(--mono); font-size: 0.72rem; color: var(--text); line-height: 1.45; }
 
   /* ========== NEW: SCREENSHOT PLACEHOLDER ========== */
-  /* GARRY TAN STACK - Personal + Org Brain */
+  /* BRAIN STACK - Personal + Org Brain */
   .gt-stack { display: flex; flex-direction: column; gap: 0; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
   .gt-layer { display: grid; grid-template-columns: 0.62fr 1fr; gap: 0; padding: 0.95rem 1.5rem; align-items: center; }
   .gt-layer-l { display: flex; flex-direction: column; gap: 0.25rem; padding-right: 1.25rem; }
@@ -805,7 +805,7 @@
         <div class="sbody">
           <div class="scmd">/diarize-person</div>
           <div class="sname">1-page stakeholder dossier</div>
-          <div class="swhat">Reads all my history with a person, outputs profile. Use before any meeting. <strong>Garry Tan&apos;s knowledge lever.</strong></div>
+          <div class="swhat">Reads all my history with a person, outputs profile. Use before any meeting. <strong>The knowledge-work lever.</strong></div>
         </div>
       </div>
       <div class="share-skill">
@@ -864,31 +864,31 @@
 
   <!-- 9, MY PERSONAL BRAIN, 4-LAYER WITH /weekly-review EXAMPLE -->
   <section class="slide" id="s9">
-    <div class="label">My Personal Brain &middot; live trace of /weekly-review</div>
-    <h2 class="title">Garry Tan&apos;s 3 layers, mapped to <span class="accent">my Personal Brain</span>.<small>Fat skills on top, thin harness in the middle, deterministic tools at the bottom. Right column shows what happens when /weekly-review runs at Friday 17:00. Real files, real paths, real outputs.</small></h2>
+    <div class="label">My Personal Brain &middot; how it works</div>
+    <h2 class="title">A brain has four parts. <span class="accent">So does mine.</span><small>Long-term memory holds everything you might ever need. Short-term memory loads the right bit for the moment. Working memory thinks. The body acts. Right column shows what happens when /weekly-review fires on Friday at 17:00.</small></h2>
     <div class="gt-stack">
       <div class="gt-layer gt-skills">
         <div class="gt-layer-l">
-          <div class="gt-tag">Layer 1 &middot; Fat Skills + Memory</div>
-          <div class="gt-name">90 percent of the value.</div>
-          <div class="gt-desc">Markdown procedures with judgment, plus the deep archive of everything I might ever need.</div>
-          <div class="gt-desc"><strong>19 skills</strong> + <strong>125 .md files</strong> + 7 property folders + 18 mo Notion + 6 yr email + all Drive + GitHub history.</div>
+          <div class="gt-tag">Layer 1 &middot; Long-term Memory</div>
+          <div class="gt-name">What I might ever need to know.</div>
+          <div class="gt-desc">Like your childhood, your skills, your contacts. Always there, never actively recalled until needed.</div>
+          <div class="gt-desc"><strong>19 skills</strong> + <strong>125 memory files</strong> + 7 property folders + 18 months Notion + 6 years email + all Drive + GitHub history.</div>
         </div>
         <div class="gt-layer-r">
-          <div class="gt-trace-h">Trace, Friday 17:00</div>
-          <div class="gt-trace-l">Cron fires. Skill <strong>/weekly-review</strong> requested.</div>
+          <div class="gt-trace-h">Friday 17:00</div>
+          <div class="gt-trace-l">Cron fires. The skill <strong>/weekly-review</strong> is requested.</div>
           <div class="gt-trace-l">Deep archive stays put. Only the relevant slice will load.</div>
         </div>
       </div>
       <div class="gt-layer gt-resolvers">
         <div class="gt-layer-l">
-          <div class="gt-tag">Layer 2 &middot; Resolvers</div>
-          <div class="gt-name">CLAUDE.md, 200 lines of pointers.</div>
-          <div class="gt-desc">Routing table. Says which skill triggers when, which memory files to load for this task.</div>
-          <div class="gt-desc">Garry Tan&apos;s rule: pointer-only, never the content itself.</div>
+          <div class="gt-tag">Layer 2 &middot; Short-term Memory</div>
+          <div class="gt-name">What I just loaded for this task.</div>
+          <div class="gt-desc">Like the phone number you just looked up. Held in the front of your mind, just long enough to use it.</div>
+          <div class="gt-desc">Only the files this run actually needs. Loaded by the routing table in CLAUDE.md.</div>
         </div>
         <div class="gt-layer-r">
-          <div class="gt-trace-h">Resolves to</div>
+          <div class="gt-trace-h">Loaded for this run</div>
           <div class="gt-trace-l">/skills/weekly-review.md</div>
           <div class="gt-trace-l">/memory/hat_system.md, /memory/current_priorities.md</div>
           <div class="gt-trace-l">7 hat-status files, last week&apos;s Friday note</div>
@@ -896,34 +896,34 @@
       </div>
       <div class="gt-layer gt-harness">
         <div class="gt-layer-l">
-          <div class="gt-tag">Layer 3 &middot; Thin Harness</div>
-          <div class="gt-name">Claude Code, ~200 lines.</div>
-          <div class="gt-desc">Four jobs only: model loop, file I/O, context window, safety. No business logic, no judgment.</div>
-          <div class="gt-desc">Runs on my Lightsail VM, read-only by default.</div>
+          <div class="gt-tag">Layer 3 &middot; Working Memory</div>
+          <div class="gt-name">What I think with, right now.</div>
+          <div class="gt-desc">Like your inner voice while you read this. Active, in-the-moment reasoning. Decides what to do, when, and how.</div>
+          <div class="gt-desc">Claude Code on my Lightsail VM. Read-only by default. Stores nothing.</div>
         </div>
         <div class="gt-layer-r">
-          <div class="gt-trace-h">Working memory, right now</div>
-          <div class="gt-trace-l">Loads resolved files, reasons across 6 hats</div>
+          <div class="gt-trace-h">Thinking, right now</div>
+          <div class="gt-trace-l">Reads the loaded files, reasons across 6 hats</div>
           <div class="gt-trace-l">Ranks open threads, flags decay, drafts the Friday note</div>
-          <div class="gt-trace-l">Stores nothing. Next run starts fresh.</div>
+          <div class="gt-trace-l">When done, next run starts fresh</div>
         </div>
       </div>
       <div class="gt-layer gt-app">
         <div class="gt-layer-l">
-          <div class="gt-tag">Layer 4 &middot; Deterministic Application</div>
-          <div class="gt-name">39 Workspace tools, real APIs.</div>
-          <div class="gt-desc">No judgment, no vibes. Predictable mechanics. Real-world execution.</div>
-          <div class="gt-desc">Gmail, Calendar, Notion, Drive, Holidu, Close, GitHub, Telegram, ~30 more.</div>
+          <div class="gt-tag">Layer 4 &middot; Body</div>
+          <div class="gt-name">What I actually do.</div>
+          <div class="gt-desc">Like your hands typing, your voice speaking. Predictable, real-world execution.</div>
+          <div class="gt-desc">39 Workspace tools: Gmail, Calendar, Notion, Drive, Holidu, Close, GitHub, Telegram, ~30 more.</div>
         </div>
         <div class="gt-layer-r">
-          <div class="gt-trace-h">Body executes</div>
-          <div class="gt-trace-l">Writes Friday note to /memory/friday-notes/</div>
-          <div class="gt-trace-l">Pushes 1-page digest to Telegram</div>
+          <div class="gt-trace-h">Body acts</div>
+          <div class="gt-trace-l">Writes the Friday note to /memory/friday-notes/</div>
+          <div class="gt-trace-l">Pushes a 1-page digest to my Telegram</div>
           <div class="gt-trace-l">Archives stale threads, flags 3 decisions for Monday</div>
         </div>
       </div>
     </div>
-    <div class="gt-bottom"><strong>One Garry Tan pattern.</strong> Skills compound, harness stays thin, application stays dumb. 23h saved per week, same architecture as the Org Brain on the next slide.</div>
+    <div class="gt-bottom"><strong>Same shape as your own brain.</strong> Just persistent, queryable, and version-controlled. 23h saved per week. Next slide: the same four parts at organization scale.</div>
     <div class="brand">EO AI Exchange #1</div>
     <div class="page-num">09 / 43</div>
   </section>
@@ -1003,68 +1003,68 @@
     <div class="page-num">11 / 43</div>
   </section>
 
-  <!-- 12, ORG BRAIN, GARRY TAN LAYERS WITH /audit-process EXAMPLE -->
+  <!-- 12, ORG BRAIN, same four parts as Personal -->
   <section class="slide" id="s12">
-    <div class="label">An Org Brain &middot; live trace of /audit-process</div>
-    <h2 class="title">Same 3 layers, this time at <span class="accent">team scale</span>.<small>The org has its own institutional memory, not borrowed from any operator. Skills travel between people. The harness moves to the cloud. Tools become the team&apos;s shared APIs. Right column shows what happens when a founder runs /audit-process.</small></h2>
+    <div class="label">An Org Brain &middot; how it works</div>
+    <h2 class="title">An organization has a brain too. <span class="accent">Same four parts.</span><small>Long-term memory is what the org has ever decided, written, or recorded. Short-term memory is what the team loads for this question. Working memory thinks. The body acts. Right column shows what happens when a founder asks the brain to audit 17 processes.</small></h2>
     <div class="gt-stack">
       <div class="gt-layer gt-skills">
         <div class="gt-layer-l">
-          <div class="gt-tag">Layer 1 &middot; Org Skills + Institutional Memory</div>
-          <div class="gt-name">The team&apos;s compounding asset.</div>
-          <div class="gt-desc">Org IP, version-controlled. Skills survive a person leaving. Memory survives a quarter ending.</div>
-          <div class="gt-desc"><strong>10 org skills</strong> + 17 process docs + 3 yr customer archive + Slack history + Moco time-tracking + Dropbox originals.</div>
+          <div class="gt-tag">Layer 1 &middot; Long-term Memory of the Org</div>
+          <div class="gt-name">Everything the org has ever done.</div>
+          <div class="gt-desc">Like a company&apos;s tribal knowledge, except actually written down. Survives a person leaving. Survives a quarter ending.</div>
+          <div class="gt-desc"><strong>10 org skills</strong> + 17 process docs + 3 years of customer engagements + Slack history + Moco time-tracking + Dropbox originals.</div>
         </div>
         <div class="gt-layer-r">
-          <div class="gt-trace-h">Trace, founder request</div>
+          <div class="gt-trace-h">Founder request</div>
           <div class="gt-trace-l">Founder: <strong>&ldquo;Audit our 17 processes for the next ops hire.&rdquo;</strong></div>
-          <div class="gt-trace-l">3 yr archive stays put. Only the relevant slice will load.</div>
+          <div class="gt-trace-l">Archive stays put. Only the relevant slice will load.</div>
         </div>
       </div>
       <div class="gt-layer gt-resolvers">
         <div class="gt-layer-l">
-          <div class="gt-tag">Layer 2 &middot; Resolvers</div>
-          <div class="gt-name">CLAUDE.md per role, routing per query.</div>
-          <div class="gt-desc">Founder CLAUDE.md routes to org-wide skills. Employee CLAUDE.md routes to scoped subset.</div>
-          <div class="gt-desc">Same pointer-only rule. No content in the resolver.</div>
+          <div class="gt-tag">Layer 2 &middot; Short-term Memory</div>
+          <div class="gt-name">What the org loads for this question.</div>
+          <div class="gt-desc">Like your team pulling the right files before a meeting. Just enough context for the task at hand.</div>
+          <div class="gt-desc">Different access per role. Founder sees everything. Employee sees a scoped subset.</div>
         </div>
         <div class="gt-layer-r">
-          <div class="gt-trace-h">Resolves to</div>
+          <div class="gt-trace-h">Loaded for this run</div>
           <div class="gt-trace-l">/skills/audit-process.md, /skills/impact-effort-matrix.md</div>
-          <div class="gt-trace-l">17 process docs (Notion), last 3 mo Slack summary</div>
+          <div class="gt-trace-l">17 process docs from Notion, last 3 mo Slack summary</div>
           <div class="gt-trace-l">customer engagement archive index</div>
         </div>
       </div>
       <div class="gt-layer gt-harness">
         <div class="gt-layer-l">
-          <div class="gt-tag">Layer 3 &middot; Thin Harness, cloud-deployed</div>
-          <div class="gt-name">Claude Code Bypass on AWS.</div>
-          <div class="gt-desc">Same harness as Personal Brain. Different surface, same four jobs: model loop, files, context, safety.</div>
-          <div class="gt-desc">Run by founder, scoped by role, audit-logged per query.</div>
+          <div class="gt-tag">Layer 3 &middot; Working Memory</div>
+          <div class="gt-name">The org thinks, right now.</div>
+          <div class="gt-desc">Like a senior associate reasoning through the audit. Without the meetings, without the overhead.</div>
+          <div class="gt-desc">Claude Code Bypass in the cloud. Audit-logged per query. Run by founder, scoped by role.</div>
         </div>
         <div class="gt-layer-r">
-          <div class="gt-trace-h">Working memory, right now</div>
+          <div class="gt-trace-h">Thinking, right now</div>
           <div class="gt-trace-l">Walks all 17 processes, scores impact vs effort</div>
-          <div class="gt-trace-l">Identifies top 3 bottlenecks + founder-time per process</div>
+          <div class="gt-trace-l">Identifies top 3 bottlenecks, founder-time per process</div>
           <div class="gt-trace-l">Drafts decision-ready ranked list</div>
         </div>
       </div>
       <div class="gt-layer gt-app">
         <div class="gt-layer-l">
-          <div class="gt-tag">Layer 4 &middot; Deterministic Application</div>
-          <div class="gt-name">Team operations + shared APIs.</div>
-          <div class="gt-desc">Slack, Notion, Dropbox, CRM, the team&apos;s actual stack. Predictable, deterministic.</div>
-          <div class="gt-desc">No judgment lives here. Just the team&apos;s wires.</div>
+          <div class="gt-tag">Layer 4 &middot; Body of the Org</div>
+          <div class="gt-name">Where the org actually acts.</div>
+          <div class="gt-desc">Like the team&apos;s hands and voices. Real APIs, real outputs, predictable execution.</div>
+          <div class="gt-desc">Slack, Notion, Dropbox, CRM, internal APIs, the team&apos;s actual stack.</div>
         </div>
         <div class="gt-layer-r">
-          <div class="gt-trace-h">Body executes</div>
+          <div class="gt-trace-h">Body acts</div>
           <div class="gt-trace-l">Writes Impact-Effort matrix to Notion</div>
-          <div class="gt-trace-l">Posts top 3 bottlenecks to #ops Slack channel</div>
+          <div class="gt-trace-l">Posts top 3 bottlenecks to the #ops Slack channel</div>
           <div class="gt-trace-l">Team picks up rollout, no founder-bottleneck</div>
         </div>
       </div>
     </div>
-    <div class="gt-bottom"><strong>Same Garry Tan pattern.</strong> Personal Brain runs on a Mac at 150 EUR/mo. Org Brain runs in the cloud at under 1k EUR/mo. The brain belongs to the org, not to the operator.</div>
+    <div class="gt-bottom"><strong>Same shape, scaled to a team.</strong> Personal Brain runs on a Mac at 150 EUR/mo. Org Brain runs in the cloud at under 1k EUR/mo. The brain belongs to the org, not to the operator.</div>
     <div class="brand">EO AI Exchange #1</div>
     <div class="page-num">12 / 43</div>
   </section>
@@ -1072,7 +1072,7 @@
   <!-- 13, 3-PYRAMID COMPARISON SVG (the WOW visual) -->
   <section class="slide" id="s13">
     <div class="label">The pattern, side by side</div>
-    <h2 class="title">Three bodies. <span class="accent">One Garry Tan pattern.</span><small>Fat Skills on top. Thin Harness in the middle. Deterministic Application at the bottom. I run this across one personal life and two organizations. Same shape every time, different deployment surface.</small></h2>
+    <h2 class="title">Three bodies. <span class="accent">One brain pattern.</span><small>Long-term memory plus skills on top. Working brain in the middle. Body of tools at the bottom. I run this across one personal life and two organizations. Same shape every time, different deployment surface.</small></h2>
     <div class="arch-svg-wrap">
       <svg viewBox="0 0 980 360" xmlns="http://www.w3.org/2000/svg">
         <path d="M 100 60 L 280 60 L 320 130 L 60 130 Z" fill="#2563eb" stroke="#1d4ed8" stroke-width="1.5"/>
@@ -1104,9 +1104,9 @@
         <text x="830" y="340" text-anchor="middle" fill="#71717a" font-family="Inter" font-size="11">4 reps, 0 managers</text>
       </svg>
       <div class="arch-legend">
-        <div class="leg"><div class="l-name">Top: Fat Skills (intelligence)</div><div class="l-desc">Markdown procedures with judgment. 90 percent of the value. Travels across every deployment.</div></div>
-        <div class="leg"><div class="l-name">Middle: Thin Harness (~200 lines)</div><div class="l-desc">Model loop, files, context, safety. Same role, different surface. Mac, Cloud, Edge, swappable.</div></div>
-        <div class="leg"><div class="l-name">Bottom: Deterministic Application</div><div class="l-desc">Real APIs, real auth, real outputs. Predictable execution, no judgment, no vibes.</div></div>
+        <div class="leg"><div class="l-name">Top: Long-term memory + skills</div><div class="l-desc">What the brain remembers, plus the procedures it knows how to run. 90 percent of the value. Travels across every deployment.</div></div>
+        <div class="leg"><div class="l-name">Middle: Working brain</div><div class="l-desc">What thinks, right now. Same role, different surface. Mac, Cloud, Edge, swappable.</div></div>
+        <div class="leg"><div class="l-name">Bottom: Body of tools</div><div class="l-desc">Where the brain acts. Real APIs, real outputs, predictable execution. No judgment, no vibes.</div></div>
       </div>
     </div>
     <div class="brand">EO AI Exchange #1</div>
@@ -1393,7 +1393,7 @@
   <section class="slide" id="s21">
     <div class="label">Single number on screen</div>
     <div class="wow-hero">
-      <div class="wow-eyebrow">Headcount value, three organizations, one Garry Tan pattern</div>
+      <div class="wow-eyebrow">Headcount value, three organizations, one brain pattern</div>
       <div class="wow-num"><span>420</span><span class="dash">–</span><span>590</span><span class="unit">k EUR</span></div>
       <div class="wow-line"><span class="muted">Per year. Hires I never had to write a job description for, never had to defend in budget review, never had to fire when the cycle turned.</span></div>
       <p class="wow-foot">This is what scales. Not the number. <strong>The fact that it is the same blueprint.</strong> And tonight, on GitHub, the blueprint becomes yours.</p>
@@ -1428,7 +1428,7 @@
         <div class="sbody">
           <div class="scmd">/diarize-person</div>
           <div class="sname">Stakeholder Profile in One Page</div>
-          <div class="swhat">Reads everything you have on a person and writes a 1-page profile: communication style, last contact, open threads. <strong>Garry Tan calls this the knowledge-work lever.</strong></div>
+          <div class="swhat">Reads everything you have on a person and writes a 1-page profile: communication style, last contact, open threads. <strong>The knowledge-work lever for any operator.</strong></div>
         </div>
       </div>
       <div class="share-skill">
@@ -1468,7 +1468,7 @@
         <div class="sbody">
           <div class="scmd" style="color: var(--success);">MASTER_TEMPLATE.md</div>
           <div class="sname">The Bridge Doc</div>
-          <div class="swhat">Garry Tan 3-Layer architecture, CLAUDE.md boilerplate (200 lines max), Hat-System guide, 30-day rollout plan. <strong>Read once, ship the brain.</strong></div>
+          <div class="swhat">3-layer brain architecture, CLAUDE.md boilerplate (200 lines max), Hat-System guide, 30-day rollout plan. <strong>Read once, ship the brain.</strong></div>
         </div>
       </div>
     </div>
@@ -1683,7 +1683,7 @@
   <!-- 31, HOW I BUILD A SKILL -->
   <section class="slide" id="s31">
     <div class="label">The Discipline</div>
-    <h2 class="title">How I build a skill.<small>The OpenClaw rule from Garry Tan, applied.</small></h2>
+    <h2 class="title">How I build a skill.<small>The OpenClaw discipline, applied.</small></h2>
     <div class="build-flow">
       <div class="build-step s1">
         <div class="num">01</div>
@@ -1901,7 +1901,7 @@ Voice match exact. No vendor pitch tone.</div>
     <h2 class="title">125 files. <span class="accent">Loaded on demand, never all at once.</span></h2>
     <div class="mem-grid">
       <div class="mem-cat"><div class="nm">Schreibregeln</div><div class="desc">Voice rules, Anti-AI words, Umlaute mandate, no em-dashes, no asterisks WhatsApp</div><div class="ct">12</div></div>
-      <div class="mem-cat"><div class="nm">Brain Architecture</div><div class="desc">Garry Tan, Karpathy patterns, v3.5 audit + migration, source map</div><div class="ct">5</div></div>
+      <div class="mem-cat"><div class="nm">Brain Architecture</div><div class="desc">Brain architecture, v3.5 audit + migration, source map</div><div class="ct">5</div></div>
       <div class="mem-cat"><div class="nm">Real Estate</div><div class="desc">7 properties, Holdings, MASTERFILE, Parkside Holidu pricing history index</div><div class="ct">15</div></div>
       <div class="mem-cat"><div class="nm">Aviation</div><div class="desc">SACAA training (54 exam memos consolidated), NAV log format, FPL filing</div><div class="ct">10</div></div>
       <div class="mem-cat"><div class="nm">Erler Ventures</div><div class="desc">Positioning, dual ICP, services, pricing, content calendar, weekly engine</div><div class="ct">8</div></div>
@@ -1963,7 +1963,7 @@ Stephan ueberlegt Pfade. Gefragt nach Empfehlung.
         <div class="tool-tag">Thin Harness</div>
         <div class="tool-title">Claude Code.</div>
         <div class="tool-sub">The harness that runs the model in a loop. Reads files, manages context, enforces safety. ~50 line CLAUDE.md, not 20.000.</div>
-        <div class="tool-quote">"My CLAUDE.md was 20.000 lines. The model's attention degraded. The fix was 200 lines, just pointers." — Garry Tan</div>
+        <div class="tool-quote">"My CLAUDE.md was 20.000 lines. The model's attention degraded. The fix was 200 lines, just pointers." — industry observation</div>
       </div>
       <div>
         <div class="tool-cat">My harness layer</div>
@@ -2069,10 +2069,10 @@ Stephan ueberlegt Pfade. Gefragt nach Empfehlung.
       <div class="anti">
         <div class="x">&times;</div>
         <div class="name">No mega-CLAUDE.md with everything</div>
-        <div class="why">Garry Tan had 20.000 lines. Model attention degraded. Cut to ~200 lines of pointers. My CLAUDE.md is ~50 lines. Skills + Memory + Resolvers load on demand. Less in the harness, more in the skill files.</div>
+        <div class="why">Early CLAUDE.md files were 20.000 lines. Model attention degraded. Cut to ~200 lines of pointers. My CLAUDE.md is ~50 lines. Skills + Memory + Resolvers load on demand. Less in the harness, more in the skill files.</div>
       </div>
     </div>
-    <p class="sources"><strong>Sources</strong>Boris Cherny (Anthropic) on agentic search &middot; Karpathy LLM Wiki Pattern, April 2026 &middot; Garry Tan gbrain repo &middot; my own Brain v3.5 audit, April 27 2026</p>
+    <p class="sources"><strong>Sources</strong>Boris Cherny (Anthropic) on agentic search &middot; Karpathy LLM Wiki Pattern, April 2026 &middot; my own Brain v3.5 audit, April 27 2026</p>
     <div class="brand">EO AI Exchange #1</div>
     <div class="page-num">40 / 43</div>
   </section>
@@ -2086,7 +2086,7 @@ Stephan ueberlegt Pfade. Gefragt nach Empfehlung.
         <tr>
           <th></th>
           <th class="me">Chris</th>
-          <th>Garry Tan</th>
+          <th>Industry pattern</th>
           <th>Karpathy</th>
           <th>Anthropic</th>
         </tr>
@@ -2106,18 +2106,18 @@ Stephan ueberlegt Pfade. Gefragt nach Empfehlung.
       </tbody>
     </table>
     <p class="origin-quote" style="margin-top:1.25rem;font-size:clamp(0.92rem,1.25vw,1.1rem);">Solo-founder setups converge on <strong>Markdown + Skills + agentic search</strong>. Vector-DB is for 10K+ unstructured files. <span class="accent">If your volume fits in your head, your brain fits in Markdown.</span></p>
-    <p class="sources"><strong>Sources</strong>Garry Tan gbrain repo &middot; Karpathy LLM Wiki gist &middot; Boris Cherny (Anthropic), "Claude Code uses agentic search, not vectors", April 2025</p>
+    <p class="sources"><strong>Sources</strong>Industry brain repos &middot; Karpathy LLM Wiki gist &middot; Boris Cherny (Anthropic), "Claude Code uses agentic search, not vectors", April 2025</p>
     <div class="brand">EO AI Exchange #1</div>
     <div class="page-num">41 / 43</div>
   </section>
 
-  <!-- 44, vs GARRY TAN -->
+  <!-- 44, BRAIN PATTERN ALIGNMENT -->
   <section class="slide" id="s44">
     <div class="label">Direct Comparison</div>
-    <h2 class="title">Where I follow Tan. <span class="accent">Where I differ.</span></h2>
+    <h2 class="title">Where I align with the pattern. <span class="accent">Where I differ.</span></h2>
     <div class="gt-grid">
       <div class="gt-col same">
-        <div class="gt-col-h">Same as Garry Tan</div>
+        <div class="gt-col-h">Industry-aligned</div>
         <div class="gt-line"><div class="text"><strong>Markdown + Git</strong> as source of truth, no Vector-DB</div></div>
         <div class="gt-line"><div class="text"><strong>Skills as method-calls</strong> with parameters, judgment in Markdown</div></div>
         <div class="gt-line"><div class="text"><strong>~50 line CLAUDE.md</strong> as resolver, never 20.000 lines</div></div>
@@ -2135,7 +2135,7 @@ Stephan ueberlegt Pfade. Gefragt nach Empfehlung.
         <div class="gt-line"><div class="text"><strong>EU-only stack:</strong> AWS Frankfurt, deutsche Umlaute as voice rule, GDPR-aware by default.</div></div>
       </div>
     </div>
-    <p class="gt-foot"><strong>Net:</strong> Tan's pattern is the foundation. <span class="accent">My differences come from being a multi-domain operator (real estate + content + ventures + aviation) who lives outside of Mountain View.</span> The architecture is identical, the surface area is wider.</p>
+    <p class="gt-foot"><strong>Net:</strong> The industry pattern is the foundation. <span class="accent">My differences come from being a multi-domain operator (real estate + content + ventures + aviation) who lives outside of Mountain View.</span> The architecture is identical, the surface area is wider.</p>
     <div class="brand">EO AI Exchange #1</div>
     <div class="page-num">42 / 43</div>
   </section>
