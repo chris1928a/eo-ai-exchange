@@ -66,9 +66,9 @@
   }
   h1.cover-title {
     font-weight: 700;
-    font-size: clamp(6rem, 14vw, 16rem); line-height: 0.9;
-    letter-spacing: -0.05em; color: var(--text);
-    margin-bottom: 2.5rem;
+    font-size: clamp(2.8rem, 6.5vw, 6rem); line-height: 1.02;
+    letter-spacing: -0.045em; color: var(--text);
+    margin-bottom: 2.5rem; max-width: 22ch;
   }
   h1.cover-title .accent { color: var(--accent); }
   .cover-sub {
@@ -419,8 +419,26 @@
   .audpains-row .rk { font-weight: 700; color: var(--accent); font-family: var(--mono); font-size: 0.72rem; }
   .audpains-row .pn { color: var(--text); font-weight: 500; }
   .audpains-row .pc { color: var(--accent); font-weight: 700; text-align: right; font-variant-numeric: tabular-nums; }
+  .audpains-row .tag { font-size: 0.52rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: white; background: var(--accent); padding: 0.18rem 0.45rem; border-radius: 99px; align-self: center; }
+  .audpains-row.covered { background: linear-gradient(90deg, var(--accent-soft) 0%, transparent 80%); padding-left: 0.5rem; margin-left: -0.5rem; border-radius: 4px; }
+  .audpains-row.covered .pn { font-weight: 600; }
   .audfoot { padding: 0.7rem 1rem; background: var(--accent-soft); border-left: 3px solid var(--accent); font-size: 0.82rem; color: var(--text); line-height: 1.5; }
   .audfoot strong { color: var(--accent); font-weight: 700; }
+
+  /* PAIN MAPPING */
+  .painmap { display: flex; flex-direction: column; margin-bottom: 1.5rem; }
+  .painmap-row { display: grid; grid-template-columns: 2.5rem 1.1fr 0.5rem 1.4fr 3rem; gap: 1rem; align-items: center; padding: 0.7rem 0; border-bottom: 1px solid var(--border); }
+  .painmap-row:first-child { border-top: 1px solid var(--border); }
+  .painmap-row .rk { font-weight: 700; color: var(--accent); font-family: var(--mono); font-size: 0.85rem; letter-spacing: -0.01em; }
+  .painmap-row .pain { display: flex; flex-direction: column; gap: 0.15rem; }
+  .painmap-row .pain .ph { font-weight: 600; font-size: 0.92rem; color: var(--text); letter-spacing: -0.005em; line-height: 1.25; }
+  .painmap-row .pain .pq { font-size: 0.68rem; color: var(--muted); font-style: italic; line-height: 1.4; }
+  .painmap-row .arrow { font-weight: 700; color: var(--accent); text-align: center; font-size: 1.1rem; }
+  .painmap-row .answer { font-size: 0.85rem; color: var(--text); line-height: 1.4; }
+  .painmap-row .answer strong { color: var(--accent); font-weight: 700; }
+  .painmap-row .pct { font-weight: 700; color: var(--accent); text-align: right; font-variant-numeric: tabular-nums; font-size: 0.92rem; }
+  .painmap-foot { padding: 0.75rem 1.1rem; background: var(--accent-soft); border-left: 3px solid var(--accent); font-size: 0.84rem; color: var(--text); line-height: 1.5; }
+  .painmap-foot strong { color: var(--accent); font-weight: 700; }
 
   /* AGENDA TIME-BOX */
   .agenda { display: flex; flex-direction: column; margin-bottom: 1.5rem; }
@@ -548,14 +566,14 @@
         </div>
       </div>
       <div>
-        <div class="audblock-h">Top pain points (n=117)</div>
+        <div class="audblock-h">Top pain points (n=117) &middot; <span style="color:var(--accent);">covered tonight</span></div>
         <div class="audpains">
-          <div class="audpains-row"><span class="rk">01</span><span class="pn">Agents and orchestration</span><span class="pc">15%</span></div>
-          <div class="audpains-row"><span class="rk">02</span><span class="pn">Setup itself, time to configure</span><span class="pc">14%</span></div>
-          <div class="audpains-row"><span class="rk">03</span><span class="pn">Integration across tools</span><span class="pc">12%</span></div>
-          <div class="audpains-row"><span class="rk">04</span><span class="pn">Team adoption + transfer</span><span class="pc">9%</span></div>
-          <div class="audpains-row"><span class="rk">05</span><span class="pn">Tool overload, which one for what</span><span class="pc">9%</span></div>
-          <div class="audpains-row"><span class="rk">06</span><span class="pn">Pace, keeping up with releases</span><span class="pc">9%</span></div>
+          <div class="audpains-row covered"><span class="rk">01</span><span class="pn">Agents and orchestration</span><span class="tag">Dom</span><span class="pc">15%</span></div>
+          <div class="audpains-row covered"><span class="rk">02</span><span class="pn">Setup itself, time to configure</span><span class="tag">Slide 8</span><span class="pc">14%</span></div>
+          <div class="audpains-row covered"><span class="rk">03</span><span class="pn">Integration across tools</span><span class="tag">Chris</span><span class="pc">12%</span></div>
+          <div class="audpains-row covered"><span class="rk">04</span><span class="pn">Team adoption + transfer</span><span class="tag">Fabian</span><span class="pc">9%</span></div>
+          <div class="audpains-row covered"><span class="rk">05</span><span class="pn">Tool overload, which one for what</span><span class="tag">Slide 5</span><span class="pc">9%</span></div>
+          <div class="audpains-row covered"><span class="rk">06</span><span class="pn">Pace, keeping up with releases</span><span class="tag">Q&amp;A</span><span class="pc">9%</span></div>
         </div>
       </div>
     </div>
@@ -569,12 +587,12 @@
     <div class="label">60 Minutes</div>
     <h2 class="title">What you walk out with.</h2>
     <div class="promise">
-      <div class="promise-item"><div class="num">01</div><div class="lbl">Clarity</div><div class="desc">Which of two stacks fits you, without burning weeks.</div></div>
-      <div class="promise-item"><div class="num">3-5</div><div class="lbl">Hacks</div><div class="desc">Concrete, actionable. Wins and the struggles behind them.</div></div>
-      <div class="promise-item"><div class="num">116</div><div class="lbl">Peers</div><div class="desc">Where other EO operators stand. Where you stand.</div></div>
+      <div class="promise-item"><div class="num">3</div><div class="lbl">Options</div><div class="desc">Three founder setups, not a finale stack. What worked, what did not, after months of building each.</div></div>
+      <div class="promise-item"><div class="num">3-5</div><div class="lbl">Hacks</div><div class="desc">Concrete, actionable. Real wins and the struggles behind them.</div></div>
+      <div class="promise-item"><div class="num">118</div><div class="lbl">Peers</div><div class="desc">Where other EO operators stand. Where you stand.</div></div>
       <div class="promise-item"><div class="num">&infin;</div><div class="lbl">Series</div><div class="desc">Seat in a continuous 30 to 90 day exchange.</div></div>
     </div>
-    <p class="footer-note">Not the goal: another tool overview, generic theory, polished vendor demos. <span class="accent">We show the struggles, not just the wins.</span></p>
+    <p class="footer-note">Not the goal: another tool overview, generic theory, polished vendor demos, or one final answer. <span class="accent">Three founders who burned the weeks already, sharing what they would build today.</span></p>
     <div class="brand">EO Berlin</div>
     <div class="page-num">05 / 22</div>
   </section>
