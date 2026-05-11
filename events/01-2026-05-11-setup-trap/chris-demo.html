@@ -468,6 +468,9 @@
   .share-skill .sname { font-weight: 700; font-size: 0.8rem; color: var(--text); }
   .share-skill .swhat { font-size: 0.7rem; color: var(--muted); line-height: 1.4; }
   .share-skill .swhat strong { color: var(--text); font-weight: 600; }
+  .share-skill .stag { font-size: 0.52rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.18rem 0.5rem; border-radius: 99px; align-self: flex-start; margin-top: 0.1rem; margin-bottom: 0.15rem; }
+  .share-skill .stag.univ { background: var(--accent); color: white; }
+  .share-skill .stag.domain { background: #fef3c7; color: #92400e; }
   .share-foot { margin-top: 0.85rem; padding: 0.65rem 1rem; background: var(--code-bg); border-left: 3px solid var(--text); font-family: var(--mono); font-size: 0.72rem; color: var(--text); line-height: 1.45; }
 
   /* ========== NEW: SCREENSHOT PLACEHOLDER ========== */
@@ -877,77 +880,85 @@
     <div class="page-num">07 / 44</div>
   </section>
 
-  <!-- 8, MY MOST HELPFUL SKILLS -->
+  <!-- 8, MY MOST HELPFUL SKILLS (audience-oriented rewrite) -->
   <section class="slide" id="s8">
     <div class="label">Act 1 &middot; the skills that do the work</div>
-    <h2 class="title">Eight skills that <span class="accent">move the needle</span>.<small>Markdown procedures I use weekly across personal admin, client advisory and real estate ops. Ranked by frequency and impact, not novelty.</small></h2>
+    <h2 class="title">Eight skills, <span class="accent">forkable tonight</span>.<small>Each one is a Markdown file with parameters. Five are universal for any founder. Three are domain examples (advisory, sales, real estate) you can adapt to your own vertical.</small></h2>
     <div class="share-grid">
       <div class="share-skill">
         <div class="sn">01</div>
         <div class="sbody">
           <div class="scmd">/morning-brief</div>
-          <div class="sname">Daily 7am personal briefing</div>
-          <div class="swhat">Inbox top 3, calendar today, open threads, in 3 minutes. Telegram-native. <strong>2.25h / week.</strong></div>
+          <div class="stag univ">Universal</div>
+          <div class="sname">Daily 7am brief in Telegram</div>
+          <div class="swhat">Inbox top 3, today&apos;s calendar, open threads, top of mind, all in one page. <strong>Saves 2.25h per week vs scrolling inbox + calendar manually.</strong></div>
         </div>
       </div>
       <div class="share-skill">
         <div class="sn">02</div>
         <div class="sbody">
           <div class="scmd">/diarize-person</div>
-          <div class="sname">1-page stakeholder dossier</div>
-          <div class="swhat">Reads all my history with a person, outputs profile. Use before any meeting. <strong>The knowledge-work lever.</strong></div>
+          <div class="stag univ">Universal</div>
+          <div class="sname">1-page dossier on any stakeholder</div>
+          <div class="swhat">Reads your full history with a person across email, calendar, notes. Returns who, what, when, where, next step. <strong>Use before every meeting.</strong></div>
         </div>
       </div>
       <div class="share-skill">
         <div class="sn">03</div>
         <div class="sbody">
           <div class="scmd">/draft-by-channel</div>
-          <div class="sname">Voice-locked drafts per relationship</div>
-          <div class="swhat">WhatsApp Lars is different from Email Lars. Loads voice rules per person + channel. <strong>Kills the &ldquo;sounds like AI&rdquo; problem.</strong></div>
+          <div class="stag univ">Universal</div>
+          <div class="sname">Voice-locked drafts per person + channel</div>
+          <div class="swhat">WhatsApp tone is different from email tone. Loads voice rules from a per-contact map. <strong>Kills the &ldquo;sounds like AI&rdquo; problem in seconds.</strong></div>
         </div>
       </div>
       <div class="share-skill">
         <div class="sn">04</div>
         <div class="sbody">
           <div class="scmd">/weekly-review</div>
-          <div class="sname">Friday review across all 7 hats</div>
-          <div class="swhat">Sweeps every hat, pulls open threads, drafts the Friday note to self. <strong>Friday: 90 min &rarr; 10 min.</strong></div>
+          <div class="stag univ">Universal</div>
+          <div class="sname">Friday review across all your hats</div>
+          <div class="swhat">Sweeps every domain you run, pulls open threads, drafts the Friday note to yourself. <strong>90 min routine collapsed to 10 min.</strong></div>
         </div>
       </div>
       <div class="share-skill">
         <div class="sn">05</div>
         <div class="sbody">
-          <div class="scmd">/audit-process</div>
-          <div class="sname">Client process diagnostics</div>
-          <div class="swhat">Audits 10-30 client processes, outputs ranked Impact-Effort matrix. <strong>Saved 56-89 person-days on one engagement.</strong></div>
+          <div class="scmd">/memory-curator</div>
+          <div class="stag univ">Universal</div>
+          <div class="sname">Memory hygiene, weekly cron</div>
+          <div class="swhat">Decides what stays in chat log vs becomes a durable memory file. Audits drift. <strong>Stops the brain from becoming a junk drawer.</strong></div>
         </div>
       </div>
       <div class="share-skill">
         <div class="sn">06</div>
         <div class="sbody">
-          <div class="scmd">/sales-script-rewriter</div>
-          <div class="sname">Sales call coaching &amp; rewrite</div>
-          <div class="swhat">Reads call transcripts, scores Gong-style metrics, rewrites the script for setter or closer. <strong>Used weekly with 4 reps.</strong></div>
+          <div class="scmd">/audit-process</div>
+          <div class="stag domain">For advisors</div>
+          <div class="sname">Internal process diagnostics</div>
+          <div class="swhat">Audits 10-30 internal processes per org, outputs a ranked Impact-Effort matrix. <strong>Saves multiple person-weeks per engagement.</strong> Demo on slide 13.</div>
         </div>
       </div>
       <div class="share-skill">
         <div class="sn">07</div>
         <div class="sbody">
-          <div class="scmd">/parkside-pricing</div>
-          <div class="sname">Daily real estate pricing</div>
-          <div class="swhat">Reads Booking.com velocity for 6 studios, writes back to Holidu API. <strong>Replaced what a revenue manager would do full-time.</strong></div>
+          <div class="scmd">/sales-script-rewriter</div>
+          <div class="stag domain">For sales founders</div>
+          <div class="sname">Sales call coaching from transcripts</div>
+          <div class="swhat">Reads call transcripts, scores six dimensions (opener, pitch, objection, close, depth, rapport), rewrites the script per rep. <strong>Currently in production with a client sales floor.</strong></div>
         </div>
       </div>
       <div class="share-skill">
         <div class="sn">08</div>
         <div class="sbody">
-          <div class="scmd">/memory-curator</div>
-          <div class="sname">Memory hygiene at the file level</div>
-          <div class="swhat">Decides what becomes durable memory and what stays in chat log. <strong>Stops the brain from becoming a junk drawer.</strong></div>
+          <div class="scmd">/property-pricing</div>
+          <div class="stag domain">Template for daily-priced goods</div>
+          <div class="sname">Daily revenue management cron</div>
+          <div class="swhat">Reads Booking.com velocity for 6 studios, writes back to the Holidu API at 06:00. <strong>Replaces a part-time revenue manager. Same pattern works for any daily-priced product.</strong></div>
         </div>
       </div>
     </div>
-    <div class="share-foot">All eight in production, version-controlled in /skills/. The five most portable get forked at the end of tonight.</div>
+    <div class="share-foot">All eight live in /skills/ on GitHub tonight. The five Universal ones are tonight&apos;s fork. The three domain examples show the pattern, adapt to your vertical in a weekend.</div>
     <div class="brand">EO AI Exchange #1</div>
     <div class="page-num">08 / 44</div>
   </section>
