@@ -471,6 +471,18 @@
   .share-skill .stag { font-size: 0.52rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.18rem 0.5rem; border-radius: 99px; align-self: flex-start; margin-top: 0.1rem; margin-bottom: 0.15rem; }
   .share-skill .stag.univ { background: var(--accent); color: white; }
   .share-skill .stag.domain { background: #fef3c7; color: #92400e; }
+  /* Skill page with what-is-a-skill side panel */
+  .skill-page { display: grid; grid-template-columns: 0.85fr 1fr 1fr; gap: 0.9rem; margin-bottom: 0.85rem; }
+  .skill-def-box { padding: 1rem 1.1rem; background: var(--accent-soft); border: 2px solid var(--accent); border-radius: 8px; display: flex; flex-direction: column; gap: 0.6rem; box-shadow: 0 2px 8px rgba(37,99,235,0.12); }
+  .skill-def-box .h { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); }
+  .skill-def-box .lead { font-weight: 700; font-size: 0.95rem; color: var(--text); line-height: 1.25; letter-spacing: -0.005em; }
+  .skill-def-box .body { font-size: 0.76rem; color: var(--text); line-height: 1.5; }
+  .skill-def-box ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.25rem; }
+  .skill-def-box li { font-size: 0.74rem; padding-left: 0.95rem; position: relative; line-height: 1.4; color: var(--text); }
+  .skill-def-box li::before { content: '\2192'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .skill-def-box li strong { color: var(--accent); font-weight: 700; }
+  .skill-def-box .punchline { font-size: 0.76rem; font-weight: 600; color: var(--accent); padding-top: 0.4rem; border-top: 1px solid rgba(37,99,235,0.2); margin-top: auto; line-height: 1.4; }
+  .skill-page .share-col { display: flex; flex-direction: column; gap: 0.7rem; }
   .share-foot { margin-top: 0.85rem; padding: 0.65rem 1rem; background: var(--code-bg); border-left: 3px solid var(--text); font-family: var(--mono); font-size: 0.72rem; color: var(--text); line-height: 1.45; }
 
   /* ========== NEW: SCREENSHOT PLACEHOLDER ========== */
@@ -880,148 +892,156 @@
     <div class="page-num">07 / 44</div>
   </section>
 
-  <!-- 8, MY MOST HELPFUL SKILLS (audience-oriented rewrite) -->
+  <!-- 8, MY MOST HELPFUL SKILLS (with what-is-a-skill side panel) -->
   <section class="slide" id="s8">
     <div class="label">Act 1 &middot; the skills that do the work</div>
-    <h2 class="title">Eight skills, <span class="accent">forkable tonight</span>.<small>Each one is a Markdown file with parameters. Five are universal for any founder. Three are domain examples (advisory, sales, real estate) you can adapt to your own vertical.</small></h2>
-    <div class="share-grid">
-      <div class="share-skill">
-        <div class="sn">01</div>
-        <div class="sbody">
-          <div class="scmd">/morning-brief</div>
-          <div class="stag univ">Universal</div>
-          <div class="sname">Daily 7am brief in Telegram</div>
-          <div class="swhat">Inbox top 3, today&apos;s calendar, open threads, top of mind, all in one page. <strong>Saves 2.25h per week vs scrolling inbox + calendar manually.</strong></div>
+    <h2 class="title">Eight skills, <span class="accent">forkable tonight</span>.<small>Five universal for any founder. Three domain examples to adapt to your own vertical.</small></h2>
+    <div class="skill-page">
+      <div class="skill-def-box">
+        <div class="h">What is a skill?</div>
+        <div class="lead">A recipe Claude reads every time.</div>
+        <div class="body">One Markdown file. Tells the AI three things:</div>
+        <ul>
+          <li><strong>WHEN</strong> to fire (trigger word)</li>
+          <li><strong>WHAT</strong> to do (steps in plain English)</li>
+          <li><strong>HOW</strong> you sound (voice + context)</li>
+        </ul>
+        <div class="body">Write it once. Run it forever. Smallest reusable unit of AI work.</div>
+        <div class="punchline">Like a saved macro, but the macro can think.</div>
+      </div>
+      <div class="share-col">
+        <div class="share-skill">
+          <div class="sn">01</div>
+          <div class="sbody">
+            <div class="scmd">/morning-brief</div>
+            <div class="stag univ">Universal</div>
+            <div class="sname">Daily 7am brief in Telegram</div>
+            <div class="swhat">Inbox top 3, today&apos;s calendar, open threads. <strong>2.25h/week.</strong></div>
+          </div>
+        </div>
+        <div class="share-skill">
+          <div class="sn">02</div>
+          <div class="sbody">
+            <div class="scmd">/diarize-person</div>
+            <div class="stag univ">Universal</div>
+            <div class="sname">1-page stakeholder dossier</div>
+            <div class="swhat">Full history with a person, one page. <strong>Use before every meeting.</strong></div>
+          </div>
+        </div>
+        <div class="share-skill">
+          <div class="sn">03</div>
+          <div class="sbody">
+            <div class="scmd">/draft-by-channel</div>
+            <div class="stag univ">Universal</div>
+            <div class="sname">Voice-locked drafts per person + channel</div>
+            <div class="swhat">WhatsApp tone vs email tone, loaded per contact. <strong>Kills &ldquo;sounds like AI&rdquo;.</strong></div>
+          </div>
+        </div>
+        <div class="share-skill">
+          <div class="sn">04</div>
+          <div class="sbody">
+            <div class="scmd">/weekly-review</div>
+            <div class="stag univ">Universal</div>
+            <div class="sname">Friday review across all your hats</div>
+            <div class="swhat">Open threads + decay flags + Friday note. <strong>90 min &rarr; 10 min.</strong></div>
+          </div>
         </div>
       </div>
-      <div class="share-skill">
-        <div class="sn">02</div>
-        <div class="sbody">
-          <div class="scmd">/diarize-person</div>
-          <div class="stag univ">Universal</div>
-          <div class="sname">1-page dossier on any stakeholder</div>
-          <div class="swhat">Reads your full history with a person across email, calendar, notes. Returns who, what, when, where, next step. <strong>Use before every meeting.</strong></div>
+      <div class="share-col">
+        <div class="share-skill">
+          <div class="sn">05</div>
+          <div class="sbody">
+            <div class="scmd">/memory-curator</div>
+            <div class="stag univ">Universal</div>
+            <div class="sname">Memory hygiene, weekly cron</div>
+            <div class="swhat">What stays in chat vs becomes durable memory. <strong>Stops the junk-drawer.</strong></div>
+          </div>
         </div>
-      </div>
-      <div class="share-skill">
-        <div class="sn">03</div>
-        <div class="sbody">
-          <div class="scmd">/draft-by-channel</div>
-          <div class="stag univ">Universal</div>
-          <div class="sname">Voice-locked drafts per person + channel</div>
-          <div class="swhat">WhatsApp tone is different from email tone. Loads voice rules from a per-contact map. <strong>Kills the &ldquo;sounds like AI&rdquo; problem in seconds.</strong></div>
+        <div class="share-skill">
+          <div class="sn">06</div>
+          <div class="sbody">
+            <div class="scmd">/audit-process</div>
+            <div class="stag domain">For advisors</div>
+            <div class="sname">Internal process diagnostics</div>
+            <div class="swhat">10-30 processes &rarr; ranked Impact-Effort matrix. <strong>Person-weeks per engagement.</strong></div>
+          </div>
         </div>
-      </div>
-      <div class="share-skill">
-        <div class="sn">04</div>
-        <div class="sbody">
-          <div class="scmd">/weekly-review</div>
-          <div class="stag univ">Universal</div>
-          <div class="sname">Friday review across all your hats</div>
-          <div class="swhat">Sweeps every domain you run, pulls open threads, drafts the Friday note to yourself. <strong>90 min routine collapsed to 10 min.</strong></div>
+        <div class="share-skill">
+          <div class="sn">07</div>
+          <div class="sbody">
+            <div class="scmd">/sales-script-rewriter</div>
+            <div class="stag domain">For sales founders</div>
+            <div class="sname">Sales call coaching from transcripts</div>
+            <div class="swhat">Scores 6 dimensions, rewrites script per rep. <strong>Live with a client sales floor.</strong></div>
+          </div>
         </div>
-      </div>
-      <div class="share-skill">
-        <div class="sn">05</div>
-        <div class="sbody">
-          <div class="scmd">/memory-curator</div>
-          <div class="stag univ">Universal</div>
-          <div class="sname">Memory hygiene, weekly cron</div>
-          <div class="swhat">Decides what stays in chat log vs becomes a durable memory file. Audits drift. <strong>Stops the brain from becoming a junk drawer.</strong></div>
-        </div>
-      </div>
-      <div class="share-skill">
-        <div class="sn">06</div>
-        <div class="sbody">
-          <div class="scmd">/audit-process</div>
-          <div class="stag domain">For advisors</div>
-          <div class="sname">Internal process diagnostics</div>
-          <div class="swhat">Audits 10-30 internal processes per org, outputs a ranked Impact-Effort matrix. <strong>Saves multiple person-weeks per engagement.</strong> Demo on slide 13.</div>
-        </div>
-      </div>
-      <div class="share-skill">
-        <div class="sn">07</div>
-        <div class="sbody">
-          <div class="scmd">/sales-script-rewriter</div>
-          <div class="stag domain">For sales founders</div>
-          <div class="sname">Sales call coaching from transcripts</div>
-          <div class="swhat">Reads call transcripts, scores six dimensions (opener, pitch, objection, close, depth, rapport), rewrites the script per rep. <strong>Currently in production with a client sales floor.</strong></div>
-        </div>
-      </div>
-      <div class="share-skill">
-        <div class="sn">08</div>
-        <div class="sbody">
-          <div class="scmd">/property-pricing</div>
-          <div class="stag domain">Template for daily-priced goods</div>
-          <div class="sname">Daily revenue management cron</div>
-          <div class="swhat">Reads Booking.com velocity for 6 studios, writes back to the Holidu API at 06:00. <strong>Replaces a part-time revenue manager. Same pattern works for any daily-priced product.</strong></div>
+        <div class="share-skill">
+          <div class="sn">08</div>
+          <div class="sbody">
+            <div class="scmd">/property-pricing</div>
+            <div class="stag domain">Daily-priced goods</div>
+            <div class="sname">Daily revenue management cron</div>
+            <div class="swhat">Velocity in, Holidu API out, at 06:00 daily. <strong>Part-time RM replaced.</strong></div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="share-foot">All eight live in /skills/ on GitHub tonight. The five Universal ones are tonight&apos;s fork. The three domain examples show the pattern, adapt to your vertical in a weekend.</div>
+    <div class="share-foot">All eight live in /skills/ on GitHub tonight. The 5 Universal ones fork in seconds. The 3 domain examples show the pattern, adapt in a weekend.</div>
     <div class="brand">EO AI Exchange #1</div>
     <div class="page-num">08 / 44</div>
   </section>
 
-  <!-- 9, MY PERSONAL BRAIN, 4-LAYER WITH /weekly-review EXAMPLE -->
+  <!-- 9, MY PERSONAL BRAIN, simplified for presentation -->
   <section class="slide" id="s9">
     <div class="label">My Personal Brain &middot; how it works</div>
-    <h2 class="title">A brain has four parts. <span class="accent">So does mine.</span><small>Long-term memory holds everything you might ever need. Short-term memory loads the right bit for the moment. Working memory thinks. The body acts. Right column shows what happens when /weekly-review fires on Friday at 17:00.</small></h2>
+    <h2 class="title">A brain has four parts. <span class="accent">So does mine.</span><small>Same shape as your own. Right column shows what happens on Friday at 17:00 when /weekly-review fires.</small></h2>
     <div class="gt-stack">
       <div class="gt-layer gt-skills">
         <div class="gt-layer-l">
           <div class="gt-tag">Layer 1 &middot; Long-term Memory</div>
-          <div class="gt-name">What I might ever need to know.</div>
-          <div class="gt-desc">Like your childhood, your skills, your contacts. Always there, never actively recalled until needed.</div>
-          <div class="gt-desc"><strong>19 skills</strong> + <strong>125 memory files</strong> + 7 property folders + 18 months Notion + 6 years email + all Drive + GitHub history.</div>
+          <div class="gt-name">Everything I might ever need.</div>
+          <div class="gt-desc">Like your childhood and skills. Always there, never recalled until needed.</div>
         </div>
         <div class="gt-layer-r">
-          <div class="gt-trace-h">In this Friday&apos;s run</div>
-          <div class="gt-trace-l">Cron fires at 17:00. Nothing from the archive loads yet.</div>
-          <div class="gt-trace-l">The brain only knows one thing: run <code>/weekly-review</code>.</div>
+          <div class="gt-trace-h">Friday 17:00</div>
+          <div class="gt-trace-l">Cron fires. Archive stays idle. Brain just knows: run <code>/weekly-review</code>.</div>
         </div>
       </div>
       <div class="gt-layer gt-resolvers">
         <div class="gt-layer-l">
           <div class="gt-tag">Layer 2 &middot; Short-term Memory</div>
           <div class="gt-name">What I just loaded for this task.</div>
-          <div class="gt-desc">Like the phone number you just looked up. Held in the front of your mind, just long enough to use it.</div>
-          <div class="gt-desc">Only the files this run actually needs. Loaded by the routing table in CLAUDE.md.</div>
+          <div class="gt-desc">Like the phone number you just looked up. Held just long enough to use it.</div>
         </div>
         <div class="gt-layer-r">
-          <div class="gt-trace-h">What loads, exactly</div>
-          <div class="gt-trace-l">10 small files: the review skill, my 6-hats system, current priorities, last week&apos;s note, 7 hat-status files.</div>
-          <div class="gt-trace-l">Total: about 5KB of text. Fast, focused.</div>
+          <div class="gt-trace-h">What loads</div>
+          <div class="gt-trace-l">~10 small files: review skill + 6-hats system + current priorities + last week&apos;s note. About 5KB total.</div>
         </div>
       </div>
       <div class="gt-layer gt-harness">
         <div class="gt-layer-l">
           <div class="gt-tag">Layer 3 &middot; Working Memory</div>
-          <div class="gt-name">What I think with, right now.</div>
-          <div class="gt-desc">Like your inner voice while you read this. Active, in-the-moment reasoning. Decides what to do, when, and how.</div>
-          <div class="gt-desc">Claude Code on my Lightsail VM. Read-only by default. Stores nothing.</div>
+          <div class="gt-name">What thinks, right now.</div>
+          <div class="gt-desc">Like your inner voice. Active, in-the-moment reasoning. Stores nothing.</div>
         </div>
         <div class="gt-layer-r">
-          <div class="gt-trace-h">What happens, right now</div>
-          <div class="gt-trace-l">Claude reads those 10 files. Walks all 6 hats. Sees what is open, ranks what is urgent.</div>
-          <div class="gt-trace-l">Drafts the Friday note. About 90 seconds of thinking. Then the session ends.</div>
+          <div class="gt-trace-h">What happens</div>
+          <div class="gt-trace-l">Walks all 6 hats, ranks open threads, drafts the Friday note. ~90 seconds.</div>
         </div>
       </div>
       <div class="gt-layer gt-app">
         <div class="gt-layer-l">
           <div class="gt-tag">Layer 4 &middot; Body</div>
           <div class="gt-name">What I actually do.</div>
-          <div class="gt-desc">Like your hands typing, your voice speaking. Predictable, real-world execution.</div>
-          <div class="gt-desc">39 Workspace tools: Gmail, Calendar, Notion, Drive, Holidu, Close, GitHub, Telegram, ~30 more.</div>
+          <div class="gt-desc">Like your hands typing. Predictable, real-world execution via tools.</div>
         </div>
         <div class="gt-layer-r">
-          <div class="gt-trace-h">What I actually get</div>
-          <div class="gt-trace-l">A 1-page brief in my Telegram, at 17:05. Five minutes after the cron fired.</div>
-          <div class="gt-trace-l">Stale threads archived. 3 decisions flagged for Monday morning.</div>
+          <div class="gt-trace-h">What I get</div>
+          <div class="gt-trace-l">1-page brief in Telegram at 17:05. Stale threads archived. 3 decisions flagged for Monday.</div>
         </div>
       </div>
     </div>
-    <div class="gt-bottom"><strong>Same shape as your own brain.</strong> Just persistent, queryable, and version-controlled. 23h saved per week. <span style="color:var(--accent);">Next slide: what happens after each session, how the brain saves what I just learned.</span></div>
+    <div class="gt-bottom"><strong>Same shape as your own brain.</strong> Just persistent and queryable. <strong>23h saved per week.</strong> <span style="color:var(--accent);">Next slide: how the brain saves what it just learned.</span></div>
     <div class="brand">EO AI Exchange #1</div>
     <div class="page-num">09 / 44</div>
   </section>
