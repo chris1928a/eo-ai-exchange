@@ -70,7 +70,7 @@ Each question:
 
 ---
 
-## Q4, 5 votes — Thilo: AI risk to your own business model + investments
+## Q4, 5 votes — AI risk to your own business model + investments
 
 **Quick answer**
 "Two questions in one. First, your own business. If your value prop is mostly information arbitrage or doing what a junior analyst does, AI eats it in 18 months. If your value prop is relationships, judgment under uncertainty, or operational execution under pressure, AI compresses your cost base but does not eat the wedge. Test it by asking: can a well-prompted Claude do my next quarter? If yes, you have a problem. If no, AI is leverage, not threat. Second, your investments. Same test, applied to each portfolio company. PE LP fund: ask each GP for their AI-readiness audit. Public equities: shift exposure toward owners of proprietary data, distribution moats, regulated rails."

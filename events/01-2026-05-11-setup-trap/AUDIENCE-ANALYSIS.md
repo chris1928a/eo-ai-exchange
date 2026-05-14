@@ -189,7 +189,7 @@ Notable: Fabian's pain ("Transfer to Team") puts him squarely in **Cluster 4 (Te
 2. **Acknowledge geographic spread** in welcome (30 chapters represented)
 3. **Frame "honest" early** to match the Luma tagline expectation
 4. **Lead the panel from Slido top-votes**, not the deck's question list
-5. **Tag Thilo by name** if his question comes up (he is on the registrant list, EO Berlin)
+5. **Tag the questioner by first name only** if they unmute live (and only after they identify themselves on stage)
 6. **Spotlight the registrants with industry-specific pains** in the panel: Anonymous (EO Ireland) (eldercare scheduling), Anonymous (EO Costa Rica) (clinical workflows). Reference their pain even if they do not unmute.
 
 ---
