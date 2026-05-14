@@ -30,4 +30,4 @@ These defaults apply unless a person's `memory/people/{slug}.md` overrides.
 
 ## Per-recipient overrides
 
-If a person's memory file `memory/people/{slug}.md` specifies different rules (e.g. Sandra always uses Sie even in WhatsApp), those win over this file.
+If a person's memory file `memory/people/{slug}.md` specifies different rules (e.g. one stakeholder always uses Sie even in WhatsApp), those win over this file.

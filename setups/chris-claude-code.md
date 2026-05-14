@@ -95,13 +95,13 @@ Every memory file follows the same internal structure. Not optional — this is 
 
 ```markdown
 ---
-name: stephan_big_decision_apr26
-description: Big Decision Framework for Stephan
+name: bigdecision_framework_apr26
+description: Big-decision framework captured in conversation, April 2026
 type: reference
 originSessionId: 8b99bcca-...
 ---
 
-# Stephan · Big Decision Framework · April 2026
+# Big Decision Framework · April 2026
 
 ## Why (the trigger context)
 
@@ -116,7 +116,7 @@ change about your behavior? Specific, not abstract.]
 ## Anchor
 
 [When to revisit this memory. Auto-pruned if stale by /memory-curator.
-e.g. "Re-evaluate if Stephan's role changes" or "Sunset on 2026-12-01".]
+e.g. "Re-evaluate if context changes" or "Sunset on 2026-12-01".]
 ```
 
 **Why this structure matters:** the `originSessionId` lets you trace back to the original conversation. The `Why` answers "why does this exist?" — without that, files become orphans you cannot prune. The `Anchor` is the auto-prune signal for `/memory-curator`.
@@ -255,7 +255,7 @@ Full template at [`templates/memory-templates/feedback_voice.md`](../templates/m
 
 ### Personal opportunity cost reclaimed
 
-23 hours per week × 47 weeks × 250 EUR/hr (Chris's blended advisory rate) = **~270k EUR/year** of Chris's time freed up for higher-leverage work.
+~23 hours per week × ~47 working weeks × a typical mid-market advisory rate ≈ **~270k EUR/year** of operator time freed up for higher-leverage work. Slide 5 of [chris-demo.html](https://chris1928a.github.io/eo-ai-exchange/events/01-2026-05-11-setup-trap/chris-demo.html) is the source.
 
 ### Hidden costs (not in the 150 EUR/mo)
 

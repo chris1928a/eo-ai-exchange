@@ -14,7 +14,7 @@ load_when: sales script, rewrite script, call coaching, score this call, sales t
 
 ## Purpose
 
-Most sales coaching is anecdotal: "I think Sandra talks too much" / "I feel Mike is good on objections." This skill replaces vibes with a 6-dimension score per call, identifies pattern weaknesses across a rep, and outputs a rewritten script tuned to that rep's actual gaps. Used live with sales teams, not as theory.
+Most sales coaching is anecdotal: "I think Rep A talks too much" / "I feel Rep B is good on objections." This skill replaces vibes with a 6-dimension score per call, identifies pattern weaknesses across a rep, and outputs a rewritten script tuned to that rep's actual gaps. Used live with sales teams, not as theory.
 
 ---
 
@@ -34,7 +34,7 @@ Most sales coaching is anecdotal: "I think Sandra talks too much" / "I feel Mike
 ### A. Per-call score sheet
 
 ```markdown
-# Call Score · {Rep} · {YYYY-MM-DD HH:MM} · {Prospect}
+# Call Score · {rep-name} · {YYYY-MM-DD HH:MM} · {prospect-name}
 
 ## Headline
 - Outcome: [meeting booked / lost / pending]
@@ -54,14 +54,14 @@ Total: 17/30 (last 5 calls average: 16/30)
 
 ## Top 3 fixes for this rep, this week
 1. **Discovery:** Ask the "What changed in the last 90 days?" question every call
-2. **Closing:** Stop offering 3 meeting times — offer 2 + "or what works"
+2. **Closing:** Stop offering 3 meeting times, offer 2 + "or what works"
 3. **Listen:** When prospect says "interesting", count to 3 before responding
 ```
 
 ### B. Rewritten script section (whatever the rep is weakest on)
 
 ```markdown
-## Discovery section, rewrite for {rep}
+## Discovery section, rewrite for {rep-name}
 
 ### Old
 [verbatim from current script]
@@ -71,7 +71,7 @@ Total: 17/30 (last 5 calls average: 16/30)
 
 ### What to practice this week
 - 3 reps of the new opening, recorded
-- Send recording to {coach} for review by Friday
+- Send recording to {coach-name} for review by Friday
 ```
 
 ---
@@ -108,7 +108,7 @@ Override per-org in `sales_rubric.md`.
 2. Create `~/.claude/projects/<your-project>/memory/sales/` with subfolders: `scripts/`, `scores/`, `icp.md`
 3. Connect Fathom / Granola / Gong MCP if available (otherwise paste transcripts manually)
 4. Customize `sales_rubric.md` for your sales motion (B2B SaaS ≠ retail ≠ enterprise)
-5. Test: paste a transcript, run `/sales-script-rewriter Sandra`
+5. Test: paste a transcript, run `/sales-script-rewriter {rep-name}`
 
 ---
 

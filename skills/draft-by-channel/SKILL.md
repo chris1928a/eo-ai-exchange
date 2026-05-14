@@ -13,7 +13,7 @@ load_when: draft to, draft for, write to, message to, email to, whatsapp to
 
 ## Purpose
 
-Generate drafts that match (a) your voice, (b) the channel's conventions, and (c) the recipient's preferred style. The same message to Sandra on WhatsApp ≠ that message to Sandra by email. Skill never confuses them.
+Generate drafts that match (a) your voice, (b) the channel's conventions, and (c) the recipient's preferred style. The same message to a recipient on WhatsApp ≠ that message to them by email. Skill never confuses them.
 
 ---
 
@@ -34,20 +34,20 @@ A single draft in the right format for the channel. No alternatives offered (you
 
 **Example shape, WhatsApp:**
 ```
-Sandra, Termin Mittwoch 14h passt. Schick die Agenda?
+{Name}, Termin Mittwoch 14h passt. Schick die Agenda?
 ```
 
 **Example shape, Email:**
 ```
 Subject: Mittwoch 14h, ja
 
-Hi Sandra,
+Hi {Name},
 
-Mittwoch 14h passt. Kannst du mir vorab die Agenda schicken — die zwei
+Mittwoch 14h passt. Kannst du mir vorab die Agenda schicken, die zwei
 Themen die ich diskutieren möchte sind X und Y.
 
 Bis Mittwoch,
-Chris
+{Your first name}
 ```
 
 Same intent, completely different surface.
@@ -71,7 +71,7 @@ Same intent, completely different surface.
 2. Create the channel rules file `~/.claude/projects/<project>/memory/feedback_channel_rules.md` — see template at [`templates/memory-templates/feedback_channel_rules.md`](../../templates/memory-templates/feedback_channel_rules.md)
 3. Create voice rules at `feedback_voice.md` — see template at [`templates/memory-templates/feedback_voice.md`](../../templates/memory-templates/feedback_voice.md)
 4. Make sure `/diarize-person` exists so recipient memory files get auto-created
-5. Test: `/draft-by-channel Sandra WhatsApp "Mittwoch 14h passt"`
+5. Test: `/draft-by-channel {recipient name} WhatsApp "Mittwoch 14h passt"`
 
 ---
 

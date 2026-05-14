@@ -8,7 +8,7 @@ type: project
 
 ## What this hat is
 
-[1-2 sentences. e.g. "Real estate ops across 6 short-term rental units in Bavaria. ~150k EUR/yr revenue, target 200k by Q4."]
+[1-2 sentences. e.g. "Real estate ops across N short-term rental units. ~XYZ EUR/yr revenue, target ABC by Q4."]
 
 ## Current state (snapshot, refresh quarterly)
 

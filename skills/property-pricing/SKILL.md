@@ -63,9 +63,9 @@ Daily-priced assets (short-term rentals, hotel rooms, flight seats, dynamic SKUs
 
 ```
 06:03 · Pricing run complete · 6 units
-Knöringen Mews: +12% next 7d (velocity surge)
-Deffingen Studio 1: -5% (cancellation cluster)
-Deffingen Studio 2: hold (within tolerance)
+Unit-1: +12% next 7d (velocity surge)
+Unit-2: -5% (cancellation cluster)
+Unit-3: hold (within tolerance)
 ...
 2 flags need your review · pricing_log.md updated
 ```

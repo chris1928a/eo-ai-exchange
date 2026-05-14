@@ -71,7 +71,7 @@ Posted to: Telegram, your weekly-review.md archive, optionally a shared Notion p
 ## Non-negotiable rules
 
 - **3 wins max.** "5 wins" is just bragging; 3 forces ranking.
-- **Decay flags by name, not by category.** "Sandra dossier overdue 4 days" not "stakeholder follow-ups slipping".
+- **Decay flags by name, not by category.** "{stakeholder} dossier overdue 4 days" not "stakeholder follow-ups slipping".
 - **Top 3 next week, not top 10.** If you have 10 priorities, you have none.
 - **Single weekend decision.** Forces Monday clarity. If there is no decision, write "no major call".
 - **No AI-fluff.** Banned: delve, leverage, harness, robust, seamless.

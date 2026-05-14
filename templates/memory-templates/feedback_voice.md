@@ -67,7 +67,7 @@ Example 2:
 ## What "bad" (AI-flavored) sounds like
 
 ```
-"Hi Sandra,
+"Hi {Name},
 
 I hope this email finds you well! I wanted to reach out and delve into
 how we could leverage our partnership to unlock seamless synergies in

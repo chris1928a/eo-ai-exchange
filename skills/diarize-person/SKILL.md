@@ -78,7 +78,7 @@ A 1-page Markdown dossier in this fixed structure:
 2. Make sure Gmail + Calendar MCPs are connected
 3. Create the directory: `~/.claude/projects/<project>/memory/people/`
 4. (Optional) Connect WhatsApp / CRM MCPs if you use them
-5. Test: `/diarize-person Sandra Müller`
+5. Test: `/diarize-person {name of someone you have email + calendar history with}`
 
 ---
 

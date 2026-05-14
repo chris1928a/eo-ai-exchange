@@ -47,7 +47,7 @@ Without this skill, the rest of the brain degrades silently.
 - Duplicates suggested for merge: 4
 
 ## Contradictions
-1. user_voice.md says "always Du form" / feedback_sandra.md says "Sie with Sandra"
+1. user_voice.md says "always Du form" / people/{stakeholder}.md says "Sie with this person"
    → Suggest: scope user_voice rule with "default Du, see person-specific overrides"
 
 ## Stale entries (90+ days untouched, no recent invocation)
@@ -55,8 +55,8 @@ Without this skill, the rest of the brain degrades silently.
 - ...
 
 ## Promotions from chat → memory (5 candidates)
-1. Conversation 2026-05-12 14:33: you flagged "never CC Lars on financial docs"
-   → Suggest: add to feedback_lars.md
+1. Conversation 2026-05-12 14:33: you flagged "never CC {colleague} on financial docs"
+   → Suggest: add to feedback_{colleague}.md
 - ...
 
 ## What I changed automatically
