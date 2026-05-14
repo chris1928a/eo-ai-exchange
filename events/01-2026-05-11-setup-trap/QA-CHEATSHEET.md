@@ -76,7 +76,7 @@ Each question:
 "Two questions in one. First, your own business. If your value prop is mostly information arbitrage or doing what a junior analyst does, AI eats it in 18 months. If your value prop is relationships, judgment under uncertainty, or operational execution under pressure, AI compresses your cost base but does not eat the wedge. Test it by asking: can a well-prompted Claude do my next quarter? If yes, you have a problem. If no, AI is leverage, not threat. Second, your investments. Same test, applied to each portfolio company. PE LP fund: ask each GP for their AI-readiness audit. Public equities: shift exposure toward owners of proprietary data, distribution moats, regulated rails."
 
 **Deeper points**
-- Solo-founder bias: AI looks like infinite leverage. For enterprise B2B with long sales cycles, AI looks like commoditization risk.
+- Solo-founder bias: AI looks like infinite multiplier. For enterprise B2B with long sales cycles, AI looks like commoditization risk.
 - "Operational alpha" thesis: AI compresses ops cost, the residual value is judgment + distribution.
 - DACH advantage: regulated industries and trust-based B2B sales cycles are AI-resistant by default. Don't sleep on this.
 - For your investments: filter for moat type, not for "AI-native" branding. Branding is noise, moats are signal.

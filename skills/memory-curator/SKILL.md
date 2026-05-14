@@ -305,7 +305,7 @@ If you delete this, plan to do manual memory audits monthly OR your other skills
 
 ## Why this is universal
 
-Memory is the single highest-leverage thing in any AI brain (see [`setups/chris-claude-code.md`](../../setups/chris-claude-code.md)). Memory without curation degrades faster than tools without maintenance. Every operator who runs a memory-driven AI brain needs this skill running on a cron, or the brain runs on lies.
+Memory is the single highest-impact thing in any AI brain (see [`setups/chris-claude-code.md`](../../setups/chris-claude-code.md)). Memory without curation degrades faster than tools without maintenance. Every operator who runs a memory-driven AI brain needs this skill running on a cron, or the brain runs on lies.
 
 This is the skill that keeps the rest working. Hidden value, but the only way to make a memory-driven setup last beyond 6 months without rotting.
 

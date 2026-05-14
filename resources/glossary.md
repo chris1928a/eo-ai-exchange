@@ -46,7 +46,7 @@ Plain Markdown files that capture what Claude should remember across conversatio
 - **project**, current work context, deadlines, stakeholders
 - **reference**, pointers to where information lives outside the project
 
-If you skip memory, every conversation starts cold. Memory is the single highest-leverage thing to set up.
+If you skip memory, every conversation starts cold. Memory is the single highest-impact thing to set up.
 
 ## Subagent / Agent
 

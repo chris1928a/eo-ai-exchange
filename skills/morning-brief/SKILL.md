@@ -214,7 +214,7 @@ Skills should earn their slot. If this one doesn't, fork a different one.
 
 ## Why this is universal
 
-Every operator has a morning. Every morning needs prioritization. The pattern (pull from N live sources → score → output a fixed-shape brief) is reusable for any "what's the state of X right now" use case. This skill is the highest-leverage one in the whole 8-skill set because it is the one you use every single day.
+Every operator has a morning. Every morning needs prioritization. The pattern (pull from N live sources → score → output a fixed-shape brief) is reusable for any "what's the state of X right now" use case. This skill is the highest-impact one in the whole 8-skill set because it is the one you use every single day.
 
 ---
 

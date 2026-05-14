@@ -98,7 +98,7 @@ Default state: filter. Exceptions are allowed but rare.
 
 ## The mental model: paradigm vs incremental
 
-90% of AI releases are incremental: better numbers on benchmarks, slightly more capable model, new feature in existing tool. Skip these unless they unlock a workflow you blocked on.
+90% of AI releases are incremental: better numbers on benchmarks, slightly more capable model, new feature in existing tool. Skip these unless they open a workflow you blocked on.
 
 10% are paradigm shifts: new abstraction layer, new protocol, new architecture. These are worth attention. Examples from 2024-2026:
 - Late 2024: MCP launched (paradigm)

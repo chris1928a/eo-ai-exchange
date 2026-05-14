@@ -204,7 +204,7 @@ This is what "every recurring task lands on a cron" actually looks like. Real sc
 
 ## Anti-AI voice clone rules (slides 41-42)
 
-Voice is the highest-leverage memory. Every output that sounds like AI degrades trust. These rules are loaded on every skill that produces text.
+Voice is the highest-impact memory. Every output that sounds like AI degrades trust. These rules are loaded on every skill that produces text.
 
 ### Banned (never use)
 
@@ -255,7 +255,7 @@ Full template at [`templates/memory-templates/feedback_voice.md`](../templates/m
 
 ### Personal opportunity cost reclaimed
 
-~23 hours per week × ~47 working weeks × a typical mid-market advisory rate ≈ **~270k EUR/year** of operator time freed up for higher-leverage work. Slide 5 of [chris-demo.html](https://chris1928a.github.io/eo-ai-exchange/events/01-2026-05-11-setup-trap/chris-demo.html) is the source.
+~23 hours per week × ~47 working weeks × a typical mid-market advisory rate ≈ **~270k EUR/year** of operator time freed up for higher-impact work. Slide 5 of [chris-demo.html](https://chris1928a.github.io/eo-ai-exchange/events/01-2026-05-11-setup-trap/chris-demo.html) is the source.
 
 ### Hidden costs (not in the 150 EUR/mo)
 
@@ -305,7 +305,7 @@ cp -r skills/morning-brief ~/.claude/skills/
 cd ~/.claude/projects/my-brain && claude
 ```
 
-Then in Claude Code: edit `memory/user_about.md` (5 min, the highest-leverage file you'll write) and type `/morning-brief` to test.
+Then in Claude Code: edit `memory/user_about.md` (5 min, the highest-impact file you'll write) and type `/morning-brief` to test.
 
 For the full path with MCP servers, cron jobs, and Telegram, continue with the Step-by-step below.
 
@@ -349,7 +349,7 @@ cp -r eo-ai-exchange/templates/memory-templates/* ~/.claude/projects/<your-proje
 cp eo-ai-exchange/templates/CLAUDE.md.template ~/.claude/projects/<your-project>/CLAUDE.md
 ```
 
-**The 30-minute step that matters:** Edit `user_about.md` and `feedback_voice.md`. These two files are 80% of the leverage you will get from the entire setup. Spend real time on them. Banned words list, voice examples, how you actually sound, all of it.
+**The 30-minute step that matters:** Edit `user_about.md` and `feedback_voice.md`. These two files are 80% of the impact you will get from the entire setup. Spend real time on them. Banned words list, voice examples, how you actually sound, all of it.
 
 **Verification:** `ls ~/.claude/projects/<your-project>/memory/` should show 7+ template files.
 
@@ -509,7 +509,7 @@ If you fork everything in this repo today, here is the realistic timeline:
 
 **Day 1-7, Personal brain bootstrap**
 - Day 1: Install Claude Code, fork [`templates/`](../templates/) into `~/.claude/projects/<your-project>/`
-- Day 1-2: Edit `user_about.md` + `feedback_voice.md` (this is the leverage)
+- Day 1-2: Edit `user_about.md` + `feedback_voice.md` (this is the impact)
 - Day 3-4: Connect 3 MCP servers (Gmail, Calendar, Drive)
 - Day 5-7: Fork 5 universal skills from [`/skills/`](../skills/), test each one in isolation
 
@@ -537,7 +537,7 @@ A few extra honest data points from the deck:
 
 - **80% of org memory dies in Slack/email**, only ~20% survives in Notion (slide 20). The whole "memory layer first" insight comes from this number.
 - **External agency quote for an org-brain build:** 56-89 person-days = 110-180k EUR. Chris built the equivalent in ~27.5k EUR with this stack (slide 21-22).
-- **Sales org headcount comparison:** would have hired Sales Manager + Sales Ops Analyst (140-200k EUR/yr), never did, brain replaces the leverage parts.
+- **Sales org headcount comparison:** would have hired Sales Manager + Sales Ops Analyst (140-200k EUR/yr), never did, brain replaces the parts that need doing.
 
 ---
 

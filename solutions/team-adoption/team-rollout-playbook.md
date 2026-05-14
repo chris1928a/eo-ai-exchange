@@ -63,7 +63,7 @@ Training is per-persona, per-role, with concrete workflows. Generic „learn the
 
 ### 5. Champions (1 enthusiastic user per department)
 
-The single highest-leverage role in any rollout. Champions:
+The single highest-impact role in any rollout. Champions:
 - Are NOT IT (they are domain experts in their function)
 - Get 4 hours/week protected for AI work in Phase 1
 - Get internal recognition (badge, title, internal showcase slot)
@@ -94,7 +94,7 @@ NEVER as your only metric: „number of Claude/ChatGPT logins per week". This is
 
 ### Week 2-4, Power-User Phase
 - 10 power-users get 1:1 onboarding from sponsor (60 min each)
-- Each power-user picks ONE leverage workflow to attack
+- Each power-user picks ONE high-impact workflow to attack
 - Weekly Friday show-and-tell, 30 min, 2 power-users present what they tried
 
 ### Week 5-8, Champion Identification

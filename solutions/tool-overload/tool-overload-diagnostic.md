@@ -27,7 +27,7 @@ For 7 consecutive days, log every block of work that took more than 15 minutes. 
 | Day | Time block | Activity | Energy (1-5) | Could AI help? (Y/N/Maybe) |
 |---|---|---|---|---|
 
-At the end of 7 days, you will see 3-5 activities consume 60-80% of your hours. These are your leverage points. Examples we see frequently:
+At the end of 7 days, you will see 3-5 activities consume 60-80% of your hours. These are your impact points. Examples we see frequently:
 
 - Email triage and replies
 - Meeting prep and post-meeting note-taking
@@ -50,7 +50,7 @@ Once you have your use case, evaluate any candidate tool against these 5 criteri
 | **Security** | Can the vendor explain in 2 sentences how they store and protect your data? Are they ISO 27001 / SOC 2 certified? | 5x |
 | **Ease of use** | Can you complete one productive task within 30 min of first login, without watching a tutorial? | 4x |
 | **Scalability** | Will this still work if your team or volume 10x in 12 months? | 3x |
-| **Strategic alignment** | Does this directly attack your top 1-3 leverage activities from Step 1? | 5x |
+| **Strategic alignment** | Does this directly attack your top 1-3 high-impact activities from Step 1? | 5x |
 
 **Maximum score:** 22 × 5 = 110. **Minimum to consider:** 88 (80% threshold).
 
@@ -122,7 +122,7 @@ Drop anything below daily-use unless it has a clear specialist purpose. Most too
 
 ## Skill version
 
-A companion runnable skill `ai-time-audit` is planned to automate Step 1: drop your calendar export + free-form text dump of your last 7 days, and it returns your top-3 leverage activities with AI-helpfulness scores. PR contributions welcome.
+A companion runnable skill `ai-time-audit` is planned to automate Step 1: drop your calendar export + free-form text dump of your last 7 days, and it returns your top-3 high-impact activities with AI-helpfulness scores. PR contributions welcome.
 
 ---
 

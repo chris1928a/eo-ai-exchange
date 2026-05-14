@@ -21,7 +21,7 @@ Forkable templates for the foundation files of any Claude Code-based personal AI
 ## Setup order (60 minutes total)
 
 1. **Fork CLAUDE.md** to your project root (5 min). This is what Claude reads every conversation.
-2. **Fork user_about.md** (10 min). The single most leveraged 10 minutes you will spend on this entire setup.
+2. **Fork user_about.md** (10 min). The single most impactful 10 minutes you will spend on this entire setup.
 3. **Fork feedback_voice.md** (15 min). Spend real time on banned words + required style, this prevents 80% of "AI-sounding" output.
 4. **Fork feedback_channel_rules.md** (5 min). Defaults are sensible, edit per your habits.
 5. **Fork MEMORY.md** (5 min). Index of everything else.

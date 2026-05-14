@@ -30,7 +30,7 @@ LAYER 2: SKILLS              ← Composable playbooks (1 skill = 1 repeatable ta
 LAYER 1: CLAUDE.md + VOICE   ← Persistent identity, who you are, what matters
 ```
 
-The trend in 2026 is **unbundling**: stop using monolithic AI platforms, assemble your stack from composable pieces. CLAUDE.md is the highest-leverage file in your stack because every other layer reads from it.
+The trend in 2026 is **unbundling**: stop using monolithic AI platforms, assemble your stack from composable pieces. CLAUDE.md is the highest-impact file in your stack because every other layer reads from it.
 
 ---
 
