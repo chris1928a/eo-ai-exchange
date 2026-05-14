@@ -7,6 +7,18 @@ A continuous, audience-driven series where EO members surface real AI-setup pain
 
 ---
 
+## Pick your path
+
+| You are... | Go here |
+|---|---|
+| **New to GitHub or AI tooling** | [`START-HERE.md`](START-HERE.md) — 3-step guide, no jargon |
+| **Looking for a working setup to fork** | [`setups/`](setups/) — Chris (Workspace), Dom (local-first), Fabian (PAI) |
+| **Hunting a fix for a specific pain** | [`SOLUTIONS.md`](SOLUTIONS.md) — 11 solutions, one per pain cluster |
+| **Confused by a term** | [`resources/glossary.md`](resources/glossary.md) — plain-language definitions |
+| **Watching the talks** | [Joint deck](https://chris1928a.github.io/eo-ai-exchange/events/01-2026-05-11-setup-trap/slides.html) · [Chris's deep dive](https://chris1928a.github.io/eo-ai-exchange/events/01-2026-05-11-setup-trap/chris-demo.html) · [Q&A](https://chris1928a.github.io/eo-ai-exchange/events/01-2026-05-11-setup-trap/qa-deck.html) |
+
+---
+
 ## What this repo is
 
 A living solution-pipeline for the AI-productivity pains that founders and operators actually face. Every event ends with a `git push`, not just „thanks for listening". Every audience pain becomes either a documented solution, a working skill, or both.
@@ -65,6 +77,7 @@ v5.0.0 ships **45 skills, 171 workflows, 37 hooks**, Algorithm v6.3.0 (Current S
 ```
 eo-ai-exchange/
 ├── README.md                    ← you are here
+├── START-HERE.md                ← beginner's 3-step path (fork → clone → first skill)
 ├── SOLUTIONS.md                 ← master index of all solutions, by pain cluster
 ├── CONTRIBUTING.md              ← how to PR your own skill or solution
 │
@@ -78,6 +91,11 @@ eo-ai-exchange/
 │       ├── QA-CHEATSHEET.md     ← panel cheatsheet, plain Markdown
 │       └── AUDIENCE-ANALYSIS.md ← anonymized pain breakdown, 118 registrants
 │
+├── setups/                      ← three operator setups, fork-ready
+│   ├── chris-claude-code.md     ← Workspace-native, ~150 EUR/mo, 23h/wk saved
+│   ├── dom-rolodex.md           ← Local-first 5-tier memory, ~$0/mo
+│   └── fabian-personal-ai.md    ← Daniel Miessler's PAI v5, complete Life OS
+│
 ├── solutions/                   ← solutions grouped by pain cluster (10 clusters)
 │   ├── tool-overload/           ← Tool Overload Diagnostic
 │   ├── setup-itself/            ← Setup Trap Diagnostic + 30-Min aiOS Blueprint
@@ -89,6 +107,9 @@ eo-ai-exchange/
 │   ├── security-gdpr/           ← GDPR Claude Checklist DACH
 │   ├── pace-keeping-up/         ← Weekly AI Filter
 │   └── time-learning/           ← 60-Day Founder Onboarding
+│
+├── resources/
+│   └── glossary.md              ← plain-language defs (Claude Code, MCP, Skills, etc.)
 │
 ├── skills/                      ← runnable Claude Code skills (community contributions)
 │
@@ -143,4 +164,4 @@ All solutions in this repo are released under MIT License. Use, modify, share. A
 
 ---
 
-*Last updated: 2026-05-11 (Event #1 shipped, 11 solutions live, 118 registrations across 53 EO chapters).*
+*Last updated: 2026-05-14 (Event #1 wrapped, 11 solutions + 3 setups + glossary live, 118 registrations across 53 EO chapters).*
