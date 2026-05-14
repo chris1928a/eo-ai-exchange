@@ -10,11 +10,17 @@ If a term you need is missing, [open an issue](https://github.com/chris1928a/eo-
 
 The large language model from Anthropic. The current top-tier models (as of 2026-05) are **Opus 4.7** (best reasoning), **Sonnet 4.6** (balanced default), and **Haiku 4.5** (fastest, cheapest). When people in this repo say "Claude," they usually mean either the model itself or the consumer app at [claude.ai](https://claude.ai).
 
-## Claude Code (in slides: "OpenClaw")
+## Claude Code
 
-Anthropic's official command-line tool that runs Claude on your machine. It can read your files, edit them, run commands, and call external services. It is the backbone of all three setups in this repo. Free to install at [docs.claude.com/en/docs/claude-code/overview](https://docs.claude.com/en/docs/claude-code/overview). Installs as a CLI command called `claude`.
+Anthropic's official command-line tool that runs Claude on your machine. It can read your files, edit them, run commands, and call external services. The backbone of [Chris's setup](../setups/chris-claude-code.md) and underneath [Fabian's PAI setup](../setups/fabian-personal-ai.md). Free to install at [docs.claude.com/en/docs/claude-code/overview](https://docs.claude.com/en/docs/claude-code/overview). Installs as a CLI command called `claude`.
 
-> **Why "OpenClaw" in the slides?** Chris uses "OpenClaw" as a working code-name in some materials. It is the same thing as Claude Code.
+> **Not the same as OpenClaw.** OpenClaw is a separate workflow-orchestration tool (see entry below). Some people use both — Claude Code for cognitive/memory work, OpenClaw for visual workflow chains.
+
+## OpenClaw
+
+An open-source visual workflow orchestration tool with a skills marketplace called ClawHub. Used at scale across the AI-tooling community for connecting tools and running sequences. Different category from Claude Code: OpenClaw is workflow orchestration, Claude Code is a model-driven CLI with memory and skills.
+
+OpenClaw is the **backbone of [Dom's setup](../setups/dom-rolodex.md)** (paired with a custom memory layer + local LLMs). It is also flagged in this repo for two production issues you should know about: **CVE-2026-25253** (CVSS 8.80, HIGH severity) and the **ClawHavoc** supply-chain incident (1.184 malicious packages on ClawHub). Full breakdown + 5 alternatives (NanoClaw, ZeroClaw, Skyvern, Nanobot, OpenFang) in [`solutions/openclaw-honest/openclaw-honest-assessment.md`](../solutions/openclaw-honest/openclaw-honest-assessment.md).
 
 ## Skill
 
