@@ -86,7 +86,7 @@ Three setups are documented in [`setups/`](setups/). Pick the one closest to how
 |---|---|---|
 | Google Workspace, mobile-first, fine paying ~150 EUR/mo | [`setups/chris-claude-code.md`](setups/chris-claude-code.md) | Workspace-native, 23h/wk saved, 31 MCP tools, 19 skills |
 | Mac, want full sovereignty, $0/mo, comfortable with terminals | [`setups/dom-rolodex.md`](setups/dom-rolodex.md) | Local-first 5-tier memory + Rolodex of 107 people, $0/mo |
-| Mac/Linux, want a complete opinionated Life OS out of the box | [`setups/fabian-personal-ai.md`](setups/fabian-personal-ai.md) | Daniel Miessler's PAI v5: 45 skills, 171 workflows, 37 hooks |
+| Mac/Linux, want a complete opinionated Life OS out of the box | [`setups/fabian-personal-ai.md`](setups/fabian-personal-ai.md) | Daniel Miessler's PAI v5: 45 skills, 171 workflows, 37 hooks (agent-agnostic) |
 
 Each setup file has:
 - What it is (in plain English)

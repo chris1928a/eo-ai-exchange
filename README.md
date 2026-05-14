@@ -73,10 +73,10 @@ Three operator-level setups demoed at Event #1 (2026-05-11). **Same problem** �
 |---|---|---|---|
 | **Operator** | Christoph Erler (EO Berlin) | Dominik Raute (CTO JustWatch) | Fabian Gless (EO Berlin) runs Daniel Miessler's PAI |
 | **Stack** | Claude Code + 31 MCP + 19 skills + 125 memory + 7 crons + Telegram | Vanilla OpenClaw + custom 5-tier memory + Rolodex + local LLMs on Mac | PAI v5.0.0: 45 skills + 171 workflows + 37 hooks + Pulse dashboard |
-| **Cost / month (honest, steady-state)** | ~150 EUR all-in (Claude Pro 20 + AWS Lightsail 20 + APIs ~110) | **$10-50/mo** cloud Claude escalations + electricity (NOT $0 — see below) | **$20-100/mo** PAI workflow API spend (depends on usage) |
-| **Hardware up-front** | Whatever you already have (Mac/Linux/Windows+WSL) | Mac M-series + 32GB+ RAM ≈ **3-5k EUR once** if you don't have one | Mac M-series recommended ≈ **3-5k EUR once** if you don't have one |
-| **3-year TCO (no new hardware needed)** | ~5.4k EUR | ~$360-1.800 | ~$720-3.600 |
-| **3-year TCO (incl. ~$4k Mac amortized)** | ~5.4k EUR | ~$4.360-5.800 | ~$4.720-7.600 |
+| **Cost / month (honest, steady-state)** | ~150 EUR all-in (Claude Pro 20 + AWS Lightsail 20 + APIs ~110) | **$10-50/mo** cloud Claude escalations + electricity (NOT $0, see below) | **$100-200/mo** single Claude Max (or equivalent Codex / Gemini) subscription. PAI is agent-agnostic. |
+| **Hardware up-front** | Whatever you already have (Mac/Linux/Windows+WSL) | Mac M-series + 32GB+ RAM ≈ **3-5k EUR once** if you don't have one | Anything that runs your chosen agent's CLI. Mac or Linux. No special hardware tier. |
+| **3-year TCO (no new hardware needed)** | ~5.4k EUR | ~$360-1.800 | **~$3.600-7.200** |
+| **3-year TCO (incl. ~$4k Mac amortized)** | ~5.4k EUR | ~$4.360-5.800 | ~$3.600-7.200 (no new hardware needed) |
 | **Mobile?** | ✅ Telegram bot | ❌ Desktop-first | Dashboard at `localhost:31337` |
 | **Platform** | Mac / Linux / Windows+WSL | Mac M-series (Linux possible, theoretical) | macOS / Linux only |
 | **Tracked time saved** | ~23h/wk | similar order, $0 marginal cost | tied to PAI's 7-phase Algorithm |
@@ -93,7 +93,7 @@ Three operator-level setups demoed at Event #1 (2026-05-11). **Same problem** �
 
 **🟢 Setup 2 — Dom (Local-First Rolodex).** The "sovereignty over convenience" path. Vanilla OpenClaw as backbone, custom 5-tier memory (`System Prompt > Bootstrap > On-Demand > Search Index > Raw Archive`), a Rolodex of 107 person dossiers, 1.183 files indexed across 5.735 vectors / 11 collections, all running on local models on a Mac. 2-5 second queries. **Real cost: $10-50/mo cloud Claude escalations + electricity, plus Mac M-series hardware (~3-5k EUR once if you don't have one).** Built over 12 months from scratch. The agent that remembers. → [Read the full spec](setups/dom-rolodex.md) — 5-tier architecture, what Dom shared at the event, honest struggles, when this is right (and when it is not).
 
-**🟣 Setup 3 — Fabian (PAI Life OS).** The "complete opinionated Life OS out of the box" path. [Daniel Miessler's PAI v5.0.0](https://github.com/danielmiessler/Personal_AI_Infrastructure) (12.100+ stars, MIT) — 45 skills, 171 workflows, 37 hooks, a Pulse dashboard at `localhost:31337`, the Telos / ISA / DA conceptual framework. One-line install. macOS / Linux only. **Real cost: PAI itself is free + MIT, but plan $20-100/mo cloud Claude API for the workflows that escalate, plus Mac hardware (~3-5k EUR once if you don't have one).** → [Read the full spec](setups/fabian-personal-ai.md) — what you get, the Telos step that matters, honest struggles, why this matters as a reference architecture.
+**🟣 Setup 3 — Fabian (PAI Life OS).** The "complete opinionated Life OS out of the box" path. [Daniel Miessler's PAI v5.0.0](https://github.com/danielmiessler/Personal_AI_Infrastructure) (12.100+ stars, MIT) — 45 skills, 171 workflows, 37 hooks, a Pulse dashboard at `localhost:31337`, the Telos / ISA / DA conceptual framework. One-line install. macOS or Linux. **Real cost: PAI itself is free + MIT, plus one single Claude Max (or equivalent Codex / Gemini) subscription at ~$100-200/mo. PAI is agent-agnostic, no special hardware tier needed.** → [Read the full spec](setups/fabian-personal-ai.md) — what you get, the Telos step that matters, honest struggles, why this matters as a reference architecture.
 
 > **Brand new to GitHub or AI tooling?** Start at [`START-HERE.md`](START-HERE.md) for the 3-step path (fork → clone → first skill). No jargon, screenshots from official GitHub Docs.
 
