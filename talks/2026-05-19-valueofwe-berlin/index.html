@@ -75,7 +75,7 @@
   h1.cover-title .accent { color: var(--accent); }
   .cover-sub {
     font-size: clamp(1.05rem, 1.5vw, 1.4rem); font-weight: 400;
-    color: var(--muted); max-width: 50ch; line-height: 1.5;
+    color: var(--muted); max-width: 55ch; line-height: 1.5;
     margin-bottom: 3.5rem;
   }
   .cover-meta {
@@ -102,7 +102,16 @@
   .stathero-foot { font-size: 0.95rem; font-weight: 400; color: var(--muted); line-height: 1.55; max-width: 75ch; padding-top: 1.5rem; border-top: 1px solid var(--border); font-style: italic; }
   .stathero-foot strong { color: var(--text); font-style: normal; font-weight: 600; }
 
-  /* TWO-COL PANELS (Slide 3, 4) */
+  /* SIX HATS GRID (Slide 3) */
+  .hats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem 2.5rem; margin-bottom: 2.5rem; }
+  .hat { display: flex; flex-direction: column; gap: 0.3rem; padding-top: 1rem; border-top: 2px solid var(--accent); }
+  .hat .htag { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-variant-numeric: tabular-nums; }
+  .hat .hname { font-weight: 700; font-size: 1.2rem; color: var(--text); letter-spacing: -0.015em; line-height: 1.2; margin-top: 0.35rem; }
+  .hat .hdesc { font-weight: 400; font-size: 0.82rem; color: var(--muted); line-height: 1.5; margin-top: 0.25rem; }
+  .hats-foot { font-size: 1.05rem; font-weight: 500; color: var(--text); line-height: 1.55; max-width: 75ch; padding-top: 1.25rem; border-top: 1px solid var(--border); }
+  .hats-foot .accent { color: var(--accent); font-weight: 700; }
+
+  /* TWO-COL PANELS (Slide 4) */
   .twocol { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; }
   .col { display: flex; flex-direction: column; gap: 1rem; }
   .col .tag { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); }
@@ -196,14 +205,13 @@
     .page-num { right: 7vw; }
     .brand { left: 7vw; }
     .twocol { grid-template-columns: 1fr; gap: 2rem; }
-    .stathero { grid-template-columns: 1fr; gap: 1.5rem; }
+    .stathero, .hats { grid-template-columns: 1fr; gap: 1.5rem; }
     .bignum-wins { grid-template-columns: 1fr; }
     .layer { grid-template-columns: 0.3rem 1fr; }
     .layer-tag { grid-column: 2; }
     .layer-desc { grid-column: 2; }
     .wf { grid-template-columns: 3rem 1fr; }
     .wf .when { grid-column: 2; text-align: left; }
-    .close-grid { grid-template-columns: 1fr 1fr; }
   }
 </style>
 </head>
@@ -214,7 +222,7 @@
   <section class="slide active" id="s1">
     <div class="cover-eyebrow">Erler Ventures &middot; Value of We &middot; AI Workshop &middot; 19 May 2026</div>
     <h1 class="cover-title">Your<br><span class="accent">Digital Twin.</span></h1>
-    <p class="cover-sub">Real-operator notes from the 5% that works. One human, eight ventures, why the twin had to build itself.</p>
+    <p class="cover-sub">What it looks like when one operator runs six different lanes of life with no team. And the simple workflows that make it possible.</p>
     <p class="cover-meta"><span class="who">Christoph Erler &middot; Founder, Erler Ventures</span><span class="when">11:20 to 11:30 CEST &middot; Berlin &middot; ~20 minutes</span></p>
     <div class="brand">Value of We &middot; Erler Ventures</div>
     <div class="page-num">01 / 10</div>
@@ -232,44 +240,57 @@
       </div>
       <div class="stat-cell">
         <div class="n">50<span style="font-size: 0.5em;">%</span></div>
-        <div class="lbl">of entrepreneurs say &ldquo;too many tools&rdquo;</div>
+        <div class="lbl">of operators say &ldquo;too many tools&rdquo;</div>
         <div class="src">EO Poll &middot; 122 votes</div>
       </div>
       <div class="stat-cell">
         <div class="n">7&#8260;10</div>
-        <div class="lbl">digitisation projects fail on mindset</div>
+        <div class="lbl">projects fail on mindset, not on tech</div>
         <div class="src">Chaleat</div>
       </div>
     </div>
-    <div class="stathero-foot">People lock themselves in for weeks to perfect their setup. <strong>The win is not the stack. It&rsquo;s the workflow that ships in week one.</strong></div>
+    <div class="stathero-foot">Most people lock themselves in for weeks picking tools and tweaking settings. <strong>The win is not the stack. It&rsquo;s the first workflow that actually ships.</strong></div>
     <div class="brand">Value of We &middot; Erler Ventures</div>
     <div class="page-num">02 / 10</div>
   </section>
 
-  <!-- 03 WHY I'M HERE -->
+  <!-- 03 SIX HATS -->
   <section class="slide" id="s3">
-    <div class="label">Why I&rsquo;m here</div>
-    <h2 class="title">One human.<br><span class="accent">Eight ventures.</span> Zero assistants.</h2>
-    <div class="twocol">
-      <div class="col">
-        <div class="tag">What I run</div>
-        <div class="name">The portfolio</div>
-        <div class="col-line"><div><div class="l-head">Erler Ventures</div><span class="l-sub">advisory, content, frameworks</span></div></div>
-        <div class="col-line"><div><div class="l-head">Best Guy &middot; Mala/Relevio &middot; RC &middot; Valtis</div><span class="l-sub">venture portfolio (founders, products, sales)</span></div></div>
-        <div class="col-line"><div><div class="l-head">Wealth and real estate</div><span class="l-sub">DE + AT properties, asset allocation</span></div></div>
-        <div class="col-line"><div><div class="l-head">Legal cases</div><span class="l-sub">ComX insolvency, P10X dispute</span></div></div>
-        <div class="col-line"><div><div class="l-head">Personal</div><span class="l-sub">wedding planning, cold case podcast</span></div></div>
+    <div class="label">What&rsquo;s on my plate, on any given day</div>
+    <h2 class="title">One operator. <span class="accent">Six lanes.</span> Zero employees.</h2>
+    <div class="hats">
+      <div class="hat">
+        <div class="htag">Lane 01</div>
+        <div class="hname">Client work</div>
+        <div class="hdesc">Advisory for founders and PE operators. The day job.</div>
       </div>
-      <div class="col">
-        <div class="tag">What it forces</div>
-        <div class="name">The discipline</div>
-        <div class="col-line"><div><div class="l-head">Context never lives in my head</div><span class="l-sub">it lives somewhere else, or it dies</span></div></div>
-        <div class="col-line"><div><div class="l-head">Decisions cannot slip</div><span class="l-sub">between portfolio calls, stakeholders, weeks</span></div></div>
-        <div class="col-line"><div><div class="l-head">Drafts cannot drag</div><span class="l-sub">two minutes, or kill them entirely</span></div></div>
-        <div class="col-line"><div><div class="l-head">Every repetitive task is a tax</div><span class="l-sub">find it, wrap it, never touch it again</span></div></div>
-        <div class="col-line"><div><div class="l-head">The twin built itself</div><span class="l-sub">out of necessity, not theory</span></div></div>
+      <div class="hat">
+        <div class="htag">Lane 02</div>
+        <div class="hname">Ventures</div>
+        <div class="hdesc">A small portfolio of early-stage companies I help build.</div>
+      </div>
+      <div class="hat">
+        <div class="htag">Lane 03</div>
+        <div class="hname">Real estate</div>
+        <div class="hdesc">Properties across Germany and Austria. Pricing, bookings, ops.</div>
+      </div>
+      <div class="hat">
+        <div class="htag">Lane 04</div>
+        <div class="hname">Pilot training</div>
+        <div class="hdesc">Working on my private pilot license. Theory, exams, flight hours.</div>
+      </div>
+      <div class="hat">
+        <div class="htag">Lane 05</div>
+        <div class="hname">Legal disputes</div>
+        <div class="hdesc">A couple of ongoing cases. Documents, deadlines, lawyer threads.</div>
+      </div>
+      <div class="hat">
+        <div class="htag">Lane 06</div>
+        <div class="hname">Personal &amp; wedding</div>
+        <div class="hdesc">Planning our wedding this year. Vendors, decisions, budget.</div>
       </div>
     </div>
+    <div class="hats-foot">Same brain runs all six. <span class="accent">No team. No assistants.</span> This is the setup we&rsquo;re going to look at.</div>
     <div class="brand">Value of We &middot; Erler Ventures</div>
     <div class="page-num">03 / 10</div>
   </section>
@@ -283,19 +304,19 @@
         <div class="tag">Before</div>
         <div class="name">The old setup</div>
         <div class="col-line"><div><div class="l-head">80 emails by 10am</div><span class="l-sub">every one a context switch</span></div></div>
-        <div class="col-line"><div><div class="l-head">&ldquo;What did I decide?&rdquo;</div><span class="l-sub">context loss between portfolio calls</span></div></div>
+        <div class="col-line"><div><div class="l-head">&ldquo;Wait, what did I decide?&rdquo;</div><span class="l-sub">stuff falls out between calls and weeks</span></div></div>
         <div class="col-line"><div><div class="l-head">Drafts drag for days</div><span class="l-sub">polish loop, then never sent</span></div></div>
         <div class="col-line"><div><div class="l-head">Meetings without prep</div><span class="l-sub">or 45 min prep for a 30 min call</span></div></div>
-        <div class="col-line"><div><div class="l-head">Repeating myself</div><span class="l-sub">to every stakeholder, every week</span></div></div>
+        <div class="col-line"><div><div class="l-head">Repeating myself</div><span class="l-sub">to every contact, every week</span></div></div>
       </div>
       <div class="col">
         <div class="tag">After</div>
         <div class="name">The digital twin</div>
         <div class="col-line"><div><div class="l-head">One morning page</div><span class="l-sub">inbox + calendar + priorities in 30 sec</span></div></div>
-        <div class="col-line"><div><div class="l-head">Briefings on demand</div><span class="l-sub">decisions surfaced, never lost</span></div></div>
+        <div class="col-line"><div><div class="l-head">Briefings on demand</div><span class="l-sub">last week&rsquo;s decisions, surfaced</span></div></div>
         <div class="col-line"><div><div class="l-head">Two-minute drafts</div><span class="l-sub">spoken idea, publish-ready</span></div></div>
-        <div class="col-line"><div><div class="l-head">Meeting prep auto-compiled</div><span class="l-sub">Drive + mail + CRM + LinkedIn, one click</span></div></div>
-        <div class="col-line"><div><div class="l-head">Stakeholder updates</div><span class="l-sub">drafted before I ask</span></div></div>
+        <div class="col-line"><div><div class="l-head">Meeting prep auto-compiled</div><span class="l-sub">email + drive + calendar, one click</span></div></div>
+        <div class="col-line"><div><div class="l-head">Updates drafted before I ask</div><span class="l-sub">the right message to the right person</span></div></div>
       </div>
     </div>
     <div class="brand">Value of We &middot; Erler Ventures</div>
@@ -304,36 +325,36 @@
 
   <!-- 05 ARCHITECTURE -->
   <section class="slide" id="s5">
-    <div class="label">The architecture</div>
+    <div class="label">How the twin is built</div>
     <h2 class="title">Memory. Tools. Workflows. Skills.<br><span class="accent">One front door.</span></h2>
     <div class="archstack">
       <div class="layer lead">
         <div class="layer-bar"></div>
-        <div class="layer-tag">Orchestrator</div>
-        <div class="layer-desc">One chat. <strong>Picks the right skill. Calls the right tools.</strong></div>
+        <div class="layer-tag">Front door</div>
+        <div class="layer-desc"><strong>One chat.</strong> It picks the right playbook and calls the right tools for the question you ask.</div>
       </div>
       <div class="layer">
         <div class="layer-bar"></div>
         <div class="layer-tag">Skills</div>
-        <div class="layer-desc">24+ verticals: <strong>Sales, Legal, M&amp;A, Real Estate, Content, Wedding, Coaching.</strong></div>
+        <div class="layer-desc"><strong>Mini playbooks, one per lane.</strong> Wedding decisions, property pricing, client briefs, legal filings. Each one a paragraph of plain text.</div>
       </div>
       <div class="layer">
         <div class="layer-bar"></div>
         <div class="layer-tag">Workflows</div>
-        <div class="layer-desc">Morning Brief, Meeting Prep, Draft Factory, Decision Cards.</div>
+        <div class="layer-desc">The recurring rituals. <strong>Morning brief. Meeting prep. Drafts. Friday review.</strong></div>
       </div>
       <div class="layer">
         <div class="layer-bar"></div>
         <div class="layer-tag">Tools</div>
-        <div class="layer-desc">39 connected: <strong>Gmail, Calendar, Drive, Notion, LinkedIn, Web, Slack, GitHub.</strong></div>
+        <div class="layer-desc"><strong>Things you already use every day.</strong> Email, calendar, drive, notes, contacts. Nothing new to install.</div>
       </div>
       <div class="layer">
         <div class="layer-bar"></div>
         <div class="layer-tag">Memory</div>
-        <div class="layer-desc">Persistent notes. Project state. Stakeholder context. <strong>Survives every restart.</strong></div>
+        <div class="layer-desc">Nothing falls out. <strong>Decisions, meeting notes, contact context.</strong> All searchable, forever.</div>
       </div>
     </div>
-    <div class="archstack-foot">All four layers live in plain files. <strong>Portable. Diff-able. No lock-in.</strong></div>
+    <div class="archstack-foot">All four parts live in plain files. <strong>Portable. Yours. No vendor lock-in.</strong></div>
     <div class="brand">Value of We &middot; Erler Ventures</div>
     <div class="page-num">05 / 10</div>
   </section>
@@ -347,7 +368,7 @@
         <div class="wn">01</div>
         <div class="wb">
           <div class="wt">Morning Brief</div>
-          <div class="wd">Inbox triage, today&rsquo;s calendar, priorities. One page, 30 seconds. <strong>Replaces 25 min of inbox scanning.</strong></div>
+          <div class="wd">Inbox triage, today&rsquo;s calendar, top priorities. One page, 30 seconds. <strong>Replaces 25 min of inbox scanning every morning.</strong></div>
         </div>
         <div class="when">06:30 daily</div>
       </div>
@@ -355,7 +376,7 @@
         <div class="wn">02</div>
         <div class="wb">
           <div class="wt">Meeting Prep</div>
-          <div class="wd">Drive + mail + CRM + LinkedIn auto-compiled into a <strong>one-page brief 15 min before every call.</strong></div>
+          <div class="wd">Email, drive, calendar history pulled together into a <strong>one-page brief 15 minutes before every call.</strong></div>
         </div>
         <div class="when">on demand</div>
       </div>
@@ -363,17 +384,17 @@
         <div class="wn">03</div>
         <div class="wb">
           <div class="wt">Draft Factory</div>
-          <div class="wd">Spoken idea to publish-ready LinkedIn post, email, or note in <strong>under 2 minutes</strong>. Voice in, polish out.</div>
+          <div class="wd">Spoken idea to publish-ready post, email, or note in <strong>under 2 minutes.</strong> Voice in, polish out.</div>
         </div>
         <div class="when">anywhere</div>
       </div>
       <div class="wf">
         <div class="wn">04</div>
         <div class="wb">
-          <div class="wt">Decision Cards</div>
-          <div class="wd">Open loops across all eight ventures: <strong>who owes what, what I owe by Friday.</strong> Decisions stop slipping.</div>
+          <div class="wt">Friday Review</div>
+          <div class="wd">Open loops across all six lanes. <strong>Who owes me what. What I owe by next Friday.</strong> Nothing slips into the weekend.</div>
         </div>
-        <div class="when">weekly</div>
+        <div class="when">fri 17:00</div>
       </div>
     </div>
     <div class="brand">Value of We &middot; Erler Ventures</div>
@@ -390,18 +411,18 @@
     <div class="bignum-wins">
       <div class="bw">
         <div class="h">Bigger win 01</div>
-        <div class="t">Decision quality</div>
-        <div class="d">Nothing slips. Cross-venture context survives every call.</div>
+        <div class="t">Nothing falls out</div>
+        <div class="d">Decisions, deadlines, contact context. All surface when I need them.</div>
       </div>
       <div class="bw">
         <div class="h">Bigger win 02</div>
-        <div class="t">Drafts ship</div>
-        <div class="d">Two-minute polish vs. three-day drag. The post goes out.</div>
+        <div class="t">Drafts actually ship</div>
+        <div class="d">Two-minute polish vs. three-day drag. The message goes out.</div>
       </div>
       <div class="bw">
         <div class="h">Bigger win 03</div>
-        <div class="t">Lower cognitive load</div>
-        <div class="d">I stop running eight timelines in my head. Energy back.</div>
+        <div class="t">Lower head load</div>
+        <div class="d">I stop running six timelines in my head. Energy comes back.</div>
       </div>
     </div>
     <div class="brand">Value of We &middot; Erler Ventures</div>
@@ -410,27 +431,27 @@
 
   <!-- 08 WHERE IT BREAKS -->
   <section class="slide" id="s8">
-    <div class="label">Honest, where it breaks</div>
+    <div class="label">Honest, where it still goes wrong</div>
     <h2 class="title">Four traps I fell into.<br><span class="accent">So you don&rsquo;t.</span></h2>
     <div class="rules">
-      <div class="rule"><div class="rn">01</div><div class="rb"><div class="rh">Tool churn</div><div class="rd">Vendors deprecate. <strong>Stay in plain files and standard formats.</strong> Skills travel between platforms. Stacks don&rsquo;t.</div></div></div>
-      <div class="rule"><div class="rn">02</div><div class="rb"><div class="rh">Hallucination on facts</div><div class="rd">Models guess on long-tail data. <strong>Force citations.</strong> Verify what&rsquo;s load-bearing before you act on it.</div></div></div>
-      <div class="rule"><div class="rn">03</div><div class="rb"><div class="rh">GDPR and privacy edges</div><div class="rd">Client data needs scoped tools. <strong>Build the privacy fence before the workflow,</strong> not after.</div></div></div>
-      <div class="rule"><div class="rn">04</div><div class="rb"><div class="rh">Mindset, not tech</div><div class="rd">7/10 digitisation projects fail on people, not tools. <strong>Adoption is the moat,</strong> not the model.</div></div></div>
+      <div class="rule"><div class="rn">01</div><div class="rb"><div class="rh">Tools come and go</div><div class="rd">Apps disappear. Pricing flips overnight. <strong>Stay in plain files everyone can open.</strong> The workflow has to survive the tool.</div></div></div>
+      <div class="rule"><div class="rn">02</div><div class="rb"><div class="rh">AI makes things up</div><div class="rd">Models guess on long-tail data. <strong>Force citations.</strong> Never trust a number, name, or date without checking the source.</div></div></div>
+      <div class="rule"><div class="rn">03</div><div class="rb"><div class="rh">Client data has limits</div><div class="rd">Decide what AI is allowed to touch <strong>before</strong> you start, not after. Build the privacy fence first, the workflow second.</div></div></div>
+      <div class="rule"><div class="rn">04</div><div class="rb"><div class="rh">It&rsquo;s people, not tech</div><div class="rd">7 out of 10 of these projects fail because no one uses them. <strong>Adoption is the moat,</strong> not the model.</div></div></div>
     </div>
     <div class="brand">Value of We &middot; Erler Ventures</div>
     <div class="page-num">08 / 10</div>
   </section>
 
-  <!-- 09 WHAT THIS MEANS -->
+  <!-- 09 WHAT THIS MEANS FOR YOUR TEAM -->
   <section class="slide" id="s9">
     <div class="label">What this means for an agency like yours</div>
     <h2 class="title">Don&rsquo;t perfect the setup.<br><span class="accent">Ship the first workflow this week.</span></h2>
     <div class="rules">
-      <div class="rule"><div class="rn">01</div><div class="rb"><div class="rh">Find the drain</div><div class="rd">Which repetitive task burns <strong>more than 5h a week</strong> on your team? Account brief? Client recap? Asset routing?</div></div></div>
-      <div class="rule"><div class="rn">02</div><div class="rb"><div class="rh">Wrap one workflow</div><div class="rd">Memory + tools + a ten-line prompt. <strong>Don&rsquo;t build a platform. Build a habit.</strong></div></div></div>
-      <div class="rule"><div class="rn">03</div><div class="rb"><div class="rh">One twin per role</div><div class="rd">Account Manager twin. Creative twin. Ops twin. <strong>Don&rsquo;t try to make one for everyone.</strong></div></div></div>
-      <div class="rule"><div class="rn">04</div><div class="rb"><div class="rh">Kill it if ROI is not there in 1 week</div><div class="rd">If it doesn&rsquo;t save real time inside seven days, <strong>the workflow is wrong, not the tech.</strong></div></div></div>
+      <div class="rule"><div class="rn">01</div><div class="rb"><div class="rh">Find the drain</div><div class="rd">Which repetitive task burns <strong>more than 5h a week</strong> on your team? Client recap? Status update? Asset routing? Brief writing?</div></div></div>
+      <div class="rule"><div class="rn">02</div><div class="rb"><div class="rh">Wrap one workflow</div><div class="rd">Memory plus tools plus a short, plain-text instruction. <strong>Don&rsquo;t build a platform. Build a habit.</strong></div></div></div>
+      <div class="rule"><div class="rn">03</div><div class="rb"><div class="rh">One twin per role</div><div class="rd">An Account Manager twin. A Creative twin. An Ops twin. <strong>Don&rsquo;t try to build one twin for everyone.</strong> Pick one role and ship.</div></div></div>
+      <div class="rule"><div class="rn">04</div><div class="rb"><div class="rh">Kill it if it doesn&rsquo;t pay back in a week</div><div class="rd">If a workflow doesn&rsquo;t save real time inside seven days, <strong>the workflow is wrong, not the tech.</strong> Try the next one.</div></div></div>
     </div>
     <div class="brand">Value of We &middot; Erler Ventures</div>
     <div class="page-num">09 / 10</div>
@@ -440,7 +461,7 @@
   <section class="slide" id="s10">
     <div class="label">Over to you</div>
     <div class="close-h"><span class="l1">Now let&rsquo;s go to</span><span class="l2">your tools.</span></div>
-    <div class="close-sub">Three seeds for the breakout. Pick one. Ship something by Friday.</div>
+    <div class="close-sub">Three things to bring into the breakout. Pick one. Try to ship it by Friday.</div>
     <div class="close-prompts-h">Bring to the breakout</div>
     <div class="close-prompts">
       <div class="close-prompt">
@@ -449,11 +470,11 @@
       </div>
       <div class="close-prompt">
         <div class="qn">02</div>
-        <div class="qt">ONE place context lives in your head, and shouldn&rsquo;t.</div>
+        <div class="qt">ONE piece of context that lives in your head and shouldn&rsquo;t.</div>
       </div>
       <div class="close-prompt">
         <div class="qn">03</div>
-        <div class="qt">ONE workflow you could ship by Friday.</div>
+        <div class="qt">ONE workflow you could try to ship by Friday.</div>
       </div>
     </div>
     <div class="close-bottom">
