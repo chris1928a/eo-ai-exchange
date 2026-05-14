@@ -70,20 +70,43 @@ The Rolodex is the "I have to remember everyone I've ever talked to and what we 
 
 ---
 
-## Cost reality
+## Cost reality (honest, not the "$0" headline)
 
-| Item | Cost |
+The "$0 marginal" framing on stage is technically true but hides two real costs.
+
+### Steady-state monthly
+
+| Item | Real cost |
 |---|---|
 | OpenClaw | Free, open source |
-| Local model serving (Ollama / LM Studio / llama.cpp) | Hardware Dom already owns |
+| Local model serving (Ollama / LM Studio / llama.cpp) | $0 software + electricity (Mac running 24/7 ≈ $5-15/mo at typical EU/US rates) |
 | Vector DB | Free, runs locally |
-| Cloud Claude API (only when escalated) | Marginal, varies by usage |
-| **Total marginal cost** | **~$0/month** |
+| Cloud Claude API (only when escalated to hard reasoning) | **$5-50/month** depending on how often you escalate |
+| **Real steady-state total** | **~$10-65/month** (not $0) |
 
-The trade is **engineering time, not money**. ~12 months from scratch for the full setup. If you fork this approach today, expect:
+### Up-front hardware (the big hidden cost)
+
+| Item | Real cost |
+|---|---|
+| Mac M-series + 32GB+ RAM (recommended for useful local model speeds) | **~3-5k EUR once** if you don't already have one |
+
+If you already own a capable Mac, this is $0 incremental. If you don't, this is the dominant cost.
+
+### Up-front engineering effort
+
+The trade is also **engineering time, not just money**. ~12 months from scratch for the full setup. If you fork this approach today, expect:
 - **40-80 hours** to stand up the first 2 tiers (System Prompt + Raw Archive) and basic OpenClaw integration
 - **+200-400 hours** to add the on-demand routing, Search Index, and Rolodex layers properly
 - **Maintenance tax:** real engineering work, not zero (see honest struggles below)
+
+### 3-year TCO honest comparison
+
+| Scenario | Total |
+|---|---|
+| You already have a capable Mac | ~$360-2.340 over 3 years |
+| You buy a Mac M-series (~$4k) | ~$4.360-6.340 over 3 years |
+
+For comparison, [Chris's Workspace-Native](chris-claude-code.md) is ~5.4k EUR (~$5.800) over 3 years assuming you already have any laptop. **Once hardware is in the picture, the cost gap narrows considerably.** The real differentiator is sovereignty + control, not cost.
 
 ---
 

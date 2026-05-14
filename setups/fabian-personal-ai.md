@@ -42,16 +42,43 @@ If you want a from-scratch personal setup with no opinionated framework, look at
 
 ---
 
-## Cost
+## Cost (honest, not just "free + your API")
 
-| Item | Cost |
+PAI itself is free under MIT. The "+ your API spend" disclaimer hides what most operators actually pay once it's running.
+
+### Steady-state monthly
+
+| Item | Real cost |
 |---|---|
 | PAI itself | Free, MIT |
-| Compute (your machine) | What you already have |
-| Model APIs (cloud Claude / OpenAI / etc.) | Pay-per-token, your choice |
-| Optional managed hosting | Optional |
+| Cloud model API spend (PAI escalates frequently — 45 skills × 171 workflows means lots of LLM calls) | **$20-100/month** depending on usage intensity |
+| Compute (your machine running Pulse + the daemon 24/7) | $0 software + electricity (~$5-15/mo) |
+| Optional managed hosting | Skip unless you need it |
+| **Real steady-state total** | **~$25-115/month** (not "free") |
 
-Total cost depends on how much you escalate to a cloud model. Cheaper than Workspace-native if you stay mostly local.
+### Up-front hardware (the hidden cost most setups quote)
+
+| Item | Real cost |
+|---|---|
+| Mac M-series (recommended for running Pulse + local model + workflows smoothly) | **~3-5k EUR once** if you don't already have one |
+| Linux box alternative | Whatever you already have or build |
+
+If you already own a capable Mac, this is $0 incremental.
+
+### Up-front time
+
+- **30 minutes:** install + first browse to Pulse at `localhost:31337`
+- **1-2 days:** define your Telos, fill in the ISA, activate first Pack — this is where most of the value compounds
+- **Ongoing:** community-driven repo, expect breaking changes between versions (v5.x → v5.x+1 takes ~30-60 days)
+
+### 3-year TCO honest comparison
+
+| Scenario | Total |
+|---|---|
+| You already have a capable Mac | ~$900-4.140 over 3 years |
+| You buy a Mac M-series (~$4k) | ~$4.900-8.140 over 3 years |
+
+For comparison, [Chris's Workspace-Native](chris-claude-code.md) is ~5.4k EUR (~$5.800) over 3 years assuming you already have any laptop, and [Dom's Local-First](dom-rolodex.md) is ~$360-6.340 depending on hardware. **All three setups land in the same TCO ballpark once you account for hardware and steady-state API spend.** The real choice is about *which trade-off you prefer*: convenience (Chris), sovereignty (Dom), or out-of-box completeness (Fabian).
 
 ---
 

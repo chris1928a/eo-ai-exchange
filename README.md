@@ -7,7 +7,23 @@ A continuous, audience-driven series where EO members surface real AI-setup pain
 
 ---
 
-![Three working AI setups — Workspace-Native (Chris) · Local-First Rolodex (Dom) · PAI Life OS (Fabian)](assets/setups-comparison.svg)
+```mermaid
+flowchart LR
+    Brain([Build a personal AI brain<br/>that actually works])
+    Brain --> S1[<b>Setup 1 — Chris</b><br/>Workspace-Native<br/>━━━━━━━━━━━<br/>~150 EUR/mo all-in<br/>Mobile via Telegram<br/>~23h/wk saved<br/>Value in 60 min]
+    Brain --> S2[<b>Setup 2 — Dom</b><br/>Local-First Rolodex<br/>━━━━━━━━━━━<br/>$10-50/mo + Mac hardware<br/>5-tier memory · 107 Rolodex<br/>Sovereignty · No mobile<br/>Backbone in 90 min · Full in 12 months]
+    Brain --> S3[<b>Setup 3 — Fabian</b><br/>PAI Life OS<br/>━━━━━━━━━━━<br/>$20-100/mo + Mac hardware<br/>45 skills · 171 workflows · 37 hooks<br/>Pulse dashboard · macOS/Linux<br/>Value in 1-2 days]
+
+    classDef chris fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#0f172a
+    classDef dom fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#0f172a
+    classDef fabian fill:#f3e8ff,stroke:#9333ea,stroke-width:2px,color:#0f172a
+    classDef start fill:#fef3c7,stroke:#d97706,stroke-width:3px,color:#0f172a
+
+    class Brain start
+    class S1 chris
+    class S2 dom
+    class S3 fabian
+```
 
 ---
 
@@ -57,22 +73,27 @@ Three operator-level setups demoed at Event #1 (2026-05-11). **Same problem** �
 |---|---|---|---|
 | **Operator** | Christoph Erler (EO Berlin) | Dominik Raute (CTO JustWatch) | Fabian Gless (EO Berlin) runs Daniel Miessler's PAI |
 | **Stack** | Claude Code + 31 MCP + 19 skills + 125 memory + 7 crons + Telegram | Vanilla OpenClaw + custom 5-tier memory + Rolodex + local LLMs on Mac | PAI v5.0.0: 45 skills + 171 workflows + 37 hooks + Pulse dashboard |
-| **Cost / month** | ~150 EUR all-in | ~$0 marginal | Free + your model API spend |
+| **Cost / month (honest, steady-state)** | ~150 EUR all-in (Claude Pro 20 + AWS Lightsail 20 + APIs ~110) | **$10-50/mo** cloud Claude escalations + electricity (NOT $0 — see below) | **$20-100/mo** PAI workflow API spend (depends on usage) |
+| **Hardware up-front** | Whatever you already have (Mac/Linux/Windows+WSL) | Mac M-series + 32GB+ RAM ≈ **3-5k EUR once** if you don't have one | Mac M-series recommended ≈ **3-5k EUR once** if you don't have one |
+| **3-year TCO (no new hardware needed)** | ~5.4k EUR | ~$360-1.800 | ~$720-3.600 |
+| **3-year TCO (incl. ~$4k Mac amortized)** | ~5.4k EUR | ~$4.360-5.800 | ~$4.720-7.600 |
 | **Mobile?** | ✅ Telegram bot | ❌ Desktop-first | Dashboard at `localhost:31337` |
-| **Platform** | Mac / Linux / Windows+WSL | Mac (M-series) only | macOS / Linux only |
-| **Tracked time saved** | ~23h/wk | similar at $0/mo | tied to PAI's 7-phase Algorithm |
-| **Best for** | Multi-domain operator in Workspace, mobile-first | Regulated data, max sovereignty, Mac power user | Wants complete Life OS out of the box |
+| **Platform** | Mac / Linux / Windows+WSL | Mac M-series (Linux possible, theoretical) | macOS / Linux only |
+| **Tracked time saved** | ~23h/wk | similar order, $0 marginal cost | tied to PAI's 7-phase Algorithm |
+| **Time to first working skill** | 60 min | 90 min for backbone, 12 months for full Rolodex | 30 min install + 1-2 days configuration |
 | **Pick if** | You live in Gmail/Calendar/Drive all day | You handle data that cannot leave your machine | You want opinionated framework, not blank slate |
 | **Skip if** | You need full local sovereignty | You want value in 30 min | You're on Windows |
 | **Detailed spec** | **→ [setups/chris-claude-code.md](setups/chris-claude-code.md)** | **→ [setups/dom-rolodex.md](setups/dom-rolodex.md)** | **→ [setups/fabian-personal-ai.md](setups/fabian-personal-ai.md)** |
+
+> **The honest cost insight.** "$0 marginal" or "free" headlines hide hardware + escalation API costs. Once you amortize a Mac and add cloud Claude calls for hard reasoning, **all three setups land in roughly the same 3-year TCO bracket** for someone who needs to buy hardware. **The real differentiator is time-to-first-value** (60 min vs 1-2 days vs 12 months) and what you optimize for (mobile vs sovereignty vs opinionated framework).
 
 ### What each setup ships, in plain terms
 
 **🔵 Setup 1 — Chris (Workspace-Native).** The "AI as infrastructure replaces a team I would have hired" path. Claude Code wired into Google Workspace via 31 MCP servers, 19 reusable skills (8 of them in [`/skills/`](skills/)), 125 memory files routed by a ~50-line CLAUDE.md, mobile via a Telegram bot on AWS Lightsail Frankfurt. ~23h/wk saved on a tracked 8-week sample. Replaces ~1.5 FTE (80-110k EUR/yr) at a 45-60x cost ratio. Personal opportunity cost reclaimed: ~270k EUR/yr. → [Read the full spec](setups/chris-claude-code.md) — origin, 4-layer brain, 8 forkable skills with names, 7 cron jobs, anti-AI voice rules, 30-day rollout plan, troubleshooting.
 
-**🟢 Setup 2 — Dom (Local-First Rolodex).** The "sovereignty over convenience" path. Vanilla OpenClaw as backbone, custom 5-tier memory (`System Prompt > Bootstrap > On-Demand > Search Index > Raw Archive`), a Rolodex of 107 person dossiers, 1.183 files indexed across 5.735 vectors / 11 collections, all running on local models on a Mac. 2-5 second queries. ~$0/month marginal cost. Built over 12 months from scratch. The agent that remembers. → [Read the full spec](setups/dom-rolodex.md) — 5-tier architecture, what Dom shared at the event, honest struggles, when this is right (and when it is not).
+**🟢 Setup 2 — Dom (Local-First Rolodex).** The "sovereignty over convenience" path. Vanilla OpenClaw as backbone, custom 5-tier memory (`System Prompt > Bootstrap > On-Demand > Search Index > Raw Archive`), a Rolodex of 107 person dossiers, 1.183 files indexed across 5.735 vectors / 11 collections, all running on local models on a Mac. 2-5 second queries. **Real cost: $10-50/mo cloud Claude escalations + electricity, plus Mac M-series hardware (~3-5k EUR once if you don't have one).** Built over 12 months from scratch. The agent that remembers. → [Read the full spec](setups/dom-rolodex.md) — 5-tier architecture, what Dom shared at the event, honest struggles, when this is right (and when it is not).
 
-**🟣 Setup 3 — Fabian (PAI Life OS).** The "complete opinionated Life OS out of the box" path. [Daniel Miessler's PAI v5.0.0](https://github.com/danielmiessler/Personal_AI_Infrastructure) (12.100+ stars, MIT) — 45 skills, 171 workflows, 37 hooks, a Pulse dashboard at `localhost:31337`, the Telos / ISA / DA conceptual framework. One-line install. macOS / Linux only. → [Read the full spec](setups/fabian-personal-ai.md) — what you get, the Telos step that matters, honest struggles, why this matters as a reference architecture.
+**🟣 Setup 3 — Fabian (PAI Life OS).** The "complete opinionated Life OS out of the box" path. [Daniel Miessler's PAI v5.0.0](https://github.com/danielmiessler/Personal_AI_Infrastructure) (12.100+ stars, MIT) — 45 skills, 171 workflows, 37 hooks, a Pulse dashboard at `localhost:31337`, the Telos / ISA / DA conceptual framework. One-line install. macOS / Linux only. **Real cost: PAI itself is free + MIT, but plan $20-100/mo cloud Claude API for the workflows that escalate, plus Mac hardware (~3-5k EUR once if you don't have one).** → [Read the full spec](setups/fabian-personal-ai.md) — what you get, the Telos step that matters, honest struggles, why this matters as a reference architecture.
 
 > **Brand new to GitHub or AI tooling?** Start at [`START-HERE.md`](START-HERE.md) for the 3-step path (fork → clone → first skill). No jargon, screenshots from official GitHub Docs.
 
