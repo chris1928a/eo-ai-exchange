@@ -38,7 +38,7 @@
 - You want to *own* the setup and iterate on it for years, not buy a SaaS
 
 If you want a complete opinionated Life OS out of the box, see [Fabian's PAI setup](fabian-personal-ai.md).
-If you want zero ongoing cost and full sovereignty, see Dom's local-first path — full doc refreshing, [slides 13-15](https://chris1928a.github.io/eo-ai-exchange/events/01-2026-05-11-setup-trap/slides.html#13) cover the architecture.
+If you want zero ongoing cost and full sovereignty, see [Dom's local-first setup](dom-rolodex.md).
 
 ---
 
@@ -281,6 +281,52 @@ Not zero. Honest.
 
 ---
 
+## Quick Start (5 minutes — you'll have a working brain)
+
+If you only have 5 minutes right now:
+
+```bash
+# 1. Install Claude Code
+curl -fsSL https://claude.ai/install.sh | bash
+
+# 2. Clone this repo
+git clone https://github.com/chris1928a/eo-ai-exchange.git
+cd eo-ai-exchange
+
+# 3. Fork the templates into your Claude config
+mkdir -p ~/.claude/projects/my-brain/memory
+cp -r templates/memory-templates/* ~/.claude/projects/my-brain/memory/
+cp templates/CLAUDE.md.template ~/.claude/projects/my-brain/CLAUDE.md
+
+# 4. Fork the morning-brief skill
+cp -r skills/morning-brief ~/.claude/skills/
+
+# 5. Open a Claude Code session in the project
+cd ~/.claude/projects/my-brain && claude
+```
+
+Then in Claude Code: edit `memory/user_about.md` (5 min, the highest-leverage file you'll write) and type `/morning-brief` to test.
+
+For the full path with MCP servers, cron jobs, and Telegram, continue with the Step-by-step below.
+
+---
+
+## Day 0 checklist (the shopping list)
+
+Before you start the long-form Step-by-step, confirm you have:
+
+- [ ] A Claude Pro subscription (or API access) — [console.anthropic.com](https://console.anthropic.com)
+- [ ] Google Workspace account with admin access (for OAuth approval of MCP servers)
+- [ ] Mac / Linux machine, OR Windows + WSL2 installed and working
+- [ ] `git` and `curl` installed (`git --version` and `curl --version` should both work)
+- [ ] (Optional) AWS account if you want the Telegram bot path — [aws.amazon.com](https://aws.amazon.com)
+- [ ] (Optional) Telegram account + access to BotFather for bot creation
+- [ ] 60 minutes of uninterrupted time (or break it into two 30-min sessions)
+
+If any of the optional ones is missing, you can still run the desktop-only version — skip Step 5 in the long-form below.
+
+---
+
 ## Step-by-step to your first win (60 minutes)
 
 ### 1. Install Claude Code
@@ -298,11 +344,14 @@ Verify: `claude --version`. Reference: [docs.claude.com/en/docs/claude-code/over
 
 ```bash
 git clone https://github.com/chris1928a/eo-ai-exchange.git
+mkdir -p ~/.claude/projects/<your-project>/memory
 cp -r eo-ai-exchange/templates/memory-templates/* ~/.claude/projects/<your-project>/memory/
-cp eo-ai-exchange/templates/CLAUDE.md.template <your-project>/CLAUDE.md
+cp eo-ai-exchange/templates/CLAUDE.md.template ~/.claude/projects/<your-project>/CLAUDE.md
 ```
 
-Edit `user_about.md` and `feedback_voice.md` first — those two files are 80% of the leverage.
+**The 30-minute step that matters:** Edit `user_about.md` and `feedback_voice.md`. These two files are 80% of the leverage you will get from the entire setup. Spend real time on them. Banned words list, voice examples, how you actually sound — all of it.
+
+**Verification:** `ls ~/.claude/projects/<your-project>/memory/` should show 7+ template files.
 
 ### 3. Connect Gmail as your first MCP server
 
@@ -319,16 +368,40 @@ Pick **Gmail**, follow the OAuth flow. Verify: ask Claude *"List my unread email
 ### 4. Fork your first skill — `/morning-brief`
 
 ```bash
+mkdir -p ~/.claude/skills
 cp -r eo-ai-exchange/skills/morning-brief ~/.claude/skills/
 ```
 
-Edit the `SKILL.md` to match your sources. Type `/morning-brief` in Claude Code. You have a working personal AI.
+Edit the `SKILL.md` to match your sources. Type `/morning-brief` in Claude Code.
+
+**Verification:** Claude should produce a 5-bullet brief from your real Gmail + Calendar data. If it doesn't trigger, check the `description` field in the frontmatter — that's the trigger sentence.
+
+**You now have a working personal AI.** Stop here for today if you want. Come back for Step 5 when you want mobile + always-on.
 
 ### 5. (Optional) Mobile via Telegram + always-on cron
 
 Spin up an AWS Lightsail VM in Frankfurt (~20 EUR/mo). Install Claude Code on it, register a Telegram bot via BotFather, run a small Node bot that listens to Telegram messages, forwards them to a `claude` session over HMAC-verified webhook, posts replies back. Schedule cron jobs for `/morning-brief` (07:00 daily) and `/weekly-review` (Fri 17:00).
 
 Detailed playbook: [`solutions/setup-itself/30-min-aios-blueprint.md`](../solutions/setup-itself/30-min-aios-blueprint.md).
+
+---
+
+## Troubleshooting — things that go wrong on first setup
+
+| Symptom | Likely cause | Fix |
+|---|---|---|
+| `claude --version` says "command not found" | PATH not refreshed after install | Restart your terminal, or `source ~/.bashrc` / `source ~/.zshrc` |
+| `/mcp` doesn't list any servers | First-time setup, none registered | That's expected — pick one (e.g. Gmail), follow the OAuth flow |
+| `/mcp` lists Gmail but Claude says "I cannot access your email" | OAuth wasn't completed | Re-run `/mcp`, complete the browser auth flow, retry |
+| `/morning-brief` doesn't trigger when you type it | Skill description doesn't match the trigger words | Edit `~/.claude/skills/morning-brief/SKILL.md` `description` field — must contain words you actually type |
+| Skill triggers but output is generic | Memory files are empty templates | Edit `user_about.md` and `feedback_voice.md` with real content |
+| Claude doesn't load `CLAUDE.md` | Wrong directory | `CLAUDE.md` must be at the root of the project where you start `claude` |
+| Memory file doesn't get loaded | Not pointed to from `MEMORY.md` | Add a one-line entry to `~/.claude/projects/<your-project>/memory/MEMORY.md` |
+| Telegram bot doesn't reply | Webhook URL wrong, or HMAC signature mismatch | Check Lightsail security group + bot token + webhook URL in BotFather |
+| Cron job doesn't fire | Cron daemon not running, or path issue in cron command | `systemctl status cron` (Linux) / `crontab -l` to confirm; use absolute paths in cron commands |
+| Cost spiking past expected | Probably Opus burn during build-up | Switch model to Sonnet 4.6 for high-frequency operations; reserve Opus for hard reasoning |
+
+If you hit something not on this list, [open an issue](https://github.com/chris1928a/eo-ai-exchange/issues) and we'll add it.
 
 ---
 
@@ -370,7 +443,7 @@ The honest history of how this brain got here:
 - You want to *own* the setup and iterate forever, not buy a SaaS
 
 **Skip this if:**
-- You handle data that cannot leave your machine (Dom's local-first path — doc refreshing, see [slides 13-15](https://chris1928a.github.io/eo-ai-exchange/events/01-2026-05-11-setup-trap/slides.html#13))
+- You handle data that cannot leave your machine (use [Dom's local-first setup](dom-rolodex.md))
 - You want a complete Life OS out of the box ([Fabian's PAI setup](fabian-personal-ai.md))
 - You operate in a single domain and 5 skills would cover you (this is overkill)
 - You are not willing to maintain a personal stack on an ongoing basis

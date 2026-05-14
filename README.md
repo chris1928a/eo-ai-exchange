@@ -7,15 +7,36 @@ A continuous, audience-driven series where EO members surface real AI-setup pain
 
 ---
 
-## Pick your path
+## Fork one of three working setups
 
-| You are... | Go here |
-|---|---|
-| **New to GitHub or AI tooling** | [`START-HERE.md`](START-HERE.md) — 3-step guide, no jargon |
-| **Looking for a working setup to fork** | [`setups/`](setups/) — Chris (Workspace) + Fabian (PAI). Dom's local-first deep-dive refreshing, see [slides 13-15](https://chris1928a.github.io/eo-ai-exchange/events/01-2026-05-11-setup-trap/slides.html#13) |
-| **Hunting a fix for a specific pain** | [`SOLUTIONS.md`](SOLUTIONS.md) — 11 solutions, one per pain cluster |
-| **Confused by a term** | [`resources/glossary.md`](resources/glossary.md) — plain-language definitions |
-| **Watching the talks** | [Joint deck](https://chris1928a.github.io/eo-ai-exchange/events/01-2026-05-11-setup-trap/slides.html) · [Chris's deep dive](https://chris1928a.github.io/eo-ai-exchange/events/01-2026-05-11-setup-trap/chris-demo.html) · [Q&A](https://chris1928a.github.io/eo-ai-exchange/events/01-2026-05-11-setup-trap/qa-deck.html) |
+Three operator-level setups demoed at Event #1 (2026-05-11). **Same problem** — build a personal AI brain that actually works in production. **Three different operator-level answers.** Pick the one closest to how you already work, fork it tonight, run it tomorrow.
+
+| | **Setup 1 — Workspace-Native** | **Setup 2 — Local-First Rolodex** | **Setup 3 — PAI Life OS** |
+|---|---|---|---|
+| **Operator** | Christoph Erler (EO Berlin) | Dominik Raute (CTO JustWatch) | Fabian Gless (EO Berlin) runs Daniel Miessler's PAI |
+| **Stack** | Claude Code + 31 MCP + 19 skills + 125 memory + 7 crons + Telegram | Vanilla OpenClaw + custom 5-tier memory + Rolodex + local LLMs on Mac | PAI v5.0.0: 45 skills + 171 workflows + 37 hooks + Pulse dashboard |
+| **Cost / month** | ~150 EUR all-in | ~$0 marginal | Free + your model API spend |
+| **Mobile?** | ✅ Telegram bot | ❌ Desktop-first | Dashboard at `localhost:31337` |
+| **Platform** | Mac / Linux / Windows+WSL | Mac (M-series) only | macOS / Linux only |
+| **Tracked time saved** | ~23h/wk | similar at $0/mo | tied to PAI's 7-phase Algorithm |
+| **Best for** | Multi-domain operator in Workspace, mobile-first | Regulated data, max sovereignty, Mac power user | Wants complete Life OS out of the box |
+| **Pick if** | You live in Gmail/Calendar/Drive all day | You handle data that cannot leave your machine | You want opinionated framework, not blank slate |
+| **Skip if** | You need full local sovereignty | You want value in 30 min | You're on Windows |
+| **Detailed spec** | **→ [setups/chris-claude-code.md](setups/chris-claude-code.md)** | **→ [setups/dom-rolodex.md](setups/dom-rolodex.md)** | **→ [setups/fabian-personal-ai.md](setups/fabian-personal-ai.md)** |
+
+### What each setup ships, in plain terms
+
+**🔵 Setup 1 — Chris (Workspace-Native).** The "AI as infrastructure replaces a team I would have hired" path. Claude Code wired into Google Workspace via 31 MCP servers, 19 reusable skills (8 of them in [`/skills/`](skills/)), 125 memory files routed by a ~50-line CLAUDE.md, mobile via a Telegram bot on AWS Lightsail Frankfurt. ~23h/wk saved on a tracked 8-week sample. Replaces ~1.5 FTE (80-110k EUR/yr) at a 45-60x cost ratio. Personal opportunity cost reclaimed: ~270k EUR/yr. → [Read the full spec](setups/chris-claude-code.md) — origin, 4-layer brain, 8 forkable skills with names, 7 cron jobs, anti-AI voice rules, 30-day rollout plan, troubleshooting.
+
+**🟢 Setup 2 — Dom (Local-First Rolodex).** The "sovereignty over convenience" path. Vanilla OpenClaw as backbone, custom 5-tier memory (`System Prompt > Bootstrap > On-Demand > Search Index > Raw Archive`), a Rolodex of 107 person dossiers, 1.183 files indexed across 5.735 vectors / 11 collections, all running on local models on a Mac. 2-5 second queries. ~$0/month marginal cost. Built over 12 months from scratch. The agent that remembers. → [Read the full spec](setups/dom-rolodex.md) — 5-tier architecture, what Dom shared at the event, honest struggles, when this is right (and when it is not).
+
+**🟣 Setup 3 — Fabian (PAI Life OS).** The "complete opinionated Life OS out of the box" path. [Daniel Miessler's PAI v5.0.0](https://github.com/danielmiessler/Personal_AI_Infrastructure) (12.100+ stars, MIT) — 45 skills, 171 workflows, 37 hooks, a Pulse dashboard at `localhost:31337`, the Telos / ISA / DA conceptual framework. One-line install. macOS / Linux only. → [Read the full spec](setups/fabian-personal-ai.md) — what you get, the Telos step that matters, honest struggles, why this matters as a reference architecture.
+
+> **Brand new to GitHub or AI tooling?** Start at [`START-HERE.md`](START-HERE.md) for the 3-step path (fork → clone → first skill). No jargon, screenshots from official GitHub Docs.
+
+> **Don't know what Claude Code, MCP, or Skills are?** Plain-English glossary at [`resources/glossary.md`](resources/glossary.md).
+
+> **Looking for a fix to a specific pain?** [`SOLUTIONS.md`](SOLUTIONS.md) — 11 documented solutions, one per audience pain cluster from 118 registrations.
 
 ---
 
@@ -91,10 +112,10 @@ eo-ai-exchange/
 │       ├── QA-CHEATSHEET.md     ← panel cheatsheet, plain Markdown
 │       └── AUDIENCE-ANALYSIS.md ← anonymized pain breakdown, 118 registrants
 │
-├── setups/                      ← operator setups, fork-ready
+├── setups/                      ← three operator setups, fork-ready
 │   ├── chris-claude-code.md     ← Workspace-native, ~150 EUR/mo, 23h/wk saved
+│   ├── dom-rolodex.md           ← Local-first 5-tier + Rolodex, ~$0/mo
 │   └── fabian-personal-ai.md    ← Daniel Miessler's PAI v5, complete Life OS
-│   (Dom's local-first deep-dive refreshing — see slides 13-15)
 │
 ├── skills/                      ← 8 forkable starter SKILL.md files from Event #1
 │   ├── morning-brief/           ← Daily 7am brief (2.25h/wk saved)
@@ -106,7 +127,7 @@ eo-ai-exchange/
 │   ├── sales-script-rewriter/   ← Domain example: sales call coaching
 │   └── property-pricing/        ← Domain example: daily revenue management
 │
-├── templates/                   ← starter foundation files (CLAUDE.md, memory)
+├── templates/                   ← starter foundation files
 │   ├── CLAUDE.md.template       ← Project-level instructions, ~50 lines
 │   └── memory-templates/        ← user_about, feedback_voice, hat, curator rules
 │
@@ -124,8 +145,6 @@ eo-ai-exchange/
 │
 ├── resources/
 │   └── glossary.md              ← plain-language defs (Claude Code, MCP, Skills, etc.)
-│
-├── skills/                      ← runnable Claude Code skills (community contributions)
 │
 └── speakers/                    ← speaker pipeline + alumni
 ```

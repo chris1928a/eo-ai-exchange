@@ -80,13 +80,13 @@ This works fine for reading the content. It is harder to update later — if tha
 
 ## Step 3 — Pick one setup and start (5 minutes to the first win)
 
-Setups are documented in [`setups/`](setups/). Pick the one closest to how you already work.
+Three setups are documented in [`setups/`](setups/). Pick the one closest to how you already work.
 
 | If you live in... | Pick this | What you get |
 |---|---|---|
 | Google Workspace, mobile-first, fine paying ~150 EUR/mo | [`setups/chris-claude-code.md`](setups/chris-claude-code.md) | Workspace-native, 23h/wk saved, 31 MCP tools, 19 skills |
+| Mac, want full sovereignty, $0/mo, comfortable with terminals | [`setups/dom-rolodex.md`](setups/dom-rolodex.md) | Local-first 5-tier memory + Rolodex of 107 people, $0/mo |
 | Mac/Linux, want a complete opinionated Life OS out of the box | [`setups/fabian-personal-ai.md`](setups/fabian-personal-ai.md) | Daniel Miessler's PAI v5: 45 skills, 171 workflows, 37 hooks |
-| Mac, want full sovereignty, $0/mo, comfortable with terminals | *Dom's local-first deep-dive refreshing* — see [slides 13-15](https://chris1928a.github.io/eo-ai-exchange/events/01-2026-05-11-setup-trap/slides.html#13) for the architecture overview |
 
 Each setup file has:
 - What it is (in plain English)
