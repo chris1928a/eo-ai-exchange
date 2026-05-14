@@ -125,13 +125,14 @@ Your Digital Assistant is the conversational interface to all of the above. Defa
 
 ## What hurts (honest struggles, from Fabian's live use)
 
-These are the same five Fabian flags in the [demo companion doc](../events/01-2026-05-11-setup-trap/fabian-demo-pai.md):
+These are the four Fabian flags from the [demo companion doc](../events/01-2026-05-11-setup-trap/fabian-demo-pai.md):
 
 1. **Opinionated framework.** You either buy the Telos + ISA + DA framing, or you do not. There is no middle ground. The system is built around Miessler's worldview.
-2. **Algorithm v6.3.0 has a learning curve.** Seven phases (Current State → Ideal State) is more complex than a 30-minute setup. Plan to invest 1-2 days reading and configuring before you get value.
-3. **Windows not supported.** Only macOS and Linux. If you are on Windows, this is not your path tonight.
-4. **Pulse is another local process.** Adds a daemon to your machine that runs alongside your other tooling. Worth it for the dashboard, but worth knowing.
-5. **Community-driven.** Stars are 12k but issues, PRs, and breaking changes happen. If you fork v5.0.0 today, expect v5.1 to land in 30-60 days. Pin a version if you cannot tolerate that.
+2. **Windows not supported.** Only macOS and Linux. If you are on Windows, this is not your path.
+3. **Pulse is another local process.** Adds a daemon to your machine that runs alongside your other tooling. Worth it for the dashboard, but worth knowing.
+4. **Community-driven.** Stars are 12k but issues, PRs, and breaking changes happen. If you fork v5.0.0 today, expect v5.1 to land in 30-60 days. Pin a version if you cannot tolerate that.
+
+> **Note on the Algorithm:** v6.3.0 is a standardized approach to any problem with different intensity levels. It works out of the box and the code decides itself how intensively it gets applied per task. No learning curve to flag here, contrary to first impression.
 
 ---
 

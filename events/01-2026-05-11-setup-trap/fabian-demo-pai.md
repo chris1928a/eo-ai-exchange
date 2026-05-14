@@ -107,10 +107,11 @@ The Packs system is what makes PAI extensible without forking the core.
 ## Honest struggles with PAI (what Fabian should mention live)
 
 1. **Opinionated.** You either buy the Telos plus ISA plus DA framing, or you do not. There is no middle ground. The system is built around Miessler's worldview.
-2. **Algorithm v6.3.0 has a learning curve.** Seven phases (Current State → Ideal State) is more complex than a 30-minute setup. Plan to invest 1-2 days reading and configuring before you get value.
-3. **Windows not supported.** Only macOS and Linux. If you are on Windows, this is not your path tonight.
-4. **Pulse is another local process.** Adds a daemon to your machine that runs alongside your other tooling. Worth it for the dashboard, but worth knowing.
-5. **Community-driven.** Stars are 12k but issues, PRs, and breaking changes happen. If you fork v5.0.0 today, expect v5.1 to land in 30-60 days.
+2. **Windows not supported.** Only macOS and Linux. If you are on Windows, this is not your path tonight.
+3. **Pulse is another local process.** Adds a daemon to your machine that runs alongside your other tooling. Worth it for the dashboard, but worth knowing.
+4. **Community-driven.** Stars are 12k but issues, PRs, and breaking changes happen. If you fork v5.0.0 today, expect v5.1 to land in 30-60 days.
+
+> **Note on the Algorithm:** v6.3.0 is a standardized approach to any problem with different intensity levels. Works out of the box, and the code decides itself how intensively it gets applied per task. Not a learning-curve item, contrary to first impression.
 
 ---
 
