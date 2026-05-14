@@ -21,14 +21,14 @@ The pattern is: **pull 7 days from N live sources → score across hats → outp
 
 ## Inputs
 
-1. **Calendar last 7 days** — what actually happened (vs what was planned)
-2. **Email sent + received** — flagged threads, important responses you owe
-3. **Memory file changes** — what you added to memory this week (proxy for "what mattered")
-4. **Skills invoked** — which skills you actually used (proxy for which workflows are alive)
-5. **Open threads file** — `memory/project_open_threads.md` (decay-flagged items)
-6. **Per-domain memory** — your "hat" files (e.g. `memory/hats/advisory.md`, `memory/hats/ventures.md`)
-7. **Last 4 weekly reviews** — `weekly-reviews/` archive for trend detection
-8. **Voice rules** — for the tone of the review itself
+1. **Calendar last 7 days**, what actually happened (vs what was planned)
+2. **Email sent + received**, flagged threads, important responses you owe
+3. **Memory file changes**, what you added to memory this week (proxy for "what mattered")
+4. **Skills invoked**, which skills you actually used (proxy for which workflows are alive)
+5. **Open threads file**, `memory/project_open_threads.md` (decay-flagged items)
+6. **Per-domain memory**, your "hat" files (e.g. `memory/hats/advisory.md`, `memory/hats/ventures.md`)
+7. **Last 4 weekly reviews**, `weekly-reviews/` archive for trend detection
+8. **Voice rules**, for the tone of the review itself
 
 ---
 
@@ -71,7 +71,7 @@ Posted to: Telegram, your `weekly-reviews/{YYYY-MM-DD}.md` archive, optionally a
 
 ---
 
-## Worked example — Friday after a productive week
+## Worked example, Friday after a productive week
 
 **Context:** Friday 2026-05-16, 17:00. Chris's brain has been logging to memory all week.
 
@@ -108,7 +108,7 @@ Posted to: Telegram, your `weekly-reviews/{YYYY-MM-DD}.md` archive, optionally a
 3. Dentist follow-up by EOD Mon (no excuses, 30 sec text)
 
 ## Single decision to make over the weekend
-Whether to attend the Berlin operator event Sat OR finish the founders deck — pick one.
+Whether to attend the Berlin operator event Sat OR finish the founders deck, pick one.
 ```
 
 That shape compresses 90 minutes of "what happened this week" reflection into 10 minutes of focused planning.
@@ -158,9 +158,9 @@ RULES:
 2. Wins MUST cite specific evidence (not vague "made progress").
 3. Decisions MUST have dates.
 4. Decay flags MUST have days-late count.
-5. Top 3 next week are commitments — same items appearing 3+ weeks running = a structural problem, flag it.
+5. Top 3 next week are commitments, same items appearing 3+ weeks running = a structural problem, flag it.
 6. Apply voice rules.
-7. Do NOT pad — if a section is empty, say "nothing notable".
+7. Do NOT pad, if a section is empty, say "nothing notable".
 
 SIDE EFFECT (after generating):
 - Save to weekly-reviews/{iso_date}.md
@@ -245,7 +245,7 @@ Same pattern (pull → score across hats → fixed-shape note → archive for tr
 | 15-28 | After 4 weekly reviews accumulated, the trend-detection part starts to work. |
 | 29+ | Trust the output. Light edits only. The skill replaces the manual routine. |
 
-The 4-week ramp matters — without trend detection on past reviews, the output is shallow.
+The 4-week ramp matters, without trend detection on past reviews, the output is shallow.
 
 ---
 

@@ -1,8 +1,8 @@
-# Setup 3 — Fabian's Personal AI Infrastructure (PAI) Fork
+# Setup 3, Fabian's Personal AI Infrastructure (PAI) Fork
 
 > **The 30-second pitch.** Daniel Miessler's open-source PAI v5.0.0. A complete, opinionated Life OS shipped with 45 skills, 171 workflows, 37 hooks. Free to fork. macOS or Linux. The "complete out of the box" path.
 
-**Maintained by upstream:** Daniel Miessler — [github.com/danielmiessler/Personal_AI_Infrastructure](https://github.com/danielmiessler/Personal_AI_Infrastructure) (12.100+ stars, MIT)
+**Maintained by upstream:** Daniel Miessler, [github.com/danielmiessler/Personal_AI_Infrastructure](https://github.com/danielmiessler/Personal_AI_Infrastructure) (12.100+ stars, MIT)
 **EO speaker who runs this in production:** Fabian Gless, founder of [Die Tierversicherer](https://digital-verkaufen-lernen.de) (AI-enabled insurance broker)
 **Pain clusters this addresses:** Setup Itself, Tool Overload, Agents, Team Adoption
 **Live demo:** Demo 3 at [Event #1](../events/01-2026-05-11-setup-trap/README.md), see slides 16-17 of [slides.html](../events/01-2026-05-11-setup-trap/slides.html)
@@ -16,7 +16,7 @@
 - You are on macOS or Linux (Windows is not supported)
 - You can invest 1-2 days reading and configuring before getting value
 - You are comfortable buying into Daniel Miessler's worldview (Telos, ISA, TRIOT)
-- You want a dashboard, not just a CLI — PAI ships with `Pulse` at `localhost:31337`
+- You want a dashboard, not just a CLI, PAI ships with `Pulse` at `localhost:31337`
 
 If you want a from-scratch personal setup with no opinionated framework, look at [Chris's](chris-claude-code.md) (Workspace-native) or [Dom's](dom-rolodex.md) (local-first) instead.
 
@@ -36,9 +36,9 @@ If you want a from-scratch personal setup with no opinionated framework, look at
 | License | MIT |
 
 **Three layers stacked:**
-1. **PAI** — the OS itself: skills, memory, the Algorithm, your Telos, identity files
-2. **Pulse** — a Life Dashboard at `localhost:31337` showing your state, goals, active work
-3. **The DA** (Digital Assistant) — the voice and personality you talk to
+1. **PAI**, the OS itself: skills, memory, the Algorithm, your Telos, identity files
+2. **Pulse**, a Life Dashboard at `localhost:31337` showing your state, goals, active work
+3. **The DA** (Digital Assistant), the voice and personality you talk to
 
 ---
 
@@ -99,7 +99,7 @@ After install, browse to [http://localhost:31337](http://localhost:31337). That 
 
 ### 3. Define your Telos (the 30-min step that matters)
 
-The biggest single decision in PAI is filling in your **Ideal State** — what "good" looks like for you across life and work. PAI calls this your **Telos**, expressed via an **ISA** (Ideal State Artifact).
+The biggest single decision in PAI is filling in your **Ideal State**, what "good" looks like for you across life and work. PAI calls this your **Telos**, expressed via an **ISA** (Ideal State Artifact).
 
 This is closer to a coaching exercise than a config step. Plan 30-60 minutes for it. The output is the spec PAI uses to evaluate everything from "should I take this meeting" to "is this draft good enough".
 
@@ -109,10 +109,10 @@ PAI ships templates. Use them.
 
 PAI ships with 30+ Packs (modular skill bundles). Start with one that matches your work:
 
-- **Agents Pack** — agent personalities, parallel agents
-- **ArXiv Pack** — research paper ingest
-- **Apify Pack** — scrape ecommerce, social, web
-- **Art Pack** — design and visual tooling
+- **Agents Pack**, agent personalities, parallel agents
+- **ArXiv Pack**, research paper ingest
+- **Apify Pack**, scrape ecommerce, social, web
+- **Art Pack**, design and visual tooling
 
 Activating a pack takes one CLI command. Read the Pack README before activating, every Pack has its own opinions.
 
@@ -145,7 +145,7 @@ These are the four Fabian flags from the [demo companion doc](../events/01-2026-
 - You can invest 1-2 days getting it dialed in
 
 **Skip PAI if:**
-- You want minimal scope, just a few skills (build your own — see [Chris's setup](chris-claude-code.md))
+- You want minimal scope, just a few skills (build your own, see [Chris's setup](chris-claude-code.md))
 - You are on Windows
 - You do not want to buy into the TRIOT framing
 - You prefer a blank-slate brain you fully control ([Dom's path](dom-rolodex.md))
@@ -176,4 +176,4 @@ These questions are useful regardless of which setup you adopt.
 
 ---
 
-*If you fork PAI and hit something the upstream README doesn't cover, [open an issue here](https://github.com/chris1928a/eo-ai-exchange/issues) — Fabian or another community member who runs PAI may answer.*
+*If you fork PAI and hit something the upstream README doesn't cover, [open an issue here](https://github.com/chris1928a/eo-ai-exchange/issues), Fabian or another community member who runs PAI may answer.*

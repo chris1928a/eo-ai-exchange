@@ -22,14 +22,14 @@ The pattern is: **pull velocity + comp set + rules → decide per unit → push 
 
 ## Inputs
 
-1. **Property list** — `memory/real-estate/properties.md` (each unit: name, channel manager ID, base price band, capacity, location)
-2. **Booking velocity** — last 14 days of bookings via Holidu GraphQL (or your channel manager's API)
-3. **Forward bookings** — next 60 days of confirmed reservations
-4. **Comp set** — `memory/real-estate/comp_set.md` (named competitor units in same area, with their current prices)
-5. **Pricing rules** — `memory/real-estate/pricing_rules.md` (your floor / ceiling / event-day overrides)
-6. **Season + event calendar** — `memory/real-estate/calendar.md` (school holidays, conferences, local events)
-7. **Past decisions log** — `memory/real-estate/pricing_log.md` (so we trend)
-8. **Voice rules** — for the Telegram summary tone
+1. **Property list**, `memory/real-estate/properties.md` (each unit: name, channel manager ID, base price band, capacity, location)
+2. **Booking velocity**, last 14 days of bookings via Holidu GraphQL (or your channel manager's API)
+3. **Forward bookings**, next 60 days of confirmed reservations
+4. **Comp set**, `memory/real-estate/comp_set.md` (named competitor units in same area, with their current prices)
+5. **Pricing rules**, `memory/real-estate/pricing_rules.md` (your floor / ceiling / event-day overrides)
+6. **Season + event calendar**, `memory/real-estate/calendar.md` (school holidays, conferences, local events)
+7. **Past decisions log**, `memory/real-estate/pricing_log.md` (so we trend)
+8. **Voice rules**, for the Telegram summary tone
 
 ---
 
@@ -75,7 +75,7 @@ Unit-3: hold (within tolerance)
 
 ---
 
-## Worked example — daily pricing run on a 6-unit short-term rental cluster
+## Worked example, daily pricing run on a 6-unit short-term rental cluster
 
 **Context:** Friday 2026-05-15, 06:00 cron. 6 studio units, all in same town. Last week's velocity was strong on weekends.
 
@@ -89,7 +89,7 @@ Unit-3: hold (within tolerance)
 - Recommended: 175 EUR (+21%)
 - Reason: 3 bookings in last 24h (vs 14d avg of 0.8) for the weekend. 
   Comp set median 168 EUR. Long weekend approaching (Pfingsten).
-  Floor 100 EUR, ceiling 220 EUR — recommendation within band.
+  Floor 100 EUR, ceiling 220 EUR, recommendation within band.
 - Confidence: HIGH
 
 ## Next 7 days
@@ -98,7 +98,7 @@ Unit-3: hold (within tolerance)
 | 2026-05-16 (Sat) | 145 | 175 | +21% | Weekend + Pfingsten approach |
 | 2026-05-17 (Sun) | 145 | 180 | +24% | Pfingsten weekend |
 | 2026-05-18 (Mon) | 145 | 195 | +34% | Pfingstmontag holiday |
-| 2026-05-19 (Tue) | 145 | 145 | 0% | Hold — back to normal |
+| 2026-05-19 (Tue) | 145 | 145 | 0% | Hold, back to normal |
 | 2026-05-20 (Wed) | 145 | 145 | 0% | Hold |
 | 2026-05-21 (Thu) | 145 | 150 | +3% | Slight lead-time adjustment |
 | 2026-05-22 (Fri) | 145 | 165 | +14% | Weekend approach |
@@ -195,7 +195,7 @@ OUTPUT (per unit):
 
 RULES:
 1. NEVER push outside floor/ceiling. EVER.
-2. NEVER auto-apply LOW confidence — flag instead.
+2. NEVER auto-apply LOW confidence, flag instead.
 3. NEVER override a manual price set in last 24h.
 4. Reason MUST cite specific signals (velocity numbers, comp set numbers, event names).
 5. Apply voice rules.
@@ -213,7 +213,7 @@ Full template at [`prompts/pricing-prompt.md`](prompts/pricing-prompt.md). Prici
 
 ---
 
-## Setup (60-90 minutes — this is the most setup-heavy of the 8)
+## Setup (60-90 minutes, this is the most setup-heavy of the 8)
 
 1. Drop SKILL.md + prompts + templates at `~/.claude/skills/property-pricing/`
 2. Create `~/.claude/projects/<your-project>/memory/real-estate/` with all input files
@@ -297,7 +297,7 @@ Same pattern (pull velocity → decide → push to system of record → log + su
 | 22-30 | Widen the band gradually as you trust the skill. |
 | 30+ | Audit weekly: revenue per available night vs prior period. Should be flat or up. |
 
-If revenue drops after switching to auto, your rules are wrong. Don't blame the skill — fix the rules.
+If revenue drops after switching to auto, your rules are wrong. Don't blame the skill, fix the rules.
 
 ---
 
@@ -314,20 +314,20 @@ If revenue drops after switching to auto, your rules are wrong. Don't blame the 
 
 ## When to delete this skill
 
-If you have <3 units OR your prices barely move (long-term rentals), **delete it** — overkill. Reasons it might not work:
+If you have <3 units OR your prices barely move (long-term rentals), **delete it**, overkill. Reasons it might not work:
 - Single property, manual is fine
 - Long-term lease model, no daily pricing
 - Channel manager API doesn't support automated price updates (rare but exists)
-- You don't trust your own pricing rules — fix that first, then automate
+- You don't trust your own pricing rules, fix that first, then automate
 
 ---
 
 ## Why this is a domain example (not universal)
 
 This skill is shaped for real estate / daily-priced goods. The pattern (pull velocity → decide → push to system of record → log + surface exceptions) reuses for any "daily decision automation":
-- `/inventory-restock` — daily restock decisions for ecom SKUs
-- `/ad-bid-adjuster` — daily ad bid adjustments
-- `/pricing-saas` — usage-based SaaS pricing for enterprise contracts
+- `/inventory-restock`, daily restock decisions for ecom SKUs
+- `/ad-bid-adjuster`, daily ad bid adjustments
+- `/pricing-saas`, usage-based SaaS pricing for enterprise contracts
 
 Fork this skill, swap the data sources + the rules, keep the structure (dry-run → tighten → go-live).
 

@@ -1,4 +1,4 @@
-# Prompt template — /property-pricing
+# Prompt template, /property-pricing
 
 ```
 SYSTEM: Generate daily pricing decisions for {user_name}'s rental units, day of {YYYY-MM-DD}.
@@ -42,7 +42,7 @@ OUTPUT STRUCTURE (per unit):
 ## Tomorrow ({date+1})
 - Current price: N EUR
 - Recommended: M EUR (Δ%)
-- Reason: [cite specific signals — velocity numbers, comp set numbers, event names]
+- Reason: [cite specific signals, velocity numbers, comp set numbers, event names]
 - Confidence: HIGH | MEDIUM | LOW
 
 ## Next 7 days
@@ -67,7 +67,7 @@ N flags need your review · pricing_log.md updated · cron complete 06:0X
 
 NON-NEGOTIABLE RULES:
 1. NEVER push outside floor/ceiling band. EVER.
-2. NEVER auto-apply LOW confidence — flag instead.
+2. NEVER auto-apply LOW confidence, flag instead.
 3. NEVER override a manual price set in last 24h.
 4. Reason MUST cite specific signals (numbers, not adjectives).
 5. Apply voice rules in flags + summary.

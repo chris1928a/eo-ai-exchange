@@ -13,7 +13,7 @@ load_when: diarize, dossier, prep for meeting, meeting prep, who is, brief me on
 
 ## Purpose
 
-Before any meeting, generate a 1-page brief on who you are about to talk to: who they are, the last 5 things you said to each other, open threads, decision style, any flagged sensitivities. Output is a single screen — never longer, never shorter.
+Before any meeting, generate a 1-page brief on who you are about to talk to: who they are, the last 5 things you said to each other, open threads, decision style, any flagged sensitivities. Output is a single screen, never longer, never shorter.
 
 The pattern is: **resolve identity → pull cross-channel history → score recency + relevance → output fixed-shape dossier → write back to memory**. Reusable for any "who is X and where do we stand" use case.
 
@@ -21,12 +21,12 @@ The pattern is: **resolve identity → pull cross-channel history → score rece
 
 ## Inputs
 
-1. **Person identifier** — name, email, or "the guy from [company]" (skill resolves to a person)
-2. **Email history** — last 90 days via Gmail MCP, threaded
-3. **Calendar history** — last 12 months of meetings with this person via Calendar MCP
-4. **Memory file** — `~/.claude/projects/<project>/memory/people/{slug}.md` if you have one (auto-created on first use)
-5. **Linked sources** — Notion / CRM / WhatsApp transcripts if MCPs are connected
-6. **Voice rules** — for tone of the dossier itself
+1. **Person identifier**, name, email, or "the guy from [company]" (skill resolves to a person)
+2. **Email history**, last 90 days via Gmail MCP, threaded
+3. **Calendar history**, last 12 months of meetings with this person via Calendar MCP
+4. **Memory file**, `~/.claude/projects/<project>/memory/people/{slug}.md` if you have one (auto-created on first use)
+5. **Linked sources**, Notion / CRM / WhatsApp transcripts if MCPs are connected
+6. **Voice rules**, for tone of the dossier itself
 
 ---
 
@@ -65,7 +65,7 @@ Total length: under 400 words. Fits on one screen. Posted to Telegram or shown i
 
 ---
 
-## Worked example — meeting prep, second meeting with a partner
+## Worked example, meeting prep, second meeting with a partner
 
 **Input:** `/diarize-person Anna Beispiel` (a real partner you've met once before)
 
@@ -86,11 +86,11 @@ Cares about retention metrics + clean integration stories. Avoids
 multi-vendor messes. Got burned by a previous partner who over-promised.
 
 ## Last 5 interactions (newest first)
-1. 2026-05-12 WhatsApp — confirmed today 14:00, asked for 1-pager pre-read
-2. 2026-04-28 Email — sent Q3 partnership outline, no response yet
-3. 2026-04-21 Email — recapped first meeting, suggested next steps
-4. 2026-04-15 Calendar — first 60min meeting, at her office
-5. 2026-04-01 Email — initial intro from common contact
+1. 2026-05-12 WhatsApp, confirmed today 14:00, asked for 1-pager pre-read
+2. 2026-04-28 Email, sent Q3 partnership outline, no response yet
+3. 2026-04-21 Email, recapped first meeting, suggested next steps
+4. 2026-04-15 Calendar, first 60min meeting, at her office
+5. 2026-04-01 Email, initial intro from common contact
 
 ## Open threads
 - Q3 partnership outline: your move (she expects answer to integration timing)
@@ -106,11 +106,11 @@ multi-vendor messes. Got burned by a previous partner who over-promised.
 ## Open questions for this meeting
 1. Did she review the Q3 partnership outline?
 2. Who else internally needs to bless the integration timing?
-3. Realistic decision timeline — Q3 sign or push to Q4?
+3. Realistic decision timeline, Q3 sign or push to Q4?
 
 ## Last-touch context
 "Bis morgen 14h, freue mich. Schick mir bitte ein 1-pager-Vorab, dann
-bin ich vorbereitet." — Anna, WhatsApp 2 days ago
+bin ich vorbereitet.", Anna, WhatsApp 2 days ago
 ```
 
 That's the shape. Decision-actionable in 30 seconds before the meeting.
@@ -122,8 +122,8 @@ That's the shape. Decision-actionable in 30 seconds before the meeting.
 - **One page. Always.** If it would not print on one A4, cut.
 - **Newest first.** No history-from-the-beginning narratives.
 - **Open threads need an owner.** Each one tagged "your move" or "their move".
-- **Decision style requires evidence.** Don't guess "analytical" — cite a specific email where they showed it.
-- **Sensitivities require evidence.** Don't fabricate emotional context — only what they flagged or showed.
+- **Decision style requires evidence.** Don't guess "analytical", cite a specific email where they showed it.
+- **Sensitivities require evidence.** Don't fabricate emotional context, only what they flagged or showed.
 - **No AI-fluff.** Avoid: delve, leverage, harness, robust, seamless, em-dashes.
 
 ---
@@ -155,7 +155,7 @@ OUTPUT STRUCTURE (mandatory, do not change):
 
 RULES:
 1. Total length under 400 words.
-2. Decision style and sensitivities MUST cite evidence from the data — no guessing.
+2. Decision style and sensitivities MUST cite evidence from the data, no guessing.
 3. Open threads MUST have ownership tag (your move / their move).
 4. If first dossier (no memory file): skip the "Open questions" section, instead add "First-touch notes" with what to learn.
 5. Apply voice rules strictly.
@@ -179,7 +179,7 @@ Full template at [`prompts/diarize-prompt.md`](prompts/diarize-prompt.md).
 5. (Optional) Connect WhatsApp / Notion / CRM MCPs if you use them
 6. Test: `/diarize-person {name of someone you have email + calendar history with}`
 7. Verify: a `memory/people/{slug}.md` file got created
-8. Run a SECOND time with the same person — verify the file got appended, not overwritten
+8. Run a SECOND time with the same person, verify the file got appended, not overwritten
 
 ---
 
@@ -252,7 +252,7 @@ Same pattern (resolve → pull cross-source → score → fixed-shape output →
 ## What this won't do (failure modes)
 
 - **Will not catch context outside your wired-up MCP servers.** If you discussed the topic on a phone call with no transcript, the dossier won't know.
-- **Will not understand company politics from email tone alone.** If a stakeholder is being undermined by an internal rival, the dossier may not surface that — you have to flag it manually in the memory file.
+- **Will not understand company politics from email tone alone.** If a stakeholder is being undermined by an internal rival, the dossier may not surface that, you have to flag it manually in the memory file.
 - **Will hallucinate sensitivities if you don't anchor with evidence.** That's why the rule is "must cite a specific email." Without that, it makes things up.
 - **Will not handle aliases automatically.** If someone shows up as "Anna B." in WhatsApp and "Anna Beispiel" in Gmail, the skill may produce two dossiers. Add an aliases line to the memory file.
 - **Will silently degrade if the email retention window is too short.** Default is 90 days. For long-running relationships, increase to 180 or 365.

@@ -1,6 +1,6 @@
-# Setup 1 — Chris's Workspace-Native Claude Code
+# Setup 1, Chris's Workspace-Native Claude Code
 
-> **The 30-second pitch.** [Claude Code](https://docs.claude.com/en/docs/claude-code/overview) wired into Google Workspace via 31 MCP servers (~39 total Workspace adapters), 19 reusable Skills, 125 memory files, 7 cron jobs, and a Telegram bot for mobile. ~150 EUR/month all-in. ~23 hours per week saved on a tracked sample. Replaces ~1.5 FTE that would have cost 80-110k EUR/year — a **45-60x cost ratio**. Personal opportunity cost reclaimed: **~270k EUR/year** (23h/wk × 47 weeks × 250 EUR/hr).
+> **The 30-second pitch.** [Claude Code](https://docs.claude.com/en/docs/claude-code/overview) wired into Google Workspace via 31 MCP servers (~39 total Workspace adapters), 19 reusable Skills, 125 memory files, 7 cron jobs, and a Telegram bot for mobile. ~150 EUR/month all-in. ~23 hours per week saved on a tracked sample. Replaces ~1.5 FTE that would have cost 80-110k EUR/year, a **45-60x cost ratio**. Personal opportunity cost reclaimed: **~270k EUR/year** (23h/wk × 47 weeks × 250 EUR/hr).
 
 **Maintained by:** Christoph Erler ([erlerventures.org](https://erlerventures.org))
 **Companion deck:** [chris-demo.html](https://chris1928a.github.io/eo-ai-exchange/events/01-2026-05-11-setup-trap/chris-demo.html) (44 slides, body-mapped tour)
@@ -12,9 +12,9 @@
 
 ---
 
-## Origin — the bet behind the architecture
+## Origin, the bet behind the architecture
 
-> *"After ComX, I had the option to hire and rebuild what I already knew. Instead I bet that **AI as infrastructure can replace the team I would have hired**. Three years later, that bet is still the strategy."* — Chris, Slide 2
+> *"After ComX, I had the option to hire and rebuild what I already knew. Instead I bet that **AI as infrastructure can replace the team I would have hired**. Three years later, that bet is still the strategy."*, Chris, Slide 2
 
 **Three founding rules:**
 1. **Every workflow I touch becomes a skill.**
@@ -24,7 +24,7 @@
 **The discipline rule (slide 36):**
 > *"If I have to ask my system for the same thing twice, **I failed**."*
 
-**Result:** zero employees. A brain that is version-controlled and queryable. Runs at ~150 EUR/month. Replaces ~1.5 FTE. Same architecture scales to a 12-person agency brain and a B2B sales-org brain (~5 FTE total replaced across three "bodies", ~330-490k EUR/yr equivalent capability never paid for — slide 25).
+**Result:** zero employees. A brain that is version-controlled and queryable. Runs at ~150 EUR/month. Replaces ~1.5 FTE. Same architecture scales to a 12-person agency brain and a B2B sales-org brain (~5 FTE total replaced across three "bodies", ~330-490k EUR/yr equivalent capability never paid for, slide 25).
 
 ---
 
@@ -32,7 +32,7 @@
 
 - You live inside Google Workspace (Gmail, Calendar, Drive, Docs, Sheets, Meet)
 - You operate across multiple domains (advisory, real estate, ventures, content, etc.) and need one brain that understands all of them
-- You want AI everywhere — including on mobile — not just at your desk
+- You want AI everywhere, including on mobile, not just at your desk
 - You are fine paying ~150 EUR/month for the convenience
 - You are willing to invest 30-60 hours up-front to get the foundation right
 - You want to *own* the setup and iterate on it for years, not buy a SaaS
@@ -64,9 +64,9 @@ The core mental model. Each layer has a clear job and lives in a specific place.
 | Skills | 19 (8 demoed publicly, see [`/skills/`](../skills/)) |
 | Memory files | 125 (`.md`, ~1-page profiles each) |
 | Cron jobs | 7 (daily / weekly / monthly) |
-| Search backend | `ripgrep` + glob — **no vector DB** (threshold ~10k files; this brain is at ~200) |
+| Search backend | `ripgrep` + glob, **no vector DB** (threshold ~10k files; this brain is at ~200) |
 | Mobile | Telegram bot on AWS Lightsail Frankfurt (~20 EUR/mo VM) |
-| EU residency | Yes — all reasoning happens on AWS Frankfurt |
+| EU residency | Yes, all reasoning happens on AWS Frankfurt |
 | Hours saved per week (8-week tracked sample) | ~23h |
 | Total monthly cost | ~150 EUR all-in |
 | Total annual cost | ~1.8k EUR/yr |
@@ -91,7 +91,7 @@ Each file: 1 page max, frontmatter (`name`, `description`, `type` ∈ {reference
 
 ## Memory file anatomy (slide 43)
 
-Every memory file follows the same internal structure. Not optional — this is what makes the brain usable months later.
+Every memory file follows the same internal structure. Not optional, this is what makes the brain usable months later.
 
 ```markdown
 ---
@@ -119,7 +119,7 @@ change about your behavior? Specific, not abstract.]
 e.g. "Re-evaluate if context changes" or "Sunset on 2026-12-01".]
 ```
 
-**Why this structure matters:** the `originSessionId` lets you trace back to the original conversation. The `Why` answers "why does this exist?" — without that, files become orphans you cannot prune. The `Anchor` is the auto-prune signal for `/memory-curator`.
+**Why this structure matters:** the `originSessionId` lets you trace back to the original conversation. The `Why` answers "why does this exist?", without that, files become orphans you cannot prune. The `Anchor` is the auto-prune signal for `/memory-curator`.
 
 ---
 
@@ -156,15 +156,15 @@ German Umlaute mandatory. No em-dashes.
 Voice match exact. No vendor pitch tone.
 ```
 
-**The 8 forkable starter SKILL.md files** demoed at Event #1 are now in [`/skills/`](../skills/) — fork as templates, customize the Inputs / Outputs / rules to your context.
+**The 8 forkable starter SKILL.md files** demoed at Event #1 are now in [`/skills/`](../skills/), fork as templates, customize the Inputs / Outputs / rules to your context.
 
 ---
 
 ## The 8 forkable skills (now live in `/skills/`)
 
-> All 8 are `SKILL.md` templates. Patterns from the live demo. Sanitized of personal data — your job is to plug in your context.
+> All 8 are `SKILL.md` templates. Patterns from the live demo. Sanitized of personal data, your job is to plug in your context.
 
-### Universal (5) — fork as-is, edit personal data
+### Universal (5), fork as-is, edit personal data
 
 | Skill | What it does | Tracked saved time | File |
 |---|---|---|---|
@@ -174,7 +174,7 @@ Voice match exact. No vendor pitch tone.
 | `/weekly-review` | Friday 7-day review across all "hats" | 1.3h/week (90→10 min) | [`/skills/weekly-review/SKILL.md`](../skills/weekly-review/SKILL.md) |
 | `/memory-curator` | Weekly memory hygiene cron | maintenance | [`/skills/memory-curator/SKILL.md`](../skills/memory-curator/SKILL.md) |
 
-### Domain examples (3) — show the pattern, adapt to your vertical
+### Domain examples (3), show the pattern, adapt to your vertical
 
 | Skill | For who | Pattern to copy | File |
 |---|---|---|---|
@@ -216,7 +216,7 @@ Voice is the highest-leverage memory. Every output that sounds like AI degrades 
 - robust
 - seamless / seamlessly
 - "I hope this finds you well"
-- em-dashes (—) — use commas, periods, parentheses
+- em-dashes (—), use commas, periods, parentheses
 - mega-paragraphs (>5 sentences without a break)
 - "happy to help" / "great question"
 - "in today's fast-paced world"
@@ -224,17 +224,17 @@ Voice is the highest-leverage memory. Every output that sounds like AI degrades 
 ### Required
 
 - **German Umlauten** always (never `ae`, `oe`, `ue`)
-- **Direct, terse** — cut adjectives that aren't load-bearing
+- **Direct, terse**, cut adjectives that aren't load-bearing
 - **Sie-Form for PE / corporate counsel**, **Du-Form for founders / EO peers**
 - **One concrete number per outreach** ("in 6 to 9 months", not "fairly quickly")
 - **First name only sign-off in DMs**, full sign-off block only in formal emails
-- **Match recipient's last register** — don't switch mid-thread
+- **Match recipient's last register**, don't switch mid-thread
 
 Full template at [`templates/memory-templates/feedback_voice.md`](../templates/memory-templates/feedback_voice.md). Fork it, fill in your own examples.
 
 ---
 
-## Cost — the honest breakdown
+## Cost, the honest breakdown
 
 ### Steady state
 
@@ -281,7 +281,7 @@ Not zero. Honest.
 
 ---
 
-## Quick Start (5 minutes — you'll have a working brain)
+## Quick Start (5 minutes, you'll have a working brain)
 
 If you only have 5 minutes right now:
 
@@ -315,15 +315,15 @@ For the full path with MCP servers, cron jobs, and Telegram, continue with the S
 
 Before you start the long-form Step-by-step, confirm you have:
 
-- [ ] A Claude Pro subscription (or API access) — [console.anthropic.com](https://console.anthropic.com)
+- [ ] A Claude Pro subscription (or API access), [console.anthropic.com](https://console.anthropic.com)
 - [ ] Google Workspace account with admin access (for OAuth approval of MCP servers)
 - [ ] Mac / Linux machine, OR Windows + WSL2 installed and working
 - [ ] `git` and `curl` installed (`git --version` and `curl --version` should both work)
-- [ ] (Optional) AWS account if you want the Telegram bot path — [aws.amazon.com](https://aws.amazon.com)
+- [ ] (Optional) AWS account if you want the Telegram bot path, [aws.amazon.com](https://aws.amazon.com)
 - [ ] (Optional) Telegram account + access to BotFather for bot creation
 - [ ] 60 minutes of uninterrupted time (or break it into two 30-min sessions)
 
-If any of the optional ones is missing, you can still run the desktop-only version — skip Step 5 in the long-form below.
+If any of the optional ones is missing, you can still run the desktop-only version, skip Step 5 in the long-form below.
 
 ---
 
@@ -349,7 +349,7 @@ cp -r eo-ai-exchange/templates/memory-templates/* ~/.claude/projects/<your-proje
 cp eo-ai-exchange/templates/CLAUDE.md.template ~/.claude/projects/<your-project>/CLAUDE.md
 ```
 
-**The 30-minute step that matters:** Edit `user_about.md` and `feedback_voice.md`. These two files are 80% of the leverage you will get from the entire setup. Spend real time on them. Banned words list, voice examples, how you actually sound — all of it.
+**The 30-minute step that matters:** Edit `user_about.md` and `feedback_voice.md`. These two files are 80% of the leverage you will get from the entire setup. Spend real time on them. Banned words list, voice examples, how you actually sound, all of it.
 
 **Verification:** `ls ~/.claude/projects/<your-project>/memory/` should show 7+ template files.
 
@@ -363,9 +363,9 @@ From Claude Code:
 
 Pick **Gmail**, follow the OAuth flow. Verify: ask Claude *"List my unread emails from today."*
 
-> **Discipline:** start with 3-5 MCP servers max. Gmail, Calendar, Drive, Notion. Stop. Add more only when a real need surfaces. The 31-server count is what 3 years of additions look like — it is not a starting point.
+> **Discipline:** start with 3-5 MCP servers max. Gmail, Calendar, Drive, Notion. Stop. Add more only when a real need surfaces. The 31-server count is what 3 years of additions look like, it is not a starting point.
 
-### 4. Fork your first skill — `/morning-brief`
+### 4. Fork your first skill, `/morning-brief`
 
 ```bash
 mkdir -p ~/.claude/skills
@@ -374,7 +374,7 @@ cp -r eo-ai-exchange/skills/morning-brief ~/.claude/skills/
 
 Edit the `SKILL.md` to match your sources. Type `/morning-brief` in Claude Code.
 
-**Verification:** Claude should produce a 5-bullet brief from your real Gmail + Calendar data. If it doesn't trigger, check the `description` field in the frontmatter — that's the trigger sentence.
+**Verification:** Claude should produce a 5-bullet brief from your real Gmail + Calendar data. If it doesn't trigger, check the `description` field in the frontmatter, that's the trigger sentence.
 
 **You now have a working personal AI.** Stop here for today if you want. Come back for Step 5 when you want mobile + always-on.
 
@@ -386,14 +386,14 @@ Detailed playbook: [`solutions/setup-itself/30-min-aios-blueprint.md`](../soluti
 
 ---
 
-## Troubleshooting — things that go wrong on first setup
+## Troubleshooting, things that go wrong on first setup
 
 | Symptom | Likely cause | Fix |
 |---|---|---|
 | `claude --version` says "command not found" | PATH not refreshed after install | Restart your terminal, or `source ~/.bashrc` / `source ~/.zshrc` |
-| `/mcp` doesn't list any servers | First-time setup, none registered | That's expected — pick one (e.g. Gmail), follow the OAuth flow |
+| `/mcp` doesn't list any servers | First-time setup, none registered | That's expected, pick one (e.g. Gmail), follow the OAuth flow |
 | `/mcp` lists Gmail but Claude says "I cannot access your email" | OAuth wasn't completed | Re-run `/mcp`, complete the browser auth flow, retry |
-| `/morning-brief` doesn't trigger when you type it | Skill description doesn't match the trigger words | Edit `~/.claude/skills/morning-brief/SKILL.md` `description` field — must contain words you actually type |
+| `/morning-brief` doesn't trigger when you type it | Skill description doesn't match the trigger words | Edit `~/.claude/skills/morning-brief/SKILL.md` `description` field, must contain words you actually type |
 | Skill triggers but output is generic | Memory files are empty templates | Edit `user_about.md` and `feedback_voice.md` with real content |
 | Claude doesn't load `CLAUDE.md` | Wrong directory | `CLAUDE.md` must be at the root of the project where you start `claude` |
 | Memory file doesn't get loaded | Not pointed to from `MEMORY.md` | Add a one-line entry to `~/.claude/projects/<your-project>/memory/MEMORY.md` |
@@ -409,7 +409,7 @@ If you hit something not on this list, [open an issue](https://github.com/chris1
 
 1. **Memory drift.** Memory files go stale within weeks if you do not audit them. Run `/memory-curator` on a Sunday cron or the brain runs on lies.
 2. **MCP server count.** 31 is too many. Most are quiet for weeks. Start with 5 and earn the rest. Integration testing across all of them gets nasty fast.
-3. **Skill description quality.** A skill with a bad `description` field never triggers. The trigger sentence is 80% of the work — invest 10 minutes per skill on it.
+3. **Skill description quality.** A skill with a bad `description` field never triggers. The trigger sentence is 80% of the work, invest 10 minutes per skill on it.
 4. **Cost spikes during build-up.** Real number: ~$50/day Opus burn for 2-4 weeks while iterating. Steady state much lower (~150 EUR/mo) but plan for the burn.
 5. **Vendor roadmap risk.** Anthropic changes the CLI quarterly. In 2026 my `settings.json` broke on three releases. Pin a Claude Code version if you cannot tolerate that.
 6. **Migration drag.** I wasted 30 days mid-2026 on a half-finished Drive sync (race condition with OneDrive). Lesson from the v3.5 audit (slide 50): 1-day audit, 1-day migration, 1-day docs. Don't drag.
@@ -424,7 +424,7 @@ The honest history of how this brain got here:
 |---|---|
 | Mar 18 | v4 vision: Drive-Hub as brain, Telegram security fixes, 39 tools registered, PDF/DOCX parsing |
 | Mar-Apr (30 days) | Skills clustering to 17 clusters, 175 uncommitted files, Drive sync half-finished |
-| Apr 27 AM | Brain v3.5 audit — Drive sync killed, OneDrive+Git race condition flagged |
+| Apr 27 AM | Brain v3.5 audit, Drive sync killed, OneDrive+Git race condition flagged |
 | Apr 27 PM | 1-day migration: Robocopy `C:\Code` (1.72 GB / 58.638 files in 43 sec) |
 | Apr 27 EOD | Documentation + talk backbone drafted |
 | May 11 | Event #1 delivered |
@@ -462,11 +462,11 @@ The same 4-Layer Brain pattern scales across very different "bodies." Demo'd at 
 
 Same architecture, different surface area. Across the three: ~5 FTE replaced, **~330-490k EUR/yr equivalent capability never paid for** (slide 25-26).
 
-The number that matters is not the count of skills — it is the count of *workflows you do not have to do anymore*.
+The number that matters is not the count of skills, it is the count of *workflows you do not have to do anymore*.
 
 ---
 
-## Where this fits in the industry (slide 48 — convergence table)
+## Where this fits in the industry (slide 48, convergence table)
 
 | Pattern | Chris | Karpathy | Anthropic |
 |---|---|---|---|
@@ -484,7 +484,7 @@ Where Chris's setup differs: multi-domain operator surface area + EU-residency /
 
 ---
 
-## Tracked results — the 9-row "Day in the Life" table (slide 7)
+## Tracked results, the 9-row "Day in the Life" table (slide 7)
 
 | Task | Frequency | Without brain | With brain | Saved/week |
 |---|---|---|---|---|
@@ -507,17 +507,17 @@ Tracked March-April 2026, mixed personal admin + ops + advisory work.
 
 If you fork everything in this repo today, here is the realistic timeline:
 
-**Day 1-7 — Personal brain bootstrap**
+**Day 1-7, Personal brain bootstrap**
 - Day 1: Install Claude Code, fork [`templates/`](../templates/) into `~/.claude/projects/<your-project>/`
 - Day 1-2: Edit `user_about.md` + `feedback_voice.md` (this is the leverage)
 - Day 3-4: Connect 3 MCP servers (Gmail, Calendar, Drive)
 - Day 5-7: Fork 5 universal skills from [`/skills/`](../skills/), test each one in isolation
 
-**Day 8-21 — First org skill**
+**Day 8-21, First org skill**
 - Pick your weakest workflow (mine was real estate pricing). Build it as a skill following the `/property-pricing` pattern.
 - Run it manually for a week. Tune the rules. Tighten the floor/ceiling. Build trust.
 
-**Day 22-30 — Cron live**
+**Day 22-30, Cron live**
 - Move the working skill onto a cron (Lightsail Frankfurt VM, ~20 EUR/mo)
 - Add `/morning-brief` and `/weekly-review` on cron
 - Set up the Telegram bot if you want mobile
@@ -537,7 +537,7 @@ A few extra honest data points from the deck:
 
 - **80% of org memory dies in Slack/email**, only ~20% survives in Notion (slide 20). The whole "memory layer first" insight comes from this number.
 - **External agency quote for an org-brain build:** 56-89 person-days = 110-180k EUR. Chris built the equivalent in ~27.5k EUR with this stack (slide 21-22).
-- **Sales org headcount comparison:** would have hired Sales Manager + Sales Ops Analyst (140-200k EUR/yr) — never did, brain replaces the leverage parts.
+- **Sales org headcount comparison:** would have hired Sales Manager + Sales Ops Analyst (140-200k EUR/yr), never did, brain replaces the leverage parts.
 
 ---
 
@@ -556,4 +556,4 @@ A few extra honest data points from the deck:
 
 ---
 
-*If you fork this setup and hit something this spec does not cover, [open an issue](https://github.com/chris1928a/eo-ai-exchange/issues) — Chris or another community member who runs it may answer. Sub a pain, get a solution.*
+*If you fork this setup and hit something this spec does not cover, [open an issue](https://github.com/chris1928a/eo-ai-exchange/issues), Chris or another community member who runs it may answer. Sub a pain, get a solution.*

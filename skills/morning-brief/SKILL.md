@@ -21,10 +21,10 @@ The pattern is: **pull from N live sources → score → output a fixed-shape br
 
 ## Inputs (4 sources)
 
-1. **Calendar** (today, next 8 hours) — via your calendar MCP server
-2. **Inbox top 3** — unread emails ranked by sender + recency, via Gmail MCP
-3. **Open threads** — anything you flagged in `~/.claude/projects/<project>/memory/project_open_threads.md`
-4. **Voice rules** — `~/.claude/projects/<project>/memory/feedback_voice.md` (so the brief sounds like you, not like an AI)
+1. **Calendar** (today, next 8 hours), via your calendar MCP server
+2. **Inbox top 3**, unread emails ranked by sender + recency, via Gmail MCP
+3. **Open threads**, anything you flagged in `~/.claude/projects/<project>/memory/project_open_threads.md`
+4. **Voice rules**, `~/.claude/projects/<project>/memory/feedback_voice.md` (so the brief sounds like you, not like an AI)
 
 ---
 
@@ -42,11 +42,11 @@ A 5-bullet brief, no fluff, in this exact shape:
 Top decision today: [single line, the one call you have to make today]
 ```
 
-Total length: under 250 words. Posted to Telegram / Slack / terminal — wherever you set the output.
+Total length: under 250 words. Posted to Telegram / Slack / terminal, wherever you set the output.
 
 ---
 
-## Worked example — Tuesday morning, real data
+## Worked example, Tuesday morning, real data
 
 **Input data Claude Code would see at 07:00:**
 - Calendar: 09:00 board prep, 11:00 sales call (cold prospect), 14:00 client diagnostic, 16:00 partner sync, 18:00 family
@@ -58,10 +58,10 @@ Total length: under 250 words. Posted to Telegram / Slack / terminal — whereve
 
 ```
 1. Q3 plan response is 2 days overdue. Partner needs your call by 12:00.
-2. Cold prospect at 11:00 has not confirmed agenda — send 1-line ping by 09:00.
+2. Cold prospect at 11:00 has not confirmed agenda, send 1-line ping by 09:00.
 3. Today: 5 calls, longest gap 12:00-14:00 (use for Q3 plan).
-4. Partner quote OK is decay-flagged — answer yes/no in 5 min.
-5. Dentist confirm slipped from yesterday — 30 sec text.
+4. Partner quote OK is decay-flagged, answer yes/no in 5 min.
+5. Dentist confirm slipped from yesterday, 30 sec text.
 
 Top decision today: Q3 plan yes/no by 12:00.
 ```
@@ -76,7 +76,7 @@ Top decision today: Q3 plan yes/no by 12:00.
 - **No AI-fluff words.** Avoid: delve, leverage, harness, robust, seamless, unlock, synergy, em-dashes.
 - **Match your voice rules** from `feedback_voice.md`. If you have specific banned/required words, this skill loads them.
 - **Decision-first ordering.** What needs your decision today goes to the top, not what arrived first.
-- **No re-summarizing if I already saw it.** Use `morning_brief_log.md` to track what was in yesterday's brief — don't repeat unchanged items.
+- **No re-summarizing if I already saw it.** Use `morning_brief_log.md` to track what was in yesterday's brief, don't repeat unchanged items.
 
 ---
 
@@ -114,7 +114,7 @@ Full prompt template forkable from [`prompts/morning-brief-prompt.md`](prompts/m
 2. Copy [`prompts/morning-brief-prompt.md`](prompts/morning-brief-prompt.md) alongside it
 3. Make sure your Gmail and Calendar MCP servers are connected (`/mcp` in Claude Code)
 4. Create the empty file: `~/.claude/projects/<project>/memory/project_open_threads.md` (Claude will populate it as you flag things)
-5. (Optional) Create `feedback_voice.md` with your tone rules — see [templates/memory-templates/feedback_voice.md](../../templates/memory-templates/feedback_voice.md)
+5. (Optional) Create `feedback_voice.md` with your tone rules, see [templates/memory-templates/feedback_voice.md](../../templates/memory-templates/feedback_voice.md)
 6. Test: type `/morning-brief` in Claude Code. Compare the output to the worked example above.
 
 ---
@@ -143,7 +143,7 @@ Full cron-setup snippet at [`scripts/cron-setup.sh`](scripts/cron-setup.sh).
 | Latency | 3-8 seconds (mostly waiting on Gmail/Calendar API responses) |
 | Monthly cost (daily cron) | **~$0.30-0.90** |
 
-Switch to Opus 4.7 if you want better prioritization on a noisy inbox — adds ~$0.10/run = $3/mo. Not usually worth it for this skill.
+Switch to Opus 4.7 if you want better prioritization on a noisy inbox, adds ~$0.10/run = $3/mo. Not usually worth it for this skill.
 
 ---
 

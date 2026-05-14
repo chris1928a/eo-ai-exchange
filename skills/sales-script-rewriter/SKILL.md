@@ -22,13 +22,13 @@ The pattern is: **transcript-in → score on 6 dimensions → trend across last 
 
 ## Inputs
 
-1. **Call transcript(s)** — paste-in, or pulled from Fathom / Granola / Gong via MCP
-2. **Rep ID** — name, resolved to `memory/people/sales/{rep-slug}.md`
-3. **Current script** — `memory/sales/scripts/{rep}_current.md` if you have one
-4. **Buyer ICP** — `memory/sales/icp.md` (who you are selling to)
-5. **Past scores for this rep** — `memory/sales/scores/{rep}/` (so we trend, not just snapshot)
-6. **Scoring rubric** — `memory/_meta/sales_rubric.md` (defaults below)
-7. **Voice rules** — for tone of the deliverable
+1. **Call transcript(s)**, paste-in, or pulled from Fathom / Granola / Gong via MCP
+2. **Rep ID**, name, resolved to `memory/people/sales/{rep-slug}.md`
+3. **Current script**, `memory/sales/scripts/{rep}_current.md` if you have one
+4. **Buyer ICP**, `memory/sales/icp.md` (who you are selling to)
+5. **Past scores for this rep**, `memory/sales/scores/{rep}/` (so we trend, not just snapshot)
+6. **Scoring rubric**, `memory/_meta/sales_rubric.md` (defaults below)
+7. **Voice rules**, for tone of the deliverable
 
 ---
 
@@ -57,7 +57,7 @@ Total: 17/30 (last 5 calls average: 16/30)
 
 ## Top 3 fixes for this rep, this week
 1. **Discovery:** Ask the "What changed in the last 90 days?" question every call
-2. **Closing:** Stop offering 3 meeting times — offer 2 + "or what works"
+2. **Closing:** Stop offering 3 meeting times, offer 2 + "or what works"
 3. **Listen:** When prospect says "interesting", count to 3 before responding
 ```
 
@@ -79,7 +79,7 @@ Total: 17/30 (last 5 calls average: 16/30)
 
 ---
 
-## Worked example — second call score for a rep on a 5-call streak
+## Worked example, second call score for a rep on a 5-call streak
 
 **Context:** Rep "Rep A" has had 5 calls scored. This is call 6. Trend shows persistent weakness in discovery + closing.
 
@@ -90,16 +90,16 @@ Total: 17/30 (last 5 calls average: 16/30)
 
 ## Headline
 - Outcome: meeting booked, qualified opportunity
-- Talk ratio: 47% rep / 53% prospect (target: 40/60) — slightly over
-- Longest monologue: 71s (target: <60s) — over
-- Discovery questions asked: 5 (target: ≥6) — close but missed
+- Talk ratio: 47% rep / 53% prospect (target: 40/60), slightly over
+- Longest monologue: 71s (target: <60s), over
+- Discovery questions asked: 5 (target: ≥6), close but missed
 
 ## 6-dimension score
 1. Opening hook: 4 (named buyer's role pain in first 30s)
 2. Discovery quality: 2 ← weakest (5 questions, mostly closed yes/no)
 3. Objection handling: 4 (handled "we already have a vendor" cleanly)
 4. Value framing: 3 (features, not buyer outcomes)
-5. Closing crispness: 3 (offered 3 times, prospect picked one — should have offered 2)
+5. Closing crispness: 3 (offered 3 times, prospect picked one, should have offered 2)
 6. Listen-to-talk discipline: 3 (paused mid-pitch when prospect interjected, good)
 
 Total: 19/30 (improving from 16/30 last week)
@@ -178,7 +178,7 @@ CONTEXT:
 
 INPUT:
 - Call transcript: {transcript}
-- Outcome: {outcome — meeting booked / lost / pending}
+- Outcome: {outcome, meeting booked / lost / pending}
 
 SCORING (apply rubric to every dimension):
 1. Opening hook (1-5)
@@ -224,7 +224,7 @@ RULES:
 1. EVERY dimension scored. No skipping.
 2. EVERY score cites a specific transcript moment.
 3. Top 3 fixes ONLY (not 4, not 5).
-4. Rewrites are SURGICAL — only the weakest section.
+4. Rewrites are SURGICAL, only the weakest section.
 5. Trend MUST flag persistent weaknesses (≤ 2.5 avg across 3+ calls).
 6. Apply voice rules.
 7. If the rep has < 3 past scores, skip "Trend" section, do not invent.
@@ -260,7 +260,7 @@ Full template at [`prompts/score-prompt.md`](prompts/score-prompt.md). Rubric at
 | Latency | 20-45 seconds |
 | Monthly cost (10 reps × 5 calls/wk = 200 calls/mo) | **~$160-500** |
 
-Most expensive of the universal-pattern skills, but justified — it replaces a sales coach role at 6-figure salary. Use Sonnet 4.6 if you can accept shallower trend detection (drops cost ~50%).
+Most expensive of the universal-pattern skills, but justified, it replaces a sales coach role at 6-figure salary. Use Sonnet 4.6 if you can accept shallower trend detection (drops cost ~50%).
 
 ---
 
@@ -319,7 +319,7 @@ Same pattern (transcript-in → score → trend → top-3 fixes → script rewri
 If you're not actually a sales-coaching role, **delete it**. Reasons it might not work:
 - Your team is too small to need standardized coaching (just talk to your reps)
 - Your sales motion is consultative + relationship-driven, not transactional
-- Your reps reject scoring as a coaching tool — culture matters more than the skill
+- Your reps reject scoring as a coaching tool, culture matters more than the skill
 
 ---
 

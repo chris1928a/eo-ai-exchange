@@ -1,4 +1,4 @@
-# Sample audit report — Sunday, 4-week-old brain
+# Sample audit report, Sunday, 4-week-old brain
 
 > Real shape of `/memory-curator` output, anonymized. Use as calibration target.
 
@@ -27,7 +27,7 @@
    → 70% overlap on email-specific rules
    → Suggest: merge to feedback_email.md, keep both for 1 audit cycle for verification
 2. people/anna_beispiel.md + people/anna_b.md
-   → Same person, different slugs — likely created on different days
+   → Same person, different slugs, likely created on different days
    → Suggest: merge to people/anna_beispiel.md, redirect anna_b.md as a stub
 
 ## Stale entries
@@ -58,9 +58,9 @@ None yet (brain only 4 weeks old). First stale candidates expected ~week 12.
 ## What's good about this audit
 
 1. **Specific.** Every finding cites file paths + line ranges + dates.
-2. **Honest about youth.** "0 stale, brain too young" — doesn't invent stale entries.
+2. **Honest about youth.** "0 stale, brain too young", doesn't invent stale entries.
 3. **Auto vs flagged separation.** Auto-actions are listed transparently. Anything with judgment is flagged.
 4. **Realistic time estimate.** "15 min total" sets a reasonable Monday-morning commitment.
 5. **Promotion candidates have context.** Each one quotes the conversation, not just "consider promoting".
 
-If your audit just says "all good" every week, your prompt isn't working — there's always something to find in a 80+ file brain.
+If your audit just says "all good" every week, your prompt isn't working, there's always something to find in a 80+ file brain.

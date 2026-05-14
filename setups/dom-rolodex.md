@@ -1,14 +1,14 @@
-# Setup 2 — Dom's Local-First Rolodex (built on OpenClaw)
+# Setup 2, Dom's Local-First Rolodex (built on OpenClaw)
 
 > **The 30-second pitch.** Vanilla [OpenClaw](../solutions/openclaw-honest/openclaw-honest-assessment.md) as backbone, custom **5-tier memory** layer (`System Prompt > Bootstrap > On-Demand > Search Index > Raw Archive`), a **Rolodex of 107 person dossiers**, **1.183 files** indexed across **5.735 vectors / 11 collections**, all running on local models on a Mac. **2-5 second queries.** **~$0/month marginal cost.** Built over **12 months from scratch**. The agent that remembers.
 
-**Maintained by:** Dominik Raute (CTO, JustWatch) — [linkedin.com/in/dominikraute](https://www.linkedin.com/in/dominikraute/)
+**Maintained by:** Dominik Raute (CTO, JustWatch), [linkedin.com/in/dominikraute](https://www.linkedin.com/in/dominikraute/)
 **Live demo:** Demo 2 at [Event #1](../events/01-2026-05-11-setup-trap/README.md), [slides 13-15](https://chris1928a.github.io/eo-ai-exchange/events/01-2026-05-11-setup-trap/slides.html#13) of the joint deck
 **Architecture deep-dive:** Dom's anonymized architecture doc is currently being refreshed (URL was on a self-hosted server that went offline). This file is the high-level overview based on public Event #1 slide content. When Dom's URL is back, the deep-dive technical doc (exact model choices, wire-up code, packaging) gets linked here.
 **Pain clusters this addresses:** Cost, Security/GDPR, Reliability
 **Cost:** ~$0/mo marginal
 
-> **Heads-up directly from Dom:** *"die richtig interessanten Parts sind relativ hart verdrahtet mit den lokalen Modellen auf meinem Mac"* — the high-value pieces are hardwired to his specific setup. *"für nicht-techies ist leider wenig dabei. Das ist größtenteils customized."* Read this file as architecture inspiration, not a copy-paste recipe.
+> **Heads-up directly from Dom:** *"die richtig interessanten Parts sind relativ hart verdrahtet mit den lokalen Modellen auf meinem Mac"*, the high-value pieces are hardwired to his specific setup. *"für nicht-techies ist leider wenig dabei. Das ist größtenteils customized."* Read this file as architecture inspiration, not a copy-paste recipe.
 
 ---
 
@@ -39,7 +39,7 @@ This is the core. Five tiers, each with a distinct job, layered from hot to cold
 | 4 | **Search Index** | Semantic search across the cold tier. The "find me everything related to X". |
 | 5 | **Raw Archive** | Everything ever. Never deleted. The eventual ground-truth fallback. |
 
-> **What is in Dom's anonymized doc (currently offline):** the exact tier-routing logic — when does Bootstrap trigger vs On-Demand, what counts as a query worth Search Index hit, how Raw Archive is partitioned. That technical depth is in the doc, not in this file.
+> **What is in Dom's anonymized doc (currently offline):** the exact tier-routing logic, when does Bootstrap trigger vs On-Demand, what counts as a query worth Search Index hit, how Raw Archive is partitioned. That technical depth is in the doc, not in this file.
 
 ### The Rolodex (Hack #2, slide 14)
 
@@ -114,9 +114,9 @@ For comparison, [Chris's Workspace-Native](chris-claude-code.md) is ~5.4k EUR (~
 
 | Tool | Why | Notes |
 |---|---|---|
-| **OpenClaw** | The workflow backbone | Read [`solutions/openclaw-honest/openclaw-honest-assessment.md`](../solutions/openclaw-honest/openclaw-honest-assessment.md) **before** installing — CVE-2026-25253 + ClawHavoc are real |
-| **A local model runtime** — [Ollama](https://ollama.com), [LM Studio](https://lmstudio.ai), or [llama.cpp](https://github.com/ggerganov/llama.cpp) | Run LLMs on your Mac for the default loop | Pick one, stick with it |
-| **A local vector DB** — [Chroma](https://www.trychroma.com), [LanceDB](https://lancedb.com), or sqlite-vec | Tiers 4 + 5 (Search Index + Raw Archive) | Chroma is easiest to start with |
+| **OpenClaw** | The workflow backbone | Read [`solutions/openclaw-honest/openclaw-honest-assessment.md`](../solutions/openclaw-honest/openclaw-honest-assessment.md) **before** installing, CVE-2026-25253 + ClawHavoc are real |
+| **A local model runtime**, [Ollama](https://ollama.com), [LM Studio](https://lmstudio.ai), or [llama.cpp](https://github.com/ggerganov/llama.cpp) | Run LLMs on your Mac for the default loop | Pick one, stick with it |
+| **A local vector DB**, [Chroma](https://www.trychroma.com), [LanceDB](https://lancedb.com), or sqlite-vec | Tiers 4 + 5 (Search Index + Raw Archive) | Chroma is easiest to start with |
 | **A Mac with M-series chip + 32 GB+ RAM** | To run a useful local model alongside everything else | M3/M4 Pro or better recommended for real-world speed |
 | **Claude API key** (optional, for escalated reasoning) | When local model is not enough | Pay-per-token, very low spend if used sparingly |
 
@@ -130,7 +130,7 @@ You can do this on Linux too, but everything in Dom's notes assumes Mac paths.
 
 ### 1. Install OpenClaw
 
-Follow the OpenClaw install instructions — but **first** read [`solutions/openclaw-honest/openclaw-honest-assessment.md`](../solutions/openclaw-honest/openclaw-honest-assessment.md) and confirm you are on the patched version (CVE-2026-25253). Audit any installed skills against the ClawHavoc supply chain incident.
+Follow the OpenClaw install instructions, but **first** read [`solutions/openclaw-honest/openclaw-honest-assessment.md`](../solutions/openclaw-honest/openclaw-honest-assessment.md) and confirm you are on the patched version (CVE-2026-25253). Audit any installed skills against the ClawHavoc supply chain incident.
 
 ### 2. Install Ollama and pull a small model
 
@@ -147,9 +147,9 @@ Verify: `ollama run llama3.2:3b "Say hi in 5 words"` should reply.
 
 Start with only 2 tiers. Do not build all 5 on day one.
 
-**Tier 1 — System Prompt:** a single Markdown file your OpenClaw flow loads at every session start. Identity, role, rules.
+**Tier 1, System Prompt:** a single Markdown file your OpenClaw flow loads at every session start. Identity, role, rules.
 
-**Tier 5 — Raw Archive:** a folder where everything you ever process gets dumped, dated, and indexed by filename. Never delete from here.
+**Tier 5, Raw Archive:** a folder where everything you ever process gets dumped, dated, and indexed by filename. Never delete from here.
 
 ```
 ~/local-brain/
@@ -182,7 +182,7 @@ These are the real trade-offs of the local-first path. Be honest with yourself b
 3. **Setup is real engineering work.** Built over 12 months from scratch. There is no shortcut.
 4. **"Die richtig interessanten Parts sind relativ hart verdrahtet"** (Dom's own words). Even with the doc, parts of the setup are coupled to Dom's specific Mac, his specific local model choice, and his specific OpenClaw flows. Not all of it is transferable.
 5. **Local model quality ceiling.** Even a 70B local model is well below cloud Claude on multi-step reasoning. Plan to escalate to cloud Claude when reasoning matters.
-6. **You own all the bugs.** No vendor support. When the vector DB drifts, when memory tiers desync, when the Mac sleeps and the daemon dies — you fix it. Forever.
+6. **You own all the bugs.** No vendor support. When the vector DB drifts, when memory tiers desync, when the Mac sleeps and the daemon dies, you fix it. Forever.
 
 ---
 
@@ -208,22 +208,22 @@ These are the real trade-offs of the local-first path. Be honest with yourself b
 ## Why this matters as a reference architecture
 
 Dom's setup is the **counterfactual** to the cloud-first paths. It proves that a serious operator can run a production-grade AI brain at $0/mo if they are willing to pay the engineering cost. That changes how you think about:
-- **Cloud lock-in** — you are not stuck with a vendor's roadmap
-- **Vendor risk** — your brain works even if Anthropic / OpenAI / Google has an outage
-- **Data residency** — for DACH / regulated industries, the data simply never moves
-- **Long-term cost curve** — $0 marginal is $0 in five years too
+- **Cloud lock-in**, you are not stuck with a vendor's roadmap
+- **Vendor risk**, your brain works even if Anthropic / OpenAI / Google has an outage
+- **Data residency**, for DACH / regulated industries, the data simply never moves
+- **Long-term cost curve**, $0 marginal is $0 in five years too
 
-Read the architecture overview even if you never build this — it sharpens your evaluation of the other two paths.
+Read the architecture overview even if you never build this, it sharpens your evaluation of the other two paths.
 
 ---
 
 ## Honest caveats about OpenClaw itself
 
 If you adopt OpenClaw for your own backbone, **read [`solutions/openclaw-honest/openclaw-honest-assessment.md`](../solutions/openclaw-honest/openclaw-honest-assessment.md) first.** The repo's honest assessment covers:
-- **CVE-2026-25253** (CVSS 8.80, HIGH severity) — 180.000+ instances were vulnerable before the patch
-- **ClawHavoc supply chain attack** — 1.184 malicious packages on ClawHub, 9.000+ installs affected
-- **Memory limitations** — OpenClaw was built for workflow orchestration, not persistent memory (which is *exactly* why Dom layered his own 5-tier memory on top)
-- **Code surface area** — OpenClaw is ~430.000 lines of code
+- **CVE-2026-25253** (CVSS 8.80, HIGH severity), 180.000+ instances were vulnerable before the patch
+- **ClawHavoc supply chain attack**, 1.184 malicious packages on ClawHub, 9.000+ installs affected
+- **Memory limitations**, OpenClaw was built for workflow orchestration, not persistent memory (which is *exactly* why Dom layered his own 5-tier memory on top)
+- **Code surface area**, OpenClaw is ~430.000 lines of code
 - **Five alternatives** with trade-offs: NanoClaw, ZeroClaw, Skyvern, Nanobot, OpenFang
 
 Dom uses vanilla OpenClaw. If you are starting fresh and security matters more than feature breadth, NanoClaw is worth the look.
@@ -233,7 +233,7 @@ Dom uses vanilla OpenClaw. If you are starting fresh and security matters more t
 ## Sources
 
 - **Slides 13-15 of the joint deck** (Dom's section, public): [`slides.html`](https://chris1928a.github.io/eo-ai-exchange/events/01-2026-05-11-setup-trap/slides.html#13)
-- **Dom's anonymized Architecture doc** (the actual technical spec) — *URL refreshing, will be linked here when back online*
+- **Dom's anonymized Architecture doc** (the actual technical spec), *URL refreshing, will be linked here when back online*
 - **OpenClaw security baseline:** [`solutions/openclaw-honest/openclaw-honest-assessment.md`](../solutions/openclaw-honest/openclaw-honest-assessment.md)
 - **DACH/EU compliance** (where this setup shines): [`solutions/security-gdpr/gdpr-claude-checklist-dach.md`](../solutions/security-gdpr/gdpr-claude-checklist-dach.md)
 - **Ollama model library** (what local models exist today): [ollama.com/library](https://ollama.com/library)
@@ -241,4 +241,4 @@ Dom uses vanilla OpenClaw. If you are starting fresh and security matters more t
 
 ---
 
-*This file describes only what Dom shared publicly at Event #1 (slides 13-15) plus his own chat quotes. No invented details. The deep-dive technical doc with exact tier-routing logic, OpenClaw flow code, and Vector DB schema is in Dom's anonymized doc — link will land here when his URL is back online.*
+*This file describes only what Dom shared publicly at Event #1 (slides 13-15) plus his own chat quotes. No invented details. The deep-dive technical doc with exact tier-routing logic, OpenClaw flow code, and Vector DB schema is in Dom's anonymized doc, link will land here when his URL is back online.*

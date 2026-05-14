@@ -21,18 +21,18 @@ The pattern is: **resolve recipient + channel + intent → load voice rules + ch
 
 ## Inputs
 
-1. **Recipient** — name, resolved to memory file `memory/people/{slug}.md` (see [`/diarize-person`](../diarize-person/SKILL.md))
-2. **Channel** — WhatsApp / Email / LinkedIn DM / Slack / Telegram
-3. **Intent** — what you want the message to do (info / ask / decline / follow up / thank)
-4. **Context** — paste-in or memory pointer (e.g. "the proposal we sent yesterday")
-5. **Voice rules** — `memory/feedback_voice.md` (banned words, required style, Du/Sie default)
-6. **Channel rules** — `memory/feedback_channel_rules.md` (e.g. WhatsApp = max 3 sentences, no greetings; Email = greeting + sign-off mandatory)
+1. **Recipient**, name, resolved to memory file `memory/people/{slug}.md` (see [`/diarize-person`](../diarize-person/SKILL.md))
+2. **Channel**, WhatsApp / Email / LinkedIn DM / Slack / Telegram
+3. **Intent**, what you want the message to do (info / ask / decline / follow up / thank)
+4. **Context**, paste-in or memory pointer (e.g. "the proposal we sent yesterday")
+5. **Voice rules**, `memory/feedback_voice.md` (banned words, required style, Du/Sie default)
+6. **Channel rules**, `memory/feedback_channel_rules.md` (e.g. WhatsApp = max 3 sentences, no greetings; Email = greeting + sign-off mandatory)
 
 ---
 
 ## Outputs
 
-A single draft in the right format for the channel. No alternatives offered (you can ask for one if you want a second pass — but the default is decisive).
+A single draft in the right format for the channel. No alternatives offered (you can ask for one if you want a second pass, but the default is decisive).
 
 **Example shape, WhatsApp:**
 ```
@@ -56,20 +56,20 @@ Same intent, completely different surface.
 
 ---
 
-## Worked example — same intent, 4 channels, 4 outputs
+## Worked example, same intent, 4 channels, 4 outputs
 
 **Intent:** confirm a Wednesday 14:00 meeting + ask for the agenda
 **Recipient:** Anna Beispiel (Du-form, professional but warm, German)
 **Context:** scheduled last week, she promised to send agenda
 
-### Output 1 — WhatsApp (3 sentences max, no greeting/sign-off)
+### Output 1, WhatsApp (3 sentences max, no greeting/sign-off)
 
 ```
 Anna, Mittwoch 14h passt. Schick mir bitte die Agenda?
 Bin gespannt auf deine zwei Punkte.
 ```
 
-### Output 2 — Email internal (Hi + first name sign-off, 5 sentences max)
+### Output 2, Email internal (Hi + first name sign-off, 5 sentences max)
 
 ```
 Subject: Mittwoch 14h, ja
@@ -84,7 +84,7 @@ Bis Mittwoch,
 Chris
 ```
 
-### Output 3 — LinkedIn DM (no greeting, no sign-off, 4 sentences max)
+### Output 3, LinkedIn DM (no greeting, no sign-off, 4 sentences max)
 
 ```
 Anna, Mittwoch 14h passt. Wenn du vorher die Agenda schickst, bin
@@ -92,7 +92,7 @@ ich vorbereitet. Meine zwei Themen: Q3-Lieferung und Reporting für
 deinen Manager. Freue mich.
 ```
 
-### Output 4 — Slack (no greeting, no sign-off, 2 sentences max)
+### Output 4, Slack (no greeting, no sign-off, 2 sentences max)
 
 ```
 Mi 14h passt. Agenda vorab?
@@ -156,7 +156,7 @@ Full template at [`prompts/draft-prompt.md`](prompts/draft-prompt.md).
 6. Test: `/draft-by-channel {recipient name} WhatsApp "Mittwoch 14h passt"`
 7. Verify: output respects channel rules (no greeting in WhatsApp, etc.)
 8. Test on email: `/draft-by-channel {recipient name} Email-internal "same intent"`
-9. Compare the two outputs — same intent, different surfaces
+9. Compare the two outputs, same intent, different surfaces
 
 ---
 
@@ -185,7 +185,7 @@ Override per recipient in their `memory/people/{slug}.md`.
 | Latency | 1-3 seconds |
 | Monthly cost (~8 drafts/day = 240/mo) | **~$1.50-4** |
 
-Cheapest skill in the set on a per-invocation basis. The quality cliff is at the voice-rules size — bigger voice file = more tokens, more cost, but better matching.
+Cheapest skill in the set on a per-invocation basis. The quality cliff is at the voice-rules size, bigger voice file = more tokens, more cost, but better matching.
 
 ---
 
@@ -209,7 +209,7 @@ Cheapest skill in the set on a per-invocation basis. The quality cliff is at the
 
 **3. Output to clipboard automatically.** Pipe through `pbcopy` (Mac) or `xclip` (Linux) so the draft is ready to paste.
 
-**4. Compare to last sent.** Add to the prompt: "Compare to the last 3 messages sent to this person — flag if voice drifted." Catches your own register slipping.
+**4. Compare to last sent.** Add to the prompt: "Compare to the last 3 messages sent to this person, flag if voice drifted." Catches your own register slipping.
 
 **5. Multi-language switching.** If recipient memory has `language: en` and your default is `de`, the skill switches to English automatically for this person.
 
@@ -239,7 +239,7 @@ Cheapest skill in the set on a per-invocation basis. The quality cliff is at the
 
 ## When to delete this skill
 
-If you find yourself rewriting most drafts substantially, **delete it** — your voice rules aren't tight enough yet. Reasons it might not work:
+If you find yourself rewriting most drafts substantially, **delete it**, your voice rules aren't tight enough yet. Reasons it might not work:
 - Your communication is highly contextual and rule-defying
 - You communicate in too many languages with no per-recipient overrides
 - You don't have time to maintain `feedback_voice.md` (the skill quality is downstream of that file)

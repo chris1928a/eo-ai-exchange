@@ -8,22 +8,22 @@
 
 Before you can score, you need ALL of these for each process:
 
-- [ ] **Process name** — what people call it internally
-- [ ] **Owner** — who is currently responsible (name + role)
-- [ ] **Frequency** — how often does it run (daily / weekly / per-deal / etc.)
-- [ ] **Current time cost** — minutes/hours per occurrence × frequency = total time/week
-- [ ] **Current money cost** — vendor fees, tool costs, opportunity cost
-- [ ] **Current quality cost** — error rate, customer complaints, rework cycles
-- [ ] **What's broken** — the specific pain in concrete language (not "it's slow")
-- [ ] **What people have tried** — past attempts at fixing, what worked / didn't
-- [ ] **Constraints** — anything that limits possible fixes (compliance, vendor lock-in, internal politics)
-- [ ] **Who has authority to change it** — sometimes ≠ the owner
+- [ ] **Process name**, what people call it internally
+- [ ] **Owner**, who is currently responsible (name + role)
+- [ ] **Frequency**, how often does it run (daily / weekly / per-deal / etc.)
+- [ ] **Current time cost**, minutes/hours per occurrence × frequency = total time/week
+- [ ] **Current money cost**, vendor fees, tool costs, opportunity cost
+- [ ] **Current quality cost**, error rate, customer complaints, rework cycles
+- [ ] **What's broken**, the specific pain in concrete language (not "it's slow")
+- [ ] **What people have tried**, past attempts at fixing, what worked / didn't
+- [ ] **Constraints**, anything that limits possible fixes (compliance, vendor lock-in, internal politics)
+- [ ] **Who has authority to change it**, sometimes ≠ the owner
 
-If any field is empty after the intake interview, skip the process — the audit can't score it without complete data.
+If any field is empty after the intake interview, skip the process, the audit can't score it without complete data.
 
 ---
 
-## Template — copy this block per process
+## Template, copy this block per process
 
 ```markdown
 ## Process: {name}
@@ -62,7 +62,7 @@ For each process, ask the owner:
 5. "If you could change one thing about this with no constraints, what would it be?"
 6. "What's stopping you from doing exactly that?"
 
-The 6th question is where the real audit value lives — the constraint, not the wish.
+The 6th question is where the real audit value lives, the constraint, not the wish.
 
 ---
 

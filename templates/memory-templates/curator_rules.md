@@ -14,7 +14,7 @@ Mark a memory file as stale if:
 - **type=feedback** and no reference in 90+ days → flag for review (not auto-prune)
 - **type=project** and the project shipped 30+ days ago → suggest archive to `memory/_archive/`
 - **type=reference** and source URL is dead → flag for re-source
-- **type=user** — never marked stale (these are foundational)
+- **type=user**, never marked stale (these are foundational)
 
 ## Duplicate detection
 
@@ -44,15 +44,15 @@ When promoting:
 ## Index integrity
 
 `MEMORY.md` must always reflect the current state of `memory/`:
-- One-line pointer per file: `- [Title](filename.md) — one-line hook`
+- One-line pointer per file: `- [Title](filename.md), one-line hook`
 - Pruned files are removed from index immediately
 - Archived files are removed from index, kept on disk in `_archive/`
 
 ## Audit cadence
 
-- **Sunday 14:00 cron** — full audit, dry-run, report to Telegram
-- **First-of-month cron** — deep audit including stale-entry promotion to `_archive/`
-- **On-demand** — `/memory-curator` invoked manually when something feels off
+- **Sunday 14:00 cron**, full audit, dry-run, report to Telegram
+- **First-of-month cron**, deep audit including stale-entry promotion to `_archive/`
+- **On-demand**, `/memory-curator` invoked manually when something feels off
 
 ## Never
 

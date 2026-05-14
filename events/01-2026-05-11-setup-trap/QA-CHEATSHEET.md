@@ -9,13 +9,13 @@ Live Slido state, 12 questions, sorted by vote count. Quick-answers + slide refe
 ## Format
 
 Each question:
-- **Quick answer (30-60 sec)** — what to say live
-- **Deeper points** — for follow-ups
-- **References** — slides + solution files to point to
+- **Quick answer (30-60 sec)**, what to say live
+- **Deeper points**, for follow-ups
+- **References**, slides + solution files to point to
 
 ---
 
-## Q1, 7 votes — If you could start over, what would you build differently?
+## Q1, 7 votes, If you could start over, what would you build differently?
 
 **Quick answer**
 "Five things, in order of regret. One: start with memory, not with tools. Two: write down 'who I am, what I do' before installing anything. Three: use Markdown files, not Vector-DB, until you have 10.000+ unstructured docs. Four: avoid Voice-of-AI lock-in, every assistant should be a Markdown wrapper, not a vendor. Five: build for one stack you live in, not for every tool you have."
@@ -34,7 +34,7 @@ Each question:
 
 ---
 
-## Q2, 6 votes — GDPR sensitive company data
+## Q2, 6 votes, GDPR sensitive company data
 
 **Quick answer**
 "You can run Claude GDPR-compliant in 2026, but you have to configure it. Anthropic signed the DPA in January 2026. For DACH or regulated industries, route through AWS Bedrock EU Frankfurt or Google Vertex AI EU regions, that is the legal floor. For ZDR, zero data retention, apply via Anthropic Sales. Critical: EU AI Act takes full effect August 2 2026, you have three months from tonight."
@@ -51,7 +51,7 @@ Each question:
 
 ---
 
-## Q3, 5 votes — Monthly cost honest, API + subs + hosting
+## Q3, 5 votes, Monthly cost honest, API + subs + hosting
 
 **Quick answer**
 "My personal setup, all-in: 150 EUR per month. Claude Pro plus a Telegram bot VM on Lightsail Frankfurt plus minor APIs. Dom is at zero dollars, fully local. Compared to Glean Enterprise at 500 per seat or a full enterprise stack at 1.5k per month, this is architecture beating budget. For an agency-scale Org Brain, expect under 1k per month all-in, including cloud harness, transcription, and API costs."
@@ -70,7 +70,7 @@ Each question:
 
 ---
 
-## Q4, 5 votes — AI risk to your own business model + investments
+## Q4, 5 votes, AI risk to your own business model + investments
 
 **Quick answer**
 "Two questions in one. First, your own business. If your value prop is mostly information arbitrage or doing what a junior analyst does, AI eats it in 18 months. If your value prop is relationships, judgment under uncertainty, or operational execution under pressure, AI compresses your cost base but does not eat the wedge. Test it by asking: can a well-prompted Claude do my next quarter? If yes, you have a problem. If no, AI is leverage, not threat. Second, your investments. Same test, applied to each portfolio company. PE LP fund: ask each GP for their AI-readiness audit. Public equities: shift exposure toward owners of proprietary data, distribution moats, regulated rails."
@@ -87,7 +87,7 @@ Each question:
 
 ---
 
-## Q5, 4 votes — Cloud vs self-hosted vs local
+## Q5, 4 votes, Cloud vs self-hosted vs local
 
 **Quick answer**
 "Three valid paths, depending on what you optimize for. Local-first like Dom: zero ongoing cost, full sovereignty, but you carry the engineering load forever. Workspace-native like me: 150 EUR per month, mobile access via Telegram, but you ride the vendor roadmap. Enterprise hosted like Glean: 500 per seat, no engineering load, but you pay vendor lock-in and your data lives in a third party. For sensitive data, DACH legal, AWS Bedrock EU is the middle path: cloud convenience, EU residency, audit trail."
@@ -105,7 +105,7 @@ Each question:
 
 ---
 
-## Q6, 2 votes — Claude vs Gemini, Google Workspace context
+## Q6, 2 votes, Claude vs Gemini, Google Workspace context
 
 **Quick answer**
 "Honest answer: use both, for different things. Gemini is best inside Workspace for quick Doc and Sheet and Slides work because it is native. Claude is best for reasoning, long-context analysis, anything that requires judgment over multiple sources, and for the agentic loop. If you are deep in Workspace and already paying for Gemini Advanced, do not pay for Claude Pro separately, use the Anthropic API for the agentic stack and let Gemini do the Workspace inline work. Do not wait for Google to catch up on reasoning. Use Claude where reasoning matters today."
@@ -121,7 +121,7 @@ Each question:
 
 ---
 
-## Q7, 2 votes — Pace of software development overruns Enterprise-AI utility
+## Q7, 2 votes, Pace of software development overruns Enterprise-AI utility
 
 **Quick answer**
 "Bet on architecture, not on model. The same architecture, Memory plus Tools plus Models, survives any model swap. If your enterprise platform is locked to a specific model API, you bought a depreciating asset. If your platform has a thin harness that calls a swappable model, you bought an appreciating asset. Test it by asking: can my product run on a different model in 30 days? If no, you have technical lock-in, not product moat."
@@ -139,7 +139,7 @@ Each question:
 
 ---
 
-## Q8, 1 vote — Hours saved per week, real numbers
+## Q8, 1 vote, Hours saved per week, real numbers
 
 **Quick answer**
 "23 hours per week, tracked over 8 weeks. Morning briefing saves 2.25h, meeting prep saves 5.7h across 4 calls per day, email and WhatsApp drafts save 2.7h, real estate pricing fully auto-runs at 5h saved, weekly review goes from 90 minutes to 10 minutes, client diagnostics save 3h, deliverables save 3.75h. Personal Brain version 4, alive 6 months, 150 EUR per month."
@@ -157,7 +157,7 @@ Each question:
 
 ---
 
-## Q9, 1 vote — Perplexity use case beside search
+## Q9, 1 vote, Perplexity use case beside search
 
 **Quick answer**
 "Three honest uses beyond standard search. One: deep-research mode for sourcing primary documents, when you need 8 to 15 citations on a specific topic. Two: competitive intel, watching specific competitors over time via Spaces. Three: stock and market research with current data and inline citations. For everything else, Claude with web search is sharper. Perplexity wins on citation density and source transparency. Claude wins on reasoning over the sources once you have them."
@@ -172,7 +172,7 @@ Each question:
 
 ---
 
-## Q10, 1 vote — Best practical case where you use ChatGPT
+## Q10, 1 vote, Best practical case where you use ChatGPT
 
 **Quick answer**
 "Honestly: image generation via DALL-E for quick mockups, and voice mode for hands-free brainstorming on walks. For everything text-based and reasoning-heavy, Claude is sharper. For multimodal tasks like fast image edits, ChatGPT plus DALL-E is faster than the equivalent Claude plus separate image tool. If you have ChatGPT Plus and Claude Pro, treat them as specialized tools: ChatGPT for multimodal and casual chat, Claude for work."
@@ -187,7 +187,7 @@ Each question:
 
 ---
 
-## Q11, 0 votes — Worst AI fail in your business, what did you learn
+## Q11, 0 votes, Worst AI fail in your business, what did you learn
 
 **Quick answer**
 "Two real fails. One: April 2026, my user memory had a 13-month drift, the brain was running on stale facts because I never audited. Fix: weekly /audit-memory cron now catches drift. Two: an early Claude Code run modified files in a production repo without a backup snapshot, lost 4 hours of work. Fix: hard rule, every destructive operation needs a backup branch created first. The lesson: AI fails silently. Build the audit and the snapshot before you trust it, not after."
@@ -206,7 +206,7 @@ Each question:
 
 ---
 
-## Q12, 0 votes — Team adoption, change management
+## Q12, 0 votes, Team adoption, change management
 
 **Quick answer**
 "Three things, in order. One: do not roll out tools, roll out skills. People can adopt a skill called /audit-process. People cannot adopt a generic LLM. Two: solve one painful workflow per quarter, not all of them at once. The win has to be visible in the first 30 days. Three: founder uses it visibly. If the founder is still in old workflows, the team mirrors that. The 90-day playbook is in the repo, six prerequisites, then phased rollout."

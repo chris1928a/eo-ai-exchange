@@ -19,14 +19,14 @@ These defaults apply unless a person's `memory/people/{slug}.md` overrides.
 | **LinkedIn DM** | None | None | 4 sentences | Match recipient profile register |
 | **Slack** | None | None | 2 sentences | Direct, no fluff |
 | **Loom / async video script** | "Quick one for {first}." | None (video ends) | 90 seconds | Conversational |
-| **Meeting note / Notion** | None | "— {your initials} {date}" | n/a | Bullets > prose |
+| **Meeting note / Notion** | None | "{your initials}, {date}" | n/a | Bullets > prose |
 
 ## Hard rules
 
 - **Never put greeting in Slack.** It's already async chat, no need.
 - **Never sign WhatsApp with full name.** First name max.
 - **Never send mega-paragraphs in DM.** If it would be more than 3 sentences, send an email or a Loom.
-- **Channel-switch warning.** If a thread starts in WhatsApp and moves to email, regenerate the draft fresh — don't translate the WhatsApp version.
+- **Channel-switch warning.** If a thread starts in WhatsApp and moves to email, regenerate the draft fresh, don't translate the WhatsApp version.
 
 ## Per-recipient overrides
 

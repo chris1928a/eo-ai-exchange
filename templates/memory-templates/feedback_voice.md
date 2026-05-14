@@ -18,7 +18,7 @@ These mark text as AI-generated. Avoid all of them:
 - robust
 - seamless / seamlessly
 - "I hope this finds you well"
-- em-dashes (—) — use commas, periods, or parentheses instead
+- em-dashes (—), use commas, periods, or parentheses instead
 - mega-paragraphs (>5 sentences without a break)
 - "happy to help" / "great question"
 - "in today's fast-paced world"
@@ -74,4 +74,4 @@ how we could leverage our partnership to unlock seamless synergies in
 the robust framework we discussed..."
 ```
 
-If anything I draft starts to sound like that — stop, restart.
+If anything I draft starts to sound like that, stop, restart.

@@ -10,9 +10,9 @@ A continuous, audience-driven series where EO members surface real AI-setup pain
 ```mermaid
 flowchart LR
     Brain([Build a personal AI brain<br/>that actually works])
-    Brain --> S1[<b>Setup 1 — Chris</b><br/>Workspace-Native<br/>━━━━━━━━━━━<br/>~150 EUR/mo all-in<br/>Mobile via Telegram<br/>~23h/wk saved<br/>Value in 60 min]
-    Brain --> S2[<b>Setup 2 — Dom</b><br/>Local-First Rolodex<br/>━━━━━━━━━━━<br/>$10-50/mo + Mac hardware<br/>5-tier memory · 107 Rolodex<br/>Sovereignty · No mobile<br/>Backbone in 90 min · Full in 12 months]
-    Brain --> S3[<b>Setup 3 — Fabian</b><br/>PAI Life OS<br/>━━━━━━━━━━━<br/>$20-100/mo + Mac hardware<br/>45 skills · 171 workflows · 37 hooks<br/>Pulse dashboard · macOS/Linux<br/>Value in 1-2 days]
+    Brain --> S1[<b>Setup 1, Chris</b><br/>Workspace-Native<br/>━━━━━━━━━━━<br/>~150 EUR/mo all-in<br/>Mobile via Telegram<br/>~23h/wk saved<br/>Value in 60 min]
+    Brain --> S2[<b>Setup 2, Dom</b><br/>Local-First Rolodex<br/>━━━━━━━━━━━<br/>$10-50/mo + Mac hardware<br/>5-tier memory · 107 Rolodex<br/>Sovereignty · No mobile<br/>Backbone in 90 min · Full in 12 months]
+    Brain --> S3[<b>Setup 3, Fabian</b><br/>PAI Life OS<br/>━━━━━━━━━━━<br/>$20-100/mo + Mac hardware<br/>45 skills · 171 workflows · 37 hooks<br/>Pulse dashboard · macOS/Linux<br/>Value in 1-2 days]
 
     classDef chris fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#0f172a
     classDef dom fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#0f172a
@@ -29,7 +29,7 @@ flowchart LR
 
 ## Which setup is best for you?
 
-> **TL;DR — for ~80% of EO operators, the answer is Setup 1 (Workspace-Native, Chris).** You already live in Workspace, you want value in 30 days not 12 months, you want mobile, and you can afford ~150 EUR/mo. The other two are for specific edge cases (regulated data → Dom, opinionated Life OS lover on Mac → Fabian).
+> **TL;DR, for ~80% of EO operators, the answer is Setup 1 (Workspace-Native, Chris).** You already live in Workspace, you want value in 30 days not 12 months, you want mobile, and you can afford ~150 EUR/mo. The other two are for specific edge cases (regulated data → Dom, opinionated Life OS lover on Mac → Fabian).
 
 The honest one-question filter:
 
@@ -41,13 +41,13 @@ flowchart TD
     Q1 -- Yes --> Q2{Can you spend<br/>~150 EUR/month?}
     Q1 -- No --> Q3{Do you handle data<br/>that cannot leave your machine?}
 
-    Q2 -- Yes --> S1[<b>SETUP 1 — Chris</b><br/>Workspace-Native<br/>~150 EUR/mo · ~23h/wk saved<br/>Mobile via Telegram bot]
+    Q2 -- Yes --> S1[<b>SETUP 1, Chris</b><br/>Workspace-Native<br/>~150 EUR/mo · ~23h/wk saved<br/>Mobile via Telegram bot]
     Q2 -- No --> Q3
 
-    Q3 -- Yes --> S2[<b>SETUP 2 — Dom</b><br/>Local-First Rolodex<br/>~$0/mo marginal · Mac M-series<br/>You debug your own stack]
+    Q3 -- Yes --> S2[<b>SETUP 2, Dom</b><br/>Local-First Rolodex<br/>~$0/mo marginal · Mac M-series<br/>You debug your own stack]
     Q3 -- No --> Q4{Do you want a complete<br/>Life OS out of the box?}
 
-    Q4 -- Yes --> S3[<b>SETUP 3 — Fabian</b><br/>PAI Life OS<br/>Free + your API spend · Mac/Linux<br/>45 skills · 171 workflows · 37 hooks]
+    Q4 -- Yes --> S3[<b>SETUP 3, Fabian</b><br/>PAI Life OS<br/>Free + your API spend · Mac/Linux<br/>45 skills · 171 workflows · 37 hooks]
     Q4 -- No --> S1
 
     classDef chris fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#0f172a
@@ -61,15 +61,15 @@ flowchart TD
     class Q1,Q2,Q3,Q4 question
 ```
 
-**Why Setup 1 is the default for the EO audience:** of 118 audience registrations across 53 chapters at Event #1, **69% already use Claude** and the dominant pain cluster was *"Setup itself / time to configure"* — the Workspace-Native path is the lowest-friction path to a working brain in <60 minutes. The other two are honest counterfactuals: Dom's local-first proves you *can* do this at $0/mo if you have 12 months of engineering time, Fabian's PAI proves you *can* skip the build entirely if you accept Miessler's opinionated framework.
+**Why Setup 1 is the default for the EO audience:** of 118 audience registrations across 53 chapters at Event #1, **69% already use Claude** and the dominant pain cluster was *"Setup itself / time to configure"*. The Workspace-Native path is the lowest-friction path to a working brain in <60 minutes. The other two are honest counterfactuals: Dom's local-first proves you *can* do this at near-zero marginal cost if you have 12 months of engineering time and a Mac, Fabian's PAI proves you *can* skip the build entirely if you accept Miessler's opinionated framework + a single Claude Max (or equivalent) subscription.
 
 ---
 
 ## All three setups, side by side
 
-Three operator-level setups demoed at Event #1 (2026-05-11). **Same problem** — build a personal AI brain that actually works in production. **Three different operator-level answers.** Pick the one closest to how you already work, fork it tonight, run it tomorrow.
+Three operator-level setups demoed at Event #1 (2026-05-11). **Same problem**, build a personal AI brain that actually works in production. **Three different operator-level answers.** Pick the one closest to how you already work, fork it tonight, run it tomorrow.
 
-| | **Setup 1 — Workspace-Native** | **Setup 2 — Local-First Rolodex** | **Setup 3 — PAI Life OS** |
+| | **Setup 1, Workspace-Native** | **Setup 2, Local-First Rolodex** | **Setup 3, PAI Life OS** |
 |---|---|---|---|
 | **Operator** | Christoph Erler (EO Berlin) | Dominik Raute (CTO JustWatch) | Fabian Gless (EO Berlin) runs Daniel Miessler's PAI |
 | **Stack** | Claude Code + 31 MCP + 19 skills + 125 memory + 7 crons + Telegram | Vanilla OpenClaw + custom 5-tier memory + Rolodex + local LLMs on Mac | PAI v5.0.0: 45 skills + 171 workflows + 37 hooks + Pulse dashboard |
@@ -89,17 +89,17 @@ Three operator-level setups demoed at Event #1 (2026-05-11). **Same problem** �
 
 ### What each setup ships, in plain terms
 
-**🔵 Setup 1 — Chris (Workspace-Native).** The "AI as infrastructure replaces a team I would have hired" path. Claude Code wired into Google Workspace via 31 MCP servers, 19 reusable skills (8 of them in [`/skills/`](skills/)), 125 memory files routed by a ~50-line CLAUDE.md, mobile via a Telegram bot on AWS Lightsail Frankfurt. ~23h/wk saved on a tracked 8-week sample. Replaces ~1.5 FTE (80-110k EUR/yr) at a 45-60x cost ratio. Personal opportunity cost reclaimed: ~270k EUR/yr. → [Read the full spec](setups/chris-claude-code.md) — origin, 4-layer brain, 8 forkable skills with names, 7 cron jobs, anti-AI voice rules, 30-day rollout plan, troubleshooting.
+**🔵 Setup 1, Chris (Workspace-Native).** The "AI as infrastructure replaces a team I would have hired" path. Claude Code wired into Google Workspace via 31 MCP servers, 19 reusable skills (8 of them in [`/skills/`](skills/)), 125 memory files routed by a ~50-line CLAUDE.md, mobile via a Telegram bot on AWS Lightsail Frankfurt. ~23h/wk saved on a tracked 8-week sample. Replaces ~1.5 FTE (80-110k EUR/yr) at a 45-60x cost ratio. Personal opportunity cost reclaimed: ~270k EUR/yr. → [Read the full spec](setups/chris-claude-code.md), origin, 4-layer brain, 8 forkable skills with names, 7 cron jobs, anti-AI voice rules, 30-day rollout plan, troubleshooting.
 
-**🟢 Setup 2 — Dom (Local-First Rolodex).** The "sovereignty over convenience" path. Vanilla OpenClaw as backbone, custom 5-tier memory (`System Prompt > Bootstrap > On-Demand > Search Index > Raw Archive`), a Rolodex of 107 person dossiers, 1.183 files indexed across 5.735 vectors / 11 collections, all running on local models on a Mac. 2-5 second queries. **Real cost: $10-50/mo cloud Claude escalations + electricity, plus Mac M-series hardware (~3-5k EUR once if you don't have one).** Built over 12 months from scratch. The agent that remembers. → [Read the full spec](setups/dom-rolodex.md) — 5-tier architecture, what Dom shared at the event, honest struggles, when this is right (and when it is not).
+**🟢 Setup 2, Dom (Local-First Rolodex).** The "sovereignty over convenience" path. Vanilla OpenClaw as backbone, custom 5-tier memory (`System Prompt > Bootstrap > On-Demand > Search Index > Raw Archive`), a Rolodex of 107 person dossiers, 1.183 files indexed across 5.735 vectors / 11 collections, all running on local models on a Mac. 2-5 second queries. **Real cost: $10-50/mo cloud Claude escalations + electricity, plus Mac M-series hardware (~3-5k EUR once if you don't have one).** Built over 12 months from scratch. The agent that remembers. → [Read the full spec](setups/dom-rolodex.md), 5-tier architecture, what Dom shared at the event, honest struggles, when this is right (and when it is not).
 
-**🟣 Setup 3 — Fabian (PAI Life OS).** The "complete opinionated Life OS out of the box" path. [Daniel Miessler's PAI v5.0.0](https://github.com/danielmiessler/Personal_AI_Infrastructure) (12.100+ stars, MIT) — 45 skills, 171 workflows, 37 hooks, a Pulse dashboard at `localhost:31337`, the Telos / ISA / DA conceptual framework. One-line install. macOS or Linux. **Real cost: PAI itself is free + MIT, plus one single Claude Max (or equivalent Codex / Gemini) subscription at ~$100-200/mo. PAI is agent-agnostic, no special hardware tier needed.** → [Read the full spec](setups/fabian-personal-ai.md) — what you get, the Telos step that matters, honest struggles, why this matters as a reference architecture.
+**🟣 Setup 3, Fabian (PAI Life OS).** The "complete opinionated Life OS out of the box" path. [Daniel Miessler's PAI v5.0.0](https://github.com/danielmiessler/Personal_AI_Infrastructure) (12.100+ stars, MIT), 45 skills, 171 workflows, 37 hooks, a Pulse dashboard at `localhost:31337`, the Telos / ISA / DA conceptual framework. One-line install. macOS or Linux. **Real cost: PAI itself is free + MIT, plus one single Claude Max (or equivalent Codex / Gemini) subscription at ~$100-200/mo. PAI is agent-agnostic, no special hardware tier needed.** → [Read the full spec](setups/fabian-personal-ai.md), what you get, the Telos step that matters, honest struggles, why this matters as a reference architecture.
 
 > **Brand new to GitHub or AI tooling?** Start at [`START-HERE.md`](START-HERE.md) for the 3-step path (fork → clone → first skill). No jargon, screenshots from official GitHub Docs.
 
 > **Don't know what Claude Code, MCP, or Skills are?** Plain-English glossary at [`resources/glossary.md`](resources/glossary.md).
 
-> **Looking for a fix to a specific pain?** [`SOLUTIONS.md`](SOLUTIONS.md) — 11 documented solutions, one per audience pain cluster from 118 registrations.
+> **Looking for a fix to a specific pain?** [`SOLUTIONS.md`](SOLUTIONS.md), 11 documented solutions, one per audience pain cluster from 118 registrations.
 
 ---
 

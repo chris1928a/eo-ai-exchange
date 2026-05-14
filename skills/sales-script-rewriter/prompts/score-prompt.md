@@ -1,4 +1,4 @@
-# Prompt template — /sales-script-rewriter
+# Prompt template, /sales-script-rewriter
 
 ```
 SYSTEM: Score this sales call from {rep_name} and produce coaching output for {user_name}.
@@ -59,8 +59,8 @@ OUTPUT STRUCTURE (mandatory):
 - Discovery questions: N (target: ≥6)
 
 ## 6-dimension score
-1. Opening hook: N — [transcript citation, e.g. "at ~01:12, rep opened with..."]
-2. Discovery quality: N — [transcript citation]
+1. Opening hook: N, [transcript citation, e.g. "at ~01:12, rep opened with..."]
+2. Discovery quality: N, [transcript citation]
 [etc.]
 Mark the weakest with ←
 
@@ -68,7 +68,7 @@ Total: N/30 (last 5 average: M/30)
 
 ## Trend across last 5 calls (skip if < 3 past scores)
 - Opening hook: avg X.X (improving/stable/declining)
-- Discovery quality: avg X.X — PERSISTENT WEAKNESS if ≤2.5 across 3+ calls
+- Discovery quality: avg X.X, PERSISTENT WEAKNESS if ≤2.5 across 3+ calls
 [etc.]
 
 ## Top 3 fixes for this rep, this week
@@ -93,7 +93,7 @@ RULES:
 2. EVERY score cites a specific transcript moment.
 3. Top 3 fixes ONLY (not 4, not 5).
 4. Rewrites are SURGICAL.
-5. If < 3 past scores, skip Trend section — do not invent.
+5. If < 3 past scores, skip Trend section, do not invent.
 6. Apply voice rules.
 7. If transcript quality is bad (lots of [inaudible] / [unclear]), say so up top and lower confidence on scores.
 

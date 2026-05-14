@@ -1,4 +1,4 @@
-# Prompt template — /memory-curator
+# Prompt template, /memory-curator
 
 ```
 SYSTEM: Audit and curate {user_name}'s memory directory at {project_dir}/memory/.

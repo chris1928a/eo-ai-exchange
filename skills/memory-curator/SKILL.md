@@ -14,23 +14,23 @@ load_when: audit memory, curate memory, memory hygiene, prune memory, what's in 
 ## Purpose
 
 Memory files go stale within weeks if no one audits them. This skill runs once a week (or on demand) and:
-1. **Audits** — checks every memory file for staleness, contradictions, drift
-2. **Curates** — promotes valuable chat moments to durable memory
-3. **Prunes** — removes / merges duplicates and obsolete entries
-4. **Reports** — outputs a 1-page audit so you stay aware
+1. **Audits**, checks every memory file for staleness, contradictions, drift
+2. **Curates**, promotes valuable chat moments to durable memory
+3. **Prunes**, removes / merges duplicates and obsolete entries
+4. **Reports**, outputs a 1-page audit so you stay aware
 
-Without this skill, the rest of the brain degrades silently. This is the most important *invisible* skill — it doesn't save time directly, it prevents future lost time.
+Without this skill, the rest of the brain degrades silently. This is the most important *invisible* skill, it doesn't save time directly, it prevents future lost time.
 
 ---
 
 ## Inputs
 
-1. **Memory directory** — `~/.claude/projects/<project>/memory/` (recursive)
-2. **MEMORY.md index** — the top-level index file
-3. **Recent chat sessions** (last 7 days) — for "what should have been a memory but wasn't"
-4. **Last audit log** — `memory/_meta/last_audit.md` so we know what changed since
-5. **Pruning rules** — `memory/_meta/curator_rules.md` (e.g. "feedback memories with no use in 90 days = stale", "project memories whose project shipped 30 days ago = archive")
-6. **Skill invocation log** — `memory/_meta/skill_log.md` (which memory files actually got loaded recently)
+1. **Memory directory**, `~/.claude/projects/<project>/memory/` (recursive)
+2. **MEMORY.md index**, the top-level index file
+3. **Recent chat sessions** (last 7 days), for "what should have been a memory but wasn't"
+4. **Last audit log**, `memory/_meta/last_audit.md` so we know what changed since
+5. **Pruning rules**, `memory/_meta/curator_rules.md` (e.g. "feedback memories with no use in 90 days = stale", "project memories whose project shipped 30 days ago = archive")
+6. **Skill invocation log**, `memory/_meta/skill_log.md` (which memory files actually got loaded recently)
 
 ---
 
@@ -52,7 +52,7 @@ Without this skill, the rest of the brain degrades silently. This is the most im
    → Suggest: scope user_voice rule with "default Du, see person-specific overrides"
 
 ## Stale entries (90+ days untouched, no recent invocation)
-- project_q1_launch.md — project shipped 2026-02-01, archive?
+- project_q1_launch.md, project shipped 2026-02-01, archive?
 - ...
 
 ## Promotions from chat → memory (5 candidates)
@@ -73,7 +73,7 @@ Without this skill, the rest of the brain degrades silently. This is the most im
 
 ---
 
-## Worked example — Sunday audit, 4-week-old brain
+## Worked example, Sunday audit, 4-week-old brain
 
 **Context:** Sun 14:00 cron. Brain has been in use for 4 weeks. Memory has accumulated 87 files.
 
@@ -136,7 +136,7 @@ That's the real output. 5 sections, ~15 min review time, prevents weeks of brain
 - **Contradictions are flagged, not auto-resolved.** Skill suggests, you decide.
 - **Promotions need your sign-off** unless you explicitly opted into `--auto` mode.
 - **Index integrity.** `MEMORY.md` always reflects the current state of `memory/` after a run.
-- **No lossy summaries.** When merging two memory files, the merged version contains *everything* from both — pruning happens at the next audit, not during merge.
+- **No lossy summaries.** When merging two memory files, the merged version contains *everything* from both, pruning happens at the next audit, not during merge.
 - **Audit log is append-only.** `memory/_meta/last_audit.md` keeps the history of every audit. You can always see what was changed when.
 
 ---
@@ -173,8 +173,8 @@ AUDIT TASKS (do all of these):
 
 4. Promotion candidates (from chat → memory):
    - Direct promotion triggers ("remember this", "save this", "for the record")
-   - Behavioral corrections ("don't do X", "always Y") — promote to feedback_*.md
-   - Factual answers referenced in 3+ subsequent conversations — promote to reference_*.md
+   - Behavioral corrections ("don't do X", "always Y"), promote to feedback_*.md
+   - Factual answers referenced in 3+ subsequent conversations, promote to reference_*.md
 
 5. Auto-actions (per curator_rules.md):
    - Remove truly empty files (< 50 chars), move to _archive/
@@ -239,7 +239,7 @@ Fires Sun 14:00. Outputs audit to Telegram. Auto-applies safe changes (index upd
 | Latency | 30-60 seconds (large reading workload) |
 | Monthly cost (4-5 audits/mo) | **~$2-6** |
 
-The most expensive of the 8 skills per-run, but lowest frequency (weekly). Net monthly cost is reasonable. Skip Sonnet — it misses subtle contradictions across files.
+The most expensive of the 8 skills per-run, but lowest frequency (weekly). Net monthly cost is reasonable. Skip Sonnet, it misses subtle contradictions across files.
 
 ---
 
@@ -250,7 +250,7 @@ The most expensive of the 8 skills per-run, but lowest frequency (weekly). Net m
 | `/memory-curator --aggressive` | Lower threshold for stale (60 days vs 90), more aggressive auto-pruning | Mature brain (>6 months) with bloat |
 | `/memory-curator --conservative` | Higher threshold, never auto-anything, more flags | Sensitive contexts (legal, medical) |
 | `/memory-curator --hat {name}` | Audit just one hat's memory files | After a project shipped, archive that hat's memory |
-| `/memory-deep-curator` | Quarterly full reorg — re-categorize, restructure folders | First Sunday of each quarter |
+| `/memory-deep-curator` | Quarterly full reorg, re-categorize, restructure folders | First Sunday of each quarter |
 | `/memory-curator --diff-only` | Show only what's changed since last audit | Daily snapshot if paranoid |
 
 ---
@@ -295,7 +295,7 @@ The most expensive of the 8 skills per-run, but lowest frequency (weekly). Net m
 ## When to delete this skill
 
 You almost never should. This skill is the maintenance backbone for everything else. Reasons it might not work:
-- Your brain is too small (<20 files) — manual review is faster
+- Your brain is too small (<20 files), manual review is faster
 - You don't actually use the rest of the skill set, so memory doesn't accumulate
 - You're using a different curation system (PAI's Telos primitive, etc.)
 
@@ -311,4 +311,4 @@ This is the skill that keeps the rest working. Hidden value, but the only way to
 
 ---
 
-*Source: demoed at [EO AI Productivity Exchange #1](../../events/01-2026-05-11-setup-trap/README.md) on 2026-05-11. Maintenance skill — saves time by preventing future losses (silent failures, stale brain), not by replacing a current task.*
+*Source: demoed at [EO AI Productivity Exchange #1](../../events/01-2026-05-11-setup-trap/README.md) on 2026-05-11. Maintenance skill, saves time by preventing future losses (silent failures, stale brain), not by replacing a current task.*

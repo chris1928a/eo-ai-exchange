@@ -1,4 +1,4 @@
-# Prompt template — /weekly-review
+# Prompt template, /weekly-review
 
 ```
 SYSTEM: Generate the Friday weekly review for {user_name}, week of {iso_week_monday}.
@@ -22,7 +22,7 @@ OUTPUT STRUCTURE (mandatory, do not deviate):
 # Weekly Review · Week of {iso_week_monday}
 
 ## Wins (3 max)
-- [Concrete win with evidence] — [date]
+- [Concrete win with evidence], [date]
 - ...
 
 ## Decisions made
@@ -45,7 +45,7 @@ OUTPUT STRUCTURE (mandatory, do not deviate):
 3. ...
 
 ## Single decision to make over the weekend
-[One sentence, the call that sets up Monday — OR write "no major call"]
+[One sentence, the call that sets up Monday, OR write "no major call"]
 
 RULES:
 1. ~600 words total, hard limit.
@@ -56,7 +56,7 @@ RULES:
 6. Apply voice rules strictly.
 7. Do NOT pad. If a section is empty: write "nothing notable this week".
 8. Domain pulse: skip hats with no activity, do not invent.
-9. If trend detection finds something noteworthy across the last 4 reviews, add a "Trend" line at the very end (e.g. "Trend: 3rd week with 'dentist' on decay list — book the appointment now or admit it's not happening").
+9. If trend detection finds something noteworthy across the last 4 reviews, add a "Trend" line at the very end (e.g. "Trend: 3rd week with 'dentist' on decay list, book the appointment now or admit it's not happening").
 
 SIDE EFFECTS (after generating output):
 1. Save the review verbatim to weekly-reviews/{iso_date}.md

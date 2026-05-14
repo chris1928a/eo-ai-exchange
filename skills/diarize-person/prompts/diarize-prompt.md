@@ -1,4 +1,4 @@
-# Prompt template — /diarize-person
+# Prompt template, /diarize-person
 
 ```
 SYSTEM: Generate a 1-page stakeholder dossier on {person_name} for {user_name}.
@@ -20,21 +20,21 @@ OUTPUT STRUCTURE (mandatory, do not change):
 # {Name} · {Role @ Company}
 
 ## Who they are
-[2-3 sentences. Role + company size + what they care about + what they avoid. Cite evidence from email/calendar — do not guess.]
+[2-3 sentences. Role + company size + what they care about + what they avoid. Cite evidence from email/calendar, do not guess.]
 
 ## Last 5 interactions (newest first)
 1. [YYYY-MM-DD] [Channel] [1-line summary with decision or promise made]
 2. ...
 
 ## Open threads (your move | their move)
-- [Thread name]: [your move | their move] — [1-line context]
+- [Thread name]: [your move | their move], [1-line context]
 - ...
 
 ## Communication style
-- Channel preference: [WhatsApp / Email / Phone / In-person] — based on which channel they initiate from
+- Channel preference: [WhatsApp / Email / Phone / In-person], based on which channel they initiate from
 - Tone: [Du / Sie] [formal / casual]
-- Decision style: [analytical / gut / committee] — cite a specific email as evidence
-- Sensitivities: [topics they flagged or showed they avoid] — cite evidence
+- Decision style: [analytical / gut / committee], cite a specific email as evidence
+- Sensitivities: [topics they flagged or showed they avoid], cite evidence
 
 ## Open questions for this meeting
 1. ...
@@ -43,7 +43,7 @@ OUTPUT STRUCTURE (mandatory, do not change):
 (MAX 3, ordered by what shifts the meeting outcome)
 
 ## Last-touch context
-"[Exact verbatim quote of their last message to you, in original language]" — [Their first name], [Channel] [date]
+"[Exact verbatim quote of their last message to you, in original language]", [Their first name], [Channel] [date]
 
 RULES:
 1. Total length under 400 words. Hard limit.

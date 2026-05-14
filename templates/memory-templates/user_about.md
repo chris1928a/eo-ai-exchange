@@ -14,7 +14,7 @@ I am **[Your Name]**. I run **[Your Company / Role]**.
 
 ## My hats / domains
 
-- [Domain 1] — primary
+- [Domain 1], primary
 - [Domain 2]
 - [Domain 3]
 - ...
@@ -34,7 +34,7 @@ I am **[Your Name]**. I run **[Your Company / Role]**.
 
 - [Mac / Linux / Windows]
 - Time zone: [CET / EST / etc]
-- Calendar typically blocks: [9-12 deep work, 13-17 calls, no meetings on Fridays — whatever your rhythm]
+- Calendar typically blocks: [9-12 deep work, 13-17 calls, no meetings on Fridays, whatever your rhythm]
 
 ## What good looks like for me
 

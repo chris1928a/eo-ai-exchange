@@ -9,7 +9,7 @@ If you already use GitHub daily, skip this and go straight to [`README.md`](READ
 
 ## What is this repo, in one paragraph
 
-This is a free library of working AI setups, written by founders for founders. Three people (Chris, Dom, Fabian) showed how they run AI day to day at [Event #1](events/01-2026-05-11-setup-trap/README.md). Their setups, the slides, the failures, the fixes — all of it lives here. You can read it, copy it, change it, or fork the entire thing into your own GitHub account and make it yours.
+This is a free library of working AI setups, written by founders for founders. Three people (Chris, Dom, Fabian) showed how they run AI day to day at [Event #1](events/01-2026-05-11-setup-trap/README.md). Their setups, the slides, the failures, the fixes, all of it lives here. You can read it, copy it, change it, or fork the entire thing into your own GitHub account and make it yours.
 
 ---
 
@@ -28,7 +28,7 @@ That is the whole journey. Maybe 15 minutes if you have never done this before. 
 
 ---
 
-## Step 1 — Fork this repo (2 minutes)
+## Step 1, Fork this repo (2 minutes)
 
 A **fork** is your personal copy of someone else's GitHub repo. You can change it, break it, rebuild it. The original is unaffected.
 
@@ -36,7 +36,7 @@ A **fork** is your personal copy of someone else's GitHub repo. You can change i
 2. Open this repo's main page: [github.com/chris1928a/eo-ai-exchange](https://github.com/chris1928a/eo-ai-exchange)
 3. Click the **Fork** button in the top-right corner of the page
 4. Leave the defaults, click **Create fork**
-5. Done — you now have `github.com/<your-username>/eo-ai-exchange`
+5. Done, you now have `github.com/<your-username>/eo-ai-exchange`
 
 > **Visual reference:** GitHub's official one-page guide with screenshots is here: [docs.github.com/.../fork-a-repo](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo). Use it if anything below is unclear.
 
@@ -44,11 +44,11 @@ A **fork** is your personal copy of someone else's GitHub repo. You can change i
 
 ---
 
-## Step 2 — Get the files on your computer (5 minutes)
+## Step 2, Get the files on your computer (5 minutes)
 
 Pick **one** of two paths.
 
-### Path A — GitHub Desktop (recommended for non-developers)
+### Path A, GitHub Desktop (recommended for non-developers)
 
 GitHub Desktop is a free app. No terminal, no commands. Click and done.
 
@@ -59,7 +59,7 @@ GitHub Desktop is a free app. No terminal, no commands. Click and done.
 
 Official walkthrough with screenshots: [docs.github.com/.../cloning-and-forking-repositories-from-github-desktop](https://docs.github.com/en/desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop)
 
-### Path B — Terminal (if you already have `git` installed)
+### Path B, Terminal (if you already have `git` installed)
 
 ```bash
 git clone https://github.com/<your-username>/eo-ai-exchange.git
@@ -68,17 +68,17 @@ cd eo-ai-exchange
 
 If `git` is not installed: [git-scm.com/downloads](https://git-scm.com/downloads).
 
-### Path C — Just download a ZIP (no install at all)
+### Path C, Just download a ZIP (no install at all)
 
 1. On your fork's page, click the green **Code** button
 2. **Download ZIP**
 3. Unzip on your computer
 
-This works fine for reading the content. It is harder to update later — if that matters, use Path A.
+This works fine for reading the content. It is harder to update later, if that matters, use Path A.
 
 ---
 
-## Step 3 — Pick one setup and start (5 minutes to the first win)
+## Step 3, Pick one setup and start (5 minutes to the first win)
 
 Three setups are documented in [`setups/`](setups/). Pick the one closest to how you already work.
 
@@ -126,8 +126,8 @@ We wrote a plain-English glossary: [`resources/glossary.md`](resources/glossary.
 
 Three things to do next, in order:
 
-1. **Read [`SOLUTIONS.md`](SOLUTIONS.md)** — 11 documented solutions to the most common pain clusters. Pick the one that matches your biggest pain.
-2. **Read [`solutions/openclaw-honest/openclaw-honest-assessment.md`](solutions/openclaw-honest/openclaw-honest-assessment.md)** — the honest assessment of where things break in production. Save yourself a week.
+1. **Read [`SOLUTIONS.md`](SOLUTIONS.md)**, 11 documented solutions to the most common pain clusters. Pick the one that matches your biggest pain.
+2. **Read [`solutions/openclaw-honest/openclaw-honest-assessment.md`](solutions/openclaw-honest/openclaw-honest-assessment.md)**, the honest assessment of where things break in production. Save yourself a week.
 3. **Submit your own pain or solution** as a Pull Request. See [CONTRIBUTING.md](CONTRIBUTING.md). Every event ships solutions for what the community asked for.
 
 ---

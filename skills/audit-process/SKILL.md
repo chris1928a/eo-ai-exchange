@@ -22,12 +22,12 @@ The pattern is: **intake N processes → score on 2 dimensions → output ranked
 
 ## Inputs
 
-1. **Process list** — paste-in or read from `memory/projects/<engagement>/processes.md`. Each process: name, owner, frequency, current pain.
-2. **Org context** — `memory/projects/<engagement>/org.md` (size, stage, revenue, current pressure)
-3. **Diagnostic rubric** — `memory/_meta/audit_rubric.md` (your scoring criteria — defaults below)
-4. **Past audits** — `memory/projects/<engagement>/audits/` (so you don't re-flag fixed items)
-5. **Voice rules** — for tone of the deliverable
-6. **Industry benchmark file** (optional) — `memory/_meta/benchmarks_{industry}.md` (so "fix" recommendations match what other companies in the same space did)
+1. **Process list**, paste-in or read from `memory/projects/<engagement>/processes.md`. Each process: name, owner, frequency, current pain.
+2. **Org context**, `memory/projects/<engagement>/org.md` (size, stage, revenue, current pressure)
+3. **Diagnostic rubric**, `memory/_meta/audit_rubric.md` (your scoring criteria, defaults below)
+4. **Past audits**, `memory/projects/<engagement>/audits/` (so you don't re-flag fixed items)
+5. **Voice rules**, for tone of the deliverable
+6. **Industry benchmark file** (optional), `memory/_meta/benchmarks_{industry}.md` (so "fix" recommendations match what other companies in the same space did)
 
 ---
 
@@ -83,7 +83,7 @@ The math: [N] hours per week reclaimed = [EUR] per year at [load].
 
 ---
 
-## Worked example — 12-process audit at a 40-person agency
+## Worked example, 12-process audit at a 40-person agency
 
 **Context:** Series-B SaaS agency, 40 FTE, 8M EUR ARR, founder-CEO is bottlenecked on approvals.
 
@@ -194,7 +194,7 @@ OUTPUT STRUCTURE (mandatory):
 [Same table format]
 
 ## Low Impact / High Effort (do not do)
-[Just process name + 1-line "why" — no fix needed]
+[Just process name + 1-line "why", no fix needed]
 
 ## Per-process detail
 [For each process scored: full block with current state, what's broken, cost, proposed fix, effort, risk of not fixing, owner, industry benchmark]
@@ -213,8 +213,8 @@ RULES:
 3. NEVER recommend a fix without a measure of impact.
 4. Top-3 summary MUST cite a real number (not "save time").
 5. Do NOT re-flag items present in past_audits as "already fixed".
-6. Apply voice rules — no AI-fluff.
-7. If a process has insufficient intake data to score, mark it "needs more intake" and skip — do not guess.
+6. Apply voice rules, no AI-fluff.
+7. If a process has insufficient intake data to score, mark it "needs more intake" and skip, do not guess.
 
 SIDE EFFECTS: 
 - Save audit verbatim to memory/projects/{engagement}/audits/{YYYY-MM-DD}.md
@@ -255,10 +255,10 @@ Compared to a 2-week consulting deliverable at 15-50k EUR, this is ~99.95% cheap
 
 | Variation | What changes | When to use |
 |---|---|---|
-| `/audit-pipeline` | Sales pipeline diagnostic — same scoring, different process set | Sales advisory work |
-| `/audit-content` | Content engine diagnostic — content workflows scored | Marketing advisory |
-| `/audit-stack` | Tech stack diagnostic — tools scored on cost / utility / replaceability | Tech operating reviews |
-| `/audit-meetings` | Meeting calendar diagnostic — recurring meetings scored on Impact-Effort | When founder feels meeting-poisoned |
+| `/audit-pipeline` | Sales pipeline diagnostic, same scoring, different process set | Sales advisory work |
+| `/audit-content` | Content engine diagnostic, content workflows scored | Marketing advisory |
+| `/audit-stack` | Tech stack diagnostic, tools scored on cost / utility / replaceability | Tech operating reviews |
+| `/audit-meetings` | Meeting calendar diagnostic, recurring meetings scored on Impact-Effort | When founder feels meeting-poisoned |
 | `/audit-onboarding` | Customer onboarding workflow audit | CS / product advisory |
 
 Same pattern (intake → score on 2 dims → ranked matrix → top-3 summary), different scope.
@@ -305,17 +305,17 @@ Same pattern (intake → score on 2 dims → ranked matrix → top-3 summary), d
 
 If you don't actually do process advisory work, **delete it**. This is highly domain-specific. Reasons it might not work:
 - Your audits need on-site observation (skill works on intake notes only)
-- Your industry has compliance audits with mandated frameworks (e.g. SOC 2, ISO 9001) — use those, not this
-- You're internal at one company, only audit your own processes — overkill, just write a list
+- Your industry has compliance audits with mandated frameworks (e.g. SOC 2, ISO 9001), use those, not this
+- You're internal at one company, only audit your own processes, overkill, just write a list
 
 ---
 
 ## Why this is a domain example (not universal)
 
 This skill is shaped for advisory / consulting / COO work. The pattern (intake → score on 2 dimensions → output ranked matrix → top-3 summary) reuses for any "diagnostic" workflow:
-- `/audit-pipeline` — sales pipeline diagnostic
-- `/audit-content` — content engine diagnostic
-- `/audit-stack` — tech stack diagnostic
+- `/audit-pipeline`, sales pipeline diagnostic
+- `/audit-content`, content engine diagnostic
+- `/audit-stack`, tech stack diagnostic
 
 Fork this skill, swap "process" for your domain, keep the rubric structure.
 

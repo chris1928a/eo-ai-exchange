@@ -3,11 +3,11 @@
 Forkable Claude Code Skills, contributed by the EO AI Productivity Exchange community.
 
 Each skill is a folder with:
-- **`SKILL.md`** — full spec (purpose / inputs / outputs / worked example / non-negotiable rules / the actual prompt under the hood / setup / cost+latency / variations / common modifications / migration playbook / what won't do / when to delete / why it's universal)
-- **`prompts/`** — the LLM prompt template the skill actually sends (forkable separately)
-- **`examples/`** — concrete sample outputs you can use as calibration target
-- **`scripts/`** — cron setup snippets (where applicable)
-- **`templates/`** — supporting input templates (rubrics, intake forms, where applicable)
+- **`SKILL.md`**, full spec (purpose / inputs / outputs / worked example / non-negotiable rules / the actual prompt under the hood / setup / cost+latency / variations / common modifications / migration playbook / what won't do / when to delete / why it's universal)
+- **`prompts/`**, the LLM prompt template the skill actually sends (forkable separately)
+- **`examples/`**, concrete sample outputs you can use as calibration target
+- **`scripts/`**, cron setup snippets (where applicable)
+- **`templates/`**, supporting input templates (rubrics, intake forms, where applicable)
 
 Each `SKILL.md` is ~280-380 lines. Each skill folder ships 3-5 supporting files for plug-and-play.
 
@@ -17,7 +17,7 @@ Each `SKILL.md` is ~280-380 lines. Each skill folder ships 3-5 supporting files 
 
 Same structure as Chris demoed live. Five universal, three domain examples.
 
-### Universal (5) — fork as-is, edit personal data
+### Universal (5), fork as-is, edit personal data
 
 | Skill | What it does | Tracked saved time | Files |
 |---|---|---|---|
@@ -27,7 +27,7 @@ Same structure as Chris demoed live. Five universal, three domain examples.
 | [`/weekly-review`](weekly-review/) | Friday 7-day review across all "hats" | 1.3h/wk (90→10 min) | SKILL + 1 prompt + 1 example + 1 cron script |
 | [`/memory-curator`](memory-curator/) | Weekly memory hygiene cron | maintenance | SKILL + 1 prompt + 1 example + 1 cron script |
 
-### Domain examples (3) — show the pattern, adapt to your vertical
+### Domain examples (3), show the pattern, adapt to your vertical
 
 | Skill | For who | Pattern to copy | Files |
 |---|---|---|---|
@@ -75,7 +75,7 @@ The 3 domain examples are templates. Take `audit-process`, swap "process" for "p
 
 - Claude Code installed: [docs.claude.com/en/docs/claude-code/overview](https://docs.claude.com/en/docs/claude-code/overview)
 - A `~/.claude/projects/<your-project>/` directory with `memory/` subfolder (see [`templates/`](../templates/))
-- The MCP servers each skill needs (Gmail, Calendar, etc.) — see [`solutions/integration-mcp/mcp-cookbook.md`](../solutions/integration-mcp/mcp-cookbook.md)
+- The MCP servers each skill needs (Gmail, Calendar, etc.), see [`solutions/integration-mcp/mcp-cookbook.md`](../solutions/integration-mcp/mcp-cookbook.md)
 
 ---
 

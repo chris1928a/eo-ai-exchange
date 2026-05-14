@@ -1,4 +1,4 @@
-# Sample — same intent, 4 channels, 4 different outputs
+# Sample, same intent, 4 channels, 4 different outputs
 
 > Real shape of `/draft-by-channel` outputs across channels. Use to verify your voice rules + channel rules are loading correctly.
 
@@ -31,7 +31,7 @@ Bin gespannt auf deine zwei Punkte.
 
 ---
 
-## Email — internal/warm
+## Email, internal/warm
 
 **Command:** `/draft-by-channel Anna Email-warm "Mittwoch 14h passt + bitte Agenda"`
 
@@ -88,7 +88,7 @@ Mi 14h passt. Agenda vorab?
 **Why this works:**
 - 2 sentences (channel rule: max 2)
 - "Mi" abbreviation (Slack norm, not formal)
-- Telegraphic — Slack rewards brevity
+- Telegraphic, Slack rewards brevity
 
 ---
 

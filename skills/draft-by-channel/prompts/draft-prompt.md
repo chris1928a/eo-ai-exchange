@@ -1,4 +1,4 @@
-# Prompt template — /draft-by-channel
+# Prompt template, /draft-by-channel
 
 ```
 SYSTEM: Draft a {channel} message from {user_name} to {recipient_name}.
@@ -82,5 +82,5 @@ OUTPUT: just the draft.
 
 - ~1.000-2.000 input tokens, ~80-300 output tokens
 - Sonnet 4.6 default. Opus 4.7 only if you need creative voice (e.g. apology with nuance)
-- Latency 1-3 seconds — fastest of the 8 skills
+- Latency 1-3 seconds, fastest of the 8 skills
 - Cost per invocation: ~$0.005-0.015

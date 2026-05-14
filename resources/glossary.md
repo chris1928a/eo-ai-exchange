@@ -14,7 +14,7 @@ The large language model from Anthropic. The current top-tier models (as of 2026
 
 Anthropic's official command-line tool that runs Claude on your machine. It can read your files, edit them, run commands, and call external services. The backbone of [Chris's setup](../setups/chris-claude-code.md) and underneath [Fabian's PAI setup](../setups/fabian-personal-ai.md). Free to install at [docs.claude.com/en/docs/claude-code/overview](https://docs.claude.com/en/docs/claude-code/overview). Installs as a CLI command called `claude`.
 
-> **Not the same as OpenClaw.** OpenClaw is a separate workflow-orchestration tool (see entry below). Some people use both — Claude Code for cognitive/memory work, OpenClaw for visual workflow chains.
+> **Not the same as OpenClaw.** OpenClaw is a separate workflow-orchestration tool (see entry below). Some people use both, Claude Code for cognitive/memory work, OpenClaw for visual workflow chains.
 
 ## OpenClaw
 
@@ -24,7 +24,7 @@ OpenClaw is the **backbone of [Dom's setup](../setups/dom-rolodex.md)** (paired 
 
 ## Skill
 
-A reusable instruction set Claude Code can invoke on demand. Lives as a `SKILL.md` file in `~/.claude/skills/<skill-name>/`. The file's frontmatter has a `description` field — that description is what tells Claude *when* to trigger the skill. Bad description = skill never triggers. Skills replace one-off prompts: write it once, reuse forever. See [docs.claude.com/skills](https://docs.claude.com/skills).
+A reusable instruction set Claude Code can invoke on demand. Lives as a `SKILL.md` file in `~/.claude/skills/<skill-name>/`. The file's frontmatter has a `description` field, that description is what tells Claude *when* to trigger the skill. Bad description = skill never triggers. Skills replace one-off prompts: write it once, reuse forever. See [docs.claude.com/skills](https://docs.claude.com/skills).
 
 ## MCP (Model Context Protocol)
 
@@ -36,15 +36,15 @@ One specific external integration. You install MCP servers individually. Each gi
 
 ## Hook
 
-A piece of automation that fires on a specific event in Claude Code. Defined in `~/.claude/settings.json`. Common events: `PreToolUse` (before Claude runs a tool), `PostToolUse` (after), `Stop` (when Claude finishes a turn), `UserPromptSubmit` (when you press enter). Hooks are how you add guardrails — e.g. block any `rm -rf` command, or auto-format code after every edit.
+A piece of automation that fires on a specific event in Claude Code. Defined in `~/.claude/settings.json`. Common events: `PreToolUse` (before Claude runs a tool), `PostToolUse` (after), `Stop` (when Claude finishes a turn), `UserPromptSubmit` (when you press enter). Hooks are how you add guardrails, e.g. block any `rm -rf` command, or auto-format code after every edit.
 
 ## Memory
 
 Plain Markdown files that capture what Claude should remember across conversations. Live in `~/.claude/projects/<project>/memory/`. Four common types:
-- **user** — who you are, your role, your preferences
-- **feedback** — corrections you have given Claude ("don't do X")
-- **project** — current work context, deadlines, stakeholders
-- **reference** — pointers to where information lives outside the project
+- **user**, who you are, your role, your preferences
+- **feedback**, corrections you have given Claude ("don't do X")
+- **project**, current work context, deadlines, stakeholders
+- **reference**, pointers to where information lives outside the project
 
 If you skip memory, every conversation starts cold. Memory is the single highest-leverage thing to set up.
 
@@ -75,9 +75,9 @@ Controls whether Claude Code asks before running tools. Modes range from "ask ev
 ## API vs Pro vs Enterprise
 
 Three ways to pay for Claude:
-- **Pro** — flat $20/mo, browser app + Claude Code, fair usage limits, retention applies
-- **API** — pay per token, higher control, retention applies (default 7 days)
-- **Enterprise / Bedrock / Vertex** — custom contract, can include Zero Data Retention (ZDR), regional residency (e.g. AWS Frankfurt for EU), DPA signed
+- **Pro**, flat $20/mo, browser app + Claude Code, fair usage limits, retention applies
+- **API**, pay per token, higher control, retention applies (default 7 days)
+- **Enterprise / Bedrock / Vertex**, custom contract, can include Zero Data Retention (ZDR), regional residency (e.g. AWS Frankfurt for EU), DPA signed
 
 For DACH/regulated industries, the route is API via AWS Bedrock EU Frankfurt or Google Vertex AI EU regions. See [GDPR Claude Checklist DACH](../solutions/security-gdpr/gdpr-claude-checklist-dach.md).
 
@@ -88,15 +88,15 @@ A configuration on the Claude API where Anthropic does not store your prompts or
 ## Telos / ISA / TRIOT (PAI-specific)
 
 Daniel Miessler's framing inside the PAI architecture:
-- **Telos** — your ideal state across life and work
-- **ISA** (Ideal State Artifact) — a document expressing your Telos in concrete, verifiable terms
-- **TRIOT** (The Real Internet of Things) — Miessler's 2016 framing where every product/person/place gets an API and your Digital Assistant assembles interfaces dynamically
+- **Telos**, your ideal state across life and work
+- **ISA** (Ideal State Artifact), a document expressing your Telos in concrete, verifiable terms
+- **TRIOT** (The Real Internet of Things), Miessler's 2016 framing where every product/person/place gets an API and your Digital Assistant assembles interfaces dynamically
 
 Only relevant if you are running [PAI](../setups/fabian-personal-ai.md). Skip otherwise.
 
 ## Vector DB
 
-A database optimized for similarity search over embeddings (numerical representations of text/images). Used to give an LLM "memory" over thousands of unstructured documents. Common picks: Chroma, LanceDB, sqlite-vec, Pinecone (cloud). Most personal setups can skip this entirely until they have 10.000+ unstructured docs — Markdown files in folders work shockingly well below that threshold.
+A database optimized for similarity search over embeddings (numerical representations of text/images). Used to give an LLM "memory" over thousands of unstructured documents. Common picks: Chroma, LanceDB, sqlite-vec, Pinecone (cloud). Most personal setups can skip this entirely until they have 10.000+ unstructured docs, Markdown files in folders work shockingly well below that threshold.
 
 ## Embedding
 
@@ -122,23 +122,23 @@ The legal contract between you (data controller) and a vendor (data processor) u
 
 ## Acronym soup, fast lookup
 
-- **API** — Application Programming Interface
-- **CLI** — Command Line Interface
-- **CVE** — Common Vulnerabilities and Exposures (the public security advisory naming scheme)
-- **DA** — Digital Assistant (PAI term)
-- **DACH** — Germany + Austria + Switzerland
-- **DPA** — Data Processing Agreement (GDPR)
-- **DSGVO** — German for GDPR
-- **GDPR** — General Data Protection Regulation
-- **ICP** — Ideal Customer Profile
-- **JTBD** — Jobs To Be Done
-- **LLM** — Large Language Model
-- **MCP** — Model Context Protocol
-- **PAI** — Personal AI Infrastructure (Daniel Miessler's framework)
-- **PRD** — Product Requirements Document
-- **VC** — Venture Capital
-- **WSL** — Windows Subsystem for Linux
-- **ZDR** — Zero Data Retention
+- **API**, Application Programming Interface
+- **CLI**, Command Line Interface
+- **CVE**, Common Vulnerabilities and Exposures (the public security advisory naming scheme)
+- **DA**, Digital Assistant (PAI term)
+- **DACH**, Germany + Austria + Switzerland
+- **DPA**, Data Processing Agreement (GDPR)
+- **DSGVO**, German for GDPR
+- **GDPR**, General Data Protection Regulation
+- **ICP**, Ideal Customer Profile
+- **JTBD**, Jobs To Be Done
+- **LLM**, Large Language Model
+- **MCP**, Model Context Protocol
+- **PAI**, Personal AI Infrastructure (Daniel Miessler's framework)
+- **PRD**, Product Requirements Document
+- **VC**, Venture Capital
+- **WSL**, Windows Subsystem for Linux
+- **ZDR**, Zero Data Retention
 
 ---
 

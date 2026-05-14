@@ -92,7 +92,7 @@ If a guest is returning (matched by email in last 12 months), apply a 5% discoun
 If booking is 7+ nights, apply -5%. If 14+ nights, apply -10%.
 
 ### Cancellation cluster response
-If 3+ cancellations land for the same date across multiple units, do NOT auto-raise prices that date — flag instead. Cancellations may signal something you don't know about (event canceled, weather warning, etc).
+If 3+ cancellations land for the same date across multiple units, do NOT auto-raise prices that date, flag instead. Cancellations may signal something you don't know about (event canceled, weather warning, etc).
 
 ### Last-minute discount
 For nights within 48h of arrival with <50% occupancy across the cluster, apply a -10% last-minute discount (encourage fill).

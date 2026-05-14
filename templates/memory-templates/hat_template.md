@@ -1,5 +1,5 @@
 ---
-name: Hat — {Domain Name}
+name: Hat, {Domain Name}
 description: Context, current state, and routing for one of the domains I operate in
 type: project
 ---
@@ -41,7 +41,7 @@ When this hat is active, these skills should be available:
 
 ## Don't
 
-- [Things AI should never do in this hat. e.g. "Never auto-respond to guest reviews — always show me the draft first"]
+- [Things AI should never do in this hat. e.g. "Never auto-respond to guest reviews, always show me the draft first"]
 - [Boundaries that matter. e.g. "Never push pricing changes that exceed +30% / -20% from base price"]
 
 ## Recent decisions (last 30 days)
