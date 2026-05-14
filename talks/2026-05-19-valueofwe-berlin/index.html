@@ -188,7 +188,25 @@
   .bw .t { font-weight: 600; font-size: 1rem; color: var(--text); letter-spacing: -0.005em; }
   .bw .d { font-size: 0.82rem; font-weight: 400; color: var(--muted); line-height: 1.5; }
 
-  /* RULES / TRAPS / STEPS (Slide 10, 11) */
+  /* TIME TABLE (Slide 10 - Where the hours come from) */
+  .time-table { width: 100%; border-collapse: collapse; }
+  .time-table th { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); border-bottom: 2px solid var(--text); padding: 0.5rem 0.75rem; text-align: left; }
+  .time-table th.right { text-align: right; }
+  .time-table td { padding: 0.55rem 0.75rem; border-bottom: 1px solid var(--border-strong); font-size: 0.78rem; vertical-align: top; line-height: 1.35; }
+  .time-table .task { font-weight: 700; color: var(--text); }
+  .time-table .task small { display: block; color: var(--muted); font-weight: 400; font-size: 0.7rem; margin-top: 0.15rem; }
+  .time-table .freq { color: var(--muted); font-size: 0.72rem; white-space: nowrap; }
+  .time-table .without { color: var(--muted); font-size: 0.72rem; line-height: 1.4; }
+  .time-table .without .strike { text-decoration: line-through; text-decoration-color: var(--red); text-decoration-thickness: 1.5px; }
+  .time-table .with { color: var(--text); font-size: 0.74rem; line-height: 1.4; }
+  .time-table .with strong { font-weight: 600; color: var(--accent); }
+  .time-table .saved { font-weight: 700; color: var(--accent); text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .time-table tr.totals td { border-top: 2px solid var(--text); border-bottom: none; padding-top: 0.7rem; font-weight: 700; font-size: 0.88rem; }
+  .time-table tr.totals .saved { font-size: 1.05rem; color: var(--accent); }
+  .time-foot { margin-top: 1rem; padding: 0.85rem 1.1rem; background: var(--accent-soft); border-left: 3px solid var(--accent); font-size: 0.82rem; line-height: 1.5; color: var(--text); border-radius: 0 4px 4px 0; }
+  .time-foot strong { color: var(--accent); font-weight: 700; }
+
+  /* RULES / TRAPS / STEPS (Slide 11, 12) */
   .rules { display: flex; flex-direction: column; margin-bottom: 1rem; }
   .rule { display: grid; grid-template-columns: 4rem 1fr; gap: 2rem; align-items: baseline; padding: 1.25rem 0; border-bottom: 1px solid var(--border); }
   .rule:first-child { border-top: 1px solid var(--border); }
@@ -254,7 +272,7 @@
     <p class="cover-sub">What it looks like when one operator runs six different lanes of life with no team. And the simple workflows that make it possible.</p>
     <p class="cover-meta"><span class="who">Christoph Erler &middot; Founder, Erler Ventures</span><span class="when">11:20 to 11:30 CEST &middot; Berlin &middot; ~20 minutes</span></p>
     <div class="brand">Value of We &middot; Erler Ventures</div>
-    <div class="page-num">01 / 12</div>
+    <div class="page-num">01 / 13</div>
   </section>
 
   <!-- 02 WHY CLAUDE (orientation for beginners) -->
@@ -298,7 +316,7 @@
     </div>
     <div class="compare-foot">All three work. <strong>Pick the one your team&rsquo;s tools live closest to.</strong> I picked Claude because the work I do (long client docs, multi-step research, careful drafting) is exactly what it&rsquo;s best at.</div>
     <div class="brand">Value of We &middot; Erler Ventures</div>
-    <div class="page-num">02 / 12</div>
+    <div class="page-num">02 / 13</div>
   </section>
 
   <!-- 03 SETUP TRAP -->
@@ -324,7 +342,7 @@
     </div>
     <div class="stathero-foot">Most people lock themselves in for weeks picking tools and tweaking settings. <strong>The win is not the stack. It&rsquo;s the first workflow that actually ships.</strong></div>
     <div class="brand">Value of We &middot; Erler Ventures</div>
-    <div class="page-num">03 / 12</div>
+    <div class="page-num">03 / 13</div>
   </section>
 
   <!-- 04 SIX HATS -->
@@ -365,7 +383,7 @@
     </div>
     <div class="hats-foot">Same brain runs all six. <span class="accent">No team. No assistants.</span> This is the setup we&rsquo;re going to look at.</div>
     <div class="brand">Value of We &middot; Erler Ventures</div>
-    <div class="page-num">04 / 12</div>
+    <div class="page-num">04 / 13</div>
   </section>
 
   <!-- 05 BEFORE vs AFTER -->
@@ -393,7 +411,7 @@
       </div>
     </div>
     <div class="brand">Value of We &middot; Erler Ventures</div>
-    <div class="page-num">05 / 12</div>
+    <div class="page-num">05 / 13</div>
   </section>
 
   <!-- 06 ARCHITECTURE -->
@@ -429,7 +447,7 @@
     </div>
     <div class="archstack-foot">All four parts live in plain files. <strong>Portable. Yours. No vendor lock-in.</strong></div>
     <div class="brand">Value of We &middot; Erler Ventures</div>
-    <div class="page-num">06 / 12</div>
+    <div class="page-num">06 / 13</div>
   </section>
 
   <!-- 07 WHAT'S A SKILL -->
@@ -463,7 +481,7 @@ One Telegram message at 06:32.
 Three priorities. Three open threads. Four calls today.</div>
     </div>
     <div class="brand">Value of We &middot; Erler Ventures</div>
-    <div class="page-num">07 / 12</div>
+    <div class="page-num">07 / 13</div>
   </section>
 
   <!-- 08 WORKFLOWS -->
@@ -505,15 +523,15 @@ Three priorities. Three open threads. Four calls today.</div>
       </div>
     </div>
     <div class="brand">Value of We &middot; Erler Ventures</div>
-    <div class="page-num">08 / 12</div>
+    <div class="page-num">08 / 13</div>
   </section>
 
   <!-- 09 THE NUMBER -->
   <section class="slide" id="s9">
     <div class="label">The number that matters</div>
     <div class="bignum-hero">
-      <div class="bignum-n">15&#8202;to&#8202;20</div>
-      <div class="bignum-eq">hours a week back. But the <span class="accent">bigger wins</span> are not on the timesheet.</div>
+      <div class="bignum-n">~23</div>
+      <div class="bignum-eq">hours a week back. Measured over 8 weeks. But the <span class="accent">bigger wins</span> are not on the timesheet.</div>
     </div>
     <div class="bignum-wins">
       <div class="bw">
@@ -533,11 +551,100 @@ Three priorities. Three open threads. Four calls today.</div>
       </div>
     </div>
     <div class="brand">Value of We &middot; Erler Ventures</div>
-    <div class="page-num">09 / 12</div>
+    <div class="page-num">09 / 13</div>
   </section>
 
-  <!-- 10 WHERE IT BREAKS -->
+  <!-- 10 WHERE THE HOURS COME FROM -->
   <section class="slide" id="s10">
+    <div class="label">Where the 23 hours actually come from</div>
+    <h2 class="title" style="margin-bottom: 1.75rem; font-size: clamp(1.85rem, 3.2vw, 2.8rem);">Real tasks. Real frequencies.<br><span class="accent">Tracked over 8 weeks.</span></h2>
+    <table class="time-table">
+      <thead>
+        <tr>
+          <th style="width: 22%;">Task</th>
+          <th style="width: 14%;">When</th>
+          <th style="width: 26%;">Without brain</th>
+          <th style="width: 26%;">With brain</th>
+          <th class="right" style="width: 12%;">Saved / week</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="task">Morning briefing<small>top inbox, today&rsquo;s calendar, open threads</small></td>
+          <td class="freq">Daily, 06:30</td>
+          <td class="without"><span class="strike">30 min</span> coffee + inbox + calendar review</td>
+          <td class="with"><strong>3 min</strong> Telegram read, my whole day in one page</td>
+          <td class="saved">2.25h</td>
+        </tr>
+        <tr>
+          <td class="task">Meeting prep<small>full context per person before any call</small></td>
+          <td class="freq">~4 calls / day</td>
+          <td class="without"><span class="strike">20 min &times; 4</span> hunting LinkedIn + past mail + CRM</td>
+          <td class="with"><strong>3 min &times; 4</strong> brief ready: who, last contact, open threads</td>
+          <td class="saved">5.7h</td>
+        </tr>
+        <tr>
+          <td class="task">Email + chat drafts<small>right voice per relationship</small></td>
+          <td class="freq">~8 drafts / day</td>
+          <td class="without"><span class="strike">5 min &times; 8</span> writing in someone else&rsquo;s voice</td>
+          <td class="with"><strong>1 min &times; 8</strong> draft ready, my tone per person + channel</td>
+          <td class="saved">2.7h</td>
+        </tr>
+        <tr>
+          <td class="task">Real estate pricing<small>multi-property revenue check</small></td>
+          <td class="freq">Daily auto</td>
+          <td class="without"><span class="strike">1h / day</span> manual price review and adjustments</td>
+          <td class="with"><strong>0 min</strong> runs at 06:00, I read the diff over coffee</td>
+          <td class="saved">5h</td>
+        </tr>
+        <tr>
+          <td class="task">Stakeholder updates<small>investors, clients, co-founders</small></td>
+          <td class="freq">~5 / week</td>
+          <td class="without"><span class="strike">20 min &times; 5</span> writing the update from scratch</td>
+          <td class="with"><strong>5 min &times; 5</strong> draft from last contact + open threads</td>
+          <td class="saved">1.25h</td>
+        </tr>
+        <tr>
+          <td class="task">Friday review<small>across all six lanes</small></td>
+          <td class="freq">Fri 17:00</td>
+          <td class="without"><span class="strike">90 min</span> reflection + drafting note to self</td>
+          <td class="with"><strong>10 min</strong> review draft, edit, send to memory</td>
+          <td class="saved">1.3h</td>
+        </tr>
+        <tr>
+          <td class="task">Invoices + receipts<small>monthly bookkeeping batch</small></td>
+          <td class="freq">Monthly auto</td>
+          <td class="without"><span class="strike">2h / month</span> manual upload to bookkeeping</td>
+          <td class="with"><strong>0 min</strong> auto-forwarded, I approve in email</td>
+          <td class="saved">0.5h</td>
+        </tr>
+        <tr>
+          <td class="task">Client research<small>process audits, ICP analysis, script reviews</small></td>
+          <td class="freq">~2 / month</td>
+          <td class="without"><span class="strike">8h &times; 2/mo</span> manual deep-dive analysis</td>
+          <td class="with"><strong>1.5h &times; 2/mo</strong> automated audit, I review</td>
+          <td class="saved">3h</td>
+        </tr>
+        <tr>
+          <td class="task">Client deliverables<small>decks, briefs, MoMs, action items</small></td>
+          <td class="freq">~3 / week</td>
+          <td class="without"><span class="strike">90 min &times; 3</span> drafting from scratch</td>
+          <td class="with"><strong>15 min &times; 3</strong> draft in my voice, I edit and ship</td>
+          <td class="saved">3.75h</td>
+        </tr>
+        <tr class="totals">
+          <td colspan="4">Total time saved per week</td>
+          <td class="saved">~23h</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="time-foot">Tracked March to April 2026. <strong>Personal admin + ops + client work.</strong> Real tasks. Real frequencies. Real outputs.</div>
+    <div class="brand">Value of We &middot; Erler Ventures</div>
+    <div class="page-num">10 / 13</div>
+  </section>
+
+  <!-- 11 WHERE IT BREAKS -->
+  <section class="slide" id="s11">
     <div class="label">Honest, where it still goes wrong</div>
     <h2 class="title">Four traps I fell into.<br><span class="accent">So you don&rsquo;t.</span></h2>
     <div class="rules">
@@ -547,11 +654,11 @@ Three priorities. Three open threads. Four calls today.</div>
       <div class="rule"><div class="rn">04</div><div class="rb"><div class="rh">It&rsquo;s people, not tech</div><div class="rd">7 out of 10 of these projects fail because no one uses them. <strong>Adoption is the moat,</strong> not the model.</div></div></div>
     </div>
     <div class="brand">Value of We &middot; Erler Ventures</div>
-    <div class="page-num">10 / 12</div>
+    <div class="page-num">11 / 13</div>
   </section>
 
-  <!-- 11 WHAT THIS MEANS FOR YOUR TEAM -->
-  <section class="slide" id="s11">
+  <!-- 12 WHAT THIS MEANS FOR YOUR TEAM -->
+  <section class="slide" id="s12">
     <div class="label">What this means for an agency like yours</div>
     <h2 class="title">Don&rsquo;t perfect the setup.<br><span class="accent">Ship the first workflow this week.</span></h2>
     <div class="rules">
@@ -561,11 +668,11 @@ Three priorities. Three open threads. Four calls today.</div>
       <div class="rule"><div class="rn">04</div><div class="rb"><div class="rh">Kill it if it doesn&rsquo;t pay back in a week</div><div class="rd">If a workflow doesn&rsquo;t save real time inside seven days, <strong>the workflow is wrong, not the tech.</strong> Try the next one.</div></div></div>
     </div>
     <div class="brand">Value of We &middot; Erler Ventures</div>
-    <div class="page-num">11 / 12</div>
+    <div class="page-num">12 / 13</div>
   </section>
 
-  <!-- 12 CLOSING -->
-  <section class="slide" id="s12">
+  <!-- 13 CLOSING -->
+  <section class="slide" id="s13">
     <div class="label">Over to you</div>
     <div class="close-h"><span class="l1">Now let&rsquo;s go to</span><span class="l2">your tools.</span></div>
     <div class="close-sub">Three things to bring into the breakout. Pick one. Try to ship it by Friday.</div>
@@ -599,7 +706,7 @@ Three priorities. Three open threads. Four calls today.</div>
       </div>
     </div>
     <div class="brand">Value of We &middot; Erler Ventures</div>
-    <div class="page-num">12 / 12</div>
+    <div class="page-num">13 / 13</div>
   </section>
 
 </div>
