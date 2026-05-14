@@ -50,10 +50,10 @@ curl -sSL https://ourpai.ai/install.sh | bash
 **vs Chris's Workspace-native setup:**
 - Chris orchestrates 39 Workspace tools on top of Gmail, Calendar, Notion, Drive. PAI replaces the Workspace-native layer with its own dashboard and identity model.
 - Chris's brain is private and bespoke. PAI is **open source and shared**, you fork it and inherit the conventions.
-- Chris's setup costs 150 EUR/month subscriptions. PAI is free to run, you pay your compute and your model APIs.
+- Chris's setup costs ~150 EUR/month all-in (Claude Pro + VM + APIs). PAI itself is free + MIT, plus a **single Claude Max (or equivalent Codex / Gemini) subscription at ~$100-200/mo**. PAI is **agent-agnostic**.
 
 **vs Dom's local-first memory:**
-- Dom built a 5-tier memory layer from scratch with local models and zero API cost. PAI is also local-first but **comes opinionated**: 45 skills, 171 workflows, 37 hooks already shipped.
+- Dom built a 5-tier memory layer from scratch on local models. PAI is **cloud-agent-driven** (Claude Code / Codex / Gemini) — different philosophy. PAI's value is the prebuilt opinionated framework: 45 skills, 171 workflows, 37 hooks already shipped.
 - Dom's setup is invisible to anyone but Dom. PAI ships **Pulse**, a Life Dashboard at a fixed local port, so you can actually see your own state.
 - Dom optimizes for sovereignty. PAI optimizes for **completeness out of the box**.
 
