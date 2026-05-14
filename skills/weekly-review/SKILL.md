@@ -92,7 +92,7 @@ Posted to: Telegram, your `weekly-reviews/{YYYY-MM-DD}.md` archive, optionally a
 
 ## Decay flags (things you said you'd do, didn't)
 - Dentist follow-up: 8 days overdue, your move
-- Hölderlin financing: 4 days late, partner waiting on you
+- {project} financing: 4 days late, partner waiting on you
 - Q2 retro: pushed 2 weeks now, needs deletion or block-time
 
 ## Domain pulse

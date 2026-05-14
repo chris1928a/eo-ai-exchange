@@ -21,14 +21,14 @@
 
 ## Decay flags
 - Dentist follow-up: 8 days late, your move (3rd week running)
-- Hölderlin financing: 4 days late, partner waiting on you
+- Property financing: 4 days late, partner waiting on you
 - Q2 retro: 14 days late, kill or block-time
 
 ## Domain pulse
 - **Advisory:** strong week, 1 new diagnostic booked
 - **Ventures:** flat, no new pipeline movement
 - **Content:** weekly post shipped, 3.2k impressions on LinkedIn
-- **Real Estate:** Deffingen pricing skill paying back, considering rolling to Knöringen Q3
+- **Real Estate:** Unit-cluster pricing skill paying back, considering rolling to next cluster Q3
 - **Personal:** wedding planning behind, family time good
 
 ## Top 3 for next week
