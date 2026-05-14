@@ -12,7 +12,7 @@ A continuous, audience-driven series where EO members surface real AI-setup pain
 | You are... | Go here |
 |---|---|
 | **New to GitHub or AI tooling** | [`START-HERE.md`](START-HERE.md) — 3-step guide, no jargon |
-| **Looking for a working setup to fork** | [`setups/`](setups/) — Chris (Workspace), Dom (local-first), Fabian (PAI) |
+| **Looking for a working setup to fork** | [`setups/`](setups/) — Chris (Workspace) + Fabian (PAI). Dom's local-first deep-dive refreshing, see [slides 13-15](https://chris1928a.github.io/eo-ai-exchange/events/01-2026-05-11-setup-trap/slides.html#13) |
 | **Hunting a fix for a specific pain** | [`SOLUTIONS.md`](SOLUTIONS.md) — 11 solutions, one per pain cluster |
 | **Confused by a term** | [`resources/glossary.md`](resources/glossary.md) — plain-language definitions |
 | **Watching the talks** | [Joint deck](https://chris1928a.github.io/eo-ai-exchange/events/01-2026-05-11-setup-trap/slides.html) · [Chris's deep dive](https://chris1928a.github.io/eo-ai-exchange/events/01-2026-05-11-setup-trap/chris-demo.html) · [Q&A](https://chris1928a.github.io/eo-ai-exchange/events/01-2026-05-11-setup-trap/qa-deck.html) |
@@ -91,10 +91,10 @@ eo-ai-exchange/
 │       ├── QA-CHEATSHEET.md     ← panel cheatsheet, plain Markdown
 │       └── AUDIENCE-ANALYSIS.md ← anonymized pain breakdown, 118 registrants
 │
-├── setups/                      ← three operator setups, fork-ready
+├── setups/                      ← operator setups, fork-ready
 │   ├── chris-claude-code.md     ← Workspace-native, ~150 EUR/mo, 23h/wk saved
-│   ├── dom-rolodex.md           ← Local-first 5-tier memory, ~$0/mo
 │   └── fabian-personal-ai.md    ← Daniel Miessler's PAI v5, complete Life OS
+│   (Dom's local-first deep-dive refreshing — see slides 13-15)
 │
 ├── solutions/                   ← solutions grouped by pain cluster (10 clusters)
 │   ├── tool-overload/           ← Tool Overload Diagnostic

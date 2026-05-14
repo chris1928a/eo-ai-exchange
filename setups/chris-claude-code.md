@@ -16,8 +16,8 @@
 - You are fine paying ~150 EUR/month for the convenience
 - You are willing to invest 30-60 hours up-front to get the foundation right
 
-If you want zero ongoing cost and full sovereignty, see [Dom's setup](dom-rolodex.md).
 If you want a complete opinionated Life OS, see [Fabian's setup](fabian-personal-ai.md).
+If you want zero ongoing cost and full sovereignty, see Dom's local-first path — full doc refreshing, [slides 13-15](https://chris1928a.github.io/eo-ai-exchange/events/01-2026-05-11-setup-trap/slides.html#13) cover the architecture.
 
 ---
 
@@ -126,7 +126,7 @@ Spin up an AWS Lightsail VM in Frankfurt (~10 EUR/mo). Run a small Node bot that
 - You want to *own* the setup and iterate forever, not buy a SaaS
 
 **Skip this if:**
-- You handle data that cannot leave your machine (use [Dom's local-first setup](dom-rolodex.md))
+- You handle data that cannot leave your machine (Dom's local-first path — doc refreshing, see [slides 13-15](https://chris1928a.github.io/eo-ai-exchange/events/01-2026-05-11-setup-trap/slides.html#13))
 - You want a complete Life OS out of the box (use [Fabian's PAI setup](fabian-personal-ai.md))
 - You are not willing to maintain a personal stack ongoing
 

@@ -104,7 +104,7 @@ A numerical vector that represents a chunk of text, an image, or another asset, 
 
 ## Local model
 
-An LLM running on your own hardware (your laptop, your server) instead of on a vendor's cloud. Tools that make this easy: [Ollama](https://ollama.com), [LM Studio](https://lmstudio.ai), [llama.cpp](https://github.com/ggerganov/llama.cpp). Quality ceiling is below cloud Claude on hard reasoning, but the data never leaves your machine and the marginal cost is $0. The foundation of [Dom's setup](../setups/dom-rolodex.md).
+An LLM running on your own hardware (your laptop, your server) instead of on a vendor's cloud. Tools that make this easy: [Ollama](https://ollama.com), [LM Studio](https://lmstudio.ai), [llama.cpp](https://github.com/ggerganov/llama.cpp). Quality ceiling is below cloud Claude on hard reasoning, but the data never leaves your machine and the marginal cost is $0. The foundation of Dom's local-first setup (Demo 2 at Event #1, see [slides 13-15](https://chris1928a.github.io/eo-ai-exchange/events/01-2026-05-11-setup-trap/slides.html#13)).
 
 ## CVE-2026-25253
 

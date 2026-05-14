@@ -18,7 +18,7 @@
 - You are comfortable buying into Daniel Miessler's worldview (Telos, ISA, TRIOT)
 - You want a dashboard, not just a CLI — PAI ships with `Pulse` at `localhost:31337`
 
-If you want a from-scratch personal setup with no opinionated framework, look at [Chris's](chris-claude-code.md) or [Dom's](dom-rolodex.md) instead.
+If you want a from-scratch personal setup with no opinionated framework, look at [Chris's](chris-claude-code.md) (Workspace-native) or Dom's local-first path (doc refreshing, see [slides 13-15](https://chris1928a.github.io/eo-ai-exchange/events/01-2026-05-11-setup-trap/slides.html#13)).
 
 ---
 
@@ -121,7 +121,7 @@ These are the same five Fabian flags in the [demo companion doc](../events/01-20
 - You want minimal scope, just a few skills (build your own — see [Chris's setup](chris-claude-code.md))
 - You are on Windows
 - You do not want to buy into the TRIOT framing
-- You prefer a blank-slate brain you fully control ([Dom's path](dom-rolodex.md))
+- You prefer a blank-slate brain you fully control (Dom's local-first path)
 - You live inside Workspace and want everything there ([Chris's path](chris-claude-code.md))
 
 ---
