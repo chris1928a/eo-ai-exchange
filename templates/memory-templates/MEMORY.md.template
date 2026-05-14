@@ -1,0 +1,47 @@
+# MEMORY.md (template)
+
+> The top-level index of your memory directory. Loaded into Claude's context every conversation. Each entry is one line: title + filename + one-line hook.
+
+## How to use this file
+
+- One-line pointers only — content lives in the linked files
+- Group by topic, not chronologically
+- Keep under 200 lines (entries beyond that get truncated in context loading)
+- Updated automatically by `/memory-curator` on each audit
+
+---
+
+## User & feedback (highest leverage, load every time)
+
+- [About me](user_about.md) — who I am and what I'm working on this quarter
+- [Voice rules](feedback_voice.md) — banned words, required style, tone defaults
+- [Channel rules](feedback_channel_rules.md) — per-channel formatting + length
+
+## Hats (one per domain)
+
+- [Hat: Advisory](hats/advisory.md) — current engagements, services, pricing
+- [Hat: Real Estate](hats/real-estate.md) — properties, partners, pricing rules
+- [Hat: Ventures](hats/ventures.md) — portfolio, deal pipeline, thesis
+- [Hat: Content](hats/content.md) — pillars, ICP, current series
+
+## People (one per important stakeholder, auto-created by /diarize-person)
+
+- [Sandra Müller](people/sandra-mueller.md) — PE Operating Partner, current advisory client
+- [...](people/...)
+
+## Active projects
+
+- [Project: Q3 launch](projects/q3-launch.md) — timeline, dependencies, open threads
+- [...](projects/...)
+
+## Reference
+
+- [Notion scope](reference_notion_scope.md) — which Notion pages I read / write
+- [API keys index](reference_apis.md) — what's wired up (no secrets, just names)
+- [Service pricing](reference_pricing.md) — current rate card
+
+## Meta (the brain about the brain)
+
+- [Curator rules](_meta/curator_rules.md) — pruning + audit rules
+- [Skill aliases](_meta/skill_aliases.md) — local aliases for skills
+- [Last audit](_meta/last_audit.md) — when /memory-curator last ran + what it changed

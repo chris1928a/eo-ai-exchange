@@ -96,6 +96,20 @@ eo-ai-exchange/
 │   └── fabian-personal-ai.md    ← Daniel Miessler's PAI v5, complete Life OS
 │   (Dom's local-first deep-dive refreshing — see slides 13-15)
 │
+├── skills/                      ← 8 forkable starter SKILL.md files from Event #1
+│   ├── morning-brief/           ← Daily 7am brief (2.25h/wk saved)
+│   ├── diarize-person/          ← 1-page stakeholder dossier
+│   ├── draft-by-channel/        ← Voice-locked drafts per channel (2.7h/wk)
+│   ├── weekly-review/           ← Friday 7-day review (90→10 min)
+│   ├── memory-curator/          ← Weekly memory hygiene cron
+│   ├── audit-process/           ← Domain example: process diagnostics
+│   ├── sales-script-rewriter/   ← Domain example: sales call coaching
+│   └── property-pricing/        ← Domain example: daily revenue management
+│
+├── templates/                   ← starter foundation files (CLAUDE.md, memory)
+│   ├── CLAUDE.md.template       ← Project-level instructions, ~50 lines
+│   └── memory-templates/        ← user_about, feedback_voice, hat, curator rules
+│
 ├── solutions/                   ← solutions grouped by pain cluster (10 clusters)
 │   ├── tool-overload/           ← Tool Overload Diagnostic
 │   ├── setup-itself/            ← Setup Trap Diagnostic + 30-Min aiOS Blueprint

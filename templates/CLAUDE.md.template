@@ -1,0 +1,65 @@
+# CLAUDE.md, project-level instructions
+
+> **This is a template** for the project-level `CLAUDE.md` file at the root of any project where you run Claude Code. Keep it under ~50 lines. Pointers, not content. Chris's actual CLAUDE.md follows this exact pattern (slide 28 + 45 of [chris-demo.html](https://chris1928a.github.io/eo-ai-exchange/events/01-2026-05-11-setup-trap/chris-demo.html)).
+
+---
+
+## Project context
+
+I am [your name]. This project is [what the project is about].
+
+My current quarter focus is in `memory/user_focus_q{N}_{YYYY}.md`.
+
+## My hats / domains
+
+I operate across N domains. Per-hat memory in `memory/hats/`:
+- [hat-1] — see `memory/hats/<hat>.md`
+- [hat-2] — see `memory/hats/<hat>.md`
+- ...
+
+## Voice rules
+
+Strict voice rules in `memory/feedback_voice.md`. Banned words list and channel-specific tone there. **You are not allowed to use** any of: delve, leverage, harness, robust, seamless, em-dashes, "I hope this finds you well".
+
+## Tools you can use
+
+MCP servers loaded for this project:
+- Gmail (read/send)
+- Calendar (read/create)
+- Notion (read/write to specific databases — see `memory/_meta/notion_scope.md`)
+- [add yours]
+
+## Hooks
+
+- PreToolUse: confirm before any file write or destructive command
+- PostToolUse: auto-commit memory changes to git
+
+## Where things live (the routing)
+
+- **Long-term memory:** GitHub repo `<your-repo-name>` + Notion (`memory/_meta/notion_index.md` lists which Notion pages are read vs write)
+- **Short-term memory:** `memory/` directory in this project
+- **Working memory:** wherever Claude Code is running (your machine or a VM)
+- **Body / tools:** MCP servers above + cron jobs in `crons/` + Telegram bot
+
+## Skills
+
+Skills loaded from `~/.claude/skills/`. Per-project skill aliases in `memory/_meta/skill_aliases.md`.
+
+## Cron jobs
+
+Defined in `crons/`. Currently: morning-brief (07:00), weekly-review (Fri 17:00), memory-curator (Sun 14:00).
+
+## Don't
+
+- **Never** push to git without showing me the diff first
+- **Never** invoke a destructive shell command without explicit confirmation
+- **Never** write to Notion outside the scopes in `notion_scope.md`
+- **Never** include personal data (names, emails, phone numbers) in any artifact destined for the public repo
+
+---
+
+## Length discipline
+
+This file is intentionally short. **~50 lines max.** It's a router, not content. If you find yourself wanting to add more, ask: "Should this be a memory file instead?"
+
+If yes, create `memory/<type>_<topic>.md` and add a one-line pointer here.
