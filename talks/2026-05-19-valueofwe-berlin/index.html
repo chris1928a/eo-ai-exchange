@@ -1,537 +1,510 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<title>Your Digital Twin &mdash; Erler Ventures &times; Value of We</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Real-operator notes from the 5% that works. Chris Erler at Value of We AI Workshop, Berlin, 19 May 2026.">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Your Digital Twin, Value of We Workshop, Berlin 19 May 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #f7f8fb;
-    --surface: #ffffff;
-    --border: #e3e7ef;
-    --ink: #10182c;
-    --ink-2: #4a5576;
-    --muted: #8b95b5;
-    --navy: #0f1530;
-    --navy-2: #1b2242;
-    --navy-3: #333d60;
-    --paper: #f5f7fb;
-    --coral: #ff6b5b;
-    --coral-2: #cc4e40;
-    --blue: #7aa2f7;
-    --blue-2: #3d5ac4;
-    --green: #3e9b6f;
+    --bg: #ffffff;
+    --text: #09090b;
+    --muted: #71717a;
+    --faint: #a1a1aa;
+    --accent: #2563eb;
+    --accent-deep: #1d4ed8;
+    --accent-soft: #eff6ff;
+    --border: #f1f5f9;
+    --border-strong: #e2e8f0;
+    --code-bg: #f4f4f5;
+    --red: #dc2626;
+    --green: #16a34a;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
   }
-  * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
-  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif; line-height: 1.55; font-size: 16px; }
-  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
-  a { color: var(--coral-2); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-
-  /* HERO */
-  .hero { background: linear-gradient(135deg, #0f1530 0%, #1b2242 100%); color: white; padding: 100px 0 90px; position: relative; }
-  .hero .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 0.18em; color: var(--muted); margin-bottom: 28px; display: flex; align-items: center; gap: 14px; }
-  .hero .eyebrow::before { content: ""; display: inline-block; width: 28px; height: 3px; background: var(--coral); }
-  .hero h1 { font-size: 88px; font-weight: 800; letter-spacing: -0.035em; margin: 0; line-height: 0.98; color: white; }
-  .hero h1 .accent { color: var(--coral); }
-  .hero .tag { font-size: 26px; color: #e0e6f3; margin-top: 28px; max-width: 760px; font-style: italic; font-weight: 300; }
-  .hero .meta { margin-top: 64px; display: flex; gap: 48px; flex-wrap: wrap; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.12); }
-  .hero .meta div { color: #cbd5e1; }
-  .hero .meta .label { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
-  .hero .meta .value { font-size: 16px; color: white; font-weight: 600; margin-top: 4px; }
-
-  /* SECTIONS */
-  section { padding: 80px 0; border-bottom: 1px solid var(--border); }
-  section.dark { background: var(--navy); border-bottom-color: var(--navy-2); color: white; }
-  section.dark h2, section.dark p, section.dark h3 { color: white; }
-  section.dark .lede { color: #b3bdd7; }
-
-  .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.18em; color: var(--coral-2); text-transform: uppercase; margin-bottom: 18px; }
-  section.dark .eyebrow { color: var(--coral); }
-  h2 { font-size: 48px; font-weight: 800; letter-spacing: -0.025em; margin: 0 0 12px; line-height: 1.05; color: var(--ink); }
-  h2 .accent { color: var(--coral); }
-  section .lede { color: var(--ink-2); font-size: 22px; margin: 0 0 40px; max-width: 800px; line-height: 1.4; font-weight: 400; }
-  h3 { font-size: 12px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.14em; margin: 0 0 12px; }
-  p { color: var(--ink-2); }
-
-  /* GRIDS */
-  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-  .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-  .grid-2-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
-  @media (max-width: 820px) {
-    .grid-3, .grid-2, .grid-2-cards { grid-template-columns: 1fr; }
-    .hero h1 { font-size: 56px; }
-    h2 { font-size: 34px; }
-    .hero { padding: 64px 0 56px; }
-    section { padding: 56px 0; }
-    .meta { gap: 24px !important; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    height: 100%; width: 100%; background: var(--bg); color: var(--text);
+    font-family: var(--sans); -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: 'ss01', 'cv11';
   }
 
-  /* STAT CARDS */
-  .stat { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 24px; position: relative; overflow: hidden; }
-  .stat::before { content: ""; position: absolute; left: 0; top: 0; height: 4px; width: 100%; background: var(--coral); }
-  .stat .big { font-size: 64px; font-weight: 800; color: var(--ink); letter-spacing: -0.03em; line-height: 1; margin: 8px 0 14px; }
-  .stat .label { font-size: 14px; color: var(--ink-2); font-weight: 600; }
-  .stat .src { font-size: 11px; color: var(--muted); font-style: italic; margin-top: 6px; letter-spacing: 0.04em; }
+  .deck { width: 100vw; height: 100vh; overflow: hidden; position: relative; }
+  .slide {
+    width: 100vw; height: 100vh; position: absolute; top: 0; left: 0;
+    display: none; padding: 11vh 11vw;
+    flex-direction: column; justify-content: center;
+    background: var(--bg);
+  }
+  .slide.active { display: flex; }
 
-  /* TWO-COL PANELS */
-  .panel { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 28px; position: relative; overflow: hidden; }
-  .panel::before { content: ""; position: absolute; left: 0; top: 0; height: 4px; width: 100%; }
-  .panel.blue::before { background: var(--blue-2); }
-  .panel.coral::before { background: var(--coral); }
-  .panel.red::before { background: var(--coral-2); }
-  .panel.green::before { background: var(--green); }
-  .panel h3.tab { color: var(--blue-2); }
-  .panel.coral h3.tab { color: var(--coral-2); }
-  .panel.red h3.tab { color: var(--coral-2); }
-  .panel.green h3.tab { color: var(--green); }
-  .panel .title { font-size: 22px; font-weight: 700; color: var(--ink); margin: 0 0 18px; letter-spacing: -0.01em; }
-  .panel ul { list-style: none; padding: 0; margin: 0; }
-  .panel ul li { padding: 9px 0; display: flex; gap: 12px; border-bottom: 1px solid #f0f2f7; font-size: 15px; color: var(--ink); line-height: 1.45; }
-  .panel ul li:last-child { border-bottom: 0; }
-  .panel ul li::before { content: ""; flex-shrink: 0; width: 8px; height: 8px; border-radius: 50%; margin-top: 8px; }
-  .panel.coral ul li::before, .panel.red ul li::before { background: var(--coral); }
-  .panel.blue ul li::before { background: var(--blue-2); }
-  .panel.green ul li::before { background: var(--green); }
+  .label {
+    position: absolute; top: 6vh; left: 11vw;
+    font-size: 0.68rem; font-weight: 500; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--muted);
+    display: flex; align-items: center; gap: 0.7rem;
+  }
+  .label::before { content: ''; width: 1.25rem; height: 1px; background: var(--accent); }
 
-  /* BEFORE / AFTER */
-  .ba-item { padding: 14px 0; border-bottom: 1px solid #f0f2f7; }
-  .ba-item:last-child { border-bottom: 0; }
-  .ba-item .h { font-size: 17px; font-weight: 700; color: var(--ink); letter-spacing: -0.01em; }
-  .ba-item.red .h { color: var(--coral-2); }
-  .ba-item.green .h { color: var(--green); }
-  .ba-item .s { font-size: 13px; color: var(--ink-2); margin-top: 2px; }
-
-  /* ARCHITECTURE STACK */
-  .stack { display: flex; flex-direction: column; gap: 10px; }
-  .layer { display: flex; align-items: stretch; min-height: 78px; }
-  .layer .bar { width: 8px; flex-shrink: 0; border-radius: 4px 0 0 4px; }
-  .layer .box { flex: 1; background: var(--navy-2); border-radius: 0 12px 12px 0; padding: 16px 24px; display: flex; align-items: center; gap: 24px; }
-  .layer .lbl { font-size: 14px; font-weight: 800; letter-spacing: 0.1em; min-width: 160px; text-transform: uppercase; }
-  .layer .desc { font-size: 15px; color: #d3d9ed; line-height: 1.5; flex: 1; }
-  .layer.coral .bar, .layer.coral .lbl { color: var(--coral); }
-  .layer.coral .bar { background: var(--coral); }
-  .layer.blue .bar { background: var(--blue); }
-  .layer.blue .lbl { color: var(--blue); }
-  .layer.blue2 .bar { background: var(--blue-2); }
-  .layer.blue2 .lbl { color: var(--blue); }
-  .layer.muted .bar { background: var(--muted); }
-  .layer.muted .lbl { color: var(--muted); }
-  .stack-note { margin-top: 22px; font-size: 13px; color: var(--muted); font-style: italic; }
-
-  /* WORKFLOW CARDS */
-  .wf-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 24px; position: relative; overflow: hidden; }
-  .wf-card::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--coral); }
-  .wf-card .head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 8px; }
-  .wf-card .num { font-size: 22px; font-weight: 800; color: var(--coral); letter-spacing: -0.02em; }
-  .wf-card .title { font-size: 24px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
-  .wf-card .when { margin-left: auto; font-size: 10px; color: var(--muted); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
-  .wf-card .desc { color: var(--ink-2); font-size: 14px; line-height: 1.55; margin: 16px 0 0; padding-top: 16px; border-top: 1px solid var(--border); }
-
-  /* BIG NUMBER */
-  .bignum { text-align: left; padding: 20px 0 40px; }
-  .bignum .n { font-size: 220px; font-weight: 800; color: var(--coral); letter-spacing: -0.05em; line-height: 0.9; margin: 0; }
-  .bignum .u { font-size: 44px; font-weight: 700; color: white; letter-spacing: -0.02em; margin-top: 18px; }
-
-  .win-card { background: var(--navy-2); border-radius: 12px; padding: 22px; position: relative; }
-  .win-card::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--coral); border-radius: 4px 0 0 4px; }
-  .win-card .h { font-size: 15px; font-weight: 700; color: white; }
-  .win-card .b { font-size: 13px; color: #b3bdd7; margin-top: 8px; line-height: 1.5; }
-
-  /* TRAPS */
-  .trap { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 20px 24px; display: flex; align-items: center; gap: 24px; margin-bottom: 14px; position: relative; overflow: hidden; }
-  .trap::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--coral); }
-  .trap .num { font-size: 26px; font-weight: 800; color: var(--coral); letter-spacing: -0.02em; flex-shrink: 0; width: 40px; }
-  .trap .h { font-size: 19px; font-weight: 700; color: var(--ink); flex-shrink: 0; min-width: 220px; letter-spacing: -0.01em; }
-  .trap .b { font-size: 14px; color: var(--ink-2); line-height: 1.5; }
-  @media (max-width: 820px) {
-    .trap { flex-wrap: wrap; gap: 8px; padding: 18px 20px; }
-    .trap .h { min-width: 0; }
+  .page-num {
+    position: absolute; bottom: 5vh; right: 11vw;
+    font-size: 0.68rem; font-weight: 400; color: var(--faint);
+    letter-spacing: 0.1em; font-variant-numeric: tabular-nums;
+  }
+  .brand {
+    position: absolute; bottom: 5vh; left: 11vw;
+    font-size: 0.68rem; font-weight: 400; color: var(--faint);
+    letter-spacing: 0.1em; text-transform: uppercase;
   }
 
-  /* PLAYBOOK */
-  .step { display: flex; align-items: flex-start; gap: 18px; padding: 18px 0; border-bottom: 1px solid var(--border); }
-  .step:last-child { border-bottom: 0; }
-  .step .circle { width: 44px; height: 44px; flex-shrink: 0; border-radius: 50%; background: var(--coral); color: white; font-weight: 800; font-size: 16px; display: flex; align-items: center; justify-content: center; }
-  .step .h { font-size: 19px; font-weight: 700; color: var(--ink); margin: 0 0 4px; letter-spacing: -0.01em; }
-  .step .b { font-size: 14px; color: var(--ink-2); line-height: 1.55; margin: 0; }
+  /* COVER */
+  .cover-eyebrow {
+    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 2.5rem;
+  }
+  h1.cover-title {
+    font-weight: 700;
+    font-size: clamp(2.8rem, 6.5vw, 6rem); line-height: 1.02;
+    letter-spacing: -0.045em; color: var(--text);
+    margin-bottom: 2.5rem; max-width: 22ch;
+  }
+  h1.cover-title .accent { color: var(--accent); }
+  .cover-sub {
+    font-size: clamp(1.05rem, 1.5vw, 1.4rem); font-weight: 400;
+    color: var(--muted); max-width: 50ch; line-height: 1.5;
+    margin-bottom: 3.5rem;
+  }
+  .cover-meta {
+    font-size: 0.85rem; font-weight: 400; color: var(--text);
+    letter-spacing: 0.01em; line-height: 1.7;
+  }
+  .cover-meta .who { font-weight: 600; display: block; }
+  .cover-meta .when { color: var(--muted); }
 
-  /* CLOSING */
-  .closing h2 { font-size: 64px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.0; }
-  .closing h2 .accent { color: var(--coral); }
-  .prompt-list { margin-top: 32px; }
-  .prompt-list .p { display: flex; align-items: baseline; gap: 14px; padding: 12px 0; color: white; font-size: 17px; }
-  .prompt-list .p::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--coral); flex-shrink: 0; }
+  h2.title {
+    font-weight: 600;
+    font-size: clamp(2.75rem, 5vw, 4.5rem); line-height: 1.05;
+    letter-spacing: -0.035em; color: var(--text);
+    margin-bottom: 4rem; max-width: 22ch;
+  }
+  h2.title .accent { color: var(--accent); font-weight: 700; }
 
-  /* FOOTER */
-  footer { padding: 36px 0 56px; background: var(--navy); color: var(--muted); font-size: 13px; border-top: 1px solid var(--navy-3); }
-  footer .row { display: flex; justify-content: space-between; align-items: baseline; gap: 24px; flex-wrap: wrap; }
-  footer a { color: #d3d9ed; }
-  footer strong { color: white; font-weight: 600; }
+  /* STAT HERO (Slide 2) */
+  .stathero { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-bottom: 2.5rem; }
+  .stat-cell { display: flex; flex-direction: column; gap: 0.4rem; padding-top: 1.1rem; border-top: 2px solid var(--accent); }
+  .stat-cell .n { font-weight: 700; font-size: clamp(2.4rem, 5vw, 4rem); line-height: 1; color: var(--accent); letter-spacing: -0.04em; font-variant-numeric: tabular-nums; }
+  .stat-cell .lbl { font-weight: 600; font-size: 1.05rem; color: var(--text); letter-spacing: -0.005em; margin-top: 0.6rem; }
+  .stat-cell .src { font-size: 0.7rem; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; font-weight: 500; margin-top: 0.25rem; }
+  .stathero-foot { font-size: 0.95rem; font-weight: 400; color: var(--muted); line-height: 1.55; max-width: 75ch; padding-top: 1.5rem; border-top: 1px solid var(--border); font-style: italic; }
+  .stathero-foot strong { color: var(--text); font-style: normal; font-weight: 600; }
+
+  /* TWO-COL PANELS (Slide 3, 4) */
+  .twocol { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; }
+  .col { display: flex; flex-direction: column; gap: 1rem; }
+  .col .tag { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); }
+  .col.warn .tag { color: var(--red); }
+  .col .name { font-weight: 600; font-size: clamp(1.4rem, 2vw, 1.85rem); color: var(--text); letter-spacing: -0.025em; margin-bottom: 0.5rem; }
+  .col-line { display: grid; grid-template-columns: 0.55rem 1fr; gap: 0.85rem; align-items: baseline; padding: 0.55rem 0; border-bottom: 1px solid var(--border); }
+  .col-line:last-child { border-bottom: none; }
+  .col-line::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); margin-top: 0.55rem; }
+  .col.warn .col-line::before { background: var(--red); }
+  .col-line .l-head { font-weight: 600; font-size: 0.95rem; color: var(--text); letter-spacing: -0.005em; line-height: 1.35; }
+  .col-line .l-sub { font-weight: 400; font-size: 0.78rem; color: var(--muted); line-height: 1.45; margin-top: 0.15rem; display: block; }
+
+  /* ARCH STACK (Slide 5) */
+  .archstack { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem; }
+  .layer { display: grid; grid-template-columns: 0.35rem 9rem 1fr; gap: 1.5rem; align-items: center; padding: 1.1rem 0; border-bottom: 1px solid var(--border); }
+  .layer:first-child { border-top: 1px solid var(--border); }
+  .layer-bar { background: var(--accent); height: 2.4rem; border-radius: 2px; }
+  .layer-tag { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text); }
+  .layer-desc { font-weight: 400; font-size: 0.95rem; color: var(--muted); line-height: 1.5; }
+  .layer-desc strong { color: var(--text); font-weight: 600; }
+  .layer.lead .layer-bar { background: var(--accent); height: 3rem; }
+  .layer.lead .layer-tag { color: var(--accent); }
+  .archstack-foot { font-size: 0.85rem; font-weight: 400; color: var(--muted); line-height: 1.55; font-style: italic; }
+  .archstack-foot strong { color: var(--accent); font-style: normal; font-weight: 600; }
+
+  /* WORKFLOWS (Slide 6) */
+  .wfs { display: flex; flex-direction: column; }
+  .wf { display: grid; grid-template-columns: 4rem 1fr 7rem; gap: 2rem; align-items: baseline; padding: 1.3rem 0; border-bottom: 1px solid var(--border); }
+  .wf:first-child { border-top: 1px solid var(--border); }
+  .wf .wn { font-weight: 700; font-size: 1.75rem; line-height: 1; color: var(--accent); letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+  .wf .wb { display: flex; flex-direction: column; gap: 0.35rem; }
+  .wf .wt { font-weight: 600; font-size: 1.2rem; color: var(--text); letter-spacing: -0.01em; }
+  .wf .wd { font-weight: 400; font-size: 0.88rem; color: var(--muted); line-height: 1.5; max-width: 75ch; }
+  .wf .wd strong { color: var(--text); font-weight: 600; }
+  .wf .when { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); text-align: right; }
+
+  /* BIG NUMBER (Slide 7) */
+  .bignum-hero { display: flex; flex-direction: column; gap: 1.5rem; align-items: flex-start; }
+  .bignum-n { font-weight: 800; font-size: clamp(6rem, 14vw, 14rem); line-height: 0.85; letter-spacing: -0.055em; color: var(--accent); font-variant-numeric: tabular-nums; }
+  .bignum-eq { font-size: clamp(1.4rem, 2.4vw, 2.1rem); font-weight: 600; color: var(--text); line-height: 1.3; max-width: 36ch; letter-spacing: -0.02em; }
+  .bignum-eq .accent { color: var(--accent); font-weight: 700; }
+  .bignum-wins { margin-top: 2rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; padding-top: 1.75rem; border-top: 1px solid var(--border-strong); }
+  .bw { display: flex; flex-direction: column; gap: 0.4rem; }
+  .bw .h { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); }
+  .bw .t { font-weight: 600; font-size: 1rem; color: var(--text); letter-spacing: -0.005em; }
+  .bw .d { font-size: 0.82rem; font-weight: 400; color: var(--muted); line-height: 1.5; }
+
+  /* RULES / TRAPS / STEPS (Slide 8, 9) */
+  .rules { display: flex; flex-direction: column; margin-bottom: 1rem; }
+  .rule { display: grid; grid-template-columns: 4rem 1fr; gap: 2rem; align-items: baseline; padding: 1.25rem 0; border-bottom: 1px solid var(--border); }
+  .rule:first-child { border-top: 1px solid var(--border); }
+  .rule .rn { font-weight: 700; font-size: 1.5rem; line-height: 1; color: var(--accent); letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+  .rule .rb { display: flex; flex-direction: column; gap: 0.3rem; }
+  .rule .rh { font-weight: 600; font-size: 1.1rem; color: var(--text); letter-spacing: -0.01em; }
+  .rule .rd { font-weight: 400; font-size: 0.88rem; color: var(--muted); line-height: 1.5; max-width: 75ch; }
+  .rule .rd strong { color: var(--text); font-weight: 600; }
+
+  /* CLOSING (Slide 10) */
+  .close-h { font-weight: 600; font-size: clamp(2.75rem, 5.5vw, 5rem); line-height: 1.05; letter-spacing: -0.045em; margin-bottom: 0.75rem; }
+  .close-h .l1 { color: var(--text); display: block; }
+  .close-h .l2 { color: var(--accent); display: block; font-weight: 700; }
+  .close-sub { font-size: clamp(1rem, 1.4vw, 1.25rem); font-weight: 400; color: var(--muted); margin-bottom: 3rem; letter-spacing: 0.005em; max-width: 60ch; line-height: 1.5; }
+  .close-prompts-h { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+  .close-prompts { display: flex; flex-direction: column; margin-bottom: 3rem; }
+  .close-prompt { padding: 0.85rem 0; border-bottom: 1px solid var(--border); display: grid; grid-template-columns: 2.6rem 1fr; gap: 1rem; align-items: baseline; }
+  .close-prompt:first-child { border-top: 1px solid var(--border); }
+  .close-prompt .qn { font-weight: 700; font-size: 0.85rem; color: var(--accent); letter-spacing: 0.08em; }
+  .close-prompt .qt { font-weight: 500; font-size: 1rem; color: var(--text); letter-spacing: -0.005em; line-height: 1.45; }
+  .close-bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); margin-top: auto; }
+  .close-bottom .lbl { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.4rem; }
+  .close-bottom .v { font-weight: 600; font-size: 1.05rem; color: var(--text); letter-spacing: -0.005em; }
+  .close-bottom .v.acc { color: var(--accent); font-weight: 700; }
+  .close-bottom .v a { color: inherit; text-decoration: none; }
+  .close-bottom .v a:hover { text-decoration: underline; }
+  .close-bottom .right { text-align: right; }
+
+  .nav-hint { position: fixed; bottom: 1rem; left: 50%; transform: translateX(-50%); font-size: 0.65rem; color: var(--faint); opacity: 0.5; pointer-events: none; letter-spacing: 0.06em; }
+  .nav-hint.hidden { opacity: 0; transition: opacity 0.5s; }
+
+  @media print {
+    @page { size: 13.3in 7.5in; margin: 0; }
+    .deck { height: auto; }
+    .slide { display: flex !important; height: 7.5in; width: 13.3in; page-break-after: always; }
+    .nav-hint { display: none; }
+  }
+
+  @media (max-width: 900px) {
+    .slide { padding: 7vh 7vw; }
+    .label { top: 4vh; left: 7vw; }
+    .page-num, .brand { bottom: 3vh; }
+    .page-num { right: 7vw; }
+    .brand { left: 7vw; }
+    .twocol { grid-template-columns: 1fr; gap: 2rem; }
+    .stathero { grid-template-columns: 1fr; gap: 1.5rem; }
+    .bignum-wins { grid-template-columns: 1fr; }
+    .layer { grid-template-columns: 0.3rem 1fr; }
+    .layer-tag { grid-column: 2; }
+    .layer-desc { grid-column: 2; }
+    .wf { grid-template-columns: 3rem 1fr; }
+    .wf .when { grid-column: 2; text-align: left; }
+    .close-grid { grid-template-columns: 1fr 1fr; }
+  }
 </style>
 </head>
 <body>
+<div class="deck">
 
-<!-- ============== HERO ============== -->
-<header class="hero">
-  <div class="wrap">
-    <div class="eyebrow">Erler Ventures &nbsp;&times;&nbsp; Value of We</div>
-    <h1>Your<br><span class="accent">Digital Twin.</span></h1>
-    <div class="tag">Real-operator notes from the 5% that works.</div>
-    <div class="meta">
-      <div>
-        <div class="label">Speaker</div>
-        <div class="value">Chris Erler &middot; Founder, Erler Ventures</div>
-      </div>
-      <div>
-        <div class="label">Event</div>
-        <div class="value">Value of We &middot; AI Workshop</div>
-      </div>
-      <div>
-        <div class="label">Date</div>
-        <div class="value">Berlin &middot; Tue 19 May 2026</div>
-      </div>
-    </div>
-  </div>
-</header>
+  <!-- 01 COVER -->
+  <section class="slide active" id="s1">
+    <div class="cover-eyebrow">Erler Ventures &middot; Value of We &middot; AI Workshop &middot; 19 May 2026</div>
+    <h1 class="cover-title">Your<br><span class="accent">Digital Twin.</span></h1>
+    <p class="cover-sub">Real-operator notes from the 5% that works. One human, eight ventures, why the twin had to build itself.</p>
+    <p class="cover-meta"><span class="who">Christoph Erler &middot; Founder, Erler Ventures</span><span class="when">11:20 to 11:30 CEST &middot; Berlin &middot; ~20 minutes</span></p>
+    <div class="brand">Value of We &middot; Erler Ventures</div>
+    <div class="page-num">01 / 10</div>
+  </section>
 
-<!-- ============== SETUP TRAP ============== -->
-<section>
-  <div class="wrap">
-    <div class="eyebrow">The setup trap</div>
-    <h2>95% of AI pilots fail.</h2>
-    <p class="lede">The 5% that works didn&rsquo;t buy more tools.</p>
-
-    <div class="grid-3">
-      <div class="stat">
-        <div class="big">95%</div>
-        <div class="label">of AI pilots have negative ROI</div>
+  <!-- 02 SETUP TRAP -->
+  <section class="slide" id="s2">
+    <div class="label">The setup trap</div>
+    <h2 class="title">95% of AI pilots fail.<br><span class="accent">The 5% didn&rsquo;t buy more tools.</span></h2>
+    <div class="stathero">
+      <div class="stat-cell">
+        <div class="n">95<span style="font-size: 0.5em;">%</span></div>
+        <div class="lbl">of AI pilots have negative ROI</div>
         <div class="src">MIT 2025</div>
       </div>
-      <div class="stat">
-        <div class="big">50%</div>
-        <div class="label">of entrepreneurs say &ldquo;too many tools&rdquo;</div>
-        <div class="src">EO POLL &middot; 122 votes</div>
+      <div class="stat-cell">
+        <div class="n">50<span style="font-size: 0.5em;">%</span></div>
+        <div class="lbl">of entrepreneurs say &ldquo;too many tools&rdquo;</div>
+        <div class="src">EO Poll &middot; 122 votes</div>
       </div>
-      <div class="stat">
-        <div class="big">7&#8260;10</div>
-        <div class="label">digitisation projects fail on mindset, not tech</div>
+      <div class="stat-cell">
+        <div class="n">7&#8260;10</div>
+        <div class="lbl">digitisation projects fail on mindset</div>
         <div class="src">Chaleat</div>
       </div>
     </div>
+    <div class="stathero-foot">People lock themselves in for weeks to perfect their setup. <strong>The win is not the stack. It&rsquo;s the workflow that ships in week one.</strong></div>
+    <div class="brand">Value of We &middot; Erler Ventures</div>
+    <div class="page-num">02 / 10</div>
+  </section>
 
-    <p style="margin-top: 32px; font-style: italic; font-size: 16px; color: var(--ink-2);">People lock themselves in for weeks to perfect their setup. The win is not the stack. It&rsquo;s the workflow that ships in week one.</p>
-  </div>
-</section>
-
-<!-- ============== WHY I'M HERE ============== -->
-<section>
-  <div class="wrap">
-    <div class="eyebrow">Why I&rsquo;m here</div>
-    <h2>One human.<br><span style="color: var(--ink-2); font-weight: 400;">Eight ventures. Zero assistants.</span></h2>
-
-    <div class="grid-2" style="margin-top: 40px;">
-      <div class="panel blue">
-        <h3 class="tab">What I run</h3>
-        <ul>
-          <li>Erler Ventures: advisory, content, frameworks</li>
-          <li>Portfolio: Best Guy &middot; Mala/Relevio &middot; RC &middot; Valtis</li>
-          <li>Wealth and real estate (DE + AT properties)</li>
-          <li>Legal cases &middot; ComX insolvency &middot; P10X dispute</li>
-          <li>Personal: wedding planning &middot; cold case podcast</li>
-        </ul>
+  <!-- 03 WHY I'M HERE -->
+  <section class="slide" id="s3">
+    <div class="label">Why I&rsquo;m here</div>
+    <h2 class="title">One human.<br><span class="accent">Eight ventures.</span> Zero assistants.</h2>
+    <div class="twocol">
+      <div class="col">
+        <div class="tag">What I run</div>
+        <div class="name">The portfolio</div>
+        <div class="col-line"><div><div class="l-head">Erler Ventures</div><span class="l-sub">advisory, content, frameworks</span></div></div>
+        <div class="col-line"><div><div class="l-head">Best Guy &middot; Mala/Relevio &middot; RC &middot; Valtis</div><span class="l-sub">venture portfolio (founders, products, sales)</span></div></div>
+        <div class="col-line"><div><div class="l-head">Wealth and real estate</div><span class="l-sub">DE + AT properties, asset allocation</span></div></div>
+        <div class="col-line"><div><div class="l-head">Legal cases</div><span class="l-sub">ComX insolvency, P10X dispute</span></div></div>
+        <div class="col-line"><div><div class="l-head">Personal</div><span class="l-sub">wedding planning, cold case podcast</span></div></div>
       </div>
-      <div class="panel coral">
-        <h3 class="tab">What it forces</h3>
-        <ul>
-          <li>Context never lives in my head. It lives somewhere else.</li>
-          <li>Decisions can&rsquo;t slip between contexts.</li>
-          <li>Drafts can&rsquo;t drag for days. Two minutes or kill them.</li>
-          <li>Every repetitive task is a tax. Find it. Wrap it.</li>
-          <li>The twin built itself out of necessity, not theory.</li>
-        </ul>
+      <div class="col">
+        <div class="tag">What it forces</div>
+        <div class="name">The discipline</div>
+        <div class="col-line"><div><div class="l-head">Context never lives in my head</div><span class="l-sub">it lives somewhere else, or it dies</span></div></div>
+        <div class="col-line"><div><div class="l-head">Decisions cannot slip</div><span class="l-sub">between portfolio calls, stakeholders, weeks</span></div></div>
+        <div class="col-line"><div><div class="l-head">Drafts cannot drag</div><span class="l-sub">two minutes, or kill them entirely</span></div></div>
+        <div class="col-line"><div><div class="l-head">Every repetitive task is a tax</div><span class="l-sub">find it, wrap it, never touch it again</span></div></div>
+        <div class="col-line"><div><div class="l-head">The twin built itself</div><span class="l-sub">out of necessity, not theory</span></div></div>
       </div>
     </div>
-  </div>
-</section>
+    <div class="brand">Value of We &middot; Erler Ventures</div>
+    <div class="page-num">03 / 10</div>
+  </section>
 
-<!-- ============== BEFORE / AFTER ============== -->
-<section>
-  <div class="wrap">
-    <div class="eyebrow">Day-to-day &middot; before vs after</div>
-    <h2>Same operator. Same calendar.<br><span style="color: var(--coral);">Different operating system.</span></h2>
-
-    <div class="grid-2" style="margin-top: 40px;">
-      <div class="panel red">
-        <h3 class="tab">Before</h3>
-        <div class="title">The old setup</div>
-        <div class="ba-item red">
-          <div class="h">80 emails by 10am</div>
-          <div class="s">every one a context switch</div>
-        </div>
-        <div class="ba-item red">
-          <div class="h">&ldquo;What did I decide?&rdquo;</div>
-          <div class="s">context loss between portfolio calls</div>
-        </div>
-        <div class="ba-item red">
-          <div class="h">Drafts drag for days</div>
-          <div class="s">polish loop, then never sent</div>
-        </div>
-        <div class="ba-item red">
-          <div class="h">Meetings without prep</div>
-          <div class="s">or 45 min prep for a 30 min call</div>
-        </div>
-        <div class="ba-item red">
-          <div class="h">Repeating myself</div>
-          <div class="s">to every stakeholder, every week</div>
-        </div>
+  <!-- 04 BEFORE vs AFTER -->
+  <section class="slide" id="s4">
+    <div class="label">Day to day, before vs after</div>
+    <h2 class="title">Same operator. Same calendar.<br><span class="accent">Different operating system.</span></h2>
+    <div class="twocol">
+      <div class="col warn">
+        <div class="tag">Before</div>
+        <div class="name">The old setup</div>
+        <div class="col-line"><div><div class="l-head">80 emails by 10am</div><span class="l-sub">every one a context switch</span></div></div>
+        <div class="col-line"><div><div class="l-head">&ldquo;What did I decide?&rdquo;</div><span class="l-sub">context loss between portfolio calls</span></div></div>
+        <div class="col-line"><div><div class="l-head">Drafts drag for days</div><span class="l-sub">polish loop, then never sent</span></div></div>
+        <div class="col-line"><div><div class="l-head">Meetings without prep</div><span class="l-sub">or 45 min prep for a 30 min call</span></div></div>
+        <div class="col-line"><div><div class="l-head">Repeating myself</div><span class="l-sub">to every stakeholder, every week</span></div></div>
       </div>
-      <div class="panel green">
-        <h3 class="tab">After</h3>
-        <div class="title">The digital twin</div>
-        <div class="ba-item green">
-          <div class="h">One morning page</div>
-          <div class="s">inbox + calendar + priorities in 30 seconds</div>
-        </div>
-        <div class="ba-item green">
-          <div class="h">Briefings on demand</div>
-          <div class="s">decisions surfaced, never lost</div>
-        </div>
-        <div class="ba-item green">
-          <div class="h">Two-minute drafts</div>
-          <div class="s">spoken idea, publish-ready</div>
-        </div>
-        <div class="ba-item green">
-          <div class="h">Meeting prep auto-compiled</div>
-          <div class="s">Drive + mail + CRM + LinkedIn, one click</div>
-        </div>
-        <div class="ba-item green">
-          <div class="h">Stakeholder updates</div>
-          <div class="s">drafted before I ask</div>
-        </div>
+      <div class="col">
+        <div class="tag">After</div>
+        <div class="name">The digital twin</div>
+        <div class="col-line"><div><div class="l-head">One morning page</div><span class="l-sub">inbox + calendar + priorities in 30 sec</span></div></div>
+        <div class="col-line"><div><div class="l-head">Briefings on demand</div><span class="l-sub">decisions surfaced, never lost</span></div></div>
+        <div class="col-line"><div><div class="l-head">Two-minute drafts</div><span class="l-sub">spoken idea, publish-ready</span></div></div>
+        <div class="col-line"><div><div class="l-head">Meeting prep auto-compiled</div><span class="l-sub">Drive + mail + CRM + LinkedIn, one click</span></div></div>
+        <div class="col-line"><div><div class="l-head">Stakeholder updates</div><span class="l-sub">drafted before I ask</span></div></div>
       </div>
     </div>
-  </div>
-</section>
+    <div class="brand">Value of We &middot; Erler Ventures</div>
+    <div class="page-num">04 / 10</div>
+  </section>
 
-<!-- ============== ARCHITECTURE ============== -->
-<section class="dark">
-  <div class="wrap">
-    <div class="eyebrow">The architecture</div>
-    <h2>Memory. Tools. Workflows. Skills.<br><span style="color: var(--coral);">One front door.</span></h2>
-
-    <div class="stack" style="margin-top: 40px;">
-      <div class="layer coral">
-        <div class="bar"></div>
-        <div class="box">
-          <div class="lbl">Orchestrator</div>
-          <div class="desc">One chat. Picks the right skill. Calls the right tools.</div>
-        </div>
+  <!-- 05 ARCHITECTURE -->
+  <section class="slide" id="s5">
+    <div class="label">The architecture</div>
+    <h2 class="title">Memory. Tools. Workflows. Skills.<br><span class="accent">One front door.</span></h2>
+    <div class="archstack">
+      <div class="layer lead">
+        <div class="layer-bar"></div>
+        <div class="layer-tag">Orchestrator</div>
+        <div class="layer-desc">One chat. <strong>Picks the right skill. Calls the right tools.</strong></div>
       </div>
-      <div class="layer blue">
-        <div class="bar"></div>
-        <div class="box">
-          <div class="lbl">Skills</div>
-          <div class="desc">24+ verticals: Sales &middot; Legal &middot; M&amp;A &middot; Real Estate &middot; Content &middot; Wedding &middot; Coaching</div>
-        </div>
+      <div class="layer">
+        <div class="layer-bar"></div>
+        <div class="layer-tag">Skills</div>
+        <div class="layer-desc">24+ verticals: <strong>Sales, Legal, M&amp;A, Real Estate, Content, Wedding, Coaching.</strong></div>
       </div>
-      <div class="layer blue">
-        <div class="bar"></div>
-        <div class="box">
-          <div class="lbl">Workflows</div>
-          <div class="desc">Morning Brief &middot; Meeting Prep &middot; Draft Factory &middot; Decision Cards</div>
-        </div>
+      <div class="layer">
+        <div class="layer-bar"></div>
+        <div class="layer-tag">Workflows</div>
+        <div class="layer-desc">Morning Brief, Meeting Prep, Draft Factory, Decision Cards.</div>
       </div>
-      <div class="layer blue2">
-        <div class="bar"></div>
-        <div class="box">
-          <div class="lbl">Tools</div>
-          <div class="desc">39 connected: Gmail &middot; Calendar &middot; Drive &middot; Notion &middot; LinkedIn &middot; Web &middot; Slack &middot; GitHub</div>
-        </div>
+      <div class="layer">
+        <div class="layer-bar"></div>
+        <div class="layer-tag">Tools</div>
+        <div class="layer-desc">39 connected: <strong>Gmail, Calendar, Drive, Notion, LinkedIn, Web, Slack, GitHub.</strong></div>
       </div>
-      <div class="layer muted">
-        <div class="bar"></div>
-        <div class="box">
-          <div class="lbl">Memory</div>
-          <div class="desc">Persistent notes. Project state. Stakeholder context. Survives every restart.</div>
-        </div>
+      <div class="layer">
+        <div class="layer-bar"></div>
+        <div class="layer-tag">Memory</div>
+        <div class="layer-desc">Persistent notes. Project state. Stakeholder context. <strong>Survives every restart.</strong></div>
       </div>
     </div>
-    <div class="stack-note">All four layers live in plain files. Portable. Diff-able. No lock-in.</div>
-  </div>
-</section>
+    <div class="archstack-foot">All four layers live in plain files. <strong>Portable. Diff-able. No lock-in.</strong></div>
+    <div class="brand">Value of We &middot; Erler Ventures</div>
+    <div class="page-num">05 / 10</div>
+  </section>
 
-<!-- ============== WORKFLOWS ============== -->
-<section>
-  <div class="wrap">
-    <div class="eyebrow">Four workflows I use every day</div>
-    <h2>Boring on paper.<br><span style="color: var(--coral);">Magic in the calendar.</span></h2>
-
-    <div class="grid-2-cards" style="margin-top: 40px;">
-      <div class="wf-card">
-        <div class="head">
-          <div class="num">01</div>
-          <div class="title">Morning Brief</div>
-          <div class="when">06:30 daily</div>
+  <!-- 06 WORKFLOWS -->
+  <section class="slide" id="s6">
+    <div class="label">Four workflows I use every day</div>
+    <h2 class="title">Boring on paper.<br><span class="accent">Magic in the calendar.</span></h2>
+    <div class="wfs">
+      <div class="wf">
+        <div class="wn">01</div>
+        <div class="wb">
+          <div class="wt">Morning Brief</div>
+          <div class="wd">Inbox triage, today&rsquo;s calendar, priorities. One page, 30 seconds. <strong>Replaces 25 min of inbox scanning.</strong></div>
         </div>
-        <div class="desc">Inbox triage &middot; today&rsquo;s calendar &middot; priorities. One page, 30 seconds. Replaces 25 min of inbox scanning.</div>
+        <div class="when">06:30 daily</div>
       </div>
-      <div class="wf-card">
-        <div class="head">
-          <div class="num">02</div>
-          <div class="title">Meeting Prep</div>
-          <div class="when">on demand</div>
+      <div class="wf">
+        <div class="wn">02</div>
+        <div class="wb">
+          <div class="wt">Meeting Prep</div>
+          <div class="wd">Drive + mail + CRM + LinkedIn auto-compiled into a <strong>one-page brief 15 min before every call.</strong></div>
         </div>
-        <div class="desc">Drive + mail + CRM + LinkedIn auto-compiled into a one-page brief 15 min before every call.</div>
+        <div class="when">on demand</div>
       </div>
-      <div class="wf-card">
-        <div class="head">
-          <div class="num">03</div>
-          <div class="title">Draft Factory</div>
-          <div class="when">anywhere</div>
+      <div class="wf">
+        <div class="wn">03</div>
+        <div class="wb">
+          <div class="wt">Draft Factory</div>
+          <div class="wd">Spoken idea to publish-ready LinkedIn post, email, or note in <strong>under 2 minutes</strong>. Voice in, polish out.</div>
         </div>
-        <div class="desc">Spoken idea, publish-ready LinkedIn post, email, or note in under 2 minutes. Voice in, polish out.</div>
+        <div class="when">anywhere</div>
       </div>
-      <div class="wf-card">
-        <div class="head">
-          <div class="num">04</div>
-          <div class="title">Decision Cards</div>
-          <div class="when">weekly</div>
+      <div class="wf">
+        <div class="wn">04</div>
+        <div class="wb">
+          <div class="wt">Decision Cards</div>
+          <div class="wd">Open loops across all eight ventures: <strong>who owes what, what I owe by Friday.</strong> Decisions stop slipping.</div>
         </div>
-        <div class="desc">Open loops across all 8 ventures: who owes what, what I owe by Friday. Decisions stop slipping.</div>
+        <div class="when">weekly</div>
       </div>
     </div>
-  </div>
-</section>
+    <div class="brand">Value of We &middot; Erler Ventures</div>
+    <div class="page-num">06 / 10</div>
+  </section>
 
-<!-- ============== THE NUMBER ============== -->
-<section class="dark">
-  <div class="wrap">
-    <div class="eyebrow">The number that matters</div>
-    <div class="bignum">
-      <div class="n">15&#8202;to&#8202;20</div>
-      <div class="u">hours a week back.</div>
+  <!-- 07 THE NUMBER -->
+  <section class="slide" id="s7">
+    <div class="label">The number that matters</div>
+    <div class="bignum-hero">
+      <div class="bignum-n">15&#8202;to&#8202;20</div>
+      <div class="bignum-eq">hours a week back. But the <span class="accent">bigger wins</span> are not on the timesheet.</div>
     </div>
-    <div class="grid-3" style="margin-top: 12px;">
-      <div class="win-card">
-        <div class="h">Bigger win: decision quality</div>
-        <div class="b">Nothing slips. Cross-venture context survives every call.</div>
+    <div class="bignum-wins">
+      <div class="bw">
+        <div class="h">Bigger win 01</div>
+        <div class="t">Decision quality</div>
+        <div class="d">Nothing slips. Cross-venture context survives every call.</div>
       </div>
-      <div class="win-card">
-        <div class="h">Bigger win: drafts ship</div>
-        <div class="b">Two-minute polish vs. 3-day drag. The post goes out.</div>
+      <div class="bw">
+        <div class="h">Bigger win 02</div>
+        <div class="t">Drafts ship</div>
+        <div class="d">Two-minute polish vs. three-day drag. The post goes out.</div>
       </div>
-      <div class="win-card">
-        <div class="h">Bigger win: lower cognitive load</div>
-        <div class="b">I stop running 8 timelines in my head. Energy back.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============== WHERE IT BREAKS ============== -->
-<section>
-  <div class="wrap">
-    <div class="eyebrow">Honest &middot; where it breaks</div>
-    <h2>Four traps I fell into.<br><span style="color: var(--coral);">So you don&rsquo;t.</span></h2>
-
-    <div style="margin-top: 40px;">
-      <div class="trap">
-        <div class="num">01</div>
-        <div class="h">Tool churn</div>
-        <div class="b">Vendors deprecate. Stay in plain files and standard formats. Skills travel.</div>
-      </div>
-      <div class="trap">
-        <div class="num">02</div>
-        <div class="h">Hallucination on facts</div>
-        <div class="b">Models guess on long-tail data. Force citations. Verify what&rsquo;s load-bearing.</div>
-      </div>
-      <div class="trap">
-        <div class="num">03</div>
-        <div class="h">GDPR and privacy edges</div>
-        <div class="b">Client data needs scoped tools. Build the privacy fence before the workflow.</div>
-      </div>
-      <div class="trap">
-        <div class="num">04</div>
-        <div class="h">Mindset, not tech</div>
-        <div class="b">7/10 digitisation projects fail on people. Adoption is the moat, not the model.</div>
+      <div class="bw">
+        <div class="h">Bigger win 03</div>
+        <div class="t">Lower cognitive load</div>
+        <div class="d">I stop running eight timelines in my head. Energy back.</div>
       </div>
     </div>
-  </div>
-</section>
+    <div class="brand">Value of We &middot; Erler Ventures</div>
+    <div class="page-num">07 / 10</div>
+  </section>
 
-<!-- ============== WHAT THIS MEANS ============== -->
-<section>
-  <div class="wrap">
-    <div class="eyebrow">What this means for an agency like yours</div>
-    <h2>Don&rsquo;t perfect the setup.<br><span class="accent" style="color: var(--coral);">Ship the first workflow this week.</span></h2>
+  <!-- 08 WHERE IT BREAKS -->
+  <section class="slide" id="s8">
+    <div class="label">Honest, where it breaks</div>
+    <h2 class="title">Four traps I fell into.<br><span class="accent">So you don&rsquo;t.</span></h2>
+    <div class="rules">
+      <div class="rule"><div class="rn">01</div><div class="rb"><div class="rh">Tool churn</div><div class="rd">Vendors deprecate. <strong>Stay in plain files and standard formats.</strong> Skills travel between platforms. Stacks don&rsquo;t.</div></div></div>
+      <div class="rule"><div class="rn">02</div><div class="rb"><div class="rh">Hallucination on facts</div><div class="rd">Models guess on long-tail data. <strong>Force citations.</strong> Verify what&rsquo;s load-bearing before you act on it.</div></div></div>
+      <div class="rule"><div class="rn">03</div><div class="rb"><div class="rh">GDPR and privacy edges</div><div class="rd">Client data needs scoped tools. <strong>Build the privacy fence before the workflow,</strong> not after.</div></div></div>
+      <div class="rule"><div class="rn">04</div><div class="rb"><div class="rh">Mindset, not tech</div><div class="rd">7/10 digitisation projects fail on people, not tools. <strong>Adoption is the moat,</strong> not the model.</div></div></div>
+    </div>
+    <div class="brand">Value of We &middot; Erler Ventures</div>
+    <div class="page-num">08 / 10</div>
+  </section>
 
-    <div style="margin-top: 36px;">
-      <div class="step">
-        <div class="circle">01</div>
-        <div>
-          <div class="h">Find the drain</div>
-          <p class="b">Which repetitive task burns more than 5h a week on your team? Account brief? Client recap? Asset routing?</p>
-        </div>
+  <!-- 09 WHAT THIS MEANS -->
+  <section class="slide" id="s9">
+    <div class="label">What this means for an agency like yours</div>
+    <h2 class="title">Don&rsquo;t perfect the setup.<br><span class="accent">Ship the first workflow this week.</span></h2>
+    <div class="rules">
+      <div class="rule"><div class="rn">01</div><div class="rb"><div class="rh">Find the drain</div><div class="rd">Which repetitive task burns <strong>more than 5h a week</strong> on your team? Account brief? Client recap? Asset routing?</div></div></div>
+      <div class="rule"><div class="rn">02</div><div class="rb"><div class="rh">Wrap one workflow</div><div class="rd">Memory + tools + a ten-line prompt. <strong>Don&rsquo;t build a platform. Build a habit.</strong></div></div></div>
+      <div class="rule"><div class="rn">03</div><div class="rb"><div class="rh">One twin per role</div><div class="rd">Account Manager twin. Creative twin. Ops twin. <strong>Don&rsquo;t try to make one for everyone.</strong></div></div></div>
+      <div class="rule"><div class="rn">04</div><div class="rb"><div class="rh">Kill it if ROI is not there in 1 week</div><div class="rd">If it doesn&rsquo;t save real time inside seven days, <strong>the workflow is wrong, not the tech.</strong></div></div></div>
+    </div>
+    <div class="brand">Value of We &middot; Erler Ventures</div>
+    <div class="page-num">09 / 10</div>
+  </section>
+
+  <!-- 10 CLOSING -->
+  <section class="slide" id="s10">
+    <div class="label">Over to you</div>
+    <div class="close-h"><span class="l1">Now let&rsquo;s go to</span><span class="l2">your tools.</span></div>
+    <div class="close-sub">Three seeds for the breakout. Pick one. Ship something by Friday.</div>
+    <div class="close-prompts-h">Bring to the breakout</div>
+    <div class="close-prompts">
+      <div class="close-prompt">
+        <div class="qn">01</div>
+        <div class="qt">ONE repetitive task you&rsquo;d hand to a twin tomorrow.</div>
       </div>
-      <div class="step">
-        <div class="circle">02</div>
-        <div>
-          <div class="h">Wrap one workflow</div>
-          <p class="b">Memory + tools + a 10-line prompt. Don&rsquo;t build a platform. Build a habit.</p>
-        </div>
+      <div class="close-prompt">
+        <div class="qn">02</div>
+        <div class="qt">ONE place context lives in your head, and shouldn&rsquo;t.</div>
       </div>
-      <div class="step">
-        <div class="circle">03</div>
-        <div>
-          <div class="h">One twin per role</div>
-          <p class="b">Account Manager twin. Creative twin. Ops twin. Don&rsquo;t try to make one for everyone.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="circle">04</div>
-        <div>
-          <div class="h">Kill it if ROI is not there in 1 week</div>
-          <p class="b">If it doesn&rsquo;t save real time inside seven days, the workflow is wrong, not the tech.</p>
-        </div>
+      <div class="close-prompt">
+        <div class="qn">03</div>
+        <div class="qt">ONE workflow you could ship by Friday.</div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ============== CLOSING ============== -->
-<section class="dark closing">
-  <div class="wrap">
-    <div class="eyebrow">Now let&rsquo;s go to</div>
-    <h2 style="color: white;">your <span class="accent">tools.</span></h2>
-
-    <div style="margin-top: 48px;">
-      <h3 style="color: var(--coral); letter-spacing: 0.14em;">Bring to the breakout</h3>
-      <div class="prompt-list">
-        <div class="p">ONE repetitive task you&rsquo;d hand to a twin tomorrow.</div>
-        <div class="p">ONE place context lives in your head, and shouldn&rsquo;t.</div>
-        <div class="p">ONE workflow you could ship by Friday.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============== FOOTER ============== -->
-<footer>
-  <div class="wrap">
-    <div class="row">
+    <div class="close-bottom">
       <div>
-        <strong>Chris Erler</strong> &middot; Founder, Erler Ventures<br>
-        <a href="mailto:chris@erlerventures.org">chris@erlerventures.org</a> &middot; <a href="https://erlerventures.org">erlerventures.org</a>
+        <div class="lbl">Speaker</div>
+        <div class="v acc">Christoph Erler</div>
+        <div class="v" style="font-size: 0.78rem; font-weight: 400; color: var(--muted); margin-top: 0.25rem;">Founder, Erler Ventures</div>
+        <div class="v" style="font-size: 0.78rem; font-weight: 500; margin-top: 0.4rem;"><a href="mailto:chris@erlerventures.org">chris@erlerventures.org</a></div>
       </div>
-      <div style="text-align: right;">
-        <strong>ERLER VENTURES &times; VALUE OF WE</strong><br>
-        Berlin &middot; 19 May 2026
+      <div class="right">
+        <div class="lbl">Event</div>
+        <div class="v">Value of We &middot; AI Workshop</div>
+        <div class="v" style="font-size: 0.78rem; font-weight: 400; color: var(--muted); margin-top: 0.25rem;">Berlin &middot; 19 May 2026</div>
+        <div class="v" style="font-size: 0.78rem; font-weight: 500; margin-top: 0.4rem;"><a href="https://erlerventures.org">erlerventures.org</a></div>
       </div>
     </div>
-  </div>
-</footer>
+    <div class="brand">Value of We &middot; Erler Ventures</div>
+    <div class="page-num">10 / 10</div>
+  </section>
 
+</div>
+
+<div class="nav-hint">arrow keys to navigate</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  let current = 0;
+  function go(idx) {
+    if (idx < 0 || idx >= slides.length) return;
+    slides[current].classList.remove('active');
+    slides[idx].classList.add('active');
+    current = idx;
+    history.replaceState({}, '', '#' + (idx + 1));
+  }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); go(current + 1); }
+    if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); go(current - 1); }
+    if (e.key === 'Home') go(0);
+    if (e.key === 'End') go(slides.length - 1);
+    document.querySelector('.nav-hint').classList.add('hidden');
+  });
+  document.querySelector('.deck').addEventListener('click', (e) => {
+    const x = e.clientX; const w = window.innerWidth;
+    if (x > w / 2) go(current + 1);
+    else go(current - 1);
+  });
+  if (window.location.hash) {
+    const n = parseInt(window.location.hash.replace('#', ''));
+    if (n >= 1 && n <= slides.length) go(n - 1);
+  }
+  setTimeout(() => document.querySelector('.nav-hint').classList.add('hidden'), 5000);
+</script>
 </body>
 </html>
