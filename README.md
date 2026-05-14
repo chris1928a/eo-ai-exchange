@@ -7,7 +7,49 @@ A continuous, audience-driven series where EO members surface real AI-setup pain
 
 ---
 
-## Fork one of three working setups
+![Three working AI setups — Workspace-Native (Chris) · Local-First Rolodex (Dom) · PAI Life OS (Fabian)](assets/setups-comparison.svg)
+
+---
+
+## Which setup is best for you?
+
+> **TL;DR — for ~80% of EO operators, the answer is Setup 1 (Workspace-Native, Chris).** You already live in Workspace, you want value in 30 days not 12 months, you want mobile, and you can afford ~150 EUR/mo. The other two are for specific edge cases (regulated data → Dom, opinionated Life OS lover on Mac → Fabian).
+
+The honest one-question filter:
+
+```mermaid
+flowchart TD
+    Start([Where do you spend your day?])
+    Start --> Q1{Inside Google Workspace<br/>Gmail, Calendar, Drive?}
+
+    Q1 -- Yes --> Q2{Can you spend<br/>~150 EUR/month?}
+    Q1 -- No --> Q3{Do you handle data<br/>that cannot leave your machine?}
+
+    Q2 -- Yes --> S1[<b>SETUP 1 — Chris</b><br/>Workspace-Native<br/>~150 EUR/mo · ~23h/wk saved<br/>Mobile via Telegram bot]
+    Q2 -- No --> Q3
+
+    Q3 -- Yes --> S2[<b>SETUP 2 — Dom</b><br/>Local-First Rolodex<br/>~$0/mo marginal · Mac M-series<br/>You debug your own stack]
+    Q3 -- No --> Q4{Do you want a complete<br/>Life OS out of the box?}
+
+    Q4 -- Yes --> S3[<b>SETUP 3 — Fabian</b><br/>PAI Life OS<br/>Free + your API spend · Mac/Linux<br/>45 skills · 171 workflows · 37 hooks]
+    Q4 -- No --> S1
+
+    classDef chris fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#0f172a
+    classDef dom fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#0f172a
+    classDef fabian fill:#f3e8ff,stroke:#9333ea,stroke-width:2px,color:#0f172a
+    classDef question fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#0f172a
+
+    class S1 chris
+    class S2 dom
+    class S3 fabian
+    class Q1,Q2,Q3,Q4 question
+```
+
+**Why Setup 1 is the default for the EO audience:** of 118 audience registrations across 53 chapters at Event #1, **69% already use Claude** and the dominant pain cluster was *"Setup itself / time to configure"* — the Workspace-Native path is the lowest-friction path to a working brain in <60 minutes. The other two are honest counterfactuals: Dom's local-first proves you *can* do this at $0/mo if you have 12 months of engineering time, Fabian's PAI proves you *can* skip the build entirely if you accept Miessler's opinionated framework.
+
+---
+
+## All three setups, side by side
 
 Three operator-level setups demoed at Event #1 (2026-05-11). **Same problem** — build a personal AI brain that actually works in production. **Three different operator-level answers.** Pick the one closest to how you already work, fork it tonight, run it tomorrow.
 
