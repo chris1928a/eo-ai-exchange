@@ -348,7 +348,7 @@
   <!-- 04 SIX HATS -->
   <section class="slide" id="s4">
     <div class="label">What&rsquo;s on my plate, on any given day</div>
-    <h2 class="title">One operator. <span class="accent">Six lanes.</span> Zero employees.</h2>
+    <h2 class="title">One operator. <span class="accent">Six personal lanes.</span> AI as the team.</h2>
     <div class="hats">
       <div class="hat">
         <div class="htag">Lane 01</div>
@@ -381,7 +381,7 @@
         <div class="hdesc">Planning our wedding this year. Vendors, decisions, budget.</div>
       </div>
     </div>
-    <div class="hats-foot">Same brain runs all six. <span class="accent">No team. No assistants.</span> This is the setup we&rsquo;re going to look at.</div>
+    <div class="hats-foot">Same brain across all six. <span class="accent">AI is the team I&rsquo;d otherwise need</span> for this personal load. This is the setup we&rsquo;re going to look at.</div>
     <div class="brand">Value of We &middot; Erler Ventures</div>
     <div class="page-num">04 / 13</div>
   </section>
@@ -526,8 +526,52 @@ Three priorities. Three open threads. Four calls today.</div>
     <div class="page-num">08 / 13</div>
   </section>
 
-  <!-- 09 THE NUMBER -->
+  <!-- 09 BORING INFRASTRUCTURE / NO N8N -->
   <section class="slide" id="s9">
+    <div class="label">The boring infrastructure trick</div>
+    <h2 class="title">Who uses <span class="accent">n8n?</span><br>Who uses <span class="accent">make.com?</span></h2>
+    <div class="compare">
+      <div class="cmp">
+        <div class="cmp-tag">The open one</div>
+        <div class="cmp-name">n8n</div>
+        <div class="cmp-maker">self-hosted automation</div>
+        <ul>
+          <li>Nodes break when integrations update</li>
+          <li>Self-hosting still needs a server</li>
+          <li>Visual flows hide what is happening</li>
+          <li>Hard to diff, hard to review</li>
+        </ul>
+      </div>
+      <div class="cmp">
+        <div class="cmp-tag">The slick one</div>
+        <div class="cmp-name">make.com</div>
+        <div class="cmp-maker">no-code, boxes and arrows</div>
+        <ul>
+          <li>Per-operation pricing, quota walls</li>
+          <li>Flows live in their UI, not your git</li>
+          <li>Debugging means clicking 30 nodes</li>
+          <li>Vendor pivots its pricing every year</li>
+        </ul>
+      </div>
+      <div class="cmp pick">
+        <div class="cmp-tag">What replaced both</div>
+        <div class="cmp-name">cron + Lambda</div>
+        <div class="cmp-maker">AWS free tier + 1975</div>
+        <ul>
+          <li>~200 lines of Python per workflow</li>
+          <li>Lives in git, diff-able, reviewable</li>
+          <li>$0 / month at my volume</li>
+          <li>Survives any vendor going under</li>
+        </ul>
+      </div>
+    </div>
+    <div class="compare-foot">I tried both. Then I killed them. <strong>The boring stack outlived the trendy stack.</strong> Most of the time an &ldquo;automation platform&rdquo; just needs <strong>a script and a cron schedule.</strong></div>
+    <div class="brand">Value of We &middot; Erler Ventures</div>
+    <div class="page-num">09 / 13</div>
+  </section>
+
+  <!-- 10 THE NUMBER -->
+  <section class="slide" id="s10">
     <div class="label">The number that matters</div>
     <div class="bignum-hero">
       <div class="bignum-n">~23</div>
@@ -551,11 +595,11 @@ Three priorities. Three open threads. Four calls today.</div>
       </div>
     </div>
     <div class="brand">Value of We &middot; Erler Ventures</div>
-    <div class="page-num">09 / 13</div>
+    <div class="page-num">10 / 13</div>
   </section>
 
-  <!-- 10 WHERE THE HOURS COME FROM -->
-  <section class="slide" id="s10">
+  <!-- 11 WHERE THE HOURS COME FROM -->
+  <section class="slide" id="s11">
     <div class="label">Where the 23 hours actually come from</div>
     <h2 class="title" style="margin-bottom: 1.75rem; font-size: clamp(1.85rem, 3.2vw, 2.8rem);">Real tasks. Real frequencies.<br><span class="accent">Tracked over 8 weeks.</span></h2>
     <table class="time-table">
@@ -640,11 +684,11 @@ Three priorities. Three open threads. Four calls today.</div>
     </table>
     <div class="time-foot">Tracked March to April 2026. <strong>Personal admin + ops + client work.</strong> Real tasks. Real frequencies. Real outputs.</div>
     <div class="brand">Value of We &middot; Erler Ventures</div>
-    <div class="page-num">10 / 13</div>
+    <div class="page-num">11 / 13</div>
   </section>
 
-  <!-- 11 WHERE IT BREAKS -->
-  <section class="slide" id="s11">
+  <!-- 12 WHERE IT BREAKS -->
+  <section class="slide" id="s12">
     <div class="label">Honest, where it still goes wrong</div>
     <h2 class="title">Four traps I fell into.<br><span class="accent">So you don&rsquo;t.</span></h2>
     <div class="rules">
@@ -654,11 +698,11 @@ Three priorities. Three open threads. Four calls today.</div>
       <div class="rule"><div class="rn">04</div><div class="rb"><div class="rh">It&rsquo;s people, not tech</div><div class="rd">7 out of 10 of these projects fail because no one uses them. <strong>Adoption is the moat,</strong> not the model.</div></div></div>
     </div>
     <div class="brand">Value of We &middot; Erler Ventures</div>
-    <div class="page-num">11 / 13</div>
+    <div class="page-num">12 / 13</div>
   </section>
 
-  <!-- 12 WHAT THIS MEANS FOR YOUR TEAM -->
-  <section class="slide" id="s12">
+  <!-- 13 WHAT THIS MEANS FOR YOUR TEAM -->
+  <section class="slide" id="s13">
     <div class="label">What this means for an agency like yours</div>
     <h2 class="title">Don&rsquo;t perfect the setup.<br><span class="accent">Ship the first workflow this week.</span></h2>
     <div class="rules">
@@ -666,44 +710,6 @@ Three priorities. Three open threads. Four calls today.</div>
       <div class="rule"><div class="rn">02</div><div class="rb"><div class="rh">Wrap one workflow</div><div class="rd">Memory plus tools plus a short, plain-text instruction. <strong>Don&rsquo;t build a platform. Build a habit.</strong></div></div></div>
       <div class="rule"><div class="rn">03</div><div class="rb"><div class="rh">One twin per role</div><div class="rd">An Account Manager twin. A Creative twin. An Ops twin. <strong>Don&rsquo;t try to build one twin for everyone.</strong> Pick one role and ship.</div></div></div>
       <div class="rule"><div class="rn">04</div><div class="rb"><div class="rh">Kill it if it doesn&rsquo;t pay back in a week</div><div class="rd">If a workflow doesn&rsquo;t save real time inside seven days, <strong>the workflow is wrong, not the tech.</strong> Try the next one.</div></div></div>
-    </div>
-    <div class="brand">Value of We &middot; Erler Ventures</div>
-    <div class="page-num">12 / 13</div>
-  </section>
-
-  <!-- 13 CLOSING -->
-  <section class="slide" id="s13">
-    <div class="label">Over to you</div>
-    <div class="close-h"><span class="l1">Now let&rsquo;s go to</span><span class="l2">your tools.</span></div>
-    <div class="close-sub">Three things to bring into the breakout. Pick one. Try to ship it by Friday.</div>
-    <div class="close-prompts-h">Bring to the breakout</div>
-    <div class="close-prompts">
-      <div class="close-prompt">
-        <div class="qn">01</div>
-        <div class="qt">ONE repetitive task you&rsquo;d hand to a twin tomorrow.</div>
-      </div>
-      <div class="close-prompt">
-        <div class="qn">02</div>
-        <div class="qt">ONE piece of context that lives in your head and shouldn&rsquo;t.</div>
-      </div>
-      <div class="close-prompt">
-        <div class="qn">03</div>
-        <div class="qt">ONE workflow you could try to ship by Friday.</div>
-      </div>
-    </div>
-    <div class="close-bottom">
-      <div>
-        <div class="lbl">Speaker</div>
-        <div class="v acc">Christoph Erler</div>
-        <div class="v" style="font-size: 0.78rem; font-weight: 400; color: var(--muted); margin-top: 0.25rem;">Founder, Erler Ventures</div>
-        <div class="v" style="font-size: 0.78rem; font-weight: 500; margin-top: 0.4rem;"><a href="mailto:chris@erlerventures.org">chris@erlerventures.org</a></div>
-      </div>
-      <div class="right">
-        <div class="lbl">Event</div>
-        <div class="v">Value of We &middot; AI Workshop</div>
-        <div class="v" style="font-size: 0.78rem; font-weight: 400; color: var(--muted); margin-top: 0.25rem;">Berlin &middot; 19 May 2026</div>
-        <div class="v" style="font-size: 0.78rem; font-weight: 500; margin-top: 0.4rem;"><a href="https://erlerventures.org">erlerventures.org</a></div>
-      </div>
     </div>
     <div class="brand">Value of We &middot; Erler Ventures</div>
     <div class="page-num">13 / 13</div>
