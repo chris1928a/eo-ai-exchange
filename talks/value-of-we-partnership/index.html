@@ -150,7 +150,22 @@
   .hub-foot { font-size: 1.05rem; font-weight: 500; color: var(--text); line-height: 1.55; max-width: 80ch; padding-top: 1.25rem; border-top: 1px solid var(--border); }
   .hub-foot strong { color: var(--accent); font-weight: 700; }
 
-  /* CASE (Slide 8 - anonymous recruiting agency) */
+  /* COWORK FLOWS (Slide 8) */
+  .flows { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 1.5rem; }
+  .flow-col { display: flex; flex-direction: column; gap: 0; }
+  .flow-head { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); padding-bottom: 0.75rem; border-bottom: 2px solid var(--accent); margin-bottom: 0.5rem; }
+  .flow-item { display: grid; grid-template-columns: 2.5rem 1fr; gap: 1rem; align-items: baseline; padding: 0.85rem 0; border-bottom: 1px solid var(--border); }
+  .flow-item:last-child { border-bottom: none; }
+  .flow-item .fn { font-weight: 700; font-size: 1.05rem; color: var(--accent); letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
+  .flow-item .fc { display: flex; flex-direction: column; gap: 0.2rem; }
+  .flow-item .ft { font-weight: 700; font-size: 0.95rem; color: var(--text); letter-spacing: -0.005em; }
+  .flow-item .fd { font-size: 0.78rem; color: var(--muted); line-height: 1.55; }
+  .flow-item .fd strong { color: var(--text); font-weight: 600; }
+  .flow-item .fd code { font-family: var(--mono); font-size: 0.72rem; background: var(--code-bg); padding: 0.05rem 0.3rem; border-radius: 3px; color: var(--accent); }
+  .flows-foot { font-size: 0.95rem; font-weight: 500; color: var(--text); line-height: 1.55; padding-top: 1rem; border-top: 1px solid var(--border); max-width: 80ch; }
+  .flows-foot strong { color: var(--accent); font-weight: 700; }
+
+  /* CASE (Slide 9 - anonymous recruiting agency) */
   .case-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-bottom: 1.5rem; align-items: start; }
   .case-stat { display: flex; flex-direction: column; gap: 0.4rem; }
   .case-stat .n { font-weight: 700; font-size: clamp(2.4rem, 5vw, 4rem); line-height: 1; color: var(--accent); letter-spacing: -0.04em; font-variant-numeric: tabular-nums; }
@@ -267,7 +282,7 @@
     <p class="cover-sub">Two layers on one shared brain. A CEO Decision Cockpit on top. A Team Cowork model underneath. Both working today, both built and tested on live clients.</p>
     <p class="cover-meta"><span class="who">Christoph Erler &middot; Founder, Erler Ventures</span><span class="when">Working pitch &middot; not for distribution</span></p>
     <div class="brand">Erler Ventures</div>
-    <div class="page-num">01 / 14</div>
+    <div class="page-num">01 / 15</div>
   </section>
 
   <!-- 02 WHY - CEO PAIN -->
@@ -293,7 +308,7 @@
     </div>
     <div class="pain-foot">The bottleneck isn&rsquo;t data. <span class="accent">It&rsquo;s the unified frame to think with.</span></div>
     <div class="brand">Erler Ventures</div>
-    <div class="page-num">02 / 14</div>
+    <div class="page-num">02 / 15</div>
   </section>
 
   <!-- 03 WHY - TEAM PAIN -->
@@ -319,7 +334,7 @@
     </div>
     <div class="pain-foot">The cost isn&rsquo;t software. <span class="accent">It&rsquo;s the dispersed context your team rebuilds, every single day.</span></div>
     <div class="brand">Erler Ventures</div>
-    <div class="page-num">03 / 14</div>
+    <div class="page-num">03 / 15</div>
   </section>
 
   <!-- 04 TWO-LAYER SOLUTION -->
@@ -354,7 +369,7 @@
     </div>
     <div class="twolayer-foot">Each layer is useful alone. <span class="accent">Together they compound:</span> better decisions, on shared context, every day.</div>
     <div class="brand">Erler Ventures</div>
-    <div class="page-num">04 / 14</div>
+    <div class="page-num">04 / 15</div>
   </section>
 
   <!-- 05 LAYER 1: CEO TWIN FRAMEWORK -->
@@ -405,7 +420,7 @@
     </div>
     <div class="layer-foot">A decision that contradicts <strong>3 or more layers</strong> triggers a stop-and-think alert. The Twin refuses to push it through.</div>
     <div class="brand">Erler Ventures</div>
-    <div class="page-num">05 / 14</div>
+    <div class="page-num">05 / 15</div>
   </section>
 
   <!-- 06 LAYER 1 IN ACTION - DECISIONS ON TAPE -->
@@ -449,7 +464,7 @@
       </tbody>
     </table>
     <div class="brand">Erler Ventures</div>
-    <div class="page-num">06 / 14</div>
+    <div class="page-num">06 / 15</div>
   </section>
 
   <!-- 07 LAYER 2 - TEAM TWIN VISUAL -->
@@ -509,10 +524,69 @@
     </div>
     <div class="hub-foot">Transcripts, decisions, briefs flow <strong>in</strong>. A weekly cowork session pulls answers <strong>out</strong>. <strong>AI doesn&rsquo;t replace the meeting. It makes the meeting sharper.</strong></div>
     <div class="brand">Erler Ventures</div>
-    <div class="page-num">07 / 14</div>
+    <div class="page-num">07 / 15</div>
   </section>
 
-  <!-- 08 USE CASE - A RECRUITING AGENCY -->
+  <!-- 08 LAYER 2 IN ACTION - COWORK FLOWS -->
+  <section class="slide" id="s_flows">
+    <div class="label">Layer 2 in action &middot; how the team and the brain trade context</div>
+    <h2 class="title">The team feeds the brain.<br><span class="accent">The brain feeds back.</span></h2>
+    <div class="flows">
+      <div class="flow-col">
+        <div class="flow-head">What the team puts in</div>
+        <div class="flow-item">
+          <div class="fn">01</div>
+          <div class="fc">
+            <div class="ft">Pull requests to a shared GitHub repo</div>
+            <div class="fd">Sales adds a transcript. Marketing updates voice rules. Founder logs a decision. Ops updates a process. <strong>The brain version-controls itself.</strong> Every change is reviewable, revertible, audit-trailed.</div>
+          </div>
+        </div>
+        <div class="flow-item">
+          <div class="fn">02</div>
+          <div class="fc">
+            <div class="ft">Live data syncs, on a schedule</div>
+            <div class="fd"><code>sales_bridge.py</code> hourly. <code>financial_pull.py</code> every 6h. <code>pipeline_daily.py</code> Mon-Fri 18:30. <strong>The team feeds the brain by working, not by uploading.</strong></div>
+          </div>
+        </div>
+        <div class="flow-item">
+          <div class="fn">03</div>
+          <div class="fc">
+            <div class="ft">Friday cowork session</div>
+            <div class="fd">Founder + me, online, brain open. Past week reviewed, this week&rsquo;s risks surfaced, one new Twin output drafted live. <strong>The session ships back to the brain as a commit.</strong></div>
+          </div>
+        </div>
+      </div>
+      <div class="flow-col">
+        <div class="flow-head">What the brain feeds back</div>
+        <div class="flow-item">
+          <div class="fn">01</div>
+          <div class="fc">
+            <div class="ft">Frame-checked answers, in Slack or in the meeting</div>
+            <div class="fd">&ldquo;What does the brain say about this hire?&rdquo; Twin pulls all 5 layers, returns a frame-stamped recommendation. <strong>20 seconds.</strong> Right where the team is already working.</div>
+          </div>
+        </div>
+        <div class="flow-item">
+          <div class="fn">02</div>
+          <div class="fc">
+            <div class="ft">Drafts in the founder&rsquo;s voice</div>
+            <div class="fd">Customer replies, LinkedIn posts, internal updates. <strong>Pattern-checked against the voice library before they leave the brain.</strong> Founder reviews, ships.</div>
+          </div>
+        </div>
+        <div class="flow-item">
+          <div class="fn">03</div>
+          <div class="fc">
+            <div class="ft">Risk flags before they bite</div>
+            <div class="fd">Pipeline stagnation, customer concentration, OKR drift, stress signals before a decision push. <strong>The brain surfaces them in the morning brief,</strong> not in the next quarterly review.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flows-foot">The brain isn&rsquo;t a tool the team opens. <strong>It&rsquo;s the layer behind the tools the team already uses.</strong></div>
+    <div class="brand">Erler Ventures</div>
+    <div class="page-num">08 / 15</div>
+  </section>
+
+  <!-- 09 USE CASE - A RECRUITING AGENCY -->
   <section class="slide" id="s8">
     <div class="label">Use case &middot; a recruiting agency</div>
     <h2 class="title">30 people. ~3M EUR ARR.<br><span class="accent">Both layers live, week one.</span></h2>
@@ -542,7 +616,7 @@
     </div>
     <div class="case-foot">Not a Notion template. Not a chatbot. <span class="accent">A working pair of instruments.</span></div>
     <div class="brand">Erler Ventures</div>
-    <div class="page-num">08 / 14</div>
+    <div class="page-num">09 / 15</div>
   </section>
 
   <!-- 09 LIVE PULLS -->
@@ -585,7 +659,7 @@
     </table>
     <div class="pull-foot"><strong>All in Python. All in git.</strong> ~200 lines per pull. No vendor platform. No n8n, no make.com. Cron and Lambda for the schedules.</div>
     <div class="brand">Erler Ventures</div>
-    <div class="page-num">09 / 14</div>
+    <div class="page-num">10 / 15</div>
   </section>
 
   <!-- 10 AUTONOMY TIERS -->
@@ -627,7 +701,7 @@
       </div>
     </div>
     <div class="brand">Erler Ventures</div>
-    <div class="page-num">10 / 14</div>
+    <div class="page-num">11 / 15</div>
   </section>
 
   <!-- 11 BORING STACK -->
@@ -653,7 +727,7 @@
     </div>
     <div class="stack-foot">The team <span class="accent">never opens a tool that didn&rsquo;t already exist.</span> The Twin pair lives behind the tools the company already uses.</div>
     <div class="brand">Erler Ventures</div>
-    <div class="page-num">11 / 14</div>
+    <div class="page-num">12 / 15</div>
   </section>
 
   <!-- 12 WHAT THIS IS FOR YOUR COMPANY -->
@@ -674,7 +748,7 @@
     </div>
     <div class="yc-foot">Same 5-layer frame. Same live-pull architecture. <strong>Different data sources, different mentor library, different vocabulary.</strong></div>
     <div class="brand">Erler Ventures</div>
-    <div class="page-num">12 / 14</div>
+    <div class="page-num">13 / 15</div>
   </section>
 
   <!-- 13 THE MOAT -->
@@ -703,7 +777,7 @@
       </div>
     </div>
     <div class="brand">Erler Ventures</div>
-    <div class="page-num">13 / 14</div>
+    <div class="page-num">14 / 15</div>
   </section>
 
   <!-- 14 ENGAGEMENT + NEXT STEP -->
@@ -738,7 +812,7 @@
       <div class="ct">A 60-minute live walkthrough of the working Twin pair. Real screen, real decisions, real numbers. <a href="https://calendly.com/chris-gdvo/30min">calendly.com/chris-gdvo/30min</a></div>
     </div>
     <div class="brand">Erler Ventures</div>
-    <div class="page-num">14 / 14</div>
+    <div class="page-num">15 / 15</div>
   </section>
 
 </div>
