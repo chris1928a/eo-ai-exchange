@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="googlebot" content="noindex, nofollow" />
+<title>The Digital Company Twin, Erler Ventures x Value of We pitch, May 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #ffffff;
+    --text: #09090b;
+    --muted: #71717a;
+    --faint: #a1a1aa;
+    --accent: #2563eb;
+    --accent-deep: #1d4ed8;
+    --accent-soft: #eff6ff;
+    --border: #f1f5f9;
+    --border-strong: #e2e8f0;
+    --code-bg: #f4f4f5;
+    --red: #dc2626;
+    --green: #16a34a;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    height: 100%; width: 100%; background: var(--bg); color: var(--text);
+    font-family: var(--sans); -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: 'ss01', 'cv11';
+  }
+
+  .deck { width: 100vw; height: 100vh; overflow: hidden; position: relative; }
+  .slide {
+    width: 100vw; height: 100vh; position: absolute; top: 0; left: 0;
+    display: none; padding: 11vh 11vw;
+    flex-direction: column; justify-content: center;
+    background: var(--bg);
+  }
+  .slide.active { display: flex; }
+
+  .label {
+    position: absolute; top: 6vh; left: 11vw;
+    font-size: 0.68rem; font-weight: 500; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--muted);
+    display: flex; align-items: center; gap: 0.7rem;
+  }
+  .label::before { content: ''; width: 1.25rem; height: 1px; background: var(--accent); }
+
+  .page-num {
+    position: absolute; bottom: 5vh; right: 11vw;
+    font-size: 0.68rem; font-weight: 400; color: var(--faint);
+    letter-spacing: 0.1em; font-variant-numeric: tabular-nums;
+  }
+  .brand {
+    position: absolute; bottom: 5vh; left: 11vw;
+    font-size: 0.68rem; font-weight: 400; color: var(--faint);
+    letter-spacing: 0.1em; text-transform: uppercase;
+  }
+
+  /* COVER */
+  .cover-eyebrow {
+    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 2.5rem;
+  }
+  h1.cover-title {
+    font-weight: 700;
+    font-size: clamp(2.8rem, 6.5vw, 6rem); line-height: 1.02;
+    letter-spacing: -0.045em; color: var(--text);
+    margin-bottom: 2.5rem; max-width: 22ch;
+  }
+  h1.cover-title .accent { color: var(--accent); }
+  .cover-sub {
+    font-size: clamp(1.05rem, 1.5vw, 1.4rem); font-weight: 400;
+    color: var(--muted); max-width: 60ch; line-height: 1.5;
+    margin-bottom: 3.5rem;
+  }
+  .cover-meta {
+    font-size: 0.85rem; font-weight: 400; color: var(--text);
+    letter-spacing: 0.01em; line-height: 1.7;
+  }
+  .cover-meta .who { font-weight: 600; display: block; }
+  .cover-meta .when { color: var(--muted); }
+
+  h2.title {
+    font-weight: 600;
+    font-size: clamp(2.5rem, 4.5vw, 4rem); line-height: 1.05;
+    letter-spacing: -0.035em; color: var(--text);
+    margin-bottom: 3.5rem; max-width: 24ch;
+  }
+  h2.title .accent { color: var(--accent); font-weight: 700; }
+
+  /* PAIN CELLS (Slide 2) */
+  .pains { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 2rem; }
+  .pain { display: flex; flex-direction: column; gap: 0.5rem; padding: 1.5rem 1.4rem; border: 1px solid var(--border-strong); border-radius: 8px; background: var(--bg); }
+  .pain .pn { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--red); }
+  .pain .pt { font-weight: 600; font-size: 1.1rem; color: var(--text); letter-spacing: -0.01em; line-height: 1.3; }
+  .pain .pd { font-size: 0.82rem; font-weight: 400; color: var(--muted); line-height: 1.5; }
+  .pain-foot { font-size: 1.05rem; font-weight: 500; color: var(--text); line-height: 1.55; max-width: 78ch; padding-top: 1.25rem; border-top: 1px solid var(--border); }
+  .pain-foot .accent { color: var(--accent); font-weight: 700; }
+
+  /* CASE (Slide 3) */
+  .case-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-bottom: 1.5rem; align-items: start; }
+  .case-stat { display: flex; flex-direction: column; gap: 0.4rem; }
+  .case-stat .n { font-weight: 700; font-size: clamp(2.4rem, 5vw, 4rem); line-height: 1; color: var(--accent); letter-spacing: -0.04em; font-variant-numeric: tabular-nums; }
+  .case-stat .lbl { font-weight: 600; font-size: 1rem; color: var(--text); letter-spacing: -0.005em; margin-top: 0.3rem; }
+  .case-stat .sub { font-size: 0.82rem; color: var(--muted); line-height: 1.4; margin-top: 0.2rem; }
+  .case-body { font-size: 1rem; color: var(--text); line-height: 1.65; }
+  .case-body p { margin-bottom: 0.85rem; }
+  .case-body strong { color: var(--accent); font-weight: 600; }
+  .case-foot { font-size: 0.95rem; font-weight: 500; color: var(--muted); line-height: 1.55; padding-top: 1.25rem; border-top: 1px solid var(--border); font-style: italic; }
+  .case-foot .accent { color: var(--accent); font-style: normal; font-weight: 600; }
+
+  /* LAYER STACK (Slide 4) */
+  .layer-stack { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem; }
+  .l-row { display: grid; grid-template-columns: 0.35rem 6rem 1fr; gap: 1.5rem; align-items: center; padding: 1.1rem 0; border-bottom: 1px solid var(--border); }
+  .l-row:first-child { border-top: 1px solid var(--border); }
+  .l-bar { background: var(--accent); height: 2.4rem; border-radius: 2px; }
+  .l-tag { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); font-variant-numeric: tabular-nums; }
+  .l-body { display: flex; flex-direction: column; gap: 0.15rem; }
+  .l-name { font-weight: 700; font-size: 1.1rem; color: var(--text); letter-spacing: -0.005em; }
+  .l-desc { font-weight: 400; font-size: 0.88rem; color: var(--muted); line-height: 1.5; }
+  .l-desc strong { color: var(--text); font-weight: 600; }
+  .layer-foot { font-size: 0.95rem; font-weight: 500; color: var(--text); line-height: 1.55; padding-top: 1rem; border-top: 1px solid var(--border); }
+  .layer-foot strong { color: var(--accent); }
+
+  /* PULL TABLE (Slide 5) */
+  .pull-table { width: 100%; border-collapse: collapse; }
+  .pull-table th { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); border-bottom: 2px solid var(--text); padding: 0.6rem 0.8rem; text-align: left; }
+  .pull-table td { padding: 0.7rem 0.8rem; border-bottom: 1px solid var(--border-strong); font-size: 0.82rem; vertical-align: top; line-height: 1.4; }
+  .pull-table .file { font-family: var(--mono); font-weight: 600; color: var(--accent); white-space: nowrap; font-size: 0.78rem; }
+  .pull-table .what { color: var(--text); font-weight: 500; }
+  .pull-table .nums { color: var(--muted); font-size: 0.78rem; }
+  .pull-foot { margin-top: 1rem; padding: 0.85rem 1.1rem; background: var(--accent-soft); border-left: 3px solid var(--accent); font-size: 0.85rem; line-height: 1.5; color: var(--text); border-radius: 0 4px 4px 0; }
+  .pull-foot strong { color: var(--accent); font-weight: 700; }
+
+  /* DECISIONS TABLE (Slide 6) */
+  .dec-table { width: 100%; border-collapse: collapse; }
+  .dec-table th { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); border-bottom: 2px solid var(--text); padding: 0.6rem 0.8rem; text-align: left; }
+  .dec-table td { padding: 0.7rem 0.8rem; border-bottom: 1px solid var(--border-strong); font-size: 0.85rem; vertical-align: top; line-height: 1.4; }
+  .dec-table .dec { font-weight: 700; color: var(--text); }
+  .dec-table .dec small { display: block; color: var(--muted); font-weight: 400; font-size: 0.72rem; margin-top: 0.2rem; }
+  .dec-table .cat { font-family: var(--mono); font-weight: 600; color: var(--accent); white-space: nowrap; font-size: 0.78rem; }
+  .dec-table .rec { color: var(--text); font-size: 0.82rem; }
+  .dec-table .rec strong { color: var(--accent); font-weight: 600; }
+
+  /* TIERS (Slide 7) */
+  .tiers { display: flex; flex-direction: column; }
+  .tier { display: grid; grid-template-columns: 5rem 1fr 1fr; gap: 2rem; align-items: baseline; padding: 1.2rem 0; border-bottom: 1px solid var(--border); }
+  .tier:first-child { border-top: 1px solid var(--border); }
+  .tier .tg { font-weight: 700; font-size: 1.5rem; line-height: 1; color: var(--accent); letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+  .tier .desc { display: flex; flex-direction: column; gap: 0.25rem; }
+  .tier .dh { font-weight: 600; font-size: 1rem; color: var(--text); }
+  .tier .dd { font-weight: 400; font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
+  .tier .who { font-size: 0.85rem; color: var(--text); font-weight: 500; line-height: 1.4; }
+  .tier .who strong { color: var(--accent); font-weight: 700; }
+
+  /* STACK COLS (Slide 8) */
+  .stack-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 1.5rem; }
+  .sc { display: flex; flex-direction: column; gap: 0.5rem; padding: 1.5rem 1.4rem; border: 1px solid var(--border-strong); border-radius: 8px; }
+  .sc.lead { border-color: var(--accent); border-width: 2px; background: var(--accent-soft); }
+  .sc .sct { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+  .sc.lead .sct { color: var(--accent); }
+  .sc .scn { font-weight: 700; font-size: 1.3rem; color: var(--text); letter-spacing: -0.015em; margin-top: 0.3rem; }
+  .sc.lead .scn { color: var(--accent); }
+  .sc .scd { font-size: 0.85rem; color: var(--text); line-height: 1.5; }
+  .sc .scd code { font-family: var(--mono); font-size: 0.78rem; background: var(--code-bg); padding: 0.1rem 0.35rem; border-radius: 3px; color: var(--accent); }
+  .stack-foot { font-size: 1rem; font-weight: 500; color: var(--text); line-height: 1.55; padding-top: 1.25rem; border-top: 1px solid var(--border); }
+  .stack-foot .accent { color: var(--accent); font-weight: 700; }
+
+  /* VOW LAYERS (Slide 9) */
+  .vow-grid { display: grid; grid-template-columns: 6rem 1fr; gap: 1.5rem; row-gap: 0.5rem; margin-bottom: 1.5rem; }
+  .vow-grid .vtag { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); padding-top: 1rem; border-top: 1px solid var(--border); font-variant-numeric: tabular-nums; }
+  .vow-grid .vdesc { padding-top: 1rem; border-top: 1px solid var(--border); }
+  .vow-grid .vdesc strong { color: var(--text); font-weight: 600; font-size: 1rem; display: block; margin-bottom: 0.2rem; }
+  .vow-grid .vdesc span { color: var(--muted); font-size: 0.85rem; line-height: 1.5; display: block; }
+  .vow-foot { font-size: 0.95rem; font-weight: 500; color: var(--muted); line-height: 1.55; padding-top: 1rem; border-top: 1px solid var(--border); font-style: italic; }
+  .vow-foot strong { color: var(--accent); font-style: normal; font-weight: 700; }
+
+  /* G2 SLIDE (Slide 10) */
+  .g2-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; margin-bottom: 1.5rem; }
+  .g2-col { display: flex; flex-direction: column; gap: 1rem; }
+  .g2-col .gtag { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); }
+  .g2-col .gh { font-weight: 700; font-size: 1.5rem; color: var(--text); letter-spacing: -0.02em; line-height: 1.2; }
+  .g2-col p { font-size: 0.95rem; color: var(--muted); line-height: 1.6; }
+  .g2-col p strong { color: var(--text); font-weight: 600; }
+  .g2-foot { font-size: 1rem; font-weight: 500; color: var(--text); line-height: 1.55; padding-top: 1.25rem; border-top: 1px solid var(--border); }
+  .g2-foot .accent { color: var(--accent); font-weight: 700; }
+
+  /* MOAT (Slide 11) */
+  .moat-quote { padding: 2rem 2.2rem; border-left: 4px solid var(--accent); background: var(--accent-soft); border-radius: 0 6px 6px 0; margin-bottom: 2.5rem; }
+  .moat-quote .q { font-weight: 600; font-size: clamp(1.4rem, 2.2vw, 1.8rem); color: var(--text); line-height: 1.4; letter-spacing: -0.015em; margin-bottom: 1rem; }
+  .moat-quote .src { font-size: 0.78rem; color: var(--accent); font-weight: 600; letter-spacing: 0.05em; }
+  .moat-proof { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+  .mp { display: flex; flex-direction: column; gap: 0.35rem; padding-top: 1rem; border-top: 2px solid var(--accent); }
+  .mp .mph { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); }
+  .mp .mpt { font-weight: 700; font-size: 1.05rem; color: var(--text); letter-spacing: -0.005em; }
+  .mp .mpd { font-weight: 400; font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
+
+  /* ENGAGEMENT (Slide 12) */
+  .phases { display: flex; flex-direction: column; margin-bottom: 1.5rem; }
+  .phase { display: grid; grid-template-columns: 7rem 1fr 8rem; gap: 2rem; align-items: baseline; padding: 1.3rem 0; border-bottom: 1px solid var(--border); }
+  .phase:first-child { border-top: 1px solid var(--border); }
+  .phase .pp { font-weight: 700; font-size: 0.85rem; color: var(--accent); letter-spacing: 0.06em; text-transform: uppercase; }
+  .phase .pcontent { display: flex; flex-direction: column; gap: 0.3rem; }
+  .phase .pt { font-weight: 600; font-size: 1.05rem; color: var(--text); letter-spacing: -0.005em; }
+  .phase .pd { font-weight: 400; font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
+  .phase .pprice { font-weight: 700; font-size: 1.2rem; color: var(--text); letter-spacing: -0.02em; text-align: right; font-variant-numeric: tabular-nums; }
+  .eng-cta { margin-top: 1.25rem; padding: 1.1rem 1.4rem; background: var(--accent-soft); border-left: 3px solid var(--accent); border-radius: 0 4px 4px 0; }
+  .eng-cta .ch { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+  .eng-cta .ct { font-weight: 600; font-size: 1.05rem; color: var(--text); line-height: 1.5; }
+  .eng-cta .ct a { color: var(--accent); text-decoration: none; font-weight: 700; }
+  .eng-cta .ct a:hover { text-decoration: underline; }
+
+  .nav-hint { position: fixed; bottom: 1rem; left: 50%; transform: translateX(-50%); font-size: 0.65rem; color: var(--faint); opacity: 0.5; pointer-events: none; letter-spacing: 0.06em; }
+  .nav-hint.hidden { opacity: 0; transition: opacity 0.5s; }
+
+  @media print {
+    @page { size: 13.3in 7.5in; margin: 0; }
+    .deck { height: auto; }
+    .slide { display: flex !important; height: 7.5in; width: 13.3in; page-break-after: always; }
+    .nav-hint { display: none; }
+  }
+
+  @media (max-width: 900px) {
+    .slide { padding: 7vh 7vw; }
+    .label { top: 4vh; left: 7vw; }
+    .page-num, .brand { bottom: 3vh; }
+    .page-num { right: 7vw; }
+    .brand { left: 7vw; }
+    .pains, .stack-cols, .moat-proof { grid-template-columns: 1fr; }
+    .case-hero, .g2-hero { grid-template-columns: 1fr; gap: 1.5rem; }
+    .l-row { grid-template-columns: 0.3rem 1fr; }
+    .l-tag, .l-body { grid-column: 2; }
+    .tier { grid-template-columns: 3rem 1fr; }
+    .tier .who { grid-column: 2; }
+    .vow-grid { grid-template-columns: 1fr; }
+    .vow-grid .vtag { border-top: 1px solid var(--border); padding-top: 1rem; }
+    .vow-grid .vdesc { border-top: none; padding-top: 0; }
+    .phase { grid-template-columns: 1fr; }
+    .phase .pprice { text-align: left; }
+  }
+</style>
+</head>
+<body>
+<div class="deck">
+
+  <!-- 01 COVER -->
+  <section class="slide active" id="s1">
+    <div class="cover-eyebrow">Erler Ventures &times; Value of We &middot; Richard Petrich &middot; May 2026</div>
+    <h1 class="cover-title">The Digital<br><span class="accent">Company Twin.</span></h1>
+    <p class="cover-sub">A working CEO Decision Cockpit. Built on a 30-person agency. Adapted for Value of We and G2 Esports.</p>
+    <p class="cover-meta"><span class="who">Christoph Erler &middot; Founder, Erler Ventures</span><span class="when">Pitch for the follow-up to the 19 May AI Workshop</span></p>
+    <div class="brand">Erler Ventures &middot; for Value of We</div>
+    <div class="page-num">01 / 12</div>
+  </section>
+
+  <!-- 02 CEO PROBLEM -->
+  <section class="slide" id="s2">
+    <div class="label">What this pitch is about</div>
+    <h2 class="title">Your CEO has more data than ever.<br><span class="accent">And less clarity than ever.</span></h2>
+    <div class="pains">
+      <div class="pain">
+        <div class="pn">Pain 01</div>
+        <div class="pt">Truth lives in 6 tools</div>
+        <div class="pd">Sales CRM, Delivery CRM, finance sheet, OKR doc, Slack, the founder&rsquo;s head. None of them talk.</div>
+      </div>
+      <div class="pain">
+        <div class="pn">Pain 02</div>
+        <div class="pt">By the time the picture is assembled, the decision window has closed</div>
+        <div class="pd">Most CEO decisions get made on gut and the last Slack message, not on a unified frame.</div>
+      </div>
+      <div class="pain">
+        <div class="pn">Pain 03</div>
+        <div class="pt">No memory between decisions</div>
+        <div class="pd">The same hire, pricing, or churn question gets re-debated every quarter. Nobody logs the reasoning.</div>
+      </div>
+    </div>
+    <div class="pain-foot">The bottleneck isn&rsquo;t data. <span class="accent">It&rsquo;s the unified frame to think with.</span></div>
+    <div class="brand">Erler Ventures &middot; for Value of We</div>
+    <div class="page-num">02 / 12</div>
+  </section>
+
+  <!-- 03 RC CASE -->
+  <section class="slide" id="s3">
+    <div class="label">Built, not pitched</div>
+    <h2 class="title">Recruitment Circle. One CEO.<br><span class="accent">One Decision Cockpit.</span></h2>
+    <div class="case-hero">
+      <div>
+        <div class="case-stat">
+          <div class="n">30</div>
+          <div class="lbl">people</div>
+          <div class="sub">DACH B2B Tech Recruiting agency, hyper-growth, founder-led.</div>
+        </div>
+        <div class="case-stat" style="margin-top: 2rem;">
+          <div class="n">3M&nbsp;EUR</div>
+          <div class="lbl">ARR</div>
+          <div class="sub">486 placements lifetime. 181 in the last 24 months. Active pipeline 1.14M EUR.</div>
+        </div>
+        <div class="case-stat" style="margin-top: 2rem;">
+          <div class="n">85<span style="font-size: 0.5em;">%</span></div>
+          <div class="lbl">decision coverage</div>
+          <div class="sub">As of 14 May 2026. Operational since the same day.</div>
+        </div>
+      </div>
+      <div class="case-body">
+        <p>Raphael is the founder-CEO. <strong>The bottleneck wasn&rsquo;t data. It was that no human can hold sales, delivery, finance, OKRs, ICP and 4 mentor patterns in one frame, in real time, while a Slack message comes in.</strong></p>
+        <p>So we built one. The Cockpit pulls every layer of company truth into a single decision frame. Live. It doesn&rsquo;t decide. It catches what the CEO would have missed.</p>
+        <p>This week it shipped <strong>5 frame-checked strategic decisions</strong> across termination, customer concentration, pricing, and strategic direction. Every one logged with a 30-day outcome review.</p>
+      </div>
+    </div>
+    <div class="case-foot">Not a Notion template. Not a chatbot. <span class="accent">A working instrument.</span></div>
+    <div class="brand">Erler Ventures &middot; for Value of We</div>
+    <div class="page-num">03 / 12</div>
+  </section>
+
+  <!-- 04 5-LAYER FRAMEWORK -->
+  <section class="slide" id="s4">
+    <div class="label">How it actually thinks</div>
+    <h2 class="title">5 layers.<br><span class="accent">Every strategic decision runs through them, in order.</span></h2>
+    <div class="layer-stack">
+      <div class="l-row">
+        <div class="l-bar"></div>
+        <div class="l-tag">Layer 01</div>
+        <div class="l-body">
+          <div class="l-name">Sales + Delivery CRM Reality</div>
+          <div class="l-desc">Wons, losses, pipeline, customer concentration, active mandates. <strong>Hard facts before opinions.</strong></div>
+        </div>
+      </div>
+      <div class="l-row">
+        <div class="l-bar"></div>
+        <div class="l-tag">Layer 02</div>
+        <div class="l-body">
+          <div class="l-name">Financial Dashboard</div>
+          <div class="l-desc">Cashflow, headcount, liquidity drawdown trend, KPIs. <strong>The decision has to survive the P&amp;L.</strong></div>
+        </div>
+      </div>
+      <div class="l-row">
+        <div class="l-bar"></div>
+        <div class="l-tag">Layer 03</div>
+        <div class="l-body">
+          <div class="l-name">Quarterly OKRs</div>
+          <div class="l-desc">Sprint commitments. <strong>A decision that breaks the sprint needs a louder reason.</strong></div>
+        </div>
+      </div>
+      <div class="l-row">
+        <div class="l-bar"></div>
+        <div class="l-tag">Layer 04</div>
+        <div class="l-body">
+          <div class="l-name">Strategy Lock</div>
+          <div class="l-desc">ICP, positioning, pricing, service tiers, tagline. <strong>The frozen choices the company has already paid to make.</strong></div>
+        </div>
+      </div>
+      <div class="l-row">
+        <div class="l-bar"></div>
+        <div class="l-tag">Layer 05</div>
+        <div class="l-body">
+          <div class="l-name">Mentor Avatars</div>
+          <div class="l-desc">Pattern-match against 3-5 of the best operators in your space. <strong>What would the smartest peer say to this?</strong></div>
+        </div>
+      </div>
+    </div>
+    <div class="layer-foot">A decision that contradicts <strong>3 or more layers</strong> triggers a stop-and-think alert. The cockpit refuses to push it through.</div>
+    <div class="brand">Erler Ventures &middot; for Value of We</div>
+    <div class="page-num">04 / 12</div>
+  </section>
+
+  <!-- 05 LIVE PULLS -->
+  <section class="slide" id="s5">
+    <div class="label">What&rsquo;s under the hood</div>
+    <h2 class="title" style="margin-bottom: 2rem;">All corporate data.<br><span class="accent">Pulled live. Always current.</span></h2>
+    <table class="pull-table">
+      <thead>
+        <tr>
+          <th style="width: 22%;">Pull</th>
+          <th style="width: 38%;">What it does</th>
+          <th style="width: 40%;">Live numbers (RC, today)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="file">close_bridge.py</td>
+          <td class="what">Sales-CRM: opportunities, wons, lost, pipeline, lead-pool, lost-reasons</td>
+          <td class="nums">411 opps, 80 wons, 530k EUR active pipeline, 20% qualified won-rate</td>
+        </tr>
+        <tr>
+          <td class="file">crm_bridge.py</td>
+          <td class="what">Delivery-CRM: active mandates, companies, candidates, recruiter ownership</td>
+          <td class="nums">15 active mandates, 391 companies, 1,000+ candidates, 26 users</td>
+        </tr>
+        <tr>
+          <td class="file">financial_pull.py</td>
+          <td class="what">Liquidity, headcount, sales/recruiting KPIs from the live finance sheet</td>
+          <td class="nums">152k EUR avg monthly revenue Q1, 130-210k personnel cost, drawdown tracked</td>
+        </tr>
+        <tr>
+          <td class="file">pipeline_daily.py</td>
+          <td class="what">Daily snapshot + diff vs. yesterday + risk flags (stagnation, overdue, drops)</td>
+          <td class="nums">Runs Mon-Fri 18:30 CET. Alerts on stage-stagnation &gt;7 days, pipeline drop &gt;10%</td>
+        </tr>
+        <tr>
+          <td class="file">stress_detector.py</td>
+          <td class="what">Pre-decision stress score with 4 trigger categories. Refuses pushes when red.</td>
+          <td class="nums">Score 0-100. Red = pause-template instead of decision-push</td>
+        </tr>
+        <tr>
+          <td class="file">renewal_tracker.py</td>
+          <td class="what">Customer renewal-cycle from won-history + custom-field override. Heatmap.</td>
+          <td class="nums">UPCOMING / RENEWAL_WINDOW / OVERDUE per customer, 60-day rolling view</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="pull-foot"><strong>All in Python. All in git.</strong> ~200 lines per pull. No vendor platform. No n8n, no make.com. Cron + Lambda for the schedules.</div>
+    <div class="brand">Erler Ventures &middot; for Value of We</div>
+    <div class="page-num">05 / 12</div>
+  </section>
+
+  <!-- 06 DECISIONS ON TAPE -->
+  <section class="slide" id="s6">
+    <div class="label">5 decisions from one week, all logged</div>
+    <h2 class="title" style="margin-bottom: 2rem;">This week the Cockpit shipped<br><span class="accent">5 frame-checked CEO decisions.</span></h2>
+    <table class="dec-table">
+      <thead>
+        <tr>
+          <th style="width: 30%;">Decision</th>
+          <th style="width: 12%;">Tier</th>
+          <th style="width: 58%;">What the Cockpit recommended</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="dec">Joshua: PIP or termination<small>SDR, 5,753 calls, 0 pitches</small></td>
+          <td class="cat">C - Monthly</td>
+          <td class="rec">30-day PIP with hard activity targets. <strong>Layer 1 caught the conversion gap. Layer 2 said firing now costs ramp-time the cashflow can&rsquo;t absorb.</strong></td>
+        </tr>
+        <tr>
+          <td class="dec">Adesso 21.5% customer concentration<small>21.5% of 24M revenue = 688k EUR</small></td>
+          <td class="cat">C - Monthly</td>
+          <td class="rec">Recruit-off-clause audit, now. <strong>Layer 1 flagged the concentration. Layer 4 said our positioning depends on diversified hyper-growth, not adesso-dependence.</strong></td>
+        </tr>
+        <tr>
+          <td class="dec">Track A/B/C strategic direction<small>Cashflow-engine vs. premium-pipeline split</small></td>
+          <td class="cat">D - Quarterly</td>
+          <td class="rec">Option C, Dual-Track. <strong>Layer 2 said pure-premium starves Q3 cash. Layer 5 said Bluebird&rsquo;s dual-channel runs 7-day TTF. Adopt the pattern.</strong></td>
+        </tr>
+        <tr>
+          <td class="dec">Pricing tier lock<small>Retainer vs. engage vs. trial</small></td>
+          <td class="cat">D - Quarterly</td>
+          <td class="rec">3-tier model: Retainer 30k, Engage hybrid, Trial 1.5k. <strong>Layer 4 frozen. No more per-deal negotiation drift.</strong></td>
+        </tr>
+        <tr>
+          <td class="dec">Mai-Test hook variant<small>4-week LinkedIn ad test</small></td>
+          <td class="cat">B - Weekly</td>
+          <td class="rec">Concept A as lead, Concept C as backup. <strong>Layer 5 pattern-match against Adriano Hermann build-in-public hooks.</strong></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="brand">Erler Ventures &middot; for Value of We</div>
+    <div class="page-num">06 / 12</div>
+  </section>
+
+  <!-- 07 AUTONOMY TIERS -->
+  <section class="slide" id="s7">
+    <div class="label">The CEO stays in the pilot seat</div>
+    <h2 class="title">The Cockpit doesn&rsquo;t fly the plane.<br><span class="accent">It catches what you missed before you decide.</span></h2>
+    <div class="tiers">
+      <div class="tier">
+        <div class="tg">A</div>
+        <div class="desc">
+          <div class="dh">Daily Tactical</div>
+          <div class="dd">LinkedIn post topic, tool trial &lt;50 EUR, outbound cadence tweak, content prompt</div>
+        </div>
+        <div class="who"><strong>Cockpit decides.</strong> CEO gets a notification, not a question.</div>
+      </div>
+      <div class="tier">
+        <div class="tg">B</div>
+        <div class="desc">
+          <div class="dh">Weekly Tactical</div>
+          <div class="dd">Sales outreach list, pricing variant for a single deal, ad hook variant, weekly priorities</div>
+        </div>
+        <div class="who"><strong>Cockpit recommends.</strong> CEO gives a quick approve in Slack or skip.</div>
+      </div>
+      <div class="tier">
+        <div class="tg">C</div>
+        <div class="desc">
+          <div class="dh">Monthly Strategic</div>
+          <div class="dd">Termination, hire, &gt;5k investment, recruiter assignment, customer escalation</div>
+        </div>
+        <div class="who"><strong>Cockpit synthesizes</strong> across 5 layers. CEO decides on the prepared frame.</div>
+      </div>
+      <div class="tier">
+        <div class="tg">D</div>
+        <div class="desc">
+          <div class="dh">Quarterly Strategic</div>
+          <div class="dd">ICP pivot, tagline change, equity, geography, M&amp;A direction</div>
+        </div>
+        <div class="who"><strong>Cockpit prepares</strong> a 5-layer brief. Operator workshop with CEO, 60-90 min.</div>
+      </div>
+    </div>
+    <div class="brand">Erler Ventures &middot; for Value of We</div>
+    <div class="page-num">07 / 12</div>
+  </section>
+
+  <!-- 08 BORING STACK -->
+  <section class="slide" id="s8">
+    <div class="label">The stack underneath</div>
+    <h2 class="title">Plain files. Open APIs.<br><span class="accent">No vendor lock-in.</span></h2>
+    <div class="stack-cols">
+      <div class="sc">
+        <div class="sct">Live layer</div>
+        <div class="scn">cron + Lambda</div>
+        <div class="scd">AWS schedules + Python pulls. Runs on a clock, no babysitting. <code>~$5/month</code>.</div>
+      </div>
+      <div class="sc lead">
+        <div class="sct">Truth layer</div>
+        <div class="scn">GitHub + Notion + Drive</div>
+        <div class="scd">Every fact is a file. Diff-able, reviewable, audit-trailed. <strong>Open APIs. You own the truth.</strong></div>
+      </div>
+      <div class="sc">
+        <div class="sct">Instrument layer</div>
+        <div class="scn">Claude</div>
+        <div class="scd">Synthesizes the 5 layers into a decision frame. Replaceable with any frontier model in 1 day.</div>
+      </div>
+    </div>
+    <div class="stack-foot">The CEO <span class="accent">never opens a tool that didn&rsquo;t already exist.</span> The Cockpit lives behind the tools the company already uses.</div>
+    <div class="brand">Erler Ventures &middot; for Value of We</div>
+    <div class="page-num">08 / 12</div>
+  </section>
+
+  <!-- 09 FOR VOW -->
+  <section class="slide" id="s9">
+    <div class="label">Translated to Value of We</div>
+    <h2 class="title">Same instruments.<br><span class="accent">Different aircraft.</span></h2>
+    <div class="vow-grid">
+      <div class="vtag">Layer 01</div>
+      <div class="vdesc"><strong>Project + Retainer CRM Reality</strong><span>Active projects per client, retainer health, pipeline by brand, scope-creep flags, billable utilization per team member</span></div>
+      <div class="vtag">Layer 02</div>
+      <div class="vdesc"><strong>Financial Dashboard</strong><span>P&amp;L by client, utilization rate, headcount load, monthly recurring revenue from retainers vs. one-off project margin</span></div>
+      <div class="vtag">Layer 03</div>
+      <div class="vdesc"><strong>Quarterly Client + Revenue OKRs</strong><span>Account growth targets, new logo targets, retention-rate sprint, brand IP commitments per quarter</span></div>
+      <div class="vtag">Layer 04</div>
+      <div class="vdesc"><strong>VOW Strategy Lock</strong><span>ICP brand profile, channel mix (Esports / Web3 / Metaverse weight), partnership model, premium positioning, AI-smart agency thesis</span></div>
+      <div class="vtag">Layer 05</div>
+      <div class="vdesc"><strong>Agency Mentor Avatars</strong><span>3-4 best-in-class agency operators in your space. Pattern-match every strategic VOW decision against how they would have called it.</span></div>
+    </div>
+    <div class="vow-foot">Same 5-layer frame. Same live-pull architecture. <strong>Different data sources, different mentor library, different vocabulary.</strong></div>
+    <div class="brand">Erler Ventures &middot; for Value of We</div>
+    <div class="page-num">09 / 12</div>
+  </section>
+
+  <!-- 10 G2 ESPORTS -->
+  <section class="slide" id="s10">
+    <div class="label">And for your biggest client</div>
+    <h2 class="title">G2 Esports as the flagship.<br><span class="accent">VOW as the operating partner who owns it.</span></h2>
+    <div class="g2-hero">
+      <div class="g2-col">
+        <div class="gtag">The play</div>
+        <div class="gh">G2 first. VOW owns the keys.</div>
+        <p>G2 is the perfect first installation: <strong>big enough to matter, complex enough to need it, close enough to your team to deliver well.</strong></p>
+        <p>You sit in the Operating Partner seat. I build the Cockpit, you maintain the relationship, G2 sees a working tool, not a slide.</p>
+        <p>After 10 weeks: G2 has a CEO Decision Cockpit, VOW has a productized service to sell to the next brand, and Erler Ventures has the next case study.</p>
+      </div>
+      <div class="g2-col">
+        <div class="gtag">Why this is the right first build</div>
+        <div class="gh">Three reasons.</div>
+        <p><strong>01 - The data is messy.</strong> Esports, sponsorships, talent IP, brand partnerships. If the Cockpit works on G2, it works anywhere.</p>
+        <p><strong>02 - The CEO is the buyer.</strong> Brand-side decisions and roster decisions both run through the top. One Cockpit, one user, fast feedback loop.</p>
+        <p><strong>03 - You already have the trust.</strong> I&rsquo;m the technical owner. You&rsquo;re the relationship owner. G2 buys from VOW, not from a German consultant they just met.</p>
+      </div>
+    </div>
+    <div class="g2-foot"><span class="accent">VOW is the agency.</span> Erler Ventures is the architect. G2 is the install.</div>
+    <div class="brand">Erler Ventures &middot; for Value of We</div>
+    <div class="page-num">10 / 12</div>
+  </section>
+
+  <!-- 11 THE MOAT -->
+  <section class="slide" id="s11">
+    <div class="label">Why this isn&rsquo;t 5 minutes of Cursor</div>
+    <h2 class="title">Everyone can build this.<br><span class="accent">One person has tested it on live clients.</span></h2>
+    <div class="moat-quote">
+      <div class="q">&ldquo;The moat is not this, because everyone can do it. The moat is someone who&rsquo;s looked into it and tested it with clients already.&rdquo;</div>
+      <div class="src">Chris to Richard, 13 May 2026 (workshop check-in)</div>
+    </div>
+    <div class="moat-proof">
+      <div class="mp">
+        <div class="mph">Proof 01</div>
+        <div class="mpt">4 active client builds</div>
+        <div class="mpd">RC, Mala, Solvera, plus a private real-estate operation. Different domains, same 5-layer frame.</div>
+      </div>
+      <div class="mp">
+        <div class="mph">Proof 02</div>
+        <div class="mpt">18 months of breakage + repair</div>
+        <div class="mpd">Every wrong architecture choice I&rsquo;ve made, I&rsquo;ve also fixed. You buy the version that survived.</div>
+      </div>
+      <div class="mp">
+        <div class="mph">Proof 03</div>
+        <div class="mpt">Every line in git, every decision logged</div>
+        <div class="mpd">30-day outcome review on every Cockpit decision. The system audits itself.</div>
+      </div>
+    </div>
+    <div class="brand">Erler Ventures &middot; for Value of We</div>
+    <div class="page-num">11 / 12</div>
+  </section>
+
+  <!-- 12 ENGAGEMENT + NEXT STEP -->
+  <section class="slide" id="s12">
+    <div class="label">How we&rsquo;d build this</div>
+    <h2 class="title">10 weeks. Two phases.<br><span class="accent">Fixed price. White-glove.</span></h2>
+    <div class="phases">
+      <div class="phase">
+        <div class="pp">Phase 01<br>Weeks 1-4</div>
+        <div class="pcontent">
+          <div class="pt">Architecture + first 3 layers</div>
+          <div class="pd">Sales/project CRM bridge, delivery CRM bridge, financial pull, daily pipeline diff. Live by week 4.</div>
+        </div>
+        <div class="pprice">25k EUR</div>
+      </div>
+      <div class="phase">
+        <div class="pp">Phase 02<br>Weeks 5-10</div>
+        <div class="pcontent">
+          <div class="pt">OKRs, Strategy Lock, Mentor Avatars, Voice Library, Stress Detector</div>
+          <div class="pd">Full 5-layer Cockpit. Voice-checked drafts. Stress-detection. Renewal-tracker. Customer relationship map.</div>
+        </div>
+        <div class="pprice">45k EUR</div>
+      </div>
+      <div class="phase">
+        <div class="pp">Total<br>10 weeks</div>
+        <div class="pcontent">
+          <div class="pt">Working Cockpit, owned by VOW (or G2)</div>
+          <div class="pd">Excludes infrastructure (~$50/month AWS). Quarterly tune-ups available at day-rate after launch.</div>
+        </div>
+        <div class="pprice">70k EUR</div>
+      </div>
+    </div>
+    <div class="eng-cta">
+      <div class="ch">Next step</div>
+      <div class="ct">A 60-minute live walkthrough of the RC Cockpit. Real screen, real decisions, real numbers. <a href="https://calendly.com/chris-gdvo/30min">calendly.com/chris-gdvo/30min</a></div>
+    </div>
+    <div class="brand">Erler Ventures &middot; for Value of We</div>
+    <div class="page-num">12 / 12</div>
+  </section>
+
+</div>
+
+<div class="nav-hint">arrow keys to navigate</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  let current = 0;
+  function go(idx) {
+    if (idx < 0 || idx >= slides.length) return;
+    slides[current].classList.remove('active');
+    slides[idx].classList.add('active');
+    current = idx;
+    history.replaceState({}, '', '#' + (idx + 1));
+  }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); go(current + 1); }
+    if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); go(current - 1); }
+    if (e.key === 'Home') go(0);
+    if (e.key === 'End') go(slides.length - 1);
+    document.querySelector('.nav-hint').classList.add('hidden');
+  });
+  document.querySelector('.deck').addEventListener('click', (e) => {
+    const x = e.clientX; const w = window.innerWidth;
+    if (x > w / 2) go(current + 1);
+    else go(current - 1);
+  });
+  if (window.location.hash) {
+    const n = parseInt(window.location.hash.replace('#', ''));
+    if (n >= 1 && n <= slides.length) go(n - 1);
+  }
+  setTimeout(() => document.querySelector('.nav-hint').classList.add('hidden'), 5000);
+</script>
+</body>
+</html>
